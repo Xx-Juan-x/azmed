@@ -32,12 +32,10 @@ namespace VISTA
             this.gbDATOS_ESPECIALIDAD = new System.Windows.Forms.GroupBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
-            this.txtID_ESPECIALIDAD = new System.Windows.Forms.TextBox();
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
-            this.lblCONTACTO = new System.Windows.Forms.Label();
             this.txtNOMBRE = new System.Windows.Forms.TextBox();
-            this.txtPRECIO = new System.Windows.Forms.TextBox();
             this.gbLISTA_ESPECIALIDADES = new System.Windows.Forms.GroupBox();
+            this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.dgvLISTA_ESPECIALIDADES = new System.Windows.Forms.DataGridView();
             this.cmbFILTRAR = new System.Windows.Forms.ComboBox();
             this.txtFILTRADO = new System.Windows.Forms.TextBox();
@@ -46,7 +44,6 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.lblFILTRAR = new System.Windows.Forms.Label();
-            this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.gbDATOS_ESPECIALIDAD.SuspendLayout();
             this.gbLISTA_ESPECIALIDADES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ESPECIALIDADES)).BeginInit();
@@ -56,11 +53,8 @@ namespace VISTA
             // 
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.btnGUARDAR);
-            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.txtID_ESPECIALIDAD);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.lbl_NOMBRE);
-            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.lblCONTACTO);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.txtNOMBRE);
-            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.txtPRECIO);
             this.gbDATOS_ESPECIALIDAD.Location = new System.Drawing.Point(1, 12);
             this.gbDATOS_ESPECIALIDAD.Name = "gbDATOS_ESPECIALIDAD";
             this.gbDATOS_ESPECIALIDAD.Size = new System.Drawing.Size(505, 94);
@@ -96,45 +90,21 @@ namespace VISTA
             this.btnGUARDAR.UseVisualStyleBackColor = false;
             this.btnGUARDAR.Click += new System.EventHandler(this.btnGUARDAR_Click);
             // 
-            // txtID_ESPECIALIDAD
-            // 
-            this.txtID_ESPECIALIDAD.Location = new System.Drawing.Point(6, 16);
-            this.txtID_ESPECIALIDAD.Name = "txtID_ESPECIALIDAD";
-            this.txtID_ESPECIALIDAD.Size = new System.Drawing.Size(31, 20);
-            this.txtID_ESPECIALIDAD.TabIndex = 57;
-            this.txtID_ESPECIALIDAD.Visible = false;
-            // 
             // lbl_NOMBRE
             // 
             this.lbl_NOMBRE.AutoSize = true;
-            this.lbl_NOMBRE.Location = new System.Drawing.Point(59, 22);
+            this.lbl_NOMBRE.Location = new System.Drawing.Point(61, 42);
             this.lbl_NOMBRE.Name = "lbl_NOMBRE";
             this.lbl_NOMBRE.Size = new System.Drawing.Size(57, 13);
             this.lbl_NOMBRE.TabIndex = 0;
             this.lbl_NOMBRE.Text = "NOMBRE:";
             // 
-            // lblCONTACTO
-            // 
-            this.lblCONTACTO.AutoSize = true;
-            this.lblCONTACTO.Location = new System.Drawing.Point(66, 48);
-            this.lblCONTACTO.Name = "lblCONTACTO";
-            this.lblCONTACTO.Size = new System.Drawing.Size(50, 13);
-            this.lblCONTACTO.TabIndex = 4;
-            this.lblCONTACTO.Text = "PRECIO:";
-            // 
             // txtNOMBRE
             // 
-            this.txtNOMBRE.Location = new System.Drawing.Point(122, 19);
+            this.txtNOMBRE.Location = new System.Drawing.Point(124, 39);
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(142, 20);
             this.txtNOMBRE.TabIndex = 6;
-            // 
-            // txtPRECIO
-            // 
-            this.txtPRECIO.Location = new System.Drawing.Point(121, 45);
-            this.txtPRECIO.Name = "txtPRECIO";
-            this.txtPRECIO.Size = new System.Drawing.Size(143, 20);
-            this.txtPRECIO.TabIndex = 9;
             // 
             // gbLISTA_ESPECIALIDADES
             // 
@@ -153,6 +123,20 @@ namespace VISTA
             this.gbLISTA_ESPECIALIDADES.TabIndex = 57;
             this.gbLISTA_ESPECIALIDADES.TabStop = false;
             this.gbLISTA_ESPECIALIDADES.Text = "LISTA DE ESPECIALIDADES";
+            // 
+            // btnCONSULTAR
+            // 
+            this.btnCONSULTAR.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCONSULTAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
+            this.btnCONSULTAR.Location = new System.Drawing.Point(288, 278);
+            this.btnCONSULTAR.Name = "btnCONSULTAR";
+            this.btnCONSULTAR.Size = new System.Drawing.Size(88, 23);
+            this.btnCONSULTAR.TabIndex = 61;
+            this.btnCONSULTAR.Text = "Consultar";
+            this.btnCONSULTAR.UseVisualStyleBackColor = false;
+            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
             // 
             // dgvLISTA_ESPECIALIDADES
             // 
@@ -243,20 +227,6 @@ namespace VISTA
             this.lblFILTRAR.TabIndex = 19;
             this.lblFILTRAR.Text = "FILTRAR POR:";
             // 
-            // btnCONSULTAR
-            // 
-            this.btnCONSULTAR.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCONSULTAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
-            this.btnCONSULTAR.Location = new System.Drawing.Point(288, 278);
-            this.btnCONSULTAR.Name = "btnCONSULTAR";
-            this.btnCONSULTAR.Size = new System.Drawing.Size(88, 23);
-            this.btnCONSULTAR.TabIndex = 61;
-            this.btnCONSULTAR.Text = "Consultar";
-            this.btnCONSULTAR.UseVisualStyleBackColor = false;
-            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
-            // 
             // frmESPECIALIDAD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,11 +250,8 @@ namespace VISTA
         private System.Windows.Forms.GroupBox gbDATOS_ESPECIALIDAD;
         private System.Windows.Forms.Button btnCANCELAR;
         private System.Windows.Forms.Button btnGUARDAR;
-        private System.Windows.Forms.TextBox txtID_ESPECIALIDAD;
         private System.Windows.Forms.Label lbl_NOMBRE;
-        private System.Windows.Forms.Label lblCONTACTO;
         private System.Windows.Forms.TextBox txtNOMBRE;
-        private System.Windows.Forms.TextBox txtPRECIO;
         private System.Windows.Forms.GroupBox gbLISTA_ESPECIALIDADES;
         private System.Windows.Forms.DataGridView dgvLISTA_ESPECIALIDADES;
         private System.Windows.Forms.ComboBox cmbFILTRAR;

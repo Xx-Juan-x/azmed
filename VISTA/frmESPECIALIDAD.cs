@@ -83,17 +83,10 @@ namespace VISTA
                 MessageBox.Show("Debe ingresar el nombre de la especialidad para poder agregarla", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            decimal PRECIO;
-            if (!decimal.TryParse(txtPRECIO.Text, out PRECIO))
-            {
-                MessageBox.Show("Debe ingresarle un precio a la especialidad", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
             oESPECIALIDAD.NOMBRE = txtNOMBRE.Text.ToUpper(); // Uso la funcion ToUapper para escribir el nombre en mayúscula
-            oESPECIALIDAD.PRECIO = PRECIO;
 
             if (ACCION == "A")
             {
@@ -106,7 +99,6 @@ namespace VISTA
 
             // LIMPIO LA TEXTBOX
             txtNOMBRE.Clear();
-            txtPRECIO.Clear();
             MODO_GRILLA();
             ARMA_GRILLA();
         }
@@ -122,8 +114,7 @@ namespace VISTA
 
             ACCION = "M";
 
-            txtNOMBRE.Text = oESPECIALIDAD.NOMBRE;
-            txtPRECIO.Text = oESPECIALIDAD.PRECIO.ToString();
+            txtNOMBRE.Text = oESPECIALIDAD.NOMBRE.ToUpper();
 
             MODO_DATOS();
         }
@@ -148,7 +139,6 @@ namespace VISTA
         private void btnCANCELAR_Click(object sender, EventArgs e)
         {
             txtNOMBRE.Clear();
-            txtPRECIO.Clear();
             MODO_GRILLA();
         }
 
@@ -168,8 +158,7 @@ namespace VISTA
 
             ACCION = "C";
 
-            txtNOMBRE.Text = oESPECIALIDAD.NOMBRE;
-            txtPRECIO.Text = oESPECIALIDAD.PRECIO.ToString();
+            txtNOMBRE.Text = oESPECIALIDAD.NOMBRE.ToUpper();
 
             MODO_DATOS();
 

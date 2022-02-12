@@ -24,5 +24,12 @@ namespace VISTA
             // FUNCION PARA MOSTRAR EL FORMULARIO
             FORMULARIO_ESPECIALIDAD.Show();
         }
+
+        private void registrarObrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmOBRA_SOCIAL FORMULARIO_OBRA_SOCIAL = frmOBRA_SOCIAL.OBTENER_INSTANCIA();
+            FORMULARIO_OBRA_SOCIAL.Show();
+        }
     }
 }

@@ -39,6 +39,8 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.USUARIO> USUARIOS { get; set; }
 
+        public virtual DbSet<MODELO.OBRA_SOCIAL> OBRAS_SOCIALES { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -48,6 +50,8 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_ROL);
             modelBuilder.Entity<MODELO.USUARIO>()
                 .HasKey(c => c.ID_USUARIO);
+            modelBuilder.Entity<MODELO.OBRA_SOCIAL>()
+                .HasKey(c => c.ID_OBRA_SOCIAL);
         }
     }
 

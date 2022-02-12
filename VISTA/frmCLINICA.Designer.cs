@@ -35,7 +35,7 @@ namespace VISTA
             this.pACIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProfesionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +91,7 @@ namespace VISTA
             this.pACIENTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarPacientesToolStripMenuItem,
             this.crearPlanesToolStripMenuItem,
-            this.crearObrasSocialesToolStripMenuItem,
+            this.registrarObrasSocialesToolStripMenuItem,
             this.facturarPacientesToolStripMenuItem});
             this.pACIENTESToolStripMenuItem.Name = "pACIENTESToolStripMenuItem";
             this.pACIENTESToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
@@ -100,25 +100,26 @@ namespace VISTA
             // registrarPacientesToolStripMenuItem
             // 
             this.registrarPacientesToolStripMenuItem.Name = "registrarPacientesToolStripMenuItem";
-            this.registrarPacientesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.registrarPacientesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registrarPacientesToolStripMenuItem.Text = "Registrar Pacientes";
             // 
             // crearPlanesToolStripMenuItem
             // 
             this.crearPlanesToolStripMenuItem.Name = "crearPlanesToolStripMenuItem";
-            this.crearPlanesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.crearPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.crearPlanesToolStripMenuItem.Text = "Crear Planes";
             // 
-            // crearObrasSocialesToolStripMenuItem
+            // registrarObrasSocialesToolStripMenuItem
             // 
-            this.crearObrasSocialesToolStripMenuItem.Name = "crearObrasSocialesToolStripMenuItem";
-            this.crearObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.crearObrasSocialesToolStripMenuItem.Text = "Crear Obras Sociales";
+            this.registrarObrasSocialesToolStripMenuItem.Name = "registrarObrasSocialesToolStripMenuItem";
+            this.registrarObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarObrasSocialesToolStripMenuItem.Text = "Registrar Obras Sociales";
+            this.registrarObrasSocialesToolStripMenuItem.Click += new System.EventHandler(this.registrarObrasSocialesToolStripMenuItem_Click);
             // 
             // facturarPacientesToolStripMenuItem
             // 
             this.facturarPacientesToolStripMenuItem.Name = "facturarPacientesToolStripMenuItem";
-            this.facturarPacientesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.facturarPacientesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.facturarPacientesToolStripMenuItem.Text = "Facturar Pacientes";
             // 
             // pROFESIONALESToolStripMenuItem
@@ -264,7 +265,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem pACIENTESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearPlanesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearObrasSocialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarObrasSocialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarPacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pROFESIONALESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProfesionalesToolStripMenuItem;

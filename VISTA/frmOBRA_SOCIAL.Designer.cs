@@ -30,8 +30,6 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_OBRA_SOCIAL = new System.Windows.Forms.GroupBox();
-            this.btnCANCELAR = new System.Windows.Forms.Button();
-            this.btnGUARDAR = new System.Windows.Forms.Button();
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
             this.lblCUIL = new System.Windows.Forms.Label();
             this.lblCONTACTO = new System.Windows.Forms.Label();
@@ -39,14 +37,17 @@ namespace VISTA
             this.txtCUIL = new System.Windows.Forms.TextBox();
             this.txtCONTACTO = new System.Windows.Forms.TextBox();
             this.gbLISTA_OBRAS_SOCIALES = new System.Windows.Forms.GroupBox();
+            this.cmbFILTRADO = new System.Windows.Forms.ComboBox();
             this.txtFILTRADO = new System.Windows.Forms.TextBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.lblFILTRAR = new System.Windows.Forms.Label();
+            this.btnCONSULTAR = new System.Windows.Forms.Button();
+            this.btnGUARDAR = new System.Windows.Forms.Button();
+            this.btnCANCELAR = new System.Windows.Forms.Button();
             this.dgvLISTA_OBRAS_SOCIALES = new System.Windows.Forms.DataGridView();
-            this.cmbFILTRADO = new System.Windows.Forms.ComboBox();
             this.gbDATOS_OBRA_SOCIAL.SuspendLayout();
             this.gbLISTA_OBRAS_SOCIALES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_OBRAS_SOCIALES)).BeginInit();
@@ -68,34 +69,6 @@ namespace VISTA
             this.gbDATOS_OBRA_SOCIAL.TabIndex = 56;
             this.gbDATOS_OBRA_SOCIAL.TabStop = false;
             this.gbDATOS_OBRA_SOCIAL.Text = "DATOS DE LA OBRA SOCIAL";
-            // 
-            // btnCANCELAR
-            // 
-            this.btnCANCELAR.BackColor = System.Drawing.Color.Red;
-            this.btnCANCELAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
-            this.btnCANCELAR.Location = new System.Drawing.Point(401, 72);
-            this.btnCANCELAR.Name = "btnCANCELAR";
-            this.btnCANCELAR.Size = new System.Drawing.Size(88, 23);
-            this.btnCANCELAR.TabIndex = 52;
-            this.btnCANCELAR.Text = "Cancelar";
-            this.btnCANCELAR.UseVisualStyleBackColor = false;
-            this.btnCANCELAR.Visible = false;
-            // 
-            // btnGUARDAR
-            // 
-            this.btnGUARDAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnGUARDAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(401, 43);
-            this.btnGUARDAR.Name = "btnGUARDAR";
-            this.btnGUARDAR.Size = new System.Drawing.Size(88, 23);
-            this.btnGUARDAR.TabIndex = 49;
-            this.btnGUARDAR.Text = "Guardar";
-            this.btnGUARDAR.UseVisualStyleBackColor = false;
-            this.btnGUARDAR.Visible = false;
             // 
             // lbl_NOMBRE
             // 
@@ -147,6 +120,8 @@ namespace VISTA
             // 
             // gbLISTA_OBRAS_SOCIALES
             // 
+            this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.dgvLISTA_OBRAS_SOCIALES);
+            this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.btnCONSULTAR);
             this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.cmbFILTRADO);
             this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.txtFILTRADO);
             this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.btnCERRAR);
@@ -154,13 +129,20 @@ namespace VISTA
             this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.btnMODIFICAR);
             this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.btnAGREGAR);
             this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.lblFILTRAR);
-            this.gbLISTA_OBRAS_SOCIALES.Controls.Add(this.dgvLISTA_OBRAS_SOCIALES);
             this.gbLISTA_OBRAS_SOCIALES.Location = new System.Drawing.Point(12, 117);
             this.gbLISTA_OBRAS_SOCIALES.Name = "gbLISTA_OBRAS_SOCIALES";
             this.gbLISTA_OBRAS_SOCIALES.Size = new System.Drawing.Size(501, 325);
             this.gbLISTA_OBRAS_SOCIALES.TabIndex = 55;
             this.gbLISTA_OBRAS_SOCIALES.TabStop = false;
             this.gbLISTA_OBRAS_SOCIALES.Text = "LISTA DE OBRAS SOCIALES";
+            // 
+            // cmbFILTRADO
+            // 
+            this.cmbFILTRADO.FormattingEnabled = true;
+            this.cmbFILTRADO.Location = new System.Drawing.Point(216, 15);
+            this.cmbFILTRADO.Name = "cmbFILTRADO";
+            this.cmbFILTRADO.Size = new System.Drawing.Size(121, 21);
+            this.cmbFILTRADO.TabIndex = 54;
             // 
             // txtFILTRADO
             // 
@@ -181,6 +163,7 @@ namespace VISTA
             this.btnCERRAR.TabIndex = 52;
             this.btnCERRAR.Text = "Cerrar";
             this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
             // btnELIMINAR
             // 
@@ -194,6 +177,7 @@ namespace VISTA
             this.btnELIMINAR.TabIndex = 51;
             this.btnELIMINAR.Text = "Eliminar";
             this.btnELIMINAR.UseVisualStyleBackColor = false;
+            this.btnELIMINAR.Click += new System.EventHandler(this.btnELIMINAR_Click);
             // 
             // btnMODIFICAR
             // 
@@ -207,6 +191,7 @@ namespace VISTA
             this.btnMODIFICAR.TabIndex = 50;
             this.btnMODIFICAR.Text = "Modificar";
             this.btnMODIFICAR.UseVisualStyleBackColor = false;
+            this.btnMODIFICAR.Click += new System.EventHandler(this.btnMODIFICAR_Click);
             // 
             // btnAGREGAR
             // 
@@ -220,6 +205,7 @@ namespace VISTA
             this.btnAGREGAR.TabIndex = 48;
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
+            this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
             // lblFILTRAR
             // 
@@ -231,27 +217,55 @@ namespace VISTA
             this.lblFILTRAR.TabIndex = 19;
             this.lblFILTRAR.Text = "FILTRAR POR:";
             // 
+            // btnCONSULTAR
+            // 
+            this.btnCONSULTAR.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCONSULTAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
+            this.btnCONSULTAR.Location = new System.Drawing.Point(286, 296);
+            this.btnCONSULTAR.Name = "btnCONSULTAR";
+            this.btnCONSULTAR.Size = new System.Drawing.Size(88, 23);
+            this.btnCONSULTAR.TabIndex = 55;
+            this.btnCONSULTAR.Text = "Consultar";
+            this.btnCONSULTAR.UseVisualStyleBackColor = false;
+            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
+            // 
+            // btnGUARDAR
+            // 
+            this.btnGUARDAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGUARDAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
+            this.btnGUARDAR.Location = new System.Drawing.Point(407, 43);
+            this.btnGUARDAR.Name = "btnGUARDAR";
+            this.btnGUARDAR.Size = new System.Drawing.Size(88, 23);
+            this.btnGUARDAR.TabIndex = 55;
+            this.btnGUARDAR.Text = "Guardar";
+            this.btnGUARDAR.UseVisualStyleBackColor = false;
+            this.btnGUARDAR.Click += new System.EventHandler(this.btnGUARDAR_Click_1);
+            // 
+            // btnCANCELAR
+            // 
+            this.btnCANCELAR.BackColor = System.Drawing.Color.Red;
+            this.btnCANCELAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
+            this.btnCANCELAR.Location = new System.Drawing.Point(407, 70);
+            this.btnCANCELAR.Name = "btnCANCELAR";
+            this.btnCANCELAR.Size = new System.Drawing.Size(88, 23);
+            this.btnCANCELAR.TabIndex = 59;
+            this.btnCANCELAR.Text = "Cancelar";
+            this.btnCANCELAR.UseVisualStyleBackColor = false;
+            this.btnCANCELAR.Click += new System.EventHandler(this.btnCANCELAR_Click_1);
+            // 
             // dgvLISTA_OBRAS_SOCIALES
             // 
-            this.dgvLISTA_OBRAS_SOCIALES.AllowUserToAddRows = false;
-            this.dgvLISTA_OBRAS_SOCIALES.AllowUserToDeleteRows = false;
             this.dgvLISTA_OBRAS_SOCIALES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLISTA_OBRAS_SOCIALES.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvLISTA_OBRAS_SOCIALES.Location = new System.Drawing.Point(6, 42);
-            this.dgvLISTA_OBRAS_SOCIALES.MultiSelect = false;
             this.dgvLISTA_OBRAS_SOCIALES.Name = "dgvLISTA_OBRAS_SOCIALES";
-            this.dgvLISTA_OBRAS_SOCIALES.ReadOnly = true;
-            this.dgvLISTA_OBRAS_SOCIALES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLISTA_OBRAS_SOCIALES.Size = new System.Drawing.Size(483, 248);
-            this.dgvLISTA_OBRAS_SOCIALES.TabIndex = 18;
-            // 
-            // cmbFILTRADO
-            // 
-            this.cmbFILTRADO.FormattingEnabled = true;
-            this.cmbFILTRADO.Location = new System.Drawing.Point(216, 15);
-            this.cmbFILTRADO.Name = "cmbFILTRADO";
-            this.cmbFILTRADO.Size = new System.Drawing.Size(121, 21);
-            this.cmbFILTRADO.TabIndex = 54;
+            this.dgvLISTA_OBRAS_SOCIALES.Size = new System.Drawing.Size(489, 248);
+            this.dgvLISTA_OBRAS_SOCIALES.TabIndex = 56;
             // 
             // frmOBRA_SOCIAL
             // 
@@ -274,8 +288,6 @@ namespace VISTA
         #endregion
 
         private System.Windows.Forms.GroupBox gbDATOS_OBRA_SOCIAL;
-        private System.Windows.Forms.Button btnCANCELAR;
-        private System.Windows.Forms.Button btnGUARDAR;
         private System.Windows.Forms.Label lbl_NOMBRE;
         private System.Windows.Forms.Label lblCUIL;
         private System.Windows.Forms.Label lblCONTACTO;
@@ -289,7 +301,10 @@ namespace VISTA
         private System.Windows.Forms.Button btnMODIFICAR;
         private System.Windows.Forms.Button btnAGREGAR;
         private System.Windows.Forms.Label lblFILTRAR;
-        private System.Windows.Forms.DataGridView dgvLISTA_OBRAS_SOCIALES;
         private System.Windows.Forms.ComboBox cmbFILTRADO;
+        private System.Windows.Forms.Button btnCONSULTAR;
+        private System.Windows.Forms.Button btnGUARDAR;
+        private System.Windows.Forms.Button btnCANCELAR;
+        private System.Windows.Forms.DataGridView dgvLISTA_OBRAS_SOCIALES;
     }
 }

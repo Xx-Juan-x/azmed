@@ -16,3 +16,6 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.pdb
 C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.Migrations.INICIAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.csproj.GenerateResource.cache
 C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.Migrations.USUARIO_ROL.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.Migrations.OBRA_SOCIAL.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ACTUALIZACION_MODELO.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ACTUALIZACIONENTEROS.resources

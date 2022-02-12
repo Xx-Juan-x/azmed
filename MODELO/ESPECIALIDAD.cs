@@ -11,7 +11,6 @@ namespace MODELO
         #region PROPIEDADES
         public int ID_ESPECIALIDAD { get; set; }
         public string NOMBRE { get; set; }
-        public decimal PRECIO { get; set; }
         #endregion
 
     }

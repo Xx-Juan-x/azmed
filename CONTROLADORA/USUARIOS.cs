@@ -44,9 +44,9 @@ namespace CONTROLADORA
             oCONTEXTO.SaveChanges();
         }
 
-        public MODELO.USUARIO OBTENER_USUARIO(string email, string clave)
+        public MODELO.USUARIO OBTENER_USUARIO(int CODIGO)
         {
-            return CASOS_DE_USO.USUARIOS.GESTION_USUARIOS.OBTENER_USUARIO(email, clave, oCONTEXTO);
+            return CASOS_DE_USO.USUARIOS.GESTION_USUARIOS.OBTENER_USUARIOS(CODIGO, oCONTEXTO);
         }
 
         public List<MODELO.USUARIO> OBTENER_USUARIOS()

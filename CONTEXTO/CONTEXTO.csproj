@@ -62,6 +62,18 @@
     <Compile Include="Migrations\202202112308596_USUARIO_ROL.designer.cs">
       <DependentUpon>202202112308596_USUARIO_ROL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202121728297_OBRA_SOCIAL.cs" />
+    <Compile Include="Migrations\202202121728297_OBRA_SOCIAL.designer.cs">
+      <DependentUpon>202202121728297_OBRA_SOCIAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202121812366_ACTUALIZACION_MODELO.cs" />
+    <Compile Include="Migrations\202202121812366_ACTUALIZACION_MODELO.designer.cs">
+      <DependentUpon>202202121812366_ACTUALIZACION_MODELO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202121933335_ACTUALIZACIONENTEROS.cs" />
+    <Compile Include="Migrations\202202121933335_ACTUALIZACIONENTEROS.designer.cs">
+      <DependentUpon>202202121933335_ACTUALIZACIONENTEROS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +93,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202112308596_USUARIO_ROL.resx">
       <DependentUpon>202202112308596_USUARIO_ROL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202121728297_OBRA_SOCIAL.resx">
+      <DependentUpon>202202121728297_OBRA_SOCIAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202121812366_ACTUALIZACION_MODELO.resx">
+      <DependentUpon>202202121812366_ACTUALIZACION_MODELO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202121933335_ACTUALIZACIONENTEROS.resx">
+      <DependentUpon>202202121933335_ACTUALIZACIONENTEROS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
