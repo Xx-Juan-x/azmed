@@ -46,7 +46,7 @@ namespace VISTA
             // lblNOMBRE
             // 
             this.lblNOMBRE.AutoSize = true;
-            this.lblNOMBRE.Location = new System.Drawing.Point(87, 15);
+            this.lblNOMBRE.Location = new System.Drawing.Point(4, 12);
             this.lblNOMBRE.Name = "lblNOMBRE";
             this.lblNOMBRE.Size = new System.Drawing.Size(57, 13);
             this.lblNOMBRE.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace VISTA
             // lblAPELLIDO
             // 
             this.lblAPELLIDO.AutoSize = true;
-            this.lblAPELLIDO.Location = new System.Drawing.Point(82, 50);
+            this.lblAPELLIDO.Location = new System.Drawing.Point(4, 50);
             this.lblAPELLIDO.Name = "lblAPELLIDO";
             this.lblAPELLIDO.Size = new System.Drawing.Size(62, 13);
             this.lblAPELLIDO.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace VISTA
             // lblEMAIL
             // 
             this.lblEMAIL.AutoSize = true;
-            this.lblEMAIL.Location = new System.Drawing.Point(102, 86);
+            this.lblEMAIL.Location = new System.Drawing.Point(4, 86);
             this.lblEMAIL.Name = "lblEMAIL";
             this.lblEMAIL.Size = new System.Drawing.Size(42, 13);
             this.lblEMAIL.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace VISTA
             // lblPASSWORD
             // 
             this.lblPASSWORD.AutoSize = true;
-            this.lblPASSWORD.Location = new System.Drawing.Point(60, 122);
+            this.lblPASSWORD.Location = new System.Drawing.Point(4, 118);
             this.lblPASSWORD.Name = "lblPASSWORD";
             this.lblPASSWORD.Size = new System.Drawing.Size(84, 13);
             this.lblPASSWORD.TabIndex = 3;
@@ -126,7 +126,7 @@ namespace VISTA
             // lonklblLOGIN
             // 
             this.lonklblLOGIN.AutoSize = true;
-            this.lonklblLOGIN.Location = new System.Drawing.Point(115, 243);
+            this.lonklblLOGIN.Location = new System.Drawing.Point(100, 241);
             this.lonklblLOGIN.Name = "lonklblLOGIN";
             this.lonklblLOGIN.Size = new System.Drawing.Size(122, 13);
             this.lonklblLOGIN.TabIndex = 10;
@@ -136,9 +136,9 @@ namespace VISTA
             // 
             // btnREGISTRAR
             // 
-            this.btnREGISTRAR.Location = new System.Drawing.Point(118, 192);
+            this.btnREGISTRAR.Location = new System.Drawing.Point(86, 192);
             this.btnREGISTRAR.Name = "btnREGISTRAR";
-            this.btnREGISTRAR.Size = new System.Drawing.Size(119, 36);
+            this.btnREGISTRAR.Size = new System.Drawing.Size(151, 36);
             this.btnREGISTRAR.TabIndex = 11;
             this.btnREGISTRAR.Text = "Registrarse";
             this.btnREGISTRAR.UseVisualStyleBackColor = true;

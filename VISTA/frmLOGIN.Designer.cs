@@ -46,7 +46,7 @@ namespace VISTA
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(51, 18);
+            this.label4.Location = new System.Drawing.Point(76, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 31);
             this.label4.TabIndex = 927;
@@ -59,7 +59,7 @@ namespace VISTA
             this.btnINGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnINGRESAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnINGRESAR.ForeColor = System.Drawing.Color.White;
-            this.btnINGRESAR.Location = new System.Drawing.Point(12, 230);
+            this.btnINGRESAR.Location = new System.Drawing.Point(32, 233);
             this.btnINGRESAR.Name = "btnINGRESAR";
             this.btnINGRESAR.Size = new System.Drawing.Size(221, 32);
             this.btnINGRESAR.TabIndex = 924;
@@ -74,7 +74,7 @@ namespace VISTA
             this.btnSALIR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSALIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSALIR.ForeColor = System.Drawing.Color.White;
-            this.btnSALIR.Location = new System.Drawing.Point(12, 268);
+            this.btnSALIR.Location = new System.Drawing.Point(32, 271);
             this.btnSALIR.Name = "btnSALIR";
             this.btnSALIR.Size = new System.Drawing.Size(221, 32);
             this.btnSALIR.TabIndex = 925;
@@ -88,7 +88,7 @@ namespace VISTA
             this.txtCLAVE.Location = new System.Drawing.Point(12, 164);
             this.txtCLAVE.Name = "txtCLAVE";
             this.txtCLAVE.PasswordChar = '*';
-            this.txtCLAVE.Size = new System.Drawing.Size(221, 26);
+            this.txtCLAVE.Size = new System.Drawing.Size(280, 26);
             this.txtCLAVE.TabIndex = 923;
             this.txtCLAVE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -97,7 +97,7 @@ namespace VISTA
             this.txtEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEMAIL.Location = new System.Drawing.Point(12, 104);
             this.txtEMAIL.Name = "txtEMAIL";
-            this.txtEMAIL.Size = new System.Drawing.Size(221, 26);
+            this.txtEMAIL.Size = new System.Drawing.Size(280, 26);
             this.txtEMAIL.TabIndex = 920;
             this.txtEMAIL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -107,14 +107,14 @@ namespace VISTA
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 73);
+            this.label3.Size = new System.Drawing.Size(304, 73);
             this.label3.TabIndex = 926;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 141);
+            this.label2.Location = new System.Drawing.Point(107, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 921;
@@ -124,7 +124,7 @@ namespace VISTA
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 81);
+            this.label1.Location = new System.Drawing.Point(127, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 922;
@@ -133,7 +133,7 @@ namespace VISTA
             // linklblREGISTRARSE
             // 
             this.linklblREGISTRARSE.AutoSize = true;
-            this.linklblREGISTRARSE.Location = new System.Drawing.Point(79, 205);
+            this.linklblREGISTRARSE.Location = new System.Drawing.Point(103, 205);
             this.linklblREGISTRARSE.Name = "linklblREGISTRARSE";
             this.linklblREGISTRARSE.Size = new System.Drawing.Size(96, 13);
             this.linklblREGISTRARSE.TabIndex = 928;
@@ -145,7 +145,7 @@ namespace VISTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 309);
+            this.ClientSize = new System.Drawing.Size(304, 309);
             this.Controls.Add(this.linklblREGISTRARSE);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnINGRESAR);

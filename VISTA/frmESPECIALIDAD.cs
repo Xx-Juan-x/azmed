@@ -39,6 +39,7 @@ namespace VISTA
             ARMA_GRILLA();
             MODO_GRILLA();
 
+
         }
 
         private void ARMA_GRILLA()

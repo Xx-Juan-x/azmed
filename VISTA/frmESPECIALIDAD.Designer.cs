@@ -37,13 +37,10 @@ namespace VISTA
             this.gbLISTA_ESPECIALIDADES = new System.Windows.Forms.GroupBox();
             this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.dgvLISTA_ESPECIALIDADES = new System.Windows.Forms.DataGridView();
-            this.cmbFILTRAR = new System.Windows.Forms.ComboBox();
-            this.txtFILTRADO = new System.Windows.Forms.TextBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
-            this.lblFILTRAR = new System.Windows.Forms.Label();
             this.gbDATOS_ESPECIALIDAD.SuspendLayout();
             this.gbLISTA_ESPECIALIDADES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ESPECIALIDADES)).BeginInit();
@@ -55,9 +52,9 @@ namespace VISTA
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.btnGUARDAR);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.lbl_NOMBRE);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.txtNOMBRE);
-            this.gbDATOS_ESPECIALIDAD.Location = new System.Drawing.Point(1, 12);
+            this.gbDATOS_ESPECIALIDAD.Location = new System.Drawing.Point(614, 12);
             this.gbDATOS_ESPECIALIDAD.Name = "gbDATOS_ESPECIALIDAD";
-            this.gbDATOS_ESPECIALIDAD.Size = new System.Drawing.Size(505, 94);
+            this.gbDATOS_ESPECIALIDAD.Size = new System.Drawing.Size(215, 112);
             this.gbDATOS_ESPECIALIDAD.TabIndex = 58;
             this.gbDATOS_ESPECIALIDAD.TabStop = false;
             this.gbDATOS_ESPECIALIDAD.Text = "ESPECIALIDAD";
@@ -68,7 +65,7 @@ namespace VISTA
             this.btnCANCELAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
-            this.btnCANCELAR.Location = new System.Drawing.Point(410, 65);
+            this.btnCANCELAR.Location = new System.Drawing.Point(116, 80);
             this.btnCANCELAR.Name = "btnCANCELAR";
             this.btnCANCELAR.Size = new System.Drawing.Size(88, 23);
             this.btnCANCELAR.TabIndex = 58;
@@ -82,7 +79,7 @@ namespace VISTA
             this.btnGUARDAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(410, 36);
+            this.btnGUARDAR.Location = new System.Drawing.Point(6, 80);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(88, 23);
             this.btnGUARDAR.TabIndex = 54;
@@ -93,7 +90,7 @@ namespace VISTA
             // lbl_NOMBRE
             // 
             this.lbl_NOMBRE.AutoSize = true;
-            this.lbl_NOMBRE.Location = new System.Drawing.Point(61, 42);
+            this.lbl_NOMBRE.Location = new System.Drawing.Point(8, 33);
             this.lbl_NOMBRE.Name = "lbl_NOMBRE";
             this.lbl_NOMBRE.Size = new System.Drawing.Size(57, 13);
             this.lbl_NOMBRE.TabIndex = 0;
@@ -101,25 +98,22 @@ namespace VISTA
             // 
             // txtNOMBRE
             // 
-            this.txtNOMBRE.Location = new System.Drawing.Point(124, 39);
+            this.txtNOMBRE.Location = new System.Drawing.Point(81, 30);
             this.txtNOMBRE.Name = "txtNOMBRE";
-            this.txtNOMBRE.Size = new System.Drawing.Size(142, 20);
+            this.txtNOMBRE.Size = new System.Drawing.Size(123, 20);
             this.txtNOMBRE.TabIndex = 6;
             // 
             // gbLISTA_ESPECIALIDADES
             // 
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.btnCONSULTAR);
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.dgvLISTA_ESPECIALIDADES);
-            this.gbLISTA_ESPECIALIDADES.Controls.Add(this.cmbFILTRAR);
-            this.gbLISTA_ESPECIALIDADES.Controls.Add(this.txtFILTRADO);
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.btnCERRAR);
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.btnELIMINAR);
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.btnMODIFICAR);
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.btnAGREGAR);
-            this.gbLISTA_ESPECIALIDADES.Controls.Add(this.lblFILTRAR);
-            this.gbLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(1, 112);
+            this.gbLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_ESPECIALIDADES.Name = "gbLISTA_ESPECIALIDADES";
-            this.gbLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(505, 308);
+            this.gbLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(596, 326);
             this.gbLISTA_ESPECIALIDADES.TabIndex = 57;
             this.gbLISTA_ESPECIALIDADES.TabStop = false;
             this.gbLISTA_ESPECIALIDADES.Text = "LISTA DE ESPECIALIDADES";
@@ -130,7 +124,7 @@ namespace VISTA
             this.btnCONSULTAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
-            this.btnCONSULTAR.Location = new System.Drawing.Point(288, 278);
+            this.btnCONSULTAR.Location = new System.Drawing.Point(192, 295);
             this.btnCONSULTAR.Name = "btnCONSULTAR";
             this.btnCONSULTAR.Size = new System.Drawing.Size(88, 23);
             this.btnCONSULTAR.TabIndex = 61;
@@ -141,25 +135,10 @@ namespace VISTA
             // dgvLISTA_ESPECIALIDADES
             // 
             this.dgvLISTA_ESPECIALIDADES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(6, 45);
+            this.dgvLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(6, 19);
             this.dgvLISTA_ESPECIALIDADES.Name = "dgvLISTA_ESPECIALIDADES";
-            this.dgvLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(492, 228);
+            this.dgvLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(584, 270);
             this.dgvLISTA_ESPECIALIDADES.TabIndex = 60;
-            // 
-            // cmbFILTRAR
-            // 
-            this.cmbFILTRAR.FormattingEnabled = true;
-            this.cmbFILTRAR.Location = new System.Drawing.Point(229, 18);
-            this.cmbFILTRAR.Name = "cmbFILTRAR";
-            this.cmbFILTRAR.Size = new System.Drawing.Size(121, 21);
-            this.cmbFILTRAR.TabIndex = 59;
-            // 
-            // txtFILTRADO
-            // 
-            this.txtFILTRADO.Location = new System.Drawing.Point(356, 19);
-            this.txtFILTRADO.Name = "txtFILTRADO";
-            this.txtFILTRADO.Size = new System.Drawing.Size(142, 20);
-            this.txtFILTRADO.TabIndex = 53;
             // 
             // btnCERRAR
             // 
@@ -167,7 +146,7 @@ namespace VISTA
             this.btnCERRAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(410, 279);
+            this.btnCERRAR.Location = new System.Drawing.Point(500, 295);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(88, 23);
             this.btnCERRAR.TabIndex = 52;
@@ -181,7 +160,7 @@ namespace VISTA
             this.btnELIMINAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnELIMINAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnELIMINAR.ForeColor = System.Drawing.Color.White;
-            this.btnELIMINAR.Location = new System.Drawing.Point(194, 279);
+            this.btnELIMINAR.Location = new System.Drawing.Point(286, 295);
             this.btnELIMINAR.Name = "btnELIMINAR";
             this.btnELIMINAR.Size = new System.Drawing.Size(88, 23);
             this.btnELIMINAR.TabIndex = 51;
@@ -195,7 +174,7 @@ namespace VISTA
             this.btnMODIFICAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMODIFICAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMODIFICAR.ForeColor = System.Drawing.Color.White;
-            this.btnMODIFICAR.Location = new System.Drawing.Point(100, 279);
+            this.btnMODIFICAR.Location = new System.Drawing.Point(98, 295);
             this.btnMODIFICAR.Name = "btnMODIFICAR";
             this.btnMODIFICAR.Size = new System.Drawing.Size(88, 23);
             this.btnMODIFICAR.TabIndex = 50;
@@ -209,7 +188,7 @@ namespace VISTA
             this.btnAGREGAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAGREGAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAGREGAR.ForeColor = System.Drawing.Color.White;
-            this.btnAGREGAR.Location = new System.Drawing.Point(6, 279);
+            this.btnAGREGAR.Location = new System.Drawing.Point(4, 295);
             this.btnAGREGAR.Name = "btnAGREGAR";
             this.btnAGREGAR.Size = new System.Drawing.Size(88, 23);
             this.btnAGREGAR.TabIndex = 48;
@@ -217,21 +196,11 @@ namespace VISTA
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
-            // lblFILTRAR
-            // 
-            this.lblFILTRAR.AutoSize = true;
-            this.lblFILTRAR.ForeColor = System.Drawing.Color.Black;
-            this.lblFILTRAR.Location = new System.Drawing.Point(142, 22);
-            this.lblFILTRAR.Name = "lblFILTRAR";
-            this.lblFILTRAR.Size = new System.Drawing.Size(81, 13);
-            this.lblFILTRAR.TabIndex = 19;
-            this.lblFILTRAR.Text = "FILTRAR POR:";
-            // 
             // frmESPECIALIDAD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 425);
+            this.ClientSize = new System.Drawing.Size(834, 341);
             this.Controls.Add(this.gbDATOS_ESPECIALIDAD);
             this.Controls.Add(this.gbLISTA_ESPECIALIDADES);
             this.Name = "frmESPECIALIDAD";
@@ -239,7 +208,6 @@ namespace VISTA
             this.gbDATOS_ESPECIALIDAD.ResumeLayout(false);
             this.gbDATOS_ESPECIALIDAD.PerformLayout();
             this.gbLISTA_ESPECIALIDADES.ResumeLayout(false);
-            this.gbLISTA_ESPECIALIDADES.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ESPECIALIDADES)).EndInit();
             this.ResumeLayout(false);
 
@@ -254,13 +222,10 @@ namespace VISTA
         private System.Windows.Forms.TextBox txtNOMBRE;
         private System.Windows.Forms.GroupBox gbLISTA_ESPECIALIDADES;
         private System.Windows.Forms.DataGridView dgvLISTA_ESPECIALIDADES;
-        private System.Windows.Forms.ComboBox cmbFILTRAR;
-        private System.Windows.Forms.TextBox txtFILTRADO;
         private System.Windows.Forms.Button btnCERRAR;
         private System.Windows.Forms.Button btnELIMINAR;
         private System.Windows.Forms.Button btnMODIFICAR;
         private System.Windows.Forms.Button btnAGREGAR;
-        private System.Windows.Forms.Label lblFILTRAR;
         private System.Windows.Forms.Button btnCONSULTAR;
     }
 }

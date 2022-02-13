@@ -30,3 +30,5 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmOBRA_SOCIAL.res
 C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmLOGIN.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmREGISTRO_PACIENTE.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmPLAN.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmATENCION.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmREGISTRO_PROFESIONALES.resources

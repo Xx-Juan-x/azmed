@@ -68,7 +68,7 @@ namespace VISTA
             this.rEPORTESToolStripMenuItem});
             this.mnStripMENU_CLINICA.Location = new System.Drawing.Point(0, 0);
             this.mnStripMENU_CLINICA.Name = "mnStripMENU_CLINICA";
-            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(800, 24);
+            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(663, 24);
             this.mnStripMENU_CLINICA.TabIndex = 1;
             this.mnStripMENU_CLINICA.Text = "menuStrip1";
             // 
@@ -83,7 +83,7 @@ namespace VISTA
             // crearUsuariosToolStripMenuItem
             // 
             this.crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
-            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearUsuariosToolStripMenuItem.Text = "Crear Usuarios";
             // 
             // pACIENTESToolStripMenuItem
@@ -247,7 +247,7 @@ namespace VISTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(663, 312);
             this.Controls.Add(this.mnStripMENU_CLINICA);
             this.Name = "frmCLINICA";
             this.Text = "CLINICA:: AZMED";
