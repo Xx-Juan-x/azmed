@@ -12,5 +12,10 @@ namespace MODELO
         public string NOMBRE { get; set; }
         public Int64 CUIL { get; set; }
         public Int64 CONTACTO { get; set; }
+
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
     }
 }

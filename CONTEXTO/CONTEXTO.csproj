@@ -74,6 +74,22 @@
     <Compile Include="Migrations\202202121933335_ACTUALIZACIONENTEROS.designer.cs">
       <DependentUpon>202202121933335_ACTUALIZACIONENTEROS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202122322225_PLAN.cs" />
+    <Compile Include="Migrations\202202122322225_PLAN.designer.cs">
+      <DependentUpon>202202122322225_PLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202130038495_ACTUALIZACION_PLAN.cs" />
+    <Compile Include="Migrations\202202130038495_ACTUALIZACION_PLAN.designer.cs">
+      <DependentUpon>202202130038495_ACTUALIZACION_PLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202130041332_ACTUALIZACION_PLAN1.cs" />
+    <Compile Include="Migrations\202202130041332_ACTUALIZACION_PLAN1.designer.cs">
+      <DependentUpon>202202130041332_ACTUALIZACION_PLAN1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202130053058_ACTUALIZACION_PLAN3.cs" />
+    <Compile Include="Migrations\202202130053058_ACTUALIZACION_PLAN3.designer.cs">
+      <DependentUpon>202202130053058_ACTUALIZACION_PLAN3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +118,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202121933335_ACTUALIZACIONENTEROS.resx">
       <DependentUpon>202202121933335_ACTUALIZACIONENTEROS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202122322225_PLAN.resx">
+      <DependentUpon>202202122322225_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202130038495_ACTUALIZACION_PLAN.resx">
+      <DependentUpon>202202130038495_ACTUALIZACION_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202130041332_ACTUALIZACION_PLAN1.resx">
+      <DependentUpon>202202130041332_ACTUALIZACION_PLAN1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202130053058_ACTUALIZACION_PLAN3.resx">
+      <DependentUpon>202202130053058_ACTUALIZACION_PLAN3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

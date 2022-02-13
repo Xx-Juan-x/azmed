@@ -33,7 +33,7 @@ namespace VISTA
             this.btnINGRESAR = new System.Windows.Forms.Button();
             this.btnSALIR = new System.Windows.Forms.Button();
             this.txtCLAVE = new System.Windows.Forms.TextBox();
-            this.txtUSUARIO = new System.Windows.Forms.TextBox();
+            this.txtEMAIL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@ namespace VISTA
             this.btnINGRESAR.TabIndex = 924;
             this.btnINGRESAR.Text = "Ingresar";
             this.btnINGRESAR.UseVisualStyleBackColor = false;
+            this.btnINGRESAR.Click += new System.EventHandler(this.btnINGRESAR_Click);
             // 
             // btnSALIR
             // 
@@ -91,14 +92,14 @@ namespace VISTA
             this.txtCLAVE.TabIndex = 923;
             this.txtCLAVE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtUSUARIO
+            // txtEMAIL
             // 
-            this.txtUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUSUARIO.Location = new System.Drawing.Point(12, 104);
-            this.txtUSUARIO.Name = "txtUSUARIO";
-            this.txtUSUARIO.Size = new System.Drawing.Size(221, 26);
-            this.txtUSUARIO.TabIndex = 920;
-            this.txtUSUARIO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEMAIL.Location = new System.Drawing.Point(12, 104);
+            this.txtEMAIL.Name = "txtEMAIL";
+            this.txtEMAIL.Size = new System.Drawing.Size(221, 26);
+            this.txtEMAIL.TabIndex = 920;
+            this.txtEMAIL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -150,7 +151,7 @@ namespace VISTA
             this.Controls.Add(this.btnINGRESAR);
             this.Controls.Add(this.btnSALIR);
             this.Controls.Add(this.txtCLAVE);
-            this.Controls.Add(this.txtUSUARIO);
+            this.Controls.Add(this.txtEMAIL);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -168,7 +169,7 @@ namespace VISTA
         private System.Windows.Forms.Button btnINGRESAR;
         private System.Windows.Forms.Button btnSALIR;
         private System.Windows.Forms.TextBox txtCLAVE;
-        private System.Windows.Forms.TextBox txtUSUARIO;
+        private System.Windows.Forms.TextBox txtEMAIL;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

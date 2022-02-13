@@ -29,3 +29,4 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmCLINICA.resourc
 C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmOBRA_SOCIAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmLOGIN.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmREGISTRO_PACIENTE.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\VISTA\obj\Debug\VISTA.frmPLAN.resources

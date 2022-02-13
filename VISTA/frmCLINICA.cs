@@ -31,5 +31,11 @@ namespace VISTA
             frmOBRA_SOCIAL FORMULARIO_OBRA_SOCIAL = frmOBRA_SOCIAL.OBTENER_INSTANCIA();
             FORMULARIO_OBRA_SOCIAL.Show();
         }
+
+        private void registrarPlanesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPLAN FORMULARIO_PLAN = frmPLAN.OBTENER_INSTANCIA();
+            FORMULARIO_PLAN.Show();
+        }
     }
 }

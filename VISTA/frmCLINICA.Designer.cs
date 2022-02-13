@@ -34,7 +34,7 @@ namespace VISTA
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pACIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +90,7 @@ namespace VISTA
             // 
             this.pACIENTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarPacientesToolStripMenuItem,
-            this.crearPlanesToolStripMenuItem,
+            this.registrarPlanesToolStripMenuItem,
             this.registrarObrasSocialesToolStripMenuItem,
             this.facturarPacientesToolStripMenuItem});
             this.pACIENTESToolStripMenuItem.Name = "pACIENTESToolStripMenuItem";
@@ -103,11 +103,12 @@ namespace VISTA
             this.registrarPacientesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registrarPacientesToolStripMenuItem.Text = "Registrar Pacientes";
             // 
-            // crearPlanesToolStripMenuItem
+            // registrarPlanesToolStripMenuItem
             // 
-            this.crearPlanesToolStripMenuItem.Name = "crearPlanesToolStripMenuItem";
-            this.crearPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.crearPlanesToolStripMenuItem.Text = "Crear Planes";
+            this.registrarPlanesToolStripMenuItem.Name = "registrarPlanesToolStripMenuItem";
+            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarPlanesToolStripMenuItem.Text = "Registrar Planes";
+            this.registrarPlanesToolStripMenuItem.Click += new System.EventHandler(this.registrarPlanesToolStripMenuItem_Click);
             // 
             // registrarObrasSocialesToolStripMenuItem
             // 
@@ -264,7 +265,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem crearUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pACIENTESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPacientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearPlanesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarPlanesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarObrasSocialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarPacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pROFESIONALESToolStripMenuItem;

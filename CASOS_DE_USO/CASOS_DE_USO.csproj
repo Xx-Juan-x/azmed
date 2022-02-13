@@ -55,6 +55,8 @@
     <Compile Include="ESPECIALIDADES\OPERACIONES_ESPECIALIDADES.cs" />
     <Compile Include="OBRAS SOCIALES\GESTION_OBRAS_SOCIALES.cs" />
     <Compile Include="OBRAS SOCIALES\OPERACIONES_OBRAS_SOCIALES.cs" />
+    <Compile Include="PLANES\GESTION_PLANES.cs" />
+    <Compile Include="PLANES\OPERACIONES_PLANES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="USUARIOS\GESTION_USUARIOS.cs" />
     <Compile Include="USUARIOS\OPERACIONES_USUARIOS.cs" />

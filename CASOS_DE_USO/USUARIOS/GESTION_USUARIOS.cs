@@ -13,10 +13,19 @@ namespace CASOS_DE_USO.USUARIOS
             return AZMED_CLINICA.USUARIOS.FirstOrDefault(_ => _.ID_USUARIO == CODIGO);
         }
 
+        public static MODELO.USUARIO OBTENER_EMAIL(string EMAIL, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
+        {
+            return AZMED_CLINICA.USUARIOS.FirstOrDefault(_ => _.EMAIL == EMAIL);
+        }
+
+        public static MODELO.USUARIO OBTENER_CLAVE(string CLAVE, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
+        {
+            return AZMED_CLINICA.USUARIOS.FirstOrDefault(_ => _.CLAVE == CLAVE);
+        }
+
         public static List<MODELO.USUARIO> OBTENER_USUARIOS(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
             return AZMED_CLINICA.USUARIOS.ToList();
         }
-
     }
 }
