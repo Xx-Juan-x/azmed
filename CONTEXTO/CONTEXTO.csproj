@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202202130053058_ACTUALIZACION_PLAN3.designer.cs">
       <DependentUpon>202202130053058_ACTUALIZACION_PLAN3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202142356503_ACTUIALIZACION4.cs" />
+    <Compile Include="Migrations\202202142356503_ACTUIALIZACION4.designer.cs">
+      <DependentUpon>202202142356503_ACTUIALIZACION4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -130,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202130053058_ACTUALIZACION_PLAN3.resx">
       <DependentUpon>202202130053058_ACTUALIZACION_PLAN3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202142356503_ACTUIALIZACION4.resx">
+      <DependentUpon>202202142356503_ACTUIALIZACION4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
