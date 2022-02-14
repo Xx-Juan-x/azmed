@@ -49,10 +49,10 @@ namespace VISTA
             this.gbHORARIOS_ATENCION = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.HORA_INICIO = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbDIA_LABORAL = new System.Windows.Forms.ComboBox();
             this.dtpHORA_INICIO = new System.Windows.Forms.DateTimePicker();
             this.dtpHORA_FIN = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtmDIA_LABORAL = new System.Windows.Forms.DateTimePicker();
             this.gbDATOS_PROFESIONAL_HORARIOS.SuspendLayout();
             this.gbLISTA_HORARIOS_ATENCION.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ATENCION)).BeginInit();
@@ -258,10 +258,10 @@ namespace VISTA
             // 
             // gbHORARIOS_ATENCION
             // 
-            this.gbHORARIOS_ATENCION.Controls.Add(this.dtmDIA_LABORAL);
-            this.gbHORARIOS_ATENCION.Controls.Add(this.label2);
             this.gbHORARIOS_ATENCION.Controls.Add(this.dtpHORA_FIN);
             this.gbHORARIOS_ATENCION.Controls.Add(this.dtpHORA_INICIO);
+            this.gbHORARIOS_ATENCION.Controls.Add(this.cmbDIA_LABORAL);
+            this.gbHORARIOS_ATENCION.Controls.Add(this.label2);
             this.gbHORARIOS_ATENCION.Controls.Add(this.label1);
             this.gbHORARIOS_ATENCION.Controls.Add(this.HORA_INICIO);
             this.gbHORARIOS_ATENCION.Location = new System.Drawing.Point(6, 120);
@@ -269,7 +269,7 @@ namespace VISTA
             this.gbHORARIOS_ATENCION.Size = new System.Drawing.Size(280, 153);
             this.gbHORARIOS_ATENCION.TabIndex = 69;
             this.gbHORARIOS_ATENCION.TabStop = false;
-            this.gbHORARIOS_ATENCION.Text = "HORARIOS DE ATENCION DE TURNOS";
+            this.gbHORARIOS_ATENCION.Text = "HORARIOS DE ATENCION DEL PROFESIONAL";
             // 
             // label1
             // 
@@ -289,22 +289,6 @@ namespace VISTA
             this.HORA_INICIO.TabIndex = 65;
             this.HORA_INICIO.Text = "HORA DE INICIO:";
             // 
-            // dtpHORA_INICIO
-            // 
-            this.dtpHORA_INICIO.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHORA_INICIO.Location = new System.Drawing.Point(110, 32);
-            this.dtpHORA_INICIO.Name = "dtpHORA_INICIO";
-            this.dtpHORA_INICIO.Size = new System.Drawing.Size(159, 20);
-            this.dtpHORA_INICIO.TabIndex = 71;
-            // 
-            // dtpHORA_FIN
-            // 
-            this.dtpHORA_FIN.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHORA_FIN.Location = new System.Drawing.Point(110, 76);
-            this.dtpHORA_FIN.Name = "dtpHORA_FIN";
-            this.dtpHORA_FIN.Size = new System.Drawing.Size(159, 20);
-            this.dtpHORA_FIN.TabIndex = 72;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -314,13 +298,31 @@ namespace VISTA
             this.label2.TabIndex = 73;
             this.label2.Text = "DIA LABORAL:";
             // 
-            // dtmDIA_LABORAL
+            // cmbDIA_LABORAL
             // 
-            this.dtmDIA_LABORAL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmDIA_LABORAL.Location = new System.Drawing.Point(110, 122);
-            this.dtmDIA_LABORAL.Name = "dtmDIA_LABORAL";
-            this.dtmDIA_LABORAL.Size = new System.Drawing.Size(159, 20);
-            this.dtmDIA_LABORAL.TabIndex = 74;
+            this.cmbDIA_LABORAL.FormattingEnabled = true;
+            this.cmbDIA_LABORAL.Location = new System.Drawing.Point(110, 120);
+            this.cmbDIA_LABORAL.Name = "cmbDIA_LABORAL";
+            this.cmbDIA_LABORAL.Size = new System.Drawing.Size(159, 21);
+            this.cmbDIA_LABORAL.TabIndex = 74;
+            // 
+            // dtpHORA_INICIO
+            // 
+            this.dtpHORA_INICIO.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHORA_INICIO.Location = new System.Drawing.Point(110, 32);
+            this.dtpHORA_INICIO.Name = "dtpHORA_INICIO";
+            this.dtpHORA_INICIO.ShowUpDown = true;
+            this.dtpHORA_INICIO.Size = new System.Drawing.Size(159, 20);
+            this.dtpHORA_INICIO.TabIndex = 75;
+            // 
+            // dtpHORA_FIN
+            // 
+            this.dtpHORA_FIN.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHORA_FIN.Location = new System.Drawing.Point(110, 76);
+            this.dtpHORA_FIN.Name = "dtpHORA_FIN";
+            this.dtpHORA_FIN.ShowUpDown = true;
+            this.dtpHORA_FIN.Size = new System.Drawing.Size(159, 20);
+            this.dtpHORA_FIN.TabIndex = 76;
             // 
             // frmATENCION
             // 
@@ -364,9 +366,9 @@ namespace VISTA
         private System.Windows.Forms.GroupBox gbHORARIOS_ATENCION;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label HORA_INICIO;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbDIA_LABORAL;
         private System.Windows.Forms.DateTimePicker dtpHORA_INICIO;
         private System.Windows.Forms.DateTimePicker dtpHORA_FIN;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtmDIA_LABORAL;
     }
 }

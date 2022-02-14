@@ -104,11 +104,11 @@
     <Compile Include="frmREGISTRO_PROFESIONALES.Designer.cs">
       <DependentUpon>frmREGISTRO_PROFESIONALES.cs</DependentUpon>
     </Compile>
-    <Compile Include="frrmREGISTRO_USUARIOS.cs">
+    <Compile Include="frmUSUARIOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frrmREGISTRO_USUARIOS.Designer.cs">
-      <DependentUpon>frrmREGISTRO_USUARIOS.cs</DependentUpon>
+    <Compile Include="frmUSUARIOS.Designer.cs">
+      <DependentUpon>frmUSUARIOS.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmREGISTRO_PROFESIONALES.resx">
       <DependentUpon>frmREGISTRO_PROFESIONALES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUSUARIOS.resx">
+      <DependentUpon>frmUSUARIOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
