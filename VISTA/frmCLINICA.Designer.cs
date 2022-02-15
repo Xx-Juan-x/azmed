@@ -37,7 +37,12 @@ namespace VISTA
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarAtenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tURNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearSolicitudDePedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +53,6 @@ namespace VISTA
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarAtenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,7 @@ namespace VISTA
             this.crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
             this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
+            this.crearUsuariosToolStripMenuItem.Click += new System.EventHandler(this.crearUsuariosToolStripMenuItem_Click);
             // 
             // pACIENTESToolStripMenuItem
             // 
@@ -125,6 +126,18 @@ namespace VISTA
             this.registrarEspecialidadesToolStripMenuItem.Text = "Registrar Especialidades";
             this.registrarEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.registrarEspecialidadesToolStripMenuItem_Click);
             // 
+            // registrarProfesionalToolStripMenuItem
+            // 
+            this.registrarProfesionalToolStripMenuItem.Name = "registrarProfesionalToolStripMenuItem";
+            this.registrarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarProfesionalToolStripMenuItem.Text = "Registrar Profesionales";
+            // 
+            // gestionarAtenciónToolStripMenuItem
+            // 
+            this.gestionarAtenciónToolStripMenuItem.Name = "gestionarAtenciónToolStripMenuItem";
+            this.gestionarAtenciónToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.gestionarAtenciónToolStripMenuItem.Text = "Gestionar Atenciones";
+            // 
             // tURNOSToolStripMenuItem
             // 
             this.tURNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -134,6 +147,24 @@ namespace VISTA
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
             this.tURNOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.tURNOSToolStripMenuItem.Text = "TURNOS";
+            // 
+            // consultaToolStripMenuItem
+            // 
+            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Text = "Solicitar Consulta";
+            // 
+            // estudioToolStripMenuItem
+            // 
+            this.estudioToolStripMenuItem.Name = "estudioToolStripMenuItem";
+            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estudioToolStripMenuItem.Text = "Solicitar Estudio";
+            // 
+            // facturarPacienteToolStripMenuItem
+            // 
+            this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
+            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // cOMPRASToolStripMenuItem
             // 
@@ -204,36 +235,6 @@ namespace VISTA
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Name = "consultaYReportesDeComprasRealizadasToolStripMenuItem";
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Text = "Consulta y Reportes de Compras Realizadas";
-            // 
-            // consultaToolStripMenuItem
-            // 
-            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultaToolStripMenuItem.Text = "Solicitar Consulta";
-            // 
-            // estudioToolStripMenuItem
-            // 
-            this.estudioToolStripMenuItem.Name = "estudioToolStripMenuItem";
-            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.estudioToolStripMenuItem.Text = "Solicitar Estudio";
-            // 
-            // registrarProfesionalToolStripMenuItem
-            // 
-            this.registrarProfesionalToolStripMenuItem.Name = "registrarProfesionalToolStripMenuItem";
-            this.registrarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.registrarProfesionalToolStripMenuItem.Text = "Registrar Profesionales";
-            // 
-            // gestionarAtenciónToolStripMenuItem
-            // 
-            this.gestionarAtenciónToolStripMenuItem.Name = "gestionarAtenciónToolStripMenuItem";
-            this.gestionarAtenciónToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.gestionarAtenciónToolStripMenuItem.Text = "Gestionar Atenciones";
-            // 
-            // facturarPacienteToolStripMenuItem
-            // 
-            this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // frmCLINICA
             // 

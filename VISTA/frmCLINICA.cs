@@ -37,5 +37,12 @@ namespace VISTA
             frmPLAN FORMULARIO_PLAN = frmPLAN.OBTENER_INSTANCIA();
             FORMULARIO_PLAN.Show();
         }
+
+        private void crearUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUSUARIOS FORMULARIO_USUARIO = frmUSUARIOS.OBTENER_INSTANCIA();
+            FORMULARIO_USUARIO.Show();
+
+        }
     }
 }

@@ -12,17 +12,17 @@ namespace VISTA
 {
     public partial class frmUSUARIOS : Form
     {
-        private static frmREGISTRO_PACIENTE instancia;
+        private static frmUSUARIOS instancia;
 
-        public static frmREGISTRO_PACIENTE OBTENER_INSTANCIA()
+        public static frmUSUARIOS OBTENER_INSTANCIA()
         {
             if (instancia == null)
             {
-                instancia = new frmREGISTRO_PACIENTE();
+                instancia = new frmUSUARIOS();
             }
             if (instancia.IsDisposed)
             {
-                instancia = new frmREGISTRO_PACIENTE();
+                instancia = new frmUSUARIOS();
             }
             return instancia;
         }
