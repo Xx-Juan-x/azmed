@@ -42,7 +42,6 @@ namespace VISTA
         {
             frmUSUARIOS FORMULARIO_USUARIO = frmUSUARIOS.OBTENER_INSTANCIA();
             FORMULARIO_USUARIO.Show();
-
         }
     }
 }
