@@ -134,12 +134,13 @@ namespace VISTA
             // 
             // cmbROL
             // 
+            this.cmbROL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbROL.FormattingEnabled = true;
+            
             this.cmbROL.Location = new System.Drawing.Point(96, 294);
             this.cmbROL.Name = "cmbROL";
             this.cmbROL.Size = new System.Drawing.Size(159, 21);
             this.cmbROL.TabIndex = 9;
-            this.cmbROL.SelectedIndexChanged += new System.EventHandler(this.cmbROL_SelectedIndexChanged);
             // 
             // gbDATOS_USUARIO
             // 
@@ -192,7 +193,6 @@ namespace VISTA
             this.btnGUARDAR.TabIndex = 60;
             this.btnGUARDAR.Text = "Guardar";
             this.btnGUARDAR.UseVisualStyleBackColor = false;
-            this.btnGUARDAR.Click += new System.EventHandler(this.btnGUARDAR_Click);
             // 
             // btnCANCELAR
             // 
@@ -314,7 +314,6 @@ namespace VISTA
             this.btnMODIFICAR.TabIndex = 57;
             this.btnMODIFICAR.Text = "Modificar";
             this.btnMODIFICAR.UseVisualStyleBackColor = false;
-            this.btnMODIFICAR.Click += new System.EventHandler(this.btnMODIFICAR_Click);
             // 
             // btnAGREGAR
             // 
@@ -328,13 +327,12 @@ namespace VISTA
             this.btnAGREGAR.TabIndex = 56;
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
-            this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
             // frmUSUARIOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 432);
+            this.ClientSize = new System.Drawing.Size(914, 432);
             this.Controls.Add(this.gbLISTA_USUARIOS);
             this.Controls.Add(this.gbDATOS_USUARIO);
             this.Name = "frmUSUARIOS";

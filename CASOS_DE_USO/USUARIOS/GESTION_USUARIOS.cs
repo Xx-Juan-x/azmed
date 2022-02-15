@@ -16,6 +16,7 @@ namespace CASOS_DE_USO.USUARIOS
         public static MODELO.USUARIO OBTENER_EMAIL(string EMAIL, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
             return AZMED_CLINICA.USUARIOS.FirstOrDefault(_ => _.EMAIL == EMAIL);
+  
         }
 
         public static MODELO.USUARIO OBTENER_CLAVE(string CLAVE, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
