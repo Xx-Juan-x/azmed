@@ -113,7 +113,7 @@ namespace VISTA
             this.gbLISTA_ESPECIALIDADES.Controls.Add(this.btnAGREGAR);
             this.gbLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_ESPECIALIDADES.Name = "gbLISTA_ESPECIALIDADES";
-            this.gbLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(596, 326);
+            this.gbLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(596, 330);
             this.gbLISTA_ESPECIALIDADES.TabIndex = 57;
             this.gbLISTA_ESPECIALIDADES.TabStop = false;
             this.gbLISTA_ESPECIALIDADES.Text = "LISTA DE ESPECIALIDADES";
@@ -124,7 +124,7 @@ namespace VISTA
             this.btnCONSULTAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
-            this.btnCONSULTAR.Location = new System.Drawing.Point(192, 295);
+            this.btnCONSULTAR.Location = new System.Drawing.Point(190, 295);
             this.btnCONSULTAR.Name = "btnCONSULTAR";
             this.btnCONSULTAR.Size = new System.Drawing.Size(88, 23);
             this.btnCONSULTAR.TabIndex = 61;
@@ -135,7 +135,7 @@ namespace VISTA
             // dgvLISTA_ESPECIALIDADES
             // 
             this.dgvLISTA_ESPECIALIDADES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(6, 19);
+            this.dgvLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(4, 19);
             this.dgvLISTA_ESPECIALIDADES.Name = "dgvLISTA_ESPECIALIDADES";
             this.dgvLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(584, 270);
             this.dgvLISTA_ESPECIALIDADES.TabIndex = 60;
@@ -146,7 +146,7 @@ namespace VISTA
             this.btnCERRAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(500, 295);
+            this.btnCERRAR.Location = new System.Drawing.Point(498, 295);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(88, 23);
             this.btnCERRAR.TabIndex = 52;
@@ -160,7 +160,7 @@ namespace VISTA
             this.btnELIMINAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnELIMINAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnELIMINAR.ForeColor = System.Drawing.Color.White;
-            this.btnELIMINAR.Location = new System.Drawing.Point(286, 295);
+            this.btnELIMINAR.Location = new System.Drawing.Point(284, 295);
             this.btnELIMINAR.Name = "btnELIMINAR";
             this.btnELIMINAR.Size = new System.Drawing.Size(88, 23);
             this.btnELIMINAR.TabIndex = 51;
@@ -174,7 +174,7 @@ namespace VISTA
             this.btnMODIFICAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMODIFICAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMODIFICAR.ForeColor = System.Drawing.Color.White;
-            this.btnMODIFICAR.Location = new System.Drawing.Point(98, 295);
+            this.btnMODIFICAR.Location = new System.Drawing.Point(96, 295);
             this.btnMODIFICAR.Name = "btnMODIFICAR";
             this.btnMODIFICAR.Size = new System.Drawing.Size(88, 23);
             this.btnMODIFICAR.TabIndex = 50;
@@ -188,7 +188,7 @@ namespace VISTA
             this.btnAGREGAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAGREGAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAGREGAR.ForeColor = System.Drawing.Color.White;
-            this.btnAGREGAR.Location = new System.Drawing.Point(4, 295);
+            this.btnAGREGAR.Location = new System.Drawing.Point(2, 295);
             this.btnAGREGAR.Name = "btnAGREGAR";
             this.btnAGREGAR.Size = new System.Drawing.Size(88, 23);
             this.btnAGREGAR.TabIndex = 48;
@@ -200,7 +200,7 @@ namespace VISTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 341);
+            this.ClientSize = new System.Drawing.Size(834, 346);
             this.Controls.Add(this.gbDATOS_ESPECIALIDAD);
             this.Controls.Add(this.gbLISTA_ESPECIALIDADES);
             this.Name = "frmESPECIALIDAD";
