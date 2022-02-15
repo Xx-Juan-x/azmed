@@ -40,20 +40,20 @@ namespace VISTA
             this.lblROL_USUARIO = new System.Windows.Forms.Label();
             this.cmbROL = new System.Windows.Forms.ComboBox();
             this.gbDATOS_USUARIO = new System.Windows.Forms.GroupBox();
-            this.gbLISTA_USUARIOS = new System.Windows.Forms.GroupBox();
+            this.txtCONFIRMAR_PASSWORD = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.btnCANCELAR = new System.Windows.Forms.Button();
+            this.gbLISTA_USUARIOS = new System.Windows.Forms.GroupBox();
+            this.lblFILTRO_EMAIL = new System.Windows.Forms.Label();
+            this.cmbFILTRO_EMAIL = new System.Windows.Forms.ComboBox();
+            this.btnBUSCAR = new System.Windows.Forms.Button();
+            this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
             this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
-            this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
-            this.lblFILTRO_EMAIL = new System.Windows.Forms.Label();
-            this.cmbFILTRO_EMAIL = new System.Windows.Forms.ComboBox();
-            this.btnBUSCAR = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCONFIRMAR_PASSWORD = new System.Windows.Forms.TextBox();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -134,7 +134,9 @@ namespace VISTA
             // 
             // cmbROL
             // 
+            this.cmbROL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbROL.FormattingEnabled = true;
+            
             this.cmbROL.Location = new System.Drawing.Point(96, 294);
             this.cmbROL.Name = "cmbROL";
             this.cmbROL.Size = new System.Drawing.Size(159, 21);
@@ -163,23 +165,21 @@ namespace VISTA
             this.gbDATOS_USUARIO.TabStop = false;
             this.gbDATOS_USUARIO.Text = "DATOS DEL USUARIO";
             // 
-            // gbLISTA_USUARIOS
+            // txtCONFIRMAR_PASSWORD
             // 
-            this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_EMAIL);
-            this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_EMAIL);
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnBUSCAR);
-            this.gbLISTA_USUARIOS.Controls.Add(this.dgvLISTA_USUARIOS);
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnCONSULTAR);
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnCERRAR);
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnELIMINAR);
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnMODIFICAR);
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnAGREGAR);
-            this.gbLISTA_USUARIOS.Location = new System.Drawing.Point(12, 12);
-            this.gbLISTA_USUARIOS.Name = "gbLISTA_USUARIOS";
-            this.gbLISTA_USUARIOS.Size = new System.Drawing.Size(623, 415);
-            this.gbLISTA_USUARIOS.TabIndex = 11;
-            this.gbLISTA_USUARIOS.TabStop = false;
-            this.gbLISTA_USUARIOS.Text = "LISTA DE USUARIOS";
+            this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(123, 244);
+            this.txtCONFIRMAR_PASSWORD.Name = "txtCONFIRMAR_PASSWORD";
+            this.txtCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(132, 20);
+            this.txtCONFIRMAR_PASSWORD.TabIndex = 63;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "CONFIRMAR CLAVE:";
             // 
             // btnGUARDAR
             // 
@@ -206,6 +206,62 @@ namespace VISTA
             this.btnCANCELAR.TabIndex = 61;
             this.btnCANCELAR.Text = "Cancelar";
             this.btnCANCELAR.UseVisualStyleBackColor = false;
+            // 
+            // gbLISTA_USUARIOS
+            // 
+            this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_EMAIL);
+            this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_EMAIL);
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnBUSCAR);
+            this.gbLISTA_USUARIOS.Controls.Add(this.dgvLISTA_USUARIOS);
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnCONSULTAR);
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnCERRAR);
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnELIMINAR);
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnMODIFICAR);
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnAGREGAR);
+            this.gbLISTA_USUARIOS.Location = new System.Drawing.Point(12, 12);
+            this.gbLISTA_USUARIOS.Name = "gbLISTA_USUARIOS";
+            this.gbLISTA_USUARIOS.Size = new System.Drawing.Size(623, 415);
+            this.gbLISTA_USUARIOS.TabIndex = 11;
+            this.gbLISTA_USUARIOS.TabStop = false;
+            this.gbLISTA_USUARIOS.Text = "LISTA DE USUARIOS";
+            // 
+            // lblFILTRO_EMAIL
+            // 
+            this.lblFILTRO_EMAIL.AutoSize = true;
+            this.lblFILTRO_EMAIL.Location = new System.Drawing.Point(96, 28);
+            this.lblFILTRO_EMAIL.Name = "lblFILTRO_EMAIL";
+            this.lblFILTRO_EMAIL.Size = new System.Drawing.Size(42, 13);
+            this.lblFILTRO_EMAIL.TabIndex = 70;
+            this.lblFILTRO_EMAIL.Text = "EMAIL:";
+            // 
+            // cmbFILTRO_EMAIL
+            // 
+            this.cmbFILTRO_EMAIL.FormattingEnabled = true;
+            this.cmbFILTRO_EMAIL.Location = new System.Drawing.Point(144, 25);
+            this.cmbFILTRO_EMAIL.Name = "cmbFILTRO_EMAIL";
+            this.cmbFILTRO_EMAIL.Size = new System.Drawing.Size(159, 21);
+            this.cmbFILTRO_EMAIL.TabIndex = 69;
+            // 
+            // btnBUSCAR
+            // 
+            this.btnBUSCAR.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBUSCAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBUSCAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBUSCAR.ForeColor = System.Drawing.Color.White;
+            this.btnBUSCAR.Location = new System.Drawing.Point(515, 14);
+            this.btnBUSCAR.Name = "btnBUSCAR";
+            this.btnBUSCAR.Size = new System.Drawing.Size(102, 35);
+            this.btnBUSCAR.TabIndex = 68;
+            this.btnBUSCAR.Text = "Buscar";
+            this.btnBUSCAR.UseVisualStyleBackColor = false;
+            // 
+            // dgvLISTA_USUARIOS
+            // 
+            this.dgvLISTA_USUARIOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLISTA_USUARIOS.Location = new System.Drawing.Point(6, 55);
+            this.dgvLISTA_USUARIOS.Name = "dgvLISTA_USUARIOS";
+            this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(611, 324);
+            this.dgvLISTA_USUARIOS.TabIndex = 61;
             // 
             // btnCONSULTAR
             // 
@@ -271,60 +327,6 @@ namespace VISTA
             this.btnAGREGAR.TabIndex = 56;
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
-            // 
-            // dgvLISTA_USUARIOS
-            // 
-            this.dgvLISTA_USUARIOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLISTA_USUARIOS.Location = new System.Drawing.Point(6, 55);
-            this.dgvLISTA_USUARIOS.Name = "dgvLISTA_USUARIOS";
-            this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(611, 324);
-            this.dgvLISTA_USUARIOS.TabIndex = 61;
-            // 
-            // lblFILTRO_EMAIL
-            // 
-            this.lblFILTRO_EMAIL.AutoSize = true;
-            this.lblFILTRO_EMAIL.Location = new System.Drawing.Point(96, 28);
-            this.lblFILTRO_EMAIL.Name = "lblFILTRO_EMAIL";
-            this.lblFILTRO_EMAIL.Size = new System.Drawing.Size(42, 13);
-            this.lblFILTRO_EMAIL.TabIndex = 70;
-            this.lblFILTRO_EMAIL.Text = "EMAIL:";
-            // 
-            // cmbFILTRO_EMAIL
-            // 
-            this.cmbFILTRO_EMAIL.FormattingEnabled = true;
-            this.cmbFILTRO_EMAIL.Location = new System.Drawing.Point(144, 25);
-            this.cmbFILTRO_EMAIL.Name = "cmbFILTRO_EMAIL";
-            this.cmbFILTRO_EMAIL.Size = new System.Drawing.Size(159, 21);
-            this.cmbFILTRO_EMAIL.TabIndex = 69;
-            // 
-            // btnBUSCAR
-            // 
-            this.btnBUSCAR.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnBUSCAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBUSCAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBUSCAR.ForeColor = System.Drawing.Color.White;
-            this.btnBUSCAR.Location = new System.Drawing.Point(515, 14);
-            this.btnBUSCAR.Name = "btnBUSCAR";
-            this.btnBUSCAR.Size = new System.Drawing.Size(102, 35);
-            this.btnBUSCAR.TabIndex = 68;
-            this.btnBUSCAR.Text = "Buscar";
-            this.btnBUSCAR.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 247);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "CONFIRMAR CLAVE:";
-            // 
-            // txtCONFIRMAR_PASSWORD
-            // 
-            this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(123, 244);
-            this.txtCONFIRMAR_PASSWORD.Name = "txtCONFIRMAR_PASSWORD";
-            this.txtCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(132, 20);
-            this.txtCONFIRMAR_PASSWORD.TabIndex = 63;
             // 
             // frmUSUARIOS
             // 

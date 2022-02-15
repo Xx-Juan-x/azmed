@@ -15,6 +15,10 @@ namespace VISTA
         public frmUSUARIOS()
         {
             InitializeComponent();
+            cmbROL.Items.AddRange(new object[] {
+            "JEFE DE COMPRAS",
+            "PROFESIONAL",
+            "ADMINISTRADOR"});
         }
     }
 }

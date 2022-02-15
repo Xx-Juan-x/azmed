@@ -16,7 +16,7 @@ namespace VISTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLOGIN());
+            Application.Run(new frmUSUARIOS());
         }
     }
 }
