@@ -14,6 +14,7 @@ namespace MODELO
         public string EMAIL { get; set; }
         public string CLAVE { get; set; }
         public DateTime FECHA { get; set; }
+        public int ID_ROL { get; set; }
         public ROL ROL { get; set; }
     }
 }

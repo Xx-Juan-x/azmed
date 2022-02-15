@@ -83,6 +83,7 @@ namespace VISTA
             oUSUARIO.EMAIL = txtEMAIL.Text;
             oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
+            oUSUARIO.ID_ROL = 2;
 
             if (txtPASSWORD.Text == txtCONFIRMAR_PASSWORD.Text)
             {
