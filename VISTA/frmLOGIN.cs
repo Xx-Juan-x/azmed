@@ -46,7 +46,7 @@ namespace VISTA
             if (txtEMAIL.Text == oUSUARIO.EMAIL && txtCLAVE.Text == oUSUARIO.CLAVE)
             {
                 frmCLINICA FORMULARIO_CLINICA = new frmCLINICA();
-                FORMULARIO_CLINICA.ShowDialog();
+                FORMULARIO_CLINICA.ShowDialog();           
             }
             else
             {

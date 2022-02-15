@@ -102,6 +102,10 @@
     <Compile Include="Migrations\202202151421324_ELIMINAR_IDROL.designer.cs">
       <DependentUpon>202202151421324_ELIMINAR_IDROL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202151914599_ELIMINAR_ROL.cs" />
+    <Compile Include="Migrations\202202151914599_ELIMINAR_ROL.designer.cs">
+      <DependentUpon>202202151914599_ELIMINAR_ROL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202151421324_ELIMINAR_IDROL.resx">
       <DependentUpon>202202151421324_ELIMINAR_IDROL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202151914599_ELIMINAR_ROL.resx">
+      <DependentUpon>202202151914599_ELIMINAR_ROL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

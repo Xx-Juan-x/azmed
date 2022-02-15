@@ -133,6 +133,7 @@ namespace VISTA
             // linklblREGISTRARSE
             // 
             this.linklblREGISTRARSE.AutoSize = true;
+            this.linklblREGISTRARSE.LinkColor = System.Drawing.Color.Teal;
             this.linklblREGISTRARSE.Location = new System.Drawing.Point(103, 205);
             this.linklblREGISTRARSE.Name = "linklblREGISTRARSE";
             this.linklblREGISTRARSE.Size = new System.Drawing.Size(96, 13);

@@ -30,6 +30,14 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_PROFESIONAL = new System.Windows.Forms.GroupBox();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.lblAPELLIDO = new System.Windows.Forms.Label();
+            this.lblMATRICULA = new System.Windows.Forms.Label();
+            this.txtMATRICULA = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtAPELLIDO = new System.Windows.Forms.TextBox();
+            this.lblNOMBRE = new System.Windows.Forms.Label();
+            this.txtNOMBRE = new System.Windows.Forms.TextBox();
             this.lblESPECIALIDAD = new System.Windows.Forms.Label();
             this.cmbESPECIALIDADES = new System.Windows.Forms.ComboBox();
             this.btnGUARDAR = new System.Windows.Forms.Button();
@@ -44,14 +52,6 @@ namespace VISTA
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
-            this.txtNOMBRE = new System.Windows.Forms.TextBox();
-            this.lblNOMBRE = new System.Windows.Forms.Label();
-            this.txtAPELLIDO = new System.Windows.Forms.TextBox();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtMATRICULA = new System.Windows.Forms.TextBox();
-            this.lblMATRICULA = new System.Windows.Forms.Label();
-            this.lblAPELLIDO = new System.Windows.Forms.Label();
-            this.lblDNI = new System.Windows.Forms.Label();
             this.gbDATOS_PROFESIONAL.SuspendLayout();
             this.gbLISTA_PROFESIONALES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PROFESIONALES)).BeginInit();
@@ -77,6 +77,70 @@ namespace VISTA
             this.gbDATOS_PROFESIONAL.TabIndex = 62;
             this.gbDATOS_PROFESIONAL.TabStop = false;
             this.gbDATOS_PROFESIONAL.Text = "DATOS DEL PROFESIONAL";
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(6, 169);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(29, 13);
+            this.lblDNI.TabIndex = 73;
+            this.lblDNI.Text = "DNI:";
+            // 
+            // lblAPELLIDO
+            // 
+            this.lblAPELLIDO.AutoSize = true;
+            this.lblAPELLIDO.Location = new System.Drawing.Point(6, 119);
+            this.lblAPELLIDO.Name = "lblAPELLIDO";
+            this.lblAPELLIDO.Size = new System.Drawing.Size(62, 13);
+            this.lblAPELLIDO.TabIndex = 72;
+            this.lblAPELLIDO.Text = "APELLIDO:";
+            // 
+            // lblMATRICULA
+            // 
+            this.lblMATRICULA.AutoSize = true;
+            this.lblMATRICULA.Location = new System.Drawing.Point(6, 36);
+            this.lblMATRICULA.Name = "lblMATRICULA";
+            this.lblMATRICULA.Size = new System.Drawing.Size(72, 13);
+            this.lblMATRICULA.TabIndex = 71;
+            this.lblMATRICULA.Text = "MATRICULA:";
+            // 
+            // txtMATRICULA
+            // 
+            this.txtMATRICULA.Location = new System.Drawing.Point(99, 33);
+            this.txtMATRICULA.Name = "txtMATRICULA";
+            this.txtMATRICULA.Size = new System.Drawing.Size(190, 20);
+            this.txtMATRICULA.TabIndex = 70;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(99, 162);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(190, 20);
+            this.txtDNI.TabIndex = 69;
+            // 
+            // txtAPELLIDO
+            // 
+            this.txtAPELLIDO.Location = new System.Drawing.Point(99, 116);
+            this.txtAPELLIDO.Name = "txtAPELLIDO";
+            this.txtAPELLIDO.Size = new System.Drawing.Size(190, 20);
+            this.txtAPELLIDO.TabIndex = 68;
+            // 
+            // lblNOMBRE
+            // 
+            this.lblNOMBRE.AutoSize = true;
+            this.lblNOMBRE.Location = new System.Drawing.Point(6, 76);
+            this.lblNOMBRE.Name = "lblNOMBRE";
+            this.lblNOMBRE.Size = new System.Drawing.Size(57, 13);
+            this.lblNOMBRE.TabIndex = 67;
+            this.lblNOMBRE.Text = "NOMBRE:";
+            // 
+            // txtNOMBRE
+            // 
+            this.txtNOMBRE.Location = new System.Drawing.Point(99, 73);
+            this.txtNOMBRE.Name = "txtNOMBRE";
+            this.txtNOMBRE.Size = new System.Drawing.Size(190, 20);
+            this.txtNOMBRE.TabIndex = 66;
             // 
             // lblESPECIALIDAD
             // 
@@ -242,78 +306,14 @@ namespace VISTA
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             // 
-            // txtNOMBRE
-            // 
-            this.txtNOMBRE.Location = new System.Drawing.Point(99, 73);
-            this.txtNOMBRE.Name = "txtNOMBRE";
-            this.txtNOMBRE.Size = new System.Drawing.Size(190, 20);
-            this.txtNOMBRE.TabIndex = 66;
-            // 
-            // lblNOMBRE
-            // 
-            this.lblNOMBRE.AutoSize = true;
-            this.lblNOMBRE.Location = new System.Drawing.Point(6, 76);
-            this.lblNOMBRE.Name = "lblNOMBRE";
-            this.lblNOMBRE.Size = new System.Drawing.Size(57, 13);
-            this.lblNOMBRE.TabIndex = 67;
-            this.lblNOMBRE.Text = "NOMBRE:";
-            // 
-            // txtAPELLIDO
-            // 
-            this.txtAPELLIDO.Location = new System.Drawing.Point(99, 116);
-            this.txtAPELLIDO.Name = "txtAPELLIDO";
-            this.txtAPELLIDO.Size = new System.Drawing.Size(190, 20);
-            this.txtAPELLIDO.TabIndex = 68;
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(99, 162);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(190, 20);
-            this.txtDNI.TabIndex = 69;
-            // 
-            // txtMATRICULA
-            // 
-            this.txtMATRICULA.Location = new System.Drawing.Point(99, 33);
-            this.txtMATRICULA.Name = "txtMATRICULA";
-            this.txtMATRICULA.Size = new System.Drawing.Size(190, 20);
-            this.txtMATRICULA.TabIndex = 70;
-            // 
-            // lblMATRICULA
-            // 
-            this.lblMATRICULA.AutoSize = true;
-            this.lblMATRICULA.Location = new System.Drawing.Point(6, 36);
-            this.lblMATRICULA.Name = "lblMATRICULA";
-            this.lblMATRICULA.Size = new System.Drawing.Size(72, 13);
-            this.lblMATRICULA.TabIndex = 71;
-            this.lblMATRICULA.Text = "MATRICULA:";
-            // 
-            // lblAPELLIDO
-            // 
-            this.lblAPELLIDO.AutoSize = true;
-            this.lblAPELLIDO.Location = new System.Drawing.Point(6, 119);
-            this.lblAPELLIDO.Name = "lblAPELLIDO";
-            this.lblAPELLIDO.Size = new System.Drawing.Size(62, 13);
-            this.lblAPELLIDO.TabIndex = 72;
-            this.lblAPELLIDO.Text = "APELLIDO:";
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(6, 169);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(29, 13);
-            this.lblDNI.TabIndex = 73;
-            this.lblDNI.Text = "DNI:";
-            // 
-            // frmREGISTRO_PROFESIONAL
+            // frmREGISTRO_PROFESIONALES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 420);
+            this.ClientSize = new System.Drawing.Size(949, 420);
             this.Controls.Add(this.gbLISTA_PROFESIONALES);
             this.Controls.Add(this.gbDATOS_PROFESIONAL);
-            this.Name = "frmREGISTRO_PROFESIONAL";
+            this.Name = "frmREGISTRO_PROFESIONALES";
             this.Text = "REGISTRO DE PROFESIONALES";
             this.gbDATOS_PROFESIONAL.ResumeLayout(false);
             this.gbDATOS_PROFESIONAL.PerformLayout();

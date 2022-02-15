@@ -35,8 +35,6 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.ESPECIALIDAD> ESPECIALIDADES { get; set; }
 
-        public virtual DbSet<MODELO.ROL> ROLES { get; set; }
-
         public virtual DbSet<MODELO.USUARIO> USUARIOS { get; set; }
 
         public virtual DbSet<MODELO.OBRA_SOCIAL> OBRAS_SOCIALES { get; set; }
@@ -48,8 +46,6 @@ namespace CONTEXTO
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
                 .HasKey(c => c.ID_ESPECIALIDAD);
-            modelBuilder.Entity<MODELO.ROL>()
-                .HasKey(c => c.ID_ROL);
             modelBuilder.Entity<MODELO.USUARIO>()
                 .HasKey(c => c.ID_USUARIO);
             modelBuilder.Entity<MODELO.OBRA_SOCIAL>()

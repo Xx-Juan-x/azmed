@@ -105,3 +105,4 @@ C:\Users\emanu\Desktop\azmed\azmed\CONTEXTO\obj\Debug\CONTEXTO.csproj.CoreCompil
 C:\Users\emanu\Desktop\azmed\azmed\CONTEXTO\obj\Debug\CONTEXTO.csproj.CopyComplete
 C:\Users\emanu\Desktop\azmed\azmed\CONTEXTO\obj\Debug\CONTEXTO.dll
 C:\Users\emanu\Desktop\azmed\azmed\CONTEXTO\obj\Debug\CONTEXTO.pdb
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ELIMINAR_ROL.resources
