@@ -120,6 +120,7 @@ namespace VISTA
             // 
             this.txtPASSWORD.Location = new System.Drawing.Point(96, 185);
             this.txtPASSWORD.Name = "txtPASSWORD";
+            this.txtPASSWORD.PasswordChar = '*';
             this.txtPASSWORD.Size = new System.Drawing.Size(159, 20);
             this.txtPASSWORD.TabIndex = 7;
             // 
@@ -136,7 +137,6 @@ namespace VISTA
             // 
             this.cmbROL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbROL.FormattingEnabled = true;
-            
             this.cmbROL.Location = new System.Drawing.Point(96, 294);
             this.cmbROL.Name = "cmbROL";
             this.cmbROL.Size = new System.Drawing.Size(159, 21);
@@ -158,7 +158,7 @@ namespace VISTA
             this.gbDATOS_USUARIO.Controls.Add(this.lblPASSWORD_USUARIO);
             this.gbDATOS_USUARIO.Controls.Add(this.txtEMAIL);
             this.gbDATOS_USUARIO.Controls.Add(this.txtAPELLIDO);
-            this.gbDATOS_USUARIO.Location = new System.Drawing.Point(641, 12);
+            this.gbDATOS_USUARIO.Location = new System.Drawing.Point(736, 12);
             this.gbDATOS_USUARIO.Name = "gbDATOS_USUARIO";
             this.gbDATOS_USUARIO.Size = new System.Drawing.Size(261, 379);
             this.gbDATOS_USUARIO.TabIndex = 10;
@@ -169,6 +169,7 @@ namespace VISTA
             // 
             this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(123, 244);
             this.txtCONFIRMAR_PASSWORD.Name = "txtCONFIRMAR_PASSWORD";
+            this.txtCONFIRMAR_PASSWORD.PasswordChar = '*';
             this.txtCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(132, 20);
             this.txtCONFIRMAR_PASSWORD.TabIndex = 63;
             // 
@@ -193,6 +194,7 @@ namespace VISTA
             this.btnGUARDAR.TabIndex = 60;
             this.btnGUARDAR.Text = "Guardar";
             this.btnGUARDAR.UseVisualStyleBackColor = false;
+            this.btnGUARDAR.Click += new System.EventHandler(this.btnGUARDAR_Click_1);
             // 
             // btnCANCELAR
             // 
@@ -206,6 +208,7 @@ namespace VISTA
             this.btnCANCELAR.TabIndex = 61;
             this.btnCANCELAR.Text = "Cancelar";
             this.btnCANCELAR.UseVisualStyleBackColor = false;
+            this.btnCANCELAR.Click += new System.EventHandler(this.btnCANCELAR_Click);
             // 
             // gbLISTA_USUARIOS
             // 
@@ -220,7 +223,7 @@ namespace VISTA
             this.gbLISTA_USUARIOS.Controls.Add(this.btnAGREGAR);
             this.gbLISTA_USUARIOS.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_USUARIOS.Name = "gbLISTA_USUARIOS";
-            this.gbLISTA_USUARIOS.Size = new System.Drawing.Size(623, 415);
+            this.gbLISTA_USUARIOS.Size = new System.Drawing.Size(718, 415);
             this.gbLISTA_USUARIOS.TabIndex = 11;
             this.gbLISTA_USUARIOS.TabStop = false;
             this.gbLISTA_USUARIOS.Text = "LISTA DE USUARIOS";
@@ -228,7 +231,7 @@ namespace VISTA
             // lblFILTRO_EMAIL
             // 
             this.lblFILTRO_EMAIL.AutoSize = true;
-            this.lblFILTRO_EMAIL.Location = new System.Drawing.Point(96, 28);
+            this.lblFILTRO_EMAIL.Location = new System.Drawing.Point(169, 28);
             this.lblFILTRO_EMAIL.Name = "lblFILTRO_EMAIL";
             this.lblFILTRO_EMAIL.Size = new System.Drawing.Size(42, 13);
             this.lblFILTRO_EMAIL.TabIndex = 70;
@@ -237,7 +240,7 @@ namespace VISTA
             // cmbFILTRO_EMAIL
             // 
             this.cmbFILTRO_EMAIL.FormattingEnabled = true;
-            this.cmbFILTRO_EMAIL.Location = new System.Drawing.Point(144, 25);
+            this.cmbFILTRO_EMAIL.Location = new System.Drawing.Point(217, 25);
             this.cmbFILTRO_EMAIL.Name = "cmbFILTRO_EMAIL";
             this.cmbFILTRO_EMAIL.Size = new System.Drawing.Size(159, 21);
             this.cmbFILTRO_EMAIL.TabIndex = 69;
@@ -248,7 +251,7 @@ namespace VISTA
             this.btnBUSCAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBUSCAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBUSCAR.ForeColor = System.Drawing.Color.White;
-            this.btnBUSCAR.Location = new System.Drawing.Point(515, 14);
+            this.btnBUSCAR.Location = new System.Drawing.Point(610, 14);
             this.btnBUSCAR.Name = "btnBUSCAR";
             this.btnBUSCAR.Size = new System.Drawing.Size(102, 35);
             this.btnBUSCAR.TabIndex = 68;
@@ -260,7 +263,7 @@ namespace VISTA
             this.dgvLISTA_USUARIOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLISTA_USUARIOS.Location = new System.Drawing.Point(6, 55);
             this.dgvLISTA_USUARIOS.Name = "dgvLISTA_USUARIOS";
-            this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(611, 324);
+            this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(706, 324);
             this.dgvLISTA_USUARIOS.TabIndex = 61;
             // 
             // btnCONSULTAR
@@ -275,6 +278,7 @@ namespace VISTA
             this.btnCONSULTAR.TabIndex = 60;
             this.btnCONSULTAR.Text = "Consultar";
             this.btnCONSULTAR.UseVisualStyleBackColor = false;
+            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
             // 
             // btnCERRAR
             // 
@@ -282,12 +286,13 @@ namespace VISTA
             this.btnCERRAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(529, 385);
+            this.btnCERRAR.Location = new System.Drawing.Point(624, 385);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(88, 23);
             this.btnCERRAR.TabIndex = 59;
             this.btnCERRAR.Text = "Cerrar";
             this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
             // btnELIMINAR
             // 
@@ -301,6 +306,7 @@ namespace VISTA
             this.btnELIMINAR.TabIndex = 58;
             this.btnELIMINAR.Text = "Eliminar";
             this.btnELIMINAR.UseVisualStyleBackColor = false;
+            this.btnELIMINAR.Click += new System.EventHandler(this.btnELIMINAR_Click);
             // 
             // btnMODIFICAR
             // 
@@ -314,6 +320,7 @@ namespace VISTA
             this.btnMODIFICAR.TabIndex = 57;
             this.btnMODIFICAR.Text = "Modificar";
             this.btnMODIFICAR.UseVisualStyleBackColor = false;
+            this.btnMODIFICAR.Click += new System.EventHandler(this.btnMODIFICAR_Click_1);
             // 
             // btnAGREGAR
             // 
@@ -327,12 +334,13 @@ namespace VISTA
             this.btnAGREGAR.TabIndex = 56;
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
+            this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click_1);
             // 
             // frmUSUARIOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 432);
+            this.ClientSize = new System.Drawing.Size(1009, 432);
             this.Controls.Add(this.gbLISTA_USUARIOS);
             this.Controls.Add(this.gbDATOS_USUARIO);
             this.Name = "frmUSUARIOS";

@@ -38,7 +38,7 @@ namespace CONTROLADORA
             oCONTEXTO.SaveChanges();
         }
 
-        public void ELIMINAR_ESPECIALIDAD(MODELO.USUARIO USUARIO)
+        public void ELIMINAR_USUARIO(MODELO.USUARIO USUARIO)
         {
             CASOS_DE_USO.USUARIOS.OPERACIONES_USUARIOS.ELIMINAR_USUARIOS(oCONTEXTO, USUARIO);
             oCONTEXTO.SaveChanges();

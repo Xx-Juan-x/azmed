@@ -78,9 +78,9 @@ namespace VISTA
             oUSUARIO = new MODELO.USUARIO();
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
-            oUSUARIO.NOMBRE = txtNOMBRE.Text;
-            oUSUARIO.APELLIDO = txtAPELLIDO.Text;
-            oUSUARIO.EMAIL = txtEMAIL.Text;
+            oUSUARIO.NOMBRE = txtNOMBRE.Text.ToUpper();
+            oUSUARIO.APELLIDO = txtAPELLIDO.Text.ToUpper();
+            oUSUARIO.EMAIL = txtEMAIL.Text.ToUpper();
             oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
             oUSUARIO.TIPO = "PACIENTE";
