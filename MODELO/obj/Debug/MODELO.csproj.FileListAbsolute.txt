@@ -22,3 +22,15 @@ C:\Users\Juan\Downloads\AZMED\azmed\MODELO\obj\Debug\MODELO.csproj.CoreCompileIn
 C:\Users\Juan\Downloads\AZMED\azmed\MODELO\obj\Debug\MODELO.csproj.CopyComplete
 C:\Users\Juan\Downloads\AZMED\azmed\MODELO\obj\Debug\MODELO.dll
 C:\Users\Juan\Downloads\AZMED\azmed\MODELO\obj\Debug\MODELO.pdb
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\MODELO.dll.config
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\MODELO.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\MODELO.pdb
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\EntityFramework.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\EntityFramework.xml
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\obj\Debug\MODELO.csproj.AssemblyReference.cache
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\obj\Debug\MODELO.csproj.CoreCompileInputs.cache
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\obj\Debug\MODELO.csproj.CopyComplete
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\obj\Debug\MODELO.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\MODELO\obj\Debug\MODELO.pdb

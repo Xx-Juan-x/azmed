@@ -83,6 +83,7 @@ namespace VISTA
             oUSUARIO.EMAIL = txtEMAIL.Text;
             oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
+            oUSUARIO.TIPO = "PACIENTE";
 
             if (txtPASSWORD.Text == txtCONFIRMAR_PASSWORD.Text)
             {

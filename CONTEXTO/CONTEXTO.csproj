@@ -94,6 +94,14 @@
     <Compile Include="Migrations\202202142356503_ACTUIALIZACION4.designer.cs">
       <DependentUpon>202202142356503_ACTUIALIZACION4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202151418178_TIPO_USUARIO.cs" />
+    <Compile Include="Migrations\202202151418178_TIPO_USUARIO.designer.cs">
+      <DependentUpon>202202151418178_TIPO_USUARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202151421324_ELIMINAR_IDROL.cs" />
+    <Compile Include="Migrations\202202151421324_ELIMINAR_IDROL.designer.cs">
+      <DependentUpon>202202151421324_ELIMINAR_IDROL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202142356503_ACTUIALIZACION4.resx">
       <DependentUpon>202202142356503_ACTUIALIZACION4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202151418178_TIPO_USUARIO.resx">
+      <DependentUpon>202202151418178_TIPO_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202151421324_ELIMINAR_IDROL.resx">
+      <DependentUpon>202202151421324_ELIMINAR_IDROL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
