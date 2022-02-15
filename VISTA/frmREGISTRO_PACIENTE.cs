@@ -84,6 +84,9 @@ namespace VISTA
             oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
             oUSUARIO.TIPO = "PACIENTE";
+            
+            //dgvLISTA_ESPECIALIDADES.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+            
 
             if (txtPASSWORD.Text == txtCONFIRMAR_PASSWORD.Text)
             {

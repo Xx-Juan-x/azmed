@@ -82,7 +82,7 @@ namespace VISTA
             // crearUsuariosToolStripMenuItem
             // 
             this.crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
-            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.crearUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
             this.crearUsuariosToolStripMenuItem.Click += new System.EventHandler(this.crearUsuariosToolStripMenuItem_Click);
             // 
@@ -130,7 +130,7 @@ namespace VISTA
             // 
             this.registrarProfesionalToolStripMenuItem.Name = "registrarProfesionalToolStripMenuItem";
             this.registrarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.registrarProfesionalToolStripMenuItem.Text = "Registrar Profesionales";
+            this.registrarProfesionalToolStripMenuItem.Text = "Asignar Especialidad";
             // 
             // gestionarAtenciónToolStripMenuItem
             // 
@@ -151,19 +151,19 @@ namespace VISTA
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.consultaToolStripMenuItem.Text = "Solicitar Consulta";
             // 
             // estudioToolStripMenuItem
             // 
             this.estudioToolStripMenuItem.Name = "estudioToolStripMenuItem";
-            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.estudioToolStripMenuItem.Text = "Solicitar Estudio";
             // 
             // facturarPacienteToolStripMenuItem
             // 
             this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // cOMPRASToolStripMenuItem
