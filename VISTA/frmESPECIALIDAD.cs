@@ -38,8 +38,6 @@ namespace VISTA
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
             ARMA_GRILLA();
             MODO_GRILLA();
-
-
         }
 
         private void ARMA_GRILLA()

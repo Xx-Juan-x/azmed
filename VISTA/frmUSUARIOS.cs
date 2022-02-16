@@ -36,8 +36,10 @@ namespace VISTA
 
             
             cmbROL.Items.Add("ADMINISTRADOR");
+            cmbROL.Items.Add("PACIENTE");
             cmbROL.Items.Add("PROFESIONAL");
             cmbROL.Items.Add("JEFE DE COMPRAS");
+            
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
@@ -122,7 +124,7 @@ namespace VISTA
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
             oUSUARIO.NOMBRE = txtNOMBRE.Text.ToUpper();// Uso la funcion ToUapper para escribir el nombre en mayúscula
             oUSUARIO.APELLIDO = txtAPELLIDO.Text.ToUpper();
-            oUSUARIO.EMAIL = txtEMAIL.Text.ToUpper();
+            oUSUARIO.EMAIL = txtEMAIL.Text;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
             oUSUARIO.FECHA = DateTime.Now;           
             oUSUARIO.TIPO = cmbROL.SelectedItem.ToString();
@@ -166,7 +168,7 @@ namespace VISTA
 
             txtNOMBRE.Text = oUSUARIO.NOMBRE.ToUpper();
             txtAPELLIDO.Text = oUSUARIO.APELLIDO.ToUpper();
-            txtEMAIL.Text = oUSUARIO.EMAIL.ToUpper();
+            txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
             cmbROL.SelectedItem = oUSUARIO.TIPO.ToString();
 
@@ -186,7 +188,7 @@ namespace VISTA
 
             txtNOMBRE.Text = oUSUARIO.NOMBRE.ToUpper();
             txtAPELLIDO.Text = oUSUARIO.APELLIDO.ToUpper();
-            txtEMAIL.Text = oUSUARIO.EMAIL.ToUpper();
+            txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
             cmbROL.SelectedItem = oUSUARIO.TIPO.ToString();
 

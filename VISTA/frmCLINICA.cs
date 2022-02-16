@@ -12,6 +12,22 @@ namespace VISTA
 {
     public partial class frmCLINICA : Form
     {
+        //PATRON SINGLETON
+        private static frmCLINICA instancia;
+
+        public static frmCLINICA OBTENER_INSTANCIA()
+        {
+            if (instancia == null)
+            {
+                instancia = new frmCLINICA();
+            }
+            if (instancia.IsDisposed)
+            {
+                instancia = new frmCLINICA();
+            }
+            return instancia;
+        }
+
         public frmCLINICA()
         {
             InitializeComponent();

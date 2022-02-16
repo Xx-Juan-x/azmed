@@ -13,7 +13,7 @@ namespace VISTA
     public partial class frmLOGIN : Form
     {
         private CONTROLADORA.USUARIOS cUSUARIOS;
-        private MODELO.USUARIO oUSUARIO;
+        
 
         public frmLOGIN()
         {
@@ -34,27 +34,43 @@ namespace VISTA
             Application.Exit();
         }
 
-        private void btnINGRESAR_Click(object sender, EventArgs e)
+        private bool VALIDAR_LOGIN(string EMAIL, string CLAVE)
         {
-            oUSUARIO = new MODELO.USUARIO();
-            cUSUARIOS.OBTENER_EMAIL(txtEMAIL.Text);
-            cUSUARIOS.OBTENER_CLAVE(txtCLAVE.Text);
-            //oUSUARIO.EMAIL = txtEMAIL.Text;
-            //oUSUARIO.CLAVE = txtCLAVE.Text;
-            
+            var RESPUESTA = from d in cUSUARIOS.OBTENER_USUARIOS()
+                    where d.EMAIL == txtEMAIL.Text
+                    && d.CLAVE == txtCLAVE.Text
+                    select d;
 
-            if (txtEMAIL.Text == oUSUARIO.EMAIL && txtCLAVE.Text == oUSUARIO.CLAVE)
+            if (RESPUESTA.Any())
             {
-                frmCLINICA FORMULARIO_CLINICA = new frmCLINICA();
-                FORMULARIO_CLINICA.ShowDialog();           
+                return true;
             }
             else
             {
-                MessageBox.Show("Debe ingresar el email o la contraseña de forma correcta", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (string.IsNullOrEmpty(txtEMAIL.Text))
+                {
+                    MessageBox.Show("Debe completar el email para poder ingresar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (string.IsNullOrEmpty(txtCLAVE.Text))
+                {
+                    MessageBox.Show("Debe completar la clave para poder ingresar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Email y Contraseña incorrectos", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);                  
+                }
+                return false;
             }
-            
-            
+        }
+        private void btnINGRESAR_Click(object sender, EventArgs e)
+        {
+            if (VALIDAR_LOGIN(txtEMAIL.Text, txtCLAVE.Text))
+            {
+                frmCLINICA FORMULARIO_CLINICA = frmCLINICA.OBTENER_INSTANCIA();
+                FORMULARIO_CLINICA.Show();
+                txtEMAIL.Clear();
+                txtCLAVE.Clear();
+            }
         }
     }
 }

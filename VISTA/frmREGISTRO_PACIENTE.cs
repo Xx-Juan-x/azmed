@@ -80,7 +80,7 @@ namespace VISTA
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
             oUSUARIO.NOMBRE = txtNOMBRE.Text.ToUpper();
             oUSUARIO.APELLIDO = txtAPELLIDO.Text.ToUpper();
-            oUSUARIO.EMAIL = txtEMAIL.Text.ToUpper();
+            oUSUARIO.EMAIL = txtEMAIL.Text;
             oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
             oUSUARIO.TIPO = "PACIENTE";
