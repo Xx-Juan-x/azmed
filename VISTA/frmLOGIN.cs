@@ -12,8 +12,8 @@ namespace VISTA
 {
     public partial class frmLOGIN : Form
     {
-        private CONTROLADORA.USUARIOS cUSUARIOS;
-        
+        private CONTROLADORA.USUARIOS cUSUARIOS;      
+        public static string TIPO_USUARIO = "";
 
         public frmLOGIN()
         {
@@ -23,10 +23,9 @@ namespace VISTA
 
         private void linklblREGISTRARSE_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmREGISTRO_PACIENTE FORMULARIO_REGISTRO = new frmREGISTRO_PACIENTE();
+            frmREGISTRO_PACIENTE FORMULARIO_REGISTRO = frmREGISTRO_PACIENTE.OBTENER_INSTANCIA();
             this.Hide();
-            FORMULARIO_REGISTRO.ShowDialog();
-            
+            FORMULARIO_REGISTRO.Show();
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)
@@ -37,12 +36,13 @@ namespace VISTA
         private bool VALIDAR_LOGIN(string EMAIL, string CLAVE)
         {
             var RESPUESTA = from d in cUSUARIOS.OBTENER_USUARIOS()
-                    where d.EMAIL == txtEMAIL.Text
-                    && d.CLAVE == txtCLAVE.Text
+                    where d.EMAIL == EMAIL
+                    && d.CLAVE == CLAVE
                     select d;
 
             if (RESPUESTA.Any())
             {
+                RESPUESTA.ToList().ForEach(s => TIPO_USUARIO = s.TIPO);
                 return true;
             }
             else

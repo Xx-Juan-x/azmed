@@ -16,6 +16,6 @@ namespace CASOS_DE_USO.USUARIOS
         public static List<MODELO.USUARIO> OBTENER_USUARIOS(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
             return AZMED_CLINICA.USUARIOS.ToList();
-        }
+        }       
     }
 }

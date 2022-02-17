@@ -53,8 +53,5 @@ namespace CONTROLADORA
         {
             return CASOS_DE_USO.USUARIOS.GESTION_USUARIOS.OBTENER_USUARIOS(oCONTEXTO);
         }
-
-
-
     }
 }

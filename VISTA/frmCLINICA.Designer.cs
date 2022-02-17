@@ -37,7 +37,7 @@ namespace VISTA
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarAtenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tURNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +53,7 @@ namespace VISTA
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.mnStripMENU_CLINICA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@ namespace VISTA
             this.rEPORTESToolStripMenuItem});
             this.mnStripMENU_CLINICA.Location = new System.Drawing.Point(0, 0);
             this.mnStripMENU_CLINICA.Name = "mnStripMENU_CLINICA";
-            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(663, 24);
+            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(490, 24);
             this.mnStripMENU_CLINICA.TabIndex = 1;
             this.mnStripMENU_CLINICA.Text = "menuStrip1";
             // 
@@ -113,7 +114,7 @@ namespace VISTA
             // 
             this.pROFESIONALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarEspecialidadesToolStripMenuItem,
-            this.registrarProfesionalToolStripMenuItem,
+            this.asignarProfesionalToolStripMenuItem,
             this.gestionarAtenciónToolStripMenuItem});
             this.pROFESIONALESToolStripMenuItem.Name = "pROFESIONALESToolStripMenuItem";
             this.pROFESIONALESToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
@@ -126,11 +127,11 @@ namespace VISTA
             this.registrarEspecialidadesToolStripMenuItem.Text = "Registrar Especialidades";
             this.registrarEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.registrarEspecialidadesToolStripMenuItem_Click);
             // 
-            // registrarProfesionalToolStripMenuItem
+            // asignarProfesionalToolStripMenuItem
             // 
-            this.registrarProfesionalToolStripMenuItem.Name = "registrarProfesionalToolStripMenuItem";
-            this.registrarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.registrarProfesionalToolStripMenuItem.Text = "Asignar Especialidad";
+            this.asignarProfesionalToolStripMenuItem.Name = "asignarProfesionalToolStripMenuItem";
+            this.asignarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.asignarProfesionalToolStripMenuItem.Text = "Asignar Especialidad";
             // 
             // gestionarAtenciónToolStripMenuItem
             // 
@@ -236,14 +237,29 @@ namespace VISTA
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Text = "Consulta y Reportes de Compras Realizadas";
             // 
+            // lblTIPO_USUARIO
+            // 
+            this.lblTIPO_USUARIO.AutoSize = true;
+            this.lblTIPO_USUARIO.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPO_USUARIO.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTIPO_USUARIO.Location = new System.Drawing.Point(352, 199);
+            this.lblTIPO_USUARIO.Name = "lblTIPO_USUARIO";
+            this.lblTIPO_USUARIO.Size = new System.Drawing.Size(38, 19);
+            this.lblTIPO_USUARIO.TabIndex = 3;
+            this.lblTIPO_USUARIO.Text = "ROL";
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 312);
+            this.ClientSize = new System.Drawing.Size(490, 227);
+            this.Controls.Add(this.lblTIPO_USUARIO);
             this.Controls.Add(this.mnStripMENU_CLINICA);
             this.Name = "frmCLINICA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CLINICA:: AZMED";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.Load += new System.EventHandler(this.frmCLINICA_Load);
             this.mnStripMENU_CLINICA.ResumeLayout(false);
             this.mnStripMENU_CLINICA.PerformLayout();
             this.ResumeLayout(false);
@@ -254,7 +270,6 @@ namespace VISTA
         #endregion
 
         private System.Windows.Forms.MenuStrip mnStripMENU_CLINICA;
-        private System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pACIENTESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPlanesToolStripMenuItem;
@@ -274,8 +289,10 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeComprasRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estudioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarProfesionalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarProfesionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarAtenciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarPacienteToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
+        private System.Windows.Forms.Label lblTIPO_USUARIO;
     }
 }
