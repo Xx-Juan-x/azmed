@@ -29,12 +29,56 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dgvLISTA_PROFESIONALES = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PROFESIONALES)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvLISTA_PROFESIONALES
+            // 
+            this.dgvLISTA_PROFESIONALES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLISTA_PROFESIONALES.Location = new System.Drawing.Point(12, 12);
+            this.dgvLISTA_PROFESIONALES.Name = "dgvLISTA_PROFESIONALES";
+            this.dgvLISTA_PROFESIONALES.Size = new System.Drawing.Size(649, 251);
+            this.dgvLISTA_PROFESIONALES.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(667, 24);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(694, 235);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // frmASIGNAR_ESPECIALIDAD
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmASIGNAR_ESPECIALIDAD";
+            this.ClientSize = new System.Drawing.Size(800, 270);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvLISTA_PROFESIONALES);
+            this.Name = "frmASIGNAR_ESPECIALIDAD";
+            this.Text = "ASIGNAR ESPECIALIDADES A PROFESIONALES";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PROFESIONALES)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvLISTA_PROFESIONALES;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

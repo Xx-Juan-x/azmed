@@ -118,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmASIGNAR_ESPECIALIDAD.resx">
+      <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmATENCION.resx">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>

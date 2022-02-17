@@ -53,5 +53,12 @@ namespace CONTROLADORA
         {
             return CASOS_DE_USO.USUARIOS.GESTION_USUARIOS.OBTENER_USUARIOS(oCONTEXTO);
         }
+
+        public List<MODELO.USUARIO> OBTENER_PROFESIONALES()
+        {
+            return CASOS_DE_USO.USUARIOS.GESTION_USUARIOS.OBTENER_PROFESIONALES(oCONTEXTO);
+        }
+
+
     }
 }

@@ -137,3 +137,4 @@ C:\Users\emanu\Desktop\azmed\azmed\VISTA\obj\Debug\VISTA.csproj.GenerateResource
 C:\Users\emanu\Desktop\azmed\azmed\VISTA\obj\Debug\VISTA.csproj.CoreCompileInputs.cache
 C:\Users\emanu\Desktop\azmed\azmed\VISTA\obj\Debug\VISTA.exe
 C:\Users\emanu\Desktop\azmed\azmed\VISTA\obj\Debug\VISTA.pdb
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmASIGNAR_ESPECIALIDAD.resources
