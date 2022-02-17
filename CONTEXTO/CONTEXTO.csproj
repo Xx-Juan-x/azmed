@@ -106,6 +106,14 @@
     <Compile Include="Migrations\202202151914599_ELIMINAR_ROL.designer.cs">
       <DependentUpon>202202151914599_ELIMINAR_ROL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202172336301_ESPECIALIDADES_USUARIOS.cs" />
+    <Compile Include="Migrations\202202172336301_ESPECIALIDADES_USUARIOS.designer.cs">
+      <DependentUpon>202202172336301_ESPECIALIDADES_USUARIOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202172353406_ACTUALIZACION_ESPECIALIDAD.cs" />
+    <Compile Include="Migrations\202202172353406_ACTUALIZACION_ESPECIALIDAD.designer.cs">
+      <DependentUpon>202202172353406_ACTUALIZACION_ESPECIALIDAD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202151914599_ELIMINAR_ROL.resx">
       <DependentUpon>202202151914599_ELIMINAR_ROL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202172336301_ESPECIALIDADES_USUARIOS.resx">
+      <DependentUpon>202202172336301_ESPECIALIDADES_USUARIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202172353406_ACTUALIZACION_ESPECIALIDAD.resx">
+      <DependentUpon>202202172353406_ACTUALIZACION_ESPECIALIDAD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
