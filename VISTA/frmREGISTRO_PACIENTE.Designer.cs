@@ -187,6 +187,7 @@ namespace VISTA
             this.Controls.Add(this.lblEMAIL);
             this.Controls.Add(this.lblAPELLIDO);
             this.Controls.Add(this.lblNOMBRE);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmREGISTRO_PACIENTE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRO";

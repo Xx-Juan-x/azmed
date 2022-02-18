@@ -15,5 +15,6 @@ namespace MODELO
         public string CLAVE { get; set; }
         public DateTime FECHA { get; set; }
         public string TIPO { get; set; }
+        public ESPECIALIDAD ESPECIALIDADES { get; set; }
     }
 }

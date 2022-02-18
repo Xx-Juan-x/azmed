@@ -39,7 +39,7 @@ namespace VISTA
 
         private void lonklblLOGIN_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmLOGIN FORMULARIO_LOGIN = new frmLOGIN();
+            frmLOGIN FORMULARIO_LOGIN = frmLOGIN.OBTENER_INSTANCIA();
             this.Hide();
             FORMULARIO_LOGIN.ShowDialog();
             

@@ -12,8 +12,25 @@ namespace VISTA
 {
     public partial class frmLOGIN : Form
     {
+        private static frmLOGIN instancia;
+
+        public static frmLOGIN OBTENER_INSTANCIA()
+        {
+            if (instancia == null)
+            {
+                instancia = new frmLOGIN();
+            }
+            if (instancia.IsDisposed)
+            {
+                instancia = new frmLOGIN();
+            }
+            return instancia;
+        }
+
+
         private CONTROLADORA.USUARIOS cUSUARIOS;      
         public static string TIPO_USUARIO = "";
+        public frmREGISTRO_PACIENTE FORMULARIO_REGISTRO;
 
         public frmLOGIN()
         {
@@ -23,13 +40,13 @@ namespace VISTA
 
         private void linklblREGISTRARSE_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmREGISTRO_PACIENTE FORMULARIO_REGISTRO = frmREGISTRO_PACIENTE.OBTENER_INSTANCIA();
-            this.Hide();
-            FORMULARIO_REGISTRO.Show();
+            FORMULARIO_REGISTRO = frmREGISTRO_PACIENTE.OBTENER_INSTANCIA();
+            this.Hide();        
+            FORMULARIO_REGISTRO.Show();        
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)
-        {
+        {       
             Application.Exit();
         }
 

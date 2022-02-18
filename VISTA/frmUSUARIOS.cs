@@ -48,8 +48,14 @@ namespace VISTA
 
         private void ARMA_GRILLA()
         {
-            dgvLISTA_USUARIOS.DataSource = null;
+            dgvLISTA_USUARIOS.DataSource = null;         
             dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+            dgvLISTA_USUARIOS.AutoGenerateColumns = false;
+            if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES"))
+            {
+                dgvLISTA_USUARIOS.Columns.Remove("ESPECIALIDADES");
+            }
+            
         }
 
         private void MODO_GRILLA()
