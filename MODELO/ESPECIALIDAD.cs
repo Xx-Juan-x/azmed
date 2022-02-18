@@ -13,5 +13,9 @@ namespace MODELO
         public string NOMBRE { get; set; }
         #endregion
 
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
     }
 }
