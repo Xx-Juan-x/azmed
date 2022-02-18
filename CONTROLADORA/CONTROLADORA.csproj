@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATENCIONES.cs" />
     <Compile Include="ESPECIALIDADES.cs" />
     <Compile Include="OBRAS_SOCIALES.cs" />
     <Compile Include="PLANES.cs" />

@@ -118,6 +118,10 @@
     <Compile Include="Migrations\202202180028597_ESPECIALIDAD-PROFESIONAL.designer.cs">
       <DependentUpon>202202180028597_ESPECIALIDAD-PROFESIONAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202182137592_ATENCION.cs" />
+    <Compile Include="Migrations\202202182137592_ATENCION.designer.cs">
+      <DependentUpon>202202182137592_ATENCION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202180028597_ESPECIALIDAD-PROFESIONAL.resx">
       <DependentUpon>202202180028597_ESPECIALIDAD-PROFESIONAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202182137592_ATENCION.resx">
+      <DependentUpon>202202182137592_ATENCION.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
