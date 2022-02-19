@@ -132,6 +132,7 @@ namespace VISTA
             this.asignarProfesionalToolStripMenuItem.Name = "asignarProfesionalToolStripMenuItem";
             this.asignarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.asignarProfesionalToolStripMenuItem.Text = "Asignar Especialidad";
+            this.asignarProfesionalToolStripMenuItem.Click += new System.EventHandler(this.asignarProfesionalToolStripMenuItem_Click);
             // 
             // gestionarAtenciónToolStripMenuItem
             // 

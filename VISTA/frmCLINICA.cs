@@ -113,6 +113,10 @@ namespace VISTA
             }          
         }
 
-        
+        private void asignarProfesionalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmASIGNAR_ESPECIALIDAD FORMULARIO_ASIGNAR_ESPECIALIDAD = frmASIGNAR_ESPECIALIDAD.OBTENER_INSTANCIA();
+            FORMULARIO_ASIGNAR_ESPECIALIDAD.Show();
+        }
     }
 }
