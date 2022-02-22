@@ -9,7 +9,7 @@ namespace MODELO
     public class ATENCION
     {
         public int ID_ATENCION { get; set; }
-        public USUARIO PROFESIONAL { get; set; }
+        public string PROFESIONAL { get; set; }
         public DateTime HORA_INICIO { get; set; }
         public DateTime HORA_FIN { get; set; }
         public string DIA_LABORAL { get; set; }

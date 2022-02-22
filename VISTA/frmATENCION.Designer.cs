@@ -46,13 +46,13 @@ namespace VISTA
             this.label1 = new System.Windows.Forms.Label();
             this.HORA_INICIO = new System.Windows.Forms.Label();
             this.gbLISTA_HORARIOS_ATENCION = new System.Windows.Forms.GroupBox();
+            this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.lblFILTRO_ESPECIALIDAD = new System.Windows.Forms.Label();
             this.cmbFILTRO_ESPECIALIDADES = new System.Windows.Forms.ComboBox();
             this.btnBUSCAR = new System.Windows.Forms.Button();
             this.dgvLISTA_PROFESIONALES = new System.Windows.Forms.DataGridView();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
-            this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.gbDATOS_PROFESIONAL_HORARIOS.SuspendLayout();
             this.gbHORARIOS_ATENCION.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ATENCIONES)).BeginInit();
@@ -241,6 +241,19 @@ namespace VISTA
             this.gbLISTA_HORARIOS_ATENCION.TabStop = false;
             this.gbLISTA_HORARIOS_ATENCION.Text = "LISTA DE HORARIOS DE ATENCION";
             // 
+            // btnMODIFICAR
+            // 
+            this.btnMODIFICAR.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMODIFICAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMODIFICAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMODIFICAR.ForeColor = System.Drawing.Color.White;
+            this.btnMODIFICAR.Location = new System.Drawing.Point(100, 486);
+            this.btnMODIFICAR.Name = "btnMODIFICAR";
+            this.btnMODIFICAR.Size = new System.Drawing.Size(86, 23);
+            this.btnMODIFICAR.TabIndex = 68;
+            this.btnMODIFICAR.Text = "Modificar";
+            this.btnMODIFICAR.UseVisualStyleBackColor = false;
+            // 
             // lblFILTRO_ESPECIALIDAD
             // 
             this.lblFILTRO_ESPECIALIDAD.AutoSize = true;
@@ -270,6 +283,7 @@ namespace VISTA
             this.btnBUSCAR.TabIndex = 58;
             this.btnBUSCAR.Text = "Buscar";
             this.btnBUSCAR.UseVisualStyleBackColor = false;
+            this.btnBUSCAR.Click += new System.EventHandler(this.btnBUSCAR_Click);
             // 
             // dgvLISTA_PROFESIONALES
             // 
@@ -305,19 +319,6 @@ namespace VISTA
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
-            // 
-            // btnMODIFICAR
-            // 
-            this.btnMODIFICAR.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMODIFICAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMODIFICAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMODIFICAR.ForeColor = System.Drawing.Color.White;
-            this.btnMODIFICAR.Location = new System.Drawing.Point(100, 486);
-            this.btnMODIFICAR.Name = "btnMODIFICAR";
-            this.btnMODIFICAR.Size = new System.Drawing.Size(86, 23);
-            this.btnMODIFICAR.TabIndex = 68;
-            this.btnMODIFICAR.Text = "Modificar";
-            this.btnMODIFICAR.UseVisualStyleBackColor = false;
             // 
             // frmATENCION
             // 

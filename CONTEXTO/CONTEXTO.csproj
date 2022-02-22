@@ -126,6 +126,10 @@
     <Compile Include="Migrations\202202182321416_BORRO_ESPECIALIDAD_ATRIBUTO.designer.cs">
       <DependentUpon>202202182321416_BORRO_ESPECIALIDAD_ATRIBUTO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202220327575_CAMBIO_MODELO_ATENCION.cs" />
+    <Compile Include="Migrations\202202220327575_CAMBIO_MODELO_ATENCION.designer.cs">
+      <DependentUpon>202202220327575_CAMBIO_MODELO_ATENCION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -193,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202182321416_BORRO_ESPECIALIDAD_ATRIBUTO.resx">
       <DependentUpon>202202182321416_BORRO_ESPECIALIDAD_ATRIBUTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202220327575_CAMBIO_MODELO_ATENCION.resx">
+      <DependentUpon>202202220327575_CAMBIO_MODELO_ATENCION.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -86,7 +86,7 @@ namespace VISTA
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
         {
-            #region
+            #region VALIDACIONES
             if (cmbOBRA_SOCIAL.SelectedItem == null)
             {
                 MessageBox.Show("Debe seleccionar una obra social para poder agregar un plan", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
