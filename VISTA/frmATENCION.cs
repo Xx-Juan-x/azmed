@@ -153,19 +153,12 @@ namespace VISTA
             }
             #endregion
 
-            if (dgvLISTA_PROFESIONALES.CurrentRow == null)
-            {
-                MessageBox.Show("Debe seleccionar un profesional de la lista para poder asignarle una atencion", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            oUSUARIO = (MODELO.USUARIO)dgvLISTA_PROFESIONALES.CurrentRow.DataBoundItem;
-
             oATENCION = (MODELO.ATENCION)dgvLISTA_ATENCIONES.CurrentRow.DataBoundItem;
 
             oATENCION.HORA_INICIO = dtpHORA_INICIO.Value;
             oATENCION.HORA_FIN = dtpHORA_FIN.Value;
             oATENCION.DIA_LABORAL = cmbDIA_LABORAL.Text;
-            oATENCION.PROFESIONAL = txtPROFESIONAL.Text;
+            //oATENCION.PROFESIONAL = txtPROFESIONAL.Text;
 
             cATENCIONES.AGREGAR_ATENCION(oATENCION);
             ARMA_GRILLA_ATENCIONES();

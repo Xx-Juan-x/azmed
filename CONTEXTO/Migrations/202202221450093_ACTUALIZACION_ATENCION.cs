@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CAMBIO_MODELO_ATENCION : DbMigration
+    public partial class ACTUALIZACION_ATENCION : DbMigration
     {
         public override void Up()
         {

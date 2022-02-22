@@ -111,4 +111,6 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrat
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ESPECIALIDADPROFESIONAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ATENCION.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.BORRO_ESPECIALIDAD_ATRIBUTO.resources
-C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.CAMBIO_MODELO_ATENCION.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ACTUALIZACION.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ACTUALIZACION_ATENCION.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ATENCION_USUARIO.resources

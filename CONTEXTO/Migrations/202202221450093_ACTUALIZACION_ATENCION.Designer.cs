@@ -7,13 +7,13 @@ namespace CONTEXTO.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CAMBIO_MODELO_ATENCION : IMigrationMetadata
+    public sealed partial class ACTUALIZACION_ATENCION : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CAMBIO_MODELO_ATENCION));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ACTUALIZACION_ATENCION));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202220327575_CAMBIO_MODELO_ATENCION"; }
+            get { return "202202221450093_ACTUALIZACION_ATENCION"; }
         }
         
         string IMigrationMetadata.Source
