@@ -16,5 +16,12 @@ namespace MODELO
         public DateTime FECHA { get; set; }
         public string TIPO { get; set; }
         public ESPECIALIDAD ESPECIALIDADES { get; set; }
+
+        public override string ToString()
+        {
+            return NOMBRE + " " + APELLIDO;
+        }
+
+
     }
 }

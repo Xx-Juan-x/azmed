@@ -117,3 +117,4 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrat
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.CAMBIO_DATETIME.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.DATETIME_ATENCION.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.TIMESPAN_CONTROL.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ESPECIALIDAD_ATENCION.resources

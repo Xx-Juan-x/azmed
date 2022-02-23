@@ -10,6 +10,7 @@ namespace MODELO
     {
         public int ID_ATENCION { get; set; }
         public USUARIO PROFESIONAL { get; set; }
+        public ESPECIALIDAD ESPECIALIDAD { get; set; }
         public TimeSpan HORA_INICIO { get; set; }
         public TimeSpan HORA_FIN { get; set; }
         public string DIA_LABORAL { get; set; }
