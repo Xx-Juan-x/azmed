@@ -10,12 +10,12 @@ namespace CASOS_DE_USO.ATENCION
     {
         public static MODELO.ATENCION OBTENER_ATENCION(int CODIGO, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
-            return AZMED_CLINICA.ATENCIONES.FirstOrDefault(_ => _.ID_ATENCION == CODIGO);
+            return AZMED_CLINICA.ATENCIONES.Include("PROFESIONAL").FirstOrDefault(_ => _.ID_ATENCION == CODIGO);
         }
 
         public static List<MODELO.ATENCION> OBTENER_ATENCIONES(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
-            return AZMED_CLINICA.ATENCIONES.ToList();
+            return AZMED_CLINICA.ATENCIONES.Include("PROFESIONAL").ToList();
         }
     }
 }

@@ -70,19 +70,12 @@ namespace VISTA
             if (TIPO == "B")
             {         
                 string FILTRO_ESPECIALIDAD = cmbFILTRO_ESPECIALIDADES.Text;
+
                 var LISTA_ESPECIALIDADES = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
                                      where a.ESPECIALIDADES.NOMBRE == FILTRO_ESPECIALIDAD
-                                     select new
-                                     {
-                                         a.ID_USUARIO,
-                                         a.NOMBRE,
-                                         a.APELLIDO,
-                                         a.EMAIL,
-                                         a.CLAVE,
-                                         a.FECHA,
-                                         a.ESPECIALIDADES,
-                                     }).ToList();
-
+                                     select a ).ToList();
+                
+              
                 dgvLISTA_PROFESIONALES.DataSource = null;
                 dgvLISTA_PROFESIONALES.DataSource = LISTA_ESPECIALIDADES;
             }
@@ -100,7 +93,8 @@ namespace VISTA
         private void ARMA_GRILLA_ATENCIONES()
         {          
             dgvLISTA_ATENCIONES.DataSource = null;
-            dgvLISTA_ATENCIONES.DataSource = cATENCIONES.OBTENER_ATENCIONES();                 
+            dgvLISTA_ATENCIONES.DataSource = cATENCIONES.OBTENER_ATENCIONES();
+            
 
             /*dgvLISTA_ATENCIONES.AutoGenerateColumns = false;
             if (dgvLISTA_ATENCIONES.Columns.Contains("ID_ATENCION"))
@@ -150,15 +144,21 @@ namespace VISTA
             {
                 MessageBox.Show("La hora de inicio no debe ser mayor a la de fin", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }           
             #endregion
 
-            oATENCION = (MODELO.ATENCION)dgvLISTA_ATENCIONES.CurrentRow.DataBoundItem;
+            //oATENCION = (MODELO.ATENCION)dgvLISTA_ATENCIONES.CurrentRow.DataBoundItem;
 
-            oATENCION.HORA_INICIO = dtpHORA_INICIO.Value;
-            oATENCION.HORA_FIN = dtpHORA_FIN.Value;
+
+
+            oATENCION.HORA_INICIO = dtpHORA_INICIO.Value.TimeOfDay;
+            oATENCION.HORA_FIN = dtpHORA_FIN.Value.TimeOfDay;
             oATENCION.DIA_LABORAL = cmbDIA_LABORAL.Text;
-            //oATENCION.PROFESIONAL = txtPROFESIONAL.Text;
+
+            //oATENCION.PROFESIONAL = (MODELO.USUARIO)txtPROFESIONAL.Text;
+            
+            //txtID_PROFESIONAL.Text = oATENCION.PROFESIONAL.ToString();
+
 
             cATENCIONES.AGREGAR_ATENCION(oATENCION);
             ARMA_GRILLA_ATENCIONES();
@@ -166,17 +166,16 @@ namespace VISTA
 
             //oATENCION.PROFESIONAL = oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO;
 
-            
-
             // LIMPIO LA TEXTBOX
-            dtpHORA_INICIO = null;
-            dtpHORA_FIN = null;
-            cmbDIA_LABORAL = null;
+            //dtpHORA_INICIO = null;
+            //dtpHORA_FIN = null;
+            //cmbDIA_LABORAL = null;
 
         }
         private void btnAGREGAR_Click(object sender, EventArgs e)
         {
-            
+            oATENCION = new MODELO.ATENCION();
+                   
 
             if (dgvLISTA_PROFESIONALES.CurrentRow == null)
             {
@@ -184,10 +183,18 @@ namespace VISTA
                 return;
             }
             oUSUARIO = (MODELO.USUARIO)dgvLISTA_PROFESIONALES.CurrentRow.DataBoundItem;
-            
 
+            /*foreach (DataGridViewRow row in dgvLISTA_PROFESIONALES.SelectedRows)
+            {
+                oUSUARIO.ID_USUARIO =  Convert.ToInt32(row.Cells["ID_USUARIO"].Value);
+             
+            }*/
+
+            //ID_PROFESIONAL = dgvLISTA_PROFESIONALES.CurrentRow.
             txtESPECIALIDAD.Text = oUSUARIO.ESPECIALIDADES.ToString();
             txtPROFESIONAL.Text = oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO;
+            txtID_PROFESIONAL.Text = oUSUARIO.ID_USUARIO.ToString();
+
             ARMA_GRILLA_ATENCIONES();
             MODO_DATOS();         
         }

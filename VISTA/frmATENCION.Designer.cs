@@ -39,7 +39,6 @@ namespace VISTA
             this.dtpHORA_FIN = new System.Windows.Forms.DateTimePicker();
             this.dtpHORA_INICIO = new System.Windows.Forms.DateTimePicker();
             this.cmbDIA_LABORAL = new System.Windows.Forms.ComboBox();
-            this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +52,8 @@ namespace VISTA
             this.dgvLISTA_PROFESIONALES = new System.Windows.Forms.DataGridView();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
+            this.ID_PROFESIONAL = new System.Windows.Forms.Label();
+            this.txtID_PROFESIONAL = new System.Windows.Forms.TextBox();
             this.gbDATOS_PROFESIONAL_HORARIOS.SuspendLayout();
             this.gbHORARIOS_ATENCION.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ATENCIONES)).BeginInit();
@@ -107,11 +108,12 @@ namespace VISTA
             // 
             // gbHORARIOS_ATENCION
             // 
+            this.gbHORARIOS_ATENCION.Controls.Add(this.txtID_PROFESIONAL);
+            this.gbHORARIOS_ATENCION.Controls.Add(this.ID_PROFESIONAL);
             this.gbHORARIOS_ATENCION.Controls.Add(this.dgvLISTA_ATENCIONES);
             this.gbHORARIOS_ATENCION.Controls.Add(this.dtpHORA_FIN);
             this.gbHORARIOS_ATENCION.Controls.Add(this.dtpHORA_INICIO);
             this.gbHORARIOS_ATENCION.Controls.Add(this.cmbDIA_LABORAL);
-            this.gbHORARIOS_ATENCION.Controls.Add(this.btnELIMINAR);
             this.gbHORARIOS_ATENCION.Controls.Add(this.btnCANCELAR);
             this.gbHORARIOS_ATENCION.Controls.Add(this.btnGUARDAR);
             this.gbHORARIOS_ATENCION.Controls.Add(this.label2);
@@ -134,7 +136,8 @@ namespace VISTA
             // 
             // dtpHORA_FIN
             // 
-            this.dtpHORA_FIN.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHORA_FIN.CustomFormat = "HH:mm";
+            this.dtpHORA_FIN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHORA_FIN.Location = new System.Drawing.Point(163, 76);
             this.dtpHORA_FIN.Name = "dtpHORA_FIN";
             this.dtpHORA_FIN.ShowUpDown = true;
@@ -143,7 +146,8 @@ namespace VISTA
             // 
             // dtpHORA_INICIO
             // 
-            this.dtpHORA_INICIO.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHORA_INICIO.CustomFormat = "HH:mm";
+            this.dtpHORA_INICIO.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHORA_INICIO.Location = new System.Drawing.Point(163, 31);
             this.dtpHORA_INICIO.Name = "dtpHORA_INICIO";
             this.dtpHORA_INICIO.ShowUpDown = true;
@@ -152,24 +156,12 @@ namespace VISTA
             // 
             // cmbDIA_LABORAL
             // 
+            this.cmbDIA_LABORAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDIA_LABORAL.FormattingEnabled = true;
             this.cmbDIA_LABORAL.Location = new System.Drawing.Point(163, 120);
             this.cmbDIA_LABORAL.Name = "cmbDIA_LABORAL";
             this.cmbDIA_LABORAL.Size = new System.Drawing.Size(178, 21);
             this.cmbDIA_LABORAL.TabIndex = 74;
-            // 
-            // btnELIMINAR
-            // 
-            this.btnELIMINAR.BackColor = System.Drawing.Color.Red;
-            this.btnELIMINAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnELIMINAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnELIMINAR.ForeColor = System.Drawing.Color.White;
-            this.btnELIMINAR.Location = new System.Drawing.Point(253, 147);
-            this.btnELIMINAR.Name = "btnELIMINAR";
-            this.btnELIMINAR.Size = new System.Drawing.Size(88, 23);
-            this.btnELIMINAR.TabIndex = 51;
-            this.btnELIMINAR.Text = "Eliminar";
-            this.btnELIMINAR.UseVisualStyleBackColor = false;
             // 
             // btnCANCELAR
             // 
@@ -320,6 +312,22 @@ namespace VISTA
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
+            // ID_PROFESIONAL
+            // 
+            this.ID_PROFESIONAL.AutoSize = true;
+            this.ID_PROFESIONAL.Location = new System.Drawing.Point(6, 157);
+            this.ID_PROFESIONAL.Name = "ID_PROFESIONAL";
+            this.ID_PROFESIONAL.Size = new System.Drawing.Size(123, 13);
+            this.ID_PROFESIONAL.TabIndex = 72;
+            this.ID_PROFESIONAL.Text = "ID DEL PROFESIONAL:";
+            // 
+            // txtID_PROFESIONAL
+            // 
+            this.txtID_PROFESIONAL.Location = new System.Drawing.Point(163, 154);
+            this.txtID_PROFESIONAL.Name = "txtID_PROFESIONAL";
+            this.txtID_PROFESIONAL.Size = new System.Drawing.Size(178, 20);
+            this.txtID_PROFESIONAL.TabIndex = 72;
+            // 
             // frmATENCION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,11 +370,12 @@ namespace VISTA
         private System.Windows.Forms.ComboBox cmbDIA_LABORAL;
         private System.Windows.Forms.DateTimePicker dtpHORA_INICIO;
         private System.Windows.Forms.DateTimePicker dtpHORA_FIN;
-        private System.Windows.Forms.Button btnELIMINAR;
         private System.Windows.Forms.Button btnAGREGAR;
         private System.Windows.Forms.TextBox txtPROFESIONAL;
         private System.Windows.Forms.TextBox txtESPECIALIDAD;
         private System.Windows.Forms.DataGridView dgvLISTA_ATENCIONES;
         private System.Windows.Forms.Button btnMODIFICAR;
+        private System.Windows.Forms.TextBox txtID_PROFESIONAL;
+        private System.Windows.Forms.Label ID_PROFESIONAL;
     }
 }

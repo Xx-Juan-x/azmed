@@ -138,6 +138,18 @@
     <Compile Include="Migrations\202202221453028_ATENCION_USUARIO.designer.cs">
       <DependentUpon>202202221453028_ATENCION_USUARIO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202221650309_CAMBIO_DATETIME.cs" />
+    <Compile Include="Migrations\202202221650309_CAMBIO_DATETIME.designer.cs">
+      <DependentUpon>202202221650309_CAMBIO_DATETIME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202221654168_DATETIME_ATENCION.cs" />
+    <Compile Include="Migrations\202202221654168_DATETIME_ATENCION.designer.cs">
+      <DependentUpon>202202221654168_DATETIME_ATENCION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202221803486_TIMESPAN_CONTROL.cs" />
+    <Compile Include="Migrations\202202221803486_TIMESPAN_CONTROL.designer.cs">
+      <DependentUpon>202202221803486_TIMESPAN_CONTROL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -214,6 +226,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202221453028_ATENCION_USUARIO.resx">
       <DependentUpon>202202221453028_ATENCION_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202221650309_CAMBIO_DATETIME.resx">
+      <DependentUpon>202202221650309_CAMBIO_DATETIME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202221654168_DATETIME_ATENCION.resx">
+      <DependentUpon>202202221654168_DATETIME_ATENCION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202221803486_TIMESPAN_CONTROL.resx">
+      <DependentUpon>202202221803486_TIMESPAN_CONTROL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
