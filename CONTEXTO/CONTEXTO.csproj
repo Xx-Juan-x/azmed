@@ -154,6 +154,18 @@
     <Compile Include="Migrations\202202230030188_ESPECIALIDAD_ATENCION.designer.cs">
       <DependentUpon>202202230030188_ESPECIALIDAD_ATENCION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202231649060_ELIMINO_HORAS.cs" />
+    <Compile Include="Migrations\202202231649060_ELIMINO_HORAS.designer.cs">
+      <DependentUpon>202202231649060_ELIMINO_HORAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202231652184_AGREGO_HORAS.cs" />
+    <Compile Include="Migrations\202202231652184_AGREGO_HORAS.designer.cs">
+      <DependentUpon>202202231652184_AGREGO_HORAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202231738422_decimal_int.cs" />
+    <Compile Include="Migrations\202202231738422_decimal_int.designer.cs">
+      <DependentUpon>202202231738422_decimal_int.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -170,12 +182,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202111859073_INICIAL.resx">
       <DependentUpon>202202111859073_INICIAL.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202112308596_USUARIO_ROL.resx">
       <DependentUpon>202202112308596_USUARIO_ROL.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202121728297_OBRA_SOCIAL.resx">
       <DependentUpon>202202121728297_OBRA_SOCIAL.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202121812366_ACTUALIZACION_MODELO.resx">
       <DependentUpon>202202121812366_ACTUALIZACION_MODELO.cs</DependentUpon>
@@ -242,6 +257,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202230030188_ESPECIALIDAD_ATENCION.resx">
       <DependentUpon>202202230030188_ESPECIALIDAD_ATENCION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202231649060_ELIMINO_HORAS.resx">
+      <DependentUpon>202202231649060_ELIMINO_HORAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202231652184_AGREGO_HORAS.resx">
+      <DependentUpon>202202231652184_AGREGO_HORAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202231738422_decimal_int.resx">
+      <DependentUpon>202202231738422_decimal_int.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

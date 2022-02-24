@@ -118,5 +118,11 @@ namespace VISTA
             frmASIGNAR_ESPECIALIDAD FORMULARIO_ASIGNAR_ESPECIALIDAD = frmASIGNAR_ESPECIALIDAD.OBTENER_INSTANCIA();
             FORMULARIO_ASIGNAR_ESPECIALIDAD.Show();
         }
+
+        private void gestionarAtenciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmATENCIONES FORMULARIO_GESTIONAR_ATENCIONES = frmATENCIONES.OBTENER_INSTANCIA();
+            FORMULARIO_GESTIONAR_ATENCIONES.Show();
+        }
     }
 }

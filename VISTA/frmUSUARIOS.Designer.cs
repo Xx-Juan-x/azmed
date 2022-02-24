@@ -54,6 +54,7 @@ namespace VISTA
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
+            this.btnTODOS = new System.Windows.Forms.Button();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -212,6 +213,7 @@ namespace VISTA
             // 
             // gbLISTA_USUARIOS
             // 
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnTODOS);
             this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_EMAIL);
             this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_EMAIL);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnBUSCAR);
@@ -257,6 +259,7 @@ namespace VISTA
             this.btnBUSCAR.TabIndex = 68;
             this.btnBUSCAR.Text = "Buscar";
             this.btnBUSCAR.UseVisualStyleBackColor = false;
+            this.btnBUSCAR.Click += new System.EventHandler(this.btnBUSCAR_Click);
             // 
             // dgvLISTA_USUARIOS
             // 
@@ -336,6 +339,20 @@ namespace VISTA
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click_1);
             // 
+            // btnTODOS
+            // 
+            this.btnTODOS.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnTODOS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTODOS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTODOS.ForeColor = System.Drawing.Color.White;
+            this.btnTODOS.Location = new System.Drawing.Point(382, 25);
+            this.btnTODOS.Name = "btnTODOS";
+            this.btnTODOS.Size = new System.Drawing.Size(65, 21);
+            this.btnTODOS.TabIndex = 71;
+            this.btnTODOS.Text = "Todos";
+            this.btnTODOS.UseVisualStyleBackColor = false;
+            this.btnTODOS.Click += new System.EventHandler(this.btnTODOS_Click);
+            // 
             // frmUSUARIOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,5 +398,6 @@ namespace VISTA
         private System.Windows.Forms.Button btnBUSCAR;
         private System.Windows.Forms.TextBox txtCONFIRMAR_PASSWORD;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnTODOS;
     }
 }

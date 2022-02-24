@@ -139,6 +139,7 @@ namespace VISTA
             this.gestionarAtenciónToolStripMenuItem.Name = "gestionarAtenciónToolStripMenuItem";
             this.gestionarAtenciónToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.gestionarAtenciónToolStripMenuItem.Text = "Gestionar Atenciones";
+            this.gestionarAtenciónToolStripMenuItem.Click += new System.EventHandler(this.gestionarAtenciónToolStripMenuItem_Click);
             // 
             // tURNOSToolStripMenuItem
             // 

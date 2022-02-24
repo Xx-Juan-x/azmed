@@ -62,12 +62,6 @@
     <Compile Include="frmASIGNAR_ESPECIALIDAD.Designer.cs">
       <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmATENCION.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmATENCION.Designer.cs">
-      <DependentUpon>frmATENCION.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmATENCIONES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,12 +104,6 @@
     <Compile Include="frmREGISTRO_PACIENTE.Designer.cs">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmREGISTRO_PROFESIONALES.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmREGISTRO_PROFESIONALES.Designer.cs">
-      <DependentUpon>frmREGISTRO_PROFESIONALES.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmUSUARIOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +114,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmASIGNAR_ESPECIALIDAD.resx">
       <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmATENCION.resx">
-      <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmATENCIONES.resx">
       <DependentUpon>frmATENCIONES.cs</DependentUpon>
@@ -150,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmREGISTRO_PACIENTE.resx">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmREGISTRO_PROFESIONALES.resx">
-      <DependentUpon>frmREGISTRO_PROFESIONALES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUSUARIOS.resx">
       <DependentUpon>frmUSUARIOS.cs</DependentUpon>

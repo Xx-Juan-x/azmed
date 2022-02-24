@@ -30,8 +30,11 @@ namespace VISTA
         public frmUSUARIOS()
         {
             InitializeComponent();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();          
-            ARMA_GRILLA();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+
+            ARMA_COMBOBOX_EMAIL();
+            
+            ARMA_GRILLA("A");
             MODO_GRILLA();
 
             
@@ -39,6 +42,8 @@ namespace VISTA
             cmbROL.Items.Add("PACIENTE");
             cmbROL.Items.Add("PROFESIONAL");
             cmbROL.Items.Add("JEFE DE COMPRAS");
+
+
             
         }
 
@@ -46,10 +51,36 @@ namespace VISTA
         private MODELO.USUARIO oUSUARIO;
         string ACCION;
 
-        private void ARMA_GRILLA()
+        private void ARMA_GRILLA(string TIPO)
         {
-            dgvLISTA_USUARIOS.DataSource = null;         
-            dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+            if (TIPO == "A")
+            {
+                dgvLISTA_USUARIOS.DataSource = null;
+                dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+            }
+            if (TIPO == "B")
+            {
+                string FILTRO_USUARIO_EMAIL = cmbFILTRO_EMAIL.Text;
+
+                if (FILTRO_USUARIO_EMAIL == "TODOS")
+                {
+                    dgvLISTA_USUARIOS.DataSource = null;
+                    dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+                }
+                else
+                {
+                    var LISTA_EMAIL = (from a in cUSUARIOS.OBTENER_USUARIOS()
+                                       where a.EMAIL == FILTRO_USUARIO_EMAIL
+                                       select a).ToList();
+
+                    dgvLISTA_USUARIOS.DataSource = null;
+                    dgvLISTA_USUARIOS.DataSource = LISTA_EMAIL;
+                }
+            }
+
+            //dgvLISTA_USUARIOS.DataSource = null;         
+            //dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+
             dgvLISTA_USUARIOS.AutoGenerateColumns = false;
             if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES"))
             {
@@ -57,6 +88,15 @@ namespace VISTA
             }
             
         }
+
+        private void ARMA_COMBOBOX_EMAIL()
+        {
+            cmbFILTRO_EMAIL.DataSource = null;
+            cmbFILTRO_EMAIL.ValueMember = "ID_USUARIO";
+            cmbFILTRO_EMAIL.DisplayMember = "EMAIL";
+            cmbFILTRO_EMAIL.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+        }
+
 
         private void MODO_GRILLA()
         {
@@ -139,11 +179,11 @@ namespace VISTA
             {
                 if (ACCION == "A")
                 {
-                    cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);
+                    cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);               
                 }
                 else if(ACCION == "M")
                 {
-                    cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
+                    cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);                  
                 }
                 // LIMPIO LA TEXTBOX         
                 txtNOMBRE.Clear();
@@ -152,8 +192,9 @@ namespace VISTA
                 txtPASSWORD.Clear();
                 txtCONFIRMAR_PASSWORD.Clear();
 
+                ARMA_GRILLA("A");
                 MODO_GRILLA();
-                ARMA_GRILLA();
+                
             }
             else
             {
@@ -214,7 +255,7 @@ namespace VISTA
             if (RESPUESTA == DialogResult.Yes)
             {
                 cUSUARIOS.ELIMINAR_USUARIO(oUSUARIO);
-                ARMA_GRILLA();
+                ARMA_GRILLA("A");
             }
         }
 
@@ -231,6 +272,21 @@ namespace VISTA
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnBUSCAR_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbFILTRO_EMAIL.Text))
+            {
+                MessageBox.Show("Debe seleccionar un usuario de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }          
+                ARMA_GRILLA("B");          
+        }
+
+        private void btnTODOS_Click(object sender, EventArgs e)
+        {
+            dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
         }
     }
 }

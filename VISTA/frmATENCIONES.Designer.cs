@@ -30,32 +30,35 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_PROFESIONAL_HORARIOS = new System.Windows.Forms.GroupBox();
+            this.cmbPROFESIONALES = new System.Windows.Forms.ComboBox();
             this.lblPROFESIONAL = new System.Windows.Forms.Label();
+            this.cmbESPECIALIDADES = new System.Windows.Forms.ComboBox();
             this.lblESPECIALIDAD = new System.Windows.Forms.Label();
             this.gbLISTA_HORARIOS_ATENCION = new System.Windows.Forms.GroupBox();
+            this.btnCONSULTAR = new System.Windows.Forms.Button();
+            this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
-            this.lblFILTRO_ESPECIALIDAD = new System.Windows.Forms.Label();
-            this.cmbFILTRO_ESPECIALIDAD = new System.Windows.Forms.ComboBox();
+            this.lblFILTRO_DIA_LABORAL = new System.Windows.Forms.Label();
+            this.cmbFILTRO_DIA_LABORAL = new System.Windows.Forms.ComboBox();
             this.btnBUSCAR = new System.Windows.Forms.Button();
             this.dgvLISTA_ATENCIONES = new System.Windows.Forms.DataGridView();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.gbHORARIOS_ATENCION = new System.Windows.Forms.GroupBox();
-            this.dtpHORA_FIN = new System.Windows.Forms.DateTimePicker();
-            this.dtpHORA_INICIO = new System.Windows.Forms.DateTimePicker();
+            this.numericHORA_FIN = new System.Windows.Forms.NumericUpDown();
             this.cmbDIA_LABORAL = new System.Windows.Forms.ComboBox();
+            this.numericHORA_INICIO = new System.Windows.Forms.NumericUpDown();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.HORA_INICIO = new System.Windows.Forms.Label();
-            this.cmbESPECIALIDADES = new System.Windows.Forms.ComboBox();
-            this.cmbPROFESIONALES = new System.Windows.Forms.ComboBox();
-            this.btnELIMINAR = new System.Windows.Forms.Button();
             this.gbDATOS_PROFESIONAL_HORARIOS.SuspendLayout();
             this.gbLISTA_HORARIOS_ATENCION.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ATENCIONES)).BeginInit();
             this.gbHORARIOS_ATENCION.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHORA_FIN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHORA_INICIO)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDATOS_PROFESIONAL_HORARIOS
@@ -64,12 +67,21 @@ namespace VISTA
             this.gbDATOS_PROFESIONAL_HORARIOS.Controls.Add(this.lblPROFESIONAL);
             this.gbDATOS_PROFESIONAL_HORARIOS.Controls.Add(this.cmbESPECIALIDADES);
             this.gbDATOS_PROFESIONAL_HORARIOS.Controls.Add(this.lblESPECIALIDAD);
-            this.gbDATOS_PROFESIONAL_HORARIOS.Location = new System.Drawing.Point(588, 12);
+            this.gbDATOS_PROFESIONAL_HORARIOS.Location = new System.Drawing.Point(670, 12);
             this.gbDATOS_PROFESIONAL_HORARIOS.Name = "gbDATOS_PROFESIONAL_HORARIOS";
             this.gbDATOS_PROFESIONAL_HORARIOS.Size = new System.Drawing.Size(349, 109);
             this.gbDATOS_PROFESIONAL_HORARIOS.TabIndex = 74;
             this.gbDATOS_PROFESIONAL_HORARIOS.TabStop = false;
             this.gbDATOS_PROFESIONAL_HORARIOS.Text = "DATOS DEL PROFESIONAL";
+            // 
+            // cmbPROFESIONALES
+            // 
+            this.cmbPROFESIONALES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPROFESIONALES.FormattingEnabled = true;
+            this.cmbPROFESIONALES.Location = new System.Drawing.Point(163, 74);
+            this.cmbPROFESIONALES.Name = "cmbPROFESIONALES";
+            this.cmbPROFESIONALES.Size = new System.Drawing.Size(178, 21);
+            this.cmbPROFESIONALES.TabIndex = 78;
             // 
             // lblPROFESIONAL
             // 
@@ -79,6 +91,16 @@ namespace VISTA
             this.lblPROFESIONAL.Size = new System.Drawing.Size(85, 13);
             this.lblPROFESIONAL.TabIndex = 67;
             this.lblPROFESIONAL.Text = "PROFESIONAL:";
+            // 
+            // cmbESPECIALIDADES
+            // 
+            this.cmbESPECIALIDADES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbESPECIALIDADES.FormattingEnabled = true;
+            this.cmbESPECIALIDADES.Location = new System.Drawing.Point(163, 35);
+            this.cmbESPECIALIDADES.Name = "cmbESPECIALIDADES";
+            this.cmbESPECIALIDADES.Size = new System.Drawing.Size(178, 21);
+            this.cmbESPECIALIDADES.TabIndex = 77;
+            this.cmbESPECIALIDADES.SelectedIndexChanged += new System.EventHandler(this.cmbESPECIALIDADES_SelectedIndexChanged);
             // 
             // lblESPECIALIDAD
             // 
@@ -91,20 +113,49 @@ namespace VISTA
             // 
             // gbLISTA_HORARIOS_ATENCION
             // 
+            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnCONSULTAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnELIMINAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnMODIFICAR);
-            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.lblFILTRO_ESPECIALIDAD);
-            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.cmbFILTRO_ESPECIALIDAD);
+            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.lblFILTRO_DIA_LABORAL);
+            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.cmbFILTRO_DIA_LABORAL);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnBUSCAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.dgvLISTA_ATENCIONES);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnCERRAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnAGREGAR);
             this.gbLISTA_HORARIOS_ATENCION.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_HORARIOS_ATENCION.Name = "gbLISTA_HORARIOS_ATENCION";
-            this.gbLISTA_HORARIOS_ATENCION.Size = new System.Drawing.Size(570, 515);
+            this.gbLISTA_HORARIOS_ATENCION.Size = new System.Drawing.Size(652, 515);
             this.gbLISTA_HORARIOS_ATENCION.TabIndex = 73;
             this.gbLISTA_HORARIOS_ATENCION.TabStop = false;
             this.gbLISTA_HORARIOS_ATENCION.Text = "LISTA DE HORARIOS DE ATENCION";
+            // 
+            // btnCONSULTAR
+            // 
+            this.btnCONSULTAR.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCONSULTAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
+            this.btnCONSULTAR.Location = new System.Drawing.Point(192, 486);
+            this.btnCONSULTAR.Name = "btnCONSULTAR";
+            this.btnCONSULTAR.Size = new System.Drawing.Size(86, 23);
+            this.btnCONSULTAR.TabIndex = 78;
+            this.btnCONSULTAR.Text = "Consultar";
+            this.btnCONSULTAR.UseVisualStyleBackColor = false;
+            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
+            // 
+            // btnELIMINAR
+            // 
+            this.btnELIMINAR.BackColor = System.Drawing.Color.Red;
+            this.btnELIMINAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnELIMINAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnELIMINAR.ForeColor = System.Drawing.Color.White;
+            this.btnELIMINAR.Location = new System.Drawing.Point(284, 486);
+            this.btnELIMINAR.Name = "btnELIMINAR";
+            this.btnELIMINAR.Size = new System.Drawing.Size(88, 23);
+            this.btnELIMINAR.TabIndex = 77;
+            this.btnELIMINAR.Text = "Eliminar";
+            this.btnELIMINAR.UseVisualStyleBackColor = false;
+            this.btnELIMINAR.Click += new System.EventHandler(this.btnELIMINAR_Click);
             // 
             // btnMODIFICAR
             // 
@@ -118,23 +169,25 @@ namespace VISTA
             this.btnMODIFICAR.TabIndex = 68;
             this.btnMODIFICAR.Text = "Modificar";
             this.btnMODIFICAR.UseVisualStyleBackColor = false;
+            this.btnMODIFICAR.Click += new System.EventHandler(this.btnMODIFICAR_Click);
             // 
-            // lblFILTRO_ESPECIALIDAD
+            // lblFILTRO_DIA_LABORAL
             // 
-            this.lblFILTRO_ESPECIALIDAD.AutoSize = true;
-            this.lblFILTRO_ESPECIALIDAD.Location = new System.Drawing.Point(6, 32);
-            this.lblFILTRO_ESPECIALIDAD.Name = "lblFILTRO_ESPECIALIDAD";
-            this.lblFILTRO_ESPECIALIDAD.Size = new System.Drawing.Size(101, 13);
-            this.lblFILTRO_ESPECIALIDAD.TabIndex = 67;
-            this.lblFILTRO_ESPECIALIDAD.Text = "ESPECIALIDADES:";
+            this.lblFILTRO_DIA_LABORAL.AutoSize = true;
+            this.lblFILTRO_DIA_LABORAL.Location = new System.Drawing.Point(6, 32);
+            this.lblFILTRO_DIA_LABORAL.Name = "lblFILTRO_DIA_LABORAL";
+            this.lblFILTRO_DIA_LABORAL.Size = new System.Drawing.Size(154, 13);
+            this.lblFILTRO_DIA_LABORAL.TabIndex = 67;
+            this.lblFILTRO_DIA_LABORAL.Text = "FILTRAR POR DIA LABORAL:";
             // 
-            // cmbFILTRO_ESPECIALIDAD
+            // cmbFILTRO_DIA_LABORAL
             // 
-            this.cmbFILTRO_ESPECIALIDAD.FormattingEnabled = true;
-            this.cmbFILTRO_ESPECIALIDAD.Location = new System.Drawing.Point(113, 29);
-            this.cmbFILTRO_ESPECIALIDAD.Name = "cmbFILTRO_ESPECIALIDAD";
-            this.cmbFILTRO_ESPECIALIDAD.Size = new System.Drawing.Size(159, 21);
-            this.cmbFILTRO_ESPECIALIDAD.TabIndex = 67;
+            this.cmbFILTRO_DIA_LABORAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFILTRO_DIA_LABORAL.FormattingEnabled = true;
+            this.cmbFILTRO_DIA_LABORAL.Location = new System.Drawing.Point(166, 26);
+            this.cmbFILTRO_DIA_LABORAL.Name = "cmbFILTRO_DIA_LABORAL";
+            this.cmbFILTRO_DIA_LABORAL.Size = new System.Drawing.Size(159, 21);
+            this.cmbFILTRO_DIA_LABORAL.TabIndex = 67;
             // 
             // btnBUSCAR
             // 
@@ -142,7 +195,7 @@ namespace VISTA
             this.btnBUSCAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBUSCAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBUSCAR.ForeColor = System.Drawing.Color.White;
-            this.btnBUSCAR.Location = new System.Drawing.Point(463, 18);
+            this.btnBUSCAR.Location = new System.Drawing.Point(544, 18);
             this.btnBUSCAR.Name = "btnBUSCAR";
             this.btnBUSCAR.Size = new System.Drawing.Size(102, 35);
             this.btnBUSCAR.TabIndex = 58;
@@ -155,7 +208,7 @@ namespace VISTA
             this.dgvLISTA_ATENCIONES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLISTA_ATENCIONES.Location = new System.Drawing.Point(6, 59);
             this.dgvLISTA_ATENCIONES.Name = "dgvLISTA_ATENCIONES";
-            this.dgvLISTA_ATENCIONES.Size = new System.Drawing.Size(559, 421);
+            this.dgvLISTA_ATENCIONES.Size = new System.Drawing.Size(640, 421);
             this.dgvLISTA_ATENCIONES.TabIndex = 56;
             // 
             // btnCERRAR
@@ -164,12 +217,13 @@ namespace VISTA
             this.btnCERRAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(477, 486);
+            this.btnCERRAR.Location = new System.Drawing.Point(558, 485);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(88, 23);
             this.btnCERRAR.TabIndex = 52;
             this.btnCERRAR.Text = "Cerrar";
             this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
             // btnAGREGAR
             // 
@@ -187,40 +241,42 @@ namespace VISTA
             // 
             // gbHORARIOS_ATENCION
             // 
-            this.gbHORARIOS_ATENCION.Controls.Add(this.dtpHORA_FIN);
-            this.gbHORARIOS_ATENCION.Controls.Add(this.dtpHORA_INICIO);
+            this.gbHORARIOS_ATENCION.Controls.Add(this.numericHORA_FIN);
             this.gbHORARIOS_ATENCION.Controls.Add(this.cmbDIA_LABORAL);
+            this.gbHORARIOS_ATENCION.Controls.Add(this.numericHORA_INICIO);
             this.gbHORARIOS_ATENCION.Controls.Add(this.btnCANCELAR);
             this.gbHORARIOS_ATENCION.Controls.Add(this.btnGUARDAR);
             this.gbHORARIOS_ATENCION.Controls.Add(this.label2);
             this.gbHORARIOS_ATENCION.Controls.Add(this.label1);
             this.gbHORARIOS_ATENCION.Controls.Add(this.HORA_INICIO);
-            this.gbHORARIOS_ATENCION.Location = new System.Drawing.Point(588, 127);
+            this.gbHORARIOS_ATENCION.Location = new System.Drawing.Point(670, 127);
             this.gbHORARIOS_ATENCION.Name = "gbHORARIOS_ATENCION";
             this.gbHORARIOS_ATENCION.Size = new System.Drawing.Size(349, 200);
             this.gbHORARIOS_ATENCION.TabIndex = 75;
             this.gbHORARIOS_ATENCION.TabStop = false;
             this.gbHORARIOS_ATENCION.Text = "HORARIOS DE ATENCION DEL PROFESIONAL";
             // 
-            // dtpHORA_FIN
+            // numericHORA_FIN
             // 
-            this.dtpHORA_FIN.CustomFormat = "HH";
-            this.dtpHORA_FIN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHORA_FIN.Location = new System.Drawing.Point(163, 76);
-            this.dtpHORA_FIN.Name = "dtpHORA_FIN";
-            this.dtpHORA_FIN.ShowUpDown = true;
-            this.dtpHORA_FIN.Size = new System.Drawing.Size(178, 20);
-            this.dtpHORA_FIN.TabIndex = 76;
-            // 
-            // dtpHORA_INICIO
-            // 
-            this.dtpHORA_INICIO.CustomFormat = "HH";
-            this.dtpHORA_INICIO.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHORA_INICIO.Location = new System.Drawing.Point(163, 31);
-            this.dtpHORA_INICIO.Name = "dtpHORA_INICIO";
-            this.dtpHORA_INICIO.ShowUpDown = true;
-            this.dtpHORA_INICIO.Size = new System.Drawing.Size(178, 20);
-            this.dtpHORA_INICIO.TabIndex = 75;
+            this.numericHORA_FIN.Location = new System.Drawing.Point(163, 80);
+            this.numericHORA_FIN.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericHORA_FIN.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericHORA_FIN.Name = "numericHORA_FIN";
+            this.numericHORA_FIN.Size = new System.Drawing.Size(178, 20);
+            this.numericHORA_FIN.TabIndex = 77;
+            this.numericHORA_FIN.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cmbDIA_LABORAL
             // 
@@ -230,6 +286,28 @@ namespace VISTA
             this.cmbDIA_LABORAL.Name = "cmbDIA_LABORAL";
             this.cmbDIA_LABORAL.Size = new System.Drawing.Size(178, 21);
             this.cmbDIA_LABORAL.TabIndex = 74;
+            // 
+            // numericHORA_INICIO
+            // 
+            this.numericHORA_INICIO.Location = new System.Drawing.Point(163, 36);
+            this.numericHORA_INICIO.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericHORA_INICIO.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericHORA_INICIO.Name = "numericHORA_INICIO";
+            this.numericHORA_INICIO.Size = new System.Drawing.Size(178, 20);
+            this.numericHORA_INICIO.TabIndex = 76;
+            this.numericHORA_INICIO.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnCANCELAR
             // 
@@ -243,6 +321,7 @@ namespace VISTA
             this.btnCANCELAR.TabIndex = 59;
             this.btnCANCELAR.Text = "Cancelar";
             this.btnCANCELAR.UseVisualStyleBackColor = false;
+            this.btnCANCELAR.Click += new System.EventHandler(this.btnCANCELAR_Click);
             // 
             // btnGUARDAR
             // 
@@ -285,41 +364,11 @@ namespace VISTA
             this.HORA_INICIO.TabIndex = 65;
             this.HORA_INICIO.Text = "HORA DE INICIO:";
             // 
-            // cmbESPECIALIDADES
-            // 
-            this.cmbESPECIALIDADES.FormattingEnabled = true;
-            this.cmbESPECIALIDADES.Location = new System.Drawing.Point(163, 35);
-            this.cmbESPECIALIDADES.Name = "cmbESPECIALIDADES";
-            this.cmbESPECIALIDADES.Size = new System.Drawing.Size(178, 21);
-            this.cmbESPECIALIDADES.TabIndex = 77;
-            this.cmbESPECIALIDADES.SelectedIndexChanged += new System.EventHandler(this.cmbESPECIALIDADES_SelectedIndexChanged);
-            // 
-            // cmbPROFESIONALES
-            // 
-            this.cmbPROFESIONALES.FormattingEnabled = true;
-            this.cmbPROFESIONALES.Location = new System.Drawing.Point(163, 74);
-            this.cmbPROFESIONALES.Name = "cmbPROFESIONALES";
-            this.cmbPROFESIONALES.Size = new System.Drawing.Size(178, 21);
-            this.cmbPROFESIONALES.TabIndex = 78;
-            // 
-            // btnELIMINAR
-            // 
-            this.btnELIMINAR.BackColor = System.Drawing.Color.Red;
-            this.btnELIMINAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnELIMINAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnELIMINAR.ForeColor = System.Drawing.Color.White;
-            this.btnELIMINAR.Location = new System.Drawing.Point(192, 486);
-            this.btnELIMINAR.Name = "btnELIMINAR";
-            this.btnELIMINAR.Size = new System.Drawing.Size(88, 23);
-            this.btnELIMINAR.TabIndex = 77;
-            this.btnELIMINAR.Text = "Eliminar";
-            this.btnELIMINAR.UseVisualStyleBackColor = false;
-            // 
             // frmATENCIONES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 532);
+            this.ClientSize = new System.Drawing.Size(1031, 532);
             this.Controls.Add(this.gbDATOS_PROFESIONAL_HORARIOS);
             this.Controls.Add(this.gbLISTA_HORARIOS_ATENCION);
             this.Controls.Add(this.gbHORARIOS_ATENCION);
@@ -332,6 +381,8 @@ namespace VISTA
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ATENCIONES)).EndInit();
             this.gbHORARIOS_ATENCION.ResumeLayout(false);
             this.gbHORARIOS_ATENCION.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHORA_FIN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHORA_INICIO)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,15 +394,13 @@ namespace VISTA
         private System.Windows.Forms.Label lblESPECIALIDAD;
         private System.Windows.Forms.GroupBox gbLISTA_HORARIOS_ATENCION;
         private System.Windows.Forms.Button btnMODIFICAR;
-        private System.Windows.Forms.Label lblFILTRO_ESPECIALIDAD;
-        private System.Windows.Forms.ComboBox cmbFILTRO_ESPECIALIDAD;
+        private System.Windows.Forms.Label lblFILTRO_DIA_LABORAL;
+        private System.Windows.Forms.ComboBox cmbFILTRO_DIA_LABORAL;
         private System.Windows.Forms.Button btnBUSCAR;
         private System.Windows.Forms.DataGridView dgvLISTA_ATENCIONES;
         private System.Windows.Forms.Button btnCERRAR;
         private System.Windows.Forms.Button btnAGREGAR;
         private System.Windows.Forms.GroupBox gbHORARIOS_ATENCION;
-        private System.Windows.Forms.DateTimePicker dtpHORA_FIN;
-        private System.Windows.Forms.DateTimePicker dtpHORA_INICIO;
         private System.Windows.Forms.ComboBox cmbDIA_LABORAL;
         private System.Windows.Forms.Button btnCANCELAR;
         private System.Windows.Forms.Button btnGUARDAR;
@@ -361,5 +410,8 @@ namespace VISTA
         private System.Windows.Forms.ComboBox cmbPROFESIONALES;
         private System.Windows.Forms.ComboBox cmbESPECIALIDADES;
         private System.Windows.Forms.Button btnELIMINAR;
+        private System.Windows.Forms.NumericUpDown numericHORA_FIN;
+        private System.Windows.Forms.NumericUpDown numericHORA_INICIO;
+        private System.Windows.Forms.Button btnCONSULTAR;
     }
 }
