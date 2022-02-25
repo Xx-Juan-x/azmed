@@ -39,6 +39,15 @@ namespace VISTA
             InitializeComponent();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
+
+            cmbPLANES.Items.Add("SELECCIONE...");
+            cmbPLANES.SelectedItem = "SELECCIONE...";
+            cmbPLANES.Items.Add("BASICO");
+            cmbPLANES.Items.Add("SUPERADOR");
+            cmbPLANES.Items.Add("PREMIUM");
+            cmbPLANES.Items.Add("JUBILADOS");
+            cmbPLANES.Items.Add("ESTUDIANTE");
+
             ARMA_GRILLA();
             MODO_GRILLA();
         }
@@ -93,9 +102,9 @@ namespace VISTA
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtNOMBRE.Text))
+            if (cmbPLANES.SelectedItem == "SELECCIONE...")
             {
-                MessageBox.Show("Debe ingresar el nombre del plan a la lista de planes", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar el plan que va a tener la obra social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -107,7 +116,7 @@ namespace VISTA
             }
             #endregion
 
-            oPLAN.NOMBRE = txtNOMBRE.Text.ToUpper(); // Uso la funcion ToUapper para escribir el nombre en mayúscula
+            oPLAN.NOMBRE = cmbPLANES.Text; // Uso la funcion ToUapper para escribir el nombre en mayúscula
             oPLAN.TIPO = TIPO_PLAN;
             oPLAN.OBRA_SOCIAL = (MODELO.OBRA_SOCIAL)cmbOBRA_SOCIAL.SelectedItem;
 
@@ -121,7 +130,7 @@ namespace VISTA
             }
 
             // LIMPIO LA TEXTBOX
-            txtNOMBRE.Clear();
+            cmbPLANES.Text = "SELECCIONE...";
             txtTIPO_PLAN.Clear();
             MODO_GRILLA();
             ARMA_GRILLA();
@@ -139,7 +148,7 @@ namespace VISTA
             ACCION = "M";
 
             //ASIGNO EL CONTENIDO DE LOS CAMPOS CON MIS OBJETOS CORRESPONDIENTES
-            txtNOMBRE.Text = oPLAN.NOMBRE;
+            cmbPLANES.Text = oPLAN.NOMBRE;
             txtTIPO_PLAN.Text = oPLAN.TIPO.ToString();
             cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
 
@@ -157,7 +166,7 @@ namespace VISTA
 
             ACCION = "C";
 
-            txtNOMBRE.Text = oPLAN.NOMBRE;
+            cmbPLANES.Text = oPLAN.NOMBRE;
             txtTIPO_PLAN.Text = oPLAN.TIPO.ToString();
             cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
 
@@ -184,7 +193,7 @@ namespace VISTA
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
         {
-            txtNOMBRE.Clear();
+            cmbPLANES.Text = "SELECCIONE..."; 
             txtTIPO_PLAN.Clear();
             MODO_GRILLA();
         }

@@ -87,6 +87,7 @@ namespace VISTA
                 FORMULARIO_CLINICA.Show();
                 txtEMAIL.Clear();
                 txtCLAVE.Clear();
+                this.Hide();
             }
         }
     }

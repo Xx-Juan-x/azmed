@@ -45,8 +45,8 @@ namespace VISTA
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.gbLISTA_USUARIOS = new System.Windows.Forms.GroupBox();
-            this.lblFILTRO_EMAIL = new System.Windows.Forms.Label();
-            this.cmbFILTRO_EMAIL = new System.Windows.Forms.ComboBox();
+            this.lblFILTRO_TIPO = new System.Windows.Forms.Label();
+            this.cmbFILTRO_TIPO = new System.Windows.Forms.ComboBox();
             this.btnBUSCAR = new System.Windows.Forms.Button();
             this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
             this.btnCONSULTAR = new System.Windows.Forms.Button();
@@ -54,7 +54,6 @@ namespace VISTA
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
-            this.btnTODOS = new System.Windows.Forms.Button();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -213,9 +212,8 @@ namespace VISTA
             // 
             // gbLISTA_USUARIOS
             // 
-            this.gbLISTA_USUARIOS.Controls.Add(this.btnTODOS);
-            this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_EMAIL);
-            this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_EMAIL);
+            this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_TIPO);
+            this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_TIPO);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnBUSCAR);
             this.gbLISTA_USUARIOS.Controls.Add(this.dgvLISTA_USUARIOS);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnCONSULTAR);
@@ -230,22 +228,23 @@ namespace VISTA
             this.gbLISTA_USUARIOS.TabStop = false;
             this.gbLISTA_USUARIOS.Text = "LISTA DE USUARIOS";
             // 
-            // lblFILTRO_EMAIL
+            // lblFILTRO_TIPO
             // 
-            this.lblFILTRO_EMAIL.AutoSize = true;
-            this.lblFILTRO_EMAIL.Location = new System.Drawing.Point(169, 28);
-            this.lblFILTRO_EMAIL.Name = "lblFILTRO_EMAIL";
-            this.lblFILTRO_EMAIL.Size = new System.Drawing.Size(42, 13);
-            this.lblFILTRO_EMAIL.TabIndex = 70;
-            this.lblFILTRO_EMAIL.Text = "EMAIL:";
+            this.lblFILTRO_TIPO.AutoSize = true;
+            this.lblFILTRO_TIPO.Location = new System.Drawing.Point(334, 25);
+            this.lblFILTRO_TIPO.Name = "lblFILTRO_TIPO";
+            this.lblFILTRO_TIPO.Size = new System.Drawing.Size(105, 13);
+            this.lblFILTRO_TIPO.TabIndex = 70;
+            this.lblFILTRO_TIPO.Text = "TIPO DE USUARIO:";
             // 
-            // cmbFILTRO_EMAIL
+            // cmbFILTRO_TIPO
             // 
-            this.cmbFILTRO_EMAIL.FormattingEnabled = true;
-            this.cmbFILTRO_EMAIL.Location = new System.Drawing.Point(217, 25);
-            this.cmbFILTRO_EMAIL.Name = "cmbFILTRO_EMAIL";
-            this.cmbFILTRO_EMAIL.Size = new System.Drawing.Size(159, 21);
-            this.cmbFILTRO_EMAIL.TabIndex = 69;
+            this.cmbFILTRO_TIPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFILTRO_TIPO.FormattingEnabled = true;
+            this.cmbFILTRO_TIPO.Location = new System.Drawing.Point(445, 22);
+            this.cmbFILTRO_TIPO.Name = "cmbFILTRO_TIPO";
+            this.cmbFILTRO_TIPO.Size = new System.Drawing.Size(159, 21);
+            this.cmbFILTRO_TIPO.TabIndex = 69;
             // 
             // btnBUSCAR
             // 
@@ -339,20 +338,6 @@ namespace VISTA
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click_1);
             // 
-            // btnTODOS
-            // 
-            this.btnTODOS.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnTODOS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTODOS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTODOS.ForeColor = System.Drawing.Color.White;
-            this.btnTODOS.Location = new System.Drawing.Point(382, 25);
-            this.btnTODOS.Name = "btnTODOS";
-            this.btnTODOS.Size = new System.Drawing.Size(65, 21);
-            this.btnTODOS.TabIndex = 71;
-            this.btnTODOS.Text = "Todos";
-            this.btnTODOS.UseVisualStyleBackColor = false;
-            this.btnTODOS.Click += new System.EventHandler(this.btnTODOS_Click);
-            // 
             // frmUSUARIOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,11 +378,10 @@ namespace VISTA
         private System.Windows.Forms.Button btnELIMINAR;
         private System.Windows.Forms.Button btnMODIFICAR;
         private System.Windows.Forms.Button btnAGREGAR;
-        private System.Windows.Forms.Label lblFILTRO_EMAIL;
-        private System.Windows.Forms.ComboBox cmbFILTRO_EMAIL;
+        private System.Windows.Forms.Label lblFILTRO_TIPO;
+        private System.Windows.Forms.ComboBox cmbFILTRO_TIPO;
         private System.Windows.Forms.Button btnBUSCAR;
         private System.Windows.Forms.TextBox txtCONFIRMAR_PASSWORD;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnTODOS;
     }
 }

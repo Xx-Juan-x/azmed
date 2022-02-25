@@ -62,11 +62,11 @@
     <Compile Include="frmASIGNAR_ESPECIALIDAD.Designer.cs">
       <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmATENCIONES.cs">
+    <Compile Include="frmATENCION.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmATENCIONES.Designer.cs">
-      <DependentUpon>frmATENCIONES.cs</DependentUpon>
+    <Compile Include="frmATENCION.Designer.cs">
+      <DependentUpon>frmATENCION.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCLINICA.cs">
       <SubType>Form</SubType>
@@ -115,8 +115,8 @@
     <EmbeddedResource Include="frmASIGNAR_ESPECIALIDAD.resx">
       <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmATENCIONES.resx">
-      <DependentUpon>frmATENCIONES.cs</DependentUpon>
+    <EmbeddedResource Include="frmATENCION.resx">
+      <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCLINICA.resx">
       <DependentUpon>frmCLINICA.cs</DependentUpon>

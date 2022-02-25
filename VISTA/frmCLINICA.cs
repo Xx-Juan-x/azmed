@@ -121,8 +121,15 @@ namespace VISTA
 
         private void gestionarAtenciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmATENCIONES FORMULARIO_GESTIONAR_ATENCIONES = frmATENCIONES.OBTENER_INSTANCIA();
+            frmATENCION FORMULARIO_GESTIONAR_ATENCIONES = frmATENCION.OBTENER_INSTANCIA();
             FORMULARIO_GESTIONAR_ATENCIONES.Show();
+        }
+
+        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLOGIN FORMULARIO_LOGIN = frmLOGIN.OBTENER_INSTANCIA();
+            FORMULARIO_LOGIN.Show();
+            this.Close();
         }
     }
 }

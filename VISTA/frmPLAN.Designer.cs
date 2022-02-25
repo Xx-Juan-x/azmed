@@ -36,7 +36,6 @@ namespace VISTA
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
             this.lblTIPO = new System.Windows.Forms.Label();
-            this.txtNOMBRE = new System.Windows.Forms.TextBox();
             this.txtTIPO_PLAN = new System.Windows.Forms.TextBox();
             this.gbLISTA_PLANES = new System.Windows.Forms.GroupBox();
             this.dgvLISTA_PLANES = new System.Windows.Forms.DataGridView();
@@ -45,6 +44,7 @@ namespace VISTA
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
+            this.cmbPLANES = new System.Windows.Forms.ComboBox();
             this.gbDATOS_PLAN.SuspendLayout();
             this.gbLISTA_PLANES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PLANES)).BeginInit();
@@ -52,13 +52,13 @@ namespace VISTA
             // 
             // gbDATOS_PLAN
             // 
+            this.gbDATOS_PLAN.Controls.Add(this.cmbPLANES);
             this.gbDATOS_PLAN.Controls.Add(this.lblOBRA_SOCIAL);
             this.gbDATOS_PLAN.Controls.Add(this.cmbOBRA_SOCIAL);
             this.gbDATOS_PLAN.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_PLAN.Controls.Add(this.btnGUARDAR);
             this.gbDATOS_PLAN.Controls.Add(this.lbl_NOMBRE);
             this.gbDATOS_PLAN.Controls.Add(this.lblTIPO);
-            this.gbDATOS_PLAN.Controls.Add(this.txtNOMBRE);
             this.gbDATOS_PLAN.Controls.Add(this.txtTIPO_PLAN);
             this.gbDATOS_PLAN.Location = new System.Drawing.Point(612, 12);
             this.gbDATOS_PLAN.Name = "gbDATOS_PLAN";
@@ -78,6 +78,7 @@ namespace VISTA
             // 
             // cmbOBRA_SOCIAL
             // 
+            this.cmbOBRA_SOCIAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOBRA_SOCIAL.FormattingEnabled = true;
             this.cmbOBRA_SOCIAL.Location = new System.Drawing.Point(93, 117);
             this.cmbOBRA_SOCIAL.Name = "cmbOBRA_SOCIAL";
@@ -129,13 +130,6 @@ namespace VISTA
             this.lblTIPO.Size = new System.Drawing.Size(84, 13);
             this.lblTIPO.TabIndex = 3;
             this.lblTIPO.Text = "TIPO DE PLAN:";
-            // 
-            // txtNOMBRE
-            // 
-            this.txtNOMBRE.Location = new System.Drawing.Point(93, 40);
-            this.txtNOMBRE.Name = "txtNOMBRE";
-            this.txtNOMBRE.Size = new System.Drawing.Size(159, 20);
-            this.txtNOMBRE.TabIndex = 6;
             // 
             // txtTIPO_PLAN
             // 
@@ -237,6 +231,15 @@ namespace VISTA
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
+            // cmbPLANES
+            // 
+            this.cmbPLANES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPLANES.FormattingEnabled = true;
+            this.cmbPLANES.Location = new System.Drawing.Point(93, 40);
+            this.cmbPLANES.Name = "cmbPLANES";
+            this.cmbPLANES.Size = new System.Drawing.Size(159, 21);
+            this.cmbPLANES.TabIndex = 62;
+            // 
             // frmPLAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,7 +265,6 @@ namespace VISTA
         private System.Windows.Forms.Button btnGUARDAR;
         private System.Windows.Forms.Label lbl_NOMBRE;
         private System.Windows.Forms.Label lblTIPO;
-        private System.Windows.Forms.TextBox txtNOMBRE;
         private System.Windows.Forms.TextBox txtTIPO_PLAN;
         private System.Windows.Forms.GroupBox gbLISTA_PLANES;
         private System.Windows.Forms.DataGridView dgvLISTA_PLANES;
@@ -272,5 +274,6 @@ namespace VISTA
         private System.Windows.Forms.Button btnMODIFICAR;
         private System.Windows.Forms.Button btnAGREGAR;
         private System.Windows.Forms.Label lblOBRA_SOCIAL;
+        private System.Windows.Forms.ComboBox cmbPLANES;
     }
 }

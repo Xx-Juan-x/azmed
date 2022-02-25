@@ -52,6 +52,7 @@ namespace VISTA
             // 
             // cmbESPECIALIDADES
             // 
+            this.cmbESPECIALIDADES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbESPECIALIDADES.FormattingEnabled = true;
             this.cmbESPECIALIDADES.Location = new System.Drawing.Point(6, 34);
             this.cmbESPECIALIDADES.Name = "cmbESPECIALIDADES";

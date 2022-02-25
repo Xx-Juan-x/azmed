@@ -32,7 +32,7 @@ namespace VISTA
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
 
-            ARMA_COMBOBOX_EMAIL();
+            //ARMA_COMBOBOX_EMAIL();
             
             ARMA_GRILLA("A");
             MODO_GRILLA();
@@ -44,7 +44,12 @@ namespace VISTA
             cmbROL.Items.Add("JEFE DE COMPRAS");
 
 
-            
+            cmbFILTRO_TIPO.Items.Add("TODOS");
+            cmbFILTRO_TIPO.SelectedItem = "TODOS";
+            cmbFILTRO_TIPO.Items.Add("ADMINISTRADOR");
+            cmbFILTRO_TIPO.Items.Add("PACIENTE");
+            cmbFILTRO_TIPO.Items.Add("PROFESIONAL");
+            cmbFILTRO_TIPO.Items.Add("JEFE DE COMPRAS");
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
@@ -60,21 +65,21 @@ namespace VISTA
             }
             if (TIPO == "B")
             {
-                string FILTRO_USUARIO_EMAIL = cmbFILTRO_EMAIL.Text;
+                string FILTRO_TIPO_USUARIO = cmbFILTRO_TIPO.Text;
 
-                if (FILTRO_USUARIO_EMAIL == "TODOS")
+                if (FILTRO_TIPO_USUARIO == "TODOS")
                 {
                     dgvLISTA_USUARIOS.DataSource = null;
                     dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
                 }
                 else
                 {
-                    var LISTA_EMAIL = (from a in cUSUARIOS.OBTENER_USUARIOS()
-                                       where a.EMAIL == FILTRO_USUARIO_EMAIL
+                    var LISTA_TIPOS_USUARIO = (from a in cUSUARIOS.OBTENER_USUARIOS()
+                                       where a.TIPO == FILTRO_TIPO_USUARIO
                                        select a).ToList();
 
                     dgvLISTA_USUARIOS.DataSource = null;
-                    dgvLISTA_USUARIOS.DataSource = LISTA_EMAIL;
+                    dgvLISTA_USUARIOS.DataSource = LISTA_TIPOS_USUARIO;
                 }
             }
 
@@ -89,13 +94,13 @@ namespace VISTA
             
         }
 
-        private void ARMA_COMBOBOX_EMAIL()
+        /*private void ARMA_COMBOBOX_EMAIL()
         {
-            cmbFILTRO_EMAIL.DataSource = null;
-            cmbFILTRO_EMAIL.ValueMember = "ID_USUARIO";
-            cmbFILTRO_EMAIL.DisplayMember = "EMAIL";
-            cmbFILTRO_EMAIL.DataSource = cUSUARIOS.OBTENER_USUARIOS();
-        }
+            cmbFILTRO_TIPO.DataSource = null;
+            cmbFILTRO_TIPO.ValueMember = "ID_USUARIO";
+            cmbFILTRO_TIPO.DisplayMember = "TIPO";
+            cmbFILTRO_TIPO.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+        }*/
 
 
         private void MODO_GRILLA()
@@ -276,7 +281,7 @@ namespace VISTA
 
         private void btnBUSCAR_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(cmbFILTRO_EMAIL.Text))
+            if (string.IsNullOrEmpty(cmbFILTRO_TIPO.Text))
             {
                 MessageBox.Show("Debe seleccionar un usuario de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -284,9 +289,6 @@ namespace VISTA
                 ARMA_GRILLA("B");          
         }
 
-        private void btnTODOS_Click(object sender, EventArgs e)
-        {
-            dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
-        }
+        
     }
 }

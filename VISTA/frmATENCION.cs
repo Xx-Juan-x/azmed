@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace VISTA
 {
-    public partial class frmATENCIONES : Form
+    public partial class frmATENCION : Form
     {
-        private static frmATENCIONES instancia;
+        private static frmATENCION instancia;
 
-        public static frmATENCIONES OBTENER_INSTANCIA()
+        public static frmATENCION OBTENER_INSTANCIA()
         {
             if (instancia == null)
             {
-                instancia = new frmATENCIONES();
+                instancia = new frmATENCION();
             }
             if (instancia.IsDisposed)
             {
-                instancia = new frmATENCIONES();
+                instancia = new frmATENCION();
             }
             return instancia;
         }
@@ -35,7 +35,7 @@ namespace VISTA
         string ACCION;
 
 
-        public frmATENCIONES()
+        public frmATENCION()
         {
             InitializeComponent();
 
@@ -43,14 +43,15 @@ namespace VISTA
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
 
-            cmbDIA_LABORAL.Items.Add("SELECCIONE...");         
-            cmbDIA_LABORAL.Items.Add("LUNES");
+                    
+            /*cmbDIA_LABORAL.Items.Add("LUNES");
             cmbDIA_LABORAL.Items.Add("MARTES");
             cmbDIA_LABORAL.Items.Add("MIERCOLES");
             cmbDIA_LABORAL.Items.Add("JUEVES");
             cmbDIA_LABORAL.Items.Add("VIERNES");
             cmbDIA_LABORAL.Items.Add("SABADO");
-            cmbDIA_LABORAL.Items.Add("DOMINGO");
+            cmbDIA_LABORAL.Items.Add("DOMINGO");*/
+            cmbDIA_LABORAL.Items.Add("SELECCIONE...");
             cmbDIA_LABORAL.SelectedItem = "SELECCIONE...";
 
 
@@ -95,16 +96,7 @@ namespace VISTA
                     dgvLISTA_ATENCIONES.DataSource = null;
                     dgvLISTA_ATENCIONES.DataSource = LISTA_ESPECIALIDADES;
                 }
-
-            }
-            
-               
-            //dgvLISTA_ATENCIONES.DataSource.Columns("HORA_INICIO").ValueType = typeof(System.Int32);
-            /*dgvLISTA_ATENCIONES.AutoGenerateColumns = false;
-            if (dgvLISTA_ATENCIONES.Columns.Contains("ESPECIALIDAD"))
-            {
-                dgvLISTA_ATENCIONES.Columns.Remove("ESPECIALIDAD");
-            }*/
+            }         
         }
 
         private void MODO_GRILLA()
@@ -112,19 +104,6 @@ namespace VISTA
             gbLISTA_HORARIOS_ATENCION.Enabled = true;
             gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
             gbHORARIOS_ATENCION.Enabled = false;
-
-            //cmbFILTRO_ESPECIALIDAD.DataSource = null;
-
-            //AÑADO MI PROPIEDAD ESPECIALIDAD A MI LISTA DE PROFESIONAL
-            //cmbFILTRO_ESPECIALIDAD.DataSource = cATENCIONES.OBTENER_ATENCIONES();
-            //cmbFILTRO_ESPECIALIDAD.DisplayMember = "DIA_LABORAL";
-            
-
-
-            /*DataRow dr = cmbFILTRO_ESPECIALIDADES.NewRow();
-            dr["CategoryName"] = "Select";
-            dr["ID"] = 0;*/
-
         }
 
         private void MODO_DATOS()
@@ -161,7 +140,6 @@ namespace VISTA
 
         private void ARMA_COMBOBOX_PROFESIONALES(int ID_ESPECIALIDAD)
         {
-
             cmbPROFESIONALES.DataSource = null;           
             var LISTA_PROFESIONALES = (from c in cUSUARIOS.OBTENER_PROFESIONALES()
                                        where c.ESPECIALIDADES.ID_ESPECIALIDAD == ID_ESPECIALIDAD
@@ -179,7 +157,7 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar una especialidad de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cmbFILTRO_DIA_LABORAL.SelectedItem == "TODOS")
+            if (cmbFILTRO_DIA_LABORAL.SelectedItem.ToString() == "TODOS")
             {
                 ARMA_GRILLA("A");
             }
@@ -230,7 +208,7 @@ namespace VISTA
                 return;
             }
 
-            if (cmbDIA_LABORAL.SelectedItem == "SELECCIONE...")
+            if (cmbDIA_LABORAL.SelectedItem.ToString() == "SELECCIONE...")
             {
                 MessageBox.Show("Debe seleccionar el día laboral del profesional", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -253,8 +231,7 @@ namespace VISTA
                 cATENCIONES.MODIFICAR_ATENCION(oATENCION);
                 ARMA_GRILLA("B");
             }
-            
-            
+                 
             MODO_GRILLA();
         }      
 
@@ -284,16 +261,12 @@ namespace VISTA
         }
 
         private void cmbESPECIALIDADES_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*if (cmbESPECIALIDADES.SelectedValue.ToString() != null)
-            {
-               
-            }*/
+        {          
             int ID_ESPECIALIDAD = Convert.ToInt32(cmbESPECIALIDADES.SelectedValue);
             ARMA_COMBOBOX_PROFESIONALES(ID_ESPECIALIDAD);
             return;
         }
-
+        
         private void btnCONSULTAR_Click(object sender, EventArgs e)
         {
             if (dgvLISTA_ATENCIONES.CurrentRow == null)
@@ -331,7 +304,7 @@ namespace VISTA
             if (RESPUESTA == DialogResult.Yes)
             {
                 cATENCIONES.ELIMINAR_ATENCION(oATENCION);
-                if (cmbFILTRO_DIA_LABORAL.SelectedItem == "TODOS")
+                if (cmbFILTRO_DIA_LABORAL.SelectedItem.ToString() == "TODOS")
                 {
                     ARMA_GRILLA("A");
                 }
@@ -351,6 +324,36 @@ namespace VISTA
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbPROFESIONALES_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ACCION == "A")
+            {
+                cmbPROFESIONALES.DataSource = null;
+                var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
+                                              where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
+                                              select c.DIA_LABORAL).ToList();
+                List<string> LISTA_DIA = new List<string>();
+                LISTA_DIA.Add("LUNES");
+                LISTA_DIA.Add("MARTES");
+                LISTA_DIA.Add("MIERCOLES");
+                LISTA_DIA.Add("JUEVES");
+                LISTA_DIA.Add("VIERNES");
+                LISTA_DIA.Add("SABADO");
+                LISTA_DIA.Add("DOMINGO");
+                var DIAS_NO_AGREGADOS = LISTA_DIA.Except(LISTA_DIAS_PROFESIONAL).ToList();
+                cmbDIA_LABORAL.DataSource = DIAS_NO_AGREGADOS;
+            }
+            else if (ACCION == "M" || ACCION == "C")
+            {
+                cmbPROFESIONALES.DataSource = null;
+                var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
+                                              where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
+                                              select c.DIA_LABORAL).ToList();
+                
+                cmbDIA_LABORAL.DataSource = LISTA_DIAS_PROFESIONAL;
+            }         
         }
     }
 }

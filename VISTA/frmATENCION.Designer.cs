@@ -1,7 +1,7 @@
 ﻿
 namespace VISTA
 {
-    partial class frmATENCIONES
+    partial class frmATENCION
     {
         /// <summary>
         /// Required designer variable.
@@ -82,6 +82,7 @@ namespace VISTA
             this.cmbPROFESIONALES.Name = "cmbPROFESIONALES";
             this.cmbPROFESIONALES.Size = new System.Drawing.Size(178, 21);
             this.cmbPROFESIONALES.TabIndex = 78;
+            this.cmbPROFESIONALES.SelectedIndexChanged += new System.EventHandler(this.cmbPROFESIONALES_SelectedIndexChanged);
             // 
             // lblPROFESIONAL
             // 
@@ -174,7 +175,7 @@ namespace VISTA
             // lblFILTRO_DIA_LABORAL
             // 
             this.lblFILTRO_DIA_LABORAL.AutoSize = true;
-            this.lblFILTRO_DIA_LABORAL.Location = new System.Drawing.Point(6, 32);
+            this.lblFILTRO_DIA_LABORAL.Location = new System.Drawing.Point(219, 29);
             this.lblFILTRO_DIA_LABORAL.Name = "lblFILTRO_DIA_LABORAL";
             this.lblFILTRO_DIA_LABORAL.Size = new System.Drawing.Size(154, 13);
             this.lblFILTRO_DIA_LABORAL.TabIndex = 67;
@@ -184,7 +185,7 @@ namespace VISTA
             // 
             this.cmbFILTRO_DIA_LABORAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFILTRO_DIA_LABORAL.FormattingEnabled = true;
-            this.cmbFILTRO_DIA_LABORAL.Location = new System.Drawing.Point(166, 26);
+            this.cmbFILTRO_DIA_LABORAL.Location = new System.Drawing.Point(379, 26);
             this.cmbFILTRO_DIA_LABORAL.Name = "cmbFILTRO_DIA_LABORAL";
             this.cmbFILTRO_DIA_LABORAL.Size = new System.Drawing.Size(159, 21);
             this.cmbFILTRO_DIA_LABORAL.TabIndex = 67;
@@ -364,7 +365,7 @@ namespace VISTA
             this.HORA_INICIO.TabIndex = 65;
             this.HORA_INICIO.Text = "HORA DE INICIO:";
             // 
-            // frmATENCIONES
+            // frmATENCION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,8 +373,8 @@ namespace VISTA
             this.Controls.Add(this.gbDATOS_PROFESIONAL_HORARIOS);
             this.Controls.Add(this.gbLISTA_HORARIOS_ATENCION);
             this.Controls.Add(this.gbHORARIOS_ATENCION);
-            this.Name = "frmATENCIONES";
-            this.Text = "frmATENCIONES";
+            this.Name = "frmATENCION";
+            this.Text = "GESTIÓN DE ATENCIONES DE PROFESIONALES";
             this.gbDATOS_PROFESIONAL_HORARIOS.ResumeLayout(false);
             this.gbDATOS_PROFESIONAL_HORARIOS.PerformLayout();
             this.gbLISTA_HORARIOS_ATENCION.ResumeLayout(false);

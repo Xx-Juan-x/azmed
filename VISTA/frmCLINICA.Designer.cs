@@ -54,6 +54,7 @@ namespace VISTA
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
+            this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +66,11 @@ namespace VISTA
             this.pROFESIONALESToolStripMenuItem,
             this.tURNOSToolStripMenuItem,
             this.cOMPRASToolStripMenuItem,
-            this.rEPORTESToolStripMenuItem});
+            this.rEPORTESToolStripMenuItem,
+            this.sALIRToolStripMenuItem});
             this.mnStripMENU_CLINICA.Location = new System.Drawing.Point(0, 0);
             this.mnStripMENU_CLINICA.Name = "mnStripMENU_CLINICA";
-            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(490, 24);
+            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(752, 24);
             this.mnStripMENU_CLINICA.TabIndex = 1;
             this.mnStripMENU_CLINICA.Text = "menuStrip1";
             // 
@@ -244,23 +246,32 @@ namespace VISTA
             this.lblTIPO_USUARIO.AutoSize = true;
             this.lblTIPO_USUARIO.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTIPO_USUARIO.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTIPO_USUARIO.Location = new System.Drawing.Point(352, 199);
+            this.lblTIPO_USUARIO.Location = new System.Drawing.Point(702, 0);
             this.lblTIPO_USUARIO.Name = "lblTIPO_USUARIO";
             this.lblTIPO_USUARIO.Size = new System.Drawing.Size(38, 19);
             this.lblTIPO_USUARIO.TabIndex = 3;
             this.lblTIPO_USUARIO.Text = "ROL";
             // 
+            // sALIRToolStripMenuItem
+            // 
+            this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
+            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.sALIRToolStripMenuItem.Text = "CERRAR SESION";
+            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 227);
+            this.ClientSize = new System.Drawing.Size(752, 227);
             this.Controls.Add(this.lblTIPO_USUARIO);
             this.Controls.Add(this.mnStripMENU_CLINICA);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCLINICA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CLINICA:: AZMED";
             this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCLINICA_Load);
             this.mnStripMENU_CLINICA.ResumeLayout(false);
             this.mnStripMENU_CLINICA.PerformLayout();
@@ -296,5 +307,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem facturarPacienteToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.Label lblTIPO_USUARIO;
+        private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
     }
 }
