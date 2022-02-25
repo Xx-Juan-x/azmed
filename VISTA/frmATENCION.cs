@@ -174,6 +174,7 @@ namespace VISTA
             cmbESPECIALIDADES.ValueMember = "ID_ESPECIALIDAD";
             cmbESPECIALIDADES.DisplayMember = "NOMBRE";
             cmbESPECIALIDADES.DataSource = cESPECIALIDADES.OBTENER_ESPECIALIDADES();
+            cmbDIA_LABORAL.Enabled = true;
             MODO_DATOS();
         }
 
@@ -255,6 +256,7 @@ namespace VISTA
             numericHORA_INICIO.Value = oATENCION.HORA_INICIO;
             numericHORA_FIN.Value = oATENCION.HORA_FIN;
             cmbDIA_LABORAL.Text = oATENCION.DIA_LABORAL.ToString();
+            cmbDIA_LABORAL.Enabled = false;
 
             ARMA_GRILLA("B");
             MODO_DATOS();
@@ -287,6 +289,7 @@ namespace VISTA
             numericHORA_INICIO.Value = oATENCION.HORA_INICIO;
             numericHORA_FIN.Value = oATENCION.HORA_FIN;
             cmbDIA_LABORAL.Text = oATENCION.DIA_LABORAL.ToString();
+            cmbDIA_LABORAL.Enabled = false;
 
             MODO_DATOS();
         }
@@ -330,7 +333,7 @@ namespace VISTA
         {
             if (ACCION == "A")
             {
-                cmbPROFESIONALES.DataSource = null;
+                //cmbPROFESIONALES.DataSource = null;
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();
@@ -347,7 +350,7 @@ namespace VISTA
             }
             else if (ACCION == "M" || ACCION == "C")
             {
-                cmbPROFESIONALES.DataSource = null;
+                //cmbPROFESIONALES.DataSource = null;
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();

@@ -130,6 +130,6 @@ namespace VISTA
             frmLOGIN FORMULARIO_LOGIN = frmLOGIN.OBTENER_INSTANCIA();
             FORMULARIO_LOGIN.Show();
             this.Close();
-        }
+        }       
     }
 }

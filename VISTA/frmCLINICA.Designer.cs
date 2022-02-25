@@ -53,8 +53,8 @@ namespace VISTA
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.mnStripMENU_CLINICA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@ namespace VISTA
             this.sALIRToolStripMenuItem});
             this.mnStripMENU_CLINICA.Location = new System.Drawing.Point(0, 0);
             this.mnStripMENU_CLINICA.Name = "mnStripMENU_CLINICA";
-            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(752, 24);
+            this.mnStripMENU_CLINICA.Size = new System.Drawing.Size(702, 24);
             this.mnStripMENU_CLINICA.TabIndex = 1;
             this.mnStripMENU_CLINICA.Text = "menuStrip1";
             // 
@@ -241,17 +241,6 @@ namespace VISTA
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Text = "Consulta y Reportes de Compras Realizadas";
             // 
-            // lblTIPO_USUARIO
-            // 
-            this.lblTIPO_USUARIO.AutoSize = true;
-            this.lblTIPO_USUARIO.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTIPO_USUARIO.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTIPO_USUARIO.Location = new System.Drawing.Point(702, 0);
-            this.lblTIPO_USUARIO.Name = "lblTIPO_USUARIO";
-            this.lblTIPO_USUARIO.Size = new System.Drawing.Size(38, 19);
-            this.lblTIPO_USUARIO.TabIndex = 3;
-            this.lblTIPO_USUARIO.Text = "ROL";
-            // 
             // sALIRToolStripMenuItem
             // 
             this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
@@ -259,11 +248,24 @@ namespace VISTA
             this.sALIRToolStripMenuItem.Text = "CERRAR SESION";
             this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
             // 
+            // lblTIPO_USUARIO
+            // 
+            this.lblTIPO_USUARIO.AutoSize = true;
+            this.lblTIPO_USUARIO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTIPO_USUARIO.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPO_USUARIO.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTIPO_USUARIO.Location = new System.Drawing.Point(12, 24);
+            this.lblTIPO_USUARIO.Name = "lblTIPO_USUARIO";
+            this.lblTIPO_USUARIO.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTIPO_USUARIO.Size = new System.Drawing.Size(40, 21);
+            this.lblTIPO_USUARIO.TabIndex = 3;
+            this.lblTIPO_USUARIO.Text = "ROL";
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 227);
+            this.ClientSize = new System.Drawing.Size(702, 308);
             this.Controls.Add(this.lblTIPO_USUARIO);
             this.Controls.Add(this.mnStripMENU_CLINICA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

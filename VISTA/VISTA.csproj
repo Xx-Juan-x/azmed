@@ -104,6 +104,12 @@
     <Compile Include="frmREGISTRO_PACIENTE.Designer.cs">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTURNOS_CONSULTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTURNOS_CONSULTA.Designer.cs">
+      <DependentUpon>frmTURNOS_CONSULTA.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUSUARIOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmREGISTRO_PACIENTE.resx">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTURNOS_CONSULTA.resx">
+      <DependentUpon>frmTURNOS_CONSULTA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUSUARIOS.resx">
       <DependentUpon>frmUSUARIOS.cs</DependentUpon>
