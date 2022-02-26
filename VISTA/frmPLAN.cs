@@ -48,6 +48,9 @@ namespace VISTA
             cmbPLANES.Items.Add("JUBILADOS");
             cmbPLANES.Items.Add("ESTUDIANTE");
 
+            cmbOBRA_SOCIAL.Items.Add("SELECCIONE...");
+            cmbOBRA_SOCIAL.SelectedItem = "SELECCIONE...";
+
             ARMA_GRILLA();
             MODO_GRILLA();
         }
@@ -74,7 +77,7 @@ namespace VISTA
 
             //AÑADO MI PROPIEDAD OBRA SOCIAL A MI PLAN
             cmbOBRA_SOCIAL.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
-            cmbOBRA_SOCIAL.DisplayMember = "TIPO_OBRA_SOCIAL";
+            cmbOBRA_SOCIAL.DisplayMember = "NOMBRE";
 
             if (ACCION == "C")
             {
@@ -132,6 +135,7 @@ namespace VISTA
             // LIMPIO LA TEXTBOX
             cmbPLANES.Text = "SELECCIONE...";
             txtTIPO_PLAN.Clear();
+            cmbOBRA_SOCIAL.SelectedItem = null;
             MODO_GRILLA();
             ARMA_GRILLA();
         }
@@ -150,9 +154,8 @@ namespace VISTA
             //ASIGNO EL CONTENIDO DE LOS CAMPOS CON MIS OBJETOS CORRESPONDIENTES
             cmbPLANES.Text = oPLAN.NOMBRE;
             txtTIPO_PLAN.Text = oPLAN.TIPO.ToString();
-            cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
-
             MODO_DATOS();
+            cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
         }
 
         private void btnCONSULTAR_Click(object sender, EventArgs e)
@@ -168,9 +171,8 @@ namespace VISTA
 
             cmbPLANES.Text = oPLAN.NOMBRE;
             txtTIPO_PLAN.Text = oPLAN.TIPO.ToString();
-            cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
-
             MODO_DATOS();
+            cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
         }
 
         private void btnELIMINAR_Click(object sender, EventArgs e)
@@ -193,14 +195,25 @@ namespace VISTA
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
         {
-            cmbPLANES.Text = "SELECCIONE..."; 
+            cmbPLANES.Text = "SELECCIONE...";          
             txtTIPO_PLAN.Clear();
+            cmbOBRA_SOCIAL.SelectedItem = null;
             MODO_GRILLA();
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtTIPO_PLAN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

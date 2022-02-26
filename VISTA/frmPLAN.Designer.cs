@@ -30,6 +30,7 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_PLAN = new System.Windows.Forms.GroupBox();
+            this.cmbPLANES = new System.Windows.Forms.ComboBox();
             this.lblOBRA_SOCIAL = new System.Windows.Forms.Label();
             this.cmbOBRA_SOCIAL = new System.Windows.Forms.ComboBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@ namespace VISTA
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
-            this.cmbPLANES = new System.Windows.Forms.ComboBox();
             this.gbDATOS_PLAN.SuspendLayout();
             this.gbLISTA_PLANES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PLANES)).BeginInit();
@@ -66,6 +66,15 @@ namespace VISTA
             this.gbDATOS_PLAN.TabIndex = 58;
             this.gbDATOS_PLAN.TabStop = false;
             this.gbDATOS_PLAN.Text = "DATOS DEL PLAN";
+            // 
+            // cmbPLANES
+            // 
+            this.cmbPLANES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPLANES.FormattingEnabled = true;
+            this.cmbPLANES.Location = new System.Drawing.Point(93, 40);
+            this.cmbPLANES.Name = "cmbPLANES";
+            this.cmbPLANES.Size = new System.Drawing.Size(159, 21);
+            this.cmbPLANES.TabIndex = 62;
             // 
             // lblOBRA_SOCIAL
             // 
@@ -137,6 +146,7 @@ namespace VISTA
             this.txtTIPO_PLAN.Name = "txtTIPO_PLAN";
             this.txtTIPO_PLAN.Size = new System.Drawing.Size(159, 20);
             this.txtTIPO_PLAN.TabIndex = 8;
+            this.txtTIPO_PLAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTIPO_PLAN_KeyPress);
             // 
             // gbLISTA_PLANES
             // 
@@ -231,15 +241,6 @@ namespace VISTA
             this.btnAGREGAR.UseVisualStyleBackColor = false;
             this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
-            // cmbPLANES
-            // 
-            this.cmbPLANES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPLANES.FormattingEnabled = true;
-            this.cmbPLANES.Location = new System.Drawing.Point(93, 40);
-            this.cmbPLANES.Name = "cmbPLANES";
-            this.cmbPLANES.Size = new System.Drawing.Size(159, 21);
-            this.cmbPLANES.TabIndex = 62;
-            // 
             // frmPLAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +249,7 @@ namespace VISTA
             this.Controls.Add(this.gbDATOS_PLAN);
             this.Controls.Add(this.gbLISTA_PLANES);
             this.Name = "frmPLAN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PLANES";
             this.gbDATOS_PLAN.ResumeLayout(false);
             this.gbDATOS_PLAN.PerformLayout();

@@ -97,6 +97,23 @@ namespace VISTA
                 MessageBox.Show("Debe ingresar un contacto de forma correcta para poder registrar la obra social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (txtCUIL.TextLength != 11)
+            {
+                MessageBox.Show("El Cuil es incorrecto", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (txtCONTACTO.TextLength <= 5)
+            {
+                MessageBox.Show("El contacto es demasiado corto", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (txtCONTACTO.TextLength > 14)
+            {
+                MessageBox.Show("El contacto es demasiado largo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
@@ -186,6 +203,35 @@ namespace VISTA
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
-        }      
+        }
+
+        private void txtNOMBRE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void txtCUIL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void txtCONTACTO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
     }
 }

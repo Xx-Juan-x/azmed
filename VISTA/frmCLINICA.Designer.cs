@@ -251,13 +251,12 @@ namespace VISTA
             // lblTIPO_USUARIO
             // 
             this.lblTIPO_USUARIO.AutoSize = true;
-            this.lblTIPO_USUARIO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTIPO_USUARIO.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTIPO_USUARIO.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblTIPO_USUARIO.Location = new System.Drawing.Point(12, 24);
             this.lblTIPO_USUARIO.Name = "lblTIPO_USUARIO";
             this.lblTIPO_USUARIO.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTIPO_USUARIO.Size = new System.Drawing.Size(40, 21);
+            this.lblTIPO_USUARIO.Size = new System.Drawing.Size(38, 19);
             this.lblTIPO_USUARIO.TabIndex = 3;
             this.lblTIPO_USUARIO.Text = "ROL";
             // 
@@ -268,7 +267,6 @@ namespace VISTA
             this.ClientSize = new System.Drawing.Size(702, 308);
             this.Controls.Add(this.lblTIPO_USUARIO);
             this.Controls.Add(this.mnStripMENU_CLINICA);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCLINICA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CLINICA:: AZMED";

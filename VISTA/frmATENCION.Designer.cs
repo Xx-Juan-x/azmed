@@ -374,6 +374,7 @@ namespace VISTA
             this.Controls.Add(this.gbLISTA_HORARIOS_ATENCION);
             this.Controls.Add(this.gbHORARIOS_ATENCION);
             this.Name = "frmATENCION";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GESTIÓN DE ATENCIONES DE PROFESIONALES";
             this.gbDATOS_PROFESIONAL_HORARIOS.ResumeLayout(false);
             this.gbDATOS_PROFESIONAL_HORARIOS.PerformLayout();

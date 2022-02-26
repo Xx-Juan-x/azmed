@@ -42,18 +42,9 @@ namespace VISTA
             cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
-
-                    
-            /*cmbDIA_LABORAL.Items.Add("LUNES");
-            cmbDIA_LABORAL.Items.Add("MARTES");
-            cmbDIA_LABORAL.Items.Add("MIERCOLES");
-            cmbDIA_LABORAL.Items.Add("JUEVES");
-            cmbDIA_LABORAL.Items.Add("VIERNES");
-            cmbDIA_LABORAL.Items.Add("SABADO");
-            cmbDIA_LABORAL.Items.Add("DOMINGO");*/
+         
             cmbDIA_LABORAL.Items.Add("SELECCIONE...");
             cmbDIA_LABORAL.SelectedItem = "SELECCIONE...";
-
 
             cmbFILTRO_DIA_LABORAL.Items.Add("TODOS");
             cmbFILTRO_DIA_LABORAL.Items.Add("LUNES");
@@ -319,9 +310,8 @@ namespace VISTA
         }
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
-        {
+        {           
             MODO_GRILLA();
-
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)

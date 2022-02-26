@@ -147,6 +147,7 @@ namespace VISTA
             this.Controls.Add(this.gbLISTA_PROFESIONALES);
             this.Controls.Add(this.gbESPECIALIDADES);
             this.Name = "frmASIGNAR_ESPECIALIDAD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASIGNAR ESPECIALIDADES A PROFESIONALES";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PROFESIONALES)).EndInit();
             this.gbESPECIALIDADES.ResumeLayout(false);

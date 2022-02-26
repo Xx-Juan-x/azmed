@@ -37,6 +37,7 @@ namespace VISTA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "frmTURNOS_CONSULTA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REALIZAR UNA CONSULTA";
             this.ResumeLayout(false);
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,6 +51,9 @@ namespace VISTA
             cmbFILTRO_TIPO.Items.Add("PACIENTE");
             cmbFILTRO_TIPO.Items.Add("PROFESIONAL");
             cmbFILTRO_TIPO.Items.Add("JEFE DE COMPRAS");
+
+            
+
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
@@ -81,10 +85,7 @@ namespace VISTA
                     dgvLISTA_USUARIOS.DataSource = null;
                     dgvLISTA_USUARIOS.DataSource = LISTA_TIPOS_USUARIO;
                 }
-            }
-
-            //dgvLISTA_USUARIOS.DataSource = null;         
-            //dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+            }           
 
             dgvLISTA_USUARIOS.AutoGenerateColumns = false;
             if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES"))
@@ -93,15 +94,6 @@ namespace VISTA
             }
             
         }
-
-        /*private void ARMA_COMBOBOX_EMAIL()
-        {
-            cmbFILTRO_TIPO.DataSource = null;
-            cmbFILTRO_TIPO.ValueMember = "ID_USUARIO";
-            cmbFILTRO_TIPO.DisplayMember = "TIPO";
-            cmbFILTRO_TIPO.DataSource = cUSUARIOS.OBTENER_USUARIOS();
-        }*/
-
 
         private void MODO_GRILLA()
         {
@@ -121,6 +113,27 @@ namespace VISTA
             else
             {
                 btnGUARDAR.Enabled = true;
+            }
+        }
+
+        private Boolean EMAIL_BIEN_ESCRITO(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -145,13 +158,18 @@ namespace VISTA
             {
                 MessageBox.Show("Debe ingresar el apellido del usuario para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }        
 
             if (string.IsNullOrEmpty(txtEMAIL.Text))
             {
                 MessageBox.Show("Debe ingresar el email del usuario para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (!EMAIL_BIEN_ESCRITO(txtEMAIL.Text))
+            {
+                MessageBox.Show("El mail es incorrecto", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }           
 
             if (string.IsNullOrWhiteSpace(txtPASSWORD.Text))
             {
@@ -170,6 +188,17 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un rol para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (txtPASSWORD.TextLength < 8 || txtCONFIRMAR_PASSWORD.TextLength < 8)
+            {
+                MessageBox.Show("La contraseña debe contener entre 8 y 16 caracteres", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (txtPASSWORD.TextLength > 16 || txtCONFIRMAR_PASSWORD.TextLength > 16)
+            {
+                MessageBox.Show("La contraseña debe contener entre 8 y 16 caracteres", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }               
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
@@ -289,6 +318,24 @@ namespace VISTA
                 ARMA_GRILLA("B");          
         }
 
-        
+        private void txtNOMBRE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtAPELLIDO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

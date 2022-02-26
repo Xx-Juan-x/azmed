@@ -128,6 +128,7 @@ namespace VISTA
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(160, 20);
             this.txtNOMBRE.TabIndex = 6;
+            this.txtNOMBRE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress);
             // 
             // txtCUIL
             // 
@@ -135,6 +136,7 @@ namespace VISTA
             this.txtCUIL.Name = "txtCUIL";
             this.txtCUIL.Size = new System.Drawing.Size(160, 20);
             this.txtCUIL.TabIndex = 8;
+            this.txtCUIL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCUIL_KeyPress);
             // 
             // txtCONTACTO
             // 
@@ -142,6 +144,7 @@ namespace VISTA
             this.txtCONTACTO.Name = "txtCONTACTO";
             this.txtCONTACTO.Size = new System.Drawing.Size(160, 20);
             this.txtCONTACTO.TabIndex = 9;
+            this.txtCONTACTO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCONTACTO_KeyPress);
             // 
             // gbLISTA_OBRAS_SOCIALES
             // 
@@ -244,6 +247,7 @@ namespace VISTA
             this.Controls.Add(this.gbDATOS_OBRA_SOCIAL);
             this.Controls.Add(this.gbLISTA_OBRAS_SOCIALES);
             this.Name = "frmOBRA_SOCIAL";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OBRAS SOCIALES";
             this.gbDATOS_OBRA_SOCIAL.ResumeLayout(false);
             this.gbDATOS_OBRA_SOCIAL.PerformLayout();

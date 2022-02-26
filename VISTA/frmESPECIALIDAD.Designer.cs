@@ -102,6 +102,7 @@ namespace VISTA
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(123, 20);
             this.txtNOMBRE.TabIndex = 6;
+            this.txtNOMBRE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress);
             // 
             // gbLISTA_ESPECIALIDADES
             // 
@@ -204,6 +205,7 @@ namespace VISTA
             this.Controls.Add(this.gbDATOS_ESPECIALIDAD);
             this.Controls.Add(this.gbLISTA_ESPECIALIDADES);
             this.Name = "frmESPECIALIDAD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ESPECIALIDADES";
             this.gbDATOS_ESPECIALIDAD.ResumeLayout(false);
             this.gbDATOS_ESPECIALIDAD.PerformLayout();

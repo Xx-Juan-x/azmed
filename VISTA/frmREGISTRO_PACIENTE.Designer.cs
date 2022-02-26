@@ -96,6 +96,7 @@ namespace VISTA
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(209, 20);
             this.txtNOMBRE.TabIndex = 5;
+            this.txtNOMBRE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress);
             // 
             // txtAPELLIDO
             // 
@@ -103,6 +104,7 @@ namespace VISTA
             this.txtAPELLIDO.Name = "txtAPELLIDO";
             this.txtAPELLIDO.Size = new System.Drawing.Size(209, 20);
             this.txtAPELLIDO.TabIndex = 6;
+            this.txtAPELLIDO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAPELLIDO_KeyPress);
             // 
             // txtEMAIL
             // 

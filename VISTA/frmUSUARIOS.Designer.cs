@@ -101,6 +101,7 @@ namespace VISTA
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(159, 20);
             this.txtNOMBRE.TabIndex = 4;
+            this.txtNOMBRE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress);
             // 
             // txtAPELLIDO
             // 
@@ -108,6 +109,7 @@ namespace VISTA
             this.txtAPELLIDO.Name = "txtAPELLIDO";
             this.txtAPELLIDO.Size = new System.Drawing.Size(159, 20);
             this.txtAPELLIDO.TabIndex = 5;
+            this.txtAPELLIDO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAPELLIDO_KeyPress);
             // 
             // txtEMAIL
             // 
@@ -346,6 +348,7 @@ namespace VISTA
             this.Controls.Add(this.gbLISTA_USUARIOS);
             this.Controls.Add(this.gbDATOS_USUARIO);
             this.Name = "frmUSUARIOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRO DE USUARIOS";
             this.gbDATOS_USUARIO.ResumeLayout(false);
             this.gbDATOS_USUARIO.PerformLayout();
