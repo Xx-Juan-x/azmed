@@ -92,8 +92,8 @@ namespace VISTA
             // pACIENTESToolStripMenuItem
             // 
             this.pACIENTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarPlanesToolStripMenuItem,
-            this.registrarObrasSocialesToolStripMenuItem});
+            this.registrarObrasSocialesToolStripMenuItem,
+            this.registrarPlanesToolStripMenuItem});
             this.pACIENTESToolStripMenuItem.Name = "pACIENTESToolStripMenuItem";
             this.pACIENTESToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.pACIENTESToolStripMenuItem.Text = "PACIENTES";

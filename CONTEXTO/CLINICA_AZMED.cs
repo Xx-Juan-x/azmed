@@ -56,6 +56,7 @@ namespace CONTEXTO
             modelBuilder.Entity<MODELO.ATENCION>()
                 .HasKey(c => c.ID_ATENCION);
         }
+
     }
 
     //public class MyEntity

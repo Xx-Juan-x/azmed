@@ -93,6 +93,7 @@ namespace VISTA
             // txtNOMBRE
             // 
             this.txtNOMBRE.Location = new System.Drawing.Point(120, 79);
+            this.txtNOMBRE.Multiline = true;
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(209, 20);
             this.txtNOMBRE.TabIndex = 5;

@@ -30,12 +30,15 @@ namespace VISTA
 
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private MODELO.OBRA_SOCIAL oOBRA_SOCIAL;
+        private CONTROLADORA.PLANES cPLANES;
+        private string OBRA_SOCIAL;
         string ACCION;
 
         public frmOBRA_SOCIAL()
         {
             InitializeComponent();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
+            cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             ARMA_GRILLA();
             MODO_GRILLA();
         }
@@ -183,13 +186,37 @@ namespace VISTA
             }
             oOBRA_SOCIAL = (MODELO.OBRA_SOCIAL)dgvLISTA_OBRAS_SOCIALES.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar la obra social " + oOBRA_SOCIAL.NOMBRE + " de la lista de obras sociales?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (RESPUESTA == DialogResult.Yes)
+            OBRA_SOCIAL = "";
+            foreach (DataGridViewRow row in dgvLISTA_OBRAS_SOCIALES.SelectedRows)
             {
-                cOBRAS_SOCIALES.ELIMINAR_OBRA_SOCIAL(oOBRA_SOCIAL);
-                ARMA_GRILLA();
+                OBRA_SOCIAL = (string)row.Cells["NOMBRE"].Value;
             }
 
+            if (OBRA_SOCIAL == "")
+            {
+                MessageBox.Show("Debe seleccionar la fila entera", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                var LISTA_PLANES = (from a in cPLANES.OBTENER_PLANES()
+                                    where a.OBRA_SOCIAL.NOMBRE == OBRA_SOCIAL
+                                    select a).ToList();
+                if (LISTA_PLANES.Count == 0)
+                {
+                    DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar la obra social " + oOBRA_SOCIAL.NOMBRE + " de la lista de obras sociales?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (RESPUESTA == DialogResult.Yes)
+                    {
+                        cOBRAS_SOCIALES.ELIMINAR_OBRA_SOCIAL(oOBRA_SOCIAL);
+                        ARMA_GRILLA();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La Obra Social ya cuenta con uno o mas planes, borre los planes vinculados a esta obra social antes de eliminarla", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
         }
 
         private void btnCANCELAR_Click_1(object sender, EventArgs e)

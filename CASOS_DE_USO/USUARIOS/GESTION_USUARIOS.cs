@@ -26,5 +26,11 @@ namespace CASOS_DE_USO.USUARIOS
             return RESPUESTA;
         }
 
+        /*public static int CANTIDAD_PROFESIONALES_ESPECIALIDAD(string ESP, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
+        {
+            // c => c.TIPO es una expresión lambda que representa cada titular de las cuentas del banco
+            return AZMED_CLINICA.USUARIOS.Count(c => c.ESPECIALIDADES.NOMBRE == ESP);
+        }*/
+
     }
 }

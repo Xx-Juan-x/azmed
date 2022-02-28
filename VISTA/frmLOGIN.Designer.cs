@@ -159,7 +159,7 @@ namespace VISTA
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLOGIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LOGIN";
+            this.Text = "7";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -31,19 +31,15 @@ namespace VISTA
         public frmUSUARIOS()
         {
             InitializeComponent();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
-
-            //ARMA_COMBOBOX_EMAIL();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();           
             
             ARMA_GRILLA("A");
             MODO_GRILLA();
-
-            
+          
             cmbROL.Items.Add("ADMINISTRADOR");
             cmbROL.Items.Add("PACIENTE");
             cmbROL.Items.Add("PROFESIONAL");
             cmbROL.Items.Add("JEFE DE COMPRAS");
-
 
             cmbFILTRO_TIPO.Items.Add("TODOS");
             cmbFILTRO_TIPO.SelectedItem = "TODOS";
@@ -51,9 +47,6 @@ namespace VISTA
             cmbFILTRO_TIPO.Items.Add("PACIENTE");
             cmbFILTRO_TIPO.Items.Add("PROFESIONAL");
             cmbFILTRO_TIPO.Items.Add("JEFE DE COMPRAS");
-
-            
-
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
@@ -91,8 +84,7 @@ namespace VISTA
             if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES"))
             {
                 dgvLISTA_USUARIOS.Columns.Remove("ESPECIALIDADES");
-            }
-            
+            }        
         }
 
         private void MODO_GRILLA()
@@ -244,6 +236,19 @@ namespace VISTA
                 return;
             }
             oUSUARIO = (MODELO.USUARIO)dgvLISTA_USUARIOS.CurrentRow.DataBoundItem;
+
+            
+            /*string TIPO = "";
+            foreach (DataGridViewRow row in dgvLISTA_USUARIOS.SelectedRows)
+            {
+                TIPO = (string)row.Cells["TIPO"].Value;
+            }
+
+            if (TIPO == "PACIENTE")
+            {
+                MessageBox.Show("No puede modificar un usuario de tipo paciente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }*/
 
             ACCION = "M";
 

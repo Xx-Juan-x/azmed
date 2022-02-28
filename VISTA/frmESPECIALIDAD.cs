@@ -30,12 +30,14 @@ namespace VISTA
 
         private CONTROLADORA.ESPECIALIDADES cESPECIALIDADES;
         private MODELO.ESPECIALIDAD oESPECIALIDAD;
+        private CONTROLADORA.USUARIOS cUSUARIOS;
         string ACCION;
-
+        private string ESP;
         public frmESPECIALIDAD()
         {
             InitializeComponent();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             ARMA_GRILLA();
             MODO_GRILLA();
         }
@@ -127,11 +129,37 @@ namespace VISTA
             }
             oESPECIALIDAD = (MODELO.ESPECIALIDAD)dgvLISTA_ESPECIALIDADES.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar la especialidad " + oESPECIALIDAD.NOMBRE + " de la lista de especialidades?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (RESPUESTA == DialogResult.Yes)
+            ESP = "";
+            foreach (DataGridViewRow row in dgvLISTA_ESPECIALIDADES.SelectedRows)
             {
-                cESPECIALIDADES.ELIMINAR_ESPECIALIDAD(oESPECIALIDAD);
-                ARMA_GRILLA();
+                ESP = (string)row.Cells["NOMBRE"].Value;
+            }
+            
+            if (ESP == "")
+            {
+                MessageBox.Show("Debe seleccionar la fila entera", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                var LISTA_PROFESIONALES = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
+                                           where a.ESPECIALIDADES.NOMBRE == ESP
+                                           select a).ToList();
+                if (LISTA_PROFESIONALES.Count == 0)
+                {
+
+                    DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar la especialidad " + oESPECIALIDAD.NOMBRE + " de la lista de especialidades?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (RESPUESTA == DialogResult.Yes)
+                    {
+                        cESPECIALIDADES.ELIMINAR_ESPECIALIDAD(oESPECIALIDAD);
+                        ARMA_GRILLA();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La especialidad ya cuenta con uno o mas profesionales, desvincule sus especialidades antes de borrar esta especialidad.", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
         }
 
