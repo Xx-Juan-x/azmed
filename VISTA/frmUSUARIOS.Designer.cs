@@ -160,7 +160,7 @@ namespace VISTA
             this.gbDATOS_USUARIO.Controls.Add(this.lblPASSWORD_USUARIO);
             this.gbDATOS_USUARIO.Controls.Add(this.txtEMAIL);
             this.gbDATOS_USUARIO.Controls.Add(this.txtAPELLIDO);
-            this.gbDATOS_USUARIO.Location = new System.Drawing.Point(736, 12);
+            this.gbDATOS_USUARIO.Location = new System.Drawing.Point(797, 12);
             this.gbDATOS_USUARIO.Name = "gbDATOS_USUARIO";
             this.gbDATOS_USUARIO.Size = new System.Drawing.Size(261, 379);
             this.gbDATOS_USUARIO.TabIndex = 10;
@@ -225,7 +225,7 @@ namespace VISTA
             this.gbLISTA_USUARIOS.Controls.Add(this.btnAGREGAR);
             this.gbLISTA_USUARIOS.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_USUARIOS.Name = "gbLISTA_USUARIOS";
-            this.gbLISTA_USUARIOS.Size = new System.Drawing.Size(718, 415);
+            this.gbLISTA_USUARIOS.Size = new System.Drawing.Size(779, 415);
             this.gbLISTA_USUARIOS.TabIndex = 11;
             this.gbLISTA_USUARIOS.TabStop = false;
             this.gbLISTA_USUARIOS.Text = "LISTA DE USUARIOS";
@@ -233,7 +233,7 @@ namespace VISTA
             // lblFILTRO_TIPO
             // 
             this.lblFILTRO_TIPO.AutoSize = true;
-            this.lblFILTRO_TIPO.Location = new System.Drawing.Point(334, 25);
+            this.lblFILTRO_TIPO.Location = new System.Drawing.Point(395, 25);
             this.lblFILTRO_TIPO.Name = "lblFILTRO_TIPO";
             this.lblFILTRO_TIPO.Size = new System.Drawing.Size(105, 13);
             this.lblFILTRO_TIPO.TabIndex = 70;
@@ -243,7 +243,7 @@ namespace VISTA
             // 
             this.cmbFILTRO_TIPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFILTRO_TIPO.FormattingEnabled = true;
-            this.cmbFILTRO_TIPO.Location = new System.Drawing.Point(445, 22);
+            this.cmbFILTRO_TIPO.Location = new System.Drawing.Point(506, 22);
             this.cmbFILTRO_TIPO.Name = "cmbFILTRO_TIPO";
             this.cmbFILTRO_TIPO.Size = new System.Drawing.Size(159, 21);
             this.cmbFILTRO_TIPO.TabIndex = 69;
@@ -254,7 +254,7 @@ namespace VISTA
             this.btnBUSCAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBUSCAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBUSCAR.ForeColor = System.Drawing.Color.White;
-            this.btnBUSCAR.Location = new System.Drawing.Point(610, 14);
+            this.btnBUSCAR.Location = new System.Drawing.Point(671, 14);
             this.btnBUSCAR.Name = "btnBUSCAR";
             this.btnBUSCAR.Size = new System.Drawing.Size(102, 35);
             this.btnBUSCAR.TabIndex = 68;
@@ -267,7 +267,7 @@ namespace VISTA
             this.dgvLISTA_USUARIOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLISTA_USUARIOS.Location = new System.Drawing.Point(6, 55);
             this.dgvLISTA_USUARIOS.Name = "dgvLISTA_USUARIOS";
-            this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(706, 324);
+            this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(767, 324);
             this.dgvLISTA_USUARIOS.TabIndex = 61;
             // 
             // btnCONSULTAR
@@ -290,7 +290,7 @@ namespace VISTA
             this.btnCERRAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(624, 385);
+            this.btnCERRAR.Location = new System.Drawing.Point(685, 385);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(88, 23);
             this.btnCERRAR.TabIndex = 59;
@@ -344,7 +344,7 @@ namespace VISTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 432);
+            this.ClientSize = new System.Drawing.Size(1070, 432);
             this.Controls.Add(this.gbLISTA_USUARIOS);
             this.Controls.Add(this.gbDATOS_USUARIO);
             this.Name = "frmUSUARIOS";

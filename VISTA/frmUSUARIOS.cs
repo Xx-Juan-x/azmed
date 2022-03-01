@@ -205,11 +205,11 @@ namespace VISTA
             {
                 if (ACCION == "A")
                 {
-                    cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);               
+                    cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);              
                 }
                 else if(ACCION == "M")
                 {
-                    cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);                  
+                    cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 }
                 // LIMPIO LA TEXTBOX         
                 txtNOMBRE.Clear();
@@ -218,7 +218,7 @@ namespace VISTA
                 txtPASSWORD.Clear();
                 txtCONFIRMAR_PASSWORD.Clear();
 
-                ARMA_GRILLA("A");
+                ARMA_GRILLA("B");
                 MODO_GRILLA();
                 
             }
