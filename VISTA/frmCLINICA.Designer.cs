@@ -33,8 +33,8 @@ namespace VISTA
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pACIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,19 +98,19 @@ namespace VISTA
             this.pACIENTESToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.pACIENTESToolStripMenuItem.Text = "PACIENTES";
             // 
-            // registrarPlanesToolStripMenuItem
-            // 
-            this.registrarPlanesToolStripMenuItem.Name = "registrarPlanesToolStripMenuItem";
-            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.registrarPlanesToolStripMenuItem.Text = "Registrar Planes";
-            this.registrarPlanesToolStripMenuItem.Click += new System.EventHandler(this.registrarPlanesToolStripMenuItem_Click);
-            // 
             // registrarObrasSocialesToolStripMenuItem
             // 
             this.registrarObrasSocialesToolStripMenuItem.Name = "registrarObrasSocialesToolStripMenuItem";
             this.registrarObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registrarObrasSocialesToolStripMenuItem.Text = "Registrar Obras Sociales";
             this.registrarObrasSocialesToolStripMenuItem.Click += new System.EventHandler(this.registrarObrasSocialesToolStripMenuItem_Click);
+            // 
+            // registrarPlanesToolStripMenuItem
+            // 
+            this.registrarPlanesToolStripMenuItem.Name = "registrarPlanesToolStripMenuItem";
+            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarPlanesToolStripMenuItem.Text = "Registrar Planes";
+            this.registrarPlanesToolStripMenuItem.Click += new System.EventHandler(this.registrarPlanesToolStripMenuItem_Click);
             // 
             // pROFESIONALESToolStripMenuItem
             // 
@@ -156,19 +156,20 @@ namespace VISTA
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem.Text = "Solicitar Consulta";
+            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // estudioToolStripMenuItem
             // 
             this.estudioToolStripMenuItem.Name = "estudioToolStripMenuItem";
-            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estudioToolStripMenuItem.Text = "Solicitar Estudio";
             // 
             // facturarPacienteToolStripMenuItem
             // 
             this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // cOMPRASToolStripMenuItem

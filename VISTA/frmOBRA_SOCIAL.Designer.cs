@@ -73,7 +73,7 @@ namespace VISTA
             this.btnCANCELAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
-            this.btnCANCELAR.Location = new System.Drawing.Point(150, 332);
+            this.btnCANCELAR.Location = new System.Drawing.Point(153, 337);
             this.btnCANCELAR.Name = "btnCANCELAR";
             this.btnCANCELAR.Size = new System.Drawing.Size(88, 23);
             this.btnCANCELAR.TabIndex = 59;
@@ -87,7 +87,7 @@ namespace VISTA
             this.btnGUARDAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(6, 332);
+            this.btnGUARDAR.Location = new System.Drawing.Point(6, 337);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(88, 23);
             this.btnGUARDAR.TabIndex = 55;

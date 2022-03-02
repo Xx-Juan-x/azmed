@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +105,12 @@
     <Compile Include="frmREGISTRO_PACIENTE.Designer.cs">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmREPORTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmREPORTE.Designer.cs">
+      <DependentUpon>frmREPORTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTURNOS_CONSULTA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmREGISTRO_PACIENTE.resx">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmREPORTE.resx">
+      <DependentUpon>frmREPORTE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTURNOS_CONSULTA.resx">
       <DependentUpon>frmTURNOS_CONSULTA.cs</DependentUpon>

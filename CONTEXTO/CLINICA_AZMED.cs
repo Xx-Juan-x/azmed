@@ -43,6 +43,10 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.ATENCION> ATENCIONES { get; set; }
 
+        public virtual DbSet<MODELO.TURNO> TURNOS { get; set; }
+
+        public virtual DbSet<MODELO.FACTURACION> FACTURACION { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -55,6 +59,10 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_PLAN);
             modelBuilder.Entity<MODELO.ATENCION>()
                 .HasKey(c => c.ID_ATENCION);
+            modelBuilder.Entity<MODELO.TURNO>()
+                .HasKey(c => c.ID_TURNO);
+            modelBuilder.Entity<MODELO.FACTURACION>()
+                .HasKey(c => c.NRO_LEGAJO);
         }
 
     }

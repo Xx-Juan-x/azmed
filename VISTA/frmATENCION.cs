@@ -92,9 +92,27 @@ namespace VISTA
 
         private void MODO_GRILLA()
         {
-            gbLISTA_HORARIOS_ATENCION.Enabled = true;
-            gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
-            gbHORARIOS_ATENCION.Enabled = false;
+            if (frmLOGIN.TIPO_USUARIO == "ADMINISTRADOR")
+            {
+                gbLISTA_HORARIOS_ATENCION.Enabled = true;
+                gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
+                gbHORARIOS_ATENCION.Enabled = false;
+                btnAGREGAR.Visible = true;
+                btnMODIFICAR.Visible = true;
+                btnCONSULTAR.Visible = true;
+                btnELIMINAR.Visible = true;
+                gbDATOS_PROFESIONAL_HORARIOS.Visible = true;
+                gbHORARIOS_ATENCION.Visible = true;
+            }
+            else if (frmLOGIN.TIPO_USUARIO == "PROFESIONAL")
+            {
+                btnAGREGAR.Visible = false;
+                btnMODIFICAR.Visible = false;
+                btnCONSULTAR.Visible = false;
+                btnELIMINAR.Visible = false;
+                gbDATOS_PROFESIONAL_HORARIOS.Visible = false;
+                gbHORARIOS_ATENCION.Visible = false;      
+            }
         }
 
         private void MODO_DATOS()
@@ -104,29 +122,30 @@ namespace VISTA
                 gbLISTA_HORARIOS_ATENCION.Enabled = false;
                 gbDATOS_PROFESIONAL_HORARIOS.Enabled = true;
                 gbHORARIOS_ATENCION.Enabled = true;
+                cmbPROFESIONALES.Enabled = true;
                 btnGUARDAR.Enabled = true;
-            }             
-            else if (ACCION == "M")
+            }
+            if (ACCION == "M")
             {
                 gbLISTA_HORARIOS_ATENCION.Enabled = false;
                 gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
                 gbHORARIOS_ATENCION.Enabled = true;
                 btnGUARDAR.Enabled = true;
             }
-            else if (ACCION == "C")
+            if (ACCION == "C")
             {
                 gbLISTA_HORARIOS_ATENCION.Enabled = false;
                 gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
                 gbHORARIOS_ATENCION.Enabled = true;
                 btnGUARDAR.Enabled = false;
-            }          
+            }
         }
 
         private void ARMA_COMBOBOX_ESPECIALIDADES()
         {
-            cmbESPECIALIDADES.DataSource = null;
-            cmbESPECIALIDADES.Items.Add("SELECCIONE...");
-            cmbESPECIALIDADES.SelectedItem = "SELECCIONE...";
+                cmbESPECIALIDADES.DataSource = null;
+                cmbESPECIALIDADES.Items.Add("SELECCIONE...");
+                cmbESPECIALIDADES.SelectedItem = "SELECCIONE...";           
         }
 
         private void ARMA_COMBOBOX_PROFESIONALES(int ID_ESPECIALIDAD)
@@ -160,8 +179,9 @@ namespace VISTA
 
         private void btnAGREGAR_Click(object sender, EventArgs e)
         {
-            oATENCION = new MODELO.ATENCION();
+            oATENCION = new MODELO.ATENCION();            
             ACCION = "A";
+
             cmbESPECIALIDADES.ValueMember = "ID_ESPECIALIDAD";
             cmbESPECIALIDADES.DisplayMember = "NOMBRE";
             cmbESPECIALIDADES.DataSource = cESPECIALIDADES.OBTENER_ESPECIALIDADES();
@@ -211,8 +231,8 @@ namespace VISTA
             oATENCION.HORA_FIN = HORA_FIN;
             oATENCION.DIA_LABORAL = cmbDIA_LABORAL.Text;
             oATENCION.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDADES.SelectedItem;
-            oATENCION.PROFESIONAL = (MODELO.USUARIO)cmbPROFESIONALES.SelectedItem;          
-
+            oATENCION.PROFESIONAL = (MODELO.USUARIO)cmbPROFESIONALES.SelectedItem;
+            
             if (ACCION == "A")
             {
                 cATENCIONES.AGREGAR_ATENCION(oATENCION);
@@ -254,10 +274,10 @@ namespace VISTA
         }
 
         private void cmbESPECIALIDADES_SelectedIndexChanged(object sender, EventArgs e)
-        {          
-            int ID_ESPECIALIDAD = Convert.ToInt32(cmbESPECIALIDADES.SelectedValue);
-            ARMA_COMBOBOX_PROFESIONALES(ID_ESPECIALIDAD);
-            return;
+        {           
+                int ID_ESPECIALIDAD = Convert.ToInt32(cmbESPECIALIDADES.SelectedValue);
+                ARMA_COMBOBOX_PROFESIONALES(ID_ESPECIALIDAD);
+                return;                 
         }
         
         private void btnCONSULTAR_Click(object sender, EventArgs e)
@@ -310,7 +330,7 @@ namespace VISTA
         }
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
-        {           
+        { 
             MODO_GRILLA();
         }
 
@@ -344,7 +364,7 @@ namespace VISTA
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();
-                
+
                 cmbDIA_LABORAL.DataSource = LISTA_DIAS_PROFESIONAL;
             }         
         }

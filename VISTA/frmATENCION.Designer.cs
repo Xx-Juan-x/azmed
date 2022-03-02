@@ -117,11 +117,11 @@ namespace VISTA
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnCONSULTAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnELIMINAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnMODIFICAR);
+            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnCERRAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.lblFILTRO_DIA_LABORAL);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.cmbFILTRO_DIA_LABORAL);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnBUSCAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.dgvLISTA_ATENCIONES);
-            this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnCERRAR);
             this.gbLISTA_HORARIOS_ATENCION.Controls.Add(this.btnAGREGAR);
             this.gbLISTA_HORARIOS_ATENCION.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_HORARIOS_ATENCION.Name = "gbLISTA_HORARIOS_ATENCION";
@@ -369,7 +369,7 @@ namespace VISTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 532);
+            this.ClientSize = new System.Drawing.Size(1026, 532);
             this.Controls.Add(this.gbDATOS_PROFESIONAL_HORARIOS);
             this.Controls.Add(this.gbLISTA_HORARIOS_ATENCION);
             this.Controls.Add(this.gbHORARIOS_ATENCION);

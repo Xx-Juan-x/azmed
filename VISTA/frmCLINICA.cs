@@ -49,7 +49,6 @@ namespace VISTA
 
         private void registrarObrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             frmOBRA_SOCIAL FORMULARIO_OBRA_SOCIAL = frmOBRA_SOCIAL.OBTENER_INSTANCIA();
             FORMULARIO_OBRA_SOCIAL.Show();
         }
@@ -123,6 +122,10 @@ namespace VISTA
         {
             frmATENCION FORMULARIO_GESTIONAR_ATENCIONES = frmATENCION.OBTENER_INSTANCIA();
             FORMULARIO_GESTIONAR_ATENCIONES.Show();
+            if (frmLOGIN.TIPO_USUARIO == "PROFESIONAL")
+            {
+                FORMULARIO_GESTIONAR_ATENCIONES.Size = new System.Drawing.Size(687, 571);
+            }
         }
 
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +133,12 @@ namespace VISTA
             frmLOGIN FORMULARIO_LOGIN = frmLOGIN.OBTENER_INSTANCIA();
             FORMULARIO_LOGIN.Show();
             this.Close();
-        }       
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTURNOS_CONSULTA FORMULARIO_TURNOS_CONSULTA = frmTURNOS_CONSULTA.OBTENER_INSTANCIA();
+            FORMULARIO_TURNOS_CONSULTA.Show();
+        }
     }
 }

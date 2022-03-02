@@ -166,6 +166,14 @@
     <Compile Include="Migrations\202202231738422_decimal_int.designer.cs">
       <DependentUpon>202202231738422_decimal_int.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203020045116_TURNOS.cs" />
+    <Compile Include="Migrations\202203020045116_TURNOS.designer.cs">
+      <DependentUpon>202203020045116_TURNOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203020226046_FACTURACION.cs" />
+    <Compile Include="Migrations\202203020226046_FACTURACION.designer.cs">
+      <DependentUpon>202203020226046_FACTURACION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -266,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202231738422_decimal_int.resx">
       <DependentUpon>202202231738422_decimal_int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203020045116_TURNOS.resx">
+      <DependentUpon>202203020045116_TURNOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203020226046_FACTURACION.resx">
+      <DependentUpon>202203020226046_FACTURACION.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
