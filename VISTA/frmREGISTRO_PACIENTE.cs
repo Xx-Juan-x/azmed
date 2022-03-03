@@ -67,7 +67,7 @@ namespace VISTA
             
         }
 
-        private void btnREGISTRAR_Click(object sender, EventArgs e)
+        private void btnREGISTRARSE_Click_1(object sender, EventArgs e)
         {
             #region VALIDACIONES
             if (string.IsNullOrWhiteSpace(txtNOMBRE.Text))
@@ -162,6 +162,6 @@ namespace VISTA
                 e.Handled = true;
                 return;
             }
-        }
+        }       
     }
 }

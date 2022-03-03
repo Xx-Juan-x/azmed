@@ -121,11 +121,7 @@ namespace VISTA
         private void gestionarAtenciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmATENCION FORMULARIO_GESTIONAR_ATENCIONES = frmATENCION.OBTENER_INSTANCIA();
-            FORMULARIO_GESTIONAR_ATENCIONES.Show();
-            if (frmLOGIN.TIPO_USUARIO == "PROFESIONAL")
-            {
-                FORMULARIO_GESTIONAR_ATENCIONES.Size = new System.Drawing.Size(687, 571);
-            }
+            FORMULARIO_GESTIONAR_ATENCIONES.Show();           
         }
 
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,5 +136,7 @@ namespace VISTA
             frmTURNOS_CONSULTA FORMULARIO_TURNOS_CONSULTA = frmTURNOS_CONSULTA.OBTENER_INSTANCIA();
             FORMULARIO_TURNOS_CONSULTA.Show();
         }
+
+        
     }
 }

@@ -28,23 +28,18 @@ namespace VISTA
         }
 
         private CONTROLADORA.TURNOS cTURNOS;
+        private CONTROLADORA.USUARIOS cUSUARIOS;
         private MODELO.TURNO oTURNO;
 
         public frmTURNOS_CONSULTA()
         {
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            dgvLISTA_ATENCIONES.DataSource = cUSUARIOS.OBTENER_USUARIOS();
         }
 
-
-
-
-
-
-
-
-
-
+        
 
     }
 }

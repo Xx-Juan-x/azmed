@@ -35,7 +35,9 @@ namespace VISTA
             
             ARMA_GRILLA("A");
             MODO_GRILLA();
-          
+
+            cmbROL.Items.Add("SELECCIONE...");
+            cmbROL.SelectedItem = "SELECCIONE...";
             cmbROL.Items.Add("ADMINISTRADOR");
             cmbROL.Items.Add("PACIENTE");
             cmbROL.Items.Add("PROFESIONAL");
@@ -129,14 +131,14 @@ namespace VISTA
             }
         }
 
-        private void btnAGREGAR_Click_1(object sender, EventArgs e)
+        private void btnAGREGAR_Click(object sender, EventArgs e)
         {
             oUSUARIO = new MODELO.USUARIO();
             ACCION = "A";
             MODO_DATOS();
         }
 
-        private void btnGUARDAR_Click_1(object sender, EventArgs e)
+        private void btnGUARDAR_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES
 
@@ -175,7 +177,7 @@ namespace VISTA
                 return;
             }
 
-            if (cmbROL.SelectedItem == null)
+            if (cmbROL.SelectedItem == "SELECCIONE...")
             {
                 MessageBox.Show("Debe seleccionar un rol para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -217,18 +219,19 @@ namespace VISTA
                 txtEMAIL.Clear();
                 txtPASSWORD.Clear();
                 txtCONFIRMAR_PASSWORD.Clear();
+                cmbROL.SelectedItem = "SELECCIONE...";
 
                 ARMA_GRILLA("B");
-                MODO_GRILLA();
-                
+                MODO_GRILLA();         
             }
             else
             {
                 MessageBox.Show("Las contraseñas deben ser las mismas para registrar un nuevo usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }   
         }
 
-        private void btnMODIFICAR_Click_1(object sender, EventArgs e)
+        private void btnMODIFICAR_Click(object sender, EventArgs e)
         {
             if (dgvLISTA_USUARIOS.CurrentRow == null)
             {
@@ -261,7 +264,7 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void btnCONSULTAR_Click(object sender, EventArgs e)
+        private void btnCONSULTAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_USUARIOS.CurrentRow == null)
             {
@@ -281,7 +284,7 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void btnELIMINAR_Click(object sender, EventArgs e)
+        private void btnELIMINAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_USUARIOS.CurrentRow == null)
             {
@@ -298,22 +301,23 @@ namespace VISTA
             }
         }
 
-        private void btnCANCELAR_Click(object sender, EventArgs e)
+        private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
             txtNOMBRE.Clear();
             txtAPELLIDO.Clear();
             txtEMAIL.Clear();
             txtPASSWORD.Clear();
             txtCONFIRMAR_PASSWORD.Clear();
+            cmbROL.SelectedItem = "SELECCIONE...";
             MODO_GRILLA();
         }
 
-        private void btnCERRAR_Click(object sender, EventArgs e)
+        private void btnCERRAR_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnBUSCAR_Click(object sender, EventArgs e)
+        private void btnBUSCAR_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmbFILTRO_TIPO.Text))
             {
@@ -323,7 +327,7 @@ namespace VISTA
                 ARMA_GRILLA("B");          
         }
 
-        private void txtNOMBRE_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNOMBRE_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
@@ -333,7 +337,7 @@ namespace VISTA
             }
         }
 
-        private void txtAPELLIDO_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtAPELLIDO_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
@@ -342,5 +346,7 @@ namespace VISTA
                 return;
             }
         }
+
+        
     }
 }

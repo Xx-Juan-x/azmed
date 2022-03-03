@@ -160,7 +160,7 @@ namespace VISTA
             cmbPROFESIONALES.DisplayMember = "NOMBRE" + "APELLIDO";
         }
 
-        private void btnBUSCAR_Click(object sender, EventArgs e)
+        private void btnBUSCAR_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmbFILTRO_DIA_LABORAL.Text))
             {
@@ -177,7 +177,7 @@ namespace VISTA
             }          
         }
 
-        private void btnAGREGAR_Click(object sender, EventArgs e)
+        private void btnAGREGAR_Click_1(object sender, EventArgs e)
         {
             oATENCION = new MODELO.ATENCION();            
             ACCION = "A";
@@ -189,7 +189,7 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void btnGUARDAR_Click(object sender, EventArgs e)
+        private void btnGUARDAR_Click_1(object sender, EventArgs e)
         {
             #region VALIDACIONES
 
@@ -247,7 +247,7 @@ namespace VISTA
             MODO_GRILLA();
         }      
 
-        private void btnMODIFICAR_Click(object sender, EventArgs e)
+        private void btnMODIFICAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_ATENCIONES.CurrentRow == null)
             {
@@ -273,14 +273,14 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void cmbESPECIALIDADES_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbESPECIALIDADES_SelectedIndexChanged_1(object sender, EventArgs e)
         {           
                 int ID_ESPECIALIDAD = Convert.ToInt32(cmbESPECIALIDADES.SelectedValue);
                 ARMA_COMBOBOX_PROFESIONALES(ID_ESPECIALIDAD);
                 return;                 
         }
         
-        private void btnCONSULTAR_Click(object sender, EventArgs e)
+        private void btnCONSULTAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_ATENCIONES.CurrentRow == null)
             {
@@ -305,7 +305,7 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void btnELIMINAR_Click(object sender, EventArgs e)
+        private void btnELIMINAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_ATENCIONES.CurrentRow == null)
             {
@@ -329,17 +329,17 @@ namespace VISTA
             }
         }
 
-        private void btnCANCELAR_Click(object sender, EventArgs e)
+        private void btnCANCELAR_Click_1(object sender, EventArgs e)
         { 
             MODO_GRILLA();
         }
 
-        private void btnCERRAR_Click(object sender, EventArgs e)
+        private void btnCERRAR_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void cmbPROFESIONALES_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbPROFESIONALES_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (ACCION == "A")
             {
@@ -367,6 +367,6 @@ namespace VISTA
 
                 cmbDIA_LABORAL.DataSource = LISTA_DIAS_PROFESIONAL;
             }         
-        }
+        }       
     }
 }

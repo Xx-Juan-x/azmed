@@ -69,14 +69,14 @@ namespace VISTA
             }
         }
 
-        private void btnAGREGAR_Click(object sender, EventArgs e)
+        private void btnAGREGAR_Click_1(object sender, EventArgs e)
         {
             oESPECIALIDAD = new MODELO.ESPECIALIDAD();
             ACCION = "A";
             MODO_DATOS();
         }
 
-        private void btnGUARDAR_Click(object sender, EventArgs e)
+        private void btnGUARDAR_Click_1(object sender, EventArgs e)
         {
             #region VALIDACIONES
             if (string.IsNullOrWhiteSpace(txtNOMBRE.Text))
@@ -104,7 +104,7 @@ namespace VISTA
             ARMA_GRILLA();
         }
 
-        private void btnMODIFICAR_Click(object sender, EventArgs e)
+        private void btnMODIFICAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_ESPECIALIDADES.CurrentRow == null)
             {
@@ -120,7 +120,7 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void btnELIMINAR_Click(object sender, EventArgs e)
+        private void btnELIMINAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_ESPECIALIDADES.CurrentRow == null)
             {
@@ -163,18 +163,18 @@ namespace VISTA
             }
         }
 
-        private void btnCANCELAR_Click(object sender, EventArgs e)
+        private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
             txtNOMBRE.Clear();
             MODO_GRILLA();
         }
 
-        private void btnCERRAR_Click(object sender, EventArgs e)
+        private void btnCERRAR_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnCONSULTAR_Click(object sender, EventArgs e)
+        private void btnCONSULTAR_Click_1(object sender, EventArgs e)
         {
             if (dgvLISTA_ESPECIALIDADES.CurrentRow == null)
             {
@@ -186,12 +186,13 @@ namespace VISTA
             ACCION = "C";
 
             txtNOMBRE.Text = oESPECIALIDAD.NOMBRE.ToUpper();
+            
 
             MODO_DATOS();
 
         }
 
-        private void txtNOMBRE_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNOMBRE_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
@@ -199,7 +200,7 @@ namespace VISTA
                 e.Handled = true;
                 return;
             }
-        }
+        }      
     }
 }
 

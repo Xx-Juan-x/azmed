@@ -69,7 +69,7 @@ namespace VISTA
             gbESPECIALIDADES.Enabled = true;
         }
 
-        private void btnASIGNAR_Click_1(object sender, EventArgs e)
+        private void btnASIGNAR_Click(object sender, EventArgs e)
         {
             //oPROFESIONAL = new MODELO.USUARIO();
             // LIMPIO MI COMBOBOX 
@@ -81,7 +81,7 @@ namespace VISTA
             MODO_DATOS();
         }
 
-        private void btnGUARDAR_Click_1(object sender, EventArgs e)
+        private void btnGUARDAR_Click(object sender, EventArgs e)
         {
             if (dgvLISTA_PROFESIONALES.CurrentRow == null)
             {
@@ -98,15 +98,15 @@ namespace VISTA
             MODO_GRILLA();
         }
 
-        private void btnCANCELAR_Click(object sender, EventArgs e)
+        private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
             cmbESPECIALIDADES.DataSource = null;
             MODO_GRILLA();
         }
 
-        private void btnCERRAR_Click_1(object sender, EventArgs e)
+        private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }        
     }
 }
