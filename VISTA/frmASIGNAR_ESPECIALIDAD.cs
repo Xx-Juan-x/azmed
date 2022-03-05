@@ -47,13 +47,13 @@ namespace VISTA
             dgvLISTA_PROFESIONALES.DataSource = cPROFESIONALES.OBTENER_PROFESIONALES();
             dgvLISTA_PROFESIONALES.AutoGenerateColumns = false;
 
-            if (dgvLISTA_PROFESIONALES.Columns.Contains("CLAVE") && dgvLISTA_PROFESIONALES.Columns.Contains("FECHA"))
+            if (dgvLISTA_PROFESIONALES.Columns.Contains("CLAVE") && dgvLISTA_PROFESIONALES.Columns.Contains("FECHA") && dgvLISTA_PROFESIONALES.Columns.Contains("PLAN") && dgvLISTA_PROFESIONALES.Columns.Contains("OBRA_SOCIAL"))
             {
                 dgvLISTA_PROFESIONALES.Columns.Remove("FECHA");
                 dgvLISTA_PROFESIONALES.Columns.Remove("CLAVE");
+                dgvLISTA_PROFESIONALES.Columns.Remove("PLAN");
+                dgvLISTA_PROFESIONALES.Columns.Remove("OBRA_SOCIAL");
             }
-            
-
         }
 
         private void MODO_GRILLA()

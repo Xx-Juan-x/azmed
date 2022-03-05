@@ -83,9 +83,11 @@ namespace VISTA
             }           
 
             dgvLISTA_USUARIOS.AutoGenerateColumns = false;
-            if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES"))
+            if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES") && dgvLISTA_USUARIOS.Columns.Contains("PLAN") && dgvLISTA_USUARIOS.Columns.Contains("OBRA_SOCIAL"))
             {
                 dgvLISTA_USUARIOS.Columns.Remove("ESPECIALIDADES");
+                dgvLISTA_USUARIOS.Columns.Remove("PLAN");
+                dgvLISTA_USUARIOS.Columns.Remove("OBRA_SOCIAL");
             }        
         }
 

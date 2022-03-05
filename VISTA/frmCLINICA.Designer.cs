@@ -56,6 +56,7 @@ namespace VISTA
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.asignarObraSocialYPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,8 @@ namespace VISTA
             // 
             this.pACIENTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarObrasSocialesToolStripMenuItem,
-            this.registrarPlanesToolStripMenuItem});
+            this.registrarPlanesToolStripMenuItem,
+            this.asignarObraSocialYPlanToolStripMenuItem});
             this.pACIENTESToolStripMenuItem.Name = "pACIENTESToolStripMenuItem";
             this.pACIENTESToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.pACIENTESToolStripMenuItem.Text = "PACIENTES";
@@ -106,14 +108,14 @@ namespace VISTA
             // registrarObrasSocialesToolStripMenuItem
             // 
             this.registrarObrasSocialesToolStripMenuItem.Name = "registrarObrasSocialesToolStripMenuItem";
-            this.registrarObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.registrarObrasSocialesToolStripMenuItem.Text = "Registrar Obras Sociales";
             this.registrarObrasSocialesToolStripMenuItem.Click += new System.EventHandler(this.registrarObrasSocialesToolStripMenuItem_Click);
             // 
             // registrarPlanesToolStripMenuItem
             // 
             this.registrarPlanesToolStripMenuItem.Name = "registrarPlanesToolStripMenuItem";
-            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.registrarPlanesToolStripMenuItem.Text = "Registrar Planes";
             this.registrarPlanesToolStripMenuItem.Click += new System.EventHandler(this.registrarPlanesToolStripMenuItem_Click);
             // 
@@ -260,7 +262,7 @@ namespace VISTA
             this.lblTIPO_USUARIO.AutoSize = true;
             this.lblTIPO_USUARIO.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblTIPO_USUARIO.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTIPO_USUARIO.ForeColor = System.Drawing.Color.Black;
+            this.lblTIPO_USUARIO.ForeColor = System.Drawing.Color.DimGray;
             this.lblTIPO_USUARIO.Location = new System.Drawing.Point(1042, 5);
             this.lblTIPO_USUARIO.Name = "lblTIPO_USUARIO";
             this.lblTIPO_USUARIO.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -281,6 +283,13 @@ namespace VISTA
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // asignarObraSocialYPlanToolStripMenuItem
+            // 
+            this.asignarObraSocialYPlanToolStripMenuItem.Name = "asignarObraSocialYPlanToolStripMenuItem";
+            this.asignarObraSocialYPlanToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.asignarObraSocialYPlanToolStripMenuItem.Text = "Asignar Obra Social y Plan";
+            this.asignarObraSocialYPlanToolStripMenuItem.Click += new System.EventHandler(this.asignarObraSocialYPlanToolStripMenuItem_Click);
             // 
             // frmCLINICA
             // 
@@ -333,5 +342,6 @@ namespace VISTA
         private System.Windows.Forms.Label lblTIPO_USUARIO;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem asignarObraSocialYPlanToolStripMenuItem;
     }
 }

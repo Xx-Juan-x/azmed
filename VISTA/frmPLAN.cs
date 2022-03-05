@@ -40,13 +40,13 @@ namespace VISTA
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
 
-            cmbPLANES.Items.Add("SELECCIONE...");
+            /*cmbPLANES.Items.Add("SELECCIONE...");
             cmbPLANES.SelectedItem = "SELECCIONE...";
             cmbPLANES.Items.Add("BASICO");
             cmbPLANES.Items.Add("SUPERADOR");
             cmbPLANES.Items.Add("PREMIUM");
             cmbPLANES.Items.Add("JUBILADOS");
-            cmbPLANES.Items.Add("ESTUDIANTE");
+            cmbPLANES.Items.Add("ESTUDIANTE");*/
 
             cmbOBRA_SOCIAL.Items.Add("SELECCIONE...");
             cmbOBRA_SOCIAL.SelectedItem = "SELECCIONE...";
@@ -105,22 +105,14 @@ namespace VISTA
                 return;
             }
 
-            if (cmbPLANES.SelectedItem == "SELECCIONE...")
+            if (string.IsNullOrWhiteSpace(txtPLAN.Text))
             {
-                MessageBox.Show("Debe seleccionar el plan que va a tener la obra social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe ingresar un plan para asignarlo con la Obra Social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
-
-            int TIPO_PLAN;
-            if (!int.TryParse(txtTIPO_PLAN.Text, out TIPO_PLAN))
-            {
-                MessageBox.Show("Debe ingresar el tipo de plan a la lista de planes", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            }           
             #endregion
 
-            oPLAN.NOMBRE = cmbPLANES.Text; // Uso la funcion ToUapper para escribir el nombre en mayúscula
-            oPLAN.TIPO = TIPO_PLAN;
+            oPLAN.NOMBRE = txtPLAN.Text.ToUpper(); // Uso la funcion ToUapper para escribir el nombre en mayúscula
             oPLAN.OBRA_SOCIAL = (MODELO.OBRA_SOCIAL)cmbOBRA_SOCIAL.SelectedItem;
 
             if (ACCION == "A")
@@ -133,8 +125,7 @@ namespace VISTA
             }
 
             // LIMPIO LA TEXTBOX
-            cmbPLANES.Text = "SELECCIONE...";
-            txtTIPO_PLAN.Clear();
+            txtPLAN.Clear();
             cmbOBRA_SOCIAL.SelectedItem = null;
             MODO_GRILLA();
             ARMA_GRILLA();
@@ -152,10 +143,9 @@ namespace VISTA
             ACCION = "M";
 
             //ASIGNO EL CONTENIDO DE LOS CAMPOS CON MIS OBJETOS CORRESPONDIENTES
-            cmbPLANES.Text = oPLAN.NOMBRE;
-            txtTIPO_PLAN.Text = oPLAN.TIPO.ToString();
-            MODO_DATOS();
+            txtPLAN.Text = oPLAN.NOMBRE.ToUpper();
             cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
+            MODO_DATOS();
         }
 
         private void btnCONSULTAR_Click_1(object sender, EventArgs e)
@@ -169,10 +159,9 @@ namespace VISTA
 
             ACCION = "C";
 
-            cmbPLANES.Text = oPLAN.NOMBRE;
-            txtTIPO_PLAN.Text = oPLAN.TIPO.ToString();
-            MODO_DATOS();
+            txtPLAN.Text = oPLAN.NOMBRE;
             cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
+            MODO_DATOS();
         }
 
         private void btnELIMINAR_Click_1(object sender, EventArgs e)
@@ -195,8 +184,7 @@ namespace VISTA
 
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
-            cmbPLANES.Text = "SELECCIONE...";          
-            txtTIPO_PLAN.Clear();
+            txtPLAN.Clear();          
             cmbOBRA_SOCIAL.SelectedItem = null;
             MODO_GRILLA();
         }
@@ -204,16 +192,16 @@ namespace VISTA
         private void btnCERRAR_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }      
 
-        private void txtTIPO_PLAN_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void txtPLAN_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
-                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
-        }       
+        }
     }
 }

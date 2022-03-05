@@ -133,10 +133,14 @@ namespace VISTA
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTURNOS_CONSULTA FORMULARIO_TURNOS_CONSULTA = frmTURNOS_CONSULTA.OBTENER_INSTANCIA();
+            frmTURNOS FORMULARIO_TURNOS_CONSULTA = frmTURNOS.OBTENER_INSTANCIA();
             FORMULARIO_TURNOS_CONSULTA.Show();
         }
 
-        
+        private void asignarObraSocialYPlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmASIGNAR_PLAN_OBRA_SOCIAL FORMULARIO_ASIGNAR_PLAN_OBRA_SOCIAL = frmASIGNAR_PLAN_OBRA_SOCIAL.OBTENER_INSTANCIA();
+            FORMULARIO_ASIGNAR_PLAN_OBRA_SOCIAL.Show();
+        }
     }
 }

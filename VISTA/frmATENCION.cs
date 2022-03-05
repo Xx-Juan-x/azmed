@@ -355,6 +355,7 @@ namespace VISTA
                 LISTA_DIA.Add("VIERNES");
                 LISTA_DIA.Add("SABADO");
                 LISTA_DIA.Add("DOMINGO");
+
                 var DIAS_NO_AGREGADOS = LISTA_DIA.Except(LISTA_DIAS_PROFESIONAL).ToList();
                 cmbDIA_LABORAL.DataSource = DIAS_NO_AGREGADOS;
             }

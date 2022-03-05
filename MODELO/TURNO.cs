@@ -17,6 +17,7 @@ namespace MODELO
         public ESPECIALIDAD ESPECIALIDAD { get; set; }
         public USUARIO PROFESIONAL { get; set; }
         public DateTime FECHA { get; set; }
+        public string ESTADO { get; set; }
         public string TIPO { get; set; }
     }
 }

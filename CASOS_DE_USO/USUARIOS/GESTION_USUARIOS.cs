@@ -26,6 +26,14 @@ namespace CASOS_DE_USO.USUARIOS
             return RESPUESTA;
         }
 
+        public static List<MODELO.USUARIO> OBTENER_PACIENTES(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
+        {
+            List<MODELO.USUARIO> RESPUESTA = (from PACIENTES in AZMED_CLINICA.USUARIOS.Include("OBRA_SOCIAL").Include("PLAN")
+                                              where PACIENTES.TIPO == "PACIENTE"
+                                              select PACIENTES).ToList();
+            return RESPUESTA;
+        }
+
         /*public static int CANTIDAD_PROFESIONALES_ESPECIALIDAD(string ESP, CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
             // c => c.TIPO es una expresión lambda que representa cada titular de las cuentas del banco

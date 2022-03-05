@@ -10,8 +10,11 @@ namespace MODELO
     {
         public int ID_PLAN { get; set; }
         public string NOMBRE { get; set; }
-        public int TIPO { get; set; }
         public OBRA_SOCIAL OBRA_SOCIAL { get; set; }
 
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
     }
 }

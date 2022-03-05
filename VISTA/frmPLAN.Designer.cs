@@ -29,16 +29,13 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_PLAN = new System.Windows.Forms.GroupBox();
-            this.cmbPLANES = new System.Windows.Forms.ComboBox();
             this.lblOBRA_SOCIAL = new System.Windows.Forms.Label();
             this.cmbOBRA_SOCIAL = new System.Windows.Forms.ComboBox();
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
-            this.lblTIPO = new System.Windows.Forms.Label();
-            this.txtTIPO_PLAN = new System.Windows.Forms.TextBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.gbLISTA_PLANES = new System.Windows.Forms.GroupBox();
@@ -48,6 +45,7 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_PLANES = new System.Windows.Forms.DataGridView();
+            this.txtPLAN = new System.Windows.Forms.TextBox();
             this.gbDATOS_PLAN.SuspendLayout();
             this.gbLISTA_PLANES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PLANES)).BeginInit();
@@ -56,35 +54,24 @@ namespace VISTA
             // gbDATOS_PLAN
             // 
             this.gbDATOS_PLAN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbDATOS_PLAN.Controls.Add(this.cmbPLANES);
+            this.gbDATOS_PLAN.Controls.Add(this.txtPLAN);
             this.gbDATOS_PLAN.Controls.Add(this.lblOBRA_SOCIAL);
             this.gbDATOS_PLAN.Controls.Add(this.cmbOBRA_SOCIAL);
             this.gbDATOS_PLAN.Controls.Add(this.lbl_NOMBRE);
-            this.gbDATOS_PLAN.Controls.Add(this.lblTIPO);
-            this.gbDATOS_PLAN.Controls.Add(this.txtTIPO_PLAN);
             this.gbDATOS_PLAN.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_PLAN.Controls.Add(this.btnGUARDAR);
             this.gbDATOS_PLAN.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_PLAN.Location = new System.Drawing.Point(615, 12);
             this.gbDATOS_PLAN.Name = "gbDATOS_PLAN";
-            this.gbDATOS_PLAN.Size = new System.Drawing.Size(264, 191);
+            this.gbDATOS_PLAN.Size = new System.Drawing.Size(264, 139);
             this.gbDATOS_PLAN.TabIndex = 5;
             this.gbDATOS_PLAN.TabStop = false;
             this.gbDATOS_PLAN.Text = "DATOS DEL PLAN";
             // 
-            // cmbPLANES
-            // 
-            this.cmbPLANES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPLANES.FormattingEnabled = true;
-            this.cmbPLANES.Location = new System.Drawing.Point(96, 21);
-            this.cmbPLANES.Name = "cmbPLANES";
-            this.cmbPLANES.Size = new System.Drawing.Size(159, 21);
-            this.cmbPLANES.TabIndex = 68;
-            // 
             // lblOBRA_SOCIAL
             // 
             this.lblOBRA_SOCIAL.AutoSize = true;
-            this.lblOBRA_SOCIAL.Location = new System.Drawing.Point(9, 101);
+            this.lblOBRA_SOCIAL.Location = new System.Drawing.Point(3, 62);
             this.lblOBRA_SOCIAL.Name = "lblOBRA_SOCIAL";
             this.lblOBRA_SOCIAL.Size = new System.Drawing.Size(81, 13);
             this.lblOBRA_SOCIAL.TabIndex = 67;
@@ -94,7 +81,7 @@ namespace VISTA
             // 
             this.cmbOBRA_SOCIAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOBRA_SOCIAL.FormattingEnabled = true;
-            this.cmbOBRA_SOCIAL.Location = new System.Drawing.Point(96, 98);
+            this.cmbOBRA_SOCIAL.Location = new System.Drawing.Point(96, 59);
             this.cmbOBRA_SOCIAL.Name = "cmbOBRA_SOCIAL";
             this.cmbOBRA_SOCIAL.Size = new System.Drawing.Size(159, 21);
             this.cmbOBRA_SOCIAL.TabIndex = 66;
@@ -108,23 +95,6 @@ namespace VISTA
             this.lbl_NOMBRE.TabIndex = 63;
             this.lbl_NOMBRE.Text = "PLAN:";
             // 
-            // lblTIPO
-            // 
-            this.lblTIPO.AutoSize = true;
-            this.lblTIPO.Location = new System.Drawing.Point(9, 61);
-            this.lblTIPO.Name = "lblTIPO";
-            this.lblTIPO.Size = new System.Drawing.Size(84, 13);
-            this.lblTIPO.TabIndex = 64;
-            this.lblTIPO.Text = "TIPO DE PLAN:";
-            // 
-            // txtTIPO_PLAN
-            // 
-            this.txtTIPO_PLAN.Location = new System.Drawing.Point(96, 58);
-            this.txtTIPO_PLAN.Name = "txtTIPO_PLAN";
-            this.txtTIPO_PLAN.Size = new System.Drawing.Size(159, 20);
-            this.txtTIPO_PLAN.TabIndex = 65;
-            this.txtTIPO_PLAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTIPO_PLAN_KeyPress_1);
-            // 
             // btnCANCELAR
             // 
             this.btnCANCELAR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -134,7 +104,7 @@ namespace VISTA
             this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCANCELAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
-            this.btnCANCELAR.Location = new System.Drawing.Point(155, 145);
+            this.btnCANCELAR.Location = new System.Drawing.Point(158, 95);
             this.btnCANCELAR.Name = "btnCANCELAR";
             this.btnCANCELAR.Size = new System.Drawing.Size(100, 36);
             this.btnCANCELAR.TabIndex = 7;
@@ -151,7 +121,7 @@ namespace VISTA
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGUARDAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(6, 145);
+            this.btnGUARDAR.Location = new System.Drawing.Point(4, 95);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(100, 36);
             this.btnGUARDAR.TabIndex = 1;
@@ -273,39 +243,47 @@ namespace VISTA
             this.dgvLISTA_PLANES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_PLANES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_PLANES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_PLANES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_PLANES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLISTA_PLANES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_PLANES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_PLANES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_PLANES.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_PLANES.Name = "dgvLISTA_PLANES";
             this.dgvLISTA_PLANES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_PLANES.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_PLANES.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvLISTA_PLANES.RowHeadersVisible = false;
             this.dgvLISTA_PLANES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_PLANES.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_PLANES.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvLISTA_PLANES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_PLANES.Size = new System.Drawing.Size(589, 280);
             this.dgvLISTA_PLANES.TabIndex = 0;
+            // 
+            // txtPLAN
+            // 
+            this.txtPLAN.Location = new System.Drawing.Point(96, 21);
+            this.txtPLAN.Name = "txtPLAN";
+            this.txtPLAN.Size = new System.Drawing.Size(159, 20);
+            this.txtPLAN.TabIndex = 68;
+            this.txtPLAN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPLAN_KeyPress);
             // 
             // frmPLAN
             // 
@@ -330,12 +308,9 @@ namespace VISTA
         #endregion
 
         private System.Windows.Forms.GroupBox gbDATOS_PLAN;
-        private System.Windows.Forms.ComboBox cmbPLANES;
         private System.Windows.Forms.Label lblOBRA_SOCIAL;
         private System.Windows.Forms.ComboBox cmbOBRA_SOCIAL;
         private System.Windows.Forms.Label lbl_NOMBRE;
-        private System.Windows.Forms.Label lblTIPO;
-        private System.Windows.Forms.TextBox txtTIPO_PLAN;
         private System.Windows.Forms.Button btnCANCELAR;
         private System.Windows.Forms.Button btnGUARDAR;
         private System.Windows.Forms.GroupBox gbLISTA_PLANES;
@@ -345,5 +320,6 @@ namespace VISTA
         private System.Windows.Forms.Button btnMODIFICAR;
         private System.Windows.Forms.Button btnAGREGAR;
         private System.Windows.Forms.DataGridView dgvLISTA_PLANES;
+        private System.Windows.Forms.TextBox txtPLAN;
     }
 }

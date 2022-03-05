@@ -174,6 +174,18 @@
     <Compile Include="Migrations\202203020226046_FACTURACION.designer.cs">
       <DependentUpon>202203020226046_FACTURACION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203041345362_ESTADOS.cs" />
+    <Compile Include="Migrations\202203041345362_ESTADOS.designer.cs">
+      <DependentUpon>202203041345362_ESTADOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203042310549_BORRO_TIPO_PLAN.cs" />
+    <Compile Include="Migrations\202203042310549_BORRO_TIPO_PLAN.designer.cs">
+      <DependentUpon>202203042310549_BORRO_TIPO_PLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.cs" />
+    <Compile Include="Migrations\202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.designer.cs">
+      <DependentUpon>202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -280,6 +292,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203020226046_FACTURACION.resx">
       <DependentUpon>202203020226046_FACTURACION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203041345362_ESTADOS.resx">
+      <DependentUpon>202203041345362_ESTADOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203042310549_BORRO_TIPO_PLAN.resx">
+      <DependentUpon>202203042310549_BORRO_TIPO_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.resx">
+      <DependentUpon>202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

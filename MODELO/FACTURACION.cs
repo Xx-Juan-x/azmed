@@ -18,6 +18,7 @@ namespace MODELO
         public DateTime FECHA { get; set; }
         public decimal MONTO { get; set; }
         public decimal DESCUENTO { get; set; }
+        public string ESTADO { get; set; }
         public decimal PRECIO_FINAL { get; set; }
     }
 }

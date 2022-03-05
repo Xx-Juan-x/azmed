@@ -16,6 +16,8 @@ namespace MODELO
         public DateTime FECHA { get; set; }
         public string TIPO { get; set; }
         public ESPECIALIDAD ESPECIALIDADES { get; set; }
+        public PLAN PLAN { get; set; }
+        public OBRA_SOCIAL OBRA_SOCIAL { get; set; }
 
         public override string ToString()
         {

@@ -63,6 +63,12 @@
     <Compile Include="frmASIGNAR_ESPECIALIDAD.Designer.cs">
       <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmASIGNAR_PLAN_OBRA_SOCIAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmASIGNAR_PLAN_OBRA_SOCIAL.Designer.cs">
+      <DependentUpon>frmASIGNAR_PLAN_OBRA_SOCIAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmATENCION.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="frmCLINICA.Designer.cs">
       <DependentUpon>frmCLINICA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDATOS_TURNO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDATOS_TURNO.Designer.cs">
+      <DependentUpon>frmDATOS_TURNO.cs</DependentUpon>
     </Compile>
     <Compile Include="frmESPECIALIDAD.cs">
       <SubType>Form</SubType>
@@ -111,11 +123,11 @@
     <Compile Include="frmREPORTE.Designer.cs">
       <DependentUpon>frmREPORTE.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTURNOS_CONSULTA.cs">
+    <Compile Include="frmTURNOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTURNOS_CONSULTA.Designer.cs">
-      <DependentUpon>frmTURNOS_CONSULTA.cs</DependentUpon>
+    <Compile Include="frmTURNOS.Designer.cs">
+      <DependentUpon>frmTURNOS.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUSUARIOS.cs">
       <SubType>Form</SubType>
@@ -128,11 +140,17 @@
     <EmbeddedResource Include="frmASIGNAR_ESPECIALIDAD.resx">
       <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmASIGNAR_PLAN_OBRA_SOCIAL.resx">
+      <DependentUpon>frmASIGNAR_PLAN_OBRA_SOCIAL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmATENCION.resx">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCLINICA.resx">
       <DependentUpon>frmCLINICA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDATOS_TURNO.resx">
+      <DependentUpon>frmDATOS_TURNO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmESPECIALIDAD.resx">
       <DependentUpon>frmESPECIALIDAD.cs</DependentUpon>
@@ -152,8 +170,8 @@
     <EmbeddedResource Include="frmREPORTE.resx">
       <DependentUpon>frmREPORTE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTURNOS_CONSULTA.resx">
-      <DependentUpon>frmTURNOS_CONSULTA.cs</DependentUpon>
+    <EmbeddedResource Include="frmTURNOS.resx">
+      <DependentUpon>frmTURNOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUSUARIOS.resx">
       <DependentUpon>frmUSUARIOS.cs</DependentUpon>
