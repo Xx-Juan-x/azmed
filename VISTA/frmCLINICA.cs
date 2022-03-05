@@ -109,7 +109,7 @@ namespace VISTA
                 default:
                     MessageBox.Show("ROL no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
-            }          
+            }
         }
 
         private void asignarProfesionalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace VISTA
             FORMULARIO_GESTIONAR_ATENCIONES.Show();           
         }
 
-        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sALIRToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmLOGIN FORMULARIO_LOGIN = frmLOGIN.OBTENER_INSTANCIA();
             FORMULARIO_LOGIN.Show();

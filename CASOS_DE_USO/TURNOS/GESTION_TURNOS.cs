@@ -17,7 +17,5 @@ namespace CASOS_DE_USO.TURNOS
         {
             return AZMED_CLINICA.TURNOS.Include("PACIENTE").Include("PLAN").Include("OBRA_SOCIAL").Include("ESPECIALIDAD").Include("PROFESIONAL").ToList();
         }
-
-
     }
 }

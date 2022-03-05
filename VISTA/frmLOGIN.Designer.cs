@@ -46,7 +46,7 @@ namespace VISTA
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(76, 23);
+            this.label4.Location = new System.Drawing.Point(79, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 31);
             this.label4.TabIndex = 927;
@@ -59,7 +59,7 @@ namespace VISTA
             this.btnINGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnINGRESAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnINGRESAR.ForeColor = System.Drawing.Color.White;
-            this.btnINGRESAR.Location = new System.Drawing.Point(32, 233);
+            this.btnINGRESAR.Location = new System.Drawing.Point(43, 233);
             this.btnINGRESAR.Name = "btnINGRESAR";
             this.btnINGRESAR.Size = new System.Drawing.Size(221, 32);
             this.btnINGRESAR.TabIndex = 924;
@@ -74,7 +74,7 @@ namespace VISTA
             this.btnSALIR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSALIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSALIR.ForeColor = System.Drawing.Color.White;
-            this.btnSALIR.Location = new System.Drawing.Point(32, 271);
+            this.btnSALIR.Location = new System.Drawing.Point(43, 271);
             this.btnSALIR.Name = "btnSALIR";
             this.btnSALIR.Size = new System.Drawing.Size(221, 32);
             this.btnSALIR.TabIndex = 925;

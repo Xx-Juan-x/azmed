@@ -35,6 +35,7 @@ namespace VISTA
             this.pACIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarObraSocialYPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@ namespace VISTA
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.asignarObraSocialYPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +118,13 @@ namespace VISTA
             this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.registrarPlanesToolStripMenuItem.Text = "Registrar Planes";
             this.registrarPlanesToolStripMenuItem.Click += new System.EventHandler(this.registrarPlanesToolStripMenuItem_Click);
+            // 
+            // asignarObraSocialYPlanToolStripMenuItem
+            // 
+            this.asignarObraSocialYPlanToolStripMenuItem.Name = "asignarObraSocialYPlanToolStripMenuItem";
+            this.asignarObraSocialYPlanToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.asignarObraSocialYPlanToolStripMenuItem.Text = "Asignar Obra Social y Plan";
+            this.asignarObraSocialYPlanToolStripMenuItem.Click += new System.EventHandler(this.asignarObraSocialYPlanToolStripMenuItem_Click);
             // 
             // pROFESIONALESToolStripMenuItem
             // 
@@ -254,7 +261,7 @@ namespace VISTA
             this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
             this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.sALIRToolStripMenuItem.Text = "CERRAR SESION";
-            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
+            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click_1);
             // 
             // lblTIPO_USUARIO
             // 
@@ -283,13 +290,6 @@ namespace VISTA
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // asignarObraSocialYPlanToolStripMenuItem
-            // 
-            this.asignarObraSocialYPlanToolStripMenuItem.Name = "asignarObraSocialYPlanToolStripMenuItem";
-            this.asignarObraSocialYPlanToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.asignarObraSocialYPlanToolStripMenuItem.Text = "Asignar Obra Social y Plan";
-            this.asignarObraSocialYPlanToolStripMenuItem.Click += new System.EventHandler(this.asignarObraSocialYPlanToolStripMenuItem_Click);
             // 
             // frmCLINICA
             // 
