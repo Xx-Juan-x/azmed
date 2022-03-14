@@ -32,6 +32,9 @@ namespace VISTA
         private MODELO.TURNO oTURNO;
         private CONTROLADORA.ESPECIALIDADES cESPECIALIDAD;
         private MODELO.ESPECIALIDAD oESPECIALIDAD;
+        private MODELO.OBRA_SOCIAL oOBRA_SOCIAL;
+        private MODELO.PLAN oPLAN;
+        private MODELO.USUARIO oPACIENTE;
         private CONTROLADORA.ATENCIONES cATENCIONES;
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private CONTROLADORA.PLANES cPLANES;
@@ -47,6 +50,7 @@ namespace VISTA
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
+            rbCONSULTA.Checked = true;
 
 
             /*cmbDIA.Items.Add("SELECCIONE...");
@@ -84,7 +88,6 @@ namespace VISTA
 
             for (int i = 0; i < 7; i++)
             {
-
                 //cmbDIA.Items.Add(new ComboboxItem() { Text = dia_nombre[i], Value = dia_fecha[i] });
                 // cmbDIA.Items.Insert(dia_fecha[i], dia_nombre[i]);
             }
@@ -243,19 +246,17 @@ namespace VISTA
             }
             #endregion
 
+            
+            var PACIENTE = (from a in cUSUARIOS.OBTENER_PACIENTES()
+                            where a.ID_USUARIO == frmLOGIN.ID_USUARIO
+                            select a).ToList();
 
-            var PACIENTE = (from a in cTURNOS.OBTENER_TURNOS()
-                            where a.PACIENTE.NOMBRE + a.PACIENTE.APELLIDO == frmLOGIN.ID_USUARIO.ToString()
-                            select a);
-
-            var OBRA_SOCIAL = (from a in cTURNOS.OBTENER_TURNOS()
-                            where a.OBRA_SOCIAL.NOMBRE == frmLOGIN.ID_USUARIO.ToString()
-                               select a);
-
-            var PLAN = (from a in cTURNOS.OBTENER_TURNOS()
-                            where a.PLAN.NOMBRE == frmLOGIN.ID_USUARIO.ToString()
-                        select a);
-
+            foreach(var PACIENTES in PACIENTE)
+            {
+                oOBRA_SOCIAL = PACIENTES.OBRA_SOCIAL;
+                oPLAN = PACIENTES.PLAN;
+                oPACIENTE = PACIENTES;
+            }
 
             // ASIGNO MIS COMBO BOXS CON MIS PROPIEDADES
             oTURNO.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedItem;
@@ -263,9 +264,9 @@ namespace VISTA
             //oTURNO.HORA_TURNO = Convert.ToString(cmbHORAS.Text);
             oTURNO.PROFESIONAL = (MODELO.USUARIO)cmbPROFESIONAL.SelectedItem;
             oTURNO.FECHA = DateTime.Now;
-            oTURNO.PACIENTE = (MODELO.USUARIO)PACIENTE;
-            oTURNO.OBRA_SOCIAL = (MODELO.OBRA_SOCIAL)OBRA_SOCIAL;
-            oTURNO.PLAN = (MODELO.PLAN)PLAN;
+            oTURNO.PACIENTE =oPACIENTE;
+            oTURNO.OBRA_SOCIAL = oOBRA_SOCIAL;
+            oTURNO.PLAN = oPLAN;
 
             
             if (rbCONSULTA.Checked)

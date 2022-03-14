@@ -124,6 +124,7 @@ namespace VISTA
             // 
             // cmbPROFESIONAL
             // 
+            this.cmbPROFESIONAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPROFESIONAL.FormattingEnabled = true;
             this.cmbPROFESIONAL.Location = new System.Drawing.Point(170, 139);
             this.cmbPROFESIONAL.Name = "cmbPROFESIONAL";
@@ -148,7 +149,6 @@ namespace VISTA
             this.rbCONSULTA.Name = "rbCONSULTA";
             this.rbCONSULTA.Size = new System.Drawing.Size(83, 17);
             this.rbCONSULTA.TabIndex = 85;
-            this.rbCONSULTA.TabStop = true;
             this.rbCONSULTA.Text = "CONSULTA";
             this.rbCONSULTA.UseVisualStyleBackColor = true;
             // 

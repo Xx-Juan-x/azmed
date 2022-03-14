@@ -138,7 +138,6 @@ C:\Users\emanu\Desktop\azmed\azmed\VISTA\obj\Debug\VISTA.pdb
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmASIGNAR_ESPECIALIDAD.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmATENCION.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmTURNOS.resources
-C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmDATOS_TURNO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmASIGNAR_PLAN_OBRA_SOCIAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_HORARIOS_LABORALES.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_PROFESIONAL.resources
