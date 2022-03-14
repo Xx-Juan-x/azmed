@@ -81,17 +81,23 @@
     <Compile Include="frmCLINICA.Designer.cs">
       <DependentUpon>frmCLINICA.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDATOS_TURNO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDATOS_TURNO.Designer.cs">
-      <DependentUpon>frmDATOS_TURNO.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmESPECIALIDAD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmESPECIALIDAD.Designer.cs">
       <DependentUpon>frmESPECIALIDAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLISTA_HORARIOS_LABORALES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLISTA_HORARIOS_LABORALES.Designer.cs">
+      <DependentUpon>frmLISTA_HORARIOS_LABORALES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLISTA_TURNOS_PROFESIONAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLISTA_TURNOS_PROFESIONAL.Designer.cs">
+      <DependentUpon>frmLISTA_TURNOS_PROFESIONAL.cs</DependentUpon>
     </Compile>
     <Compile Include="frmOBRA_SOCIAL.cs">
       <SubType>Form</SubType>
@@ -117,11 +123,11 @@
     <Compile Include="frmREGISTRO_PACIENTE.Designer.cs">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmREPORTE.cs">
+    <Compile Include="frmREPORTE_ESTADISTICO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmREPORTE.Designer.cs">
-      <DependentUpon>frmREPORTE.cs</DependentUpon>
+    <Compile Include="frmREPORTE_ESTADISTICO.Designer.cs">
+      <DependentUpon>frmREPORTE_ESTADISTICO.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTURNOS.cs">
       <SubType>Form</SubType>
@@ -149,11 +155,14 @@
     <EmbeddedResource Include="frmCLINICA.resx">
       <DependentUpon>frmCLINICA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDATOS_TURNO.resx">
-      <DependentUpon>frmDATOS_TURNO.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmESPECIALIDAD.resx">
       <DependentUpon>frmESPECIALIDAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLISTA_HORARIOS_LABORALES.resx">
+      <DependentUpon>frmLISTA_HORARIOS_LABORALES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLISTA_TURNOS_PROFESIONAL.resx">
+      <DependentUpon>frmLISTA_TURNOS_PROFESIONAL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLOGIN.resx">
       <DependentUpon>frmLOGIN.cs</DependentUpon>
@@ -167,8 +176,8 @@
     <EmbeddedResource Include="frmREGISTRO_PACIENTE.resx">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmREPORTE.resx">
-      <DependentUpon>frmREPORTE.cs</DependentUpon>
+    <EmbeddedResource Include="frmREPORTE_ESTADISTICO.resx">
+      <DependentUpon>frmREPORTE_ESTADISTICO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTURNOS.resx">
       <DependentUpon>frmTURNOS.cs</DependentUpon>

@@ -31,7 +31,8 @@ namespace VISTA
         public frmUSUARIOS()
         {
             InitializeComponent();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();           
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
             
             ARMA_GRILLA("A");
             MODO_GRILLA();
@@ -53,6 +54,8 @@ namespace VISTA
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
         private MODELO.USUARIO oUSUARIO;
+        private CONTROLADORA.ATENCIONES cATENCIONES;
+        private MODELO.ATENCION oATENCION;
         string ACCION;
 
         private void ARMA_GRILLA(string TIPO)
@@ -179,7 +182,7 @@ namespace VISTA
                 return;
             }
 
-            if (cmbROL.SelectedItem == "SELECCIONE...")
+            if (cmbROL.SelectedItem.ToString() == "SELECCIONE...")
             {
                 MessageBox.Show("Debe seleccionar un rol para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -298,7 +301,11 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
+                //oATENCION = new MODELO.ATENCION();
+                //oATENCION.PROFESIONAL.ID_USUARIO = oUSUARIO.ID_USUARIO;
                 cUSUARIOS.ELIMINAR_USUARIO(oUSUARIO);
+                //cATENCIONES.ELIMINAR_ATENCION(oATENCION);
+                
                 ARMA_GRILLA("A");
             }
         }

@@ -186,6 +186,14 @@
     <Compile Include="Migrations\202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.designer.cs">
       <DependentUpon>202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203072048224_CAMBIO_VARIABLE_TURNO.cs" />
+    <Compile Include="Migrations\202203072048224_CAMBIO_VARIABLE_TURNO.designer.cs">
+      <DependentUpon>202203072048224_CAMBIO_VARIABLE_TURNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120043520_DIA_MODELO_STRING.cs" />
+    <Compile Include="Migrations\202203120043520_DIA_MODELO_STRING.designer.cs">
+      <DependentUpon>202203120043520_DIA_MODELO_STRING.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -301,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.resx">
       <DependentUpon>202203042318052_PLAN_OBRA_SOCIAL_PACIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203072048224_CAMBIO_VARIABLE_TURNO.resx">
+      <DependentUpon>202203072048224_CAMBIO_VARIABLE_TURNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120043520_DIA_MODELO_STRING.resx">
+      <DependentUpon>202203120043520_DIA_MODELO_STRING.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

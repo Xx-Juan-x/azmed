@@ -77,6 +77,8 @@ namespace VISTA
                     tURNOSToolStripMenuItem.Visible = true;
                     facturarPacienteToolStripMenuItem.Visible = true;
                     rEPORTESToolStripMenuItem.Visible = true;
+                    horariosLaboralesToolStripMenuItem.Visible = false;
+                    turnosToolStripMenuItem1.Visible = false;
                     break;
                 case "PACIENTE":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -84,16 +86,23 @@ namespace VISTA
                     pROFESIONALESToolStripMenuItem.Visible = false;
                     tURNOSToolStripMenuItem.Visible = true;
                     facturarPacienteToolStripMenuItem.Visible = false;
+                    turnosToolStripMenuItem1.Visible = false;
                     cOMPRASToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;
+                    rEPORTESToolStripMenuItem.Visible = false;           
                     break;
                 case "PROFESIONAL":
                     uSUARIOSToolStripMenuItem.Visible = false;
                     pACIENTESToolStripMenuItem.Visible = false;
                     pROFESIONALESToolStripMenuItem.Visible = true;
+                    horariosLaboralesToolStripMenuItem.Visible = true;
                     registrarEspecialidadesToolStripMenuItem.Visible = false;
                     asignarProfesionalToolStripMenuItem.Visible = false;
-                    tURNOSToolStripMenuItem.Visible = false;
+                    gestionarAtenciónToolStripMenuItem.Visible = false;
+                    tURNOSToolStripMenuItem.Visible = true;
+                    consultaToolStripMenuItem.Visible = false;
+                    estudioToolStripMenuItem.Visible = false;
+                    facturarPacienteToolStripMenuItem.Visible = false;
+                    turnosToolStripMenuItem1.Visible = true;
                     cOMPRASToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
                     break;
@@ -104,7 +113,7 @@ namespace VISTA
                     tURNOSToolStripMenuItem.Visible = false;
                     cOMPRASToolStripMenuItem.Visible = true;
                     crearSolicitudDePedidoToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;
+                    rEPORTESToolStripMenuItem.Visible = false;                  
                     break;
                 default:
                     MessageBox.Show("ROL no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -141,6 +150,18 @@ namespace VISTA
         {
             frmASIGNAR_PLAN_OBRA_SOCIAL FORMULARIO_ASIGNAR_PLAN_OBRA_SOCIAL = frmASIGNAR_PLAN_OBRA_SOCIAL.OBTENER_INSTANCIA();
             FORMULARIO_ASIGNAR_PLAN_OBRA_SOCIAL.Show();
+        }
+
+        private void horariosLaboralesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLISTA_HORARIOS_LABORALES FORMULARIO_HORARIO_LABORAL = frmLISTA_HORARIOS_LABORALES.OBTENER_INSTANCIA();
+            FORMULARIO_HORARIO_LABORAL.Show();
+        }
+
+        private void consultaYReportesDeProfesionalesRegistradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmREPORTE_ESTADISTICO FORMULARIO_CANTIDAD_PROFESIONAL = frmREPORTE_ESTADISTICO.OBTENER_INSTANCIA();
+            FORMULARIO_CANTIDAD_PROFESIONAL.Show();
         }
     }
 }

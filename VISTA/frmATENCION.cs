@@ -92,27 +92,15 @@ namespace VISTA
 
         private void MODO_GRILLA()
         {
-            if (frmLOGIN.TIPO_USUARIO == "ADMINISTRADOR")
-            {
-                gbLISTA_HORARIOS_ATENCION.Enabled = true;
-                gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
-                gbHORARIOS_ATENCION.Enabled = false;
-                btnAGREGAR.Visible = true;
-                btnMODIFICAR.Visible = true;
-                btnCONSULTAR.Visible = true;
-                btnELIMINAR.Visible = true;
-                gbDATOS_PROFESIONAL_HORARIOS.Visible = true;
-                gbHORARIOS_ATENCION.Visible = true;
-            }
-            else if (frmLOGIN.TIPO_USUARIO == "PROFESIONAL")
-            {
-                btnAGREGAR.Visible = false;
-                btnMODIFICAR.Visible = false;
-                btnCONSULTAR.Visible = false;
-                btnELIMINAR.Visible = false;
-                gbDATOS_PROFESIONAL_HORARIOS.Visible = false;
-                gbHORARIOS_ATENCION.Visible = false;      
-            }
+            gbLISTA_HORARIOS_ATENCION.Enabled = true;
+            gbDATOS_PROFESIONAL_HORARIOS.Enabled = false;
+            gbHORARIOS_ATENCION.Enabled = false;
+            btnAGREGAR.Visible = true;
+            btnMODIFICAR.Visible = true;
+            btnCONSULTAR.Visible = true;
+            btnELIMINAR.Visible = true;
+            gbDATOS_PROFESIONAL_HORARIOS.Visible = true;
+            gbHORARIOS_ATENCION.Visible = true;          
         }
 
         private void MODO_DATOS()

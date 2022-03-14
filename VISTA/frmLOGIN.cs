@@ -30,6 +30,7 @@ namespace VISTA
 
         private CONTROLADORA.USUARIOS cUSUARIOS;      
         public static string TIPO_USUARIO = "";
+        public static int ID_USUARIO; 
         public frmREGISTRO_PACIENTE FORMULARIO_REGISTRO;
 
         public frmLOGIN()
@@ -60,6 +61,7 @@ namespace VISTA
             if (RESPUESTA.Any())
             {
                 RESPUESTA.ToList().ForEach(s => TIPO_USUARIO = s.TIPO);
+                RESPUESTA.ToList().ForEach(s => ID_USUARIO = s.ID_USUARIO);
                 return true;
             }
             else

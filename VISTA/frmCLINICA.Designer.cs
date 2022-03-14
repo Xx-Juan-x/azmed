@@ -40,10 +40,12 @@ namespace VISTA
             this.registrarEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarAtenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horariosLaboralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tURNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearSolicitudDePedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,7 +133,8 @@ namespace VISTA
             this.pROFESIONALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarEspecialidadesToolStripMenuItem,
             this.asignarProfesionalToolStripMenuItem,
-            this.gestionarAtenciónToolStripMenuItem});
+            this.gestionarAtenciónToolStripMenuItem,
+            this.horariosLaboralesToolStripMenuItem});
             this.pROFESIONALESToolStripMenuItem.Name = "pROFESIONALESToolStripMenuItem";
             this.pROFESIONALESToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
             this.pROFESIONALESToolStripMenuItem.Text = "PROFESIONALES";
@@ -157,12 +160,20 @@ namespace VISTA
             this.gestionarAtenciónToolStripMenuItem.Text = "Gestionar Atenciones";
             this.gestionarAtenciónToolStripMenuItem.Click += new System.EventHandler(this.gestionarAtenciónToolStripMenuItem_Click);
             // 
+            // horariosLaboralesToolStripMenuItem
+            // 
+            this.horariosLaboralesToolStripMenuItem.Name = "horariosLaboralesToolStripMenuItem";
+            this.horariosLaboralesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.horariosLaboralesToolStripMenuItem.Text = "Horarios Laborales";
+            this.horariosLaboralesToolStripMenuItem.Click += new System.EventHandler(this.horariosLaboralesToolStripMenuItem_Click);
+            // 
             // tURNOSToolStripMenuItem
             // 
             this.tURNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaToolStripMenuItem,
             this.estudioToolStripMenuItem,
-            this.facturarPacienteToolStripMenuItem});
+            this.facturarPacienteToolStripMenuItem,
+            this.turnosToolStripMenuItem1});
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
             this.tURNOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.tURNOSToolStripMenuItem.Text = "TURNOS";
@@ -185,6 +196,12 @@ namespace VISTA
             this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
             this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
+            // 
+            // turnosToolStripMenuItem1
+            // 
+            this.turnosToolStripMenuItem1.Name = "turnosToolStripMenuItem1";
+            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.turnosToolStripMenuItem1.Text = "Turnos";
             // 
             // cOMPRASToolStripMenuItem
             // 
@@ -241,19 +258,20 @@ namespace VISTA
             // consultaYReportesDeProfesionalesRegistradosToolStripMenuItem
             // 
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Name = "consultaYReportesDeProfesionalesRegistradosToolStripMenuItem";
-            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
-            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Text = "Consulta y Reportes de Profesionales Registrados";
+            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Text = "Estadistica de Especialidades";
+            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Click += new System.EventHandler(this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem_Click);
             // 
             // consultaYReportesDeTurnosSolicitadosToolStripMenuItem
             // 
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Name = "consultaYReportesDeTurnosSolicitadosToolStripMenuItem";
-            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
+            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Text = "Consulta y Reportes de Turnos Solicitados";
             // 
             // consultaYReportesDeComprasRealizadasToolStripMenuItem
             // 
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Name = "consultaYReportesDeComprasRealizadasToolStripMenuItem";
-            this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(332, 22);
+            this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Text = "Consulta y Reportes de Compras Realizadas";
             // 
             // sALIRToolStripMenuItem
@@ -343,5 +361,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem asignarObraSocialYPlanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem horariosLaboralesToolStripMenuItem;
     }
 }
