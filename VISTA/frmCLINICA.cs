@@ -78,7 +78,9 @@ namespace VISTA
                     facturarPacienteToolStripMenuItem.Visible = true;
                     rEPORTESToolStripMenuItem.Visible = true;
                     horariosLaboralesToolStripMenuItem.Visible = false;
+                    SolicitarTurnoToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = false;
+
                     break;
                 case "PACIENTE":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -99,8 +101,7 @@ namespace VISTA
                     asignarProfesionalToolStripMenuItem.Visible = false;
                     gestionarAtenciónToolStripMenuItem.Visible = false;
                     tURNOSToolStripMenuItem.Visible = true;
-                    consultaToolStripMenuItem.Visible = false;
-                    estudioToolStripMenuItem.Visible = false;
+                    SolicitarTurnoToolStripMenuItem.Visible = false;
                     facturarPacienteToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = true;
                     cOMPRASToolStripMenuItem.Visible = false;
@@ -162,6 +163,12 @@ namespace VISTA
         {
             frmREPORTE_ESTADISTICO FORMULARIO_CANTIDAD_PROFESIONAL = frmREPORTE_ESTADISTICO.OBTENER_INSTANCIA();
             FORMULARIO_CANTIDAD_PROFESIONAL.Show();
+        }
+
+        private void turnosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLISTA_TURNOS_PROFESIONAL FORMULARIO_LISTA_TURNOS = frmLISTA_TURNOS_PROFESIONAL.OBTENER_INSTANCIA();
+            FORMULARIO_LISTA_TURNOS.Show();
         }
     }
 }

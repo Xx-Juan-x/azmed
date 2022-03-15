@@ -29,35 +29,87 @@ namespace VISTA
         }
 
         private CONTROLADORA.TURNOS cTURNOS;
-
+        private MODELO.TURNO oTURNO;
+        private CONTROLADORA.USUARIOS cUSUARIOS;        
 
         public frmLISTA_TURNOS_PROFESIONAL()
         {
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+
+            cmbFILTRO_DIA_LABORAL.Items.Add("TODOS");
+            cmbFILTRO_DIA_LABORAL.Items.Add("LUNES");
+            cmbFILTRO_DIA_LABORAL.Items.Add("MARTES");
+            cmbFILTRO_DIA_LABORAL.Items.Add("MIERCOLES");
+            cmbFILTRO_DIA_LABORAL.Items.Add("JUEVES");
+            cmbFILTRO_DIA_LABORAL.Items.Add("VIERNES");
+            cmbFILTRO_DIA_LABORAL.Items.Add("SABADO");
+            cmbFILTRO_DIA_LABORAL.Items.Add("DOMINGO");
+            cmbFILTRO_DIA_LABORAL.SelectedItem = "TODOS";
+
+            ARMA_GRILLA("A");
         }
 
-        private void ARMA_GRILLA()
+        private void ARMA_GRILLA(string TIPO)
         {
-            dgvLISTA_TURNOS.DataSource = null;
-            
-
-
-
             var LISTA_TURNOS_PROFESIONAL = (from a in cTURNOS.OBTENER_TURNOS()
                                             where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
                                             select a).ToList();
 
-            dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+            if (TIPO == "A")
+            {
+                dgvLISTA_TURNOS.DataSource = null;
+                dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+            }
+            if (TIPO == "B")
+            {
+                string FILTRO_DIA_LABORAL = cmbFILTRO_DIA_LABORAL.Text;
+
+                if (FILTRO_DIA_LABORAL == "TODOS")
+                {
+                    dgvLISTA_TURNOS.DataSource = null;
+                    dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+                }
+                else
+                {
+                    var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
+                                        where a.DIA == FILTRO_DIA_LABORAL &&
+                                        a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
+                                        select a).ToList();
+
+                    dgvLISTA_TURNOS.DataSource = null;
+                    dgvLISTA_TURNOS.DataSource = LISTA_TURNOS;
+                }
 
 
-            /*var LISTA_TURNOS_PROFESIONAL = (from a in cTURNOS.OBTENER_TURNOS()
-                                            where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
-                                            && a.DIA == cmbFILTRO_DIA_LABORAL.SelectedValue
-                                            select a).ToList();*/          
+                /*var LISTA_TURNOS_PROFESIONAL = (from a in cTURNOS.OBTENER_TURNOS()
+                                                where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
+                                                && a.DIA == cmbFILTRO_DIA_LABORAL.SelectedValue
+                                                select a).ToList();*/
+            }
         }
 
+        private void btnBUSCAR_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbFILTRO_DIA_LABORAL.Text))
+            {
+                MessageBox.Show("Debe seleccionar un dia laboral de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cmbFILTRO_DIA_LABORAL.SelectedItem.ToString() == "TODOS")
+            {
+                ARMA_GRILLA("A");
+            }
+            else
+            {
+                ARMA_GRILLA("B");
+            }
+        }
 
-
+        private void btnCERRAR_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

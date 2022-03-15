@@ -35,10 +35,12 @@ namespace VISTA
         private MODELO.OBRA_SOCIAL oOBRA_SOCIAL;
         private MODELO.PLAN oPLAN;
         private MODELO.USUARIO oPACIENTE;
+        private MODELO.USUARIO oPROFESIONAL;
         private CONTROLADORA.ATENCIONES cATENCIONES;
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private CONTROLADORA.PLANES cPLANES;
         private string DIA;
+        string ACCION;
 
         public frmTURNOS()
         {
@@ -147,7 +149,9 @@ namespace VISTA
         }*/
 
         private void cmbDIA_SelectedIndexChanged_1(object sender, EventArgs e)
-        {           
+        {
+            cmbHORAS.DataSource = null;
+            cmbPROFESIONAL.DataSource = null;
             int[] horas_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
             int[] horas_no_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
 
@@ -167,10 +171,11 @@ namespace VISTA
 
                 hora_disponibles = hora_disponibles.Concat(HORA_ARRAY_PROFESIONAL).ToArray();
             }
-            //La LISTA_TURNOS es un array [5,6,7...] con los turnos asignados  
+            //La LISTA_TURNOS es un array [5,6,7...] con los turnos asignados
+            //MessageBox.Show(DIA_CMB_V);
             var LISTA_TURNOS = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
                                 where b.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
-                                && b.DIA.Contains(DIA_CMB_V)
+                                && b.FECHA.ToShortDateString() ==DIA_CMB_V
                                 select b.HORA_TURNO).ToArray();
             //Borramos el array de horas disponibles  exceptuando lo que LISTA_TURNOS TIENE 
 
@@ -202,20 +207,60 @@ namespace VISTA
             }
         }
 
-        private void btnCERRAR_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void cmbESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {           
             cmbHORAS.DataSource = null;
+            cmbPROFESIONAL.DataSource = null;
         }
 
         private void cmbHORAS_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbPROFESIONAL.DataSource = null;
             DIAS dia = cmbDIA.SelectedItem as DIAS;
-            //MessageBox.Show(dia.DIA_VALOR.ToString());
+            string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
+            //Traigo todos los profesionales que coincidan con , el dia laboral, con la especialidad seleccionada, y con la hora selecciona
+            //MessageBox.Show(cmbHORAS.SelectedItem.ToString());
+            var LISTA_PROFESIONALES = (from a in cATENCIONES.OBTENER_ATENCIONES()
+                                       where a.DIA_LABORAL == dia.DIA_TEXTO
+                                       && a.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
+                                       && (a.HORA_INICIO <= Convert.ToInt32(HORA_TEXTO)
+                                       && a.HORA_FIN >= Convert.ToInt32(HORA_TEXTO))
+                                       select a).ToList();
+
+            //En esta lista le inserto un indice por cada profesional que esta disponible luego de recorrer los turnos de dicho profesional.
+            List<COMBOBOX_PROFESIONAL> LISTA_CMB_PROFESIONAL = new List<COMBOBOX_PROFESIONAL>();
+
+            cmbPROFESIONAL.DisplayMember = "CMB_TEXTO";
+            cmbPROFESIONAL.ValueMember = "CMB_VALOR";
+           
+            int HORA_NUMERO = Convert.ToInt32(HORA_TEXTO);
+            foreach (var PROFESIONAL in LISTA_PROFESIONALES)
+            {
+                var COMPROBAR_PROFESIONAL = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
+                                             where b.HORA_TURNO == HORA_NUMERO
+                                             && b.PROFESIONAL.ID_USUARIO == PROFESIONAL.PROFESIONAL.ID_USUARIO
+                                             && b.DIA == dia.DIA_VALOR.ToShortDateString()
+                                             select b).Count();
+                //si COMPROBAR_PROFESIONAL el count me devuelve 0, significa que el profesional esta disponible
+                //si devuelve 1 , el profesional ya tiene un turno para esa hora, no esta disponible
+                if (COMPROBAR_PROFESIONAL == 0)
+                {
+                    //agrego a la cmb 
+                    LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(PROFESIONAL.PROFESIONAL.NOMBRE + " " + PROFESIONAL.PROFESIONAL.APELLIDO, PROFESIONAL.PROFESIONAL.ID_USUARIO));
+                }
+            }
+            cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
+        }
+
+        class COMBOBOX_PROFESIONAL
+        {
+            public string CMB_TEXTO { get; set; }//EMA ROCA
+            public int CMB_VALOR { get; set; }//11
+            public COMBOBOX_PROFESIONAL(string T, int V)
+            {
+                CMB_TEXTO = T;
+                CMB_VALOR = V;
+            }
         }
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
@@ -223,35 +268,43 @@ namespace VISTA
             #region VALIDACIONES
             if (cmbESPECIALIDAD.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar una especialidad para poder solicitar un turno");
+                MessageBox.Show("Debe seleccionar una especialidad para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbDIA.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar un día de la semana para poder solicitar un turno");
+                MessageBox.Show("Debe seleccionar un día de la semana para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbHORAS.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar una hora de los que trabaja el profesional para poder solicitar un turno");
+                MessageBox.Show("Debe seleccionar una hora de los que trabaja el profesional para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbPROFESIONAL.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar el profesional que se encuentra disponible para poder solicitar un turno");
+                MessageBox.Show("Debe seleccionar el profesional que se encuentra disponible para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             #endregion
 
-            
+            oTURNO = new MODELO.TURNO();
+            COMBOBOX_PROFESIONAL VALOR_PROFESIONAL = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
+
             var PACIENTE = (from a in cUSUARIOS.OBTENER_PACIENTES()
                             where a.ID_USUARIO == frmLOGIN.ID_USUARIO
                             select a).ToList();
-
-            foreach(var PACIENTES in PACIENTE)
+            var PROFESIONAL = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
+                            where a.ID_USUARIO == VALOR_PROFESIONAL.CMB_VALOR
+                            select a).ToList();
+            foreach (var PROFESIONALES in PROFESIONAL)
+            {
+                oPROFESIONAL = PROFESIONALES;
+            }
+            foreach (var PACIENTES in PACIENTE)
             {
                 oOBRA_SOCIAL = PACIENTES.OBRA_SOCIAL;
                 oPLAN = PACIENTES.PLAN;
@@ -259,16 +312,17 @@ namespace VISTA
             }
 
             // ASIGNO MIS COMBO BOXS CON MIS PROPIEDADES
+            ACCION = "A";
             oTURNO.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedItem;
             oTURNO.DIA = cmbDIA.Text;
-            //oTURNO.HORA_TURNO = Convert.ToString(cmbHORAS.Text);
-            oTURNO.PROFESIONAL = (MODELO.USUARIO)cmbPROFESIONAL.SelectedItem;
+            string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
+            oTURNO.HORA_TURNO = Convert.ToInt32(HORA_TEXTO);
+            oPROFESIONAL.ID_USUARIO = VALOR_PROFESIONAL.CMB_VALOR;
+            oTURNO.PROFESIONAL = oPROFESIONAL;
             oTURNO.FECHA = DateTime.Now;
-            oTURNO.PACIENTE =oPACIENTE;
+            oTURNO.PACIENTE = oPACIENTE;
             oTURNO.OBRA_SOCIAL = oOBRA_SOCIAL;
-            oTURNO.PLAN = oPLAN;
-
-            
+            oTURNO.PLAN = oPLAN;        
             if (rbCONSULTA.Checked)
             {
                 oTURNO.TIPO = rbCONSULTA.Text;
@@ -280,10 +334,16 @@ namespace VISTA
                 oTURNO.TIPO = "ESTUDIO";
             }
 
-            cTURNOS.AGREGAR_TURNO(oTURNO);
+            if (ACCION == "A")
+            {
+                cTURNOS.AGREGAR_TURNO(oTURNO);
+                MessageBox.Show("Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);             
+            }
+        }
 
-            // LIMPIO LAS COMBOBOX
-
+        private void btnCERRAR_Click(object sender, EventArgs e)
+        {           
+            this.Close();
         }
     }
     

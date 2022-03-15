@@ -42,8 +42,7 @@ namespace VISTA
             this.gestionarAtenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horariosLaboralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tURNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SolicitarTurnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -170,38 +169,32 @@ namespace VISTA
             // tURNOSToolStripMenuItem
             // 
             this.tURNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaToolStripMenuItem,
-            this.estudioToolStripMenuItem,
+            this.SolicitarTurnoToolStripMenuItem,
             this.facturarPacienteToolStripMenuItem,
             this.turnosToolStripMenuItem1});
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
             this.tURNOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.tURNOSToolStripMenuItem.Text = "TURNOS";
             // 
-            // consultaToolStripMenuItem
+            // SolicitarTurnoToolStripMenuItem
             // 
-            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.consultaToolStripMenuItem.Text = "Solicitar Consulta";
-            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
-            // 
-            // estudioToolStripMenuItem
-            // 
-            this.estudioToolStripMenuItem.Name = "estudioToolStripMenuItem";
-            this.estudioToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.estudioToolStripMenuItem.Text = "Solicitar Estudio";
+            this.SolicitarTurnoToolStripMenuItem.Name = "SolicitarTurnoToolStripMenuItem";
+            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SolicitarTurnoToolStripMenuItem.Text = "Solicitar Turno";
+            this.SolicitarTurnoToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // facturarPacienteToolStripMenuItem
             // 
             this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // turnosToolStripMenuItem1
             // 
             this.turnosToolStripMenuItem1.Name = "turnosToolStripMenuItem1";
-            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.turnosToolStripMenuItem1.Text = "Turnos";
+            this.turnosToolStripMenuItem1.Click += new System.EventHandler(this.turnosToolStripMenuItem1_Click);
             // 
             // cOMPRASToolStripMenuItem
             // 
@@ -351,8 +344,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeProfesionalesRegistradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeTurnosSolicitadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeComprasRealizadasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SolicitarTurnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarProfesionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarAtenciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarPacienteToolStripMenuItem;
