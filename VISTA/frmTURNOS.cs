@@ -159,32 +159,62 @@ namespace VISTA
 
             string DIA_CMB_T = DIA_SELECCIONADO.DIA_TEXTO;//LUNES
             string DIA_CMB_V = DIA_SELECCIONADO.DIA_VALOR.ToShortDateString();//11-03-2022
-            int[] hora_disponibles = new int[] { };
+            int[] hora_disponibles = new int[24];
 
             var LISTA_ATENCION = (from a in cATENCIONES.OBTENER_ATENCIONES().AsEnumerable()
                                   where a.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
                                   && a.DIA_LABORAL == DIA_CMB_T
                                   select a).ToList();
+
+            var dict = new Dictionary<int, int>();
             foreach (var lista in LISTA_ATENCION)
             {
                 int[] HORA_ARRAY_PROFESIONAL = Enumerable.Range(lista.HORA_INICIO, lista.HORA_FIN - lista.HORA_INICIO + 1).ToArray();
-
-                hora_disponibles = hora_disponibles.Concat(HORA_ARRAY_PROFESIONAL).ToArray();
+                for (int i = 0; i < HORA_ARRAY_PROFESIONAL.Length; i++)
+                {
+                    if (Array.IndexOf(dict.Keys.ToArray(), HORA_ARRAY_PROFESIONAL[i]) != -1)
+                    {
+                        dict[HORA_ARRAY_PROFESIONAL[i]] = dict[HORA_ARRAY_PROFESIONAL[i]] + 1;
+                    }
+                    else
+                    {
+                        dict.Add(HORA_ARRAY_PROFESIONAL[i], 1);
+                    }
+                }
+                //hora_disponibles = hora_disponibles.Concat(HORA_ARRAY_PROFESIONAL).ToArray();
             }
-            //La LISTA_TURNOS es un array [5,6,7...] con los turnos asignados
-            //MessageBox.Show(DIA_CMB_V);
+            //La LISTA_TURNOS es un array [5,6,7...] con los turnos asignados  
             var LISTA_TURNOS = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
                                 where b.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
-                                && b.FECHA.ToShortDateString() ==DIA_CMB_V
+                                && b.FECHA.ToShortDateString() == DIA_CMB_V
                                 select b.HORA_TURNO).ToArray();
+            for (int i = 0; i < LISTA_TURNOS.Length; i++)
+            {
+                if (Array.IndexOf(dict.Keys.ToArray(), LISTA_TURNOS[i]) != -1)
+                {
+                    //dict[HORA_ARRAY_PROFESIONAL[i]] = dict[HORA_ARRAY_PROFESIONAL[i]] + 1;
+                    dict[LISTA_TURNOS[i]] = dict[LISTA_TURNOS[i]] - 1;
+                }
+            }
+            int index = 0;
+
+            foreach (var keyval in dict)
+            {
+                if (keyval.Value > 0)
+                {
+                    hora_disponibles[index] = keyval.Key;
+                    index++;
+                }
+            }
+
+
             //Borramos el array de horas disponibles  exceptuando lo que LISTA_TURNOS TIENE 
 
             //horas_disponibles[5,6,7,8,9,10]
             //LISTA_TURNOS[5,6]
             //RESULTADO: hora_disponibles [7,8,9,10]
 
-            hora_disponibles = hora_disponibles.Except(LISTA_TURNOS).ToArray();
-
+            //hora_disponibles = hora_disponibles.Except(LISTA_TURNOS).ToArray();
 
             horas_no_habiles = horas_no_habiles.Except(hora_disponibles).ToArray();
             horas_habiles = hora_disponibles;
@@ -310,6 +340,7 @@ namespace VISTA
                 oPLAN = PACIENTES.PLAN;
                 oPACIENTE = PACIENTES;
             }
+            DIAS DIA_SELECCIONADO = cmbDIA.SelectedItem as DIAS;
 
             // ASIGNO MIS COMBO BOXS CON MIS PROPIEDADES
             ACCION = "A";
@@ -319,7 +350,7 @@ namespace VISTA
             oTURNO.HORA_TURNO = Convert.ToInt32(HORA_TEXTO);
             oPROFESIONAL.ID_USUARIO = VALOR_PROFESIONAL.CMB_VALOR;
             oTURNO.PROFESIONAL = oPROFESIONAL;
-            oTURNO.FECHA = DateTime.Now;
+            oTURNO.FECHA = DIA_SELECCIONADO.DIA_VALOR;
             oTURNO.PACIENTE = oPACIENTE;
             oTURNO.OBRA_SOCIAL = oOBRA_SOCIAL;
             oTURNO.PLAN = oPLAN;        

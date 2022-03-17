@@ -170,5 +170,11 @@ namespace VISTA
             frmLISTA_TURNOS_PROFESIONAL FORMULARIO_LISTA_TURNOS = frmLISTA_TURNOS_PROFESIONAL.OBTENER_INSTANCIA();
             FORMULARIO_LISTA_TURNOS.Show();
         }
+
+        private void consultaYReportesDeTurnosSolicitadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmREPORTE_CANTIDAD_TURNOS FORMULARIO_CANTIDAD_TURNOS = frmREPORTE_CANTIDAD_TURNOS.OBTENER_INSTANCIA();
+            FORMULARIO_CANTIDAD_TURNOS.Show();
+        }
     }
 }

@@ -179,20 +179,20 @@ namespace VISTA
             // SolicitarTurnoToolStripMenuItem
             // 
             this.SolicitarTurnoToolStripMenuItem.Name = "SolicitarTurnoToolStripMenuItem";
-            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.SolicitarTurnoToolStripMenuItem.Text = "Solicitar Turno";
             this.SolicitarTurnoToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // facturarPacienteToolStripMenuItem
             // 
             this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // turnosToolStripMenuItem1
             // 
             this.turnosToolStripMenuItem1.Name = "turnosToolStripMenuItem1";
-            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.turnosToolStripMenuItem1.Text = "Turnos";
             this.turnosToolStripMenuItem1.Click += new System.EventHandler(this.turnosToolStripMenuItem1_Click);
             // 
@@ -259,7 +259,8 @@ namespace VISTA
             // 
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Name = "consultaYReportesDeTurnosSolicitadosToolStripMenuItem";
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Text = "Consulta y Reportes de Turnos Solicitados";
+            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Text = "Estadistica de Turnos Semanales";
+            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Click += new System.EventHandler(this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem_Click);
             // 
             // consultaYReportesDeComprasRealizadasToolStripMenuItem
             // 
