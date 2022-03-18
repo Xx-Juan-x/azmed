@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_ESPECIALIDAD = new System.Windows.Forms.GroupBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
@@ -44,6 +44,10 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_ESPECIALIDADES = new System.Windows.Forms.DataGridView();
+            this.txtIMPORTE_CONSULTA = new System.Windows.Forms.TextBox();
+            this.txtIMPORTE_ESTUDIO = new System.Windows.Forms.TextBox();
+            this.lblIMPORTE_CONSULTA = new System.Windows.Forms.Label();
+            this.lblIMPORTE_ESTUDIO = new System.Windows.Forms.Label();
             this.gbDATOS_ESPECIALIDAD.SuspendLayout();
             this.gbLISTA_ESPECIALIDADES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ESPECIALIDADES)).BeginInit();
@@ -52,6 +56,10 @@ namespace VISTA
             // gbDATOS_ESPECIALIDAD
             // 
             this.gbDATOS_ESPECIALIDAD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.lblIMPORTE_ESTUDIO);
+            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.lblIMPORTE_CONSULTA);
+            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.txtIMPORTE_ESTUDIO);
+            this.gbDATOS_ESPECIALIDAD.Controls.Add(this.txtIMPORTE_CONSULTA);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.lbl_NOMBRE);
             this.gbDATOS_ESPECIALIDAD.Controls.Add(this.btnGUARDAR);
@@ -59,7 +67,7 @@ namespace VISTA
             this.gbDATOS_ESPECIALIDAD.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_ESPECIALIDAD.Location = new System.Drawing.Point(600, 12);
             this.gbDATOS_ESPECIALIDAD.Name = "gbDATOS_ESPECIALIDAD";
-            this.gbDATOS_ESPECIALIDAD.Size = new System.Drawing.Size(269, 108);
+            this.gbDATOS_ESPECIALIDAD.Size = new System.Drawing.Size(269, 190);
             this.gbDATOS_ESPECIALIDAD.TabIndex = 7;
             this.gbDATOS_ESPECIALIDAD.TabStop = false;
             this.gbDATOS_ESPECIALIDAD.Text = "ESPECIALIDAD";
@@ -73,7 +81,7 @@ namespace VISTA
             this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCANCELAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
-            this.btnCANCELAR.Location = new System.Drawing.Point(158, 66);
+            this.btnCANCELAR.Location = new System.Drawing.Point(158, 148);
             this.btnCANCELAR.Name = "btnCANCELAR";
             this.btnCANCELAR.Size = new System.Drawing.Size(105, 36);
             this.btnCANCELAR.TabIndex = 7;
@@ -102,7 +110,7 @@ namespace VISTA
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGUARDAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(4, 66);
+            this.btnGUARDAR.Location = new System.Drawing.Point(6, 148);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(105, 36);
             this.btnGUARDAR.TabIndex = 1;
@@ -235,39 +243,85 @@ namespace VISTA
             this.dgvLISTA_ESPECIALIDADES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_ESPECIALIDADES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_ESPECIALIDADES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_ESPECIALIDADES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_ESPECIALIDADES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLISTA_ESPECIALIDADES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_ESPECIALIDADES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_ESPECIALIDADES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_ESPECIALIDADES.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_ESPECIALIDADES.Name = "dgvLISTA_ESPECIALIDADES";
             this.dgvLISTA_ESPECIALIDADES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_ESPECIALIDADES.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_ESPECIALIDADES.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvLISTA_ESPECIALIDADES.RowHeadersVisible = false;
             this.dgvLISTA_ESPECIALIDADES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_ESPECIALIDADES.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_ESPECIALIDADES.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvLISTA_ESPECIALIDADES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_ESPECIALIDADES.Size = new System.Drawing.Size(566, 270);
             this.dgvLISTA_ESPECIALIDADES.TabIndex = 0;
+            // 
+            // txtIMPORTE_CONSULTA
+            // 
+            this.txtIMPORTE_CONSULTA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIMPORTE_CONSULTA.Location = new System.Drawing.Point(135, 68);
+            this.txtIMPORTE_CONSULTA.Name = "txtIMPORTE_CONSULTA";
+            this.txtIMPORTE_CONSULTA.Size = new System.Drawing.Size(128, 20);
+            this.txtIMPORTE_CONSULTA.TabIndex = 8;
+            this.txtIMPORTE_CONSULTA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIMPORTE_CONSULTA_KeyPress);
+            // 
+            // txtIMPORTE_ESTUDIO
+            // 
+            this.txtIMPORTE_ESTUDIO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIMPORTE_ESTUDIO.Location = new System.Drawing.Point(135, 110);
+            this.txtIMPORTE_ESTUDIO.Name = "txtIMPORTE_ESTUDIO";
+            this.txtIMPORTE_ESTUDIO.Size = new System.Drawing.Size(128, 20);
+            this.txtIMPORTE_ESTUDIO.TabIndex = 9;
+            this.txtIMPORTE_ESTUDIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIMPORTE_ESTUDIO_KeyPress);
+            // 
+            // lblIMPORTE_CONSULTA
+            // 
+            this.lblIMPORTE_CONSULTA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIMPORTE_CONSULTA.AutoSize = true;
+            this.lblIMPORTE_CONSULTA.Location = new System.Drawing.Point(6, 75);
+            this.lblIMPORTE_CONSULTA.Name = "lblIMPORTE_CONSULTA";
+            this.lblIMPORTE_CONSULTA.Size = new System.Drawing.Size(120, 13);
+            this.lblIMPORTE_CONSULTA.TabIndex = 10;
+            this.lblIMPORTE_CONSULTA.Text = "IMPORTE CONSULTA:";
+            // 
+            // lblIMPORTE_ESTUDIO
+            // 
+            this.lblIMPORTE_ESTUDIO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIMPORTE_ESTUDIO.AutoSize = true;
+            this.lblIMPORTE_ESTUDIO.Location = new System.Drawing.Point(6, 117);
+            this.lblIMPORTE_ESTUDIO.Name = "lblIMPORTE_ESTUDIO";
+            this.lblIMPORTE_ESTUDIO.Size = new System.Drawing.Size(110, 13);
+            this.lblIMPORTE_ESTUDIO.TabIndex = 11;
+            this.lblIMPORTE_ESTUDIO.Text = "IMPORTE ESTUDIO:";
             // 
             // frmESPECIALIDAD
             // 
@@ -303,5 +357,9 @@ namespace VISTA
         private System.Windows.Forms.Button btnMODIFICAR;
         private System.Windows.Forms.Button btnAGREGAR;
         private System.Windows.Forms.DataGridView dgvLISTA_ESPECIALIDADES;
+        private System.Windows.Forms.Label lblIMPORTE_ESTUDIO;
+        private System.Windows.Forms.Label lblIMPORTE_CONSULTA;
+        private System.Windows.Forms.TextBox txtIMPORTE_ESTUDIO;
+        private System.Windows.Forms.TextBox txtIMPORTE_CONSULTA;
     }
 }

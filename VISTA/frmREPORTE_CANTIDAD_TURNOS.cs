@@ -68,6 +68,8 @@ namespace VISTA
             Series FECHA3 = chart_CANTIDAD_TURNOS.Series.Add(SERIE3[0].ToShortDateString() + " A " + SERIE3[1].ToShortDateString());
             Series FECHA4 = chart_CANTIDAD_TURNOS.Series.Add(SERIE4[0].ToShortDateString() + " A " + SERIE4[1].ToShortDateString());
 
+            
+
             var TURNOS1 = (from a in cTURNOS.OBTENER_TURNOS()
                            where a.FECHA >= SERIE1[0] && a.FECHA <= SERIE1[1]
                            select a).Count();
@@ -81,15 +83,24 @@ namespace VISTA
                            select a).Count();
 
             var TURNOS4 = (from a in cTURNOS.OBTENER_TURNOS()
-                           where a.FECHA >= SERIE3[0] && a.FECHA <= SERIE3[1]
+                           where a.FECHA >= SERIE4[0] && a.FECHA <= SERIE4[1]
                            select a).Count();
+
+            
+
+            chart_CANTIDAD_TURNOS.Series[0].ChartType = SeriesChartType.Line;
+            chart_CANTIDAD_TURNOS.Series[1].ChartType = SeriesChartType.Line;
+            chart_CANTIDAD_TURNOS.Series[2].ChartType = SeriesChartType.Line;
+            chart_CANTIDAD_TURNOS.Series[3].ChartType = SeriesChartType.Line;
 
             FECHA1.Points.Add(TURNOS1);
             FECHA2.Points.Add(TURNOS2);
             FECHA3.Points.Add(TURNOS3);
             FECHA4.Points.Add(TURNOS4);
 
-            //chart_CANTIDAD_TURNOS.Series[].ChartType = SeriesChartType.Line;
+            SeriesChartType TIPO_GRAFICO = SeriesChartType.Line;
+
+            //FECHA1.Points.Add(1, new );
 
         }
 

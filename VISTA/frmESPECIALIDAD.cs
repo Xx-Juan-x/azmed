@@ -84,10 +84,26 @@ namespace VISTA
                 MessageBox.Show("Debe ingresar el nombre de la especialidad para poder agregarla", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            double IMPORTE_CONSULTA;
+            if (!double.TryParse(txtIMPORTE_CONSULTA.Text, out IMPORTE_CONSULTA))
+            {
+                MessageBox.Show("Debe ingresar un importe de consulta que tendrá la especialidad para poder agregarla al sistema", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            double IMPORTE_ESTUDIO;
+            if (!double.TryParse(txtIMPORTE_ESTUDIO.Text, out IMPORTE_ESTUDIO))
+            {
+                MessageBox.Show("Debe ingresar un importe de estudio que tendrá la especialidad para poder agregarla al sistema", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
             oESPECIALIDAD.NOMBRE = txtNOMBRE.Text.ToUpper(); // Uso la funcion ToUapper para escribir el nombre en mayúscula
+            oESPECIALIDAD.IMPORTE_CONSULTA = IMPORTE_CONSULTA;
+            oESPECIALIDAD.IMPORTE_ESTUDIO = IMPORTE_ESTUDIO;
 
             if (ACCION == "A")
             {
@@ -100,6 +116,8 @@ namespace VISTA
 
             // LIMPIO LA TEXTBOX
             txtNOMBRE.Clear();
+            txtIMPORTE_CONSULTA.Clear();
+            txtIMPORTE_ESTUDIO.Clear();
             MODO_GRILLA();
             ARMA_GRILLA();
         }
@@ -116,6 +134,8 @@ namespace VISTA
             ACCION = "M";
 
             txtNOMBRE.Text = oESPECIALIDAD.NOMBRE.ToUpper();
+            txtIMPORTE_CONSULTA.Text = oESPECIALIDAD.IMPORTE_CONSULTA.ToString();
+            txtIMPORTE_ESTUDIO.Text = oESPECIALIDAD.IMPORTE_ESTUDIO.ToString();
 
             MODO_DATOS();
         }
@@ -166,6 +186,8 @@ namespace VISTA
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
             txtNOMBRE.Clear();
+            txtIMPORTE_CONSULTA.Clear();
+            txtIMPORTE_ESTUDIO.Clear();
             MODO_GRILLA();
         }
 
@@ -200,7 +222,26 @@ namespace VISTA
                 e.Handled = true;
                 return;
             }
-        }      
+        }
+
+        private void txtIMPORTE_CONSULTA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void txtIMPORTE_ESTUDIO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }
 

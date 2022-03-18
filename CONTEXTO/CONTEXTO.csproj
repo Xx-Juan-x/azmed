@@ -194,6 +194,10 @@
     <Compile Include="Migrations\202203120043520_DIA_MODELO_STRING.designer.cs">
       <DependentUpon>202203120043520_DIA_MODELO_STRING.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203172234452_IMPORTE_ESPECIALIDAD.cs" />
+    <Compile Include="Migrations\202203172234452_IMPORTE_ESPECIALIDAD.designer.cs">
+      <DependentUpon>202203172234452_IMPORTE_ESPECIALIDAD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -315,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203120043520_DIA_MODELO_STRING.resx">
       <DependentUpon>202203120043520_DIA_MODELO_STRING.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203172234452_IMPORTE_ESPECIALIDAD.resx">
+      <DependentUpon>202203172234452_IMPORTE_ESPECIALIDAD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

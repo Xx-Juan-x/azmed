@@ -128,3 +128,4 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrat
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.PLAN_OBRA_SOCIAL_PACIENTE.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.CAMBIO_VARIABLE_TURNO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.DIA_MODELO_STRING.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.IMPORTE_ESPECIALIDAD.resources

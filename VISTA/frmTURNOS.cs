@@ -150,7 +150,6 @@ namespace VISTA
 
         private void cmbDIA_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            cmbHORAS.DataSource = null;
             cmbPROFESIONAL.DataSource = null;
             int[] horas_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
             int[] horas_no_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
@@ -238,8 +237,9 @@ namespace VISTA
         }
 
         private void cmbESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
-        {           
-            cmbHORAS.DataSource = null;
+        {
+            cmbHORAS.Items.Clear();
+            cmbHORAS.ResetText();
             cmbPROFESIONAL.DataSource = null;
         }
 
@@ -269,7 +269,7 @@ namespace VISTA
                 var COMPROBAR_PROFESIONAL = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
                                              where b.HORA_TURNO == HORA_NUMERO
                                              && b.PROFESIONAL.ID_USUARIO == PROFESIONAL.PROFESIONAL.ID_USUARIO
-                                             && b.DIA == dia.DIA_VALOR.ToShortDateString()
+                                             && b.FECHA.ToShortDateString() == dia.DIA_VALOR.ToShortDateString()
                                              select b).Count();
                 //si COMPROBAR_PROFESIONAL el count me devuelve 0, significa que el profesional esta disponible
                 //si devuelve 1 , el profesional ya tiene un turno para esa hora, no esta disponible
@@ -322,11 +322,13 @@ namespace VISTA
             #endregion
 
             oTURNO = new MODELO.TURNO();
+
             COMBOBOX_PROFESIONAL VALOR_PROFESIONAL = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
 
             var PACIENTE = (from a in cUSUARIOS.OBTENER_PACIENTES()
                             where a.ID_USUARIO == frmLOGIN.ID_USUARIO
                             select a).ToList();
+
             var PROFESIONAL = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
                             where a.ID_USUARIO == VALOR_PROFESIONAL.CMB_VALOR
                             select a).ToList();
@@ -368,7 +370,10 @@ namespace VISTA
             if (ACCION == "A")
             {
                 cTURNOS.AGREGAR_TURNO(oTURNO);
-                MessageBox.Show("Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);             
+                MessageBox.Show("Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbHORAS.Items.Clear();
+                cmbHORAS.ResetText();
+                cmbPROFESIONAL.DataSource = null;
             }
         }
 
