@@ -28,8 +28,7 @@ namespace VISTA
             return instancia;
         }
 
-        private CONTROLADORA.TURNOS cTURNOS;
-        private MODELO.TURNO oTURNO;
+        private CONTROLADORA.TURNOS cTURNOS;       
         private CONTROLADORA.USUARIOS cUSUARIOS;        
 
         public frmLISTA_TURNOS_PROFESIONAL()

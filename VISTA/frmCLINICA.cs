@@ -80,6 +80,7 @@ namespace VISTA
                     horariosLaboralesToolStripMenuItem.Visible = false;
                     SolicitarTurnoToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = false;
+                    listaDeTurnosExportarToolStripMenuItem.Visible = false;
 
                     break;
                 case "PACIENTE":
@@ -90,7 +91,8 @@ namespace VISTA
                     facturarPacienteToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = false;
                     cOMPRASToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;           
+                    rEPORTESToolStripMenuItem.Visible = false;
+                    listaDeTurnosExportarToolStripMenuItem.Visible = true;
                     break;
                 case "PROFESIONAL":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -106,6 +108,7 @@ namespace VISTA
                     turnosToolStripMenuItem1.Visible = true;
                     cOMPRASToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
+                    listaDeTurnosExportarToolStripMenuItem.Visible = false;
                     break;
                 case "JEFE DE COMPRAS":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -175,6 +178,12 @@ namespace VISTA
         {
             frmREPORTE_CANTIDAD_TURNOS FORMULARIO_CANTIDAD_TURNOS = frmREPORTE_CANTIDAD_TURNOS.OBTENER_INSTANCIA();
             FORMULARIO_CANTIDAD_TURNOS.Show();
+        }
+
+        private void listaDeTurnosExportarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLISTA_TURNOS_PACIENTES FORMULARIO_LISTA_TURNOS_PACIENTE = frmLISTA_TURNOS_PACIENTES.OBTENER_INSTANCIA();
+            FORMULARIO_LISTA_TURNOS_PACIENTE.Show();
         }
     }
 }

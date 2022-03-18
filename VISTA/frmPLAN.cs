@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace VISTA
 {
@@ -109,11 +110,27 @@ namespace VISTA
             {
                 MessageBox.Show("Debe ingresar un plan para asignarlo con la Obra Social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }           
+            }
+
+            double DESCUENTO_CONSULTA;
+            if (!double.TryParse(txtDESCUENTO_CONSULTA.Text, out DESCUENTO_CONSULTA))
+            {
+                MessageBox.Show("Debe ingresar un descuento de consulta al plan de forma correcta", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            double DESCUENTO_ESTUDIO;
+            if (!double.TryParse(txtDESCUENTO_ESTUDIO.Text, out DESCUENTO_ESTUDIO))
+            {
+                MessageBox.Show("Debe ingresar un descuento de estudio al plan de forma correcta", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             #endregion
 
             oPLAN.NOMBRE = txtPLAN.Text.ToUpper(); // Uso la funcion ToUapper para escribir el nombre en mayúscula
             oPLAN.OBRA_SOCIAL = (MODELO.OBRA_SOCIAL)cmbOBRA_SOCIAL.SelectedItem;
+            oPLAN.DESCUENTO_CONSULTA = DESCUENTO_CONSULTA;
+            oPLAN.DESCUENTO_ESTUDIO = DESCUENTO_ESTUDIO;
 
             if (ACCION == "A")
             {
@@ -127,6 +144,8 @@ namespace VISTA
             // LIMPIO LA TEXTBOX
             txtPLAN.Clear();
             cmbOBRA_SOCIAL.SelectedItem = null;
+            txtDESCUENTO_CONSULTA.Clear();
+            txtDESCUENTO_ESTUDIO.Clear();
             MODO_GRILLA();
             ARMA_GRILLA();
         }
@@ -145,6 +164,8 @@ namespace VISTA
             //ASIGNO EL CONTENIDO DE LOS CAMPOS CON MIS OBJETOS CORRESPONDIENTES
             txtPLAN.Text = oPLAN.NOMBRE.ToUpper();
             cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
+            txtDESCUENTO_CONSULTA.Text = oPLAN.DESCUENTO_CONSULTA.ToString();
+            txtDESCUENTO_ESTUDIO.Text = oPLAN.DESCUENTO_ESTUDIO.ToString();
             MODO_DATOS();
         }
 
@@ -161,6 +182,8 @@ namespace VISTA
 
             txtPLAN.Text = oPLAN.NOMBRE;
             cmbOBRA_SOCIAL.SelectedItem = oPLAN.OBRA_SOCIAL;
+            txtDESCUENTO_CONSULTA.Text = oPLAN.DESCUENTO_CONSULTA.ToString();
+            txtDESCUENTO_ESTUDIO.Text = oPLAN.DESCUENTO_ESTUDIO.ToString();
             MODO_DATOS();
         }
 
@@ -181,11 +204,12 @@ namespace VISTA
             }
 
         }
-
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
             txtPLAN.Clear();          
             cmbOBRA_SOCIAL.SelectedItem = null;
+            txtDESCUENTO_CONSULTA.Clear();
+            txtDESCUENTO_ESTUDIO.Clear();
             MODO_GRILLA();
         }
 
@@ -199,6 +223,28 @@ namespace VISTA
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
                 MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtDESCUENTO_CONSULTA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!reg.IsMatch(e.KeyChar.ToString()) && !(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números y comas", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtDESCUENTO_ESTUDIO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!reg.IsMatch(e.KeyChar.ToString()) && !(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números y comas", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }

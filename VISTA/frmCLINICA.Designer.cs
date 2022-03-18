@@ -58,6 +58,7 @@ namespace VISTA
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listaDeTurnosExportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -171,7 +172,8 @@ namespace VISTA
             this.tURNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SolicitarTurnoToolStripMenuItem,
             this.facturarPacienteToolStripMenuItem,
-            this.turnosToolStripMenuItem1});
+            this.turnosToolStripMenuItem1,
+            this.listaDeTurnosExportarToolStripMenuItem});
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
             this.tURNOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.tURNOSToolStripMenuItem.Text = "TURNOS";
@@ -179,20 +181,20 @@ namespace VISTA
             // SolicitarTurnoToolStripMenuItem
             // 
             this.SolicitarTurnoToolStripMenuItem.Name = "SolicitarTurnoToolStripMenuItem";
-            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.SolicitarTurnoToolStripMenuItem.Text = "Solicitar Turno";
             this.SolicitarTurnoToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // facturarPacienteToolStripMenuItem
             // 
             this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // turnosToolStripMenuItem1
             // 
             this.turnosToolStripMenuItem1.Name = "turnosToolStripMenuItem1";
-            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(208, 22);
             this.turnosToolStripMenuItem1.Text = "Turnos";
             this.turnosToolStripMenuItem1.Click += new System.EventHandler(this.turnosToolStripMenuItem1_Click);
             // 
@@ -303,6 +305,13 @@ namespace VISTA
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // listaDeTurnosExportarToolStripMenuItem
+            // 
+            this.listaDeTurnosExportarToolStripMenuItem.Name = "listaDeTurnosExportarToolStripMenuItem";
+            this.listaDeTurnosExportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaDeTurnosExportarToolStripMenuItem.Text = "Turnos";
+            this.listaDeTurnosExportarToolStripMenuItem.Click += new System.EventHandler(this.listaDeTurnosExportarToolStripMenuItem_Click);
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,5 +365,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem asignarObraSocialYPlanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem horariosLaboralesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeTurnosExportarToolStripMenuItem;
     }
 }

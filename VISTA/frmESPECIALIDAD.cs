@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace VISTA
 {
@@ -226,18 +227,28 @@ namespace VISTA
 
         private void txtIMPORTE_CONSULTA_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            /*if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
                 MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }*/
+
+            var reg = new Regex("^[0-9,]*$");
+            if (!reg.IsMatch(e.KeyChar.ToString()) && !(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números y comas", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
             }
+
         }
         private void txtIMPORTE_ESTUDIO_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            var reg = new Regex("^[0-9,]*$");
+            if (!reg.IsMatch(e.KeyChar.ToString()) && !(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Solo se permiten números y comas", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
