@@ -235,6 +235,7 @@ namespace VISTA
             this.registrarProveedoresToolStripMenuItem.Name = "registrarProveedoresToolStripMenuItem";
             this.registrarProveedoresToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.registrarProveedoresToolStripMenuItem.Text = "Registrar Proveedores";
+            this.registrarProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedoresToolStripMenuItem_Click);
             // 
             // crearCotizacionesToolStripMenuItem
             // 

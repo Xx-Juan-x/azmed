@@ -191,5 +191,11 @@ namespace VISTA
             frmMATERIAL FORMULARIO_MATERIALES = frmMATERIAL.OBTENER_INSTANCIA();
             FORMULARIO_MATERIALES.Show();
         }
+
+        private void registrarProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPROVEEDOR FORMULARIO_PROVEEDOR = frmPROVEEDOR.OBTENER_INSTANCIA();
+            FORMULARIO_PROVEEDOR.Show();
+        }
     }
 }
