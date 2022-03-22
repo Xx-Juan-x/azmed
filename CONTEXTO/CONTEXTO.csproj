@@ -202,6 +202,14 @@
     <Compile Include="Migrations\202203181511440_DESCUENTO_PLAN.designer.cs">
       <DependentUpon>202203181511440_DESCUENTO_PLAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203221436292_MATERIAL.cs" />
+    <Compile Include="Migrations\202203221436292_MATERIAL.designer.cs">
+      <DependentUpon>202203221436292_MATERIAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203221759143_PROVEEDOR.cs" />
+    <Compile Include="Migrations\202203221759143_PROVEEDOR.designer.cs">
+      <DependentUpon>202203221759143_PROVEEDOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -329,6 +337,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203181511440_DESCUENTO_PLAN.resx">
       <DependentUpon>202203181511440_DESCUENTO_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203221436292_MATERIAL.resx">
+      <DependentUpon>202203221436292_MATERIAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203221759143_PROVEEDOR.resx">
+      <DependentUpon>202203221759143_PROVEEDOR.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

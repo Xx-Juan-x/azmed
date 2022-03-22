@@ -17,8 +17,5 @@ namespace CASOS_DE_USO.ESPECIALIDADES
         {
             return AZMED_CLINICA.ESPECIALIDADES.ToList();
         }
-
-       
-
     }
 }

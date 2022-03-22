@@ -185,5 +185,11 @@ namespace VISTA
             frmLISTA_TURNOS_PACIENTES FORMULARIO_LISTA_TURNOS_PACIENTE = frmLISTA_TURNOS_PACIENTES.OBTENER_INSTANCIA();
             FORMULARIO_LISTA_TURNOS_PACIENTE.Show();
         }
+
+        private void registrarMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMATERIAL FORMULARIO_MATERIALES = frmMATERIAL.OBTENER_INSTANCIA();
+            FORMULARIO_MATERIALES.Show();
+        }
     }
 }

@@ -47,6 +47,10 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.FACTURACION> FACTURACION { get; set; }
 
+        public virtual DbSet<MODELO.MATERIAL> MATERIALES { get; set; }
+
+        public virtual DbSet<MODELO.PROVEEDOR> PROVEEDORES { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -63,6 +67,10 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_TURNO);
             modelBuilder.Entity<MODELO.FACTURACION>()
                 .HasKey(c => c.NRO_LEGAJO);
+            modelBuilder.Entity<MODELO.MATERIAL>()
+                .HasKey(c => c.ID_MATERIAL);
+            modelBuilder.Entity<MODELO.PROVEEDOR>()
+                .HasKey(c => c.ID_PROVEEDOR);
         }
 
     }

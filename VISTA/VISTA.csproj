@@ -99,6 +99,12 @@
     <Compile Include="frmLISTA_TURNOS_PROFESIONAL.Designer.cs">
       <DependentUpon>frmLISTA_TURNOS_PROFESIONAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMATERIAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMATERIAL.Designer.cs">
+      <DependentUpon>frmMATERIAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOBRA_SOCIAL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="frmPLAN.Designer.cs">
       <DependentUpon>frmPLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPROVEEDOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPROVEEDOR.Designer.cs">
+      <DependentUpon>frmPROVEEDOR.cs</DependentUpon>
     </Compile>
     <Compile Include="frmREGISTRO_PACIENTE.cs">
       <SubType>Form</SubType>
@@ -179,11 +191,17 @@
     <EmbeddedResource Include="frmLOGIN.resx">
       <DependentUpon>frmLOGIN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMATERIAL.resx">
+      <DependentUpon>frmMATERIAL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOBRA_SOCIAL.resx">
       <DependentUpon>frmOBRA_SOCIAL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPLAN.resx">
       <DependentUpon>frmPLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPROVEEDOR.resx">
+      <DependentUpon>frmPROVEEDOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmREGISTRO_PACIENTE.resx">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
