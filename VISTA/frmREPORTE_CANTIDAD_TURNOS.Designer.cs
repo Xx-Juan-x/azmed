@@ -31,6 +31,8 @@ namespace VISTA
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart_CANTIDAD_TURNOS = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnCERRAR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart_CANTIDAD_TURNOS)).BeginInit();
@@ -42,17 +44,31 @@ namespace VISTA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart_CANTIDAD_TURNOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.chart_CANTIDAD_TURNOS.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            this.chart_CANTIDAD_TURNOS.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            this.chart_CANTIDAD_TURNOS.BorderSkin.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.chart_CANTIDAD_TURNOS.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart_CANTIDAD_TURNOS.Legends.Add(legend1);
             this.chart_CANTIDAD_TURNOS.Location = new System.Drawing.Point(12, 12);
             this.chart_CANTIDAD_TURNOS.Name = "chart_CANTIDAD_TURNOS";
-            this.chart_CANTIDAD_TURNOS.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chart_CANTIDAD_TURNOS.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart_CANTIDAD_TURNOS.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))};
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.LabelForeColor = System.Drawing.Color.OrangeRed;
+            series1.Legend = "Legend1";
+            series1.Name = "CANTIDAD DE TURNOS";
+            series1.YValuesPerPoint = 2;
+            this.chart_CANTIDAD_TURNOS.Series.Add(series1);
             this.chart_CANTIDAD_TURNOS.Size = new System.Drawing.Size(773, 373);
             this.chart_CANTIDAD_TURNOS.TabIndex = 0;
             this.chart_CANTIDAD_TURNOS.Text = "CANTIDAD DE TURNOS";
+            title1.ForeColor = System.Drawing.Color.LightGray;
+            title1.Name = "CANTIDAD DE TURNOS POR SEMANA";
+            title1.Text = "CANTIDAD DE TURNOS POR SEMANA";
+            this.chart_CANTIDAD_TURNOS.Titles.Add(title1);
             // 
             // btnCERRAR
             // 

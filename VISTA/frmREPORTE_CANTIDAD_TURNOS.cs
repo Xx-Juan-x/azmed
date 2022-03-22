@@ -34,6 +34,9 @@ namespace VISTA
         {
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
+
+            //Defino el tipo de gráfico
+            //chart_CANTIDAD_TURNOS.Series[0].ChartType = SeriesChartType.Line;
             ARMA_CHART();
         }
 
@@ -41,9 +44,8 @@ namespace VISTA
 
         private void ARMA_CHART()
         {
-            
+
             // Le coloco un nombre al gráfico
-            chart_CANTIDAD_TURNOS.Titles.Add("CANTIDAD DE TURNOS SEMANALES");
 
             //Doy un rango de 28 días atrasados, para ver la cantidad de turnos
             DateTime[] SERIE1 = new DateTime[2];
@@ -53,22 +55,19 @@ namespace VISTA
 
             SERIE1[0] = DIA_ACTUAL;//16/02/2022
             SERIE1[1] = DIA_ACTUAL.AddDays(6);//22/02/2022
+            string serie1 = "Semana "+SERIE1[0].ToShortDateString().Remove(4,5);
 
             SERIE2[0] = SERIE1[1].AddDays(1);//23/02/2022
             SERIE2[1] = SERIE2[0].AddDays(6);//29/02/2022
+            string serie2 = "Semana " + SERIE2[0].ToShortDateString().Remove(4, 5);
 
-            SERIE3[0] = SERIE2[0].AddDays(1);//30/02/2022
+            SERIE3[0] = SERIE2[1].AddDays(1);//30/02/2022
             SERIE3[1] = SERIE3[0].AddDays(6);//06/03/2022
+            string serie3 = "Semana " + SERIE3[0].ToShortDateString().Remove(4, 5);
 
-            SERIE4[0] = SERIE3[0].AddDays(1);//07/03/2022
+            SERIE4[0] = SERIE3[1].AddDays(1);//07/03/2022
             SERIE4[1] = SERIE4[0].AddDays(6);//13/03/2022
-
-            Series FECHA1 = chart_CANTIDAD_TURNOS.Series.Add(SERIE1[0].ToShortDateString() + " A " + SERIE1[1].ToShortDateString());
-            Series FECHA2 = chart_CANTIDAD_TURNOS.Series.Add(SERIE2[0].ToShortDateString() + " A " + SERIE2[1].ToShortDateString());
-            Series FECHA3 = chart_CANTIDAD_TURNOS.Series.Add(SERIE3[0].ToShortDateString() + " A " + SERIE3[1].ToShortDateString());
-            Series FECHA4 = chart_CANTIDAD_TURNOS.Series.Add(SERIE4[0].ToShortDateString() + " A " + SERIE4[1].ToShortDateString());
-
-            
+            string serie4 = "Semana " + SERIE4[0].ToShortDateString().Remove(4, 5);
 
             var TURNOS1 = (from a in cTURNOS.OBTENER_TURNOS()
                            where a.FECHA >= SERIE1[0] && a.FECHA <= SERIE1[1]
@@ -86,22 +85,10 @@ namespace VISTA
                            where a.FECHA >= SERIE4[0] && a.FECHA <= SERIE4[1]
                            select a).Count();
 
-            
+            int[] seriesY = new int[4] {TURNOS1,TURNOS2,TURNOS3,TURNOS4};
+            string[] seriesX = new string[4] {serie1,serie2,serie3,serie4 };
 
-            chart_CANTIDAD_TURNOS.Series[0].ChartType = SeriesChartType.Line;
-            chart_CANTIDAD_TURNOS.Series[1].ChartType = SeriesChartType.Line;
-            chart_CANTIDAD_TURNOS.Series[2].ChartType = SeriesChartType.Line;
-            chart_CANTIDAD_TURNOS.Series[3].ChartType = SeriesChartType.Line;
-
-            FECHA1.Points.Add(TURNOS1);
-            FECHA2.Points.Add(TURNOS2);
-            FECHA3.Points.Add(TURNOS3);
-            FECHA4.Points.Add(TURNOS4);
-
-            SeriesChartType TIPO_GRAFICO = SeriesChartType.Line;
-
-            //FECHA1.Points.Add(1, new );
-
+            chart_CANTIDAD_TURNOS.Series[0].Points.DataBindXY(seriesX, seriesY);
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)
