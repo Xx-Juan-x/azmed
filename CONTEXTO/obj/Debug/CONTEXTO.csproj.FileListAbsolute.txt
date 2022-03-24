@@ -135,3 +135,6 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrat
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.MODIFICACION_MATERIAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.SOLICITUD_PEDIDO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.COTIZACION.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.LISTA_SOLICITUD_PEDIDO.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.BORRO_SOLICITUD_PEDIDO.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.AGREGO_LISTA_Y_PEDIDO.resources

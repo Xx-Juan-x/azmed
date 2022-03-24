@@ -51,7 +51,9 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.PROVEEDOR> PROVEEDORES { get; set; }
 
-        public virtual DbSet<MODELO.SOLICITUD_PEDIDO> SOLICITUD_DE_PEDIDO { get; set; }
+        public virtual DbSet<MODELO.SOLICITUD_PEDIDO> SOLICITUDES_DE_PEDIDO { get; set; }
+
+        public virtual DbSet<MODELO.LISTA_PEDIDO> LISTA_DE_PEDIDOS { get; set; }
 
         public virtual DbSet<MODELO.COTIZACION> COTIZACIONES { get; set; }
 
@@ -76,11 +78,12 @@ namespace CONTEXTO
             modelBuilder.Entity<MODELO.PROVEEDOR>()
                 .HasKey(c => c.ID_PROVEEDOR);
             modelBuilder.Entity<MODELO.SOLICITUD_PEDIDO>()
-                .HasKey(c => c.ID_PEDIDO);
+                .HasKey(c => c.ID_SOLICITUD_PEDIDO);
+            modelBuilder.Entity<MODELO.LISTA_PEDIDO>()
+                .HasKey(c => c.ID_LISTA_PEDIDO);
             modelBuilder.Entity<MODELO.COTIZACION>()
-                .HasKey(c => c.ID_COTIZACION);
+                .HasKey(c => c.ID_COTIZACION);           
         }
-
     }
 
     //public class MyEntity

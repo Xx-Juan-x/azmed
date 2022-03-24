@@ -14,7 +14,7 @@ namespace VISTA
     public partial class frmCLINICA : Form
     {      
         private CONTROLADORA.USUARIOS cUSUARIOS;
-        private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
+        //private CONTROLADORA.LISTA_SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
 
         //public static frmCLINICA MDI_CLINICA;
 
@@ -38,7 +38,7 @@ namespace VISTA
         {
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
-            cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
+            //cSOLICITUDES_PEDIDOS = CONTROLADORA.LISTA_SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
         }
 
         
@@ -128,7 +128,7 @@ namespace VISTA
                     picIMAGEN_CLINICA.Visible = false;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;          
                     dgvLISTA_SOLICITUD_PEDIDO.DataSource = null;
-                    dgvLISTA_SOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_DE_PEDIDOS();
+                    //dgvLISTA_SOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_DE_PEDIDOS();
                     break;
                 default:
                     MessageBox.Show("ROL no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);

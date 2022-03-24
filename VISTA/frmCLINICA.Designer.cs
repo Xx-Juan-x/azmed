@@ -368,7 +368,7 @@ namespace VISTA
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvLISTA_SOLICITUD_PEDIDO.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_SOLICITUD_PEDIDO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLISTA_SOLICITUD_PEDIDO.Size = new System.Drawing.Size(1172, 541);
+            this.dgvLISTA_SOLICITUD_PEDIDO.Size = new System.Drawing.Size(1172, 519);
             this.dgvLISTA_SOLICITUD_PEDIDO.TabIndex = 0;
             // 
             // gbLISTA_SOLICITUDES_PEDIDOS
@@ -379,9 +379,9 @@ namespace VISTA
             this.gbLISTA_SOLICITUDES_PEDIDOS.Controls.Add(this.dgvLISTA_SOLICITUD_PEDIDO);
             this.gbLISTA_SOLICITUDES_PEDIDOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbLISTA_SOLICITUDES_PEDIDOS.ForeColor = System.Drawing.Color.White;
-            this.gbLISTA_SOLICITUDES_PEDIDOS.Location = new System.Drawing.Point(0, 22);
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Location = new System.Drawing.Point(0, 27);
             this.gbLISTA_SOLICITUDES_PEDIDOS.Name = "gbLISTA_SOLICITUDES_PEDIDOS";
-            this.gbLISTA_SOLICITUDES_PEDIDOS.Size = new System.Drawing.Size(1184, 566);
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Size = new System.Drawing.Size(1184, 544);
             this.gbLISTA_SOLICITUDES_PEDIDOS.TabIndex = 6;
             this.gbLISTA_SOLICITUDES_PEDIDOS.TabStop = false;
             this.gbLISTA_SOLICITUDES_PEDIDOS.Text = "LISTA DE SOLICITUDES DE PEDIDOS";

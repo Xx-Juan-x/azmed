@@ -222,6 +222,18 @@
     <Compile Include="Migrations\202203241300338_COTIZACION.designer.cs">
       <DependentUpon>202203241300338_COTIZACION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203242216399_LISTA_SOLICITUD_PEDIDO.cs" />
+    <Compile Include="Migrations\202203242216399_LISTA_SOLICITUD_PEDIDO.designer.cs">
+      <DependentUpon>202203242216399_LISTA_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203242302269_BORRO_SOLICITUD_PEDIDO.cs" />
+    <Compile Include="Migrations\202203242302269_BORRO_SOLICITUD_PEDIDO.designer.cs">
+      <DependentUpon>202203242302269_BORRO_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203242310572_AGREGO_LISTA_Y_PEDIDO.cs" />
+    <Compile Include="Migrations\202203242310572_AGREGO_LISTA_Y_PEDIDO.designer.cs">
+      <DependentUpon>202203242310572_AGREGO_LISTA_Y_PEDIDO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -364,6 +376,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203241300338_COTIZACION.resx">
       <DependentUpon>202203241300338_COTIZACION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203242216399_LISTA_SOLICITUD_PEDIDO.resx">
+      <DependentUpon>202203242216399_LISTA_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203242302269_BORRO_SOLICITUD_PEDIDO.resx">
+      <DependentUpon>202203242302269_BORRO_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203242310572_AGREGO_LISTA_Y_PEDIDO.resx">
+      <DependentUpon>202203242310572_AGREGO_LISTA_Y_PEDIDO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

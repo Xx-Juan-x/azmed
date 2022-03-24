@@ -30,7 +30,7 @@ namespace VISTA
         private CONTROLADORA.COTIZACIONES cCOTIZACIONES;
         private MODELO.COTIZACION oCONTIZACION;
         private CONTROLADORA.PROVEEDORES cPROVEEDORES;
-        private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
+        //private CONTROLADORA.LISTA_SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
         string ACCION;
 
         public frmCOTIZACION()
@@ -38,7 +38,7 @@ namespace VISTA
             InitializeComponent();
             cCOTIZACIONES = CONTROLADORA.COTIZACIONES.OBTENER_INSTANCIA();
             cPROVEEDORES = CONTROLADORA.PROVEEDORES.OBTENER_INSTANCIA();
-            cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
+            //cSOLICITUDES_PEDIDOS = CONTROLADORA.LISTA_SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
             ARMA_COMBOBOX_PROVEEDOR();
             ARMA_COMBOBOX_SOLICITUD_PEDIDO();
 
@@ -53,7 +53,7 @@ namespace VISTA
         private void ARMA_COMBOBOX_SOLICITUD_PEDIDO()
         {
             cmbSOLICITUD_PEDIDO.DataSource = null;
-            cmbSOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_DE_PEDIDOS();
+            //cmbSOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_DE_PEDIDOS();
         }
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
@@ -92,14 +92,13 @@ namespace VISTA
 
             oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
             oCONTIZACION.FECHA = DateTime.Now;
-            oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;
-            oCONTIZACION.PEDIDO = (MODELO.SOLICITUD_PEDIDO)cmbSOLICITUD_PEDIDO.SelectedItem;
+            oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;          
             oCONTIZACION.PRECIO = PRECIO_UNITARIO;
             oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
 
             if (ACCION == "A")
             {
-                DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea cotizar el pedido " + oCONTIZACION.PEDIDO + " ?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea cotizar el pedido?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (RESPUESTA == DialogResult.Yes)
                 {
                     cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);
