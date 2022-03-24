@@ -190,7 +190,7 @@ namespace VISTA
             }
             oPROVEEDOR = (MODELO.PROVEEDOR)dgvLISTA_PROVEEDORES.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el proveedor " + oPROVEEDOR.NOMBRE + oPROVEEDOR.APELLIDO + " de la lista de proveedores?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el proveedor " + oPROVEEDOR.NOMBRE + " " + oPROVEEDOR.APELLIDO + " de la lista de proveedores?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (RESPUESTA == DialogResult.Yes)
             {
                 cPROVEEDORES.ELIMINAR_PROVEEDOR(oPROVEEDOR);

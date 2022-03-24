@@ -86,8 +86,8 @@ namespace VISTA
                 MessageBox.Show("Debe ingresar una descripcion al insumo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            int CANTIDAD;
-            if (!int.TryParse(txtCANTIDAD.Text, out CANTIDAD))
+            int STOCK;
+            if (!int.TryParse(txtSTOCK.Text, out STOCK))
             {
                 MessageBox.Show("Debe ingresar la cantidad de insumos", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -96,7 +96,7 @@ namespace VISTA
 
             oMATERIAL.NOMBRE = txtNOMBRE.Text.ToUpper();
             oMATERIAL.DESCRIPCION = txtDESCRIPCION.Text.ToUpper();
-            oMATERIAL.CANTIDAD = CANTIDAD;
+            oMATERIAL.STOCK = STOCK;
 
             if (ACCION == "A")
             {
@@ -109,7 +109,7 @@ namespace VISTA
 
             txtNOMBRE.Clear();
             txtDESCRIPCION.Clear();
-            txtCANTIDAD.Clear();
+            txtSTOCK.Clear();
             MODO_GRILLA();
             ARMA_GRILLA();         
         }
@@ -127,7 +127,7 @@ namespace VISTA
 
             txtNOMBRE.Text = oMATERIAL.NOMBRE.ToUpper();
             txtDESCRIPCION.Text = oMATERIAL.DESCRIPCION.ToUpper();
-            txtCANTIDAD.Text = oMATERIAL.CANTIDAD.ToString();
+            txtSTOCK.Text = oMATERIAL.STOCK.ToString();
             MODO_DATOS();
         }
 
@@ -144,7 +144,7 @@ namespace VISTA
 
             txtNOMBRE.Text = oMATERIAL.NOMBRE.ToUpper();
             txtDESCRIPCION.Text = oMATERIAL.DESCRIPCION.ToUpper();
-            txtCANTIDAD.Text = oMATERIAL.CANTIDAD.ToString();
+            txtSTOCK.Text = oMATERIAL.STOCK.ToString();
             MODO_DATOS();
         }
 
@@ -169,7 +169,7 @@ namespace VISTA
         {
             txtNOMBRE.Clear();
             txtDESCRIPCION.Clear();
-            txtCANTIDAD.Clear();
+            txtSTOCK.Clear();
             MODO_GRILLA();
         }
 
@@ -178,7 +178,7 @@ namespace VISTA
             this.Close();
         }
 
-        private void txtCANTIDAD_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSTOCK_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {

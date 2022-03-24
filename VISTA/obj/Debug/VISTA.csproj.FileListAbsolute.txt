@@ -146,3 +146,5 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_C
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_PACIENTES.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmMATERIAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmPROVEEDOR.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmSOLICITAR_PEDIDO_INSUMO.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmCOTIZACION.resources

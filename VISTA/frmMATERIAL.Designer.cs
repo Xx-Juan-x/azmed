@@ -29,13 +29,13 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_MATERIAL = new System.Windows.Forms.GroupBox();
-            this.lblIMPORTE_ESTUDIO = new System.Windows.Forms.Label();
+            this.lblSTOCK = new System.Windows.Forms.Label();
             this.lblDESCRIPCION = new System.Windows.Forms.Label();
-            this.txtCANTIDAD = new System.Windows.Forms.TextBox();
+            this.txtSTOCK = new System.Windows.Forms.TextBox();
             this.txtDESCRIPCION = new System.Windows.Forms.TextBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@ namespace VISTA
             // gbDATOS_MATERIAL
             // 
             this.gbDATOS_MATERIAL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbDATOS_MATERIAL.Controls.Add(this.lblIMPORTE_ESTUDIO);
+            this.gbDATOS_MATERIAL.Controls.Add(this.lblSTOCK);
             this.gbDATOS_MATERIAL.Controls.Add(this.lblDESCRIPCION);
-            this.gbDATOS_MATERIAL.Controls.Add(this.txtCANTIDAD);
+            this.gbDATOS_MATERIAL.Controls.Add(this.txtSTOCK);
             this.gbDATOS_MATERIAL.Controls.Add(this.txtDESCRIPCION);
             this.gbDATOS_MATERIAL.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_MATERIAL.Controls.Add(this.lbl_NOMBRE);
@@ -72,17 +72,17 @@ namespace VISTA
             this.gbDATOS_MATERIAL.TabStop = false;
             this.gbDATOS_MATERIAL.Text = "INSUMO";
             // 
-            // lblIMPORTE_ESTUDIO
+            // lblSTOCK
             // 
-            this.lblIMPORTE_ESTUDIO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblSTOCK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblIMPORTE_ESTUDIO.AutoSize = true;
-            this.lblIMPORTE_ESTUDIO.Location = new System.Drawing.Point(6, 171);
-            this.lblIMPORTE_ESTUDIO.Name = "lblIMPORTE_ESTUDIO";
-            this.lblIMPORTE_ESTUDIO.Size = new System.Drawing.Size(65, 13);
-            this.lblIMPORTE_ESTUDIO.TabIndex = 11;
-            this.lblIMPORTE_ESTUDIO.Text = "CANTIDAD:";
+            this.lblSTOCK.AutoSize = true;
+            this.lblSTOCK.Location = new System.Drawing.Point(6, 171);
+            this.lblSTOCK.Name = "lblSTOCK";
+            this.lblSTOCK.Size = new System.Drawing.Size(46, 13);
+            this.lblSTOCK.TabIndex = 11;
+            this.lblSTOCK.Text = "STOCK:";
             // 
             // lblDESCRIPCION
             // 
@@ -96,16 +96,16 @@ namespace VISTA
             this.lblDESCRIPCION.TabIndex = 10;
             this.lblDESCRIPCION.Text = "DESCRIPCION:";
             // 
-            // txtCANTIDAD
+            // txtSTOCK
             // 
-            this.txtCANTIDAD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSTOCK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCANTIDAD.Location = new System.Drawing.Point(152, 168);
-            this.txtCANTIDAD.Name = "txtCANTIDAD";
-            this.txtCANTIDAD.Size = new System.Drawing.Size(180, 20);
-            this.txtCANTIDAD.TabIndex = 9;
-            this.txtCANTIDAD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCANTIDAD_KeyPress);
+            this.txtSTOCK.Location = new System.Drawing.Point(152, 168);
+            this.txtSTOCK.Name = "txtSTOCK";
+            this.txtSTOCK.Size = new System.Drawing.Size(180, 20);
+            this.txtSTOCK.TabIndex = 9;
+            this.txtSTOCK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSTOCK_KeyPress);
             // 
             // txtDESCRIPCION
             // 
@@ -286,36 +286,36 @@ namespace VISTA
             this.dgvLISTA_MATERIALES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_MATERIALES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_MATERIALES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_MATERIALES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_MATERIALES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_MATERIALES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_MATERIALES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_MATERIALES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_MATERIALES.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_MATERIALES.Name = "dgvLISTA_MATERIALES";
             this.dgvLISTA_MATERIALES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_MATERIALES.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_MATERIALES.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_MATERIALES.RowHeadersVisible = false;
             this.dgvLISTA_MATERIALES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_MATERIALES.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_MATERIALES.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_MATERIALES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_MATERIALES.Size = new System.Drawing.Size(646, 301);
             this.dgvLISTA_MATERIALES.TabIndex = 0;
@@ -343,9 +343,9 @@ namespace VISTA
         #endregion
 
         private System.Windows.Forms.GroupBox gbDATOS_MATERIAL;
-        private System.Windows.Forms.Label lblIMPORTE_ESTUDIO;
+        private System.Windows.Forms.Label lblSTOCK;
         private System.Windows.Forms.Label lblDESCRIPCION;
-        private System.Windows.Forms.TextBox txtCANTIDAD;
+        private System.Windows.Forms.TextBox txtSTOCK;
         private System.Windows.Forms.TextBox txtDESCRIPCION;
         private System.Windows.Forms.Button btnCANCELAR;
         private System.Windows.Forms.Label lbl_NOMBRE;

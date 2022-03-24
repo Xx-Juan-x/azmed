@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CONTROLADORA
+{
+    public class SOLICITUDES_DE_PEDIDOS
+    {
+        // PATRON SINGLETON
+        private static SOLICITUDES_DE_PEDIDOS instancia;
+
+        public static SOLICITUDES_DE_PEDIDOS OBTENER_INSTANCIA()
+        {
+            if (instancia == null)
+            {
+                instancia = new SOLICITUDES_DE_PEDIDOS();
+            }
+            return instancia;
+        }
+
+        //Creo mi objeto contexto
+        CONTEXTO.CLINICA_AZMED oCONTEXTO;
+
+        private SOLICITUDES_DE_PEDIDOS()
+        {
+            oCONTEXTO = CONTEXTO.CLINICA_AZMED.OBTENER_INSTANCIA();
+        }
+
+        public void AGREGAR_SOLICITUD_PEDIDO(MODELO.SOLICITUD_PEDIDO SOLICITUD_PEDIDO)
+        {
+            CASOS_DE_USO.SOLICITUDES_DE_PEDIDO.OPERACIONES_SOLICITUD_PEDIDO.AGREGAR_SOLICITUD_PEDIDO(oCONTEXTO, SOLICITUD_PEDIDO);
+            oCONTEXTO.SaveChanges();
+        }
+
+        public void MODIFICAR_SOLICITUD_PEDIDO(MODELO.SOLICITUD_PEDIDO SOLICITUD_PEDIDO)
+        {
+            CASOS_DE_USO.SOLICITUDES_DE_PEDIDO.OPERACIONES_SOLICITUD_PEDIDO.MODIFICAR_SOLICITUD_PEDIDO(oCONTEXTO, SOLICITUD_PEDIDO);
+            oCONTEXTO.SaveChanges();
+        }
+
+        public void ELIMINAR_SOLICITUD_PEDIDO(MODELO.SOLICITUD_PEDIDO SOLICITUD_PEDIDO)
+        {
+            CASOS_DE_USO.SOLICITUDES_DE_PEDIDO.OPERACIONES_SOLICITUD_PEDIDO.ELIMINAR_SOLICITUD_PEDIDO(oCONTEXTO, SOLICITUD_PEDIDO);
+            oCONTEXTO.SaveChanges();
+        }
+
+        public MODELO.SOLICITUD_PEDIDO OBTENER_SOLICITUD_PEDIDO(int CODIGO)
+        {
+            return CASOS_DE_USO.SOLICITUDES_DE_PEDIDO.GESTION_SOLICITUD_PEDIDO.OBTENER_SOLICITUD_PEDIDO(CODIGO, oCONTEXTO);
+        }
+
+        public List<MODELO.SOLICITUD_PEDIDO> OBTENER_SOLICITUDES_DE_PEDIDOS()
+        {
+            return CASOS_DE_USO.SOLICITUDES_DE_PEDIDO.GESTION_SOLICITUD_PEDIDO.OBTENER_SOLICITUDES_PEDIDOS(oCONTEXTO);
+        }
+    }
+}

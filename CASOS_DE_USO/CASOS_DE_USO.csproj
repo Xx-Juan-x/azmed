@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="ATENCION\GESTION_ATENCIONES.cs" />
     <Compile Include="ATENCION\OPERACIONES_ATENCIONES.cs" />
+    <Compile Include="COTIZACIONES\GESTION_COTIZACIONES.cs" />
+    <Compile Include="COTIZACIONES\OPERACIONES_COTIZACIONES.cs" />
     <Compile Include="ESPECIALIDADES\GESTION_ESPECIALIDADES.cs" />
     <Compile Include="ESPECIALIDADES\OPERACIONES_ESPECIALIDADES.cs" />
     <Compile Include="FACTURACION\GESTION_FACTURACION.cs" />
@@ -66,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES\GESTION_PROVEEDORES.cs" />
     <Compile Include="PROVEEDORES\OPERACIONES_PROVEEDORES.cs" />
+    <Compile Include="SOLICITUDES DE PEDIDO\GESTION_SOLICITUD_PEDIDO.cs" />
+    <Compile Include="SOLICITUDES DE PEDIDO\OPERACIONES_SOLICITUD_PEDIDO.cs" />
     <Compile Include="TURNOS\GESTION_TURNOS.cs" />
     <Compile Include="TURNOS\OPERACIONES_TURNOS.cs" />
     <Compile Include="USUARIOS\GESTION_USUARIOS.cs" />

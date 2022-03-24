@@ -14,6 +14,7 @@ namespace VISTA
     public partial class frmCLINICA : Form
     {      
         private CONTROLADORA.USUARIOS cUSUARIOS;
+        private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
 
         //public static frmCLINICA MDI_CLINICA;
 
@@ -37,7 +38,10 @@ namespace VISTA
         {
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
         }
+
+        
 
         private void registrarEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -81,6 +85,7 @@ namespace VISTA
                     SolicitarTurnoToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = false;
                     listaDeTurnosExportarToolStripMenuItem.Visible = false;
+                    gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
 
                     break;
                 case "PACIENTE":
@@ -93,6 +98,7 @@ namespace VISTA
                     cOMPRASToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
                     listaDeTurnosExportarToolStripMenuItem.Visible = true;
+                    gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
                     break;
                 case "PROFESIONAL":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -109,6 +115,7 @@ namespace VISTA
                     cOMPRASToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
                     listaDeTurnosExportarToolStripMenuItem.Visible = false;
+                    gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
                     break;
                 case "JEFE DE COMPRAS":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -117,7 +124,11 @@ namespace VISTA
                     tURNOSToolStripMenuItem.Visible = false;
                     cOMPRASToolStripMenuItem.Visible = true;
                     crearSolicitudDePedidoToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;                  
+                    rEPORTESToolStripMenuItem.Visible = false;
+                    picIMAGEN_CLINICA.Visible = false;
+                    gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;          
+                    dgvLISTA_SOLICITUD_PEDIDO.DataSource = null;
+                    dgvLISTA_SOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_DE_PEDIDOS();
                     break;
                 default:
                     MessageBox.Show("ROL no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -196,6 +207,18 @@ namespace VISTA
         {
             frmPROVEEDOR FORMULARIO_PROVEEDOR = frmPROVEEDOR.OBTENER_INSTANCIA();
             FORMULARIO_PROVEEDOR.Show();
+        }
+
+        private void crearSolicitudDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSOLICITAR_PEDIDO_INSUMO FORMULARIOS_SOLICITUD_PEDIDO = frmSOLICITAR_PEDIDO_INSUMO.OBTENER_INSTANCIA();
+            FORMULARIOS_SOLICITUD_PEDIDO.Show();
+        }
+
+        private void crearCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCOTIZACION FORMULARIO_COTIZACION = frmCOTIZACION.OBTENER_INSTANCIA();
+            FORMULARIO_COTIZACION.Show();
         }
     }
 }

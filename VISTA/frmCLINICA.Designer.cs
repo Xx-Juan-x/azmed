@@ -29,6 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnStripMENU_CLINICA = new System.Windows.Forms.MenuStrip();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,9 +61,13 @@ namespace VISTA
             this.consultaYReportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
+            this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
+            this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.mnStripMENU_CLINICA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN_CLINICA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
+            this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnStripMENU_CLINICA
@@ -220,33 +227,35 @@ namespace VISTA
             // crearSolicitudDePedidoToolStripMenuItem
             // 
             this.crearSolicitudDePedidoToolStripMenuItem.Name = "crearSolicitudDePedidoToolStripMenuItem";
-            this.crearSolicitudDePedidoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.crearSolicitudDePedidoToolStripMenuItem.Text = "Crear Solicitud de Pedido";
+            this.crearSolicitudDePedidoToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.crearSolicitudDePedidoToolStripMenuItem.Text = "Solicitar un Pedido de Insumos";
+            this.crearSolicitudDePedidoToolStripMenuItem.Click += new System.EventHandler(this.crearSolicitudDePedidoToolStripMenuItem_Click);
             // 
             // registrarMaterialesToolStripMenuItem
             // 
             this.registrarMaterialesToolStripMenuItem.Name = "registrarMaterialesToolStripMenuItem";
-            this.registrarMaterialesToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.registrarMaterialesToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.registrarMaterialesToolStripMenuItem.Text = "Registrar Insumos";
             this.registrarMaterialesToolStripMenuItem.Click += new System.EventHandler(this.registrarMaterialesToolStripMenuItem_Click);
             // 
             // registrarProveedoresToolStripMenuItem
             // 
             this.registrarProveedoresToolStripMenuItem.Name = "registrarProveedoresToolStripMenuItem";
-            this.registrarProveedoresToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.registrarProveedoresToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.registrarProveedoresToolStripMenuItem.Text = "Registrar Proveedores";
             this.registrarProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedoresToolStripMenuItem_Click);
             // 
             // crearCotizacionesToolStripMenuItem
             // 
             this.crearCotizacionesToolStripMenuItem.Name = "crearCotizacionesToolStripMenuItem";
-            this.crearCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.crearCotizacionesToolStripMenuItem.Text = "Crear Cotizaciones";
+            this.crearCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.crearCotizacionesToolStripMenuItem.Text = "Cotizar Pedido de Material";
+            this.crearCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.crearCotizacionesToolStripMenuItem_Click);
             // 
             // crearOrdenDeCompraToolStripMenuItem
             // 
             this.crearOrdenDeCompraToolStripMenuItem.Name = "crearOrdenDeCompraToolStripMenuItem";
-            this.crearOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.crearOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.crearOrdenDeCompraToolStripMenuItem.Text = "Crear Orden de Compra";
             // 
             // rEPORTESToolStripMenuItem
@@ -301,18 +310,81 @@ namespace VISTA
             this.lblTIPO_USUARIO.Text = "ROL";
             this.lblTIPO_USUARIO.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // pictureBox1
+            // picIMAGEN_CLINICA
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.picIMAGEN_CLINICA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::VISTA.Properties.Resources.CLINICA_AZMED_IMAGEN;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1184, 549);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.picIMAGEN_CLINICA.Image = global::VISTA.Properties.Resources.CLINICA_AZMED_IMAGEN;
+            this.picIMAGEN_CLINICA.Location = new System.Drawing.Point(0, 22);
+            this.picIMAGEN_CLINICA.Name = "picIMAGEN_CLINICA";
+            this.picIMAGEN_CLINICA.Size = new System.Drawing.Size(1184, 549);
+            this.picIMAGEN_CLINICA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picIMAGEN_CLINICA.TabIndex = 4;
+            this.picIMAGEN_CLINICA.TabStop = false;
+            // 
+            // dgvLISTA_SOLICITUD_PEDIDO
+            // 
+            this.dgvLISTA_SOLICITUD_PEDIDO.AllowUserToAddRows = false;
+            this.dgvLISTA_SOLICITUD_PEDIDO.AllowUserToDeleteRows = false;
+            this.dgvLISTA_SOLICITUD_PEDIDO.AllowUserToResizeColumns = false;
+            this.dgvLISTA_SOLICITUD_PEDIDO.AllowUserToResizeRows = false;
+            this.dgvLISTA_SOLICITUD_PEDIDO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLISTA_SOLICITUD_PEDIDO.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLISTA_SOLICITUD_PEDIDO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.dgvLISTA_SOLICITUD_PEDIDO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvLISTA_SOLICITUD_PEDIDO.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvLISTA_SOLICITUD_PEDIDO.EnableHeadersVisualStyles = false;
+            this.dgvLISTA_SOLICITUD_PEDIDO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.dgvLISTA_SOLICITUD_PEDIDO.Location = new System.Drawing.Point(5, 19);
+            this.dgvLISTA_SOLICITUD_PEDIDO.Name = "dgvLISTA_SOLICITUD_PEDIDO";
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersVisible = false;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvLISTA_SOLICITUD_PEDIDO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLISTA_SOLICITUD_PEDIDO.Size = new System.Drawing.Size(1172, 541);
+            this.dgvLISTA_SOLICITUD_PEDIDO.TabIndex = 0;
+            // 
+            // gbLISTA_SOLICITUDES_PEDIDOS
+            // 
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Controls.Add(this.dgvLISTA_SOLICITUD_PEDIDO);
+            this.gbLISTA_SOLICITUDES_PEDIDOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbLISTA_SOLICITUDES_PEDIDOS.ForeColor = System.Drawing.Color.White;
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Location = new System.Drawing.Point(0, 22);
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Name = "gbLISTA_SOLICITUDES_PEDIDOS";
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Size = new System.Drawing.Size(1184, 566);
+            this.gbLISTA_SOLICITUDES_PEDIDOS.TabIndex = 6;
+            this.gbLISTA_SOLICITUDES_PEDIDOS.TabStop = false;
+            this.gbLISTA_SOLICITUDES_PEDIDOS.Text = "LISTA DE SOLICITUDES DE PEDIDOS";
             // 
             // frmCLINICA
             // 
@@ -320,9 +392,10 @@ namespace VISTA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1184, 570);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picIMAGEN_CLINICA);
             this.Controls.Add(this.lblTIPO_USUARIO);
             this.Controls.Add(this.mnStripMENU_CLINICA);
+            this.Controls.Add(this.gbLISTA_SOLICITUDES_PEDIDOS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmCLINICA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -330,7 +403,9 @@ namespace VISTA
             this.Load += new System.EventHandler(this.frmCLINICA_Load);
             this.mnStripMENU_CLINICA.ResumeLayout(false);
             this.mnStripMENU_CLINICA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN_CLINICA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).EndInit();
+            this.gbLISTA_SOLICITUDES_PEDIDOS.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,10 +438,12 @@ namespace VISTA
         public System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.Label lblTIPO_USUARIO;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picIMAGEN_CLINICA;
         private System.Windows.Forms.ToolStripMenuItem asignarObraSocialYPlanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem horariosLaboralesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDeTurnosExportarToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvLISTA_SOLICITUD_PEDIDO;
+        private System.Windows.Forms.GroupBox gbLISTA_SOLICITUDES_PEDIDOS;
     }
 }

@@ -51,6 +51,10 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.PROVEEDOR> PROVEEDORES { get; set; }
 
+        public virtual DbSet<MODELO.SOLICITUD_PEDIDO> SOLICITUD_DE_PEDIDO { get; set; }
+
+        public virtual DbSet<MODELO.COTIZACION> COTIZACIONES { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -71,6 +75,10 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_MATERIAL);
             modelBuilder.Entity<MODELO.PROVEEDOR>()
                 .HasKey(c => c.ID_PROVEEDOR);
+            modelBuilder.Entity<MODELO.SOLICITUD_PEDIDO>()
+                .HasKey(c => c.ID_PEDIDO);
+            modelBuilder.Entity<MODELO.COTIZACION>()
+                .HasKey(c => c.ID_COTIZACION);
         }
 
     }

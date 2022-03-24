@@ -210,6 +210,18 @@
     <Compile Include="Migrations\202203221759143_PROVEEDOR.designer.cs">
       <DependentUpon>202203221759143_PROVEEDOR.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203231420309_MODIFICACION_MATERIAL.cs" />
+    <Compile Include="Migrations\202203231420309_MODIFICACION_MATERIAL.designer.cs">
+      <DependentUpon>202203231420309_MODIFICACION_MATERIAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203231427203_SOLICITUD_PEDIDO.cs" />
+    <Compile Include="Migrations\202203231427203_SOLICITUD_PEDIDO.designer.cs">
+      <DependentUpon>202203231427203_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203241300338_COTIZACION.cs" />
+    <Compile Include="Migrations\202203241300338_COTIZACION.designer.cs">
+      <DependentUpon>202203241300338_COTIZACION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -343,6 +355,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203221759143_PROVEEDOR.resx">
       <DependentUpon>202203221759143_PROVEEDOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203231420309_MODIFICACION_MATERIAL.resx">
+      <DependentUpon>202203231420309_MODIFICACION_MATERIAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203231427203_SOLICITUD_PEDIDO.resx">
+      <DependentUpon>202203231427203_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203241300338_COTIZACION.resx">
+      <DependentUpon>202203241300338_COTIZACION.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

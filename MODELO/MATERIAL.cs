@@ -11,6 +11,12 @@ namespace MODELO
         public int ID_MATERIAL { get; set; }
         public string NOMBRE { get; set; }
         public string DESCRIPCION { get; set; }
-        public int CANTIDAD { get; set; }
+        public int STOCK { get; set; }
+
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
+
     }
 }
