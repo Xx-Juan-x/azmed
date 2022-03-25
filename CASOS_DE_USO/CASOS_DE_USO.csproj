@@ -59,6 +59,8 @@
     <Compile Include="ESPECIALIDADES\OPERACIONES_ESPECIALIDADES.cs" />
     <Compile Include="FACTURACION\GESTION_FACTURACION.cs" />
     <Compile Include="FACTURACION\OPERACIONES_FACTURACION.cs" />
+    <Compile Include="LISTA DE PEDIDOS\GESTION_LISTA_PEDIDOS.cs" />
+    <Compile Include="LISTA DE PEDIDOS\OPERACIONES_LISTA_PEDIDOS.cs" />
     <Compile Include="MATERIALES\GESTION_MATERIALES.cs" />
     <Compile Include="MATERIALES\OPERACIONES_MATERIALES.cs" />
     <Compile Include="OBRAS SOCIALES\GESTION_OBRAS_SOCIALES.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES\GESTION_PROVEEDORES.cs" />
     <Compile Include="PROVEEDORES\OPERACIONES_PROVEEDORES.cs" />
+    <Compile Include="SOLICITUDES DE PEDIDOS\GESTION_SOLICITUDES_PEDIDOS.cs" />
+    <Compile Include="SOLICITUDES DE PEDIDOS\OPERACIONES_SOLICITUDES_PEDIDOS.cs" />
     <Compile Include="TURNOS\GESTION_TURNOS.cs" />
     <Compile Include="TURNOS\OPERACIONES_TURNOS.cs" />
     <Compile Include="USUARIOS\GESTION_USUARIOS.cs" />

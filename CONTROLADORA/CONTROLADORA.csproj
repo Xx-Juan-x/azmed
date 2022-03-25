@@ -55,11 +55,13 @@
     <Compile Include="COTIZACIONES.cs" />
     <Compile Include="ESPECIALIDADES.cs" />
     <Compile Include="FACTURACIONES.cs" />
+    <Compile Include="LISTA_DE_PEDIDOS.cs" />
     <Compile Include="MATERIALES.cs" />
     <Compile Include="OBRAS_SOCIALES.cs" />
     <Compile Include="PLANES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES.cs" />
+    <Compile Include="SOLICITUDES_DE_PEDIDOS.cs" />
     <Compile Include="TURNOS.cs" />
     <Compile Include="USUARIOS.cs" />
   </ItemGroup>
