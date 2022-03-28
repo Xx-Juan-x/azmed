@@ -10,6 +10,6 @@ namespace MODELO
     {
         public int ID_LISTA_PEDIDO { get; set; }
         public MATERIAL INSUMO { get; set; }
-        public SOLICITUD_PEDIDO PEDIDO { get; set; }
+        public SOLICITUD_PEDIDO PEDIDO { get; set; }       
     }
 }

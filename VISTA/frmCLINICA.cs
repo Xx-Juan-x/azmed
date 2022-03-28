@@ -14,7 +14,7 @@ namespace VISTA
     public partial class frmCLINICA : Form
     {      
         private CONTROLADORA.USUARIOS cUSUARIOS;
-        private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
+        private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;       
 
         //public static frmCLINICA MDI_CLINICA;
 
@@ -125,15 +125,20 @@ namespace VISTA
                     cOMPRASToolStripMenuItem.Visible = true;
                     crearSolicitudDePedidoToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
-                    picIMAGEN_CLINICA.Visible = false;
-                    gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;          
-                    dgvLISTA_SOLICITUD_PEDIDO.DataSource = null;
-                    dgvLISTA_SOLICITUD_PEDIDO.DataSource = cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS();
+                    ARMA_LISTA_SOLICITUD_PEDIDO();                
                     break;
                 default:
                     MessageBox.Show("ROL no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
+        }
+
+        private void ARMA_LISTA_SOLICITUD_PEDIDO()
+        {
+            picIMAGEN_CLINICA.Visible = false;
+            gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;
+            dgvLISTA_SOLICITUD_PEDIDO.DataSource = null;
+            dgvLISTA_SOLICITUD_PEDIDO.DataSource = cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS();
         }
 
         private void asignarProfesionalToolStripMenuItem_Click(object sender, EventArgs e)

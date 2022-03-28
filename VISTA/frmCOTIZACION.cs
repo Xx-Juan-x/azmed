@@ -31,6 +31,8 @@ namespace VISTA
         private MODELO.COTIZACION oCONTIZACION;
         private CONTROLADORA.PROVEEDORES cPROVEEDORES;
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
+        private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
+        private MODELO.LISTA_PEDIDO oLISTA_PEDIDO;
         string ACCION;
 
         public frmCOTIZACION()
@@ -39,6 +41,7 @@ namespace VISTA
             cCOTIZACIONES = CONTROLADORA.COTIZACIONES.OBTENER_INSTANCIA();
             cPROVEEDORES = CONTROLADORA.PROVEEDORES.OBTENER_INSTANCIA();
             cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
+            cLISTA_PEDIDOS = CONTROLADORA.LISTA_DE_PEDIDOS.OBTENER_INSTANCIA();
             ARMA_COMBOBOX_PROVEEDOR();
             ARMA_COMBOBOX_SOLICITUD_PEDIDO();
 
@@ -88,13 +91,18 @@ namespace VISTA
             #endregion
 
             oCONTIZACION = new MODELO.COTIZACION();
+            oLISTA_PEDIDO = new MODELO.LISTA_PEDIDO();
             ACCION = "A";
 
             oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
             oCONTIZACION.FECHA = DateTime.Now;
-            oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;          
+            oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;
+            oCONTIZACION.PEDIDO = (MODELO.SOLICITUD_PEDIDO)cmbSOLICITUD_PEDIDO.SelectedItem;
             oCONTIZACION.PRECIO = PRECIO_UNITARIO;
             oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
+            //VER LA LISTA DE PEDIDOS
+            oLISTA_PEDIDO.PEDIDO = (MODELO.SOLICITUD_PEDIDO)cmbSOLICITUD_PEDIDO.SelectedItem;
+            
 
             if (ACCION == "A")
             {
@@ -102,6 +110,7 @@ namespace VISTA
                 if (RESPUESTA == DialogResult.Yes)
                 {
                     cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);
+                    cLISTA_PEDIDOS.AGREGAR_LISTA_PEDIDO(oLISTA_PEDIDO);
                     txtNOMBRE.Clear();
                     ARMA_COMBOBOX_PROVEEDOR();
                     ARMA_COMBOBOX_SOLICITUD_PEDIDO();
