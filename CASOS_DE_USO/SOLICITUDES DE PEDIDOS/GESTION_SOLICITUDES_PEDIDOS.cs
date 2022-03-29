@@ -12,11 +12,15 @@ namespace CASOS_DE_USO.SOLICITUDES_DE_PEDIDOS
         {
             return AZMED_CLINICA.SOLICITUDES_DE_PEDIDO.FirstOrDefault(_ => _.ID_SOLICITUD_PEDIDO == CODIGO);
         }
-
+        /*public static MODELO.SOLICITUD_PEDIDO ULTIMA_SOLICITUD_PEDIDO( CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
+        {
+            return AZMED_CLINICA.SOLICITUDES_DE_PEDIDO.LastOrDefault();
+        }*/
         public static List<MODELO.SOLICITUD_PEDIDO> OBTENER_SOLICITUDES_PEDIDOS(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
             return AZMED_CLINICA.SOLICITUDES_DE_PEDIDO.ToList();
         }
+
 
     }
 }
