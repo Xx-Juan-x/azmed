@@ -14,6 +14,6 @@ namespace MODELO
         public string MOTIVO { get; set; }
         public PROVEEDOR PROVEEDOR { get; set; }
         public double PRECIO { get; set; }
-        public SOLICITUD_PEDIDO PEDIDO { get; set; }
+        public SOLICITUD_PEDIDO PEDIDO { get; set; }       
     }
 }

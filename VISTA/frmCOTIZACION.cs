@@ -109,8 +109,7 @@ namespace VISTA
                 DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea cotizar el pedido?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (RESPUESTA == DialogResult.Yes)
                 {
-                    cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);
-                    cLISTA_PEDIDOS.AGREGAR_LISTA_PEDIDO(oLISTA_PEDIDO);
+                    cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);                   
                     txtNOMBRE.Clear();
                     ARMA_COMBOBOX_PROVEEDOR();
                     ARMA_COMBOBOX_SOLICITUD_PEDIDO();

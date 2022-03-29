@@ -11,6 +11,12 @@ namespace MODELO
         public int ID_SOLICITUD_PEDIDO { get; set; }
         public string DESCRIPCION { get; set; }
         public DateTime FECHA { get; set; }
-        public string ESTADO { get; set; }       
+        public string ESTADO { get; set; }
+
+        public override string ToString()
+        {
+            return DESCRIPCION + " " + FECHA.ToShortDateString();
+        }
+
     }
 }

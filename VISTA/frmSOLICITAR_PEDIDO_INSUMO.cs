@@ -53,11 +53,29 @@ namespace VISTA
         }
         private void ARMAR_COMBOBOX_MATERIAL()
         {
-            List<CMB_MATERIAL> lista_materiales = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales1 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales2 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales3 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales4 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales5 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales6 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales7 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales8 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales9 = new List<CMB_MATERIAL>();
+            List<CMB_MATERIAL> lista_materiales10 = new List<CMB_MATERIAL>();
 
             foreach (var item in cMATERIALES.OBTENER_MATERIALES())
-           {
-                lista_materiales.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+            {
+                lista_materiales1.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales2.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales3.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales4.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales5.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales6.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales7.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales8.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales9.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
+                lista_materiales10.Add(new CMB_MATERIAL(item.NOMBRE,item.ID_MATERIAL));
             }
             //List<CONTROLADORA.MATERIALES> oMATERIAL = cMATERIALES.OBTENER_MATERIALES();
 
@@ -82,16 +100,16 @@ namespace VISTA
             cmbMATERIAL_10.DisplayMember = "texto";
             cmbMATERIAL_10.ValueMember = "id";
 
-            cmbMATERIAL_1.DataSource = lista_materiales;
-            cmbMATERIAL_2.DataSource = lista_materiales;
-            cmbMATERIAL_3.DataSource = lista_materiales;
-            cmbMATERIAL_4.DataSource = lista_materiales;
-            cmbMATERIAL_5.DataSource = lista_materiales;
-            cmbMATERIAL_6.DataSource = lista_materiales;
-            cmbMATERIAL_7.DataSource = lista_materiales;
-            cmbMATERIAL_8.DataSource = lista_materiales;
-            cmbMATERIAL_9.DataSource = lista_materiales;
-            cmbMATERIAL_10.DataSource = lista_materiales;
+            cmbMATERIAL_1.DataSource = lista_materiales1;
+            cmbMATERIAL_2.DataSource = lista_materiales2;
+            cmbMATERIAL_3.DataSource = lista_materiales3;
+            cmbMATERIAL_4.DataSource = lista_materiales4;
+            cmbMATERIAL_5.DataSource = lista_materiales5;
+            cmbMATERIAL_6.DataSource = lista_materiales6;
+            cmbMATERIAL_7.DataSource = lista_materiales7;
+            cmbMATERIAL_8.DataSource = lista_materiales8;
+            cmbMATERIAL_9.DataSource = lista_materiales9;
+            cmbMATERIAL_10.DataSource = lista_materiales10;
             
         }
 
@@ -102,8 +120,17 @@ namespace VISTA
 
         private void btnENVIAR_Click_1(object sender, EventArgs e)
         {
+            #region VALIDACION
+            if (string.IsNullOrWhiteSpace(txtDESCRIPCION.Text))
+            {
+                MessageBox.Show("Debe ingresar una descripción de pedido", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion
+
             oSOLICITUD_PEDIDO = new MODELO.SOLICITUD_PEDIDO();
             oLISTA_PEDIDO = new MODELO.LISTA_PEDIDO();
+            oMATERIAL = new MODELO.MATERIAL();
             //VER COMO HACER PARA QUE ESTO SE SUBA EN DISTINTOS REGISTROS
             oSOLICITUD_PEDIDO.DESCRIPCION = txtDESCRIPCION.Text.ToUpper();
             oSOLICITUD_PEDIDO.FECHA = DateTime.Today;
@@ -115,10 +142,10 @@ namespace VISTA
             oSOLICITUD_PEDIDO.ID_SOLICITUD_PEDIDO = ULTIMA_SOLICITUD.ID_SOLICITUD_PEDIDO;
             oLISTA_PEDIDO.PEDIDO = oSOLICITUD_PEDIDO;
 
-            // oLISTA_PEDIDO.PEDIDO = 
             //VER LA LISTA DE PEDIDOS
             
-            int[] ARRAY_CMB = new int[] { };
+            
+            List<int> ARRAY_CMB = new List<int>();
             CMB_MATERIAL VALOR_MATERIAL_1 = cmbMATERIAL_1.SelectedItem as CMB_MATERIAL;
             CMB_MATERIAL VALOR_MATERIAL_2 = cmbMATERIAL_2.SelectedItem as CMB_MATERIAL;
             CMB_MATERIAL VALOR_MATERIAL_3 = cmbMATERIAL_3.SelectedItem as CMB_MATERIAL;
@@ -130,35 +157,36 @@ namespace VISTA
             CMB_MATERIAL VALOR_MATERIAL_9 = cmbMATERIAL_9.SelectedItem as CMB_MATERIAL;
             CMB_MATERIAL VALOR_MATERIAL_10 = cmbMATERIAL_10.SelectedItem as CMB_MATERIAL;
 
-            ARRAY_CMB.Append(VALOR_MATERIAL_1.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_2.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_3.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_4.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_5.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_6.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_7.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_8.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_9.id);
-            ARRAY_CMB.Append(VALOR_MATERIAL_10.id);
-           
-            int[] ARRAY_SELECTED = new int[] { };
-            for (int i = 0; i < 10; i++)
-            {
-                //VALIDA SI EL ITEM QUE SE ESTÁ POR AGREGAR NO SE REPITE EN EL ARRAY Y TAMPOCO ES "SELECCIONE..."
-                if (ARRAY_SELECTED.Contains(ARRAY_CMB[i]) == false && ARRAY_CMB[i] != 1)
-                {
-                    //AGREGA AL ARRAY UN NUEVO ÍNDICE
-                    ARRAY_SELECTED.Append(ARRAY_CMB[i]);
-                }
-            }
+            ARRAY_CMB.Add(VALOR_MATERIAL_1.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_2.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_3.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_4.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_5.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_6.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_7.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_8.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_9.id);
+            ARRAY_CMB.Add(VALOR_MATERIAL_10.id);
+            ARRAY_CMB.RemoveAll(s => s == 1);
+
+
+            List<int> ARRAY_SELECTED = ARRAY_CMB.Distinct().ToList();
             //RECORRE Y AGREGA TODOS LOS ITEMS SELECCIONADOS QUE YA FUERON VALIDADOS ANTERIORMENTE
-            for (int i = 0; i < ARRAY_SELECTED.Length; i++)
+            foreach (var item in ARRAY_SELECTED)
             {
-                oLISTA_PEDIDO.INSUMO.ID_MATERIAL = ARRAY_SELECTED[i];
-                //GUARDAR material en LISTA_PEDIDO.
-                cLISTA_PEDIDOS.AGREGAR_LISTA_PEDIDO(oLISTA_PEDIDO);             
-            }                                      
-        }
-      
+                var MATERIAL = (from a in cMATERIALES.OBTENER_MATERIALES()
+                                where a.ID_MATERIAL == item
+                                select a).ToList();
+                foreach (var MATERIALES in MATERIAL)
+                {
+                    oMATERIAL = MATERIALES;
+                }
+                oLISTA_PEDIDO.INSUMO = oMATERIAL;
+                cLISTA_PEDIDOS.AGREGAR_LISTA_PEDIDO(oLISTA_PEDIDO);              
+            }
+            MessageBox.Show("Su pedido ah sido registrado en el sistema", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtDESCRIPCION.Clear();
+
+        }     
     }
 }

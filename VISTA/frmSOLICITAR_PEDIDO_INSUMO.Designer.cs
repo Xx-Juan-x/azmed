@@ -153,7 +153,7 @@ namespace VISTA
             this.btnENVIAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnENVIAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnENVIAR.ForeColor = System.Drawing.Color.White;
-            this.btnENVIAR.Location = new System.Drawing.Point(0, 281);
+            this.btnENVIAR.Location = new System.Drawing.Point(6, 281);
             this.btnENVIAR.Name = "btnENVIAR";
             this.btnENVIAR.Size = new System.Drawing.Size(224, 36);
             this.btnENVIAR.TabIndex = 86;
