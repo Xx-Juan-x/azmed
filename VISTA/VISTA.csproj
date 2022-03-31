@@ -123,6 +123,12 @@
     <Compile Include="frmLOGIN.Designer.cs">
       <DependentUpon>frmLOGIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmORDEN_COMPRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmORDEN_COMPRA.Designer.cs">
+      <DependentUpon>frmORDEN_COMPRA.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPLAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOBRA_SOCIAL.resx">
       <DependentUpon>frmOBRA_SOCIAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmORDEN_COMPRA.resx">
+      <DependentUpon>frmORDEN_COMPRA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPLAN.resx">
       <DependentUpon>frmPLAN.cs</DependentUpon>
