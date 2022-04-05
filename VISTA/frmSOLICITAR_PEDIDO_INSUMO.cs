@@ -135,15 +135,9 @@ namespace VISTA
             oSOLICITUD_PEDIDO.DESCRIPCION = txtDESCRIPCION.Text.ToUpper();
             oSOLICITUD_PEDIDO.FECHA = DateTime.Today;
             oSOLICITUD_PEDIDO.ESTADO = "EN PROCESO";
-            cSOLICITUDES_PEDIDOS.AGREGAR_SOLICITUD_PEDIDO(oSOLICITUD_PEDIDO);
-            var ULTIMA_SOLICITUD = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS().Last();
-            /* var ULTIMA_SOLICITUD = from a in cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS()
-                                    where a.ID_SOLICITUD_PEDIDO.*/
-            oSOLICITUD_PEDIDO.ID_SOLICITUD_PEDIDO = ULTIMA_SOLICITUD.ID_SOLICITUD_PEDIDO;
-            oLISTA_PEDIDO.PEDIDO = oSOLICITUD_PEDIDO;
+            
 
             //VER LA LISTA DE PEDIDOS
-            
             
             List<int> ARRAY_CMB = new List<int>();
             CMB_MATERIAL VALOR_MATERIAL_1 = cmbMATERIAL_1.SelectedItem as CMB_MATERIAL;
@@ -171,22 +165,35 @@ namespace VISTA
 
 
             List<int> ARRAY_SELECTED = ARRAY_CMB.Distinct().ToList();
-            //RECORRE Y AGREGA TODOS LOS ITEMS SELECCIONADOS QUE YA FUERON VALIDADOS ANTERIORMENTE
-            foreach (var item in ARRAY_SELECTED)
+            if (ARRAY_SELECTED.Count() == 0)
             {
-                var MATERIAL = (from a in cMATERIALES.OBTENER_MATERIALES()
-                                where a.ID_MATERIAL == item
-                                select a).ToList();
-                foreach (var MATERIALES in MATERIAL)
-                {
-                    oMATERIAL = MATERIALES;
-                }
-                oLISTA_PEDIDO.INSUMO = oMATERIAL;
-                cLISTA_PEDIDOS.AGREGAR_LISTA_PEDIDO(oLISTA_PEDIDO);              
+                MessageBox.Show("Debe seleccionar al menos un material", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            MessageBox.Show("Su pedido ah sido registrado en el sistema", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtDESCRIPCION.Clear();
+            else
+            {
+                cSOLICITUDES_PEDIDOS.AGREGAR_SOLICITUD_PEDIDO(oSOLICITUD_PEDIDO);
+                var ULTIMA_SOLICITUD = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS().Last();
+                /* var ULTIMA_SOLICITUD = from a in cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS()
+                                        where a.ID_SOLICITUD_PEDIDO.*/
+                oSOLICITUD_PEDIDO.ID_SOLICITUD_PEDIDO = ULTIMA_SOLICITUD.ID_SOLICITUD_PEDIDO;
+                oLISTA_PEDIDO.PEDIDO = oSOLICITUD_PEDIDO;
+                //RECORRE Y AGREGA TODOS LOS ITEMS SELECCIONADOS QUE YA FUERON VALIDADOS ANTERIORMENTE
+                foreach (var item in ARRAY_SELECTED)
+                {
+                    var MATERIAL = (from a in cMATERIALES.OBTENER_MATERIALES()
+                                    where a.ID_MATERIAL == item
+                                    select a).ToList();
+                    foreach (var MATERIALES in MATERIAL)
+                    {
+                        oMATERIAL = MATERIALES;
+                    }
+                    oLISTA_PEDIDO.INSUMO = oMATERIAL;
+                    cLISTA_PEDIDOS.AGREGAR_LISTA_PEDIDO(oLISTA_PEDIDO);
 
+                }
+                MessageBox.Show("Su pedido ah sido registrado en el sistema", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDESCRIPCION.Clear();
+            }
         }     
     }
 }

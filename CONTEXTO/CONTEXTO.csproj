@@ -238,6 +238,10 @@
     <Compile Include="Migrations\202203290046066_CAMBIOS_SOLICITUD_PEDIDO.designer.cs">
       <DependentUpon>202203290046066_CAMBIOS_SOLICITUD_PEDIDO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204052038046_ORDEN_COMPRA.cs" />
+    <Compile Include="Migrations\202204052038046_ORDEN_COMPRA.designer.cs">
+      <DependentUpon>202204052038046_ORDEN_COMPRA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -392,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203290046066_CAMBIOS_SOLICITUD_PEDIDO.resx">
       <DependentUpon>202203290046066_CAMBIOS_SOLICITUD_PEDIDO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204052038046_ORDEN_COMPRA.resx">
+      <DependentUpon>202204052038046_ORDEN_COMPRA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

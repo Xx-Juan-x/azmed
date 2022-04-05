@@ -227,5 +227,11 @@ namespace VISTA
             frmCOTIZACION FORMULARIO_COTIZACION = frmCOTIZACION.OBTENER_INSTANCIA();
             FORMULARIO_COTIZACION.Show();
         }
+
+        private void crearOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmORDEN_COMPRA FORMULARIO_ORDEN_COMPRA = frmORDEN_COMPRA.OBTENER_INSTANCIA();
+            FORMULARIO_ORDEN_COMPRA.Show();
+        }
     }
 }

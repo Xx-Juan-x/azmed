@@ -58,6 +58,7 @@
     <Compile Include="LISTA_DE_PEDIDOS.cs" />
     <Compile Include="MATERIALES.cs" />
     <Compile Include="OBRAS_SOCIALES.cs" />
+    <Compile Include="ORDENES_DE_COMPRAS.cs" />
     <Compile Include="PLANES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES.cs" />

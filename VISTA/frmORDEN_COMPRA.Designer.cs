@@ -35,30 +35,30 @@ namespace VISTA
             this.gbLISTA_COTIZACIONES = new System.Windows.Forms.GroupBox();
             this.lblSOLICITUD_PEDIDO = new System.Windows.Forms.Label();
             this.cmbSOLICITUD_PEDIDO = new System.Windows.Forms.ComboBox();
-            this.btnCERRAR = new System.Windows.Forms.Button();
             this.dgvLISTA_COTIZACIONES = new System.Windows.Forms.DataGridView();
-            this.cmbCOTIZACION_1 = new System.Windows.Forms.ComboBox();
+            this.btnCERRAR = new System.Windows.Forms.Button();
             this.gbCOTIZACIONES = new System.Windows.Forms.GroupBox();
-            this.cmbCOTIZACION_2 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_3 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_4 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_5 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_10 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_9 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_8 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_7 = new System.Windows.Forms.ComboBox();
-            this.cmbCOTIZACION_6 = new System.Windows.Forms.ComboBox();
-            this.txtCANTIDAD_1 = new System.Windows.Forms.TextBox();
-            this.txtCANTIDAD_2 = new System.Windows.Forms.TextBox();
-            this.txtCANTIDAD_3 = new System.Windows.Forms.TextBox();
-            this.txtCANTIDAD_4 = new System.Windows.Forms.TextBox();
-            this.txtCANTIDAD_5 = new System.Windows.Forms.TextBox();
+            this.btnENVIAR = new System.Windows.Forms.Button();
             this.txtCANTIDAD_10 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_9 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_8 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_7 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_6 = new System.Windows.Forms.TextBox();
-            this.btnENVIAR = new System.Windows.Forms.Button();
+            this.txtCANTIDAD_5 = new System.Windows.Forms.TextBox();
+            this.txtCANTIDAD_4 = new System.Windows.Forms.TextBox();
+            this.txtCANTIDAD_3 = new System.Windows.Forms.TextBox();
+            this.txtCANTIDAD_2 = new System.Windows.Forms.TextBox();
+            this.txtCANTIDAD_1 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_1 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_2 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_3 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_4 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_5 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_6 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_7 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_8 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_9 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_10 = new System.Windows.Forms.TextBox();
             this.gbLISTA_COTIZACIONES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_COTIZACIONES)).BeginInit();
             this.gbCOTIZACIONES.SuspendLayout();
@@ -101,21 +101,7 @@ namespace VISTA
             this.cmbSOLICITUD_PEDIDO.Name = "cmbSOLICITUD_PEDIDO";
             this.cmbSOLICITUD_PEDIDO.Size = new System.Drawing.Size(296, 21);
             this.cmbSOLICITUD_PEDIDO.TabIndex = 70;
-            // 
-            // btnCERRAR
-            // 
-            this.btnCERRAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCERRAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnCERRAR.FlatAppearance.BorderSize = 0;
-            this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(373, 229);
-            this.btnCERRAR.Name = "btnCERRAR";
-            this.btnCERRAR.Size = new System.Drawing.Size(304, 39);
-            this.btnCERRAR.TabIndex = 16;
-            this.btnCERRAR.Text = "Cerrar";
-            this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.cmbSOLICITUD_PEDIDO.SelectedIndexChanged += new System.EventHandler(this.cmbSOLICITUD_PEDIDO_SelectedIndexChanged);
             // 
             // dgvLISTA_COTIZACIONES
             // 
@@ -165,19 +151,35 @@ namespace VISTA
             this.dgvLISTA_COTIZACIONES.Size = new System.Drawing.Size(671, 265);
             this.dgvLISTA_COTIZACIONES.TabIndex = 0;
             // 
-            // cmbCOTIZACION_1
+            // btnCERRAR
             // 
-            this.cmbCOTIZACION_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbCOTIZACION_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_1.FormattingEnabled = true;
-            this.cmbCOTIZACION_1.Location = new System.Drawing.Point(12, 14);
-            this.cmbCOTIZACION_1.Name = "cmbCOTIZACION_1";
-            this.cmbCOTIZACION_1.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_1.TabIndex = 72;
+            this.btnCERRAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCERRAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnCERRAR.FlatAppearance.BorderSize = 0;
+            this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCERRAR.ForeColor = System.Drawing.Color.White;
+            this.btnCERRAR.Location = new System.Drawing.Point(373, 229);
+            this.btnCERRAR.Name = "btnCERRAR";
+            this.btnCERRAR.Size = new System.Drawing.Size(304, 39);
+            this.btnCERRAR.TabIndex = 16;
+            this.btnCERRAR.Text = "Cerrar";
+            this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
             // gbCOTIZACIONES
             // 
             this.gbCOTIZACIONES.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_10);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_9);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_8);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_7);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_6);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_5);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_4);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_3);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_2);
+            this.gbCOTIZACIONES.Controls.Add(this.txtCOTIZACION_1);
             this.gbCOTIZACIONES.Controls.Add(this.btnENVIAR);
             this.gbCOTIZACIONES.Controls.Add(this.txtCANTIDAD_10);
             this.gbCOTIZACIONES.Controls.Add(this.txtCANTIDAD_9);
@@ -190,16 +192,6 @@ namespace VISTA
             this.gbCOTIZACIONES.Controls.Add(this.txtCANTIDAD_3);
             this.gbCOTIZACIONES.Controls.Add(this.txtCANTIDAD_2);
             this.gbCOTIZACIONES.Controls.Add(this.txtCANTIDAD_1);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_10);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_9);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_8);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_7);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_6);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_5);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_4);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_3);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_2);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCOTIZACION_1);
             this.gbCOTIZACIONES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbCOTIZACIONES.ForeColor = System.Drawing.Color.White;
             this.gbCOTIZACIONES.Location = new System.Drawing.Point(6, 340);
@@ -209,135 +201,21 @@ namespace VISTA
             this.gbCOTIZACIONES.TabStop = false;
             this.gbCOTIZACIONES.Text = "COTIZACIONES";
             // 
-            // cmbCOTIZACION_2
+            // btnENVIAR
             // 
-            this.cmbCOTIZACION_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbCOTIZACION_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_2.FormattingEnabled = true;
-            this.cmbCOTIZACION_2.Location = new System.Drawing.Point(12, 56);
-            this.cmbCOTIZACION_2.Name = "cmbCOTIZACION_2";
-            this.cmbCOTIZACION_2.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_2.TabIndex = 73;
-            // 
-            // cmbCOTIZACION_3
-            // 
-            this.cmbCOTIZACION_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbCOTIZACION_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_3.FormattingEnabled = true;
-            this.cmbCOTIZACION_3.Location = new System.Drawing.Point(12, 102);
-            this.cmbCOTIZACION_3.Name = "cmbCOTIZACION_3";
-            this.cmbCOTIZACION_3.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_3.TabIndex = 74;
-            // 
-            // cmbCOTIZACION_4
-            // 
-            this.cmbCOTIZACION_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbCOTIZACION_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_4.FormattingEnabled = true;
-            this.cmbCOTIZACION_4.Location = new System.Drawing.Point(12, 147);
-            this.cmbCOTIZACION_4.Name = "cmbCOTIZACION_4";
-            this.cmbCOTIZACION_4.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_4.TabIndex = 75;
-            // 
-            // cmbCOTIZACION_5
-            // 
-            this.cmbCOTIZACION_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbCOTIZACION_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_5.FormattingEnabled = true;
-            this.cmbCOTIZACION_5.Location = new System.Drawing.Point(12, 191);
-            this.cmbCOTIZACION_5.Name = "cmbCOTIZACION_5";
-            this.cmbCOTIZACION_5.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_5.TabIndex = 76;
-            // 
-            // cmbCOTIZACION_10
-            // 
-            this.cmbCOTIZACION_10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCOTIZACION_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_10.FormattingEnabled = true;
-            this.cmbCOTIZACION_10.Location = new System.Drawing.Point(379, 190);
-            this.cmbCOTIZACION_10.Name = "cmbCOTIZACION_10";
-            this.cmbCOTIZACION_10.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_10.TabIndex = 81;
-            // 
-            // cmbCOTIZACION_9
-            // 
-            this.cmbCOTIZACION_9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCOTIZACION_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_9.FormattingEnabled = true;
-            this.cmbCOTIZACION_9.Location = new System.Drawing.Point(379, 148);
-            this.cmbCOTIZACION_9.Name = "cmbCOTIZACION_9";
-            this.cmbCOTIZACION_9.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_9.TabIndex = 80;
-            // 
-            // cmbCOTIZACION_8
-            // 
-            this.cmbCOTIZACION_8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCOTIZACION_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_8.FormattingEnabled = true;
-            this.cmbCOTIZACION_8.Location = new System.Drawing.Point(379, 103);
-            this.cmbCOTIZACION_8.Name = "cmbCOTIZACION_8";
-            this.cmbCOTIZACION_8.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_8.TabIndex = 79;
-            // 
-            // cmbCOTIZACION_7
-            // 
-            this.cmbCOTIZACION_7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCOTIZACION_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_7.FormattingEnabled = true;
-            this.cmbCOTIZACION_7.Location = new System.Drawing.Point(379, 57);
-            this.cmbCOTIZACION_7.Name = "cmbCOTIZACION_7";
-            this.cmbCOTIZACION_7.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_7.TabIndex = 78;
-            // 
-            // cmbCOTIZACION_6
-            // 
-            this.cmbCOTIZACION_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCOTIZACION_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCOTIZACION_6.FormattingEnabled = true;
-            this.cmbCOTIZACION_6.Location = new System.Drawing.Point(379, 14);
-            this.cmbCOTIZACION_6.Name = "cmbCOTIZACION_6";
-            this.cmbCOTIZACION_6.Size = new System.Drawing.Size(162, 21);
-            this.cmbCOTIZACION_6.TabIndex = 77;
-            // 
-            // txtCANTIDAD_1
-            // 
-            this.txtCANTIDAD_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCANTIDAD_1.Location = new System.Drawing.Point(201, 15);
-            this.txtCANTIDAD_1.Name = "txtCANTIDAD_1";
-            this.txtCANTIDAD_1.Size = new System.Drawing.Size(100, 20);
-            this.txtCANTIDAD_1.TabIndex = 82;
-            // 
-            // txtCANTIDAD_2
-            // 
-            this.txtCANTIDAD_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCANTIDAD_2.Location = new System.Drawing.Point(201, 56);
-            this.txtCANTIDAD_2.Name = "txtCANTIDAD_2";
-            this.txtCANTIDAD_2.Size = new System.Drawing.Size(100, 20);
-            this.txtCANTIDAD_2.TabIndex = 83;
-            // 
-            // txtCANTIDAD_3
-            // 
-            this.txtCANTIDAD_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCANTIDAD_3.Location = new System.Drawing.Point(201, 102);
-            this.txtCANTIDAD_3.Name = "txtCANTIDAD_3";
-            this.txtCANTIDAD_3.Size = new System.Drawing.Size(100, 20);
-            this.txtCANTIDAD_3.TabIndex = 84;
-            // 
-            // txtCANTIDAD_4
-            // 
-            this.txtCANTIDAD_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCANTIDAD_4.Location = new System.Drawing.Point(201, 148);
-            this.txtCANTIDAD_4.Name = "txtCANTIDAD_4";
-            this.txtCANTIDAD_4.Size = new System.Drawing.Size(100, 20);
-            this.txtCANTIDAD_4.TabIndex = 85;
-            // 
-            // txtCANTIDAD_5
-            // 
-            this.txtCANTIDAD_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCANTIDAD_5.Location = new System.Drawing.Point(201, 191);
-            this.txtCANTIDAD_5.Name = "txtCANTIDAD_5";
-            this.txtCANTIDAD_5.Size = new System.Drawing.Size(100, 20);
-            this.txtCANTIDAD_5.TabIndex = 86;
+            this.btnENVIAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnENVIAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnENVIAR.FlatAppearance.BorderSize = 0;
+            this.btnENVIAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnENVIAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnENVIAR.ForeColor = System.Drawing.Color.White;
+            this.btnENVIAR.Location = new System.Drawing.Point(6, 229);
+            this.btnENVIAR.Name = "btnENVIAR";
+            this.btnENVIAR.Size = new System.Drawing.Size(301, 39);
+            this.btnENVIAR.TabIndex = 73;
+            this.btnENVIAR.Text = "Enviar Orden de Pedido";
+            this.btnENVIAR.UseVisualStyleBackColor = false;
+            this.btnENVIAR.Click += new System.EventHandler(this.btnENVIAR_Click);
             // 
             // txtCANTIDAD_10
             // 
@@ -379,20 +257,125 @@ namespace VISTA
             this.txtCANTIDAD_6.Size = new System.Drawing.Size(100, 20);
             this.txtCANTIDAD_6.TabIndex = 87;
             // 
-            // btnENVIAR
+            // txtCANTIDAD_5
             // 
-            this.btnENVIAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnENVIAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnENVIAR.FlatAppearance.BorderSize = 0;
-            this.btnENVIAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnENVIAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnENVIAR.ForeColor = System.Drawing.Color.White;
-            this.btnENVIAR.Location = new System.Drawing.Point(6, 229);
-            this.btnENVIAR.Name = "btnENVIAR";
-            this.btnENVIAR.Size = new System.Drawing.Size(301, 39);
-            this.btnENVIAR.TabIndex = 73;
-            this.btnENVIAR.Text = "Enviar Orden de Pedido";
-            this.btnENVIAR.UseVisualStyleBackColor = false;
+            this.txtCANTIDAD_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCANTIDAD_5.Location = new System.Drawing.Point(201, 191);
+            this.txtCANTIDAD_5.Name = "txtCANTIDAD_5";
+            this.txtCANTIDAD_5.Size = new System.Drawing.Size(100, 20);
+            this.txtCANTIDAD_5.TabIndex = 86;
+            // 
+            // txtCANTIDAD_4
+            // 
+            this.txtCANTIDAD_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCANTIDAD_4.Location = new System.Drawing.Point(201, 148);
+            this.txtCANTIDAD_4.Name = "txtCANTIDAD_4";
+            this.txtCANTIDAD_4.Size = new System.Drawing.Size(100, 20);
+            this.txtCANTIDAD_4.TabIndex = 85;
+            // 
+            // txtCANTIDAD_3
+            // 
+            this.txtCANTIDAD_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCANTIDAD_3.Location = new System.Drawing.Point(201, 102);
+            this.txtCANTIDAD_3.Name = "txtCANTIDAD_3";
+            this.txtCANTIDAD_3.Size = new System.Drawing.Size(100, 20);
+            this.txtCANTIDAD_3.TabIndex = 84;
+            // 
+            // txtCANTIDAD_2
+            // 
+            this.txtCANTIDAD_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCANTIDAD_2.Location = new System.Drawing.Point(201, 56);
+            this.txtCANTIDAD_2.Name = "txtCANTIDAD_2";
+            this.txtCANTIDAD_2.Size = new System.Drawing.Size(100, 20);
+            this.txtCANTIDAD_2.TabIndex = 83;
+            // 
+            // txtCANTIDAD_1
+            // 
+            this.txtCANTIDAD_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCANTIDAD_1.Location = new System.Drawing.Point(201, 15);
+            this.txtCANTIDAD_1.Name = "txtCANTIDAD_1";
+            this.txtCANTIDAD_1.Size = new System.Drawing.Size(100, 20);
+            this.txtCANTIDAD_1.TabIndex = 82;
+            // 
+            // txtCOTIZACION_1
+            // 
+            this.txtCOTIZACION_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_1.Location = new System.Drawing.Point(12, 14);
+            this.txtCOTIZACION_1.Name = "txtCOTIZACION_1";
+            this.txtCOTIZACION_1.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_1.TabIndex = 92;
+            // 
+            // txtCOTIZACION_2
+            // 
+            this.txtCOTIZACION_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_2.Location = new System.Drawing.Point(12, 56);
+            this.txtCOTIZACION_2.Name = "txtCOTIZACION_2";
+            this.txtCOTIZACION_2.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_2.TabIndex = 93;
+            // 
+            // txtCOTIZACION_3
+            // 
+            this.txtCOTIZACION_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_3.Location = new System.Drawing.Point(12, 102);
+            this.txtCOTIZACION_3.Name = "txtCOTIZACION_3";
+            this.txtCOTIZACION_3.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_3.TabIndex = 94;
+            // 
+            // txtCOTIZACION_4
+            // 
+            this.txtCOTIZACION_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_4.Location = new System.Drawing.Point(12, 148);
+            this.txtCOTIZACION_4.Name = "txtCOTIZACION_4";
+            this.txtCOTIZACION_4.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_4.TabIndex = 95;
+            // 
+            // txtCOTIZACION_5
+            // 
+            this.txtCOTIZACION_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_5.Location = new System.Drawing.Point(12, 191);
+            this.txtCOTIZACION_5.Name = "txtCOTIZACION_5";
+            this.txtCOTIZACION_5.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_5.TabIndex = 96;
+            // 
+            // txtCOTIZACION_6
+            // 
+            this.txtCOTIZACION_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_6.Location = new System.Drawing.Point(379, 15);
+            this.txtCOTIZACION_6.Name = "txtCOTIZACION_6";
+            this.txtCOTIZACION_6.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_6.TabIndex = 97;
+            // 
+            // txtCOTIZACION_7
+            // 
+            this.txtCOTIZACION_7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_7.Location = new System.Drawing.Point(379, 56);
+            this.txtCOTIZACION_7.Name = "txtCOTIZACION_7";
+            this.txtCOTIZACION_7.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_7.TabIndex = 98;
+            // 
+            // txtCOTIZACION_8
+            // 
+            this.txtCOTIZACION_8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_8.Location = new System.Drawing.Point(379, 102);
+            this.txtCOTIZACION_8.Name = "txtCOTIZACION_8";
+            this.txtCOTIZACION_8.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_8.TabIndex = 99;
+            // 
+            // txtCOTIZACION_9
+            // 
+            this.txtCOTIZACION_9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_9.Location = new System.Drawing.Point(379, 148);
+            this.txtCOTIZACION_9.Name = "txtCOTIZACION_9";
+            this.txtCOTIZACION_9.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_9.TabIndex = 100;
+            // 
+            // txtCOTIZACION_10
+            // 
+            this.txtCOTIZACION_10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_10.Location = new System.Drawing.Point(379, 191);
+            this.txtCOTIZACION_10.Name = "txtCOTIZACION_10";
+            this.txtCOTIZACION_10.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_10.TabIndex = 101;
             // 
             // frmORDEN_COMPRA
             // 
@@ -422,7 +405,6 @@ namespace VISTA
         private System.Windows.Forms.ComboBox cmbSOLICITUD_PEDIDO;
         private System.Windows.Forms.Button btnCERRAR;
         private System.Windows.Forms.DataGridView dgvLISTA_COTIZACIONES;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_1;
         private System.Windows.Forms.GroupBox gbCOTIZACIONES;
         private System.Windows.Forms.TextBox txtCANTIDAD_10;
         private System.Windows.Forms.TextBox txtCANTIDAD_9;
@@ -434,15 +416,16 @@ namespace VISTA
         private System.Windows.Forms.TextBox txtCANTIDAD_3;
         private System.Windows.Forms.TextBox txtCANTIDAD_2;
         private System.Windows.Forms.TextBox txtCANTIDAD_1;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_10;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_9;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_8;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_7;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_6;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_5;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_4;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_3;
-        private System.Windows.Forms.ComboBox cmbCOTIZACION_2;
         private System.Windows.Forms.Button btnENVIAR;
+        private System.Windows.Forms.TextBox txtCOTIZACION_5;
+        private System.Windows.Forms.TextBox txtCOTIZACION_4;
+        private System.Windows.Forms.TextBox txtCOTIZACION_3;
+        private System.Windows.Forms.TextBox txtCOTIZACION_2;
+        private System.Windows.Forms.TextBox txtCOTIZACION_1;
+        private System.Windows.Forms.TextBox txtCOTIZACION_10;
+        private System.Windows.Forms.TextBox txtCOTIZACION_9;
+        private System.Windows.Forms.TextBox txtCOTIZACION_8;
+        private System.Windows.Forms.TextBox txtCOTIZACION_7;
+        private System.Windows.Forms.TextBox txtCOTIZACION_6;
     }
 }

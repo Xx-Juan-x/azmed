@@ -257,6 +257,7 @@ namespace VISTA
             this.crearOrdenDeCompraToolStripMenuItem.Name = "crearOrdenDeCompraToolStripMenuItem";
             this.crearOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.crearOrdenDeCompraToolStripMenuItem.Text = "Crear Orden de Compra";
+            this.crearOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.crearOrdenDeCompraToolStripMenuItem_Click);
             // 
             // rEPORTESToolStripMenuItem
             // 

@@ -65,6 +65,8 @@
     <Compile Include="MATERIALES\OPERACIONES_MATERIALES.cs" />
     <Compile Include="OBRAS SOCIALES\GESTION_OBRAS_SOCIALES.cs" />
     <Compile Include="OBRAS SOCIALES\OPERACIONES_OBRAS_SOCIALES.cs" />
+    <Compile Include="ORDEN DE COMPRA\GESTION_ORDEN_COMPRA.cs" />
+    <Compile Include="ORDEN DE COMPRA\OPERACIONES_ORDEN_COMPRA.cs" />
     <Compile Include="PLANES\GESTION_PLANES.cs" />
     <Compile Include="PLANES\OPERACIONES_PLANES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

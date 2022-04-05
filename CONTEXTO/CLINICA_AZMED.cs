@@ -57,6 +57,8 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.COTIZACION> COTIZACIONES { get; set; }
 
+        public virtual DbSet<MODELO.ORDEN_COMPRA> ORDENES_DE_COMPRAS { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -82,7 +84,9 @@ namespace CONTEXTO
             modelBuilder.Entity<MODELO.LISTA_PEDIDO>()
                 .HasKey(c => c.ID_LISTA_PEDIDO);
             modelBuilder.Entity<MODELO.COTIZACION>()
-                .HasKey(c => c.ID_COTIZACION);           
+                .HasKey(c => c.ID_COTIZACION);
+            modelBuilder.Entity<MODELO.ORDEN_COMPRA>()
+                .HasKey(c => c.ID_ORDEN_COMPRA);
         }
     }
 
