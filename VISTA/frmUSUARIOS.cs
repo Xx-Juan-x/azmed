@@ -56,6 +56,7 @@ namespace VISTA
         private MODELO.USUARIO oUSUARIO;
         private CONTROLADORA.ATENCIONES cATENCIONES;
         private MODELO.ATENCION oATENCION;
+        private MODELO.ESPECIALIDAD oESPECIALIDAD;
         string ACCION;
 
         private void ARMA_GRILLA(string TIPO)
@@ -197,7 +198,7 @@ namespace VISTA
             {
                 MessageBox.Show("La contraseña debe contener entre 8 y 16 caracteres", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }               
+            }
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
@@ -205,9 +206,10 @@ namespace VISTA
             oUSUARIO.APELLIDO = txtAPELLIDO.Text.ToUpper();
             oUSUARIO.EMAIL = txtEMAIL.Text;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
-            oUSUARIO.FECHA = DateTime.Now;           
+            oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.TIPO = cmbROL.SelectedItem.ToString();
-            
+
+
             if (txtPASSWORD.Text == txtCONFIRMAR_PASSWORD.Text)
             {
                 if (ACCION == "A")
@@ -244,7 +246,6 @@ namespace VISTA
                 return;
             }
             oUSUARIO = (MODELO.USUARIO)dgvLISTA_USUARIOS.CurrentRow.DataBoundItem;
-
             
             /*string TIPO = "";
             foreach (DataGridViewRow row in dgvLISTA_USUARIOS.SelectedRows)
@@ -265,6 +266,7 @@ namespace VISTA
             txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
             cmbROL.SelectedItem = oUSUARIO.TIPO.ToString();
+            cmbROL.Enabled = false;
 
             MODO_DATOS();
         }
