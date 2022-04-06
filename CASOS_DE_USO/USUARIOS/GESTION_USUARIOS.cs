@@ -16,11 +16,7 @@ namespace CASOS_DE_USO.USUARIOS
         public static List<MODELO.USUARIO> OBTENER_USUARIOS(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {          
             return AZMED_CLINICA.USUARIOS.ToList();
-        }
-        public static List<MODELO.USUARIO> OBTENER_USUARIOS_ESP(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
-        {
-            return AZMED_CLINICA.USUARIOS.Include("ESPECIALIDADES").ToList();
-        }
+        }       
 
         public static List<MODELO.USUARIO> OBTENER_PROFESIONALES(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {

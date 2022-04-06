@@ -10,7 +10,7 @@ namespace MODELO
     {
        public int ID_ORDEN_COMPRA { get; set; }
        public SOLICITUD_PEDIDO PEDIDO { get; set; }
-       public COTIZACION COTIZACION { get; set; }
-       public int CANTIDAD { get; set; } 
+       public DateTime FECHA { get; set; }
+       public string ESTADO { get; set; } 
     }
 }

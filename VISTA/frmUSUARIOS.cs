@@ -55,8 +55,7 @@ namespace VISTA
         private CONTROLADORA.USUARIOS cUSUARIOS;
         private MODELO.USUARIO oUSUARIO;
         private CONTROLADORA.ATENCIONES cATENCIONES;
-        private MODELO.ATENCION oATENCION;
-        private MODELO.ESPECIALIDAD oESPECIALIDAD;
+        private MODELO.ATENCION oATENCION;      
         string ACCION;
 
         private void ARMA_GRILLA(string TIPO)

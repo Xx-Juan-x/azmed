@@ -140,3 +140,5 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrat
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.AGREGO_LISTA_Y_PEDIDO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.CAMBIOS_SOLICITUD_PEDIDO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.ORDEN_COMPRA.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.MODIFICAR_ORDEN_COMPRA.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.LISTA_ORDEN_COMPRA.resources
