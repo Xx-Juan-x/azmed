@@ -58,16 +58,17 @@ namespace VISTA
             this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaYReportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
-            this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
+            this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
+            this.estadisticaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN_CLINICA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN_CLINICA)).BeginInit();
             this.SuspendLayout();
             // 
             // mnStripMENU_CLINICA
@@ -264,7 +265,8 @@ namespace VISTA
             this.rEPORTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem,
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem,
-            this.consultaYReportesDeComprasRealizadasToolStripMenuItem});
+            this.reportesDeComprasRealizadasToolStripMenuItem,
+            this.estadisticaDeMaterialesToolStripMenuItem});
             this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
             this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.rEPORTESToolStripMenuItem.Text = "REPORTES";
@@ -272,22 +274,23 @@ namespace VISTA
             // consultaYReportesDeProfesionalesRegistradosToolStripMenuItem
             // 
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Name = "consultaYReportesDeProfesionalesRegistradosToolStripMenuItem";
-            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Text = "Estadistica de Especialidades";
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem.Click += new System.EventHandler(this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem_Click);
             // 
             // consultaYReportesDeTurnosSolicitadosToolStripMenuItem
             // 
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Name = "consultaYReportesDeTurnosSolicitadosToolStripMenuItem";
-            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Text = "Estadistica de Turnos Semanales";
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem.Click += new System.EventHandler(this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem_Click);
             // 
-            // consultaYReportesDeComprasRealizadasToolStripMenuItem
+            // reportesDeComprasRealizadasToolStripMenuItem
             // 
-            this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Name = "consultaYReportesDeComprasRealizadasToolStripMenuItem";
-            this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.consultaYReportesDeComprasRealizadasToolStripMenuItem.Text = "Consulta y Reportes de Compras Realizadas";
+            this.reportesDeComprasRealizadasToolStripMenuItem.Name = "reportesDeComprasRealizadasToolStripMenuItem";
+            this.reportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.reportesDeComprasRealizadasToolStripMenuItem.Text = "Reportes de Compras";
+            this.reportesDeComprasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.reportesDeComprasRealizadasToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
@@ -310,19 +313,6 @@ namespace VISTA
             this.lblTIPO_USUARIO.TabIndex = 3;
             this.lblTIPO_USUARIO.Text = "ROL";
             this.lblTIPO_USUARIO.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // picIMAGEN_CLINICA
-            // 
-            this.picIMAGEN_CLINICA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picIMAGEN_CLINICA.Image = global::VISTA.Properties.Resources.CLINICA_AZMED_IMAGEN;
-            this.picIMAGEN_CLINICA.Location = new System.Drawing.Point(0, 22);
-            this.picIMAGEN_CLINICA.Name = "picIMAGEN_CLINICA";
-            this.picIMAGEN_CLINICA.Size = new System.Drawing.Size(1184, 549);
-            this.picIMAGEN_CLINICA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIMAGEN_CLINICA.TabIndex = 4;
-            this.picIMAGEN_CLINICA.TabStop = false;
             // 
             // dgvLISTA_SOLICITUD_PEDIDO
             // 
@@ -387,6 +377,26 @@ namespace VISTA
             this.gbLISTA_SOLICITUDES_PEDIDOS.TabStop = false;
             this.gbLISTA_SOLICITUDES_PEDIDOS.Text = "LISTA DE SOLICITUDES DE PEDIDOS";
             // 
+            // picIMAGEN_CLINICA
+            // 
+            this.picIMAGEN_CLINICA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picIMAGEN_CLINICA.Image = global::VISTA.Properties.Resources.CLINICA_AZMED_IMAGEN;
+            this.picIMAGEN_CLINICA.Location = new System.Drawing.Point(0, 22);
+            this.picIMAGEN_CLINICA.Name = "picIMAGEN_CLINICA";
+            this.picIMAGEN_CLINICA.Size = new System.Drawing.Size(1184, 549);
+            this.picIMAGEN_CLINICA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picIMAGEN_CLINICA.TabIndex = 4;
+            this.picIMAGEN_CLINICA.TabStop = false;
+            // 
+            // estadisticaDeMaterialesToolStripMenuItem
+            // 
+            this.estadisticaDeMaterialesToolStripMenuItem.Name = "estadisticaDeMaterialesToolStripMenuItem";
+            this.estadisticaDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.estadisticaDeMaterialesToolStripMenuItem.Text = "Estadistica de Materiales";
+            this.estadisticaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMaterialesToolStripMenuItem_Click);
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,9 +414,9 @@ namespace VISTA
             this.Load += new System.EventHandler(this.frmCLINICA_Load);
             this.mnStripMENU_CLINICA.ResumeLayout(false);
             this.mnStripMENU_CLINICA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN_CLINICA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).EndInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN_CLINICA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,7 +441,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem rEPORTESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeProfesionalesRegistradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeTurnosSolicitadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeComprasRealizadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesDeComprasRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SolicitarTurnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarProfesionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarAtenciónToolStripMenuItem;
@@ -446,5 +456,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem listaDeTurnosExportarToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvLISTA_SOLICITUD_PEDIDO;
         private System.Windows.Forms.GroupBox gbLISTA_SOLICITUDES_PEDIDOS;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaDeMaterialesToolStripMenuItem;
     }
 }

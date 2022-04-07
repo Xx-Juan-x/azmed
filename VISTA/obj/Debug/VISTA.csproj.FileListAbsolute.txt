@@ -149,3 +149,5 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmPROVEEDOR
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmSOLICITAR_PEDIDO_INSUMO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmCOTIZACION.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmORDEN_COMPRA.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_COMPRAS.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_MATERIALES.resources

@@ -12,5 +12,6 @@ namespace MODELO
         public ORDEN_COMPRA COMPRA { get; set; }
         public COTIZACION COTIZACION { get; set; }
         public int CANTIDAD { get; set; }
+        public decimal PRECIO { get; set; }
     }
 }

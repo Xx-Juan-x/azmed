@@ -1,7 +1,7 @@
 ﻿
 namespace VISTA
 {
-    partial class frmREPORTE_ESTADISTICO
+    partial class frmREPORTE_MATERIALES
     {
         /// <summary>
         /// Required designer variable.
@@ -31,35 +31,41 @@ namespace VISTA
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.chartESPECIALIDAD_PROFESIONAL = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_ESTADISTICA_MATERIALES = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnCERRAR = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.chartESPECIALIDAD_PROFESIONAL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_ESTADISTICA_MATERIALES)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartESPECIALIDAD_PROFESIONAL
+            // chart_ESTADISTICA_MATERIALES
             // 
-            this.chartESPECIALIDAD_PROFESIONAL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.chart_ESTADISTICA_MATERIALES.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.chartESPECIALIDAD_PROFESIONAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.chartESPECIALIDAD_PROFESIONAL.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            this.chartESPECIALIDAD_PROFESIONAL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chartESPECIALIDAD_PROFESIONAL.BackImageTransparentColor = System.Drawing.Color.White;
+            this.chart_ESTADISTICA_MATERIALES.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.chart_ESTADISTICA_MATERIALES.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            this.chart_ESTADISTICA_MATERIALES.BorderSkin.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
-            this.chartESPECIALIDAD_PROFESIONAL.ChartAreas.Add(chartArea1);
+            this.chart_ESTADISTICA_MATERIALES.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chartESPECIALIDAD_PROFESIONAL.Legends.Add(legend1);
-            this.chartESPECIALIDAD_PROFESIONAL.Location = new System.Drawing.Point(12, 12);
-            this.chartESPECIALIDAD_PROFESIONAL.Name = "chartESPECIALIDAD_PROFESIONAL";
-            this.chartESPECIALIDAD_PROFESIONAL.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            this.chartESPECIALIDAD_PROFESIONAL.Size = new System.Drawing.Size(817, 365);
-            this.chartESPECIALIDAD_PROFESIONAL.TabIndex = 0;
-            this.chartESPECIALIDAD_PROFESIONAL.Text = "CANTIDAD DE PROFESIONALES";
+            this.chart_ESTADISTICA_MATERIALES.Legends.Add(legend1);
+            this.chart_ESTADISTICA_MATERIALES.Location = new System.Drawing.Point(12, 12);
+            this.chart_ESTADISTICA_MATERIALES.Name = "chart_ESTADISTICA_MATERIALES";
+            this.chart_ESTADISTICA_MATERIALES.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart_ESTADISTICA_MATERIALES.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))};
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "CANTIDAD DE MATERIALES";
+            this.chart_ESTADISTICA_MATERIALES.Series.Add(series1);
+            this.chart_ESTADISTICA_MATERIALES.Size = new System.Drawing.Size(859, 390);
+            this.chart_ESTADISTICA_MATERIALES.TabIndex = 2;
+            this.chart_ESTADISTICA_MATERIALES.Text = "ESTADISTICA DE MATERIALES AL MES";
             title1.ForeColor = System.Drawing.Color.White;
-            title1.Name = "CANTIDAD DE PROFESIONALES POR ESPECIALIDAD";
-            title1.Text = "CANTIDAD DE PROFESIONALES POR ESPECIALIDAD";
-            this.chartESPECIALIDAD_PROFESIONAL.Titles.Add(title1);
+            title1.Name = "CANTIDAD DE MATERIALES MENSUALES";
+            title1.Text = "CANTIDAD DE MATERIALES MENSUALES";
+            this.chart_ESTADISTICA_MATERIALES.Titles.Add(title1);
             // 
             // btnCERRAR
             // 
@@ -69,34 +75,34 @@ namespace VISTA
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(746, 383);
+            this.btnCERRAR.Location = new System.Drawing.Point(788, 408);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(83, 30);
-            this.btnCERRAR.TabIndex = 13;
+            this.btnCERRAR.TabIndex = 16;
             this.btnCERRAR.Text = "Cerrar";
             this.btnCERRAR.UseVisualStyleBackColor = false;
             this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
-            // frmREPORTE_ESTADISTICO
+            // frmREPORTE_MATERIALES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(837, 425);
+            this.ClientSize = new System.Drawing.Size(883, 450);
             this.Controls.Add(this.btnCERRAR);
-            this.Controls.Add(this.chartESPECIALIDAD_PROFESIONAL);
+            this.Controls.Add(this.chart_ESTADISTICA_MATERIALES);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "frmREPORTE_ESTADISTICO";
+            this.Name = "frmREPORTE_MATERIALES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CANTIDAD DE PROFESIONALES POR ESPECIALIDAD";
-            ((System.ComponentModel.ISupportInitialize)(this.chartESPECIALIDAD_PROFESIONAL)).EndInit();
+            this.Text = "REPORTE DE PEDIDOS";
+            ((System.ComponentModel.ISupportInitialize)(this.chart_ESTADISTICA_MATERIALES)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartESPECIALIDAD_PROFESIONAL;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_ESTADISTICA_MATERIALES;
         private System.Windows.Forms.Button btnCERRAR;
     }
 }

@@ -40,12 +40,7 @@ namespace VISTA
         }
 
         private void ARMAR_CHART()
-        {  
-            // Le coloco un nombre al gráfico
-            chartESPECIALIDAD_PROFESIONAL.Titles.Add("CANTIDAD DE PROFESIONALES POR ESPECIALIDAD");
-
-            //chartESPECIALIDAD_PROFESIONAL.Palette = ChartColorPalette.Pastel;
-
+        {          
             // Traigo la cantidad de especialidades que tengo    
             string[] SERIES_ARRAY_ESPECIALIDAD = cESPECIALIDADES.OBTENER_ESPECIALIDADES().AsEnumerable().Where(r => r.NOMBRE != null).Select(r => r.NOMBRE).Distinct().ToArray();
             string[] LISTA_PROFESIONALES = cPROFESIONALES.OBTENER_PROFESIONALES().AsEnumerable().Where(r => r.ESPECIALIDADES != null).Select(r => r.ESPECIALIDADES.NOMBRE).ToArray();

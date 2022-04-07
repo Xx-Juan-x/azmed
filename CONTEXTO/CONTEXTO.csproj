@@ -250,6 +250,10 @@
     <Compile Include="Migrations\202204062342356_LISTA_ORDEN_COMPRA.designer.cs">
       <DependentUpon>202204062342356_LISTA_ORDEN_COMPRA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204070020240_PRECIO_COMPRA.cs" />
+    <Compile Include="Migrations\202204070020240_PRECIO_COMPRA.designer.cs">
+      <DependentUpon>202204070020240_PRECIO_COMPRA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -413,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204062342356_LISTA_ORDEN_COMPRA.resx">
       <DependentUpon>202204062342356_LISTA_ORDEN_COMPRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204070020240_PRECIO_COMPRA.resx">
+      <DependentUpon>202204070020240_PRECIO_COMPRA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

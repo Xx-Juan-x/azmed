@@ -233,5 +233,17 @@ namespace VISTA
             frmORDEN_COMPRA FORMULARIO_ORDEN_COMPRA = frmORDEN_COMPRA.OBTENER_INSTANCIA();
             FORMULARIO_ORDEN_COMPRA.Show();
         }
+
+        private void reportesDeComprasRealizadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmREPORTE_COMPRAS FORMULARIO_REPORTE_COMPRAS = frmREPORTE_COMPRAS.OBTENER_INSTANCIA();
+            FORMULARIO_REPORTE_COMPRAS.Show();
+        }
+
+        private void reportesDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmREPORTE_MATERIALES FORMULARIO_REPORTE_MATERIALES = frmREPORTE_MATERIALES.OBTENER_INSTANCIA();
+            FORMULARIO_REPORTE_MATERIALES.Show();
+        }
     }
 }

@@ -147,11 +147,23 @@
     <Compile Include="frmREGISTRO_PACIENTE.Designer.cs">
       <DependentUpon>frmREGISTRO_PACIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmREPORTE_COMPRAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmREPORTE_COMPRAS.Designer.cs">
+      <DependentUpon>frmREPORTE_COMPRAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmREPORTE_ESTADISTICO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmREPORTE_ESTADISTICO.Designer.cs">
       <DependentUpon>frmREPORTE_ESTADISTICO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmREPORTE_MATERIALES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmREPORTE_MATERIALES.Designer.cs">
+      <DependentUpon>frmREPORTE_MATERIALES.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSOLICITAR_PEDIDO_INSUMO.cs">
       <SubType>Form</SubType>
@@ -233,8 +245,14 @@
     <EmbeddedResource Include="frmREPORTE_CANTIDAD_TURNOS.resx">
       <DependentUpon>frmREPORTE_CANTIDAD_TURNOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmREPORTE_COMPRAS.resx">
+      <DependentUpon>frmREPORTE_COMPRAS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmREPORTE_ESTADISTICO.resx">
       <DependentUpon>frmREPORTE_ESTADISTICO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmREPORTE_MATERIALES.resx">
+      <DependentUpon>frmREPORTE_MATERIALES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSOLICITAR_PEDIDO_INSUMO.resx">
       <DependentUpon>frmSOLICITAR_PEDIDO_INSUMO.cs</DependentUpon>
