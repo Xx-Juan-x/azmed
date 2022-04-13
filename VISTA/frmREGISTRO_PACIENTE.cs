@@ -34,7 +34,7 @@ namespace VISTA
         public frmREGISTRO_PACIENTE()
         {
             InitializeComponent();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();       
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();         
         }
 
         private Boolean EMAIL_BIEN_ESCRITO(String email)
@@ -161,6 +161,6 @@ namespace VISTA
                 e.Handled = true;
                 return;
             }
-        }       
+        }      
     }
 }

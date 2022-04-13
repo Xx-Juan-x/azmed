@@ -33,6 +33,7 @@ namespace VISTA
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
+            cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
             
             ARMA_GRILLA("A");
             MODO_GRILLA();
@@ -55,7 +56,9 @@ namespace VISTA
         private CONTROLADORA.USUARIOS cUSUARIOS;
         private MODELO.USUARIO oUSUARIO;
         private CONTROLADORA.ATENCIONES cATENCIONES;
-        private MODELO.ATENCION oATENCION;      
+        private MODELO.ATENCION oATENCION;
+        private CONTROLADORA.TURNOS cTURNOS;
+        private MODELO.TURNO oTURNO;
         string ACCION;
 
         private void ARMA_GRILLA(string TIPO)
@@ -302,11 +305,21 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
-                //oATENCION = new MODELO.ATENCION();
-                //oATENCION.PROFESIONAL.ID_USUARIO = oUSUARIO.ID_USUARIO;
+                /*if (oUSUARIO.TIPO == "PROFESIONAL")
+                {
+                    DateTime DIA_ACTUAL = DateTime.Now;
+                    var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
+                                        where a.FECHA > DIA_ACTUAL && a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
+                                        select a).ToList();
+                    foreach (var item in LISTA_TURNOS)
+                    {
+                        oTURNO = (MODELO.TURNO)item;
+                        oTURNO.ESTADO = "CANCELADO";
+                        cTURNOS.MODIFICAR_TURNO(oTURNO);
+                    }
+                }*/
+
                 cUSUARIOS.ELIMINAR_USUARIO(oUSUARIO);
-                //cATENCIONES.ELIMINAR_ATENCION(oATENCION);
-                
                 ARMA_GRILLA("A");
             }
         }

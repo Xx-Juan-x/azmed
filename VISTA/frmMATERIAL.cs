@@ -42,8 +42,12 @@ namespace VISTA
 
         private void ARMA_GRILLA()
         {
+            var LISTA_MATERIALES = (from a in cMATERIALES.OBTENER_MATERIALES()
+                                where a.NOMBRE != "SELECCIONE..."
+                                select a).ToList();
+
             dgvLISTA_MATERIALES.DataSource = null;
-            dgvLISTA_MATERIALES.DataSource = cMATERIALES.OBTENER_MATERIALES();
+            dgvLISTA_MATERIALES.DataSource = LISTA_MATERIALES;
         }
 
         private void MODO_GRILLA()

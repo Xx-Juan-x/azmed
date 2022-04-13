@@ -60,7 +60,7 @@ namespace VISTA
                     GASTOS += ITEMS_COMPRAS.PRECIO * ITEMS_COMPRAS.CANTIDAD;
                 }
             }
-            MessageBox.Show(GASTOS.ToString());
+            //MessageBox.Show(GASTOS.ToString());
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)

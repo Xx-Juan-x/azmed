@@ -30,7 +30,7 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.lonklblLOGIN = new System.Windows.Forms.LinkLabel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblBIENVENIDO = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCONFIRMAR_PASSWORD = new System.Windows.Forms.Label();
             this.txtCONFIRMAR_PASSWORD = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@ namespace VISTA
             // 
             this.lonklblLOGIN.AutoSize = true;
             this.lonklblLOGIN.LinkColor = System.Drawing.Color.White;
-            this.lonklblLOGIN.Location = new System.Drawing.Point(94, 327);
+            this.lonklblLOGIN.Location = new System.Drawing.Point(142, 328);
             this.lonklblLOGIN.Name = "lonklblLOGIN";
             this.lonklblLOGIN.Size = new System.Drawing.Size(122, 13);
             this.lonklblLOGIN.TabIndex = 10;
@@ -59,17 +59,18 @@ namespace VISTA
             this.lonklblLOGIN.Text = "¿YA TIENES CUENTA?";
             this.lonklblLOGIN.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lonklblLOGIN_LinkClicked);
             // 
-            // label4
+            // lblBIENVENIDO
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(82, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 31);
-            this.label4.TabIndex = 929;
-            this.label4.Text = "Bienvenido";
+            this.lblBIENVENIDO.AutoSize = true;
+            this.lblBIENVENIDO.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblBIENVENIDO.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBIENVENIDO.ForeColor = System.Drawing.Color.White;
+            this.lblBIENVENIDO.Location = new System.Drawing.Point(129, 23);
+            this.lblBIENVENIDO.Name = "lblBIENVENIDO";
+            this.lblBIENVENIDO.Size = new System.Drawing.Size(148, 31);
+            this.lblBIENVENIDO.TabIndex = 929;
+            this.lblBIENVENIDO.Text = "Bienvenido";
+            this.lblBIENVENIDO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -77,7 +78,7 @@ namespace VISTA
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 73);
+            this.label3.Size = new System.Drawing.Size(394, 73);
             this.label3.TabIndex = 928;
             // 
             // lblCONFIRMAR_PASSWORD
@@ -87,7 +88,7 @@ namespace VISTA
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCONFIRMAR_PASSWORD.AutoSize = true;
             this.lblCONFIRMAR_PASSWORD.ForeColor = System.Drawing.Color.White;
-            this.lblCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(12, 286);
+            this.lblCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(12, 293);
             this.lblCONFIRMAR_PASSWORD.Name = "lblCONFIRMAR_PASSWORD";
             this.lblCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(111, 13);
             this.lblCONFIRMAR_PASSWORD.TabIndex = 938;
@@ -98,10 +99,12 @@ namespace VISTA
             this.txtCONFIRMAR_PASSWORD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(135, 279);
+            this.txtCONFIRMAR_PASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(135, 286);
+            this.txtCONFIRMAR_PASSWORD.Multiline = true;
             this.txtCONFIRMAR_PASSWORD.Name = "txtCONFIRMAR_PASSWORD";
             this.txtCONFIRMAR_PASSWORD.PasswordChar = '*';
-            this.txtCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(172, 20);
+            this.txtCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(247, 26);
             this.txtCONFIRMAR_PASSWORD.TabIndex = 939;
             // 
             // lblPASSWORD
@@ -111,7 +114,7 @@ namespace VISTA
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPASSWORD.AutoSize = true;
             this.lblPASSWORD.ForeColor = System.Drawing.Color.White;
-            this.lblPASSWORD.Location = new System.Drawing.Point(12, 237);
+            this.lblPASSWORD.Location = new System.Drawing.Point(12, 244);
             this.lblPASSWORD.Name = "lblPASSWORD";
             this.lblPASSWORD.Size = new System.Drawing.Size(84, 13);
             this.lblPASSWORD.TabIndex = 936;
@@ -135,10 +138,12 @@ namespace VISTA
             this.txtPASSWORD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPASSWORD.Location = new System.Drawing.Point(135, 230);
+            this.txtPASSWORD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPASSWORD.Location = new System.Drawing.Point(135, 237);
+            this.txtPASSWORD.Multiline = true;
             this.txtPASSWORD.Name = "txtPASSWORD";
             this.txtPASSWORD.PasswordChar = '*';
-            this.txtPASSWORD.Size = new System.Drawing.Size(172, 20);
+            this.txtPASSWORD.Size = new System.Drawing.Size(247, 26);
             this.txtPASSWORD.TabIndex = 937;
             // 
             // txtNOMBRE
@@ -146,9 +151,11 @@ namespace VISTA
             this.txtNOMBRE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNOMBRE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtNOMBRE.Location = new System.Drawing.Point(135, 88);
+            this.txtNOMBRE.Multiline = true;
             this.txtNOMBRE.Name = "txtNOMBRE";
-            this.txtNOMBRE.Size = new System.Drawing.Size(172, 20);
+            this.txtNOMBRE.Size = new System.Drawing.Size(247, 26);
             this.txtNOMBRE.TabIndex = 931;
             // 
             // lblEMAIL
@@ -169,9 +176,11 @@ namespace VISTA
             this.txtAPELLIDO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAPELLIDO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtAPELLIDO.Location = new System.Drawing.Point(135, 136);
+            this.txtAPELLIDO.Multiline = true;
             this.txtAPELLIDO.Name = "txtAPELLIDO";
-            this.txtAPELLIDO.Size = new System.Drawing.Size(172, 20);
+            this.txtAPELLIDO.Size = new System.Drawing.Size(247, 26);
             this.txtAPELLIDO.TabIndex = 933;
             // 
             // txtEMAIL
@@ -179,9 +188,11 @@ namespace VISTA
             this.txtEMAIL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtEMAIL.Location = new System.Drawing.Point(135, 186);
+            this.txtEMAIL.Multiline = true;
             this.txtEMAIL.Name = "txtEMAIL";
-            this.txtEMAIL.Size = new System.Drawing.Size(172, 20);
+            this.txtEMAIL.Size = new System.Drawing.Size(247, 26);
             this.txtEMAIL.TabIndex = 935;
             // 
             // lblAPELLIDO
@@ -204,9 +215,9 @@ namespace VISTA
             this.btnREGISTRARSE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnREGISTRARSE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnREGISTRARSE.ForeColor = System.Drawing.Color.White;
-            this.btnREGISTRARSE.Location = new System.Drawing.Point(43, 354);
+            this.btnREGISTRARSE.Location = new System.Drawing.Point(88, 354);
             this.btnREGISTRARSE.Name = "btnREGISTRARSE";
-            this.btnREGISTRARSE.Size = new System.Drawing.Size(221, 32);
+            this.btnREGISTRARSE.Size = new System.Drawing.Size(221, 39);
             this.btnREGISTRARSE.TabIndex = 941;
             this.btnREGISTRARSE.Text = "Registrarse";
             this.btnREGISTRARSE.UseVisualStyleBackColor = false;
@@ -216,7 +227,7 @@ namespace VISTA
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(225, 253);
+            this.label1.Location = new System.Drawing.Point(306, 266);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 942;
@@ -226,7 +237,7 @@ namespace VISTA
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(225, 302);
+            this.label2.Location = new System.Drawing.Point(306, 315);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 943;
@@ -237,7 +248,7 @@ namespace VISTA
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(319, 398);
+            this.ClientSize = new System.Drawing.Size(394, 398);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnREGISTRARSE);
@@ -251,7 +262,7 @@ namespace VISTA
             this.Controls.Add(this.txtAPELLIDO);
             this.Controls.Add(this.txtEMAIL);
             this.Controls.Add(this.lblAPELLIDO);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblBIENVENIDO);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lonklblLOGIN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -265,7 +276,7 @@ namespace VISTA
 
         #endregion
         private System.Windows.Forms.LinkLabel lonklblLOGIN;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblBIENVENIDO;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCONFIRMAR_PASSWORD;
         private System.Windows.Forms.TextBox txtCONFIRMAR_PASSWORD;

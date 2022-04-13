@@ -50,7 +50,7 @@ namespace VISTA
             txtCOTIZACION_7.Enabled = false;
             txtCOTIZACION_8.Enabled = false;
             txtCOTIZACION_9.Enabled = false;
-            txtCOTIZACION_10.Enabled = false;
+            txtCOTIZACION_10.Enabled = false;           
         }
 
         private void ARMA_COMBOBOX_SOLICITUD_PEDIDO()
@@ -66,14 +66,16 @@ namespace VISTA
                 TextBox tbx = this.Controls.Find("txtCOTIZACION_" + j, true).FirstOrDefault() as TextBox;
                 if(tbx != null)
                 {
-                    tbx.Text = "";
+                    tbx.Text = ""; 
                 }
                 TextBox tcx = this.Controls.Find("txtCANTIDAD_" + j, true).FirstOrDefault() as TextBox;
                 if (tcx != null)
                 {
                     tcx.Text = "";
+                    tcx.Enabled = true;
                 }
             }
+
             var LISTA_COTIZACIONES = (from a in cCOTIZACIONES.OBTENER_COTIZACIONES()
                                      where a.PEDIDO.ID_SOLICITUD_PEDIDO == ID_SOLICITUD_PEDIDO 
                                      select a).ToList();
@@ -87,11 +89,24 @@ namespace VISTA
                 TextBox tbx = this.Controls.Find("txtCOTIZACION_" + i, true).FirstOrDefault() as TextBox;
                 if (tbx != null)
                 {
-                    tbx.Text = item.ID_COTIZACION + "-" + item.NOMBRE;
+                    tbx.Text = item.ID_COTIZACION + "-" + item.NOMBRE;                           
                 }
                 i++;
             }
 
+            for (int j = i; j < 11; j++)
+            {
+                TextBox tbx = this.Controls.Find("txtCOTIZACION_" + j, true).FirstOrDefault() as TextBox;
+                TextBox tbc = this.Controls.Find("txtCANTIDAD_" + j, true).FirstOrDefault() as TextBox;
+                if (tbx != null)
+                {
+                    tbx.Enabled = false;
+                }
+                if (tbc != null)
+                {
+                    tbc.Enabled = false;
+                }
+            }
         }
 
         private void cmbSOLICITUD_PEDIDO_SelectedIndexChanged(object sender, EventArgs e)
