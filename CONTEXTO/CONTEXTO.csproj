@@ -254,6 +254,14 @@
     <Compile Include="Migrations\202204070020240_PRECIO_COMPRA.designer.cs">
       <DependentUpon>202204070020240_PRECIO_COMPRA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204132316205_ESTADO_USUARIO.cs" />
+    <Compile Include="Migrations\202204132316205_ESTADO_USUARIO.designer.cs">
+      <DependentUpon>202204132316205_ESTADO_USUARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204132326079_ATENCION_ESTADO.cs" />
+    <Compile Include="Migrations\202204132326079_ATENCION_ESTADO.designer.cs">
+      <DependentUpon>202204132326079_ATENCION_ESTADO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -420,6 +428,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204070020240_PRECIO_COMPRA.resx">
       <DependentUpon>202204070020240_PRECIO_COMPRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204132316205_ESTADO_USUARIO.resx">
+      <DependentUpon>202204132316205_ESTADO_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204132326079_ATENCION_ESTADO.resx">
+      <DependentUpon>202204132326079_ATENCION_ESTADO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -66,7 +66,7 @@ namespace VISTA
             if (TIPO == "A")
             {
                 dgvLISTA_USUARIOS.DataSource = null;
-                dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+                dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS_TODOS();
             }
             if (TIPO == "B")
             {
@@ -75,11 +75,11 @@ namespace VISTA
                 if (FILTRO_TIPO_USUARIO == "TODOS")
                 {
                     dgvLISTA_USUARIOS.DataSource = null;
-                    dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS();
+                    dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS_TODOS();
                 }
                 else
                 {
-                    var LISTA_TIPOS_USUARIO = (from a in cUSUARIOS.OBTENER_USUARIOS()
+                    var LISTA_TIPOS_USUARIO = (from a in cUSUARIOS.OBTENER_USUARIOS_TODOS()
                                        where a.TIPO == FILTRO_TIPO_USUARIO
                                        select a).ToList();
 
@@ -216,6 +216,7 @@ namespace VISTA
             {
                 if (ACCION == "A")
                 {
+                    oUSUARIO.ESTADO = "ACTIVO";
                     cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);              
                 }
                 else if(ACCION == "M")
@@ -248,7 +249,13 @@ namespace VISTA
                 return;
             }
             oUSUARIO = (MODELO.USUARIO)dgvLISTA_USUARIOS.CurrentRow.DataBoundItem;
-            
+
+            if (oUSUARIO.ESTADO == "INACTIVO")
+            {
+                MessageBox.Show("Debe seleccionar un usuario activo para poder modificarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             /*string TIPO = "";
             foreach (DataGridViewRow row in dgvLISTA_USUARIOS.SelectedRows)
             {
@@ -305,7 +312,7 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
-                /*if (oUSUARIO.TIPO == "PROFESIONAL")
+                if (oUSUARIO.TIPO == "PROFESIONAL")
                 {
                     DateTime DIA_ACTUAL = DateTime.Now;
                     var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
@@ -317,9 +324,9 @@ namespace VISTA
                         oTURNO.ESTADO = "CANCELADO";
                         cTURNOS.MODIFICAR_TURNO(oTURNO);
                     }
-                }*/
-
-                cUSUARIOS.ELIMINAR_USUARIO(oUSUARIO);
+                }
+                oUSUARIO.ESTADO = "INACTIVO";
+                cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
             }
         }
@@ -370,6 +377,27 @@ namespace VISTA
             }
         }
 
-        
+        private void btnRECUPERAR_Click(object sender, EventArgs e)
+        {
+            if (dgvLISTA_USUARIOS.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un usuario de la lista para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            oUSUARIO = (MODELO.USUARIO)dgvLISTA_USUARIOS.CurrentRow.DataBoundItem;
+            if (oUSUARIO.ESTADO != "INACTIVO")
+            {
+                MessageBox.Show("Debe seleccionar un usuario inactivo para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            oUSUARIO.ESTADO = "ACTIVO";
+            DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + "", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (RESPUESTA == DialogResult.Yes)
+            {
+                cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
+                ARMA_GRILLA("A");
+            }
+        }
     }
+    
 }

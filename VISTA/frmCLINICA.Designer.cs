@@ -46,7 +46,6 @@ namespace VISTA
             this.horariosLaboralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tURNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SolicitarTurnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeTurnosExportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,12 +58,12 @@ namespace VISTA
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
-            this.estadisticaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -179,7 +178,6 @@ namespace VISTA
             // 
             this.tURNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SolicitarTurnoToolStripMenuItem,
-            this.facturarPacienteToolStripMenuItem,
             this.turnosToolStripMenuItem1,
             this.listaDeTurnosExportarToolStripMenuItem});
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
@@ -189,27 +187,21 @@ namespace VISTA
             // SolicitarTurnoToolStripMenuItem
             // 
             this.SolicitarTurnoToolStripMenuItem.Name = "SolicitarTurnoToolStripMenuItem";
-            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SolicitarTurnoToolStripMenuItem.Text = "Solicitar Turno";
             this.SolicitarTurnoToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
-            // 
-            // facturarPacienteToolStripMenuItem
-            // 
-            this.facturarPacienteToolStripMenuItem.Name = "facturarPacienteToolStripMenuItem";
-            this.facturarPacienteToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.facturarPacienteToolStripMenuItem.Text = "Facturar Paciente";
             // 
             // turnosToolStripMenuItem1
             // 
             this.turnosToolStripMenuItem1.Name = "turnosToolStripMenuItem1";
-            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.turnosToolStripMenuItem1.Text = "Turnos";
             this.turnosToolStripMenuItem1.Click += new System.EventHandler(this.turnosToolStripMenuItem1_Click);
             // 
             // listaDeTurnosExportarToolStripMenuItem
             // 
             this.listaDeTurnosExportarToolStripMenuItem.Name = "listaDeTurnosExportarToolStripMenuItem";
-            this.listaDeTurnosExportarToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.listaDeTurnosExportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaDeTurnosExportarToolStripMenuItem.Text = "Turnos";
             this.listaDeTurnosExportarToolStripMenuItem.Click += new System.EventHandler(this.listaDeTurnosExportarToolStripMenuItem_Click);
             // 
@@ -291,6 +283,13 @@ namespace VISTA
             this.reportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.reportesDeComprasRealizadasToolStripMenuItem.Text = "Reportes de Compras";
             this.reportesDeComprasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.reportesDeComprasRealizadasToolStripMenuItem_Click);
+            // 
+            // estadisticaDeMaterialesToolStripMenuItem
+            // 
+            this.estadisticaDeMaterialesToolStripMenuItem.Name = "estadisticaDeMaterialesToolStripMenuItem";
+            this.estadisticaDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.estadisticaDeMaterialesToolStripMenuItem.Text = "Estadistica de Materiales";
+            this.estadisticaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMaterialesToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
@@ -390,13 +389,6 @@ namespace VISTA
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
             // 
-            // estadisticaDeMaterialesToolStripMenuItem
-            // 
-            this.estadisticaDeMaterialesToolStripMenuItem.Name = "estadisticaDeMaterialesToolStripMenuItem";
-            this.estadisticaDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.estadisticaDeMaterialesToolStripMenuItem.Text = "Estadistica de Materiales";
-            this.estadisticaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMaterialesToolStripMenuItem_Click);
-            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,7 +437,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem SolicitarTurnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarProfesionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarAtenciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturarPacienteToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.Label lblTIPO_USUARIO;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;

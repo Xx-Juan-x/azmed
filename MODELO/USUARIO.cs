@@ -18,6 +18,7 @@ namespace MODELO
         public ESPECIALIDAD ESPECIALIDADES { get; set; }
         public PLAN PLAN { get; set; }
         public OBRA_SOCIAL OBRA_SOCIAL { get; set; }
+        public string ESTADO { get; set; }
 
         public override string ToString()
         {

@@ -80,22 +80,23 @@ namespace VISTA
                     uSUARIOSToolStripMenuItem.Visible = true;
                     pACIENTESToolStripMenuItem.Visible = true;
                     pROFESIONALESToolStripMenuItem.Visible = true;
-                    tURNOSToolStripMenuItem.Visible = true;
-                    facturarPacienteToolStripMenuItem.Visible = true;
+                    tURNOSToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = true;
                     horariosLaboralesToolStripMenuItem.Visible = false;
                     SolicitarTurnoToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = false;
                     listaDeTurnosExportarToolStripMenuItem.Visible = false;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
-
+                    registrarMaterialesToolStripMenuItem.Visible = false;
+                    registrarProveedoresToolStripMenuItem.Visible = false;
+                    crearCotizacionesToolStripMenuItem.Visible = false;
+                    crearOrdenDeCompraToolStripMenuItem.Visible = false;
                     break;
                 case "PACIENTE":
                     uSUARIOSToolStripMenuItem.Visible = false;
                     pACIENTESToolStripMenuItem.Visible = false;
                     pROFESIONALESToolStripMenuItem.Visible = false;
                     tURNOSToolStripMenuItem.Visible = true;
-                    facturarPacienteToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = false;
                     cOMPRASToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
@@ -111,8 +112,7 @@ namespace VISTA
                     asignarProfesionalToolStripMenuItem.Visible = false;
                     gestionarAtenciónToolStripMenuItem.Visible = false;
                     tURNOSToolStripMenuItem.Visible = true;
-                    SolicitarTurnoToolStripMenuItem.Visible = false;
-                    facturarPacienteToolStripMenuItem.Visible = false;
+                    SolicitarTurnoToolStripMenuItem.Visible = false;                  
                     turnosToolStripMenuItem1.Visible = true;
                     cOMPRASToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;

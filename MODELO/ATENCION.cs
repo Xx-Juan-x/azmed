@@ -14,6 +14,7 @@ namespace MODELO
         public ESPECIALIDAD ESPECIALIDAD { get; set; }
         public int HORA_INICIO { get; set; }
         public int HORA_FIN { get; set; }
+        public string ESTADO { get; set; }
         
     }
 }

@@ -59,6 +59,7 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
+            this.btnRECUPERAR = new System.Windows.Forms.Button();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -250,6 +251,7 @@ namespace VISTA
             this.gbLISTA_USUARIOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbLISTA_USUARIOS.Controls.Add(this.btnRECUPERAR);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnBUSCAR);
             this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_TIPO);
             this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_TIPO);
@@ -433,6 +435,22 @@ namespace VISTA
             this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(777, 314);
             this.dgvLISTA_USUARIOS.TabIndex = 0;
             // 
+            // btnRECUPERAR
+            // 
+            this.btnRECUPERAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRECUPERAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnRECUPERAR.FlatAppearance.BorderSize = 0;
+            this.btnRECUPERAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRECUPERAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRECUPERAR.ForeColor = System.Drawing.Color.White;
+            this.btnRECUPERAR.Location = new System.Drawing.Point(361, 381);
+            this.btnRECUPERAR.Name = "btnRECUPERAR";
+            this.btnRECUPERAR.Size = new System.Drawing.Size(83, 30);
+            this.btnRECUPERAR.TabIndex = 77;
+            this.btnRECUPERAR.Text = "Recuperar";
+            this.btnRECUPERAR.UseVisualStyleBackColor = false;
+            this.btnRECUPERAR.Click += new System.EventHandler(this.btnRECUPERAR_Click);
+            // 
             // frmUSUARIOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,5 +501,6 @@ namespace VISTA
         private System.Windows.Forms.DataGridView dgvLISTA_USUARIOS;
         private System.Windows.Forms.Label lblDESCRIPCION_CLAVE;
         private System.Windows.Forms.Label lblDESCRIPCION;
+        private System.Windows.Forms.Button btnRECUPERAR;
     }
 }
