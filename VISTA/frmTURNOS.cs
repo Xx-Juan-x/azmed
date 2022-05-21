@@ -41,6 +41,8 @@ namespace VISTA
         private CONTROLADORA.PLANES cPLANES;
         private string DIA;
         string ACCION;
+        private double IMPORTE_CONSULTA;
+        private double IMPORTE_ESTUDIO;
 
         public frmTURNOS()
         {
@@ -52,8 +54,7 @@ namespace VISTA
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
-            rbCONSULTA.Checked = true;
-
+            txtPRECIO.Enabled = false;
 
             /*cmbDIA.Items.Add("SELECCIONE...");
             cmbDIA.SelectedItem = "SELECCIONE...";*/
@@ -241,6 +242,14 @@ namespace VISTA
             cmbHORAS.Items.Clear();
             cmbHORAS.ResetText();
             cmbPROFESIONAL.DataSource = null;
+            //cmbESPECIALIDAD.SelectedValue;
+            MODELO.ESPECIALIDAD ESP = new MODELO.ESPECIALIDAD();
+            ESP = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedValue;
+            IMPORTE_CONSULTA = ESP.IMPORTE_CONSULTA;
+            IMPORTE_ESTUDIO = ESP.IMPORTE_ESTUDIO;
+            txtPRECIO.Text = null;
+            rbCONSULTA.Checked = false;
+            rbESTUDIO.Checked = false;
         }
 
         private void cmbHORAS_SelectedIndexChanged(object sender, EventArgs e)
@@ -318,7 +327,7 @@ namespace VISTA
             {
                 MessageBox.Show("Debe seleccionar el profesional que se encuentra disponible para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }          
             #endregion
 
             oTURNO = new MODELO.TURNO();
@@ -355,7 +364,7 @@ namespace VISTA
             oTURNO.FECHA = DIA_SELECCIONADO.DIA_VALOR;
             oTURNO.PACIENTE = oPACIENTE;
             oTURNO.OBRA_SOCIAL = oOBRA_SOCIAL;
-            oTURNO.PLAN = oPLAN;        
+            oTURNO.PLAN = oPLAN;   
             if (rbCONSULTA.Checked)
             {
                 oTURNO.TIPO = rbCONSULTA.Text;
@@ -366,6 +375,14 @@ namespace VISTA
                 oTURNO.TIPO = rbESTUDIO.Text;
                 oTURNO.TIPO = "ESTUDIO";
             }
+
+            double PRECIO;
+            PRECIO = Convert.ToDouble(txtPRECIO.Text);
+            oTURNO.PRECIO = PRECIO;
+            oTURNO.ESTADO = "SOLICITADO";
+
+            //Vacío la texbox
+            txtPRECIO.Text = null;
 
             if (ACCION == "A")
             {
@@ -380,6 +397,22 @@ namespace VISTA
         private void btnCERRAR_Click(object sender, EventArgs e)
         {           
             this.Close();
+        }
+
+        private void rbCONSULTA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCONSULTA.Checked == true)
+            {
+                txtPRECIO.Text = IMPORTE_CONSULTA.ToString();
+            }
+        }
+
+        private void rbESTUDIO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbESTUDIO.Checked == true)
+            {
+                txtPRECIO.Text = IMPORTE_ESTUDIO.ToString();
+            }
         }
     }
     

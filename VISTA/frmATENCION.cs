@@ -138,9 +138,10 @@ namespace VISTA
 
         private void ARMA_COMBOBOX_PROFESIONALES(int ID_ESPECIALIDAD)
         {
+   
             cmbPROFESIONALES.DataSource = null;           
             var LISTA_PROFESIONALES = (from c in cUSUARIOS.OBTENER_PROFESIONALES()
-                                       where c.ESPECIALIDADES.ID_ESPECIALIDAD == ID_ESPECIALIDAD
+                                       where c.ESPECIALIDADES != null && c.ESPECIALIDADES.ID_ESPECIALIDAD == ID_ESPECIALIDAD
                                        select c).ToList();
 
             cmbPROFESIONALES.DataSource = LISTA_PROFESIONALES;
@@ -220,6 +221,7 @@ namespace VISTA
             oATENCION.DIA_LABORAL = cmbDIA_LABORAL.Text;
             oATENCION.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDADES.SelectedItem;
             oATENCION.PROFESIONAL = (MODELO.USUARIO)cmbPROFESIONALES.SelectedItem;
+            oATENCION.ESTADO = "ACTIVO";
             
             if (ACCION == "A")
             {

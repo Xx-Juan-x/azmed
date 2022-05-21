@@ -19,5 +19,6 @@ namespace MODELO
         public DateTime FECHA { get; set; }
         public string ESTADO { get; set; }
         public string TIPO { get; set; }
+        public double PRECIO { get; set; }
     }
 }

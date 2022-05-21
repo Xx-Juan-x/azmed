@@ -324,6 +324,17 @@ namespace VISTA
                         oTURNO.ESTADO = "CANCELADO";
                         cTURNOS.MODIFICAR_TURNO(oTURNO);
                     }
+
+                    var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
+                                            where a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
+                                            select a).ToList();
+
+                    foreach (var items in LISTA_ATENCIONES)
+                    {
+                        oATENCION = (MODELO.ATENCION)items;
+                        oATENCION.ESTADO = "INACTIVO";
+                        cATENCIONES.MODIFICAR_ATENCION(oATENCION);
+                    }
                 }
                 oUSUARIO.ESTADO = "INACTIVO";
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
@@ -394,6 +405,17 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + "", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
+                var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
+                                        where a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
+                                        select a).ToList();
+
+                foreach (var items in LISTA_ATENCIONES)
+                {
+                    oATENCION = (MODELO.ATENCION)items;
+                    oATENCION.ESTADO = "ACTIVO";
+                    cATENCIONES.MODIFICAR_ATENCION(oATENCION);
+                }
+
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
             }

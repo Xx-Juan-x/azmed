@@ -45,6 +45,9 @@ namespace VISTA
             this.lblDIA = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblPRECIO = new System.Windows.Forms.Label();
+            this.txtPRECIO = new System.Windows.Forms.TextBox();
+            this.lblSIGNO_PRECIO = new System.Windows.Forms.Label();
             this.gbDATOS_TURNOS.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +56,9 @@ namespace VISTA
             this.gbDATOS_TURNOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDATOS_TURNOS.Controls.Add(this.lblSIGNO_PRECIO);
+            this.gbDATOS_TURNOS.Controls.Add(this.txtPRECIO);
+            this.gbDATOS_TURNOS.Controls.Add(this.lblPRECIO);
             this.gbDATOS_TURNOS.Controls.Add(this.btnCERRAR);
             this.gbDATOS_TURNOS.Controls.Add(this.btnGUARDAR);
             this.gbDATOS_TURNOS.Controls.Add(this.lblTIPO_TURNO);
@@ -69,7 +75,7 @@ namespace VISTA
             this.gbDATOS_TURNOS.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_TURNOS.Location = new System.Drawing.Point(12, 58);
             this.gbDATOS_TURNOS.Name = "gbDATOS_TURNOS";
-            this.gbDATOS_TURNOS.Size = new System.Drawing.Size(406, 268);
+            this.gbDATOS_TURNOS.Size = new System.Drawing.Size(406, 329);
             this.gbDATOS_TURNOS.TabIndex = 8;
             this.gbDATOS_TURNOS.TabStop = false;
             this.gbDATOS_TURNOS.Text = "DATOS DEL TURNO";
@@ -81,7 +87,7 @@ namespace VISTA
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(275, 222);
+            this.btnCERRAR.Location = new System.Drawing.Point(275, 287);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(119, 36);
             this.btnCERRAR.TabIndex = 90;
@@ -96,7 +102,7 @@ namespace VISTA
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGUARDAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(6, 222);
+            this.btnGUARDAR.Location = new System.Drawing.Point(6, 287);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(119, 36);
             this.btnGUARDAR.TabIndex = 86;
@@ -141,6 +147,7 @@ namespace VISTA
             this.rbESTUDIO.TabStop = true;
             this.rbESTUDIO.Text = "ESTUDIO";
             this.rbESTUDIO.UseVisualStyleBackColor = true;
+            this.rbESTUDIO.CheckedChanged += new System.EventHandler(this.rbESTUDIO_CheckedChanged);
             // 
             // rbCONSULTA
             // 
@@ -151,6 +158,7 @@ namespace VISTA
             this.rbCONSULTA.TabIndex = 85;
             this.rbCONSULTA.Text = "CONSULTA";
             this.rbCONSULTA.UseVisualStyleBackColor = true;
+            this.rbCONSULTA.CheckedChanged += new System.EventHandler(this.rbCONSULTA_CheckedChanged);
             // 
             // lblHORAS
             // 
@@ -230,12 +238,37 @@ namespace VISTA
             this.label4.TabIndex = 930;
             this.label4.Text = "Solicita un Turno";
             // 
+            // lblPRECIO
+            // 
+            this.lblPRECIO.AutoSize = true;
+            this.lblPRECIO.Location = new System.Drawing.Point(13, 236);
+            this.lblPRECIO.Name = "lblPRECIO";
+            this.lblPRECIO.Size = new System.Drawing.Size(50, 13);
+            this.lblPRECIO.TabIndex = 91;
+            this.lblPRECIO.Text = "PRECIO:";
+            // 
+            // txtPRECIO
+            // 
+            this.txtPRECIO.Location = new System.Drawing.Point(259, 233);
+            this.txtPRECIO.Name = "txtPRECIO";
+            this.txtPRECIO.Size = new System.Drawing.Size(135, 20);
+            this.txtPRECIO.TabIndex = 92;
+            // 
+            // lblSIGNO_PRECIO
+            // 
+            this.lblSIGNO_PRECIO.AutoSize = true;
+            this.lblSIGNO_PRECIO.Location = new System.Drawing.Point(240, 236);
+            this.lblSIGNO_PRECIO.Name = "lblSIGNO_PRECIO";
+            this.lblSIGNO_PRECIO.Size = new System.Drawing.Size(13, 13);
+            this.lblSIGNO_PRECIO.TabIndex = 93;
+            this.lblSIGNO_PRECIO.Text = "$";
+            // 
             // frmTURNOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(430, 338);
+            this.ClientSize = new System.Drawing.Size(430, 399);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gbDATOS_TURNOS);
@@ -268,5 +301,8 @@ namespace VISTA
         private System.Windows.Forms.Label lblDIA;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSIGNO_PRECIO;
+        private System.Windows.Forms.TextBox txtPRECIO;
+        private System.Windows.Forms.Label lblPRECIO;
     }
 }

@@ -27,7 +27,6 @@ namespace VISTA
             return instancia;
         }
 
-
         private CONTROLADORA.USUARIOS cUSUARIOS;      
         public static string TIPO_USUARIO = "";
         public static int ID_USUARIO; 
@@ -60,9 +59,18 @@ namespace VISTA
 
             if (RESPUESTA.Any())
             {
-                RESPUESTA.ToList().ForEach(s => TIPO_USUARIO = s.TIPO);
-                RESPUESTA.ToList().ForEach(s => ID_USUARIO = s.ID_USUARIO);
-                return true;
+                var usuario = RESPUESTA.ToList();
+                if (usuario[0].ESTADO == "ACTIVO")
+                {
+                    RESPUESTA.ToList().ForEach(s => TIPO_USUARIO = s.TIPO);
+                    RESPUESTA.ToList().ForEach(s => ID_USUARIO = s.ID_USUARIO);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("El usuario esta INACTIVO, contactar al administrador para mas informacion", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
             else
             {
@@ -76,10 +84,11 @@ namespace VISTA
                 }
                 else
                 {
-                    MessageBox.Show("Email y Contraseña incorrectos", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);                  
+                    MessageBox.Show("Email y Contraseña incorrectos", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 return false;
             }
+
         }
         private void btnINGRESAR_Click(object sender, EventArgs e)
         {

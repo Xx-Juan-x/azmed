@@ -32,6 +32,10 @@ namespace VISTA
         private CONTROLADORA.COTIZACIONES cCOTIZACIONES;
         private CONTROLADORA.ORDENES_DE_COMPRAS cORDENES_COMPRAS;
         private MODELO.ORDEN_COMPRA oORDEN_COMPRA;
+        private MODELO.LISTA_COMPRA oLISTA_COMPRA;
+        private CONTROLADORA.LISTA_ORDENES_DE_COMPRAS cLISTA_ORDENES_COMPRAS;
+        private MODELO.COTIZACION oCOTIZACION;
+        string[] texto_cotizacion;
         
 
         public frmORDEN_COMPRA()
@@ -40,6 +44,7 @@ namespace VISTA
             cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
             cCOTIZACIONES = CONTROLADORA.COTIZACIONES.OBTENER_INSTANCIA();
             cORDENES_COMPRAS = CONTROLADORA.ORDENES_DE_COMPRAS.OBTENER_INSTANCIA();
+            cLISTA_ORDENES_COMPRAS = CONTROLADORA.LISTA_ORDENES_DE_COMPRAS.OBTENER_INSTANCIA();
             ARMA_COMBOBOX_SOLICITUD_PEDIDO();
             txtCOTIZACION_1.Enabled = false;
             txtCOTIZACION_2.Enabled = false;
@@ -89,7 +94,8 @@ namespace VISTA
                 TextBox tbx = this.Controls.Find("txtCOTIZACION_" + i, true).FirstOrDefault() as TextBox;
                 if (tbx != null)
                 {
-                    tbx.Text = item.ID_COTIZACION + "-" + item.NOMBRE;                           
+                    tbx.Text = item.ID_COTIZACION + "-" + item.NOMBRE + "-" + item.PRECIO;
+                    
                 }
                 i++;
             }
@@ -123,9 +129,52 @@ namespace VISTA
 
         private void btnENVIAR_Click(object sender, EventArgs e)
         {
+            oORDEN_COMPRA = new MODELO.ORDEN_COMPRA();
             oORDEN_COMPRA.PEDIDO = (MODELO.SOLICITUD_PEDIDO)cmbSOLICITUD_PEDIDO.SelectedItem;
-            //oORDEN_COMPRA.COTIZACION = 
-            //oORDEN_COMPRA.CANTIDAD =
+            oORDEN_COMPRA.FECHA = DateTime.Now;
+            cORDENES_COMPRAS.AGREGAR_ORDEN_COMPRA(oORDEN_COMPRA);
+
+            var COMPRAS = (from a in cORDENES_COMPRAS.OBTENER_ORDENES_COMPRAS()
+                           select a).ToList();
+
+            MODELO.ORDEN_COMPRA ULTIMA_COMPRA = COMPRAS.Last();
+
+            for (int c = 1; c < 11; c++)
+            {
+                bool cantidad = false;
+                bool cotizacion = false;
+
+                TextBox tbx = this.Controls.Find("txtCOTIZACION_" + c, true).FirstOrDefault() as TextBox;
+                if (tbx.Text.Length > 0)
+                {
+                    texto_cotizacion = tbx.Text.Split('-');
+                    cotizacion = true;
+                }
+                TextBox tcx = this.Controls.Find("txtCANTIDAD_" + c, true).FirstOrDefault() as TextBox;
+                if (tcx.Text.Length > 0)
+                {
+                    cantidad = true;
+                }
+
+                if (cotizacion == true && cantidad == true)
+                {
+                    oLISTA_COMPRA = new MODELO.LISTA_COMPRA();
+                    oLISTA_COMPRA.CANTIDAD = Convert.ToInt32(tcx.Text);
+                    oCOTIZACION = new MODELO.COTIZACION();
+                    oCOTIZACION.ID_COTIZACION = Convert.ToInt32(texto_cotizacion[0]);
+
+                    var COTIZACION = (from a in cCOTIZACIONES.OBTENER_COTIZACIONES()
+                                      where a.ID_COTIZACION == Convert.ToInt32(texto_cotizacion[0])
+                                      select a).ToList();
+
+                    oLISTA_COMPRA.COTIZACION = (MODELO.COTIZACION)COTIZACION[0];
+                    oLISTA_COMPRA.PRECIO = Convert.ToInt32(texto_cotizacion[2]);
+                    oLISTA_COMPRA.COMPRA = ULTIMA_COMPRA;
+                    cLISTA_ORDENES_COMPRAS.AGREGAR_LISTA_ORDEN_COMPRA(oLISTA_COMPRA);
+                }
+            }
+            //PONER MENSAJE SIN QUE SE REPITA
+            MessageBox.Show("Su Orden de compra se concretó con éxito");
         }
     }
 }
