@@ -64,6 +64,7 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
+            this.turnosDeHoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -179,7 +180,8 @@ namespace VISTA
             this.tURNOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SolicitarTurnoToolStripMenuItem,
             this.turnosToolStripMenuItem1,
-            this.listaDeTurnosExportarToolStripMenuItem});
+            this.listaDeTurnosExportarToolStripMenuItem,
+            this.turnosDeHoyToolStripMenuItem});
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
             this.tURNOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.tURNOSToolStripMenuItem.Text = "TURNOS";
@@ -389,6 +391,12 @@ namespace VISTA
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
             // 
+            // turnosDeHoyToolStripMenuItem
+            // 
+            this.turnosDeHoyToolStripMenuItem.Name = "turnosDeHoyToolStripMenuItem";
+            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turnosDeHoyToolStripMenuItem.Text = "Turnos de hoy";
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,5 +456,6 @@ namespace VISTA
         private System.Windows.Forms.DataGridView dgvLISTA_SOLICITUD_PEDIDO;
         private System.Windows.Forms.GroupBox gbLISTA_SOLICITUDES_PEDIDOS;
         private System.Windows.Forms.ToolStripMenuItem estadisticaDeMaterialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turnosDeHoyToolStripMenuItem;
     }
 }

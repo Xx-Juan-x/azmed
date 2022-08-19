@@ -30,6 +30,9 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_TURNOS = new System.Windows.Forms.GroupBox();
+            this.lblSIGNO_PRECIO = new System.Windows.Forms.Label();
+            this.txtPRECIO = new System.Windows.Forms.TextBox();
+            this.lblPRECIO = new System.Windows.Forms.Label();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.lblTIPO_TURNO = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@ namespace VISTA
             this.lblDIA = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblPRECIO = new System.Windows.Forms.Label();
-            this.txtPRECIO = new System.Windows.Forms.TextBox();
-            this.lblSIGNO_PRECIO = new System.Windows.Forms.Label();
             this.gbDATOS_TURNOS.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,31 @@ namespace VISTA
             this.gbDATOS_TURNOS.TabIndex = 8;
             this.gbDATOS_TURNOS.TabStop = false;
             this.gbDATOS_TURNOS.Text = "DATOS DEL TURNO";
+            // 
+            // lblSIGNO_PRECIO
+            // 
+            this.lblSIGNO_PRECIO.AutoSize = true;
+            this.lblSIGNO_PRECIO.Location = new System.Drawing.Point(240, 236);
+            this.lblSIGNO_PRECIO.Name = "lblSIGNO_PRECIO";
+            this.lblSIGNO_PRECIO.Size = new System.Drawing.Size(13, 13);
+            this.lblSIGNO_PRECIO.TabIndex = 93;
+            this.lblSIGNO_PRECIO.Text = "$";
+            // 
+            // txtPRECIO
+            // 
+            this.txtPRECIO.Location = new System.Drawing.Point(259, 233);
+            this.txtPRECIO.Name = "txtPRECIO";
+            this.txtPRECIO.Size = new System.Drawing.Size(135, 20);
+            this.txtPRECIO.TabIndex = 92;
+            // 
+            // lblPRECIO
+            // 
+            this.lblPRECIO.AutoSize = true;
+            this.lblPRECIO.Location = new System.Drawing.Point(13, 236);
+            this.lblPRECIO.Name = "lblPRECIO";
+            this.lblPRECIO.Size = new System.Drawing.Size(50, 13);
+            this.lblPRECIO.TabIndex = 91;
+            this.lblPRECIO.Text = "PRECIO:";
             // 
             // btnCERRAR
             // 
@@ -237,31 +262,6 @@ namespace VISTA
             this.label4.Size = new System.Drawing.Size(217, 31);
             this.label4.TabIndex = 930;
             this.label4.Text = "Solicita un Turno";
-            // 
-            // lblPRECIO
-            // 
-            this.lblPRECIO.AutoSize = true;
-            this.lblPRECIO.Location = new System.Drawing.Point(13, 236);
-            this.lblPRECIO.Name = "lblPRECIO";
-            this.lblPRECIO.Size = new System.Drawing.Size(50, 13);
-            this.lblPRECIO.TabIndex = 91;
-            this.lblPRECIO.Text = "PRECIO:";
-            // 
-            // txtPRECIO
-            // 
-            this.txtPRECIO.Location = new System.Drawing.Point(259, 233);
-            this.txtPRECIO.Name = "txtPRECIO";
-            this.txtPRECIO.Size = new System.Drawing.Size(135, 20);
-            this.txtPRECIO.TabIndex = 92;
-            // 
-            // lblSIGNO_PRECIO
-            // 
-            this.lblSIGNO_PRECIO.AutoSize = true;
-            this.lblSIGNO_PRECIO.Location = new System.Drawing.Point(240, 236);
-            this.lblSIGNO_PRECIO.Name = "lblSIGNO_PRECIO";
-            this.lblSIGNO_PRECIO.Size = new System.Drawing.Size(13, 13);
-            this.lblSIGNO_PRECIO.TabIndex = 93;
-            this.lblSIGNO_PRECIO.Text = "$";
             // 
             // frmTURNOS
             // 
