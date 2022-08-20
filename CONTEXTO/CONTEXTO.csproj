@@ -266,6 +266,10 @@
     <Compile Include="Migrations\202205202337486_PRECIO.designer.cs">
       <DependentUpon>202205202337486_PRECIO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208192340512_ESTADO_PLAN.cs" />
+    <Compile Include="Migrations\202208192340512_ESTADO_PLAN.designer.cs">
+      <DependentUpon>202208192340512_ESTADO_PLAN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -441,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205202337486_PRECIO.resx">
       <DependentUpon>202205202337486_PRECIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208192340512_ESTADO_PLAN.resx">
+      <DependentUpon>202208192340512_ESTADO_PLAN.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

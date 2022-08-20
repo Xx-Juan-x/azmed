@@ -13,6 +13,7 @@ namespace MODELO
         public OBRA_SOCIAL OBRA_SOCIAL { get; set; }
         public double DESCUENTO_CONSULTA { get; set; }
         public double DESCUENTO_ESTUDIO { get; set; }
+        public string ESTADO { get; set; }
 
         public override string ToString()
         {

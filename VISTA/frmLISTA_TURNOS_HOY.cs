@@ -12,9 +12,90 @@ namespace VISTA
 {
     public partial class frmLISTA_TURNOS_HOY : Form
     {
+        private static frmLISTA_TURNOS_HOY instancia;
+
+        public static frmLISTA_TURNOS_HOY OBTENER_INSTANCIA()
+        {
+            if (instancia == null)
+            {
+                instancia = new frmLISTA_TURNOS_HOY();
+            }
+            if (instancia.IsDisposed)
+            {
+                instancia = new frmLISTA_TURNOS_HOY();
+            }
+            return instancia;
+        }
+
+        private CONTROLADORA.TURNOS cTURNOS;
+        private CONTROLADORA.USUARIOS cUSUARIOS;
+        private MODELO.TURNO oTURNO;
+
         public frmLISTA_TURNOS_HOY()
         {
             InitializeComponent();
+            cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            ARMA_GRILLA();
+        }
+
+        public void ARMA_GRILLA()
+        {
+            DateTime DIA_ACTUAL = DateTime.Now;
+
+                var LISTA_TURNOS_PACIENTE_HOY = (from a in cTURNOS.OBTENER_TURNOS()
+                                             where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
+                                             && (a.FECHA.Date == DIA_ACTUAL.Date)
+                                             select a).ToList();
+
+                dgvLISTA_TURNOS_HOY.DataSource = null;
+                dgvLISTA_TURNOS_HOY.DataSource = LISTA_TURNOS_PACIENTE_HOY;    
+            
+        }
+
+        private void btnCERRAR_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTOMAR_Click(object sender, EventArgs e)
+        {
+            oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS_HOY.CurrentRow.DataBoundItem;
+
+            if (oTURNO.ESTADO == "SOLICITADO")
+            {
+                DialogResult RESPUESTA = MessageBox.Show("¿Está seguro de modificar el estado " + oTURNO.ESTADO + " a TOMADO?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (RESPUESTA == DialogResult.Yes)
+                {
+                    oTURNO.ESTADO = "TOMADO";
+                    cTURNOS.MODIFICAR_TURNO(oTURNO);
+                    ARMA_GRILLA();
+                }
+            }
+            else
+            {
+                MessageBox.Show("El turno ya está tomado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnCANCELAR_Click(object sender, EventArgs e)
+        {
+            oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS_HOY.CurrentRow.DataBoundItem;
+
+            if (oTURNO.ESTADO == "SOLICITADO")
+            {
+                DialogResult RESPUESTA = MessageBox.Show("¿Está seguro de modificar el estado " + oTURNO.ESTADO + " a CANCELADO?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (RESPUESTA == DialogResult.Yes)
+                {
+                    oTURNO.ESTADO = "CANCELADO";
+                    cTURNOS.MODIFICAR_TURNO(oTURNO);
+                    ARMA_GRILLA();
+                }
+            }
+            else
+            {
+                MessageBox.Show("El turno ya está cancelado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

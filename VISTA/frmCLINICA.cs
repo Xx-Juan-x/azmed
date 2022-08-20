@@ -102,6 +102,7 @@ namespace VISTA
                     rEPORTESToolStripMenuItem.Visible = false;
                     listaDeTurnosExportarToolStripMenuItem.Visible = true;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
+                    turnosDeHoyToolStripMenuItem.Visible = false;
                     break;
                 case "PROFESIONAL":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -118,6 +119,7 @@ namespace VISTA
                     rEPORTESToolStripMenuItem.Visible = false;
                     listaDeTurnosExportarToolStripMenuItem.Visible = false;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
+                    turnosDeHoyToolStripMenuItem.Visible = true;
                     break;
                 case "JEFE DE COMPRAS":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -244,6 +246,12 @@ namespace VISTA
         {
             frmREPORTE_MATERIALES FORMULARIO_REPORTE_MATERIALES = frmREPORTE_MATERIALES.OBTENER_INSTANCIA();
             FORMULARIO_REPORTE_MATERIALES.Show();
+        }
+
+        private void turnosDeHoyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLISTA_TURNOS_HOY FORMULARIO_TURNOS_HOY = frmLISTA_TURNOS_HOY.OBTENER_INSTANCIA();
+            FORMULARIO_TURNOS_HOY.Show();
         }
     }
 }

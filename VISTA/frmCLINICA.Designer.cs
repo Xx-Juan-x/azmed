@@ -63,8 +63,8 @@ namespace VISTA
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
-            this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
             this.turnosDeHoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -378,6 +378,13 @@ namespace VISTA
             this.gbLISTA_SOLICITUDES_PEDIDOS.TabStop = false;
             this.gbLISTA_SOLICITUDES_PEDIDOS.Text = "LISTA DE SOLICITUDES DE PEDIDOS";
             // 
+            // turnosDeHoyToolStripMenuItem
+            // 
+            this.turnosDeHoyToolStripMenuItem.Name = "turnosDeHoyToolStripMenuItem";
+            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turnosDeHoyToolStripMenuItem.Text = "Turnos de hoy";
+            this.turnosDeHoyToolStripMenuItem.Click += new System.EventHandler(this.turnosDeHoyToolStripMenuItem_Click);
+            // 
             // picIMAGEN_CLINICA
             // 
             this.picIMAGEN_CLINICA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -390,12 +397,6 @@ namespace VISTA
             this.picIMAGEN_CLINICA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
-            // 
-            // turnosDeHoyToolStripMenuItem
-            // 
-            this.turnosDeHoyToolStripMenuItem.Name = "turnosDeHoyToolStripMenuItem";
-            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.turnosDeHoyToolStripMenuItem.Text = "Turnos de hoy";
             // 
             // frmCLINICA
             // 

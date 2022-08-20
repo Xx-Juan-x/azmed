@@ -134,6 +134,7 @@ namespace VISTA
 
             if (ACCION == "A")
             {
+                oPLAN.ESTADO = "HABILITADO";
                 cPLANES.AGREGAR_PLAN(oPLAN);
             }
             else
@@ -199,7 +200,8 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el plan " + oPLAN.NOMBRE + " de la lista de planes?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (RESPUESTA == DialogResult.Yes)
             {
-                cPLANES.ELIMINAR_PLAN(oPLAN);
+                oPLAN.ESTADO = "INHABILITADO";
+                cPLANES.MODIFICAR_PLAN(oPLAN);
                 ARMA_GRILLA();
             }
 
