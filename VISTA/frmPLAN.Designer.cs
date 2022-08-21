@@ -29,10 +29,14 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_PLAN = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDESCUENTO_CONSULTA = new System.Windows.Forms.Label();
+            this.txtDESCUENTO_ESTUDIO = new System.Windows.Forms.TextBox();
+            this.txtDESCUENTO_CONSULTA = new System.Windows.Forms.TextBox();
             this.txtPLAN = new System.Windows.Forms.TextBox();
             this.lblOBRA_SOCIAL = new System.Windows.Forms.Label();
             this.cmbOBRA_SOCIAL = new System.Windows.Forms.ComboBox();
@@ -46,10 +50,7 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_PLANES = new System.Windows.Forms.DataGridView();
-            this.txtDESCUENTO_CONSULTA = new System.Windows.Forms.TextBox();
-            this.txtDESCUENTO_ESTUDIO = new System.Windows.Forms.TextBox();
-            this.lblDESCUENTO_CONSULTA = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnRECUPERAR = new System.Windows.Forms.Button();
             this.gbDATOS_PLAN.SuspendLayout();
             this.gbLISTA_PLANES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_PLANES)).BeginInit();
@@ -75,6 +76,42 @@ namespace VISTA
             this.gbDATOS_PLAN.TabIndex = 5;
             this.gbDATOS_PLAN.TabStop = false;
             this.gbDATOS_PLAN.Text = "DATOS DEL PLAN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 13);
+            this.label1.TabIndex = 72;
+            this.label1.Text = "DESCUENTO DE ESTUDIO:";
+            // 
+            // lblDESCUENTO_CONSULTA
+            // 
+            this.lblDESCUENTO_CONSULTA.AutoSize = true;
+            this.lblDESCUENTO_CONSULTA.Location = new System.Drawing.Point(6, 108);
+            this.lblDESCUENTO_CONSULTA.Name = "lblDESCUENTO_CONSULTA";
+            this.lblDESCUENTO_CONSULTA.Size = new System.Drawing.Size(156, 13);
+            this.lblDESCUENTO_CONSULTA.TabIndex = 71;
+            this.lblDESCUENTO_CONSULTA.Text = "DESCUENTO DE CONSULTA:";
+            // 
+            // txtDESCUENTO_ESTUDIO
+            // 
+            this.txtDESCUENTO_ESTUDIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDESCUENTO_ESTUDIO.Location = new System.Drawing.Point(176, 141);
+            this.txtDESCUENTO_ESTUDIO.Name = "txtDESCUENTO_ESTUDIO";
+            this.txtDESCUENTO_ESTUDIO.Size = new System.Drawing.Size(159, 20);
+            this.txtDESCUENTO_ESTUDIO.TabIndex = 70;
+            this.txtDESCUENTO_ESTUDIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDESCUENTO_ESTUDIO_KeyPress);
+            // 
+            // txtDESCUENTO_CONSULTA
+            // 
+            this.txtDESCUENTO_CONSULTA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDESCUENTO_CONSULTA.Location = new System.Drawing.Point(176, 101);
+            this.txtDESCUENTO_CONSULTA.Name = "txtDESCUENTO_CONSULTA";
+            this.txtDESCUENTO_CONSULTA.Size = new System.Drawing.Size(159, 20);
+            this.txtDESCUENTO_CONSULTA.TabIndex = 69;
+            this.txtDESCUENTO_CONSULTA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDESCUENTO_CONSULTA_KeyPress);
             // 
             // txtPLAN
             // 
@@ -150,6 +187,7 @@ namespace VISTA
             this.gbLISTA_PLANES.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbLISTA_PLANES.Controls.Add(this.btnRECUPERAR);
             this.gbLISTA_PLANES.Controls.Add(this.btnCERRAR);
             this.gbLISTA_PLANES.Controls.Add(this.btnELIMINAR);
             this.gbLISTA_PLANES.Controls.Add(this.btnCONSULTAR);
@@ -259,75 +297,55 @@ namespace VISTA
             this.dgvLISTA_PLANES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_PLANES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_PLANES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_PLANES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_PLANES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLISTA_PLANES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_PLANES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_PLANES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_PLANES.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_PLANES.Name = "dgvLISTA_PLANES";
             this.dgvLISTA_PLANES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_PLANES.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_PLANES.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLISTA_PLANES.RowHeadersVisible = false;
             this.dgvLISTA_PLANES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_PLANES.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_PLANES.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLISTA_PLANES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_PLANES.Size = new System.Drawing.Size(700, 280);
             this.dgvLISTA_PLANES.TabIndex = 0;
             // 
-            // txtDESCUENTO_CONSULTA
+            // btnRECUPERAR
             // 
-            this.txtDESCUENTO_CONSULTA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDESCUENTO_CONSULTA.Location = new System.Drawing.Point(176, 101);
-            this.txtDESCUENTO_CONSULTA.Name = "txtDESCUENTO_CONSULTA";
-            this.txtDESCUENTO_CONSULTA.Size = new System.Drawing.Size(159, 20);
-            this.txtDESCUENTO_CONSULTA.TabIndex = 69;
-            this.txtDESCUENTO_CONSULTA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDESCUENTO_CONSULTA_KeyPress);
-            // 
-            // txtDESCUENTO_ESTUDIO
-            // 
-            this.txtDESCUENTO_ESTUDIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDESCUENTO_ESTUDIO.Location = new System.Drawing.Point(176, 141);
-            this.txtDESCUENTO_ESTUDIO.Name = "txtDESCUENTO_ESTUDIO";
-            this.txtDESCUENTO_ESTUDIO.Size = new System.Drawing.Size(159, 20);
-            this.txtDESCUENTO_ESTUDIO.TabIndex = 70;
-            this.txtDESCUENTO_ESTUDIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDESCUENTO_ESTUDIO_KeyPress);
-            // 
-            // lblDESCUENTO_CONSULTA
-            // 
-            this.lblDESCUENTO_CONSULTA.AutoSize = true;
-            this.lblDESCUENTO_CONSULTA.Location = new System.Drawing.Point(6, 108);
-            this.lblDESCUENTO_CONSULTA.Name = "lblDESCUENTO_CONSULTA";
-            this.lblDESCUENTO_CONSULTA.Size = new System.Drawing.Size(156, 13);
-            this.lblDESCUENTO_CONSULTA.TabIndex = 71;
-            this.lblDESCUENTO_CONSULTA.Text = "DESCUENTO DE CONSULTA:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 13);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "DESCUENTO DE ESTUDIO:";
+            this.btnRECUPERAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRECUPERAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnRECUPERAR.FlatAppearance.BorderSize = 0;
+            this.btnRECUPERAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRECUPERAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRECUPERAR.ForeColor = System.Drawing.Color.White;
+            this.btnRECUPERAR.Location = new System.Drawing.Point(361, 305);
+            this.btnRECUPERAR.Name = "btnRECUPERAR";
+            this.btnRECUPERAR.Size = new System.Drawing.Size(83, 30);
+            this.btnRECUPERAR.TabIndex = 17;
+            this.btnRECUPERAR.Text = "Recuperar";
+            this.btnRECUPERAR.UseVisualStyleBackColor = false;
+            this.btnRECUPERAR.Click += new System.EventHandler(this.btnRECUPERAR_Click);
             // 
             // frmPLAN
             // 
@@ -369,5 +387,6 @@ namespace VISTA
         private System.Windows.Forms.Label lblDESCUENTO_CONSULTA;
         private System.Windows.Forms.TextBox txtDESCUENTO_ESTUDIO;
         private System.Windows.Forms.TextBox txtDESCUENTO_CONSULTA;
+        private System.Windows.Forms.Button btnRECUPERAR;
     }
 }

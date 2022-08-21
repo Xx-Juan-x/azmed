@@ -58,8 +58,12 @@ namespace VISTA
 
         private void ARMA_GRILLA()
         {
+            var LISTAR_PLANES = (from a in cPLANES.OBTENER_PLANES()
+                                            where a.NOMBRE != "SIN ASIGNAR"
+                                            select a).ToList();
+
             dgvLISTA_PLANES.DataSource = null;
-            dgvLISTA_PLANES.DataSource = cPLANES.OBTENER_PLANES();
+            dgvLISTA_PLANES.DataSource = LISTAR_PLANES;
         }
 
         private void MODO_GRILLA()
@@ -77,7 +81,12 @@ namespace VISTA
             cmbOBRA_SOCIAL.DataSource = null;
 
             //AÑADO MI PROPIEDAD OBRA SOCIAL A MI PLAN
-            cmbOBRA_SOCIAL.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
+
+            var LISTAR_OBRAS_SOCIALES = (from a in cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES()
+                                       where a.NOMBRE != "SIN ASIGNAR"
+                                       select a).ToList();
+
+            cmbOBRA_SOCIAL.DataSource = LISTAR_OBRAS_SOCIALES;
             cmbOBRA_SOCIAL.DisplayMember = "NOMBRE";
 
             if (ACCION == "C")
@@ -134,7 +143,7 @@ namespace VISTA
 
             if (ACCION == "A")
             {
-                oPLAN.ESTADO = "HABILITADO";
+                oPLAN.ESTADO = "ACTIVO";
                 cPLANES.AGREGAR_PLAN(oPLAN);
             }
             else
@@ -200,11 +209,10 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el plan " + oPLAN.NOMBRE + " de la lista de planes?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (RESPUESTA == DialogResult.Yes)
             {
-                oPLAN.ESTADO = "INHABILITADO";
+                oPLAN.ESTADO = "INACTIVO";
                 cPLANES.MODIFICAR_PLAN(oPLAN);
                 ARMA_GRILLA();
             }
-
         }
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
@@ -249,6 +257,28 @@ namespace VISTA
                 MessageBox.Show("Solo se permiten números y comas", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void btnRECUPERAR_Click(object sender, EventArgs e)
+        {
+            if (dgvLISTA_PLANES.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un plan de la lista para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            oPLAN = (MODELO.PLAN)dgvLISTA_PLANES.CurrentRow.DataBoundItem;
+            if (oPLAN.ESTADO != "INACTIVO")
+            {
+                MessageBox.Show("Debe seleccionar un plan inactivo para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            oPLAN.ESTADO = "ACTIVO";
+            DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el plan " + oPLAN.NOMBRE + " con la obra social " + oPLAN.OBRA_SOCIAL + "?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (RESPUESTA == DialogResult.Yes)
+            {
+                cPLANES.MODIFICAR_PLAN(oPLAN);
+                ARMA_GRILLA();
             }
         }
     }

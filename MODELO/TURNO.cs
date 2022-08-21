@@ -10,7 +10,7 @@ namespace MODELO
     {
         public int ID_TURNO { get; set; }
         public string DIA { get; set; }
-        public int HORA_TURNO { get; set; }       
+        public int HORA_TURNO { get; set; }
         public USUARIO PACIENTE { get; set; }
         public PLAN PLAN { get; set; }
         public OBRA_SOCIAL OBRA_SOCIAL { get; set; }          

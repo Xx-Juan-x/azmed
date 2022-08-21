@@ -45,8 +45,12 @@ namespace VISTA
 
         private void ARMA_GRILLA()
         {
+            var LISTAR_OBRAS_SOCIALES = (from a in cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES()
+                                 where a.NOMBRE != "SIN ASIGNAR"
+                                 select a).ToList();
+
             dgvLISTA_OBRAS_SOCIALES.DataSource = null;
-            dgvLISTA_OBRAS_SOCIALES.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
+            dgvLISTA_OBRAS_SOCIALES.DataSource = LISTAR_OBRAS_SOCIALES;
         }
 
         private void MODO_GRILLA()

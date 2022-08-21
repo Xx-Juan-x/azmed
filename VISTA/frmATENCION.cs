@@ -358,6 +358,6 @@ namespace VISTA
 
                 cmbDIA_LABORAL.DataSource = LISTA_DIAS_PROFESIONAL;
             }         
-        }       
+        }
     }
 }

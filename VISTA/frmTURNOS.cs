@@ -334,21 +334,41 @@ namespace VISTA
 
             COMBOBOX_PROFESIONAL VALOR_PROFESIONAL = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
 
+            //BANDERA
+            bool PLAN_INACTIVO = false;
+
+            MODELO.PLAN SIN_PLAN = cPLANES.OBTENER_PLANES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
+            MODELO.OBRA_SOCIAL SIN_OBRA_SOCIAL = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
+
             var PACIENTE = (from a in cUSUARIOS.OBTENER_PACIENTES()
                             where a.ID_USUARIO == frmLOGIN.ID_USUARIO
                             select a).ToList();
+            if (PACIENTE[0].PLAN.ESTADO == "INACTIVO")
+            {
+                DialogResult RESPUESTA = MessageBox.Show("El plan asignado a la cuenta actual ha sido deshabilitada, usted solicitará el turno sin poseer plan ni obra social.", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (RESPUESTA == DialogResult.No)
+                {
+                    MessageBox.Show("Verifique los datos del plan y la obra social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    PLAN_INACTIVO = true;
+                }
+            }
 
             var PROFESIONAL = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
-                            where a.ID_USUARIO == VALOR_PROFESIONAL.CMB_VALOR
-                            select a).ToList();
+                               where a.ID_USUARIO == VALOR_PROFESIONAL.CMB_VALOR
+                               select a).ToList();
             foreach (var PROFESIONALES in PROFESIONAL)
             {
                 oPROFESIONAL = PROFESIONALES;
             }
             foreach (var PACIENTES in PACIENTE)
             {
-                oOBRA_SOCIAL = PACIENTES.OBRA_SOCIAL;
-                oPLAN = PACIENTES.PLAN;
+
+                oOBRA_SOCIAL = (PLAN_INACTIVO ? SIN_OBRA_SOCIAL : PACIENTES.OBRA_SOCIAL);
+                oPLAN = (PLAN_INACTIVO ? SIN_PLAN : PACIENTES.PLAN);
                 oPACIENTE = PACIENTES;
             }
             DIAS DIA_SELECCIONADO = cmbDIA.SelectedItem as DIAS;
@@ -399,11 +419,14 @@ namespace VISTA
             this.Close();
         }
 
+
         private void rbCONSULTA_CheckedChanged(object sender, EventArgs e)
         {
             if (rbCONSULTA.Checked == true)
             {
-                txtPRECIO.Text = IMPORTE_CONSULTA.ToString();
+                double PRECIO = 0;
+                PRECIO = IMPORTE_CONSULTA - (IMPORTE_CONSULTA * (frmLOGIN.DESCUENTO_CONSULTA / 100));
+                txtPRECIO.Text = PRECIO.ToString();
             }
         }
 
@@ -411,9 +434,10 @@ namespace VISTA
         {
             if (rbESTUDIO.Checked == true)
             {
-                txtPRECIO.Text = IMPORTE_ESTUDIO.ToString();
+                double PRECIO = 0;
+                PRECIO = IMPORTE_ESTUDIO - (IMPORTE_ESTUDIO * (frmLOGIN.DESCUENTO_ESTUDIO / 100));
+                txtPRECIO.Text = PRECIO.ToString();
             }
         }
-    }
-    
+    } 
 }

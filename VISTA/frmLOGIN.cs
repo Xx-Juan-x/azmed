@@ -27,15 +27,19 @@ namespace VISTA
             return instancia;
         }
 
-        private CONTROLADORA.USUARIOS cUSUARIOS;      
+        private CONTROLADORA.USUARIOS cUSUARIOS;
+        private CONTROLADORA.PLANES cPLANES;
         public static string TIPO_USUARIO = "";
         public static int ID_USUARIO; 
         public frmREGISTRO_PACIENTE FORMULARIO_REGISTRO;
+        public static double DESCUENTO_ESTUDIO;
+        public static double DESCUENTO_CONSULTA;
 
         public frmLOGIN()
         {
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
         }
 
         private void linklblREGISTRARSE_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -52,18 +56,32 @@ namespace VISTA
 
         private bool VALIDAR_LOGIN(string EMAIL, string CLAVE)
         {
-            var RESPUESTA = from d in cUSUARIOS.OBTENER_USUARIOS()
-                    where d.EMAIL == EMAIL
-                    && d.CLAVE == CLAVE
-                    select d;
+            var RESPUESTA = (from d in cUSUARIOS.OBTENER_USUARIOS()
+                             where d.EMAIL == EMAIL
+                             && d.CLAVE == CLAVE
+                             select d).ToList();
 
             if (RESPUESTA.Any())
             {
                 var usuario = RESPUESTA.ToList();
                 if (usuario[0].ESTADO == "ACTIVO")
                 {
-                    RESPUESTA.ToList().ForEach(s => TIPO_USUARIO = s.TIPO);
-                    RESPUESTA.ToList().ForEach(s => ID_USUARIO = s.ID_USUARIO);
+                    TIPO_USUARIO = RESPUESTA[0].TIPO;
+                    ID_USUARIO = RESPUESTA[0].ID_USUARIO;
+
+                    if (TIPO_USUARIO == "PACIENTE")
+                    {
+                        if (RESPUESTA[0].PLAN.ESTADO == "INACTIVO")
+                        {
+                            DESCUENTO_CONSULTA = 0;
+                            DESCUENTO_ESTUDIO = 0;
+                        }
+                        else
+                        {
+                            DESCUENTO_CONSULTA = RESPUESTA[0].PLAN.DESCUENTO_CONSULTA;
+                            DESCUENTO_ESTUDIO = RESPUESTA[0].PLAN.DESCUENTO_ESTUDIO;
+                        }
+                    }
                     return true;
                 }
                 else
