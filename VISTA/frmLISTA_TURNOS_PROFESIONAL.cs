@@ -55,7 +55,7 @@ namespace VISTA
             var LISTA_TURNOS_PROFESIONAL = (from a in cTURNOS.OBTENER_TURNOS()
                                             where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
                                             select a).ToList();
-
+            
             if (TIPO == "A")
             {
                 dgvLISTA_TURNOS.DataSource = null;
@@ -80,12 +80,6 @@ namespace VISTA
                     dgvLISTA_TURNOS.DataSource = null;
                     dgvLISTA_TURNOS.DataSource = LISTA_TURNOS;
                 }
-
-
-                /*var LISTA_TURNOS_PROFESIONAL = (from a in cTURNOS.OBTENER_TURNOS()
-                                                where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
-                                                && a.DIA == cmbFILTRO_DIA_LABORAL.SelectedValue
-                                                select a).ToList();*/
             }
         }
 

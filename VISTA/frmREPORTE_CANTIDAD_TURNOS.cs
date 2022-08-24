@@ -55,19 +55,19 @@ namespace VISTA
 
             SERIE1[0] = DIA_ACTUAL;//16/02/2022
             SERIE1[1] = DIA_ACTUAL.AddDays(6);//22/02/2022
-            string serie1 = "Semana "+SERIE1[0].ToShortDateString().Remove(4,5);
+            string serie1 = "Semana " + SERIE1[0].Day + "/" + SERIE1[0].Month;
 
-            SERIE2[0] = SERIE1[1].AddDays(1);//23/02/2022
-            SERIE2[1] = SERIE2[0].AddDays(6);//29/02/2022
-            string serie2 = "Semana " + SERIE2[0].ToShortDateString().Remove(4, 5);
+            SERIE2[0] = SERIE1[1].AddDays(1);
+            SERIE2[1] = SERIE2[0].AddDays(6);
+            string serie2 = "Semana " + SERIE2[0].Day + "/" + SERIE2[0].Month;
 
-            SERIE3[0] = SERIE2[1].AddDays(1);//30/02/2022
-            SERIE3[1] = SERIE3[0].AddDays(6);//06/03/2022
-            string serie3 = "Semana " + SERIE3[0].ToShortDateString().Remove(4, 5);
+            SERIE3[0] = SERIE2[1].AddDays(1);
+            SERIE3[1] = SERIE3[0].AddDays(6);
+            string serie3 = "Semana " + SERIE3[0].Day + "/" + SERIE3[0].Month;
 
-            SERIE4[0] = SERIE3[1].AddDays(1);//07/03/2022
-            SERIE4[1] = SERIE4[0].AddDays(6);//13/03/2022
-            string serie4 = "Semana " + SERIE4[0].ToShortDateString().Remove(4, 5);
+            SERIE4[0] = SERIE3[1].AddDays(1);
+            SERIE4[1] = SERIE4[0].AddDays(6);
+            string serie4 = "Semana " + SERIE4[0].Day + "/" + SERIE4[0].Month;
 
             var TURNOS1 = (from a in cTURNOS.OBTENER_TURNOS()
                            where a.FECHA >= SERIE1[0] && a.FECHA <= SERIE1[1]
