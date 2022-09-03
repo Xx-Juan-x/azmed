@@ -143,6 +143,7 @@ namespace VISTA
         {
             oUSUARIO = new MODELO.USUARIO();
             ACCION = "A";
+            cmbROL.Enabled = true;
             MODO_DATOS();
         }
 
