@@ -321,6 +321,9 @@
   <ItemGroup>
     <None Include="Resources\CLINICA_AZMED_IMAGEN.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AZMED Logo.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

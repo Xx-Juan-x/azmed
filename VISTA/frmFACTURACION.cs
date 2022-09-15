@@ -29,7 +29,6 @@ namespace VISTA
 
         private CONTROLADORA.TURNOS cTURNOS;
         private CONTROLADORA.USUARIOS cUSUARIOS;
-        private MODELO.TURNO oTURNO;
 
         public frmFACTURACION_TURNOS()
         {
@@ -44,7 +43,8 @@ namespace VISTA
             DateTime DIA_ACTUAL = DateTime.Now;
 
             var LISTA_TURNOS_HOY_FACTURAR = (from a in cTURNOS.OBTENER_TURNOS()
-                                             where (a.FECHA.Date == DIA_ACTUAL.Date)
+                                             where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
+                                             && (a.FECHA.Date == DIA_ACTUAL.Date)
                                              select a).ToList();
 
             dgvLISTA_TURNOS_HOY_FACTURAR.DataSource = null;
