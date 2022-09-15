@@ -93,6 +93,12 @@
     <Compile Include="frmESPECIALIDAD.Designer.cs">
       <DependentUpon>frmESPECIALIDAD.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFACTURACION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFACTURACION.Designer.cs">
+      <DependentUpon>frmFACTURACION.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLISTA_HORARIOS_LABORALES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmESPECIALIDAD.resx">
       <DependentUpon>frmESPECIALIDAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFACTURACION.resx">
+      <DependentUpon>frmFACTURACION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLISTA_HORARIOS_LABORALES.resx">
       <DependentUpon>frmLISTA_HORARIOS_LABORALES.cs</DependentUpon>

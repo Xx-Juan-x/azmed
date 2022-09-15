@@ -80,7 +80,7 @@ namespace VISTA
                     uSUARIOSToolStripMenuItem.Visible = true;
                     pACIENTESToolStripMenuItem.Visible = true;
                     pROFESIONALESToolStripMenuItem.Visible = true;
-                    tURNOSToolStripMenuItem.Visible = false;
+                    tURNOSToolStripMenuItem.Visible = true;
                     rEPORTESToolStripMenuItem.Visible = true;
                     horariosLaboralesToolStripMenuItem.Visible = false;
                     SolicitarTurnoToolStripMenuItem.Visible = false;
@@ -91,6 +91,7 @@ namespace VISTA
                     registrarProveedoresToolStripMenuItem.Visible = false;
                     crearCotizacionesToolStripMenuItem.Visible = false;
                     crearOrdenDeCompraToolStripMenuItem.Visible = false;
+                    turnosDeHoyToolStripMenuItem.Visible = false;
                     break;
                 case "PACIENTE":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -103,6 +104,7 @@ namespace VISTA
                     listaDeTurnosExportarToolStripMenuItem.Visible = true;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
                     turnosDeHoyToolStripMenuItem.Visible = false;
+                    facturarToolStripMenuItem.Visible = false;
                     break;
                 case "PROFESIONAL":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -120,6 +122,7 @@ namespace VISTA
                     listaDeTurnosExportarToolStripMenuItem.Visible = false;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
                     turnosDeHoyToolStripMenuItem.Visible = true;
+                    facturarToolStripMenuItem.Visible = false;
                     break;
                 case "JEFE DE COMPRAS":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -252,6 +255,12 @@ namespace VISTA
         {
             frmLISTA_TURNOS_HOY FORMULARIO_TURNOS_HOY = frmLISTA_TURNOS_HOY.OBTENER_INSTANCIA();
             FORMULARIO_TURNOS_HOY.Show();
+        }
+
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFACTURACION_TURNOS FORMULARIO_FACTURACION = frmFACTURACION_TURNOS.OBTENER_INSTANCIA();
+            FORMULARIO_FACTURACION.Show();
         }
     }
 }

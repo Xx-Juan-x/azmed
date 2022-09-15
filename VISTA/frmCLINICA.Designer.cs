@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnStripMENU_CLINICA = new System.Windows.Forms.MenuStrip();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +48,7 @@ namespace VISTA
             this.SolicitarTurnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeTurnosExportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnosDeHoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearSolicitudDePedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,8 +64,8 @@ namespace VISTA
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
-            this.turnosDeHoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
+            this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -181,7 +182,8 @@ namespace VISTA
             this.SolicitarTurnoToolStripMenuItem,
             this.turnosToolStripMenuItem1,
             this.listaDeTurnosExportarToolStripMenuItem,
-            this.turnosDeHoyToolStripMenuItem});
+            this.turnosDeHoyToolStripMenuItem,
+            this.facturarToolStripMenuItem});
             this.tURNOSToolStripMenuItem.Name = "tURNOSToolStripMenuItem";
             this.tURNOSToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.tURNOSToolStripMenuItem.Text = "TURNOS";
@@ -206,6 +208,13 @@ namespace VISTA
             this.listaDeTurnosExportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaDeTurnosExportarToolStripMenuItem.Text = "Turnos";
             this.listaDeTurnosExportarToolStripMenuItem.Click += new System.EventHandler(this.listaDeTurnosExportarToolStripMenuItem_Click);
+            // 
+            // turnosDeHoyToolStripMenuItem
+            // 
+            this.turnosDeHoyToolStripMenuItem.Name = "turnosDeHoyToolStripMenuItem";
+            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turnosDeHoyToolStripMenuItem.Text = "Turnos de hoy";
+            this.turnosDeHoyToolStripMenuItem.Click += new System.EventHandler(this.turnosDeHoyToolStripMenuItem_Click);
             // 
             // cOMPRASToolStripMenuItem
             // 
@@ -329,36 +338,36 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_SOLICITUD_PEDIDO.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_SOLICITUD_PEDIDO.EnableHeadersVisualStyles = false;
             this.dgvLISTA_SOLICITUD_PEDIDO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_SOLICITUD_PEDIDO.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_SOLICITUD_PEDIDO.Name = "dgvLISTA_SOLICITUD_PEDIDO";
             this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersVisible = false;
             this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_SOLICITUD_PEDIDO.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLISTA_SOLICITUD_PEDIDO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_SOLICITUD_PEDIDO.Size = new System.Drawing.Size(1172, 519);
             this.dgvLISTA_SOLICITUD_PEDIDO.TabIndex = 0;
@@ -378,13 +387,6 @@ namespace VISTA
             this.gbLISTA_SOLICITUDES_PEDIDOS.TabStop = false;
             this.gbLISTA_SOLICITUDES_PEDIDOS.Text = "LISTA DE SOLICITUDES DE PEDIDOS";
             // 
-            // turnosDeHoyToolStripMenuItem
-            // 
-            this.turnosDeHoyToolStripMenuItem.Name = "turnosDeHoyToolStripMenuItem";
-            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.turnosDeHoyToolStripMenuItem.Text = "Turnos de hoy";
-            this.turnosDeHoyToolStripMenuItem.Click += new System.EventHandler(this.turnosDeHoyToolStripMenuItem_Click);
-            // 
             // picIMAGEN_CLINICA
             // 
             this.picIMAGEN_CLINICA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -397,6 +399,13 @@ namespace VISTA
             this.picIMAGEN_CLINICA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
+            // 
+            // facturarToolStripMenuItem
+            // 
+            this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facturarToolStripMenuItem.Text = "Facturar";
+            this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
             // frmCLINICA
             // 
@@ -458,5 +467,6 @@ namespace VISTA
         private System.Windows.Forms.GroupBox gbLISTA_SOLICITUDES_PEDIDOS;
         private System.Windows.Forms.ToolStripMenuItem estadisticaDeMaterialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosDeHoyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
     }
 }

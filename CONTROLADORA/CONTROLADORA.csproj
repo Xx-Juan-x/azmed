@@ -54,7 +54,6 @@
     <Compile Include="ATENCIONES.cs" />
     <Compile Include="COTIZACIONES.cs" />
     <Compile Include="ESPECIALIDADES.cs" />
-    <Compile Include="FACTURACIONES.cs" />
     <Compile Include="LISTA_DE_PEDIDOS.cs" />
     <Compile Include="LISTA_ORDENES_DE_COMPRAS.cs" />
     <Compile Include="MATERIALES.cs" />

@@ -37,8 +37,7 @@ namespace VISTA
             cPROFESIONALES = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
             ARMA_GRILLA();
-            MODO_GRILLA();
-            
+            MODO_GRILLA();      
         }
 
         private void ARMA_GRILLA()
@@ -60,7 +59,6 @@ namespace VISTA
         {
             gbLISTA_PROFESIONALES.Enabled = true;
             gbESPECIALIDADES.Enabled = false;
-
         }
 
         private void MODO_DATOS()

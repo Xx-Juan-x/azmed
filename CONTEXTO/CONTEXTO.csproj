@@ -270,6 +270,10 @@
     <Compile Include="Migrations\202208192340512_ESTADO_PLAN.designer.cs">
       <DependentUpon>202208192340512_ESTADO_PLAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209150042004_ELIMINO_TABLA_FACTURACION.cs" />
+    <Compile Include="Migrations\202209150042004_ELIMINO_TABLA_FACTURACION.designer.cs">
+      <DependentUpon>202209150042004_ELIMINO_TABLA_FACTURACION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -448,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208192340512_ESTADO_PLAN.resx">
       <DependentUpon>202208192340512_ESTADO_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209150042004_ELIMINO_TABLA_FACTURACION.resx">
+      <DependentUpon>202209150042004_ELIMINO_TABLA_FACTURACION.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

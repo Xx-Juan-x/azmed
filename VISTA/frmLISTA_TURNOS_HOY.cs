@@ -60,6 +60,11 @@ namespace VISTA
 
         private void btnTOMAR_Click(object sender, EventArgs e)
         {
+            if (dgvLISTA_TURNOS_HOY.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un turno de hoy de la lista para poder tomarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS_HOY.CurrentRow.DataBoundItem;
 
             if (oTURNO.ESTADO == "SOLICITADO")
@@ -80,6 +85,11 @@ namespace VISTA
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
         {
+            if (dgvLISTA_TURNOS_HOY.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un turno de hoy de la lista para poder cancelarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS_HOY.CurrentRow.DataBoundItem;
 
             if (oTURNO.ESTADO == "SOLICITADO")
