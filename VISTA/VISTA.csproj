@@ -42,6 +42,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=20.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.20.3.0.47\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.3460.0.47, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.20.3.0.47\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=20.3460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.20.3.0.47\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -322,7 +331,7 @@
     <None Include="Resources\CLINICA_AZMED_IMAGEN.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\AZMED Logo.jpeg" />
+    <Content Include="Resources\AZMEDLogo.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

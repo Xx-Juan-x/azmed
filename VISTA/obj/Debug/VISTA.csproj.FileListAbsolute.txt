@@ -153,3 +153,8 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_C
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_MATERIALES.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_HOY.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmFACTURACION_TURNOS.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Pdf.Base.xml

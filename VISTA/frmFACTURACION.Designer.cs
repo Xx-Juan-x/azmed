@@ -29,13 +29,13 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_TURNOS_HOY_FACTURAR = new System.Windows.Forms.GroupBox();
+            this.btnEXPORTAR_PDF = new System.Windows.Forms.Button();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.dgvLISTA_TURNOS_HOY_FACTURAR = new System.Windows.Forms.DataGridView();
-            this.btnEXPORTAR_PDF = new System.Windows.Forms.Button();
             this.gbLISTA_TURNOS_HOY_FACTURAR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_TURNOS_HOY_FACTURAR)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,21 @@ namespace VISTA
             this.gbLISTA_TURNOS_HOY_FACTURAR.TabIndex = 8;
             this.gbLISTA_TURNOS_HOY_FACTURAR.TabStop = false;
             this.gbLISTA_TURNOS_HOY_FACTURAR.Text = "LISTA DE TURNOS DE HOY A FACTURAR";
+            // 
+            // btnEXPORTAR_PDF
+            // 
+            this.btnEXPORTAR_PDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnEXPORTAR_PDF.FlatAppearance.BorderSize = 0;
+            this.btnEXPORTAR_PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEXPORTAR_PDF.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEXPORTAR_PDF.ForeColor = System.Drawing.Color.White;
+            this.btnEXPORTAR_PDF.Location = new System.Drawing.Point(6, 331);
+            this.btnEXPORTAR_PDF.Name = "btnEXPORTAR_PDF";
+            this.btnEXPORTAR_PDF.Size = new System.Drawing.Size(111, 30);
+            this.btnEXPORTAR_PDF.TabIndex = 17;
+            this.btnEXPORTAR_PDF.Text = "Exportar en PDF";
+            this.btnEXPORTAR_PDF.UseVisualStyleBackColor = false;
+            this.btnEXPORTAR_PDF.Click += new System.EventHandler(this.btnEXPORTAR_PDF_Click);
             // 
             // btnCERRAR
             // 
@@ -87,53 +102,39 @@ namespace VISTA
             this.dgvLISTA_TURNOS_HOY_FACTURAR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_TURNOS_HOY_FACTURAR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_TURNOS_HOY_FACTURAR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.EnableHeadersVisualStyles = false;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_TURNOS_HOY_FACTURAR.Location = new System.Drawing.Point(6, 19);
             this.dgvLISTA_TURNOS_HOY_FACTURAR.Name = "dgvLISTA_TURNOS_HOY_FACTURAR";
             this.dgvLISTA_TURNOS_HOY_FACTURAR.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_TURNOS_HOY_FACTURAR.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_TURNOS_HOY_FACTURAR.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.RowHeadersVisible = false;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_TURNOS_HOY_FACTURAR.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_TURNOS_HOY_FACTURAR.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.Size = new System.Drawing.Size(619, 306);
             this.dgvLISTA_TURNOS_HOY_FACTURAR.TabIndex = 0;
-            // 
-            // btnEXPORTAR_PDF
-            // 
-            this.btnEXPORTAR_PDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnEXPORTAR_PDF.FlatAppearance.BorderSize = 0;
-            this.btnEXPORTAR_PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEXPORTAR_PDF.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEXPORTAR_PDF.ForeColor = System.Drawing.Color.White;
-            this.btnEXPORTAR_PDF.Location = new System.Drawing.Point(6, 331);
-            this.btnEXPORTAR_PDF.Name = "btnEXPORTAR_PDF";
-            this.btnEXPORTAR_PDF.Size = new System.Drawing.Size(111, 30);
-            this.btnEXPORTAR_PDF.TabIndex = 17;
-            this.btnEXPORTAR_PDF.Text = "Exportar en PDF";
-            this.btnEXPORTAR_PDF.UseVisualStyleBackColor = false;
             // 
             // frmFACTURACION_TURNOS
             // 
