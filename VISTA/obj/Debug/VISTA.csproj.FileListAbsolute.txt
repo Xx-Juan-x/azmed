@@ -143,7 +143,6 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_HOR
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_PROFESIONAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_ESTADISTICO.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmREPORTE_CANTIDAD_TURNOS.resources
-C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_PACIENTES.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmMATERIAL.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmPROVEEDOR.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmSOLICITAR_PEDIDO_INSUMO.resources
@@ -158,3 +157,4 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Licensi
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Pdf.Base.dll
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Compression.Base.xml
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_PACIENTES.resources
