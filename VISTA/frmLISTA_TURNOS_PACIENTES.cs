@@ -44,7 +44,7 @@ namespace VISTA
         {
             DateTime DIA_ACTUAL = DateTime.Now;
             //13:44:00
-            string HORA_ACTUAL = DIA_ACTUAL.ToShortTimeString().Remove(2, 3);
+            string HORA_ACTUAL = Convert.ToString(DIA_ACTUAL.Hour);
             int HORA_ACTUAL_INT = Convert.ToInt32(HORA_ACTUAL);
 
             if (TIPO == "A")
