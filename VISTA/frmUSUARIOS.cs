@@ -402,10 +402,11 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un usuario inactivo para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            oUSUARIO.ESTADO = "ACTIVO";
+            
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + "", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
+                oUSUARIO.ESTADO = "ACTIVO";
                 var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
                                         where a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
                                         select a).ToList();

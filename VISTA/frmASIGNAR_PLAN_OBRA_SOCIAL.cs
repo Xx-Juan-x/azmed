@@ -95,7 +95,7 @@ namespace VISTA
         {
             cmbOBRA_SOCIAL.DataSource = null;
 
-            //AÑADO MI PROPIEDAD ESPECIALIDAD A MI COMBOBOX
+            //AÑADO MI PROPIEDAD OBRA SOCIAL A MI COMBOBOX
             
             cmbOBRA_SOCIAL.ValueMember = "ID_OBRA_SOCIAL";
             cmbOBRA_SOCIAL.DisplayMember = "NOMBRE";

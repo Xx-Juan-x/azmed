@@ -273,10 +273,11 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un plan inactivo para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            oPLAN.ESTADO = "ACTIVO";
+
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el plan " + oPLAN.NOMBRE + " con la obra social " + oPLAN.OBRA_SOCIAL + "?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
+                oPLAN.ESTADO = "ACTIVO";
                 cPLANES.MODIFICAR_PLAN(oPLAN);
                 ARMA_GRILLA();
             }
