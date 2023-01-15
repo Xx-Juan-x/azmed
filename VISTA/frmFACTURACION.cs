@@ -232,8 +232,8 @@ namespace VISTA
                     doc.Save("import/" + hoy.Day + "-" + hoy.Month + "-" + hoy.Year + "_" + oTURNO.PACIENTE.NOMBRE + " " + oTURNO.PACIENTE.APELLIDO + ".pdf");
                     //close the document
                     doc.Close(true);
-                    MessageBox.Show("Su factura se ah creado correctamente, visite AZMED\azmedVISTA\binDebugimport", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     oTURNO.ESTADO = "FACTURADO";
+                    MessageBox.Show("Su factura se ah creado correctamente, visite AZMED\azmedVISTA\binDebugimport", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);  
                     cTURNOS.MODIFICAR_TURNO(oTURNO);
                 }
             }

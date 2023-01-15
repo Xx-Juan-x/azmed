@@ -49,6 +49,7 @@ namespace VISTA
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeTurnosExportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosDeHoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearSolicitudDePedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,7 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
-            this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -92,6 +93,7 @@ namespace VISTA
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarGruposToolStripMenuItem,
             this.crearUsuariosToolStripMenuItem});
             this.uSUARIOSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
@@ -102,7 +104,7 @@ namespace VISTA
             // 
             this.crearUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
-            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
             this.crearUsuariosToolStripMenuItem.Click += new System.EventHandler(this.crearUsuariosToolStripMenuItem_Click);
             // 
@@ -191,30 +193,37 @@ namespace VISTA
             // SolicitarTurnoToolStripMenuItem
             // 
             this.SolicitarTurnoToolStripMenuItem.Name = "SolicitarTurnoToolStripMenuItem";
-            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SolicitarTurnoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.SolicitarTurnoToolStripMenuItem.Text = "Solicitar Turno";
             this.SolicitarTurnoToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // turnosToolStripMenuItem1
             // 
             this.turnosToolStripMenuItem1.Name = "turnosToolStripMenuItem1";
-            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.turnosToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.turnosToolStripMenuItem1.Text = "Turnos";
             this.turnosToolStripMenuItem1.Click += new System.EventHandler(this.turnosToolStripMenuItem1_Click);
             // 
             // listaDeTurnosExportarToolStripMenuItem
             // 
             this.listaDeTurnosExportarToolStripMenuItem.Name = "listaDeTurnosExportarToolStripMenuItem";
-            this.listaDeTurnosExportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaDeTurnosExportarToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.listaDeTurnosExportarToolStripMenuItem.Text = "Turnos";
             this.listaDeTurnosExportarToolStripMenuItem.Click += new System.EventHandler(this.listaDeTurnosExportarToolStripMenuItem_Click);
             // 
             // turnosDeHoyToolStripMenuItem
             // 
             this.turnosDeHoyToolStripMenuItem.Name = "turnosDeHoyToolStripMenuItem";
-            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turnosDeHoyToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.turnosDeHoyToolStripMenuItem.Text = "Turnos de hoy";
             this.turnosDeHoyToolStripMenuItem.Click += new System.EventHandler(this.turnosDeHoyToolStripMenuItem_Click);
+            // 
+            // facturarToolStripMenuItem
+            // 
+            this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.facturarToolStripMenuItem.Text = "Facturar";
+            this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
             // cOMPRASToolStripMenuItem
             // 
@@ -400,12 +409,12 @@ namespace VISTA
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
             // 
-            // facturarToolStripMenuItem
+            // gestionarGruposToolStripMenuItem
             // 
-            this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
-            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.facturarToolStripMenuItem.Text = "Facturar";
-            this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
+            this.gestionarGruposToolStripMenuItem.Name = "gestionarGruposToolStripMenuItem";
+            this.gestionarGruposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarGruposToolStripMenuItem.Text = "Gestionar Grupos";
+            this.gestionarGruposToolStripMenuItem.Click += new System.EventHandler(this.gestionarGruposToolStripMenuItem_Click);
             // 
             // frmCLINICA
             // 
@@ -468,5 +477,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem estadisticaDeMaterialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosDeHoyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarGruposToolStripMenuItem;
     }
 }

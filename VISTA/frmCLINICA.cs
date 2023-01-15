@@ -92,6 +92,7 @@ namespace VISTA
                     crearCotizacionesToolStripMenuItem.Visible = false;
                     crearOrdenDeCompraToolStripMenuItem.Visible = false;
                     turnosDeHoyToolStripMenuItem.Visible = false;
+                    gestionarAtenciónToolStripMenuItem.Visible = true;
                     break;
                 case "PACIENTE":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -105,6 +106,7 @@ namespace VISTA
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
                     turnosDeHoyToolStripMenuItem.Visible = false;
                     facturarToolStripMenuItem.Visible = false;
+                    gestionarAtenciónToolStripMenuItem.Visible = false;
                     break;
                 case "PROFESIONAL":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -123,6 +125,7 @@ namespace VISTA
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
                     turnosDeHoyToolStripMenuItem.Visible = true;
                     facturarToolStripMenuItem.Visible = false;
+                    gestionarAtenciónToolStripMenuItem.Visible = false;
                     break;
                 case "JEFE DE COMPRAS":
                     uSUARIOSToolStripMenuItem.Visible = false;
@@ -132,6 +135,7 @@ namespace VISTA
                     cOMPRASToolStripMenuItem.Visible = true;
                     crearSolicitudDePedidoToolStripMenuItem.Visible = false;
                     rEPORTESToolStripMenuItem.Visible = false;
+                    gestionarAtenciónToolStripMenuItem.Visible = false;
                     ARMA_LISTA_SOLICITUD_PEDIDO();                
                     break;
                 default:
@@ -261,6 +265,12 @@ namespace VISTA
         {
             frmFACTURACION_TURNOS FORMULARIO_FACTURACION = frmFACTURACION_TURNOS.OBTENER_INSTANCIA();
             FORMULARIO_FACTURACION.Show();
+        }
+
+        private void gestionarGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGRUPO FORMULARIO_GRUPO = frmGRUPO.OBTENER_INSTANCIA();
+            FORMULARIO_GRUPO.Show();
         }
     }
 }

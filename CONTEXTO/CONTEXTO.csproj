@@ -274,6 +274,10 @@
     <Compile Include="Migrations\202209150042004_ELIMINO_TABLA_FACTURACION.designer.cs">
       <DependentUpon>202209150042004_ELIMINO_TABLA_FACTURACION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301151957116_AGREGO_TABLA_GRUPO.cs" />
+    <Compile Include="Migrations\202301151957116_AGREGO_TABLA_GRUPO.designer.cs">
+      <DependentUpon>202301151957116_AGREGO_TABLA_GRUPO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -455,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209150042004_ELIMINO_TABLA_FACTURACION.resx">
       <DependentUpon>202209150042004_ELIMINO_TABLA_FACTURACION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301151957116_AGREGO_TABLA_GRUPO.resx">
+      <DependentUpon>202301151957116_AGREGO_TABLA_GRUPO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

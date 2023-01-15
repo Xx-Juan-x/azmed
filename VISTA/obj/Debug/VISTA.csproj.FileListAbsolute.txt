@@ -158,3 +158,4 @@ C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Pdf.Bas
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Compression.Base.xml
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\bin\Debug\Syncfusion.Pdf.Base.xml
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmLISTA_TURNOS_PACIENTES.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmGRUPO.resources
