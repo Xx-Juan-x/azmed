@@ -278,6 +278,14 @@
     <Compile Include="Migrations\202301151957116_AGREGO_TABLA_GRUPO.designer.cs">
       <DependentUpon>202301151957116_AGREGO_TABLA_GRUPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301171744349_TABLA_ACCIONES.cs" />
+    <Compile Include="Migrations\202301171744349_TABLA_ACCIONES.designer.cs">
+      <DependentUpon>202301171744349_TABLA_ACCIONES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301171749382_TABLA_ACCIONES_GRUPOS.cs" />
+    <Compile Include="Migrations\202301171749382_TABLA_ACCIONES_GRUPOS.designer.cs">
+      <DependentUpon>202301171749382_TABLA_ACCIONES_GRUPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -462,6 +470,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301151957116_AGREGO_TABLA_GRUPO.resx">
       <DependentUpon>202301151957116_AGREGO_TABLA_GRUPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301171744349_TABLA_ACCIONES.resx">
+      <DependentUpon>202301171744349_TABLA_ACCIONES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301171749382_TABLA_ACCIONES_GRUPOS.resx">
+      <DependentUpon>202301171749382_TABLA_ACCIONES_GRUPOS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

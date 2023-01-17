@@ -61,6 +61,10 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.GRUPO> GRUPO { get; set; }
 
+        public virtual DbSet<MODELO.ACCIONES> ACCIONES { get; set; }
+
+        public virtual DbSet<MODELO.ACCIONES_GRUPOS> ACCIONES_GRUPOS { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -91,6 +95,10 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_LISTA_COMPRA);
             modelBuilder.Entity<MODELO.GRUPO>()
                 .HasKey(c => c.ID_GRUPO);
+            modelBuilder.Entity<MODELO.ACCIONES>()
+                .HasKey(c => c.ID_ACCIONES);
+            modelBuilder.Entity<MODELO.ACCIONES_GRUPOS>()
+                .HasKey(c => c.ID_ACCION_GRUPO);
         }
     }
 
