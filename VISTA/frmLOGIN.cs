@@ -66,10 +66,10 @@ namespace VISTA
                 var usuario = RESPUESTA.ToList();
                 if (usuario[0].ESTADO == "ACTIVO")
                 {
-                    TIPO_USUARIO = RESPUESTA[0].TIPO;
+                    TIPO_USUARIO = RESPUESTA[0].GRUPO.NOMBRE;
                     ID_USUARIO = RESPUESTA[0].ID_USUARIO;
 
-                    if (TIPO_USUARIO == "PACIENTE")
+                    /*if (TIPO_USUARIO == "PACIENTE")
                     {
                         if (RESPUESTA[0].PLAN.ESTADO == "INACTIVO")
                         {
@@ -81,7 +81,7 @@ namespace VISTA
                             DESCUENTO_CONSULTA = RESPUESTA[0].PLAN.DESCUENTO_CONSULTA;
                             DESCUENTO_ESTUDIO = RESPUESTA[0].PLAN.DESCUENTO_ESTUDIO;
                         }
-                    }
+                    }*/
                     return true;
                 }
                 else

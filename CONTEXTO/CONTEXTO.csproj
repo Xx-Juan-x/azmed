@@ -286,6 +286,18 @@
     <Compile Include="Migrations\202301171749382_TABLA_ACCIONES_GRUPOS.designer.cs">
       <DependentUpon>202301171749382_TABLA_ACCIONES_GRUPOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302011444046_ACTUALIZACION_TABLA_USUARIO.cs" />
+    <Compile Include="Migrations\202302011444046_ACTUALIZACION_TABLA_USUARIO.designer.cs">
+      <DependentUpon>202302011444046_ACTUALIZACION_TABLA_USUARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302011453374_AGREGO_ATRIBUTO_GRUPO.cs" />
+    <Compile Include="Migrations\202302011453374_AGREGO_ATRIBUTO_GRUPO.designer.cs">
+      <DependentUpon>202302011453374_AGREGO_ATRIBUTO_GRUPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302011501147_CORRECCION_ATRIBUTO_GRUPO.cs" />
+    <Compile Include="Migrations\202302011501147_CORRECCION_ATRIBUTO_GRUPO.designer.cs">
+      <DependentUpon>202302011501147_CORRECCION_ATRIBUTO_GRUPO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -476,6 +488,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301171749382_TABLA_ACCIONES_GRUPOS.resx">
       <DependentUpon>202301171749382_TABLA_ACCIONES_GRUPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302011444046_ACTUALIZACION_TABLA_USUARIO.resx">
+      <DependentUpon>202302011444046_ACTUALIZACION_TABLA_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302011453374_AGREGO_ATRIBUTO_GRUPO.resx">
+      <DependentUpon>202302011453374_AGREGO_ATRIBUTO_GRUPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302011501147_CORRECCION_ATRIBUTO_GRUPO.resx">
+      <DependentUpon>202302011501147_CORRECCION_ATRIBUTO_GRUPO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

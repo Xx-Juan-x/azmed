@@ -28,38 +28,48 @@ namespace VISTA
             return instancia;
         }
 
+        private CONTROLADORA.USUARIOS cUSUARIOS;
+        private MODELO.USUARIO oUSUARIO;
+        private CONTROLADORA.GRUPOS cGRUPOS;
+        private MODELO.GRUPO oGRUPO;
+        string ACCION;
+
+        //CODIGO PARA LA TABLA PACIENTES Y PROFESIONALES
+
+        //private CONTROLADORA.ATENCIONES cATENCIONES;
+        //private MODELO.ATENCION oATENCION;
+        //private CONTROLADORA.TURNOS cTURNOS;
+        //private MODELO.TURNO oTURNO;
+
+
         public frmUSUARIOS()
         {
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
-            cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
-            cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
+            cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
+
+            //CODIGO PARA LA TABLA PACIENTE Y PROFESIONAL
+            /*cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
+            cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();*/
             
             ARMA_GRILLA("A");
             MODO_GRILLA();
 
-            cmbROL.Items.Add("SELECCIONE...");
-            cmbROL.SelectedItem = "SELECCIONE...";
-            cmbROL.Items.Add("ADMINISTRADOR");
-            cmbROL.Items.Add("PACIENTE");
-            cmbROL.Items.Add("PROFESIONAL");
-            cmbROL.Items.Add("JEFE DE COMPRAS");
+            //NO VA
+            /*cmbGRUPO.Items.Add("SELECCIONE...");
+            cmbGRUPO.SelectedItem = "SELECCIONE...";
+            cmbGRUPO.Items.Add("ADMINISTRADOR");
+            cmbGRUPO.Items.Add("PACIENTE");
+            cmbGRUPO.Items.Add("PROFESIONAL");
+            cmbGRUPO.Items.Add("JEFE DE COMPRAS");
 
-            cmbFILTRO_TIPO.Items.Add("TODOS");
-            cmbFILTRO_TIPO.SelectedItem = "TODOS";
-            cmbFILTRO_TIPO.Items.Add("ADMINISTRADOR");
-            cmbFILTRO_TIPO.Items.Add("PACIENTE");
-            cmbFILTRO_TIPO.Items.Add("PROFESIONAL");
-            cmbFILTRO_TIPO.Items.Add("JEFE DE COMPRAS");
+            cmbFILTRO_GRUPO.Items.Add("TODOS");
+            cmbFILTRO_GRUPO.SelectedItem = "TODOS";
+            cmbFILTRO_GRUPO.Items.Add("ADMINISTRADOR");
+            cmbFILTRO_GRUPO.Items.Add("PACIENTE");
+            cmbFILTRO_GRUPO.Items.Add("PROFESIONAL");
+            cmbFILTRO_GRUPO.Items.Add("JEFE DE COMPRAS");*/
         }
-
-        private CONTROLADORA.USUARIOS cUSUARIOS;
-        private MODELO.USUARIO oUSUARIO;
-        private CONTROLADORA.ATENCIONES cATENCIONES;
-        private MODELO.ATENCION oATENCION;
-        private CONTROLADORA.TURNOS cTURNOS;
-        private MODELO.TURNO oTURNO;
-        string ACCION;
 
         private void ARMA_GRILLA(string TIPO)
         {
@@ -70,7 +80,7 @@ namespace VISTA
             }
             if (TIPO == "B")
             {
-                string FILTRO_TIPO_USUARIO = cmbFILTRO_TIPO.Text;
+                string FILTRO_TIPO_USUARIO = cmbFILTRO_GRUPO.Text;
 
                 if (FILTRO_TIPO_USUARIO == "TODOS")
                 {
@@ -79,22 +89,22 @@ namespace VISTA
                 }
                 else
                 {
-                    var LISTA_TIPOS_USUARIO = (from a in cUSUARIOS.OBTENER_USUARIOS_TODOS()
-                                       where a.TIPO == FILTRO_TIPO_USUARIO
+                    var FILTRO_GRUPO_USUARIO = (from a in cUSUARIOS.OBTENER_USUARIOS_TODOS()
+                                       where a.GRUPO.NOMBRE == FILTRO_TIPO_USUARIO
                                        select a).ToList();
 
                     dgvLISTA_USUARIOS.DataSource = null;
-                    dgvLISTA_USUARIOS.DataSource = LISTA_TIPOS_USUARIO;
+                    dgvLISTA_USUARIOS.DataSource = FILTRO_GRUPO_USUARIO;
                 }
             }           
 
             dgvLISTA_USUARIOS.AutoGenerateColumns = false;
-            if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES") && dgvLISTA_USUARIOS.Columns.Contains("PLAN") && dgvLISTA_USUARIOS.Columns.Contains("OBRA_SOCIAL"))
+            /*if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES") && dgvLISTA_USUARIOS.Columns.Contains("PLAN") && dgvLISTA_USUARIOS.Columns.Contains("OBRA_SOCIAL"))
             {
                 dgvLISTA_USUARIOS.Columns.Remove("ESPECIALIDADES");
                 dgvLISTA_USUARIOS.Columns.Remove("PLAN");
                 dgvLISTA_USUARIOS.Columns.Remove("OBRA_SOCIAL");
-            }        
+            }*/       
         }
 
         private void MODO_GRILLA()
@@ -143,7 +153,7 @@ namespace VISTA
         {
             oUSUARIO = new MODELO.USUARIO();
             ACCION = "A";
-            cmbROL.Enabled = true;
+            cmbGRUPO.Enabled = true;
             MODO_DATOS();
         }
 
@@ -151,17 +161,11 @@ namespace VISTA
         {
             #region VALIDACIONES
 
-            if (string.IsNullOrEmpty(txtNOMBRE.Text))
+            if (string.IsNullOrEmpty(txtNOMBRE_USUARIO.Text))
             {
                 MessageBox.Show("Debe ingresar el nombre del usuario para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
-
-            if (string.IsNullOrEmpty(txtAPELLIDO.Text))
-            {
-                MessageBox.Show("Debe ingresar el apellido del usuario para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }        
+            }       
 
             if (string.IsNullOrEmpty(txtEMAIL.Text))
             {
@@ -186,7 +190,7 @@ namespace VISTA
                 return;
             }
 
-            if (cmbROL.SelectedItem.ToString() == "SELECCIONE...")
+            if (cmbGRUPO.SelectedItem.ToString() == "SELECCIONE...")
             {
                 MessageBox.Show("Debe seleccionar un rol para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -205,13 +209,11 @@ namespace VISTA
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
-            oUSUARIO.NOMBRE = txtNOMBRE.Text.ToUpper();// Uso la funcion ToUapper para escribir el nombre en mayúscula
-            oUSUARIO.APELLIDO = txtAPELLIDO.Text.ToUpper();
+            oUSUARIO.NOMBRE = txtNOMBRE_USUARIO.Text.ToUpper();// Uso la funcion ToUapper para escribir el nombre en mayúscula
             oUSUARIO.EMAIL = txtEMAIL.Text;
             oUSUARIO.CLAVE = txtPASSWORD.Text;
             oUSUARIO.FECHA = DateTime.Now;
-            oUSUARIO.TIPO = cmbROL.SelectedItem.ToString();
-
+            oUSUARIO.GRUPO = (MODELO.GRUPO)cmbGRUPO.SelectedItem;
 
             if (txtPASSWORD.Text == txtCONFIRMAR_PASSWORD.Text)
             {
@@ -225,12 +227,11 @@ namespace VISTA
                     cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 }
                 // LIMPIO LA TEXTBOX         
-                txtNOMBRE.Clear();
-                txtAPELLIDO.Clear();
+                txtNOMBRE_USUARIO.Clear();
                 txtEMAIL.Clear();
                 txtPASSWORD.Clear();
                 txtCONFIRMAR_PASSWORD.Clear();
-                cmbROL.SelectedItem = "SELECCIONE...";
+                cmbGRUPO.SelectedItem = "SELECCIONE...";
 
                 ARMA_GRILLA("B");
                 MODO_GRILLA();         
@@ -271,12 +272,10 @@ namespace VISTA
 
             ACCION = "M";
 
-            txtNOMBRE.Text = oUSUARIO.NOMBRE.ToUpper();
-            txtAPELLIDO.Text = oUSUARIO.APELLIDO.ToUpper();
+            txtNOMBRE_USUARIO.Text = oUSUARIO.NOMBRE.ToUpper();
             txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
-            cmbROL.SelectedItem = oUSUARIO.TIPO.ToString();
-            cmbROL.Enabled = false;
+            cmbGRUPO.Enabled = false;
 
             MODO_DATOS();
         }
@@ -292,11 +291,9 @@ namespace VISTA
 
             ACCION = "C";
 
-            txtNOMBRE.Text = oUSUARIO.NOMBRE.ToUpper();
-            txtAPELLIDO.Text = oUSUARIO.APELLIDO.ToUpper();
+            txtNOMBRE_USUARIO.Text = oUSUARIO.NOMBRE.ToUpper();
             txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
-            cmbROL.SelectedItem = oUSUARIO.TIPO.ToString();
 
             MODO_DATOS();
         }
@@ -310,10 +307,12 @@ namespace VISTA
             }
             oUSUARIO = (MODELO.USUARIO)dgvLISTA_USUARIOS.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
-                if (oUSUARIO.TIPO == "PROFESIONAL")
+                //CODIGO PARA LA TABLA PACIENTES Y PROFESIONALES
+
+                /*if (oUSUARIO.GRUPO.NOMBRE == "PROFESIONAL")
                 {
                     DateTime DIA_ACTUAL = DateTime.Now;
                     var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
@@ -336,7 +335,8 @@ namespace VISTA
                         oATENCION.ESTADO = "INACTIVO";
                         cATENCIONES.MODIFICAR_ATENCION(oATENCION);
                     }
-                }
+                }*/
+
                 oUSUARIO.ESTADO = "INACTIVO";
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
@@ -345,12 +345,11 @@ namespace VISTA
 
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
-            txtNOMBRE.Clear();
-            txtAPELLIDO.Clear();
+            txtNOMBRE_USUARIO.Clear();
             txtEMAIL.Clear();
             txtPASSWORD.Clear();
             txtCONFIRMAR_PASSWORD.Clear();
-            cmbROL.SelectedItem = "SELECCIONE...";
+            cmbGRUPO.SelectedItem = "SELECCIONE...";
             MODO_GRILLA();
         }
 
@@ -361,7 +360,7 @@ namespace VISTA
 
         private void btnBUSCAR_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(cmbFILTRO_TIPO.Text))
+            if (string.IsNullOrEmpty(cmbFILTRO_GRUPO.Text))
             {
                 MessageBox.Show("Debe seleccionar un usuario de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -403,10 +402,12 @@ namespace VISTA
                 return;
             }
             
-            DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " " + oUSUARIO.APELLIDO + "", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
-                oUSUARIO.ESTADO = "ACTIVO";
+                //CODIGO PARA LA TABLA PACIENTES Y PROFESIONALES
+
+                /*oUSUARIO.ESTADO = "ACTIVO";
                 var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
                                         where a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
                                         select a).ToList();
@@ -416,7 +417,7 @@ namespace VISTA
                     oATENCION = (MODELO.ATENCION)items;
                     oATENCION.ESTADO = "ACTIVO";
                     cATENCIONES.MODIFICAR_ATENCION(oATENCION);
-                }
+                }*/
 
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");

@@ -29,37 +29,35 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_USUARIO = new System.Windows.Forms.GroupBox();
             this.lblDESCRIPCION_CLAVE = new System.Windows.Forms.Label();
             this.lblDESCRIPCION = new System.Windows.Forms.Label();
             this.txtCONFIRMAR_PASSWORD = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNOMBRE = new System.Windows.Forms.TextBox();
+            this.lblCONFIRM_PASSWORD = new System.Windows.Forms.Label();
+            this.txtNOMBRE_USUARIO = new System.Windows.Forms.TextBox();
             this.lblNOMBRE_USUARIO = new System.Windows.Forms.Label();
-            this.cmbROL = new System.Windows.Forms.ComboBox();
-            this.lblAPELLIDO_USUARIO = new System.Windows.Forms.Label();
-            this.lblROL_USUARIO = new System.Windows.Forms.Label();
+            this.cmbGRUPO = new System.Windows.Forms.ComboBox();
+            this.lblGRUPO_USUARIO = new System.Windows.Forms.Label();
             this.lblEMAIL_USUARIO = new System.Windows.Forms.Label();
             this.txtPASSWORD = new System.Windows.Forms.TextBox();
             this.lblPASSWORD_USUARIO = new System.Windows.Forms.Label();
             this.txtEMAIL = new System.Windows.Forms.TextBox();
-            this.txtAPELLIDO = new System.Windows.Forms.TextBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.gbLISTA_USUARIOS = new System.Windows.Forms.GroupBox();
+            this.btnRECUPERAR = new System.Windows.Forms.Button();
             this.btnBUSCAR = new System.Windows.Forms.Button();
-            this.lblFILTRO_TIPO = new System.Windows.Forms.Label();
-            this.cmbFILTRO_TIPO = new System.Windows.Forms.ComboBox();
+            this.lblFILTRO_GRUPO = new System.Windows.Forms.Label();
+            this.cmbFILTRO_GRUPO = new System.Windows.Forms.ComboBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
-            this.btnRECUPERAR = new System.Windows.Forms.Button();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -71,17 +69,15 @@ namespace VISTA
             this.gbDATOS_USUARIO.Controls.Add(this.lblDESCRIPCION_CLAVE);
             this.gbDATOS_USUARIO.Controls.Add(this.lblDESCRIPCION);
             this.gbDATOS_USUARIO.Controls.Add(this.txtCONFIRMAR_PASSWORD);
-            this.gbDATOS_USUARIO.Controls.Add(this.label1);
-            this.gbDATOS_USUARIO.Controls.Add(this.txtNOMBRE);
+            this.gbDATOS_USUARIO.Controls.Add(this.lblCONFIRM_PASSWORD);
+            this.gbDATOS_USUARIO.Controls.Add(this.txtNOMBRE_USUARIO);
             this.gbDATOS_USUARIO.Controls.Add(this.lblNOMBRE_USUARIO);
-            this.gbDATOS_USUARIO.Controls.Add(this.cmbROL);
-            this.gbDATOS_USUARIO.Controls.Add(this.lblAPELLIDO_USUARIO);
-            this.gbDATOS_USUARIO.Controls.Add(this.lblROL_USUARIO);
+            this.gbDATOS_USUARIO.Controls.Add(this.cmbGRUPO);
+            this.gbDATOS_USUARIO.Controls.Add(this.lblGRUPO_USUARIO);
             this.gbDATOS_USUARIO.Controls.Add(this.lblEMAIL_USUARIO);
             this.gbDATOS_USUARIO.Controls.Add(this.txtPASSWORD);
             this.gbDATOS_USUARIO.Controls.Add(this.lblPASSWORD_USUARIO);
             this.gbDATOS_USUARIO.Controls.Add(this.txtEMAIL);
-            this.gbDATOS_USUARIO.Controls.Add(this.txtAPELLIDO);
             this.gbDATOS_USUARIO.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_USUARIO.Controls.Add(this.btnGUARDAR);
             this.gbDATOS_USUARIO.ForeColor = System.Drawing.Color.White;
@@ -95,7 +91,7 @@ namespace VISTA
             // lblDESCRIPCION_CLAVE
             // 
             this.lblDESCRIPCION_CLAVE.AutoSize = true;
-            this.lblDESCRIPCION_CLAVE.Location = new System.Drawing.Point(176, 258);
+            this.lblDESCRIPCION_CLAVE.Location = new System.Drawing.Point(176, 228);
             this.lblDESCRIPCION_CLAVE.Name = "lblDESCRIPCION_CLAVE";
             this.lblDESCRIPCION_CLAVE.Size = new System.Drawing.Size(82, 13);
             this.lblDESCRIPCION_CLAVE.TabIndex = 77;
@@ -104,7 +100,7 @@ namespace VISTA
             // lblDESCRIPCION
             // 
             this.lblDESCRIPCION.AutoSize = true;
-            this.lblDESCRIPCION.Location = new System.Drawing.Point(176, 199);
+            this.lblDESCRIPCION.Location = new System.Drawing.Point(176, 167);
             this.lblDESCRIPCION.Name = "lblDESCRIPCION";
             this.lblDESCRIPCION.Size = new System.Drawing.Size(82, 13);
             this.lblDESCRIPCION.TabIndex = 76;
@@ -112,69 +108,60 @@ namespace VISTA
             // 
             // txtCONFIRMAR_PASSWORD
             // 
-            this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(126, 235);
+            this.txtCONFIRMAR_PASSWORD.Location = new System.Drawing.Point(126, 205);
             this.txtCONFIRMAR_PASSWORD.Name = "txtCONFIRMAR_PASSWORD";
             this.txtCONFIRMAR_PASSWORD.PasswordChar = '*';
             this.txtCONFIRMAR_PASSWORD.Size = new System.Drawing.Size(132, 20);
             this.txtCONFIRMAR_PASSWORD.TabIndex = 75;
             // 
-            // label1
+            // lblCONFIRM_PASSWORD
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 238);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "CONFIRMAR CLAVE:";
+            this.lblCONFIRM_PASSWORD.AutoSize = true;
+            this.lblCONFIRM_PASSWORD.Location = new System.Drawing.Point(9, 208);
+            this.lblCONFIRM_PASSWORD.Name = "lblCONFIRM_PASSWORD";
+            this.lblCONFIRM_PASSWORD.Size = new System.Drawing.Size(111, 13);
+            this.lblCONFIRM_PASSWORD.TabIndex = 74;
+            this.lblCONFIRM_PASSWORD.Text = "CONFIRMAR CLAVE:";
             // 
-            // txtNOMBRE
+            // txtNOMBRE_USUARIO
             // 
-            this.txtNOMBRE.Location = new System.Drawing.Point(99, 31);
-            this.txtNOMBRE.Name = "txtNOMBRE";
-            this.txtNOMBRE.Size = new System.Drawing.Size(159, 20);
-            this.txtNOMBRE.TabIndex = 68;
-            this.txtNOMBRE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress_1);
+            this.txtNOMBRE_USUARIO.Location = new System.Drawing.Point(99, 31);
+            this.txtNOMBRE_USUARIO.Name = "txtNOMBRE_USUARIO";
+            this.txtNOMBRE_USUARIO.Size = new System.Drawing.Size(159, 20);
+            this.txtNOMBRE_USUARIO.TabIndex = 68;
+            this.txtNOMBRE_USUARIO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress_1);
             // 
             // lblNOMBRE_USUARIO
             // 
             this.lblNOMBRE_USUARIO.AutoSize = true;
             this.lblNOMBRE_USUARIO.Location = new System.Drawing.Point(9, 34);
             this.lblNOMBRE_USUARIO.Name = "lblNOMBRE_USUARIO";
-            this.lblNOMBRE_USUARIO.Size = new System.Drawing.Size(57, 13);
+            this.lblNOMBRE_USUARIO.Size = new System.Drawing.Size(59, 13);
             this.lblNOMBRE_USUARIO.TabIndex = 64;
-            this.lblNOMBRE_USUARIO.Text = "NOMBRE:";
+            this.lblNOMBRE_USUARIO.Text = "USUARIO:";
             // 
-            // cmbROL
+            // cmbGRUPO
             // 
-            this.cmbROL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbROL.FormattingEnabled = true;
-            this.cmbROL.Location = new System.Drawing.Point(99, 285);
-            this.cmbROL.Name = "cmbROL";
-            this.cmbROL.Size = new System.Drawing.Size(159, 21);
-            this.cmbROL.TabIndex = 73;
+            this.cmbGRUPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGRUPO.FormattingEnabled = true;
+            this.cmbGRUPO.Location = new System.Drawing.Point(100, 275);
+            this.cmbGRUPO.Name = "cmbGRUPO";
+            this.cmbGRUPO.Size = new System.Drawing.Size(159, 21);
+            this.cmbGRUPO.TabIndex = 73;
             // 
-            // lblAPELLIDO_USUARIO
+            // lblGRUPO_USUARIO
             // 
-            this.lblAPELLIDO_USUARIO.AutoSize = true;
-            this.lblAPELLIDO_USUARIO.Location = new System.Drawing.Point(9, 79);
-            this.lblAPELLIDO_USUARIO.Name = "lblAPELLIDO_USUARIO";
-            this.lblAPELLIDO_USUARIO.Size = new System.Drawing.Size(62, 13);
-            this.lblAPELLIDO_USUARIO.TabIndex = 65;
-            this.lblAPELLIDO_USUARIO.Text = "APELLIDO:";
-            // 
-            // lblROL_USUARIO
-            // 
-            this.lblROL_USUARIO.AutoSize = true;
-            this.lblROL_USUARIO.Location = new System.Drawing.Point(9, 288);
-            this.lblROL_USUARIO.Name = "lblROL_USUARIO";
-            this.lblROL_USUARIO.Size = new System.Drawing.Size(32, 13);
-            this.lblROL_USUARIO.TabIndex = 72;
-            this.lblROL_USUARIO.Text = "ROL:";
+            this.lblGRUPO_USUARIO.AutoSize = true;
+            this.lblGRUPO_USUARIO.Location = new System.Drawing.Point(10, 278);
+            this.lblGRUPO_USUARIO.Name = "lblGRUPO_USUARIO";
+            this.lblGRUPO_USUARIO.Size = new System.Drawing.Size(49, 13);
+            this.lblGRUPO_USUARIO.TabIndex = 72;
+            this.lblGRUPO_USUARIO.Text = "GRUPO:";
             // 
             // lblEMAIL_USUARIO
             // 
             this.lblEMAIL_USUARIO.AutoSize = true;
-            this.lblEMAIL_USUARIO.Location = new System.Drawing.Point(9, 126);
+            this.lblEMAIL_USUARIO.Location = new System.Drawing.Point(9, 92);
             this.lblEMAIL_USUARIO.Name = "lblEMAIL_USUARIO";
             this.lblEMAIL_USUARIO.Size = new System.Drawing.Size(42, 13);
             this.lblEMAIL_USUARIO.TabIndex = 66;
@@ -182,7 +169,7 @@ namespace VISTA
             // 
             // txtPASSWORD
             // 
-            this.txtPASSWORD.Location = new System.Drawing.Point(99, 176);
+            this.txtPASSWORD.Location = new System.Drawing.Point(99, 144);
             this.txtPASSWORD.Name = "txtPASSWORD";
             this.txtPASSWORD.PasswordChar = '*';
             this.txtPASSWORD.Size = new System.Drawing.Size(159, 20);
@@ -191,26 +178,18 @@ namespace VISTA
             // lblPASSWORD_USUARIO
             // 
             this.lblPASSWORD_USUARIO.AutoSize = true;
-            this.lblPASSWORD_USUARIO.Location = new System.Drawing.Point(9, 179);
+            this.lblPASSWORD_USUARIO.Location = new System.Drawing.Point(9, 147);
             this.lblPASSWORD_USUARIO.Name = "lblPASSWORD_USUARIO";
-            this.lblPASSWORD_USUARIO.Size = new System.Drawing.Size(84, 13);
+            this.lblPASSWORD_USUARIO.Size = new System.Drawing.Size(44, 13);
             this.lblPASSWORD_USUARIO.TabIndex = 67;
-            this.lblPASSWORD_USUARIO.Text = "CONTRASEÑA:";
+            this.lblPASSWORD_USUARIO.Text = "CLAVE:";
             // 
             // txtEMAIL
             // 
-            this.txtEMAIL.Location = new System.Drawing.Point(99, 123);
+            this.txtEMAIL.Location = new System.Drawing.Point(99, 89);
             this.txtEMAIL.Name = "txtEMAIL";
             this.txtEMAIL.Size = new System.Drawing.Size(159, 20);
             this.txtEMAIL.TabIndex = 70;
-            // 
-            // txtAPELLIDO
-            // 
-            this.txtAPELLIDO.Location = new System.Drawing.Point(99, 76);
-            this.txtAPELLIDO.Name = "txtAPELLIDO";
-            this.txtAPELLIDO.Size = new System.Drawing.Size(159, 20);
-            this.txtAPELLIDO.TabIndex = 69;
-            this.txtAPELLIDO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAPELLIDO_KeyPress_1);
             // 
             // btnCANCELAR
             // 
@@ -253,8 +232,8 @@ namespace VISTA
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbLISTA_USUARIOS.Controls.Add(this.btnRECUPERAR);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnBUSCAR);
-            this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_TIPO);
-            this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_TIPO);
+            this.gbLISTA_USUARIOS.Controls.Add(this.lblFILTRO_GRUPO);
+            this.gbLISTA_USUARIOS.Controls.Add(this.cmbFILTRO_GRUPO);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnCERRAR);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnELIMINAR);
             this.gbLISTA_USUARIOS.Controls.Add(this.btnCONSULTAR);
@@ -269,6 +248,22 @@ namespace VISTA
             this.gbLISTA_USUARIOS.TabIndex = 4;
             this.gbLISTA_USUARIOS.TabStop = false;
             this.gbLISTA_USUARIOS.Text = "LISTA DE USUARIOS";
+            // 
+            // btnRECUPERAR
+            // 
+            this.btnRECUPERAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRECUPERAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnRECUPERAR.FlatAppearance.BorderSize = 0;
+            this.btnRECUPERAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRECUPERAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRECUPERAR.ForeColor = System.Drawing.Color.White;
+            this.btnRECUPERAR.Location = new System.Drawing.Point(361, 381);
+            this.btnRECUPERAR.Name = "btnRECUPERAR";
+            this.btnRECUPERAR.Size = new System.Drawing.Size(83, 30);
+            this.btnRECUPERAR.TabIndex = 77;
+            this.btnRECUPERAR.Text = "Recuperar";
+            this.btnRECUPERAR.UseVisualStyleBackColor = false;
+            this.btnRECUPERAR.Click += new System.EventHandler(this.btnRECUPERAR_Click);
             // 
             // btnBUSCAR
             // 
@@ -286,26 +281,26 @@ namespace VISTA
             this.btnBUSCAR.UseVisualStyleBackColor = false;
             this.btnBUSCAR.Click += new System.EventHandler(this.btnBUSCAR_Click_1);
             // 
-            // lblFILTRO_TIPO
+            // lblFILTRO_GRUPO
             // 
-            this.lblFILTRO_TIPO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFILTRO_TIPO.AutoSize = true;
-            this.lblFILTRO_TIPO.ForeColor = System.Drawing.Color.White;
-            this.lblFILTRO_TIPO.Location = new System.Drawing.Point(407, 31);
-            this.lblFILTRO_TIPO.Name = "lblFILTRO_TIPO";
-            this.lblFILTRO_TIPO.Size = new System.Drawing.Size(105, 13);
-            this.lblFILTRO_TIPO.TabIndex = 71;
-            this.lblFILTRO_TIPO.Text = "TIPO DE USUARIO:";
+            this.lblFILTRO_GRUPO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFILTRO_GRUPO.AutoSize = true;
+            this.lblFILTRO_GRUPO.ForeColor = System.Drawing.Color.White;
+            this.lblFILTRO_GRUPO.Location = new System.Drawing.Point(389, 31);
+            this.lblFILTRO_GRUPO.Name = "lblFILTRO_GRUPO";
+            this.lblFILTRO_GRUPO.Size = new System.Drawing.Size(123, 13);
+            this.lblFILTRO_GRUPO.TabIndex = 71;
+            this.lblFILTRO_GRUPO.Text = "FILTRAR POR GRUPO:";
             // 
-            // cmbFILTRO_TIPO
+            // cmbFILTRO_GRUPO
             // 
-            this.cmbFILTRO_TIPO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbFILTRO_TIPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFILTRO_TIPO.FormattingEnabled = true;
-            this.cmbFILTRO_TIPO.Location = new System.Drawing.Point(518, 26);
-            this.cmbFILTRO_TIPO.Name = "cmbFILTRO_TIPO";
-            this.cmbFILTRO_TIPO.Size = new System.Drawing.Size(159, 21);
-            this.cmbFILTRO_TIPO.TabIndex = 70;
+            this.cmbFILTRO_GRUPO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbFILTRO_GRUPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFILTRO_GRUPO.FormattingEnabled = true;
+            this.cmbFILTRO_GRUPO.Location = new System.Drawing.Point(518, 26);
+            this.cmbFILTRO_GRUPO.Name = "cmbFILTRO_GRUPO";
+            this.cmbFILTRO_GRUPO.Size = new System.Drawing.Size(159, 21);
+            this.cmbFILTRO_GRUPO.TabIndex = 70;
             // 
             // btnCERRAR
             // 
@@ -401,55 +396,39 @@ namespace VISTA
             this.dgvLISTA_USUARIOS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_USUARIOS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_USUARIOS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_USUARIOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_USUARIOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLISTA_USUARIOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_USUARIOS.EnableHeadersVisualStyles = false;
             this.dgvLISTA_USUARIOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_USUARIOS.Location = new System.Drawing.Point(6, 61);
             this.dgvLISTA_USUARIOS.Name = "dgvLISTA_USUARIOS";
             this.dgvLISTA_USUARIOS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_USUARIOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_USUARIOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLISTA_USUARIOS.RowHeadersVisible = false;
             this.dgvLISTA_USUARIOS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_USUARIOS.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_USUARIOS.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLISTA_USUARIOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(777, 314);
             this.dgvLISTA_USUARIOS.TabIndex = 0;
-            // 
-            // btnRECUPERAR
-            // 
-            this.btnRECUPERAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRECUPERAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnRECUPERAR.FlatAppearance.BorderSize = 0;
-            this.btnRECUPERAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRECUPERAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRECUPERAR.ForeColor = System.Drawing.Color.White;
-            this.btnRECUPERAR.Location = new System.Drawing.Point(361, 381);
-            this.btnRECUPERAR.Name = "btnRECUPERAR";
-            this.btnRECUPERAR.Size = new System.Drawing.Size(83, 30);
-            this.btnRECUPERAR.TabIndex = 77;
-            this.btnRECUPERAR.Text = "Recuperar";
-            this.btnRECUPERAR.UseVisualStyleBackColor = false;
-            this.btnRECUPERAR.Click += new System.EventHandler(this.btnRECUPERAR_Click);
             // 
             // frmUSUARIOS
             // 
@@ -476,23 +455,21 @@ namespace VISTA
 
         private System.Windows.Forms.GroupBox gbDATOS_USUARIO;
         private System.Windows.Forms.TextBox txtCONFIRMAR_PASSWORD;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNOMBRE;
+        private System.Windows.Forms.Label lblCONFIRM_PASSWORD;
+        private System.Windows.Forms.TextBox txtNOMBRE_USUARIO;
         private System.Windows.Forms.Label lblNOMBRE_USUARIO;
-        private System.Windows.Forms.ComboBox cmbROL;
-        private System.Windows.Forms.Label lblAPELLIDO_USUARIO;
-        private System.Windows.Forms.Label lblROL_USUARIO;
+        private System.Windows.Forms.ComboBox cmbGRUPO;
+        private System.Windows.Forms.Label lblGRUPO_USUARIO;
         private System.Windows.Forms.Label lblEMAIL_USUARIO;
         private System.Windows.Forms.TextBox txtPASSWORD;
         private System.Windows.Forms.Label lblPASSWORD_USUARIO;
         private System.Windows.Forms.TextBox txtEMAIL;
-        private System.Windows.Forms.TextBox txtAPELLIDO;
         private System.Windows.Forms.Button btnCANCELAR;
         private System.Windows.Forms.Button btnGUARDAR;
         private System.Windows.Forms.GroupBox gbLISTA_USUARIOS;
         private System.Windows.Forms.Button btnBUSCAR;
-        private System.Windows.Forms.Label lblFILTRO_TIPO;
-        private System.Windows.Forms.ComboBox cmbFILTRO_TIPO;
+        private System.Windows.Forms.Label lblFILTRO_GRUPO;
+        private System.Windows.Forms.ComboBox cmbFILTRO_GRUPO;
         private System.Windows.Forms.Button btnCERRAR;
         private System.Windows.Forms.Button btnELIMINAR;
         private System.Windows.Forms.Button btnCONSULTAR;
