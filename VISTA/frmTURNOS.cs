@@ -28,14 +28,15 @@ namespace VISTA
         }
 
         private CONTROLADORA.TURNOS cTURNOS;
-        private CONTROLADORA.USUARIOS cUSUARIOS;
+        private CONTROLADORA.PACIENTES cPACIENTES;
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;
         private MODELO.TURNO oTURNO;
         private CONTROLADORA.ESPECIALIDADES cESPECIALIDAD;
         private MODELO.ESPECIALIDAD oESPECIALIDAD;
         private MODELO.OBRA_SOCIAL oOBRA_SOCIAL;
         private MODELO.PLAN oPLAN;
-        private MODELO.USUARIO oPACIENTE;
-        private MODELO.USUARIO oPROFESIONAL;
+        private MODELO.PACIENTE oPACIENTE;
+        private MODELO.PROFESIONAL oPROFESIONAL;
         private CONTROLADORA.ATENCIONES cATENCIONES;
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private CONTROLADORA.PLANES cPLANES;
@@ -49,7 +50,8 @@ namespace VISTA
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
             cESPECIALIDAD = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPACIENTES = CONTROLADORA.PACIENTES.OBTENER_INSTANCIA();
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
@@ -277,7 +279,7 @@ namespace VISTA
             {
                 var COMPROBAR_PROFESIONAL = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
                                              where b.HORA_TURNO == HORA_NUMERO
-                                             && b.PROFESIONAL.ID_USUARIO == PROFESIONAL.PROFESIONAL.ID_USUARIO
+                                             && b.PROFESIONAL.ID_PROFESIONAL == PROFESIONAL.PROFESIONAL.ID_PROFESIONAL
                                              && b.FECHA.ToShortDateString() == dia.DIA_VALOR.ToShortDateString()
                                              select b).Count();
                 //si COMPROBAR_PROFESIONAL el count me devuelve 0, significa que el profesional esta disponible
@@ -285,7 +287,7 @@ namespace VISTA
                 if (COMPROBAR_PROFESIONAL == 0)
                 {
                     //agrego a la cmb 
-                    LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(PROFESIONAL.PROFESIONAL.NOMBRE + " " + PROFESIONAL.PROFESIONAL.APELLIDO, PROFESIONAL.PROFESIONAL.ID_USUARIO));
+                    LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(PROFESIONAL.PROFESIONAL.NOMBRE + " " + PROFESIONAL.PROFESIONAL.APELLIDO, PROFESIONAL.PROFESIONAL.ID_PROFESIONAL));
                 }
             }
             cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
@@ -340,8 +342,8 @@ namespace VISTA
             MODELO.PLAN SIN_PLAN = cPLANES.OBTENER_PLANES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
             MODELO.OBRA_SOCIAL SIN_OBRA_SOCIAL = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
 
-            var PACIENTE = (from a in cUSUARIOS.OBTENER_PACIENTES()
-                            where a.ID_USUARIO == frmLOGIN.ID_USUARIO
+            var PACIENTE = (from a in cPACIENTES.OBTENER_PACIENTES()
+                            where a.ID_PACIENTE == frmLOGIN.ID_USUARIO
                             select a).ToList();
             if (PACIENTE[0].PLAN.ESTADO == "INACTIVO")
             {
@@ -357,8 +359,8 @@ namespace VISTA
                 }
             }
 
-            var PROFESIONAL = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
-                               where a.ID_USUARIO == VALOR_PROFESIONAL.CMB_VALOR
+            var PROFESIONAL = (from a in cPROFESIONALES.OBTENER_PROFESIONALES()
+                               where a.ID_PROFESIONAL == VALOR_PROFESIONAL.CMB_VALOR
                                select a).ToList();
             foreach (var PROFESIONALES in PROFESIONAL)
             {
@@ -379,7 +381,7 @@ namespace VISTA
             oTURNO.DIA = cmbDIA.Text;
             string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
             oTURNO.HORA_TURNO = Convert.ToInt32(HORA_TEXTO);
-            oPROFESIONAL.ID_USUARIO = VALOR_PROFESIONAL.CMB_VALOR;
+            oPROFESIONAL.ID_PROFESIONAL = VALOR_PROFESIONAL.CMB_VALOR;
             oTURNO.PROFESIONAL = oPROFESIONAL;
             oTURNO.FECHA = DIA_SELECCIONADO.DIA_VALOR;
             oTURNO.PACIENTE = oPACIENTE;

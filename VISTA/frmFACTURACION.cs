@@ -116,7 +116,7 @@ namespace VISTA
 
                     dataTable_header.Rows.Add(new object[] { firstLU(oTURNO.PACIENTE.NOMBRE) + " " + firstLU(oTURNO.PACIENTE.APELLIDO), "", firstLU(oTURNO.PROFESIONAL.NOMBRE) });
                     dataTable_header.Rows.Add(new object[] { oTURNO.PACIENTE.EMAIL.ToLower(), "", oTURNO.PROFESIONAL.EMAIL.ToLower() });
-                    dataTable_header.Rows.Add(new object[] { firstLU(oTURNO.PACIENTE.PLAN.NOMBRE), "", firstLU(oTURNO.PROFESIONAL.ESPECIALIDADES.NOMBRE) });
+                    dataTable_header.Rows.Add(new object[] { firstLU(oTURNO.PACIENTE.PLAN.NOMBRE), "", firstLU(oTURNO.PROFESIONAL.ESPECIALIDAD.NOMBRE) });
                     pdfGrid_header.DataSource = dataTable_header;
                     //Add layout format for grid pagination
                     Syncfusion.Pdf.Grid.PdfGridLayoutFormat layoutFormat = new Syncfusion.Pdf.Grid.PdfGridLayoutFormat();

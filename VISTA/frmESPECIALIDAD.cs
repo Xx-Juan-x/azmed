@@ -31,14 +31,14 @@ namespace VISTA
 
         private CONTROLADORA.ESPECIALIDADES cESPECIALIDADES;
         private MODELO.ESPECIALIDAD oESPECIALIDAD;
-        private CONTROLADORA.USUARIOS cUSUARIOS;
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;
         string ACCION;
         private string ESP;
         public frmESPECIALIDAD()
         {
             InitializeComponent();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             ARMA_GRILLA();
             MODO_GRILLA();
         }
@@ -163,8 +163,8 @@ namespace VISTA
             }
             else
             {
-                var LISTA_PROFESIONALES = (from a in cUSUARIOS.OBTENER_PROFESIONALES()
-                                           where a.ESPECIALIDADES.NOMBRE == ESP
+                var LISTA_PROFESIONALES = (from a in cPROFESIONALES.OBTENER_PROFESIONALES()
+                                           where a.ESPECIALIDAD.NOMBRE == ESP
                                            select a).ToList();
                 if (LISTA_PROFESIONALES.Count == 0)
                 {

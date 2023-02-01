@@ -69,8 +69,12 @@
     <Compile Include="OBRAS SOCIALES\OPERACIONES_OBRAS_SOCIALES.cs" />
     <Compile Include="ORDEN DE COMPRA\GESTION_ORDEN_COMPRA.cs" />
     <Compile Include="ORDEN DE COMPRA\OPERACIONES_ORDEN_COMPRA.cs" />
+    <Compile Include="PACIENTES\GESTION_PACIENTES.cs" />
+    <Compile Include="PACIENTES\OPERACIONES_PACIENTES.cs" />
     <Compile Include="PLANES\GESTION_PLANES.cs" />
     <Compile Include="PLANES\OPERACIONES_PLANES.cs" />
+    <Compile Include="PROFESIONALES\GESTION_PROFESIONALES.cs" />
+    <Compile Include="PROFESIONALES\OPERACIONES_PROFESIONALES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES\GESTION_PROVEEDORES.cs" />
     <Compile Include="PROVEEDORES\OPERACIONES_PROVEEDORES.cs" />

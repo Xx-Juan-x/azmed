@@ -41,8 +41,9 @@ namespace VISTA
         {
             dgvLISTA_HORARIOS_LABORALES.DataSource = null;
            
+            //VER: DEBERÍA VERSE LOS HORARIOS LABORALES DE LOS USUARIOS PROFESIONALES QUE INGRESARON Y NO DE TODOS LOS PROFESIONALES
             var LISTA_HORARIOS_LABORALES = (from a in cATENCIONES.OBTENER_ATENCIONES()
-                                        where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
+                                        where a.USUARIO.ID_USUARIO == frmLOGIN.ID_USUARIO
                                         select a).ToList();
 
             dgvLISTA_HORARIOS_LABORALES.DataSource = LISTA_HORARIOS_LABORALES;

@@ -28,19 +28,17 @@ namespace VISTA
         }
 
         private CONTROLADORA.ATENCIONES cATENCIONES;
-        private MODELO.USUARIO oUSUARIO;
-        private CONTROLADORA.USUARIOS cUSUARIOS;
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;
         private MODELO.ATENCION oATENCION;
         private CONTROLADORA.ESPECIALIDADES cESPECIALIDADES;
         string ACCION;
-
 
         public frmATENCION()
         {
             InitializeComponent();
 
             cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
          
             cmbDIA_LABORAL.Items.Add("SELECCIONE...");
@@ -140,8 +138,8 @@ namespace VISTA
         {
    
             cmbPROFESIONALES.DataSource = null;           
-            var LISTA_PROFESIONALES = (from c in cUSUARIOS.OBTENER_PROFESIONALES()
-                                       where c.ESPECIALIDADES != null && c.ESPECIALIDADES.ID_ESPECIALIDAD == ID_ESPECIALIDAD
+            var LISTA_PROFESIONALES = (from c in cPROFESIONALES.OBTENER_PROFESIONALES()
+                                       where c.ESPECIALIDAD != null && c.ESPECIALIDAD.ID_ESPECIALIDAD == ID_ESPECIALIDAD
                                        select c).ToList();
 
             cmbPROFESIONALES.DataSource = LISTA_PROFESIONALES;
@@ -220,7 +218,7 @@ namespace VISTA
             oATENCION.HORA_FIN = HORA_FIN;
             oATENCION.DIA_LABORAL = cmbDIA_LABORAL.Text;
             oATENCION.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDADES.SelectedItem;
-            oATENCION.PROFESIONAL = (MODELO.USUARIO)cmbPROFESIONALES.SelectedItem;
+            oATENCION.PROFESIONAL = (MODELO.PROFESIONAL)cmbPROFESIONALES.SelectedItem;
             oATENCION.ESTADO = "ACTIVO";
             
             if (ACCION == "A")
@@ -335,7 +333,7 @@ namespace VISTA
             {
                 //cmbPROFESIONALES.DataSource = null;
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
-                                              where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
+                                              where c.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();
                 List<string> LISTA_DIA = new List<string>();
                 LISTA_DIA.Add("LUNES");
@@ -353,7 +351,7 @@ namespace VISTA
             {
                 //cmbPROFESIONALES.DataSource = null;
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
-                                              where c.PROFESIONAL.ID_USUARIO == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
+                                              where c.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();
 
                 cmbDIA_LABORAL.DataSource = LISTA_DIAS_PROFESIONAL;

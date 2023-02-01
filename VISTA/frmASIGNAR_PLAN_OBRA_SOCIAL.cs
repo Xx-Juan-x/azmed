@@ -28,15 +28,15 @@ namespace VISTA
             return instancia;
         }
 
-        private CONTROLADORA.USUARIOS cPACIENTES;
-        private MODELO.USUARIO oPACIENTE;
+        private CONTROLADORA.PACIENTES cPACIENTES;
+        private MODELO.PACIENTE oPACIENTE;
         private CONTROLADORA.PLANES cPLANES;
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
 
         public frmASIGNAR_PLAN_OBRA_SOCIAL()
         {
             InitializeComponent();
-            cPACIENTES = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPACIENTES = CONTROLADORA.PACIENTES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
 
@@ -49,14 +49,14 @@ namespace VISTA
         {
             dgvLISTA_PACIENTES.DataSource = null;
             dgvLISTA_PACIENTES.DataSource = cPACIENTES.OBTENER_PACIENTES();
-            dgvLISTA_PACIENTES.AutoGenerateColumns = false;
+            /*dgvLISTA_PACIENTES.AutoGenerateColumns = false;
 
             if (dgvLISTA_PACIENTES.Columns.Contains("CLAVE") && dgvLISTA_PACIENTES.Columns.Contains("FECHA") && dgvLISTA_PACIENTES.Columns.Contains("ESPECIALIDADES"))
             {
                 dgvLISTA_PACIENTES.Columns.Remove("FECHA");
                 dgvLISTA_PACIENTES.Columns.Remove("CLAVE");
                 dgvLISTA_PACIENTES.Columns.Remove("ESPECIALIDADES");
-            }
+            }*/
         }
 
         private void MODO_GRILLA()
@@ -118,12 +118,12 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un paciente de la lista para poder asignar la obra social junto con el plan", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            oPACIENTE = (MODELO.USUARIO)dgvLISTA_PACIENTES.CurrentRow.DataBoundItem;
+            oPACIENTE = (MODELO.PACIENTE)dgvLISTA_PACIENTES.CurrentRow.DataBoundItem;
 
             oPACIENTE.OBRA_SOCIAL = (MODELO.OBRA_SOCIAL)cmbOBRA_SOCIAL.SelectedItem;
             oPACIENTE.PLAN = (MODELO.PLAN)cmbPLAN.SelectedItem;
 
-            cPACIENTES.MODIFICAR_USUARIO(oPACIENTE);
+            cPACIENTES.MODIFICAR_PACIENTE(oPACIENTE);
 
             ARMA_GRILLA();
             MODO_GRILLA();

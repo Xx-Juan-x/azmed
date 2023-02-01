@@ -27,14 +27,14 @@ namespace VISTA
             return instancia;
         }
 
-        private CONTROLADORA.USUARIOS cPROFESIONALES;
+        private MODELO.PROFESIONAL oPROFESIONAL;
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;
         private CONTROLADORA.ESPECIALIDADES cESPECIALIDADES;
-        private MODELO.USUARIO oPROFESIONAL;
-        private MODELO.USUARIO oESPECIALIDAD;
+
         public frmASIGNAR_ESPECIALIDAD()
         {
             InitializeComponent();
-            cPROFESIONALES = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
             ARMA_GRILLA();
             MODO_GRILLA();      
@@ -44,7 +44,7 @@ namespace VISTA
         {
             dgvLISTA_PROFESIONALES.DataSource = null;
             dgvLISTA_PROFESIONALES.DataSource = cPROFESIONALES.OBTENER_PROFESIONALES();
-            dgvLISTA_PROFESIONALES.AutoGenerateColumns = false;
+            /*dgvLISTA_PROFESIONALES.AutoGenerateColumns = false;
 
             if (dgvLISTA_PROFESIONALES.Columns.Contains("CLAVE") && dgvLISTA_PROFESIONALES.Columns.Contains("FECHA") && dgvLISTA_PROFESIONALES.Columns.Contains("PLAN") && dgvLISTA_PROFESIONALES.Columns.Contains("OBRA_SOCIAL"))
             {
@@ -52,7 +52,7 @@ namespace VISTA
                 dgvLISTA_PROFESIONALES.Columns.Remove("CLAVE");
                 dgvLISTA_PROFESIONALES.Columns.Remove("PLAN");
                 dgvLISTA_PROFESIONALES.Columns.Remove("OBRA_SOCIAL");
-            }
+            }*/
         }
 
         private void MODO_GRILLA()
@@ -86,11 +86,11 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un profesional de la lista para poder asignarle una especialidad", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            oPROFESIONAL = (MODELO.USUARIO)dgvLISTA_PROFESIONALES.CurrentRow.DataBoundItem;
+            oPROFESIONAL = (MODELO.PROFESIONAL)dgvLISTA_PROFESIONALES.CurrentRow.DataBoundItem;
 
-            oPROFESIONAL.ESPECIALIDADES = (MODELO.ESPECIALIDAD)cmbESPECIALIDADES.SelectedItem;
+            oPROFESIONAL.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDADES.SelectedItem;
 
-            cPROFESIONALES.MODIFICAR_USUARIO(oPROFESIONAL);
+            cPROFESIONALES.MODIFICAR_PROFESIONAL(oPROFESIONAL);
 
             ARMA_GRILLA();
             MODO_GRILLA();

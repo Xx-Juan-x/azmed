@@ -31,7 +31,6 @@ namespace VISTA
 
         private CONTROLADORA.PLANES cPLANES;
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
-        private MODELO.OBRA_SOCIAL oOBRA_SOCIAL;
         private MODELO.PLAN oPLAN;
         string ACCION;
 

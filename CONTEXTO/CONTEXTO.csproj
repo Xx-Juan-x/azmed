@@ -306,6 +306,10 @@
     <Compile Include="Migrations\202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.designer.cs">
       <DependentUpon>202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302011856035_CAMBIOS_ARREGLOS.cs" />
+    <Compile Include="Migrations\202302011856035_CAMBIOS_ARREGLOS.designer.cs">
+      <DependentUpon>202302011856035_CAMBIOS_ARREGLOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -511,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.resx">
       <DependentUpon>202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302011856035_CAMBIOS_ARREGLOS.resx">
+      <DependentUpon>202302011856035_CAMBIOS_ARREGLOS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

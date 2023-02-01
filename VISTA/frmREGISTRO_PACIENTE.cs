@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace VISTA
 {
-    public partial class frmREGISTRO_PACIENTE : Form
+    /*public partial class frmREGISTRO_PACIENTE : Form
     {
         private static frmREGISTRO_PACIENTE instancia;
 
@@ -162,5 +162,5 @@ namespace VISTA
                 return;
             }
         }      
-    }
+    }*/
 }

@@ -29,13 +29,13 @@ namespace VISTA
         }
 
         CONTROLADORA.ESPECIALIDADES cESPECIALIDADES;
-        CONTROLADORA.USUARIOS cPROFESIONALES;       
+        CONTROLADORA.PROFESIONALES cPROFESIONALES;       
         
         public frmREPORTE_ESTADISTICO()
         {
             InitializeComponent();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
-            cPROFESIONALES = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             ARMAR_CHART();
         }
 
@@ -43,7 +43,7 @@ namespace VISTA
         {          
             // Traigo la cantidad de especialidades que tengo    
             string[] SERIES_ARRAY_ESPECIALIDAD = cESPECIALIDADES.OBTENER_ESPECIALIDADES().AsEnumerable().Where(r => r.NOMBRE != null).Select(r => r.NOMBRE).Distinct().ToArray();
-            string[] LISTA_PROFESIONALES = cPROFESIONALES.OBTENER_PROFESIONALES().AsEnumerable().Where(r => r.ESPECIALIDADES != null).Select(r => r.ESPECIALIDADES.NOMBRE).ToArray();
+            string[] LISTA_PROFESIONALES = cPROFESIONALES.OBTENER_PROFESIONALES().AsEnumerable().Where(r => r.ESPECIALIDAD != null).Select(r => r.ESPECIALIDAD.NOMBRE).ToArray();
 
             // For que me permite cargar los datos en el chart
             for (int i = 0; i < SERIES_ARRAY_ESPECIALIDAD.Length; i++)

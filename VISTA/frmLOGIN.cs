@@ -28,25 +28,27 @@ namespace VISTA
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
-        private CONTROLADORA.PLANES cPLANES;
+        //private CONTROLADORA.PLANES cPLANES;
+        public static CONTROLADORA.GRUPOS cGRUPOS;
         public static string TIPO_USUARIO = "";
         public static int ID_USUARIO; 
-        public frmREGISTRO_PACIENTE FORMULARIO_REGISTRO;
-        public static double DESCUENTO_ESTUDIO;
-        public static double DESCUENTO_CONSULTA;
+        //public frmREGISTRO_PACIENTE FORMULARIO_REGISTRO;
+        //public static double DESCUENTO_ESTUDIO;
+        //public static double DESCUENTO_CONSULTA;
 
         public frmLOGIN()
         {
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
-            cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
+            cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
+            //cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
         }
 
         private void linklblREGISTRARSE_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FORMULARIO_REGISTRO = frmREGISTRO_PACIENTE.OBTENER_INSTANCIA();
+            //FORMULARIO_REGISTRO = frmREGISTRO_PACIENTE.OBTENER_INSTANCIA();
             this.Hide();        
-            FORMULARIO_REGISTRO.Show();        
+            //FORMULARIO_REGISTRO.Show();        
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)
