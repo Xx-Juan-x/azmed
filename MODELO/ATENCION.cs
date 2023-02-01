@@ -10,7 +10,9 @@ namespace MODELO
     {
         public int ID_ATENCION { get; set; }
         public string DIA_LABORAL { get; set; }
-        public USUARIO PROFESIONAL { get; set; }
+
+        //COLOCAR EL ID DE LA TABLA PROFESIONAL
+        public PROFESIONAL PROFESIONAL { get; set; }
         public ESPECIALIDAD ESPECIALIDAD { get; set; }
         public int HORA_INICIO { get; set; }
         public int HORA_FIN { get; set; }

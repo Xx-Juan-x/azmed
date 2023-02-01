@@ -62,7 +62,9 @@
     <Compile Include="MATERIAL.cs" />
     <Compile Include="OBRA_SOCIAL.cs" />
     <Compile Include="ORDEN_COMPRA.cs" />
+    <Compile Include="PACIENTE.cs" />
     <Compile Include="PLAN.cs" />
+    <Compile Include="PROFESIONAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDOR.cs" />
     <Compile Include="SOLICITUD_PEDIDO.cs" />

@@ -11,11 +11,15 @@ namespace MODELO
         public int ID_TURNO { get; set; }
         public string DIA { get; set; }
         public int HORA_TURNO { get; set; }
-        public USUARIO PACIENTE { get; set; }
+
+        //COLOCAR EL ID DE LA TABLA PACIENTE
+        public PACIENTE PACIENTE { get; set; }
         public PLAN PLAN { get; set; }
         public OBRA_SOCIAL OBRA_SOCIAL { get; set; }          
         public ESPECIALIDAD ESPECIALIDAD { get; set; }
-        public USUARIO PROFESIONAL { get; set; }
+
+        //COLOCAR EL ID DE LA TABLA PROFESIONAL
+        public PROFESIONAL PROFESIONAL { get; set; }
         public DateTime FECHA { get; set; }
         public string ESTADO { get; set; }
         public string TIPO { get; set; }

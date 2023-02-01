@@ -65,6 +65,10 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.ACCIONES_GRUPOS> ACCIONES_GRUPOS { get; set; }
 
+        public virtual DbSet<MODELO.PROFESIONAL> PROFESIONALES { get; set; }
+
+        public virtual DbSet<MODELO.PACIENTE> PACIENTES { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -99,6 +103,10 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_ACCIONES);
             modelBuilder.Entity<MODELO.ACCIONES_GRUPOS>()
                 .HasKey(c => c.ID_ACCION_GRUPO);
+            modelBuilder.Entity<MODELO.PROFESIONAL>()
+                .HasKey(c => c.ID_PROFESIONAL);
+            modelBuilder.Entity<MODELO.PACIENTE>()
+                .HasKey(c => c.ID_PACIENTE);
         }
     }
 

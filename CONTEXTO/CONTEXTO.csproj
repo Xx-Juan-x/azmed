@@ -298,6 +298,14 @@
     <Compile Include="Migrations\202302011501147_CORRECCION_ATRIBUTO_GRUPO.designer.cs">
       <DependentUpon>202302011501147_CORRECCION_ATRIBUTO_GRUPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302011648289_ELIMINO_REFERENCIA_ATENCION_TURNO.cs" />
+    <Compile Include="Migrations\202302011648289_ELIMINO_REFERENCIA_ATENCION_TURNO.designer.cs">
+      <DependentUpon>202302011648289_ELIMINO_REFERENCIA_ATENCION_TURNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.cs" />
+    <Compile Include="Migrations\202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.designer.cs">
+      <DependentUpon>202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -497,6 +505,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302011501147_CORRECCION_ATRIBUTO_GRUPO.resx">
       <DependentUpon>202302011501147_CORRECCION_ATRIBUTO_GRUPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302011648289_ELIMINO_REFERENCIA_ATENCION_TURNO.resx">
+      <DependentUpon>202302011648289_ELIMINO_REFERENCIA_ATENCION_TURNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.resx">
+      <DependentUpon>202302011702560_AGREGO_TABLAS_PACIENTE_PROFESIONAL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
