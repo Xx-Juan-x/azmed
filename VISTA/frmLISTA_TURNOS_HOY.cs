@@ -44,8 +44,9 @@ namespace VISTA
             DateTime DIA_ACTUAL = DateTime.Now;
 
                 var LISTA_TURNOS_PACIENTE_HOY = (from a in cTURNOS.OBTENER_TURNOS()
-                                             where a.PROFESIONAL.ID_USUARIO == frmLOGIN.ID_USUARIO
-                                             && (a.FECHA.Date == DIA_ACTUAL.Date)
+                                             where
+                                             //a.PROFESIONAL.ID_PROFESIONAL == frmLOGIN.ID_USUARIO &&
+                                             (a.FECHA.Date == DIA_ACTUAL.Date)
                                              select a).ToList();
 
                 dgvLISTA_TURNOS_HOY.DataSource = null;

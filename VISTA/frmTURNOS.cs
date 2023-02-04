@@ -427,7 +427,7 @@ namespace VISTA
             if (rbCONSULTA.Checked == true)
             {
                 double PRECIO = 0;
-                PRECIO = IMPORTE_CONSULTA - (IMPORTE_CONSULTA * (frmLOGIN.DESCUENTO_CONSULTA / 100));
+                PRECIO = IMPORTE_CONSULTA - (IMPORTE_CONSULTA /* * (frmLOGIN.DESCUENTO_CONSULTA* / 100)*/);
                 txtPRECIO.Text = PRECIO.ToString();
             }
         }
@@ -437,7 +437,7 @@ namespace VISTA
             if (rbESTUDIO.Checked == true)
             {
                 double PRECIO = 0;
-                PRECIO = IMPORTE_ESTUDIO - (IMPORTE_ESTUDIO * (frmLOGIN.DESCUENTO_ESTUDIO / 100));
+                PRECIO = IMPORTE_ESTUDIO - (IMPORTE_ESTUDIO /* * (frmLOGIN.DESCUENTO_ESTUDIO / 100)*/);
                 txtPRECIO.Text = PRECIO.ToString();
             }
         }
