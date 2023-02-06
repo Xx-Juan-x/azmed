@@ -34,14 +34,15 @@ namespace VISTA
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnStripMENU_CLINICA = new System.Windows.Forms.MenuStrip();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pACIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarObraSocialYPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROFESIONALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarProfesionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProfesionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarAtenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horariosLaboralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tURNOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
-            this.gestionarGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -100,11 +100,18 @@ namespace VISTA
             this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
             // 
+            // gestionarGruposToolStripMenuItem
+            // 
+            this.gestionarGruposToolStripMenuItem.Name = "gestionarGruposToolStripMenuItem";
+            this.gestionarGruposToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarGruposToolStripMenuItem.Text = "Gestionar Grupos";
+            this.gestionarGruposToolStripMenuItem.Click += new System.EventHandler(this.gestionarGruposToolStripMenuItem_Click);
+            // 
             // crearUsuariosToolStripMenuItem
             // 
             this.crearUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
-            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.crearUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
             this.crearUsuariosToolStripMenuItem.Click += new System.EventHandler(this.crearUsuariosToolStripMenuItem_Click);
             // 
@@ -113,7 +120,7 @@ namespace VISTA
             this.pACIENTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarObrasSocialesToolStripMenuItem,
             this.registrarPlanesToolStripMenuItem,
-            this.asignarObraSocialYPlanToolStripMenuItem});
+            this.registrarPacientesToolStripMenuItem});
             this.pACIENTESToolStripMenuItem.Name = "pACIENTESToolStripMenuItem";
             this.pACIENTESToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.pACIENTESToolStripMenuItem.Text = "PACIENTES";
@@ -121,29 +128,29 @@ namespace VISTA
             // registrarObrasSocialesToolStripMenuItem
             // 
             this.registrarObrasSocialesToolStripMenuItem.Name = "registrarObrasSocialesToolStripMenuItem";
-            this.registrarObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registrarObrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registrarObrasSocialesToolStripMenuItem.Text = "Registrar Obras Sociales";
             this.registrarObrasSocialesToolStripMenuItem.Click += new System.EventHandler(this.registrarObrasSocialesToolStripMenuItem_Click);
             // 
             // registrarPlanesToolStripMenuItem
             // 
             this.registrarPlanesToolStripMenuItem.Name = "registrarPlanesToolStripMenuItem";
-            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registrarPlanesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registrarPlanesToolStripMenuItem.Text = "Registrar Planes";
             this.registrarPlanesToolStripMenuItem.Click += new System.EventHandler(this.registrarPlanesToolStripMenuItem_Click);
             // 
-            // asignarObraSocialYPlanToolStripMenuItem
+            // registrarPacientesToolStripMenuItem
             // 
-            this.asignarObraSocialYPlanToolStripMenuItem.Name = "asignarObraSocialYPlanToolStripMenuItem";
-            this.asignarObraSocialYPlanToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.asignarObraSocialYPlanToolStripMenuItem.Text = "Asignar Obra Social y Plan";
-            this.asignarObraSocialYPlanToolStripMenuItem.Click += new System.EventHandler(this.asignarObraSocialYPlanToolStripMenuItem_Click);
+            this.registrarPacientesToolStripMenuItem.Name = "registrarPacientesToolStripMenuItem";
+            this.registrarPacientesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarPacientesToolStripMenuItem.Text = "Registrar Pacientes";
+            this.registrarPacientesToolStripMenuItem.Click += new System.EventHandler(this.registrarPacientesToolStripMenuItem_Click);
             // 
             // pROFESIONALESToolStripMenuItem
             // 
             this.pROFESIONALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarEspecialidadesToolStripMenuItem,
-            this.asignarProfesionalToolStripMenuItem,
+            this.registrarProfesionalesToolStripMenuItem,
             this.gestionarAtenciónToolStripMenuItem,
             this.horariosLaboralesToolStripMenuItem});
             this.pROFESIONALESToolStripMenuItem.Name = "pROFESIONALESToolStripMenuItem";
@@ -157,12 +164,12 @@ namespace VISTA
             this.registrarEspecialidadesToolStripMenuItem.Text = "Registrar Especialidades";
             this.registrarEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.registrarEspecialidadesToolStripMenuItem_Click);
             // 
-            // asignarProfesionalToolStripMenuItem
+            // registrarProfesionalesToolStripMenuItem
             // 
-            this.asignarProfesionalToolStripMenuItem.Name = "asignarProfesionalToolStripMenuItem";
-            this.asignarProfesionalToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.asignarProfesionalToolStripMenuItem.Text = "Asignar Especialidad";
-            this.asignarProfesionalToolStripMenuItem.Click += new System.EventHandler(this.asignarProfesionalToolStripMenuItem_Click);
+            this.registrarProfesionalesToolStripMenuItem.Name = "registrarProfesionalesToolStripMenuItem";
+            this.registrarProfesionalesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registrarProfesionalesToolStripMenuItem.Text = "Registrar Profesionales";
+            this.registrarProfesionalesToolStripMenuItem.Click += new System.EventHandler(this.registrarProfesionalesToolStripMenuItem_Click);
             // 
             // gestionarAtenciónToolStripMenuItem
             // 
@@ -409,13 +416,6 @@ namespace VISTA
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
             // 
-            // gestionarGruposToolStripMenuItem
-            // 
-            this.gestionarGruposToolStripMenuItem.Name = "gestionarGruposToolStripMenuItem";
-            this.gestionarGruposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarGruposToolStripMenuItem.Text = "Gestionar Grupos";
-            this.gestionarGruposToolStripMenuItem.Click += new System.EventHandler(this.gestionarGruposToolStripMenuItem_Click);
-            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,13 +462,11 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem consultaYReportesDeTurnosSolicitadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeComprasRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SolicitarTurnoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarProfesionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarAtenciónToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private System.Windows.Forms.Label lblTIPO_USUARIO;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
         private System.Windows.Forms.PictureBox picIMAGEN_CLINICA;
-        private System.Windows.Forms.ToolStripMenuItem asignarObraSocialYPlanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem horariosLaboralesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDeTurnosExportarToolStripMenuItem;
@@ -478,5 +476,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem turnosDeHoyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarGruposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarPacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProfesionalesToolStripMenuItem;
     }
 }

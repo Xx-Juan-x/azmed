@@ -143,7 +143,7 @@ namespace VISTA
                                        select c).ToList();
 
             cmbPROFESIONALES.DataSource = LISTA_PROFESIONALES;
-            cmbPROFESIONALES.ValueMember = "ID_USUARIO";
+            cmbPROFESIONALES.ValueMember = "ID_PROFESIONAL";
             cmbPROFESIONALES.DisplayMember = "NOMBRE" + "APELLIDO";
         }
 

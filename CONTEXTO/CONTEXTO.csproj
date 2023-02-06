@@ -310,6 +310,10 @@
     <Compile Include="Migrations\202302011856035_CAMBIOS_ARREGLOS.designer.cs">
       <DependentUpon>202302011856035_CAMBIOS_ARREGLOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302050945489_CAMBIO_ATRIBUTO_PACIENTE.cs" />
+    <Compile Include="Migrations\202302050945489_CAMBIO_ATRIBUTO_PACIENTE.designer.cs">
+      <DependentUpon>202302050945489_CAMBIO_ATRIBUTO_PACIENTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -518,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302011856035_CAMBIOS_ARREGLOS.resx">
       <DependentUpon>202302011856035_CAMBIOS_ARREGLOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302050945489_CAMBIO_ATRIBUTO_PACIENTE.resx">
+      <DependentUpon>202302050945489_CAMBIO_ATRIBUTO_PACIENTE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

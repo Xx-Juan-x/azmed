@@ -120,12 +120,6 @@ namespace VISTA
             dgvLISTA_SOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS();
         }
 
-        private void asignarProfesionalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmASIGNAR_ESPECIALIDAD FORMULARIO_ASIGNAR_ESPECIALIDAD = frmASIGNAR_ESPECIALIDAD.OBTENER_INSTANCIA();
-            FORMULARIO_ASIGNAR_ESPECIALIDAD.Show();
-        }
-
         private void gestionarAtenciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmATENCION FORMULARIO_GESTIONAR_ATENCIONES = frmATENCION.OBTENER_INSTANCIA();
@@ -143,12 +137,6 @@ namespace VISTA
         {
             frmTURNOS FORMULARIO_TURNOS_CONSULTA = frmTURNOS.OBTENER_INSTANCIA();
             FORMULARIO_TURNOS_CONSULTA.Show();
-        }
-
-        private void asignarObraSocialYPlanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmASIGNAR_PLAN_OBRA_SOCIAL FORMULARIO_ASIGNAR_PLAN_OBRA_SOCIAL = frmASIGNAR_PLAN_OBRA_SOCIAL.OBTENER_INSTANCIA();
-            FORMULARIO_ASIGNAR_PLAN_OBRA_SOCIAL.Show();
         }
 
         private void horariosLaboralesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -239,6 +227,18 @@ namespace VISTA
         {
             frmGRUPO FORMULARIO_GRUPO = frmGRUPO.OBTENER_INSTANCIA();
             FORMULARIO_GRUPO.Show();
+        }
+
+        private void registrarPacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPACIENTES FORMULARIO_PACIENTE = frmPACIENTES.OBTENER_INSTANCIA();
+            FORMULARIO_PACIENTE.Show();
+        }
+
+        private void registrarProfesionalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPROFESIONALES FORMULARIO_PROFESIONAL = frmPROFESIONALES.OBTENER_INSTANCIA();
+            FORMULARIO_PROFESIONAL.Show();
         }
     }
 }

@@ -37,7 +37,6 @@ namespace VISTA
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.linklblREGISTRARSE = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label4
@@ -59,7 +58,7 @@ namespace VISTA
             this.btnINGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnINGRESAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnINGRESAR.ForeColor = System.Drawing.Color.White;
-            this.btnINGRESAR.Location = new System.Drawing.Point(43, 233);
+            this.btnINGRESAR.Location = new System.Drawing.Point(39, 216);
             this.btnINGRESAR.Name = "btnINGRESAR";
             this.btnINGRESAR.Size = new System.Drawing.Size(221, 32);
             this.btnINGRESAR.TabIndex = 924;
@@ -74,7 +73,7 @@ namespace VISTA
             this.btnSALIR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSALIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSALIR.ForeColor = System.Drawing.Color.White;
-            this.btnSALIR.Location = new System.Drawing.Point(43, 271);
+            this.btnSALIR.Location = new System.Drawing.Point(39, 254);
             this.btnSALIR.Name = "btnSALIR";
             this.btnSALIR.Size = new System.Drawing.Size(221, 32);
             this.btnSALIR.TabIndex = 925;
@@ -132,26 +131,12 @@ namespace VISTA
             this.label1.TabIndex = 922;
             this.label1.Text = "Email";
             // 
-            // linklblREGISTRARSE
-            // 
-            this.linklblREGISTRARSE.AutoSize = true;
-            this.linklblREGISTRARSE.ForeColor = System.Drawing.Color.White;
-            this.linklblREGISTRARSE.LinkColor = System.Drawing.Color.White;
-            this.linklblREGISTRARSE.Location = new System.Drawing.Point(103, 205);
-            this.linklblREGISTRARSE.Name = "linklblREGISTRARSE";
-            this.linklblREGISTRARSE.Size = new System.Drawing.Size(96, 13);
-            this.linklblREGISTRARSE.TabIndex = 928;
-            this.linklblREGISTRARSE.TabStop = true;
-            this.linklblREGISTRARSE.Text = "¿REGISTRARSE?";
-            this.linklblREGISTRARSE.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblREGISTRARSE_LinkClicked);
-            // 
             // frmLOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(304, 309);
-            this.Controls.Add(this.linklblREGISTRARSE);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnINGRESAR);
             this.Controls.Add(this.btnSALIR);
@@ -178,6 +163,5 @@ namespace VISTA
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linklblREGISTRARSE;
     }
 }
