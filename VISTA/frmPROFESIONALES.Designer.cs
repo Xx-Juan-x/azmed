@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_PROFESIONAL = new System.Windows.Forms.GroupBox();
             this.txtEMAIL = new System.Windows.Forms.TextBox();
             this.lblEMAIL = new System.Windows.Forms.Label();
@@ -40,8 +40,8 @@ namespace VISTA
             this.cmbESPECIALIDAD = new System.Windows.Forms.ComboBox();
             this.lblESPECIALIDAD = new System.Windows.Forms.Label();
             this.lblAPELLIDO = new System.Windows.Forms.Label();
-            this.txtTELEFONO = new System.Windows.Forms.TextBox();
-            this.lblTELEFONO = new System.Windows.Forms.Label();
+            this.txtCONTACTO = new System.Windows.Forms.TextBox();
+            this.lblCONTACTO = new System.Windows.Forms.Label();
             this.txtAPELLIDO = new System.Windows.Forms.TextBox();
             this.btnCANCELAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
@@ -71,8 +71,8 @@ namespace VISTA
             this.gbDATOS_PROFESIONAL.Controls.Add(this.cmbESPECIALIDAD);
             this.gbDATOS_PROFESIONAL.Controls.Add(this.lblESPECIALIDAD);
             this.gbDATOS_PROFESIONAL.Controls.Add(this.lblAPELLIDO);
-            this.gbDATOS_PROFESIONAL.Controls.Add(this.txtTELEFONO);
-            this.gbDATOS_PROFESIONAL.Controls.Add(this.lblTELEFONO);
+            this.gbDATOS_PROFESIONAL.Controls.Add(this.txtCONTACTO);
+            this.gbDATOS_PROFESIONAL.Controls.Add(this.lblCONTACTO);
             this.gbDATOS_PROFESIONAL.Controls.Add(this.txtAPELLIDO);
             this.gbDATOS_PROFESIONAL.Controls.Add(this.btnCANCELAR);
             this.gbDATOS_PROFESIONAL.Controls.Add(this.btnGUARDAR);
@@ -88,7 +88,6 @@ namespace VISTA
             // 
             this.txtEMAIL.Location = new System.Drawing.Point(99, 205);
             this.txtEMAIL.Name = "txtEMAIL";
-            this.txtEMAIL.PasswordChar = '*';
             this.txtEMAIL.Size = new System.Drawing.Size(159, 20);
             this.txtEMAIL.TabIndex = 75;
             // 
@@ -145,22 +144,21 @@ namespace VISTA
             this.lblAPELLIDO.TabIndex = 66;
             this.lblAPELLIDO.Text = "APELLIDO:";
             // 
-            // txtTELEFONO
+            // txtCONTACTO
             // 
-            this.txtTELEFONO.Location = new System.Drawing.Point(99, 144);
-            this.txtTELEFONO.Name = "txtTELEFONO";
-            this.txtTELEFONO.PasswordChar = '*';
-            this.txtTELEFONO.Size = new System.Drawing.Size(159, 20);
-            this.txtTELEFONO.TabIndex = 71;
+            this.txtCONTACTO.Location = new System.Drawing.Point(99, 144);
+            this.txtCONTACTO.Name = "txtCONTACTO";
+            this.txtCONTACTO.Size = new System.Drawing.Size(159, 20);
+            this.txtCONTACTO.TabIndex = 71;
             // 
-            // lblTELEFONO
+            // lblCONTACTO
             // 
-            this.lblTELEFONO.AutoSize = true;
-            this.lblTELEFONO.Location = new System.Drawing.Point(9, 147);
-            this.lblTELEFONO.Name = "lblTELEFONO";
-            this.lblTELEFONO.Size = new System.Drawing.Size(67, 13);
-            this.lblTELEFONO.TabIndex = 67;
-            this.lblTELEFONO.Text = "TELEFONO:";
+            this.lblCONTACTO.AutoSize = true;
+            this.lblCONTACTO.Location = new System.Drawing.Point(9, 147);
+            this.lblCONTACTO.Name = "lblCONTACTO";
+            this.lblCONTACTO.Size = new System.Drawing.Size(69, 13);
+            this.lblCONTACTO.TabIndex = 67;
+            this.lblCONTACTO.Text = "CONTACTO:";
             // 
             // txtAPELLIDO
             // 
@@ -184,6 +182,7 @@ namespace VISTA
             this.btnCANCELAR.TabIndex = 7;
             this.btnCANCELAR.Text = "Cancelar";
             this.btnCANCELAR.UseVisualStyleBackColor = false;
+            this.btnCANCELAR.Click += new System.EventHandler(this.btnCANCELAR_Click);
             // 
             // btnGUARDAR
             // 
@@ -200,6 +199,7 @@ namespace VISTA
             this.btnGUARDAR.TabIndex = 1;
             this.btnGUARDAR.Text = "Guardar";
             this.btnGUARDAR.UseVisualStyleBackColor = false;
+            this.btnGUARDAR.Click += new System.EventHandler(this.btnGUARDAR_Click);
             // 
             // gbLISTA_PROFESIONALES
             // 
@@ -239,6 +239,7 @@ namespace VISTA
             this.btnRECUPERAR.TabIndex = 77;
             this.btnRECUPERAR.Text = "Recuperar";
             this.btnRECUPERAR.UseVisualStyleBackColor = false;
+            this.btnRECUPERAR.Click += new System.EventHandler(this.btnRECUPERAR_Click);
             // 
             // btnBUSCAR
             // 
@@ -254,6 +255,7 @@ namespace VISTA
             this.btnBUSCAR.TabIndex = 76;
             this.btnBUSCAR.Text = "Buscar";
             this.btnBUSCAR.UseVisualStyleBackColor = false;
+            this.btnBUSCAR.Click += new System.EventHandler(this.btnBUSCAR_Click);
             // 
             // lblFILTRO_GRUPO
             // 
@@ -290,6 +292,7 @@ namespace VISTA
             this.btnCERRAR.TabIndex = 16;
             this.btnCERRAR.Text = "Cerrar";
             this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
             // btnELIMINAR
             // 
@@ -305,6 +308,7 @@ namespace VISTA
             this.btnELIMINAR.TabIndex = 15;
             this.btnELIMINAR.Text = "Eliminar";
             this.btnELIMINAR.UseVisualStyleBackColor = false;
+            this.btnELIMINAR.Click += new System.EventHandler(this.btnELIMINAR_Click);
             // 
             // btnCONSULTAR
             // 
@@ -320,6 +324,7 @@ namespace VISTA
             this.btnCONSULTAR.TabIndex = 14;
             this.btnCONSULTAR.Text = "Consultar";
             this.btnCONSULTAR.UseVisualStyleBackColor = false;
+            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
             // 
             // btnMODIFICAR
             // 
@@ -335,6 +340,7 @@ namespace VISTA
             this.btnMODIFICAR.TabIndex = 13;
             this.btnMODIFICAR.Text = "Modificar";
             this.btnMODIFICAR.UseVisualStyleBackColor = false;
+            this.btnMODIFICAR.Click += new System.EventHandler(this.btnMODIFICAR_Click);
             // 
             // btnAGREGAR
             // 
@@ -350,6 +356,7 @@ namespace VISTA
             this.btnAGREGAR.TabIndex = 11;
             this.btnAGREGAR.Text = "Agregar";
             this.btnAGREGAR.UseVisualStyleBackColor = false;
+            this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
             // 
             // dgvLISTA_PROFESIONALES
             // 
@@ -365,36 +372,36 @@ namespace VISTA
             this.dgvLISTA_PROFESIONALES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_PROFESIONALES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_PROFESIONALES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_PROFESIONALES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_PROFESIONALES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvLISTA_PROFESIONALES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_PROFESIONALES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_PROFESIONALES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_PROFESIONALES.Location = new System.Drawing.Point(6, 61);
             this.dgvLISTA_PROFESIONALES.Name = "dgvLISTA_PROFESIONALES";
             this.dgvLISTA_PROFESIONALES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_PROFESIONALES.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_PROFESIONALES.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvLISTA_PROFESIONALES.RowHeadersVisible = false;
             this.dgvLISTA_PROFESIONALES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_PROFESIONALES.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_PROFESIONALES.RowsDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvLISTA_PROFESIONALES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_PROFESIONALES.Size = new System.Drawing.Size(740, 314);
             this.dgvLISTA_PROFESIONALES.TabIndex = 0;
@@ -430,8 +437,8 @@ namespace VISTA
         private System.Windows.Forms.ComboBox cmbESPECIALIDAD;
         private System.Windows.Forms.Label lblESPECIALIDAD;
         private System.Windows.Forms.Label lblAPELLIDO;
-        private System.Windows.Forms.TextBox txtTELEFONO;
-        private System.Windows.Forms.Label lblTELEFONO;
+        private System.Windows.Forms.TextBox txtCONTACTO;
+        private System.Windows.Forms.Label lblCONTACTO;
         private System.Windows.Forms.TextBox txtAPELLIDO;
         private System.Windows.Forms.Button btnCANCELAR;
         private System.Windows.Forms.Button btnGUARDAR;

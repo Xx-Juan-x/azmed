@@ -314,6 +314,10 @@
     <Compile Include="Migrations\202302050945489_CAMBIO_ATRIBUTO_PACIENTE.designer.cs">
       <DependentUpon>202302050945489_CAMBIO_ATRIBUTO_PACIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.cs" />
+    <Compile Include="Migrations\202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.designer.cs">
+      <DependentUpon>202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -525,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302050945489_CAMBIO_ATRIBUTO_PACIENTE.resx">
       <DependentUpon>202302050945489_CAMBIO_ATRIBUTO_PACIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.resx">
+      <DependentUpon>202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

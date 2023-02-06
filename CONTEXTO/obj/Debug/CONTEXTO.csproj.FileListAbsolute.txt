@@ -238,3 +238,4 @@ C:\Users\emanu\OneDrive\Escritorio\azmed\CONTEXTO\obj\Debug\CONTEXTO.csproj.Copy
 C:\Users\emanu\OneDrive\Escritorio\azmed\CONTEXTO\obj\Debug\CONTEXTO.dll
 C:\Users\emanu\OneDrive\Escritorio\azmed\CONTEXTO\obj\Debug\CONTEXTO.pdb
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.CAMBIO_ATRIBUTO_PACIENTE.resources
+C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\CONTEXTO\obj\Debug\CONTEXTO.Migrations.CAMBIO_ATRIBUTO_PROFESIONAL.resources

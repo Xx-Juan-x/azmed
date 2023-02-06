@@ -11,7 +11,7 @@ namespace MODELO
         public int ID_PROFESIONAL { get; set; }
         public string NOMBRE { get; set; }
         public string APELLIDO { get; set; }
-        public string TELEFONO { get; set; }
+        public Int64 CONTACTO { get; set; }
         public string EMAIL { get; set; }
         public ESPECIALIDAD ESPECIALIDAD { get; set; }
         public DateTime FECHA { get; set; }
