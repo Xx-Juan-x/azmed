@@ -39,7 +39,7 @@ namespace VISTA
             public dynamic MOSTRAR()
             {
                 var LISTA_TURNOS_PACIENTE = (from a in cTURNOS.OBTENER_TURNOS()
-                                             where a.PACIENTE.ID_PACIENTE == frmLOGIN.ID_USUARIO
+                                             where a.PACIENTE != null
                                              && (a.FECHA < DIA_ACTUAL)
                                              || (a.FECHA == DIA_ACTUAL && a.HORA_TURNO < HORA_ACTUAL_INT)
                                              select a).ToList();
