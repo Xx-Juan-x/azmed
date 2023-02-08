@@ -217,3 +217,5 @@ C:\Users\emanu\OneDrive\Escritorio\azmed\VISTA\bin\Debug\CASOS_DE_USO.dll.config
 C:\Users\emanu\OneDrive\Escritorio\azmed\VISTA\obj\Debug\VISTA.csproj.CopyComplete
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmPROFESIONALES.resources
 C:\Users\Juan\OneDrive\Escritorio\AZMED\azmed\VISTA\obj\Debug\VISTA.frmPACIENTES.resources
+C:\Users\emanu\OneDrive\Escritorio\azmed\VISTA\obj\Debug\VISTA.frmPROFESIONALES.resources
+C:\Users\emanu\OneDrive\Escritorio\azmed\VISTA\obj\Debug\VISTA.frmPACIENTES.resources

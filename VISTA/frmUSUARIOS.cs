@@ -51,24 +51,26 @@ namespace VISTA
             //CODIGO PARA LA TABLA PACIENTE Y PROFESIONAL
             /*cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();*/
-            
+
             ARMA_GRILLA("A");
             MODO_GRILLA();
 
             //NO VA
-            /*cmbGRUPO.Items.Add("SELECCIONE...");
+            /*
+            cmbGRUPO.Items.Add("SELECCIONE...");
             cmbGRUPO.SelectedItem = "SELECCIONE...";
             cmbGRUPO.Items.Add("ADMINISTRADOR");
             cmbGRUPO.Items.Add("PACIENTE");
             cmbGRUPO.Items.Add("PROFESIONAL");
             cmbGRUPO.Items.Add("JEFE DE COMPRAS");
-
+            */
             cmbFILTRO_GRUPO.Items.Add("TODOS");
             cmbFILTRO_GRUPO.SelectedItem = "TODOS";
-            cmbFILTRO_GRUPO.Items.Add("ADMINISTRADOR");
-            cmbFILTRO_GRUPO.Items.Add("PACIENTE");
-            cmbFILTRO_GRUPO.Items.Add("PROFESIONAL");
-            cmbFILTRO_GRUPO.Items.Add("JEFE DE COMPRAS");*/
+            var grupos = (from g in cGRUPOS.OBTENER_GRUPOS() select g).ToList();
+            foreach (var gr in grupos)
+            {
+                cmbFILTRO_GRUPO.Items.Add(gr.NOMBRE);
+            }
         }
 
         private void ARMA_GRILLA(string TIPO)
@@ -76,7 +78,8 @@ namespace VISTA
             if (TIPO == "A")
             {
                 dgvLISTA_USUARIOS.DataSource = null;
-                dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS_TODOS();
+                dgvLISTA_USUARIOS.DataSource = (from a in cUSUARIOS.OBTENER_USUARIOS_TODOS()
+                                                select new { a.ID_USUARIO, a.EMAIL, a.NOMBRE, a.FECHA, a.ESTADO, GRUPO = a.GRUPO != null ? a.GRUPO.NOMBRE : "-" }).ToList();
             }
             if (TIPO == "B")
             {
@@ -85,18 +88,19 @@ namespace VISTA
                 if (FILTRO_TIPO_USUARIO == "TODOS")
                 {
                     dgvLISTA_USUARIOS.DataSource = null;
-                    dgvLISTA_USUARIOS.DataSource = cUSUARIOS.OBTENER_USUARIOS_TODOS();
+                    dgvLISTA_USUARIOS.DataSource = (from a in cUSUARIOS.OBTENER_USUARIOS_TODOS()
+                                                    select new { a.ID_USUARIO, a.EMAIL, a.NOMBRE, a.FECHA, a.ESTADO, GRUPO = a.GRUPO != null ? a.GRUPO.NOMBRE : "-" }).ToList();
                 }
                 else
                 {
                     var FILTRO_GRUPO_USUARIO = (from a in cUSUARIOS.OBTENER_USUARIOS_TODOS()
-                                       where a.GRUPO.NOMBRE == FILTRO_TIPO_USUARIO
-                                       select a).ToList();
+                                                where a.GRUPO != null && a.GRUPO.NOMBRE == FILTRO_TIPO_USUARIO
+                                                select new { a.ID_USUARIO, a.EMAIL, a.NOMBRE, a.FECHA, a.ESTADO, GRUPO = a.GRUPO != null ? a.GRUPO.NOMBRE : "-" }).ToList();
 
                     dgvLISTA_USUARIOS.DataSource = null;
                     dgvLISTA_USUARIOS.DataSource = FILTRO_GRUPO_USUARIO;
                 }
-            }           
+            }
 
             dgvLISTA_USUARIOS.AutoGenerateColumns = false;
             /*if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES") && dgvLISTA_USUARIOS.Columns.Contains("PLAN") && dgvLISTA_USUARIOS.Columns.Contains("OBRA_SOCIAL"))
@@ -104,7 +108,7 @@ namespace VISTA
                 dgvLISTA_USUARIOS.Columns.Remove("ESPECIALIDADES");
                 dgvLISTA_USUARIOS.Columns.Remove("PLAN");
                 dgvLISTA_USUARIOS.Columns.Remove("OBRA_SOCIAL");
-            }*/       
+            }*/
         }
 
         private void MODO_GRILLA()
@@ -153,7 +157,18 @@ namespace VISTA
         {
             oUSUARIO = new MODELO.USUARIO();
             ACCION = "A";
+
             cmbGRUPO.Enabled = true;
+            MODELO.GRUPO grupo_vacio = new MODELO.GRUPO();
+            grupo_vacio.NOMBRE = "Elegir un grupo";
+            cmbGRUPO.Items.Add(grupo_vacio);
+            cmbGRUPO.SelectedItem = grupo_vacio;
+            var grupos = (from g in cGRUPOS.OBTENER_GRUPOS() select g).ToList();
+            foreach (var gr in grupos)
+            {
+                cmbGRUPO.Items.Add(gr);
+            }
+
             MODO_DATOS();
         }
 
@@ -165,7 +180,7 @@ namespace VISTA
             {
                 MessageBox.Show("Debe ingresar el nombre del usuario para poder registrar el usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }       
+            }
 
             if (string.IsNullOrEmpty(txtEMAIL.Text))
             {
@@ -176,7 +191,7 @@ namespace VISTA
             {
                 MessageBox.Show("El mail es incorrecto", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }           
+            }
 
             if (string.IsNullOrWhiteSpace(txtPASSWORD.Text))
             {
@@ -220,9 +235,9 @@ namespace VISTA
                 if (ACCION == "A")
                 {
                     oUSUARIO.ESTADO = "ACTIVO";
-                    cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);              
+                    cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);
                 }
-                else if(ACCION == "M")
+                else if (ACCION == "M")
                 {
                     cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 }
@@ -234,13 +249,13 @@ namespace VISTA
                 cmbGRUPO.SelectedItem = "SELECCIONE...";
 
                 ARMA_GRILLA("B");
-                MODO_GRILLA();         
+                MODO_GRILLA();
             }
             else
             {
                 MessageBox.Show("Las contraseñas deben ser las mismas para registrar un nuevo usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }   
+            }
         }
 
         private void btnMODIFICAR_Click(object sender, EventArgs e)
@@ -364,8 +379,8 @@ namespace VISTA
             {
                 MessageBox.Show("Debe seleccionar un usuario de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }          
-                ARMA_GRILLA("B");          
+            }
+            ARMA_GRILLA("B");
         }
 
         private void txtNOMBRE_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -401,7 +416,7 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un usuario inactivo para poder activarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
@@ -423,6 +438,11 @@ namespace VISTA
                 ARMA_GRILLA("A");
             }
         }
+
+        private void cmbGRUPO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }
