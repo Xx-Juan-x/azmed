@@ -66,18 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmASIGNAR_ESPECIALIDAD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmASIGNAR_ESPECIALIDAD.Designer.cs">
-      <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmASIGNAR_PLAN_OBRA_SOCIAL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmASIGNAR_PLAN_OBRA_SOCIAL.Designer.cs">
-      <DependentUpon>frmASIGNAR_PLAN_OBRA_SOCIAL.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmATENCION.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,12 +218,6 @@
     <Compile Include="frmREPORTE_CANTIDAD_TURNOS.Designer.cs">
       <DependentUpon>frmREPORTE_CANTIDAD_TURNOS.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmASIGNAR_ESPECIALIDAD.resx">
-      <DependentUpon>frmASIGNAR_ESPECIALIDAD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmASIGNAR_PLAN_OBRA_SOCIAL.resx">
-      <DependentUpon>frmASIGNAR_PLAN_OBRA_SOCIAL.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmATENCION.resx">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>
