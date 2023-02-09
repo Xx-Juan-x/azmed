@@ -277,7 +277,6 @@ namespace VISTA
             this.cmbFILTRO_ESPECIALIDAD.Name = "cmbFILTRO_ESPECIALIDAD";
             this.cmbFILTRO_ESPECIALIDAD.Size = new System.Drawing.Size(159, 21);
             this.cmbFILTRO_ESPECIALIDAD.TabIndex = 70;
-            this.cmbFILTRO_ESPECIALIDAD.SelectedIndexChanged += new System.EventHandler(this.cmbFILTRO_ESPECIALIDAD_SelectedIndexChanged);
             // 
             // btnCERRAR
             // 

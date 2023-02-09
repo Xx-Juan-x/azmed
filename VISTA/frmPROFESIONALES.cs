@@ -44,7 +44,7 @@ namespace VISTA
             cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
 
-            
+            ARMA_COMBOBOX_ESPECIALIDAD();
             ARMA_GRILLA("A");
             MODO_GRILLA();
         }
@@ -107,6 +107,12 @@ namespace VISTA
             {
                 btnGUARDAR.Enabled = true;
             }
+        }
+        private void ARMA_COMBOBOX_ESPECIALIDAD()
+        {
+            cmbESPECIALIDAD.DataSource = null;
+            cmbESPECIALIDAD.Items.Add("SELECCIONE...");
+            cmbESPECIALIDAD.SelectedItem = "SELECCIONE...";
         }
 
         private Boolean EMAIL_BIEN_ESCRITO(String email)
@@ -351,12 +357,8 @@ namespace VISTA
             txtCONTACTO.Clear();
             txtEMAIL.Clear();
 
+            ARMA_COMBOBOX_ESPECIALIDAD();
             MODO_GRILLA();
-        }
-
-        private void cmbFILTRO_ESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

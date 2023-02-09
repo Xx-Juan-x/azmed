@@ -47,15 +47,6 @@ namespace VISTA
                                         select a).ToList();
 
             dgvLISTA_HORARIOS_LABORALES.DataSource = LISTA_HORARIOS_LABORALES;
-
-            dgvLISTA_HORARIOS_LABORALES.AutoGenerateColumns = false;
-            
-            if (dgvLISTA_HORARIOS_LABORALES.Columns.Contains("ID_ATENCION") && dgvLISTA_HORARIOS_LABORALES.Columns.Contains("ESPECIALIDAD") && dgvLISTA_HORARIOS_LABORALES.Columns.Contains("PROFESIONAL"))
-            {
-                dgvLISTA_HORARIOS_LABORALES.Columns.Remove("ID_ATENCION");
-                dgvLISTA_HORARIOS_LABORALES.Columns.Remove("ESPECIALIDAD");
-                dgvLISTA_HORARIOS_LABORALES.Columns.Remove("PROFESIONAL");
-            }
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)

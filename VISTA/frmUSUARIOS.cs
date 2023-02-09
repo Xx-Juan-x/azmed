@@ -54,6 +54,7 @@ namespace VISTA
 
             ARMA_GRILLA("A");
             MODO_GRILLA();
+            ARMA_COMBOBOX_GRUPO();
 
             cmbFILTRO_GRUPO.Items.Add("TODOS");
             cmbFILTRO_GRUPO.SelectedItem = "TODOS";
@@ -92,14 +93,6 @@ namespace VISTA
                     dgvLISTA_USUARIOS.DataSource = FILTRO_GRUPO_USUARIO;
                 }
             }
-
-            dgvLISTA_USUARIOS.AutoGenerateColumns = false;
-            /*if (dgvLISTA_USUARIOS.Columns.Contains("ESPECIALIDADES") && dgvLISTA_USUARIOS.Columns.Contains("PLAN") && dgvLISTA_USUARIOS.Columns.Contains("OBRA_SOCIAL"))
-            {
-                dgvLISTA_USUARIOS.Columns.Remove("ESPECIALIDADES");
-                dgvLISTA_USUARIOS.Columns.Remove("PLAN");
-                dgvLISTA_USUARIOS.Columns.Remove("OBRA_SOCIAL");
-            }*/
         }
 
         private void MODO_GRILLA()
@@ -121,6 +114,13 @@ namespace VISTA
             {
                 btnGUARDAR.Enabled = true;
             }
+        }
+
+        private void ARMA_COMBOBOX_GRUPO()
+        {
+            cmbGRUPO.DataSource = null;
+            cmbGRUPO.Items.Add("SELECCIONE...");
+            cmbGRUPO.SelectedItem = "SELECCIONE...";
         }
 
         private Boolean EMAIL_BIEN_ESCRITO(String email)
@@ -152,16 +152,6 @@ namespace VISTA
             cmbGRUPO.ValueMember = "ID_GRUPO";
             cmbGRUPO.DisplayMember = "NOMBRE";
             cmbGRUPO.DataSource = cGRUPOS.OBTENER_GRUPOS();
-
-            /*MODELO.GRUPO grupo_vacio = new MODELO.GRUPO();
-            grupo_vacio.NOMBRE = "Elegir un grupo";
-            cmbGRUPO.Items.Add(grupo_vacio);
-            cmbGRUPO.SelectedItem = grupo_vacio;
-            var grupos = (from g in cGRUPOS.OBTENER_GRUPOS() select g).ToList();
-            foreach (var gr in grupos)
-            {
-                cmbGRUPO.Items.Add(gr);
-            }*/
 
             MODO_DATOS();
         }
@@ -367,8 +357,9 @@ namespace VISTA
             txtEMAIL.Clear();
             txtPASSWORD.Clear();
             txtCONFIRMAR_PASSWORD.Clear();
-            cmbGRUPO.SelectedItem = "SELECCIONE...";
+
             MODO_GRILLA();
+            ARMA_COMBOBOX_GRUPO();
         }
 
         private void btnCERRAR_Click_1(object sender, EventArgs e)
@@ -387,16 +378,6 @@ namespace VISTA
         }
 
         private void txtNOMBRE_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
-            {
-                MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtAPELLIDO_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
@@ -427,11 +408,6 @@ namespace VISTA
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
             }
-        }
-
-        private void cmbGRUPO_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 

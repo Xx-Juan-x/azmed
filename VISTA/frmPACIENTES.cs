@@ -334,6 +334,7 @@ namespace VISTA
             txtEMAIL.Clear();
 
             MODO_GRILLA();
+            ARMA_COMBOBOX_OBRA_SOCIAL();
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)
