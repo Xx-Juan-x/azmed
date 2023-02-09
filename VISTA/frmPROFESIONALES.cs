@@ -55,12 +55,20 @@ namespace VISTA
             {
                 dgvLISTA_PROFESIONALES.DataSource = null;
                 dgvLISTA_PROFESIONALES.DataSource = cPROFESIONALES.OBTENER_PROFESIONALES();
-                cmbFILTRO_ESPECIALIDAD.DataSource = cESPECIALIDADES.OBTENER_ESPECIALIDADES();
+
+                List<MODELO.ESPECIALIDAD> especialidades = cESPECIALIDADES.OBTENER_ESPECIALIDADES();
+                MODELO.ESPECIALIDAD especial = new MODELO.ESPECIALIDAD();
+                especial.NOMBRE = "TODOS";
+                especial.ID_ESPECIALIDAD = 0;
+
+                especialidades.Insert(0,especial);
+                cmbFILTRO_ESPECIALIDAD.DataSource = especialidades;
+
+
             }
             if (TIPO == "B")
             {
                 string FILTRO_PROFESIONAL = cmbFILTRO_ESPECIALIDAD.Text;
-                cmbFILTRO_ESPECIALIDAD.DataSource = cESPECIALIDADES.OBTENER_ESPECIALIDADES();
 
                 if (FILTRO_PROFESIONAL == "TODOS")
                 {
@@ -344,6 +352,11 @@ namespace VISTA
             txtEMAIL.Clear();
 
             MODO_GRILLA();
+        }
+
+        private void cmbFILTRO_ESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
