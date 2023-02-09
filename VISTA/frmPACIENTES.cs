@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CONTROLADORA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,12 +54,17 @@ namespace VISTA
             {
                 dgvLISTA_PACIENTES.DataSource = null;
                 dgvLISTA_PACIENTES.DataSource = cPACIENTES.OBTENER_PACIENTES();
-                cmbFILTRO_OBRA_SOCIAL.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
+                List<MODELO.OBRA_SOCIAL> obras_sociales = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
+                MODELO.OBRA_SOCIAL obra = new MODELO.OBRA_SOCIAL();
+                obra.NOMBRE = "TODOS";
+                obra.ID_OBRA_SOCIAL = 0;
+
+                obras_sociales.Insert(0, obra);
+                cmbFILTRO_OBRA_SOCIAL.DataSource = obras_sociales;
             }
             if (TIPO == "B")
             {
                 string FILTRO_PACIENTE = cmbFILTRO_OBRA_SOCIAL.Text;
-                cmbFILTRO_OBRA_SOCIAL.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
 
                 if (FILTRO_PACIENTE == "SIN ASIGNAR")
                 {
@@ -363,6 +369,11 @@ namespace VISTA
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void cmbFILTRO_OBRA_SOCIAL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
