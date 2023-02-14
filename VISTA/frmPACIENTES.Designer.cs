@@ -286,7 +286,6 @@ namespace VISTA
             this.cmbFILTRO_OBRA_SOCIAL.Name = "cmbFILTRO_OBRA_SOCIAL";
             this.cmbFILTRO_OBRA_SOCIAL.Size = new System.Drawing.Size(168, 21);
             this.cmbFILTRO_OBRA_SOCIAL.TabIndex = 70;
-            this.cmbFILTRO_OBRA_SOCIAL.SelectedIndexChanged += new System.EventHandler(this.cmbFILTRO_OBRA_SOCIAL_SelectedIndexChanged);
             // 
             // btnCERRAR
             // 

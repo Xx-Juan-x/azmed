@@ -32,13 +32,17 @@ namespace VISTA
         private CONTROLADORA.PLANES cPLANES;
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private MODELO.PLAN oPLAN;
+        private MODELO.PACIENTE oPACIENTE;
+        private CONTROLADORA.PACIENTES cPACIENTES;
         string ACCION;
+        private string PLAN;
 
         public frmPLAN()
         {
             InitializeComponent();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
+            cPACIENTES = CONTROLADORA.PACIENTES.OBTENER_INSTANCIA();
 
             /*cmbPLANES.Items.Add("SELECCIONE...");
             cmbPLANES.SelectedItem = "SELECCIONE...";
@@ -205,13 +209,42 @@ namespace VISTA
             }
             oPLAN = (MODELO.PLAN)dgvLISTA_PLANES.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el plan " + oPLAN.NOMBRE + " de la lista de planes?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (RESPUESTA == DialogResult.Yes)
+            PLAN = "";
+            foreach (DataGridViewRow row in dgvLISTA_PLANES.SelectedRows)
             {
-                oPLAN.ESTADO = "INACTIVO";
-                cPLANES.MODIFICAR_PLAN(oPLAN);
-                ARMA_GRILLA();
+                PLAN = (string)row.Cells["NOMBRE"].Value;
             }
+
+            if (PLAN == "")
+            {
+                MessageBox.Show("Debe seleccionar la fila entera", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                var LISTA_PACIENTES = (from a in cPACIENTES.OBTENER_PACIENTES()
+                                    where a.PLAN.NOMBRE == PLAN && a.PLAN.NOMBRE == "SIN ASIGNAR"
+                                    select a).ToList();
+
+                if (LISTA_PACIENTES.Count == 0)
+                {
+                    DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el plan " + oPLAN.NOMBRE + " de la lista de planes?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (RESPUESTA == DialogResult.Yes)
+                    {
+                        oPLAN.ESTADO = "INACTIVO";
+                        oPACIENTE.PLAN.NOMBRE = "SIN ASIGNAR";
+                        cPACIENTES.MODIFICAR_PACIENTE(oPACIENTE);
+                        cPLANES.MODIFICAR_PLAN(oPLAN);
+                        ARMA_GRILLA();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El Plan ya cuenta con uno o mas pacientes, borre los pacientes vinculados a este plan antes de eliminarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
         }
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {

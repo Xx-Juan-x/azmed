@@ -66,7 +66,7 @@ namespace VISTA
             {
                 string FILTRO_PACIENTE = cmbFILTRO_OBRA_SOCIAL.Text;
 
-                if (FILTRO_PACIENTE == "SIN ASIGNAR")
+                if (FILTRO_PACIENTE == "TODOS")
                 {
                     dgvLISTA_PACIENTES.DataSource = null;
                     dgvLISTA_PACIENTES.DataSource = cPACIENTES.OBTENER_PACIENTES();
@@ -137,7 +137,7 @@ namespace VISTA
         {
             cmbPLAN.DataSource = null;
             var LISTA_PLANES = (from c in cPLANES.OBTENER_PLANES()
-                                where c.OBRA_SOCIAL.ID_OBRA_SOCIAL == ID_OBRA_SOCIAL
+                                where c.OBRA_SOCIAL.ID_OBRA_SOCIAL == ID_OBRA_SOCIAL && c.ESTADO != "INACTIVO"
                                 select c).ToList();
 
             cmbPLAN.DataSource = LISTA_PLANES;
@@ -204,13 +204,13 @@ namespace VISTA
                 return;
             }
 
-            if (cmbOBRA_SOCIAL.SelectedItem.ToString() == "SIN ASIGNAR" || cmbOBRA_SOCIAL.SelectedItem == null)
+            if (cmbOBRA_SOCIAL.SelectedItem == null)
             {
                 MessageBox.Show("Debe seleccionar una obra social para poder registrar el paciente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (cmbPLAN.SelectedItem.ToString() == "SIN ASIGNAR" || cmbPLAN.SelectedItem == null)
+            if (cmbPLAN.SelectedItem == null)
             {
                 MessageBox.Show("Debe seleccionar un plan para poder registrar el paciente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -370,11 +370,6 @@ namespace VISTA
                 e.Handled = true;
                 return;
             }
-        }
-
-        private void cmbFILTRO_OBRA_SOCIAL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
