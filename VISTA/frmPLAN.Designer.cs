@@ -125,7 +125,7 @@ namespace VISTA
             // lblOBRA_SOCIAL
             // 
             this.lblOBRA_SOCIAL.AutoSize = true;
-            this.lblOBRA_SOCIAL.Location = new System.Drawing.Point(3, 62);
+            this.lblOBRA_SOCIAL.Location = new System.Drawing.Point(9, 62);
             this.lblOBRA_SOCIAL.Name = "lblOBRA_SOCIAL";
             this.lblOBRA_SOCIAL.Size = new System.Drawing.Size(81, 13);
             this.lblOBRA_SOCIAL.TabIndex = 67;
