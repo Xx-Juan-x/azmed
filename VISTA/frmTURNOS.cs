@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MODELO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -57,7 +59,16 @@ namespace VISTA
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
             txtPRECIO.Enabled = false;
-
+            var lista_pacientes = cPACIENTES.OBTENER_PACIENTES().ToList();
+            List<COMBOBOX_PACIENTE> LISTA_CMB_PACIENTES = new List<COMBOBOX_PACIENTE>();
+            LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE("Seleccione...", -1));
+            cmbPACIENTE.DisplayMember = "CMB_TEXTO";
+            cmbPACIENTE.ValueMember = "CMB_VALOR";
+            foreach (var PACIENTE in lista_pacientes)
+            {
+                LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE(PACIENTE.NOMBRE + " " + PACIENTE.APELLIDO, PACIENTE.ID_PACIENTE));
+            }
+            cmbPACIENTE.DataSource = LISTA_CMB_PACIENTES;
             /*cmbDIA.Items.Add("SELECCIONE...");
             cmbDIA.SelectedItem = "SELECCIONE...";*/
             var hoy = DateTime.Today;//2022-03-07
@@ -295,7 +306,7 @@ namespace VISTA
 
         class COMBOBOX_PROFESIONAL
         {
-            public string CMB_TEXTO { get; set; }//EMA ROCA
+            public string CMB_TEXTO { get; set; }
             public int CMB_VALOR { get; set; }//11
             public COMBOBOX_PROFESIONAL(string T, int V)
             {
@@ -303,6 +314,17 @@ namespace VISTA
                 CMB_VALOR = V;
             }
         }
+        class COMBOBOX_PACIENTE
+        {
+            public string CMB_TEXTO { get; set; }
+            public int CMB_VALOR { get; set; }
+            public COMBOBOX_PACIENTE(string T, int V)
+            {
+                CMB_TEXTO = T;
+                CMB_VALOR = V;
+            }
+        }
+
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
         {
@@ -343,7 +365,7 @@ namespace VISTA
             MODELO.OBRA_SOCIAL SIN_OBRA_SOCIAL = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
 
             var PACIENTE = (from a in cPACIENTES.OBTENER_PACIENTES()
-                            where a.ID_PACIENTE == frmLOGIN.ID_USUARIO
+                            where a.ID_PACIENTE == Convert.ToInt32(cmbPACIENTE.SelectedValue)
                             select a).ToList();
             if (PACIENTE[0].PLAN.ESTADO == "INACTIVO")
             {
@@ -384,9 +406,7 @@ namespace VISTA
             oPROFESIONAL.ID_PROFESIONAL = VALOR_PROFESIONAL.CMB_VALOR;
             oTURNO.PROFESIONAL = oPROFESIONAL;
             oTURNO.FECHA = DIA_SELECCIONADO.DIA_VALOR;
-            oTURNO.PACIENTE = oPACIENTE;
-            oTURNO.OBRA_SOCIAL = oOBRA_SOCIAL;
-            oTURNO.PLAN = oPLAN;   
+            oTURNO.PACIENTE = oPACIENTE; 
             if (rbCONSULTA.Checked)
             {
                 oTURNO.TIPO = rbCONSULTA.Text;
@@ -427,7 +447,7 @@ namespace VISTA
             if (rbCONSULTA.Checked == true)
             {
                 double PRECIO = 0;
-                PRECIO = IMPORTE_CONSULTA - (IMPORTE_CONSULTA /* * (frmLOGIN.DESCUENTO_CONSULTA* / 100)*/);
+                PRECIO = IMPORTE_CONSULTA /*- (IMPORTE_CONSULTA * (frmLOGIN.DESCUENTO_CONSULTA* / 100))*/;
                 txtPRECIO.Text = PRECIO.ToString();
             }
         }
@@ -437,9 +457,19 @@ namespace VISTA
             if (rbESTUDIO.Checked == true)
             {
                 double PRECIO = 0;
-                PRECIO = IMPORTE_ESTUDIO - (IMPORTE_ESTUDIO /* * (frmLOGIN.DESCUENTO_ESTUDIO / 100)*/);
+                PRECIO = IMPORTE_ESTUDIO /*- (IMPORTE_ESTUDIO * (frmLOGIN.DESCUENTO_ESTUDIO / 100))*/;
                 txtPRECIO.Text = PRECIO.ToString();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     } 
 }

@@ -322,6 +322,10 @@
     <Compile Include="Migrations\202302090037279_CAMBIOS_ACTUALES.designer.cs">
       <DependentUpon>202302090037279_CAMBIOS_ACTUALES.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302140256411_actualizado turnos.cs" />
+    <Compile Include="Migrations\202302140256411_actualizado turnos.designer.cs">
+      <DependentUpon>202302140256411_actualizado turnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -539,6 +543,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302090037279_CAMBIOS_ACTUALES.resx">
       <DependentUpon>202302090037279_CAMBIOS_ACTUALES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302140256411_actualizado turnos.resx">
+      <DependentUpon>202302140256411_actualizado turnos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

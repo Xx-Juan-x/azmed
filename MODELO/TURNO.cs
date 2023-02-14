@@ -13,9 +13,7 @@ namespace MODELO
         public int HORA_TURNO { get; set; }
 
         //COLOCAR EL ID DE LA TABLA PACIENTE
-        public PACIENTE PACIENTE { get; set; }
-        public PLAN PLAN { get; set; }
-        public OBRA_SOCIAL OBRA_SOCIAL { get; set; }          
+        public PACIENTE PACIENTE { get; set; }     
         public ESPECIALIDAD ESPECIALIDAD { get; set; }
 
         //COLOCAR EL ID DE LA TABLA PROFESIONAL

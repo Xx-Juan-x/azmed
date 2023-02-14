@@ -53,7 +53,6 @@ namespace VISTA
         private void ARMA_GRILLA(string TIPO)
         {
             var LISTA_TURNOS_PROFESIONAL = (from a in cTURNOS.OBTENER_TURNOS()
-                                            where a.PROFESIONAL.ID_PROFESIONAL == frmLOGIN.ID_USUARIO
                                             select a).ToList();
             
             if (TIPO == "A")
