@@ -28,14 +28,14 @@ namespace VISTA
             return instancia;
         }
 
-        private CONTROLADORA.TURNOS cTURNOS;       
-        private CONTROLADORA.USUARIOS cUSUARIOS;        
+        private CONTROLADORA.TURNOS cTURNOS;
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;        
 
         public frmLISTA_TURNOS_PROFESIONAL()
         {
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
 
             cmbFILTRO_DIA_LABORAL.Items.Add("TODOS");
             cmbFILTRO_DIA_LABORAL.Items.Add("LUNES");
@@ -47,7 +47,17 @@ namespace VISTA
             cmbFILTRO_DIA_LABORAL.Items.Add("DOMINGO");
             cmbFILTRO_DIA_LABORAL.SelectedItem = "TODOS";
 
+            
             ARMA_GRILLA("A");
+            ARMA_COMBOBOX_PROFESIONAL();
+        }
+
+        private void ARMA_COMBOBOX_PROFESIONAL()
+        {
+            cmbFILTRO_PROFESIONAL.DataSource = null;
+            cmbFILTRO_PROFESIONAL.DataSource = cPROFESIONALES.OBTENER_PROFESIONALES();
+            cmbFILTRO_PROFESIONAL.ValueMember = "ID_PROFESIONAL";
+            cmbFILTRO_PROFESIONAL.DisplayMember = "APELLIDO";
         }
 
         private void ARMA_GRILLA(string TIPO)
@@ -63,17 +73,26 @@ namespace VISTA
             if (TIPO == "B")
             {
                 string FILTRO_DIA_LABORAL = cmbFILTRO_DIA_LABORAL.Text;
+                string FILTRO_PROFESIONAL = cmbFILTRO_PROFESIONAL.Text;
 
-                if (FILTRO_DIA_LABORAL == "TODOS")
+                if (FILTRO_DIA_LABORAL == "TODOS" || FILTRO_PROFESIONAL == "TODOS")
                 {
                     dgvLISTA_TURNOS.DataSource = null;
                     dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
                 }
-                else
+                else if (FILTRO_PROFESIONAL == "TODOS" && FILTRO_DIA_LABORAL != "TODOS")
                 {
                     var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
-                                        where a.DIA == FILTRO_DIA_LABORAL &&
-                                        a.PROFESIONAL.ID_PROFESIONAL == frmLOGIN.ID_USUARIO
+                                        where a.DIA == FILTRO_DIA_LABORAL
+                                        select a).ToList();
+
+                    dgvLISTA_TURNOS.DataSource = null;
+                    dgvLISTA_TURNOS.DataSource = LISTA_TURNOS;
+                }
+                else if (FILTRO_PROFESIONAL != "TODOS" && FILTRO_DIA_LABORAL != "TODOS")
+                {
+                    var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
+                                        where a.DIA == FILTRO_DIA_LABORAL && a.PROFESIONAL.NOMBRE == FILTRO_PROFESIONAL || a.PROFESIONAL.APELLIDO == FILTRO_PROFESIONAL
                                         select a).ToList();
 
                     dgvLISTA_TURNOS.DataSource = null;
@@ -89,7 +108,7 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar un dia laboral de la lista", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cmbFILTRO_DIA_LABORAL.SelectedItem.ToString() == "TODOS")
+            if (cmbFILTRO_DIA_LABORAL.SelectedItem.ToString() == "TODOS" && cmbFILTRO_PROFESIONAL.SelectedItem.ToString() == "TODOS")
             {
                 ARMA_GRILLA("A");
             }

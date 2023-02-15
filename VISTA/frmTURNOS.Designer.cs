@@ -30,6 +30,8 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_TURNOS = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbPACIENTE = new System.Windows.Forms.ComboBox();
             this.lblSIGNO_PRECIO = new System.Windows.Forms.Label();
             this.txtPRECIO = new System.Windows.Forms.TextBox();
             this.lblPRECIO = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@ namespace VISTA
             this.lblDIA = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbPACIENTE = new System.Windows.Forms.ComboBox();
             this.gbDATOS_TURNOS.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,26 @@ namespace VISTA
             this.gbDATOS_TURNOS.TabIndex = 8;
             this.gbDATOS_TURNOS.TabStop = false;
             this.gbDATOS_TURNOS.Text = "DATOS DEL TURNO";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "PACIENTE:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cmbPACIENTE
+            // 
+            this.cmbPACIENTE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPACIENTE.FormattingEnabled = true;
+            this.cmbPACIENTE.Location = new System.Drawing.Point(170, 182);
+            this.cmbPACIENTE.Name = "cmbPACIENTE";
+            this.cmbPACIENTE.Size = new System.Drawing.Size(224, 21);
+            this.cmbPACIENTE.TabIndex = 94;
+            this.cmbPACIENTE.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lblSIGNO_PRECIO
             // 
@@ -173,7 +193,6 @@ namespace VISTA
             this.rbESTUDIO.Name = "rbESTUDIO";
             this.rbESTUDIO.Size = new System.Drawing.Size(73, 17);
             this.rbESTUDIO.TabIndex = 86;
-            this.rbESTUDIO.TabStop = true;
             this.rbESTUDIO.Text = "ESTUDIO";
             this.rbESTUDIO.UseVisualStyleBackColor = true;
             this.rbESTUDIO.CheckedChanged += new System.EventHandler(this.rbESTUDIO_CheckedChanged);
@@ -181,10 +200,12 @@ namespace VISTA
             // rbCONSULTA
             // 
             this.rbCONSULTA.AutoSize = true;
+            this.rbCONSULTA.Checked = true;
             this.rbCONSULTA.Location = new System.Drawing.Point(170, 230);
             this.rbCONSULTA.Name = "rbCONSULTA";
             this.rbCONSULTA.Size = new System.Drawing.Size(83, 17);
             this.rbCONSULTA.TabIndex = 85;
+            this.rbCONSULTA.TabStop = true;
             this.rbCONSULTA.Text = "CONSULTA";
             this.rbCONSULTA.UseVisualStyleBackColor = true;
             this.rbCONSULTA.CheckedChanged += new System.EventHandler(this.rbCONSULTA_CheckedChanged);
@@ -266,26 +287,6 @@ namespace VISTA
             this.label4.Size = new System.Drawing.Size(217, 31);
             this.label4.TabIndex = 930;
             this.label4.Text = "Solicita un Turno";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 95;
-            this.label1.Text = "PACIENTE:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cmbPACIENTE
-            // 
-            this.cmbPACIENTE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPACIENTE.FormattingEnabled = true;
-            this.cmbPACIENTE.Location = new System.Drawing.Point(170, 182);
-            this.cmbPACIENTE.Name = "cmbPACIENTE";
-            this.cmbPACIENTE.Size = new System.Drawing.Size(224, 21);
-            this.cmbPACIENTE.TabIndex = 94;
-            this.cmbPACIENTE.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmTURNOS
             // 

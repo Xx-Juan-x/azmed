@@ -61,7 +61,7 @@ namespace VISTA
             txtPRECIO.Enabled = false;
             var lista_pacientes = cPACIENTES.OBTENER_PACIENTES().ToList();
             List<COMBOBOX_PACIENTE> LISTA_CMB_PACIENTES = new List<COMBOBOX_PACIENTE>();
-            LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE("Seleccione...", -1));
+            LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE("SELECCIONE...", -1));
             cmbPACIENTE.DisplayMember = "CMB_TEXTO";
             cmbPACIENTE.ValueMember = "CMB_VALOR";
             foreach (var PACIENTE in lista_pacientes)
@@ -331,27 +331,33 @@ namespace VISTA
             #region VALIDACIONES
             if (cmbESPECIALIDAD.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar una especialidad para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una especialidad para poder registrar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbDIA.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar un día de la semana para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un día de la semana para poder registrar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbHORAS.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar una hora de los que trabaja el profesional para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una hora de los que trabaja el profesional para poder registrar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbPROFESIONAL.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar el profesional que se encuentra disponible para poder solicitar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar el profesional que se encuentra disponible para poder registrar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }          
+            }
+
+            if (cmbPACIENTE.SelectedItem == "SELECCIONE...")
+            {
+                MessageBox.Show("Debe seleccionar un paciente que se encuentra disponible para poder registrar un turno", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             #endregion
 
             oTURNO = new MODELO.TURNO();
@@ -367,6 +373,7 @@ namespace VISTA
             var PACIENTE = (from a in cPACIENTES.OBTENER_PACIENTES()
                             where a.ID_PACIENTE == Convert.ToInt32(cmbPACIENTE.SelectedValue)
                             select a).ToList();
+ 
             if (PACIENTE[0].PLAN.ESTADO == "INACTIVO")
             {
                 DialogResult RESPUESTA = MessageBox.Show("El plan asignado a la cuenta actual ha sido deshabilitada, usted solicitará el turno sin poseer plan ni obra social.", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

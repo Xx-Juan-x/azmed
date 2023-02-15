@@ -33,13 +33,13 @@ namespace VISTA
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_TURNOS = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbFILTRO_PROFESIONAL = new System.Windows.Forms.ComboBox();
             this.btnBUSCAR = new System.Windows.Forms.Button();
             this.lblFILTRO_DIA_LABORAL = new System.Windows.Forms.Label();
             this.cmbFILTRO_DIA_LABORAL = new System.Windows.Forms.ComboBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.dgvLISTA_TURNOS = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbLISTA_TURNOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_TURNOS)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@ namespace VISTA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbLISTA_TURNOS.Controls.Add(this.label1);
-            this.gbLISTA_TURNOS.Controls.Add(this.comboBox1);
+            this.gbLISTA_TURNOS.Controls.Add(this.cmbFILTRO_PROFESIONAL);
             this.gbLISTA_TURNOS.Controls.Add(this.btnBUSCAR);
             this.gbLISTA_TURNOS.Controls.Add(this.lblFILTRO_DIA_LABORAL);
             this.gbLISTA_TURNOS.Controls.Add(this.cmbFILTRO_DIA_LABORAL);
@@ -64,6 +64,26 @@ namespace VISTA
             this.gbLISTA_TURNOS.TabIndex = 6;
             this.gbLISTA_TURNOS.TabStop = false;
             this.gbLISTA_TURNOS.Text = "LISTA DE TURNOS DEL PROFESIONAL";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "PROFESIONAL";
+            // 
+            // cmbFILTRO_PROFESIONAL
+            // 
+            this.cmbFILTRO_PROFESIONAL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbFILTRO_PROFESIONAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFILTRO_PROFESIONAL.FormattingEnabled = true;
+            this.cmbFILTRO_PROFESIONAL.Location = new System.Drawing.Point(103, 28);
+            this.cmbFILTRO_PROFESIONAL.Name = "cmbFILTRO_PROFESIONAL";
+            this.cmbFILTRO_PROFESIONAL.Size = new System.Drawing.Size(159, 21);
+            this.cmbFILTRO_PROFESIONAL.TabIndex = 89;
             // 
             // btnBUSCAR
             // 
@@ -165,26 +185,6 @@ namespace VISTA
             this.dgvLISTA_TURNOS.Size = new System.Drawing.Size(808, 275);
             this.dgvLISTA_TURNOS.TabIndex = 0;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 21);
-            this.comboBox1.TabIndex = 89;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 90;
-            this.label1.Text = "PROFESIONAL";
-            // 
             // frmLISTA_TURNOS_PROFESIONAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +212,6 @@ namespace VISTA
         private System.Windows.Forms.Label lblFILTRO_DIA_LABORAL;
         private System.Windows.Forms.ComboBox cmbFILTRO_DIA_LABORAL;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFILTRO_PROFESIONAL;
     }
 }
