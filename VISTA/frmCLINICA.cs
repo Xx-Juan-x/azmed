@@ -105,8 +105,22 @@ namespace VISTA
                     gestionarAtenciónToolStripMenuItem.Visible = false;
                     ARMA_LISTA_SOLICITUD_PEDIDO();                
                     break;
+
+                case "PROFESIONAL":
+                    uSUARIOSToolStripMenuItem.Visible = false;
+                    pACIENTESToolStripMenuItem.Visible = false;
+                    pROFESIONALESToolStripMenuItem.Visible = false;
+                    cOMPRASToolStripMenuItem.Visible = false;
+                    rEPORTESToolStripMenuItem.Visible = false;
+                    tURNOSToolStripMenuItem.Visible = true;
+                    SolicitarTurnoToolStripMenuItem.Visible = false;
+                    turnosDeHoyToolStripMenuItem.Visible = true;
+                    turnosDeHoyToolStripMenuItem.Visible = false;
+                    facturarToolStripMenuItem.Visible = false;
+                    break;
+
                 default:
-                    MessageBox.Show("ROL no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("GRUPO no encontrado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
         }
