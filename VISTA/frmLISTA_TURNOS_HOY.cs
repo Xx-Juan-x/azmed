@@ -28,14 +28,12 @@ namespace VISTA
         }
 
         private CONTROLADORA.TURNOS cTURNOS;
-        private CONTROLADORA.USUARIOS cUSUARIOS;
         private MODELO.TURNO oTURNO;
 
         public frmLISTA_TURNOS_HOY()
         {
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
-            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             ARMA_GRILLA();
         }
 
@@ -44,9 +42,7 @@ namespace VISTA
             DateTime DIA_ACTUAL = DateTime.Now;
 
                 var LISTA_TURNOS_PACIENTE_HOY = (from a in cTURNOS.OBTENER_TURNOS()
-                                             where
-                                             //a.PROFESIONAL.ID_PROFESIONAL == frmLOGIN.ID_USUARIO &&
-                                             (a.FECHA.Date == DIA_ACTUAL.Date)
+                                             where a.FECHA.Date == DIA_ACTUAL.Date
                                              select a).ToList();
 
                 dgvLISTA_TURNOS_HOY.DataSource = null;

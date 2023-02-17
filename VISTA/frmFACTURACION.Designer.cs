@@ -52,7 +52,7 @@ namespace VISTA
             this.gbLISTA_TURNOS_HOY_FACTURAR.ForeColor = System.Drawing.Color.White;
             this.gbLISTA_TURNOS_HOY_FACTURAR.Location = new System.Drawing.Point(12, 12);
             this.gbLISTA_TURNOS_HOY_FACTURAR.Name = "gbLISTA_TURNOS_HOY_FACTURAR";
-            this.gbLISTA_TURNOS_HOY_FACTURAR.Size = new System.Drawing.Size(631, 367);
+            this.gbLISTA_TURNOS_HOY_FACTURAR.Size = new System.Drawing.Size(892, 367);
             this.gbLISTA_TURNOS_HOY_FACTURAR.TabIndex = 8;
             this.gbLISTA_TURNOS_HOY_FACTURAR.TabStop = false;
             this.gbLISTA_TURNOS_HOY_FACTURAR.Text = "LISTA DE TURNOS DE HOY A FACTURAR";
@@ -80,7 +80,7 @@ namespace VISTA
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(542, 331);
+            this.btnCERRAR.Location = new System.Drawing.Point(803, 331);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(83, 30);
             this.btnCERRAR.TabIndex = 16;
@@ -133,7 +133,7 @@ namespace VISTA
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_TURNOS_HOY_FACTURAR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLISTA_TURNOS_HOY_FACTURAR.Size = new System.Drawing.Size(619, 306);
+            this.dgvLISTA_TURNOS_HOY_FACTURAR.Size = new System.Drawing.Size(880, 306);
             this.dgvLISTA_TURNOS_HOY_FACTURAR.TabIndex = 0;
             // 
             // frmFACTURACION_TURNOS
@@ -141,7 +141,7 @@ namespace VISTA
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(655, 391);
+            this.ClientSize = new System.Drawing.Size(916, 391);
             this.Controls.Add(this.gbLISTA_TURNOS_HOY_FACTURAR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmFACTURACION_TURNOS";

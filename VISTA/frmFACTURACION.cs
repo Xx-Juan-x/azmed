@@ -48,7 +48,7 @@ namespace VISTA
             DateTime DIA_ACTUAL = DateTime.Now;
 
             var LISTA_TURNOS_HOY_FACTURAR = (from a in cTURNOS.OBTENER_TURNOS()
-                                             where a.FECHA.Date == DIA_ACTUAL.Date
+                                             where a.FECHA.Date == DIA_ACTUAL.Date && a.ESTADO == "TOMADO"
                                              select a).ToList();
 
             dgvLISTA_TURNOS_HOY_FACTURAR.DataSource = null;

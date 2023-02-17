@@ -424,6 +424,11 @@ namespace VISTA
                 oTURNO.TIPO = rbESTUDIO.Text;
                 oTURNO.TIPO = "ESTUDIO";
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar si es un turno de tipo CONSULTA o un turno de tipo ESTUDIO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             double PRECIO;
             PRECIO = Convert.ToDouble(txtPRECIO.Text);
