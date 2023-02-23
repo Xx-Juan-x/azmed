@@ -40,6 +40,9 @@ namespace VISTA
             this.cmbFILTRO_DIA_LABORAL = new System.Windows.Forms.ComboBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.dgvLISTA_TURNOS = new System.Windows.Forms.DataGridView();
+            this.btnMODIFICAR = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAGREGAR = new System.Windows.Forms.Button();
             this.gbLISTA_TURNOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_TURNOS)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +52,9 @@ namespace VISTA
             this.gbLISTA_TURNOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbLISTA_TURNOS.Controls.Add(this.btnAGREGAR);
+            this.gbLISTA_TURNOS.Controls.Add(this.btnEliminar);
+            this.gbLISTA_TURNOS.Controls.Add(this.btnMODIFICAR);
             this.gbLISTA_TURNOS.Controls.Add(this.label1);
             this.gbLISTA_TURNOS.Controls.Add(this.cmbFILTRO_PROFESIONAL);
             this.gbLISTA_TURNOS.Controls.Add(this.btnBUSCAR);
@@ -185,6 +191,54 @@ namespace VISTA
             this.dgvLISTA_TURNOS.Size = new System.Drawing.Size(808, 275);
             this.dgvLISTA_TURNOS.TabIndex = 0;
             // 
+            // btnMODIFICAR
+            // 
+            this.btnMODIFICAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMODIFICAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnMODIFICAR.FlatAppearance.BorderSize = 0;
+            this.btnMODIFICAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMODIFICAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMODIFICAR.ForeColor = System.Drawing.Color.White;
+            this.btnMODIFICAR.Location = new System.Drawing.Point(95, 342);
+            this.btnMODIFICAR.Name = "btnMODIFICAR";
+            this.btnMODIFICAR.Size = new System.Drawing.Size(83, 30);
+            this.btnMODIFICAR.TabIndex = 91;
+            this.btnMODIFICAR.Text = "Modificar";
+            this.btnMODIFICAR.UseVisualStyleBackColor = false;
+            this.btnMODIFICAR.Click += new System.EventHandler(this.btnMODIFICAR_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(184, 342);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(83, 30);
+            this.btnEliminar.TabIndex = 92;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAGREGAR
+            // 
+            this.btnAGREGAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAGREGAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnAGREGAR.FlatAppearance.BorderSize = 0;
+            this.btnAGREGAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAGREGAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAGREGAR.ForeColor = System.Drawing.Color.White;
+            this.btnAGREGAR.Location = new System.Drawing.Point(6, 342);
+            this.btnAGREGAR.Name = "btnAGREGAR";
+            this.btnAGREGAR.Size = new System.Drawing.Size(83, 30);
+            this.btnAGREGAR.TabIndex = 93;
+            this.btnAGREGAR.Text = "Agregar";
+            this.btnAGREGAR.UseVisualStyleBackColor = false;
+            this.btnAGREGAR.Click += new System.EventHandler(this.btnAGREGAR_Click);
+            // 
             // frmLISTA_TURNOS_PROFESIONAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +267,8 @@ namespace VISTA
         private System.Windows.Forms.ComboBox cmbFILTRO_DIA_LABORAL;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFILTRO_PROFESIONAL;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnMODIFICAR;
+        private System.Windows.Forms.Button btnAGREGAR;
     }
 }

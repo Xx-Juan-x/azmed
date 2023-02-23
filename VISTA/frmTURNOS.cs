@@ -43,7 +43,7 @@ namespace VISTA
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private CONTROLADORA.PLANES cPLANES;
         private string DIA;
-        string ACCION;
+        private string ACCION;
         private double IMPORTE_CONSULTA;
         private double IMPORTE_ESTUDIO;
 
@@ -445,6 +445,36 @@ namespace VISTA
                 cmbHORAS.Items.Clear();
                 cmbHORAS.ResetText();
                 cmbPROFESIONAL.DataSource = null;
+            }
+            else if (ACCION == "M")
+            {
+                cmbESPECIALIDAD.Text = oTURNO.ESPECIALIDAD.ToString();
+                cmbDIA.Text = oTURNO.DIA.ToString();
+                cmbHORAS.Text = oTURNO.HORA_TURNO.ToString();
+                cmbPROFESIONAL.Text = oTURNO.PROFESIONAL.ToString();
+                cmbPACIENTE.Text = oTURNO.PACIENTE.ToString();
+
+                if (rbCONSULTA.Checked)
+                {
+                    oTURNO.TIPO = rbCONSULTA.Text;
+                    oTURNO.TIPO = "CONSULTA";
+                }
+                else if (rbESTUDIO.Checked)
+                {
+                    oTURNO.TIPO = rbESTUDIO.Text;
+                    oTURNO.TIPO = "ESTUDIO";
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar si es un turno de tipo CONSULTA o un turno de tipo ESTUDIO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                txtPRECIO.Text = oTURNO.PRECIO.ToString();
+
+                cTURNOS.MODIFICAR_TURNO(oTURNO);
+                frmLISTA_TURNOS_PROFESIONAL FORMULARIO_LISTA_TURNO = frmLISTA_TURNOS_PROFESIONAL.OBTENER_INSTANCIA();
+                FORMULARIO_LISTA_TURNO.Show();
             }
         }
 

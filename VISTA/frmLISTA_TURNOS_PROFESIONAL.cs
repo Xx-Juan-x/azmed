@@ -29,7 +29,9 @@ namespace VISTA
         }
 
         private CONTROLADORA.TURNOS cTURNOS;
-        private CONTROLADORA.PROFESIONALES cPROFESIONALES;        
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;
+        private MODELO.TURNO oTURNO;
+        string ACCION;
 
         public frmLISTA_TURNOS_PROFESIONAL()
         {
@@ -143,6 +145,48 @@ namespace VISTA
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMODIFICAR_Click(object sender, EventArgs e)
+        {
+            if (dgvLISTA_TURNOS.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un turno de la lista para poder modificar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS.CurrentRow.DataBoundItem;
+
+
+            ACCION = "M";
+
+            frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
+            FORMULARIO_TURNO.Show();
+            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvLISTA_TURNOS.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un turno de la lista para poder eliminar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS.CurrentRow.DataBoundItem;
+
+            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el turno del paciente " + oTURNO.PACIENTE + " de la lista de turnos?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (RESPUESTA == DialogResult.Yes)
+            {
+                cTURNOS.ELIMINAR_TURNO(oTURNO);
+                ARMA_GRILLA("A");
+            }
+        }
+
+        private void btnAGREGAR_Click(object sender, EventArgs e)
+        {
+            ACCION = "A";
+
+            frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
+            FORMULARIO_TURNO.Show();
         }
     }
 }
