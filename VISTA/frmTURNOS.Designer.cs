@@ -32,9 +32,6 @@ namespace VISTA
             this.gbDATOS_TURNOS = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbPACIENTE = new System.Windows.Forms.ComboBox();
-            this.lblSIGNO_PRECIO = new System.Windows.Forms.Label();
-            this.txtPRECIO = new System.Windows.Forms.TextBox();
-            this.lblPRECIO = new System.Windows.Forms.Label();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.lblTIPO_TURNO = new System.Windows.Forms.Label();
@@ -60,9 +57,6 @@ namespace VISTA
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDATOS_TURNOS.Controls.Add(this.label1);
             this.gbDATOS_TURNOS.Controls.Add(this.cmbPACIENTE);
-            this.gbDATOS_TURNOS.Controls.Add(this.lblSIGNO_PRECIO);
-            this.gbDATOS_TURNOS.Controls.Add(this.txtPRECIO);
-            this.gbDATOS_TURNOS.Controls.Add(this.lblPRECIO);
             this.gbDATOS_TURNOS.Controls.Add(this.btnCERRAR);
             this.gbDATOS_TURNOS.Controls.Add(this.btnGUARDAR);
             this.gbDATOS_TURNOS.Controls.Add(this.lblTIPO_TURNO);
@@ -103,31 +97,6 @@ namespace VISTA
             this.cmbPACIENTE.Size = new System.Drawing.Size(224, 21);
             this.cmbPACIENTE.TabIndex = 94;
             this.cmbPACIENTE.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // lblSIGNO_PRECIO
-            // 
-            this.lblSIGNO_PRECIO.AutoSize = true;
-            this.lblSIGNO_PRECIO.Location = new System.Drawing.Point(240, 278);
-            this.lblSIGNO_PRECIO.Name = "lblSIGNO_PRECIO";
-            this.lblSIGNO_PRECIO.Size = new System.Drawing.Size(13, 13);
-            this.lblSIGNO_PRECIO.TabIndex = 93;
-            this.lblSIGNO_PRECIO.Text = "$";
-            // 
-            // txtPRECIO
-            // 
-            this.txtPRECIO.Location = new System.Drawing.Point(259, 275);
-            this.txtPRECIO.Name = "txtPRECIO";
-            this.txtPRECIO.Size = new System.Drawing.Size(135, 20);
-            this.txtPRECIO.TabIndex = 92;
-            // 
-            // lblPRECIO
-            // 
-            this.lblPRECIO.AutoSize = true;
-            this.lblPRECIO.Location = new System.Drawing.Point(13, 278);
-            this.lblPRECIO.Name = "lblPRECIO";
-            this.lblPRECIO.Size = new System.Drawing.Size(50, 13);
-            this.lblPRECIO.TabIndex = 91;
-            this.lblPRECIO.Text = "PRECIO:";
             // 
             // btnCERRAR
             // 
@@ -326,9 +295,6 @@ namespace VISTA
         private System.Windows.Forms.Label lblDIA;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblSIGNO_PRECIO;
-        private System.Windows.Forms.TextBox txtPRECIO;
-        private System.Windows.Forms.Label lblPRECIO;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbPACIENTE;
     }

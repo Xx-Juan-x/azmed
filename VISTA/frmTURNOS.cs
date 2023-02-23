@@ -46,7 +46,7 @@ namespace VISTA
         string ACCION;
         private double IMPORTE_CONSULTA;
         private double IMPORTE_ESTUDIO;
-
+        private double PRECIO;
         public frmTURNOS()
         {
             InitializeComponent();
@@ -58,7 +58,6 @@ namespace VISTA
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
             cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
-            txtPRECIO.Enabled = false;
             var lista_pacientes = cPACIENTES.OBTENER_PACIENTES().ToList();
             List<COMBOBOX_PACIENTE> LISTA_CMB_PACIENTES = new List<COMBOBOX_PACIENTE>();
             LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE("SELECCIONE...", -1));
@@ -260,9 +259,18 @@ namespace VISTA
             ESP = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedValue;
             IMPORTE_CONSULTA = ESP.IMPORTE_CONSULTA;
             IMPORTE_ESTUDIO = ESP.IMPORTE_ESTUDIO;
-            txtPRECIO.Text = null;
-            rbCONSULTA.Checked = false;
-            rbESTUDIO.Checked = false;
+            if (rbCONSULTA.Checked == true)
+            {
+
+                PRECIO = IMPORTE_CONSULTA;
+
+            }
+            if (rbESTUDIO.Checked == true)
+            {
+
+                PRECIO = IMPORTE_ESTUDIO;
+
+            }
         }
 
         private void cmbHORAS_SelectedIndexChanged(object sender, EventArgs e)
@@ -369,7 +377,10 @@ namespace VISTA
 
             MODELO.PLAN SIN_PLAN = cPLANES.OBTENER_PLANES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
             MODELO.OBRA_SOCIAL SIN_OBRA_SOCIAL = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES().Where(a => a.NOMBRE == "SIN ASIGNAR").FirstOrDefault();
-
+            if (Convert.ToInt32(cmbPACIENTE.SelectedValue) == -1) { 
+                MessageBox.Show("Debe elegir un paciente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var PACIENTE = (from a in cPACIENTES.OBTENER_PACIENTES()
                             where a.ID_PACIENTE == Convert.ToInt32(cmbPACIENTE.SelectedValue)
                             select a).ToList();
@@ -413,16 +424,18 @@ namespace VISTA
             oPROFESIONAL.ID_PROFESIONAL = VALOR_PROFESIONAL.CMB_VALOR;
             oTURNO.PROFESIONAL = oPROFESIONAL;
             oTURNO.FECHA = DIA_SELECCIONADO.DIA_VALOR;
-            oTURNO.PACIENTE = oPACIENTE; 
+            oTURNO.PACIENTE = oPACIENTE;
             if (rbCONSULTA.Checked)
             {
                 oTURNO.TIPO = rbCONSULTA.Text;
                 oTURNO.TIPO = "CONSULTA";
+                oTURNO.PRECIO = (PRECIO) - (PRECIO * (oPACIENTE.PLAN.DESCUENTO_CONSULTA / 100));
             }
             else if (rbESTUDIO.Checked)
             {
                 oTURNO.TIPO = rbESTUDIO.Text;
                 oTURNO.TIPO = "ESTUDIO";
+                oTURNO.PRECIO = (PRECIO) - (PRECIO * (oPACIENTE.PLAN.DESCUENTO_ESTUDIO / 100));
             }
             else
             {
@@ -430,13 +443,10 @@ namespace VISTA
                 return;
             }
 
-            double PRECIO;
-            PRECIO = Convert.ToDouble(txtPRECIO.Text);
-            oTURNO.PRECIO = PRECIO;
+            
             oTURNO.ESTADO = "SOLICITADO";
 
             //Vacío la texbox
-            txtPRECIO.Text = null;
 
             if (ACCION == "A")
             {
@@ -458,9 +468,9 @@ namespace VISTA
         {
             if (rbCONSULTA.Checked == true)
             {
-                double PRECIO = 0;
+
                 PRECIO = IMPORTE_CONSULTA /*- (IMPORTE_CONSULTA * (frmLOGIN.DESCUENTO_CONSULTA* / 100))*/;
-                txtPRECIO.Text = PRECIO.ToString();
+
             }
         }
 
@@ -468,9 +478,7 @@ namespace VISTA
         {
             if (rbESTUDIO.Checked == true)
             {
-                double PRECIO = 0;
                 PRECIO = IMPORTE_ESTUDIO /*- (IMPORTE_ESTUDIO * (frmLOGIN.DESCUENTO_ESTUDIO / 100))*/;
-                txtPRECIO.Text = PRECIO.ToString();
             }
         }
 
