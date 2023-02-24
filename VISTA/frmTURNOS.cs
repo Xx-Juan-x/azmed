@@ -443,10 +443,7 @@ namespace VISTA
                 return;
             }
 
-            
             oTURNO.ESTADO = "SOLICITADO";
-
-            //Vacío la texbox
 
             if (ACCION == "A")
             {
@@ -480,11 +477,7 @@ namespace VISTA
                     return;
                 }
 
-                txtPRECIO.Text = oTURNO.PRECIO.ToString();
-
                 cTURNOS.MODIFICAR_TURNO(oTURNO);
-                frmLISTA_TURNOS_PROFESIONAL FORMULARIO_LISTA_TURNO = frmLISTA_TURNOS_PROFESIONAL.OBTENER_INSTANCIA();
-                FORMULARIO_LISTA_TURNO.Show();
             }
         }
 
@@ -498,9 +491,7 @@ namespace VISTA
         {
             if (rbCONSULTA.Checked == true)
             {
-
-                PRECIO = IMPORTE_CONSULTA /*- (IMPORTE_CONSULTA * (frmLOGIN.DESCUENTO_CONSULTA* / 100))*/;
-
+                PRECIO = IMPORTE_CONSULTA;
             }
         }
 
@@ -508,18 +499,8 @@ namespace VISTA
         {
             if (rbESTUDIO.Checked == true)
             {
-                PRECIO = IMPORTE_ESTUDIO /*- (IMPORTE_ESTUDIO * (frmLOGIN.DESCUENTO_ESTUDIO / 100))*/;
+                PRECIO = IMPORTE_ESTUDIO;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     } 
 }

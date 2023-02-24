@@ -73,7 +73,7 @@ namespace VISTA
             this.gbDATOS_TURNOS.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_TURNOS.Location = new System.Drawing.Point(12, 58);
             this.gbDATOS_TURNOS.Name = "gbDATOS_TURNOS";
-            this.gbDATOS_TURNOS.Size = new System.Drawing.Size(406, 384);
+            this.gbDATOS_TURNOS.Size = new System.Drawing.Size(406, 322);
             this.gbDATOS_TURNOS.TabIndex = 8;
             this.gbDATOS_TURNOS.TabStop = false;
             this.gbDATOS_TURNOS.Text = "DATOS DEL TURNO";
@@ -86,7 +86,6 @@ namespace VISTA
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 95;
             this.label1.Text = "PACIENTE:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmbPACIENTE
             // 
@@ -96,7 +95,6 @@ namespace VISTA
             this.cmbPACIENTE.Name = "cmbPACIENTE";
             this.cmbPACIENTE.Size = new System.Drawing.Size(224, 21);
             this.cmbPACIENTE.TabIndex = 94;
-            this.cmbPACIENTE.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnCERRAR
             // 
@@ -105,7 +103,7 @@ namespace VISTA
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(275, 329);
+            this.btnCERRAR.Location = new System.Drawing.Point(281, 276);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(119, 36);
             this.btnCERRAR.TabIndex = 90;
@@ -120,7 +118,7 @@ namespace VISTA
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGUARDAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(6, 329);
+            this.btnGUARDAR.Location = new System.Drawing.Point(6, 276);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(119, 36);
             this.btnGUARDAR.TabIndex = 86;
@@ -251,18 +249,18 @@ namespace VISTA
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(103, 9);
+            this.label4.Location = new System.Drawing.Point(84, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(217, 31);
+            this.label4.Size = new System.Drawing.Size(247, 31);
             this.label4.TabIndex = 930;
-            this.label4.Text = "Solicita un Turno";
+            this.label4.Text = "Gestionar un Turno";
             // 
             // frmTURNOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(430, 454);
+            this.ClientSize = new System.Drawing.Size(430, 392);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gbDATOS_TURNOS);

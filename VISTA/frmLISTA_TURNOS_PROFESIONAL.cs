@@ -185,6 +185,8 @@ namespace VISTA
         {
             ACCION = "A";
 
+            this.Close();
+
             frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
             FORMULARIO_TURNO.Show();
         }
