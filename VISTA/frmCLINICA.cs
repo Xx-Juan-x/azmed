@@ -83,7 +83,7 @@ namespace VISTA
                     tURNOSToolStripMenuItem.Visible = true;
                     rEPORTESToolStripMenuItem.Visible = true;
                     horariosLaboralesToolStripMenuItem.Visible = true;
-                    SolicitarTurnoToolStripMenuItem.Visible = true;
+                    SolicitarTurnoToolStripMenuItem.Visible = false;
                     turnosToolStripMenuItem1.Visible = true;
                     gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;
                     registrarMaterialesToolStripMenuItem.Visible = true;

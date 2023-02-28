@@ -76,7 +76,7 @@ namespace VISTA
             }
             else
             {
-                MessageBox.Show("El turno ya está tomado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El turno ya está tomado, facturado o cancelado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -101,7 +101,7 @@ namespace VISTA
             }
             else
             {
-                MessageBox.Show("El turno ya está cancelado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El turno ya está cancelado, tomado o facturado", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -43,10 +43,10 @@ namespace VISTA
         private CONTROLADORA.OBRAS_SOCIALES cOBRAS_SOCIALES;
         private CONTROLADORA.PLANES cPLANES;
         private string DIA;
-        private string ACCION;
         private double IMPORTE_CONSULTA;
         private double IMPORTE_ESTUDIO;
         private double PRECIO;
+        public static string ACCION;
         public frmTURNOS()
         {
             InitializeComponent();
@@ -416,7 +416,6 @@ namespace VISTA
             DIAS DIA_SELECCIONADO = cmbDIA.SelectedItem as DIAS;
 
             // ASIGNO MIS COMBO BOXS CON MIS PROPIEDADES
-            ACCION = "A";
             oTURNO.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedItem;
             oTURNO.DIA = cmbDIA.Text;
             string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
@@ -445,7 +444,7 @@ namespace VISTA
 
             oTURNO.ESTADO = "SOLICITADO";
 
-            if (ACCION == "A")
+            if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "A")
             {
                 cTURNOS.AGREGAR_TURNO(oTURNO);
                 MessageBox.Show("Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -453,15 +452,15 @@ namespace VISTA
                 cmbHORAS.ResetText();
                 cmbPROFESIONAL.DataSource = null;
             }
-            else if (ACCION == "M")
+            else if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "M")
             {
-                cmbESPECIALIDAD.Text = oTURNO.ESPECIALIDAD.ToString();
+                /*cmbESPECIALIDAD.Text = oTURNO.ESPECIALIDAD.ToString();
                 cmbDIA.Text = oTURNO.DIA.ToString();
                 cmbHORAS.Text = oTURNO.HORA_TURNO.ToString();
                 cmbPROFESIONAL.Text = oTURNO.PROFESIONAL.ToString();
-                cmbPACIENTE.Text = oTURNO.PACIENTE.ToString();
+                cmbPACIENTE.Text = oTURNO.PACIENTE.ToString();*/
 
-                if (rbCONSULTA.Checked)
+                /*if (rbCONSULTA.Checked)
                 {
                     oTURNO.TIPO = rbCONSULTA.Text;
                     oTURNO.TIPO = "CONSULTA";
@@ -475,9 +474,13 @@ namespace VISTA
                 {
                     MessageBox.Show("Debe seleccionar si es un turno de tipo CONSULTA o un turno de tipo ESTUDIO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
+                }*/
 
                 cTURNOS.MODIFICAR_TURNO(oTURNO);
+                MessageBox.Show(" aaaaaaaaaaaa Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbHORAS.Items.Clear();
+                cmbHORAS.ResetText();
+                cmbPROFESIONAL.DataSource = null;
             }
         }
 

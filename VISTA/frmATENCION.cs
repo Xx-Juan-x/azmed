@@ -139,7 +139,7 @@ namespace VISTA
    
             cmbPROFESIONALES.DataSource = null;           
             var LISTA_PROFESIONALES = (from c in cPROFESIONALES.OBTENER_PROFESIONALES()
-                                       where c.ESPECIALIDAD != null && c.ESPECIALIDAD.ID_ESPECIALIDAD == ID_ESPECIALIDAD
+                                       where c.ESPECIALIDAD != null && c.ESPECIALIDAD.ID_ESPECIALIDAD == ID_ESPECIALIDAD && c.ESTADO != "INACTIVO"
                                        select c).ToList();
 
             cmbPROFESIONALES.DataSource = LISTA_PROFESIONALES;

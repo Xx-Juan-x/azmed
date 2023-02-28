@@ -239,7 +239,7 @@ namespace VISTA
             }
             else
             {
-                MessageBox.Show("El turno no se encuentra tomado o ya está facturado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El turno ya está facturado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }   
         }   
     }

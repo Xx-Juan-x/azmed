@@ -31,7 +31,7 @@ namespace VISTA
         private CONTROLADORA.TURNOS cTURNOS;
         private CONTROLADORA.PROFESIONALES cPROFESIONALES;
         private MODELO.TURNO oTURNO;
-        string ACCION;
+        public static string ACCION;
 
         public frmLISTA_TURNOS_PROFESIONAL()
         {
@@ -159,6 +159,8 @@ namespace VISTA
 
             ACCION = "M";
 
+            
+
             frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
             FORMULARIO_TURNO.Show();
             
@@ -184,8 +186,6 @@ namespace VISTA
         private void btnAGREGAR_Click(object sender, EventArgs e)
         {
             ACCION = "A";
-
-            this.Close();
 
             frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
             FORMULARIO_TURNO.Show();
