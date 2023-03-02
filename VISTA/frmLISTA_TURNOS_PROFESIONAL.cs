@@ -82,7 +82,7 @@ namespace VISTA
 
         }
 
-        private void ARMA_GRILLA(string TIPO)
+        public void ARMA_GRILLA(string TIPO)
         {
             string FILTRO_DIA_LABORAL = cmbFILTRO_DIA_LABORAL.Text;
             int FILTRO_PROFESIONAL = Convert.ToInt32(cmbFILTRO_PROFESIONAL.SelectedValue ?? 0);
@@ -161,7 +161,7 @@ namespace VISTA
 
             
 
-            frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
+            frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA(oTURNO);
             FORMULARIO_TURNO.Show();
             
         }
