@@ -223,29 +223,36 @@ namespace VISTA
             else
             {
                 var LISTA_PACIENTES = (from a in cPACIENTES.OBTENER_PACIENTES()
-                                    where a.PLAN.NOMBRE == PLAN && a.PLAN.NOMBRE == "SIN ASIGNAR"
-                                    select a).ToList();
+                                       where a.PLAN.NOMBRE == PLAN
+                                       select a).ToList();
 
-                if (LISTA_PACIENTES.Count == 0)
+                DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el plan " + oPLAN.NOMBRE + " de la lista de planes? Todos los pacientes vinculados con ese plan y esa obra social quedaran SIN ASIGNAR", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (RESPUESTA == DialogResult.Yes)
                 {
-                    DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el plan " + oPLAN.NOMBRE + " de la lista de planes?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (RESPUESTA == DialogResult.Yes)
+
+                    var PLAN_SIN_ASIGNAR = (from a in cPLANES.OBTENER_PLANES()
+                                            where a.NOMBRE == "SIN ASIGNAR"
+                                            select a).ToList();
+
+                    var OBRA_SOCIAL_SIN_ASIGNAR = (from a in cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES()
+                                                   where a.NOMBRE == "SIN ASIGNAR"
+                                                   select a).ToList();
+
+                    foreach (var item in LISTA_PACIENTES)
                     {
-                        oPLAN.ESTADO = "INACTIVO";
-                        oPACIENTE.PLAN.NOMBRE = "SIN ASIGNAR";
+                        oPACIENTE = item;
+                        oPACIENTE.PLAN = PLAN_SIN_ASIGNAR[0];
+                        oPACIENTE.OBRA_SOCIAL = OBRA_SOCIAL_SIN_ASIGNAR[0];
                         cPACIENTES.MODIFICAR_PACIENTE(oPACIENTE);
-                        cPLANES.MODIFICAR_PLAN(oPLAN);
-                        ARMA_GRILLA();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("El Plan ya cuenta con uno o mas pacientes, borre los pacientes vinculados a este plan antes de eliminarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    oPLAN.ESTADO = "INACTIVO";
+                    oPACIENTE.PLAN.NOMBRE = "SIN ASIGNAR";
+                    cPLANES.MODIFICAR_PLAN(oPLAN);
+                    ARMA_GRILLA();
                 }
             }
-
         }
+
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
             txtPLAN.Clear();          

@@ -451,6 +451,7 @@ namespace VISTA
                 cmbHORAS.Items.Clear();
                 cmbHORAS.ResetText();
                 cmbPROFESIONAL.DataSource = null;
+                frmLISTA_TURNOS_PROFESIONAL.ARMAR_AL_AGREGAR();
             }
             else if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "M")
             {
