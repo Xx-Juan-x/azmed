@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -16,15 +17,15 @@ namespace VISTA
     {
         private static frmTURNOS instancia;
 
-        public static frmTURNOS OBTENER_INSTANCIA()
+        public static frmTURNOS OBTENER_INSTANCIA(MODELO.TURNO turno = null)
         {
             if (instancia == null)
             {
-                instancia = new frmTURNOS();
+                instancia = new frmTURNOS(turno);
             }
             if (instancia.IsDisposed)
             {
-                instancia = new frmTURNOS();
+                instancia = new frmTURNOS(turno);
             }
             return instancia;
         }
@@ -47,7 +48,9 @@ namespace VISTA
         private double IMPORTE_ESTUDIO;
         private double PRECIO;
         public static string ACCION;
-        public frmTURNOS()
+        public  int id_prof_modificar;
+        public  string prof_modificar = null;
+        public frmTURNOS(MODELO.TURNO turno = null)
         {
             InitializeComponent();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
@@ -106,9 +109,47 @@ namespace VISTA
                 //cmbDIA.Items.Add(new ComboboxItem() { Text = dia_nombre[i], Value = dia_fecha[i] });
                 // cmbDIA.Items.Insert(dia_fecha[i], dia_nombre[i]);
             }
+            if(turno != null)
+            {
+                modificar_turno(turno);
+            }
+        }
+        //este metodo llena los datos desde el turno seleccionado desde la lISTAdeTurnos
+        private void modificar_turno(MODELO.TURNO turno)
+        {
+            //Cuando prof_modificar es agregado desde aca , se sumara en el cmbProf AUTOMATICAMENTE
+            prof_modificar = turno.PROFESIONAL.NOMBRE + " " + turno.PROFESIONAL.APELLIDO;
+            id_prof_modificar = turno.PROFESIONAL.ID_PROFESIONAL;
+
+            oTURNO = new MODELO.TURNO();
+            oTURNO = (from a in cTURNOS.OBTENER_TURNOS() where a.ID_TURNO == turno.ID_TURNO select a).FirstOrDefault();
+            cmbDIA.SelectedIndex = cmbDIA.FindString(turno.DIA);
+            cmbESPECIALIDAD.SelectedIndex = cmbESPECIALIDAD.FindString(turno.ESPECIALIDAD.NOMBRE);
+            cmbHORAS.SelectedIndex = cmbHORAS.FindString(turno.HORA_TURNO.ToString());
+            if (cmbHORAS.SelectedIndex == -1)
+            {
+                cmbHORAS.Items.Add(turno.HORA_TURNO + " Hs");
+                cmbHORAS.SelectedIndex = cmbHORAS.Items.Count - 1;
+            }
+            
+            cmbPROFESIONAL.SelectedIndex = cmbPROFESIONAL.FindString(turno.PROFESIONAL.NOMBRE + " " + turno.PROFESIONAL.APELLIDO);
+
+            if (cmbPROFESIONAL.SelectedIndex == -1)
+            {
+                cmbPROFESIONAL.SelectedIndex = cmbPROFESIONAL.Items.Count - 1;
+            }
+            cmbPACIENTE.SelectedIndex = cmbPACIENTE.FindString(turno.PACIENTE.NOMBRE + " " + turno.PACIENTE.APELLIDO);
+            if(turno.TIPO == "CONSULTA")
+            {
+                rbCONSULTA.Checked = true;
+            }
+            else if(turno.TIPO == "ESTUDIO")
+            {
+                rbESTUDIO.Checked = true;
+            }
+            oTURNO.ID_TURNO = turno.ID_TURNO;
 
         }
-
         private string traducir_dia(string dia)
         {
             switch (dia)
@@ -148,18 +189,6 @@ namespace VISTA
                 DIA_TEXTO = T;
             }
         }
-
-
-        /*public class ComboboxItem
-        {
-            public string Text { get; set; }
-            public object Value { get; set; }
-
-            public override string ToString()
-            {
-                return Text;
-            }
-        }*/
 
         private void cmbDIA_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -249,7 +278,7 @@ namespace VISTA
             }
         }
 
-        private void cmbESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbESPECIALIDAD_SelectedIndexChanged(object sender = null, EventArgs e = null)
         {
             cmbHORAS.Items.Clear();
             cmbHORAS.ResetText();
@@ -308,7 +337,10 @@ namespace VISTA
                     //agrego a la cmb 
                     LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(PROFESIONAL.PROFESIONAL.NOMBRE + " " + PROFESIONAL.PROFESIONAL.APELLIDO, PROFESIONAL.PROFESIONAL.ID_PROFESIONAL));
                 }
+
             }
+            //Pasa cuando el turno es modificado
+            if (prof_modificar != null) LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(prof_modificar, id_prof_modificar));
             cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
         }
 
@@ -367,8 +399,12 @@ namespace VISTA
                 return;
             }
             #endregion
+            //Si ya paso por el ModificarTurno
+            if(oTURNO == null)
+            {
+                oTURNO = new MODELO.TURNO();
 
-            oTURNO = new MODELO.TURNO();
+            }
 
             COMBOBOX_PROFESIONAL VALOR_PROFESIONAL = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
 
@@ -455,33 +491,14 @@ namespace VISTA
             }
             else if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "M")
             {
-                /*cmbESPECIALIDAD.Text = oTURNO.ESPECIALIDAD.ToString();
-                cmbDIA.Text = oTURNO.DIA.ToString();
-                cmbHORAS.Text = oTURNO.HORA_TURNO.ToString();
-                cmbPROFESIONAL.Text = oTURNO.PROFESIONAL.ToString();
-                cmbPACIENTE.Text = oTURNO.PACIENTE.ToString();*/
-
-                /*if (rbCONSULTA.Checked)
-                {
-                    oTURNO.TIPO = rbCONSULTA.Text;
-                    oTURNO.TIPO = "CONSULTA";
-                }
-                else if (rbESTUDIO.Checked)
-                {
-                    oTURNO.TIPO = rbESTUDIO.Text;
-                    oTURNO.TIPO = "ESTUDIO";
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar si es un turno de tipo CONSULTA o un turno de tipo ESTUDIO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }*/
-
+                
                 cTURNOS.MODIFICAR_TURNO(oTURNO);
-                MessageBox.Show(" aaaaaaaaaaaa Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(" Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmbHORAS.Items.Clear();
                 cmbHORAS.ResetText();
                 cmbPROFESIONAL.DataSource = null;
+                frmLISTA_TURNOS_PROFESIONAL frm = new frmLISTA_TURNOS_PROFESIONAL();
+                frm.ARMA_GRILLA("A");
             }
         }
 

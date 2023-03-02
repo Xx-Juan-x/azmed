@@ -161,7 +161,7 @@ namespace VISTA
 
             
 
-            frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA();
+            frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA(oTURNO);
             FORMULARIO_TURNO.Show();
             
         }
