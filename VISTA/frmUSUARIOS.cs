@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MODELO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,9 +30,11 @@ namespace VISTA
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
+        private CONTROLADORA.PROFESIONALES cPROFESIONALES;
         private MODELO.USUARIO oUSUARIO;
         private CONTROLADORA.GRUPOS cGRUPOS;
         private MODELO.GRUPO oGRUPO;
+        private MODELO.PROFESIONAL oPROFESIONAL;
         string ACCION;
 
         //CODIGO PARA LA TABLA PACIENTES Y PROFESIONALES
@@ -47,7 +50,7 @@ namespace VISTA
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
-
+            cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             //CODIGO PARA LA TABLA PACIENTE Y PROFESIONAL
             /*cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
             cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();*/
@@ -213,6 +216,14 @@ namespace VISTA
             oUSUARIO.CLAVE = txtPASSWORD.Text;
             oUSUARIO.FECHA = DateTime.Now;
             oUSUARIO.GRUPO = (MODELO.GRUPO)cmbGRUPO.SelectedItem;
+            if (cmbGRUPO.SelectedItem.ToString() == "PROFESIONAL" && cmbVincularProf.SelectedIndex > 0)
+            {
+                int idPROF = cmbVincularProf.SelectedItem.GetHashCode();
+                
+                oPROFESIONAL = (from a in cPROFESIONALES.OBTENER_PROFESIONALES() where a.ID_PROFESIONAL ==  idPROF select a).FirstOrDefault();
+                oUSUARIO.PROFESIONAL = oPROFESIONAL;
+            }
+            
 
             if (txtPASSWORD.Text == txtCONFIRMAR_PASSWORD.Text)
             {
@@ -407,6 +418,50 @@ namespace VISTA
                 oUSUARIO.ESTADO = "ACTIVO";
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        class COMBOBOX_PROFESIONALES
+        {
+            public string CMB_TEXTO { get; set; }
+            public int CMB_VALOR { get; set; }
+            public COMBOBOX_PROFESIONALES(string T, int V)
+            {
+                CMB_TEXTO = T;
+                CMB_VALOR = V;
+            }
+            public override string ToString()
+            {
+                return CMB_TEXTO;
+            }
+            public override int GetHashCode()
+            {
+                return CMB_VALOR;
+            }
+        }
+        private void cmbGRUPO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<COMBOBOX_PROFESIONALES> listaPROF = new List<COMBOBOX_PROFESIONALES>();
+            var a = cmbGRUPO.SelectedItem.ToString();
+            if (cmbGRUPO.SelectedItem.ToString() == "PROFESIONAL")
+            {
+                var profesionales = (from p in cPROFESIONALES.OBTENER_PROFESIONALES() select p).ToList();
+                listaPROF.Add(new COMBOBOX_PROFESIONALES("Seleccione..", -1));
+                foreach (var prof in profesionales)
+                {
+                    listaPROF.Add(new COMBOBOX_PROFESIONALES(prof.NOMBRE + " " + prof.APELLIDO, prof.ID_PROFESIONAL));
+                }
+                cmbVincularProf.DataSource = listaPROF;
+                cmbVincularProf.Enabled = true;
+            }
+            else
+            {
+                cmbVincularProf.Items.Clear();
+                cmbVincularProf.Enabled = false;
             }
         }
     }

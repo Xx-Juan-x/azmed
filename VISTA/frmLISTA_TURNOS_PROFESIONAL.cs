@@ -102,7 +102,12 @@ namespace VISTA
                                                     select a).ToList();
                 }
                 dgvLISTA_TURNOS.DataSource = null;
-                dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+                //dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+                BindingSource source = new BindingSource();
+                source.DataSource = LISTA_TURNOS_PROFESIONAL;
+                dgvLISTA_TURNOS.DataSource = source;
+                dgvLISTA_TURNOS.Update();
+                dgvLISTA_TURNOS.Refresh();
             }
             //Un dia seleccionado
             if (TIPO == "B")
@@ -121,7 +126,10 @@ namespace VISTA
                                                 select a).ToList();
                 }
                 dgvLISTA_TURNOS.DataSource = null;
-                dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+                //dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
+                BindingSource source = new BindingSource();
+                source.DataSource = LISTA_TURNOS_PROFESIONAL;
+                dgvLISTA_TURNOS.DataSource = source;
             }
         }
 
@@ -156,14 +164,10 @@ namespace VISTA
             }
             oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS.CurrentRow.DataBoundItem;
 
-
             ACCION = "M";
-
-            
 
             frmTURNOS FORMULARIO_TURNO = frmTURNOS.OBTENER_INSTANCIA(oTURNO);
             FORMULARIO_TURNO.Show();
-            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -174,7 +178,7 @@ namespace VISTA
                 return;
             }
             oTURNO = (MODELO.TURNO)dgvLISTA_TURNOS.CurrentRow.DataBoundItem;
-
+    
             DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el turno del paciente " + oTURNO.PACIENTE + " de la lista de turnos?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (RESPUESTA == DialogResult.Yes)
             {

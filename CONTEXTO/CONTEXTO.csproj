@@ -326,6 +326,14 @@
     <Compile Include="Migrations\202302140256411_actualizado turnos.designer.cs">
       <DependentUpon>202302140256411_actualizado turnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303030228290_profesional y usuario.cs" />
+    <Compile Include="Migrations\202303030228290_profesional y usuario.designer.cs">
+      <DependentUpon>202303030228290_profesional y usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303030409415_usuario cambios.cs" />
+    <Compile Include="Migrations\202303030409415_usuario cambios.designer.cs">
+      <DependentUpon>202303030409415_usuario cambios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -546,6 +554,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302140256411_actualizado turnos.resx">
       <DependentUpon>202302140256411_actualizado turnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303030228290_profesional y usuario.resx">
+      <DependentUpon>202303030228290_profesional y usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303030409415_usuario cambios.resx">
+      <DependentUpon>202303030409415_usuario cambios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

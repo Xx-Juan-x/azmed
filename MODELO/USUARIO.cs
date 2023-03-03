@@ -15,7 +15,7 @@ namespace MODELO
         public DateTime FECHA { get; set; }
         public string ESTADO { get; set; }
         public GRUPO GRUPO { get; set; }
-
+        public PROFESIONAL PROFESIONAL{ get; set; }
         /*public override string ToString()
         {
             return NOMBRE;

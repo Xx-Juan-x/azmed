@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_USUARIO = new System.Windows.Forms.GroupBox();
             this.lblDESCRIPCION_CLAVE = new System.Windows.Forms.Label();
             this.lblDESCRIPCION = new System.Windows.Forms.Label();
@@ -58,6 +58,8 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
+            this.cmbVincularProf = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -66,6 +68,8 @@ namespace VISTA
             // gbDATOS_USUARIO
             // 
             this.gbDATOS_USUARIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDATOS_USUARIO.Controls.Add(this.cmbVincularProf);
+            this.gbDATOS_USUARIO.Controls.Add(this.label1);
             this.gbDATOS_USUARIO.Controls.Add(this.lblDESCRIPCION_CLAVE);
             this.gbDATOS_USUARIO.Controls.Add(this.lblDESCRIPCION);
             this.gbDATOS_USUARIO.Controls.Add(this.txtCONFIRMAR_PASSWORD);
@@ -83,7 +87,7 @@ namespace VISTA
             this.gbDATOS_USUARIO.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_USUARIO.Location = new System.Drawing.Point(799, 8);
             this.gbDATOS_USUARIO.Name = "gbDATOS_USUARIO";
-            this.gbDATOS_USUARIO.Size = new System.Drawing.Size(264, 375);
+            this.gbDATOS_USUARIO.Size = new System.Drawing.Size(264, 417);
             this.gbDATOS_USUARIO.TabIndex = 5;
             this.gbDATOS_USUARIO.TabStop = false;
             this.gbDATOS_USUARIO.Text = "DATOS DEL USUARIO";
@@ -148,6 +152,7 @@ namespace VISTA
             this.cmbGRUPO.Name = "cmbGRUPO";
             this.cmbGRUPO.Size = new System.Drawing.Size(159, 21);
             this.cmbGRUPO.TabIndex = 73;
+            this.cmbGRUPO.SelectedIndexChanged += new System.EventHandler(this.cmbGRUPO_SelectedIndexChanged);
             // 
             // lblGRUPO_USUARIO
             // 
@@ -200,7 +205,7 @@ namespace VISTA
             this.btnCANCELAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCANCELAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCANCELAR.ForeColor = System.Drawing.Color.White;
-            this.btnCANCELAR.Location = new System.Drawing.Point(155, 323);
+            this.btnCANCELAR.Location = new System.Drawing.Point(158, 375);
             this.btnCANCELAR.Name = "btnCANCELAR";
             this.btnCANCELAR.Size = new System.Drawing.Size(100, 36);
             this.btnCANCELAR.TabIndex = 7;
@@ -217,7 +222,7 @@ namespace VISTA
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGUARDAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(6, 323);
+            this.btnGUARDAR.Location = new System.Drawing.Point(4, 375);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(100, 36);
             this.btnGUARDAR.TabIndex = 1;
@@ -396,39 +401,59 @@ namespace VISTA
             this.dgvLISTA_USUARIOS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_USUARIOS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_USUARIOS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_USUARIOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_USUARIOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_USUARIOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_USUARIOS.EnableHeadersVisualStyles = false;
             this.dgvLISTA_USUARIOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_USUARIOS.Location = new System.Drawing.Point(6, 61);
             this.dgvLISTA_USUARIOS.Name = "dgvLISTA_USUARIOS";
             this.dgvLISTA_USUARIOS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_USUARIOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_USUARIOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_USUARIOS.RowHeadersVisible = false;
             this.dgvLISTA_USUARIOS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_USUARIOS.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_USUARIOS.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_USUARIOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(777, 314);
             this.dgvLISTA_USUARIOS.TabIndex = 0;
+            // 
+            // cmbVincularProf
+            // 
+            this.cmbVincularProf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVincularProf.Enabled = false;
+            this.cmbVincularProf.FormattingEnabled = true;
+            this.cmbVincularProf.Location = new System.Drawing.Point(99, 329);
+            this.cmbVincularProf.Name = "cmbVincularProf";
+            this.cmbVincularProf.Size = new System.Drawing.Size(159, 21);
+            this.cmbVincularProf.TabIndex = 79;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 326);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 26);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Vincular\r\nProfesional";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmUSUARIOS
             // 
@@ -479,5 +504,7 @@ namespace VISTA
         private System.Windows.Forms.Label lblDESCRIPCION_CLAVE;
         private System.Windows.Forms.Label lblDESCRIPCION;
         private System.Windows.Forms.Button btnRECUPERAR;
+        private System.Windows.Forms.ComboBox cmbVincularProf;
+        private System.Windows.Forms.Label label1;
     }
 }
