@@ -235,6 +235,7 @@ namespace VISTA
                     oTURNO.ESTADO = "FACTURADO";
                     MessageBox.Show("Su factura se ah creado correctamente, visite AZMED\azmedVISTA\binDebugimport", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);  
                     cTURNOS.MODIFICAR_TURNO(oTURNO);
+                    ARMA_GRILLA();
                 }
             }
             else

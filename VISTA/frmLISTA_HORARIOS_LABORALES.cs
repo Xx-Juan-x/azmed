@@ -40,13 +40,19 @@ namespace VISTA
         private void ARMA_GRILLA()
         {
             dgvLISTA_HORARIOS_LABORALES.DataSource = null;
-           
-            //VER: DEBERÍA VERSE LOS HORARIOS LABORALES DE LOS USUARIOS PROFESIONALES QUE INGRESARON Y NO DE TODOS LOS PROFESIONALES
-            var LISTA_HORARIOS_LABORALES = (from a in cATENCIONES.OBTENER_ATENCIONES()
-                                        where a.PROFESIONAL.ID_PROFESIONAL == frmLOGIN.ID_USUARIO
-                                        select a).ToList();
 
-            dgvLISTA_HORARIOS_LABORALES.DataSource = LISTA_HORARIOS_LABORALES;
+            if ( frmLOGIN.ID_PROFESIONAL > 0)
+            {
+                var LISTA_HORARIOS_LABORALES = (from a in cATENCIONES.OBTENER_ATENCIONES()
+                                                where a.PROFESIONAL.ID_PROFESIONAL == frmLOGIN.ID_PROFESIONAL
+                                                select a).ToList();
+
+                dgvLISTA_HORARIOS_LABORALES.DataSource = LISTA_HORARIOS_LABORALES;
+            }
+            else
+            {
+                dgvLISTA_HORARIOS_LABORALES.DataSource = cATENCIONES.OBTENER_ATENCIONES();
+            }
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)

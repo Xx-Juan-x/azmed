@@ -28,13 +28,10 @@ namespace VISTA
         }
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
-        //private CONTROLADORA.PLANES cPLANES;
         public static CONTROLADORA.GRUPOS cGRUPOS;
         public static string TIPO_USUARIO = "";
         public static int ID_USUARIO; 
-        //public frmREGISTRO_PACIENTE FORMULARIO_REGISTRO;
-        //public static double DESCUENTO_ESTUDIO;
-        //public static double DESCUENTO_CONSULTA;
+        public static int ID_PROFESIONAL = 0;
 
         public frmLOGIN()
         {
@@ -70,20 +67,10 @@ namespace VISTA
                 {
                     TIPO_USUARIO = RESPUESTA[0].GRUPO.NOMBRE;
                     ID_USUARIO = RESPUESTA[0].ID_USUARIO;
-
-                    /*if (TIPO_USUARIO == "PACIENTE")
+                    if(RESPUESTA[0].PROFESIONAL != null)
                     {
-                        if (RESPUESTA[0].PLAN.ESTADO == "INACTIVO")
-                        {
-                            DESCUENTO_CONSULTA = 0;
-                            DESCUENTO_ESTUDIO = 0;
-                        }
-                        else
-                        {
-                            DESCUENTO_CONSULTA = RESPUESTA[0].PLAN.DESCUENTO_CONSULTA;
-                            DESCUENTO_ESTUDIO = RESPUESTA[0].PLAN.DESCUENTO_ESTUDIO;
-                        }
-                    }*/
+                        ID_PROFESIONAL = RESPUESTA[0].PROFESIONAL.ID_PROFESIONAL;
+                    } 
                     return true;
                 }
                 else

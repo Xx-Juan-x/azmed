@@ -107,16 +107,20 @@ namespace VISTA
                     break;
 
                 case "PROFESIONAL":
-                    uSUARIOSToolStripMenuItem.Visible = false;
-                    pACIENTESToolStripMenuItem.Visible = false;
-                    pROFESIONALESToolStripMenuItem.Visible = false;
-                    cOMPRASToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;
                     tURNOSToolStripMenuItem.Visible = true;
-                    SolicitarTurnoToolStripMenuItem.Visible = false;
                     turnosDeHoyToolStripMenuItem.Visible = true;
-                    turnosDeHoyToolStripMenuItem.Visible = false;
+                    pROFESIONALESToolStripMenuItem.Visible = true;
+                    horariosLaboralesToolStripMenuItem.Visible = true;
+                    registrarEspecialidadesToolStripMenuItem.Visible = false;
+                    registrarProfesionalesToolStripMenuItem.Visible = false;
+                    gestionarAtenciónToolStripMenuItem.Visible = false;
+                    SolicitarTurnoToolStripMenuItem.Visible = false;
+                    turnosToolStripMenuItem1.Visible = false;
                     facturarToolStripMenuItem.Visible = false;
+                    uSUARIOSToolStripMenuItem.Visible = false;
+                    pACIENTESToolStripMenuItem.Visible = false;       
+                    cOMPRASToolStripMenuItem.Visible = false;
+                    rEPORTESToolStripMenuItem.Visible = false;       
                     break;
 
                 default:
@@ -174,12 +178,6 @@ namespace VISTA
         {
             frmREPORTE_CANTIDAD_TURNOS FORMULARIO_CANTIDAD_TURNOS = frmREPORTE_CANTIDAD_TURNOS.OBTENER_INSTANCIA();
             FORMULARIO_CANTIDAD_TURNOS.Show();
-        }
-
-        private void listaDeTurnosExportarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLISTA_TURNOS_PACIENTES FORMULARIO_LISTA_TURNOS_PACIENTE = frmLISTA_TURNOS_PACIENTES.OBTENER_INSTANCIA();
-            FORMULARIO_LISTA_TURNOS_PACIENTE.Show();
         }
 
         private void registrarMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
