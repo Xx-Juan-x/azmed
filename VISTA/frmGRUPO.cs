@@ -30,12 +30,15 @@ namespace VISTA
 
         private CONTROLADORA.GRUPOS cGRUPOS;
         private MODELO.GRUPO oGRUPO;
+        private CONTROLADORA.USUARIOS cUSUARIOS;
         string ACCION;
+        private string GRUPO;
 
         public frmGRUPO()
         {
             InitializeComponent();
             cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
+            cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             ARMA_GRILLA();
             MODO_GRILLA();
         }
@@ -145,12 +148,44 @@ namespace VISTA
             }
             oGRUPO = (MODELO.GRUPO)dgvLISTA_GRUPOS.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el grupo " + oGRUPO.NOMBRE + " de la lista de grupos?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            GRUPO = "";
+            foreach (DataGridViewRow row in dgvLISTA_GRUPOS.SelectedRows)
+            {
+                GRUPO = (string)row.Cells["NOMBRE"].Value;
+            }
+
+            if (GRUPO == "")
+            {
+                MessageBox.Show("Debe seleccionar la fila entera", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                var LISTA_USUARIOS = (from a in cUSUARIOS.OBTENER_USUARIOS()
+                                    where a.GRUPO.NOMBRE == GRUPO
+                                    select a).ToList();
+                if (LISTA_USUARIOS.Count == 0)
+                {
+                    DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el grupo " + oGRUPO.NOMBRE + " de la lista de grupos?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (RESPUESTA == DialogResult.Yes)
+                    {
+                        cGRUPOS.ELIMINAR_GRUPO(oGRUPO);
+                        ARMA_GRILLA();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El Grupo ya cuenta con uno o mas Usuarios, borre los Usuarios vinculados a este Grupo antes de eliminarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            /*DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el grupo " + oGRUPO.NOMBRE + " de la lista de grupos?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (RESPUESTA == DialogResult.Yes)
             {
                 cGRUPOS.ELIMINAR_GRUPO(oGRUPO);
                 ARMA_GRILLA();
-            }
+            }*/
         }
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
