@@ -331,7 +331,6 @@ namespace VISTA
         {
             if (ACCION == "A")
             {
-                //cmbPROFESIONALES.DataSource = null;
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();
@@ -349,7 +348,6 @@ namespace VISTA
             }
             else if (ACCION == "M" || ACCION == "C")
             {
-                //cmbPROFESIONALES.DataSource = null;
                 var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONALES.SelectedValue)
                                               select c.DIA_LABORAL).ToList();

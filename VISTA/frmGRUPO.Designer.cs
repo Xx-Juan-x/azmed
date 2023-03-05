@@ -29,10 +29,11 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_GRUPOS = new System.Windows.Forms.GroupBox();
+            this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.btnELIMINAR = new System.Windows.Forms.Button();
             this.btnMODIFICAR = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@ namespace VISTA
             this.lbl_NOMBRE = new System.Windows.Forms.Label();
             this.btnGUARDAR = new System.Windows.Forms.Button();
             this.txtNOMBRE = new System.Windows.Forms.TextBox();
-            this.btnCONSULTAR = new System.Windows.Forms.Button();
             this.gbLISTA_GRUPOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_GRUPOS)).BeginInit();
             this.gbDATOS_GRUPO.SuspendLayout();
@@ -68,6 +68,22 @@ namespace VISTA
             this.gbLISTA_GRUPOS.TabIndex = 7;
             this.gbLISTA_GRUPOS.TabStop = false;
             this.gbLISTA_GRUPOS.Text = "LISTA DE GRUPOS";
+            // 
+            // btnCONSULTAR
+            // 
+            this.btnCONSULTAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCONSULTAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnCONSULTAR.FlatAppearance.BorderSize = 0;
+            this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCONSULTAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
+            this.btnCONSULTAR.Location = new System.Drawing.Point(183, 313);
+            this.btnCONSULTAR.Name = "btnCONSULTAR";
+            this.btnCONSULTAR.Size = new System.Drawing.Size(83, 30);
+            this.btnCONSULTAR.TabIndex = 17;
+            this.btnCONSULTAR.Text = "Consultar";
+            this.btnCONSULTAR.UseVisualStyleBackColor = false;
+            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
             // 
             // btnCERRAR
             // 
@@ -147,36 +163,36 @@ namespace VISTA
             this.dgvLISTA_GRUPOS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_GRUPOS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_GRUPOS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_GRUPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_GRUPOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_GRUPOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_GRUPOS.EnableHeadersVisualStyles = false;
             this.dgvLISTA_GRUPOS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_GRUPOS.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_GRUPOS.Name = "dgvLISTA_GRUPOS";
             this.dgvLISTA_GRUPOS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_GRUPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_GRUPOS.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_GRUPOS.RowHeadersVisible = false;
             this.dgvLISTA_GRUPOS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_GRUPOS.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_GRUPOS.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_GRUPOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_GRUPOS.Size = new System.Drawing.Size(549, 288);
             this.dgvLISTA_GRUPOS.TabIndex = 0;
@@ -251,22 +267,7 @@ namespace VISTA
             this.txtNOMBRE.Name = "txtNOMBRE";
             this.txtNOMBRE.Size = new System.Drawing.Size(128, 20);
             this.txtNOMBRE.TabIndex = 6;
-            // 
-            // btnCONSULTAR
-            // 
-            this.btnCONSULTAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCONSULTAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnCONSULTAR.FlatAppearance.BorderSize = 0;
-            this.btnCONSULTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCONSULTAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCONSULTAR.ForeColor = System.Drawing.Color.White;
-            this.btnCONSULTAR.Location = new System.Drawing.Point(183, 313);
-            this.btnCONSULTAR.Name = "btnCONSULTAR";
-            this.btnCONSULTAR.Size = new System.Drawing.Size(83, 30);
-            this.btnCONSULTAR.TabIndex = 17;
-            this.btnCONSULTAR.Text = "Consultar";
-            this.btnCONSULTAR.UseVisualStyleBackColor = false;
-            this.btnCONSULTAR.Click += new System.EventHandler(this.btnCONSULTAR_Click);
+            this.txtNOMBRE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOMBRE_KeyPress);
             // 
             // frmGRUPO
             // 

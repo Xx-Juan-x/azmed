@@ -44,14 +44,6 @@ namespace VISTA
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPACIENTES = CONTROLADORA.PACIENTES.OBTENER_INSTANCIA();
 
-            /*cmbPLANES.Items.Add("SELECCIONE...");
-            cmbPLANES.SelectedItem = "SELECCIONE...";
-            cmbPLANES.Items.Add("BASICO");
-            cmbPLANES.Items.Add("SUPERADOR");
-            cmbPLANES.Items.Add("PREMIUM");
-            cmbPLANES.Items.Add("JUBILADOS");
-            cmbPLANES.Items.Add("ESTUDIANTE");*/
-
             cmbOBRA_SOCIAL.Items.Add("SELECCIONE...");
             cmbOBRA_SOCIAL.SelectedItem = "SELECCIONE...";
 
@@ -246,7 +238,7 @@ namespace VISTA
                         cPACIENTES.MODIFICAR_PACIENTE(oPACIENTE);
                     }
                     oPLAN.ESTADO = "INACTIVO";
-                    oPACIENTE.PLAN.NOMBRE = "SIN ASIGNAR";
+                    oPACIENTE.PLAN.NOMBRE = "SIN ASIGNAR";  
                     cPLANES.MODIFICAR_PLAN(oPLAN);
                     ARMA_GRILLA();
                 }
@@ -317,6 +309,7 @@ namespace VISTA
             if (RESPUESTA == DialogResult.Yes)
             {
                 oPLAN.ESTADO = "ACTIVO";
+                oPACIENTE.PLAN.ESTADO = "SIN ASIGNAR";
                 cPLANES.MODIFICAR_PLAN(oPLAN);
                 ARMA_GRILLA();
             }

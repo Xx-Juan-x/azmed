@@ -151,8 +151,8 @@ namespace VISTA
             ACCION = "A";
 
             cmbOBRA_SOCIAL.DataSource = null;
-            //AÑADO MI PROPIEDAD OBRA SOCIAL A MI COMBOBOX
 
+            //AÑADO MI PROPIEDAD OBRA SOCIAL A MI COMBOBOX
             cmbOBRA_SOCIAL.ValueMember = "ID_OBRA_SOCIAL";
             cmbOBRA_SOCIAL.DisplayMember = "NOMBRE";
             cmbOBRA_SOCIAL.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
@@ -305,6 +305,18 @@ namespace VISTA
             oPACIENTE = (MODELO.PACIENTE)dgvLISTA_PACIENTES.CurrentRow.DataBoundItem;
 
             ACCION = "C";
+
+            txtNOMBRE.Text = oPACIENTE.NOMBRE.ToUpper();
+            txtAPELLIDO.Text = oPACIENTE.APELLIDO.ToUpper();
+            txtCONTACTO.Text = oPACIENTE.CONTACTO.ToString();
+            txtEMAIL.Text = oPACIENTE.EMAIL;
+
+            cmbOBRA_SOCIAL.ValueMember = "ID_OBRA_SOCIAL";
+            cmbOBRA_SOCIAL.DisplayMember = "NOMBRE";
+            cmbOBRA_SOCIAL.DataSource = cOBRAS_SOCIALES.OBTENER_OBRAS_SOCIALES();
+
+            cmbOBRA_SOCIAL.Text = oPACIENTE.OBRA_SOCIAL.ToString();
+            cmbPLAN.Text = oPACIENTE.PLAN.ToString();
 
             MODO_DATOS();
         }

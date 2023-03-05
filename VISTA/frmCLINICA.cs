@@ -17,8 +17,6 @@ namespace VISTA
         private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
 
-        //public static frmCLINICA MDI_CLINICA;
-
         //PATRON SINGLETON
         private static frmCLINICA instancia;
 

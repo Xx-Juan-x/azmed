@@ -43,6 +43,8 @@ namespace VISTA
             InitializeComponent();
             cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
             cESPECIALIDADES = CONTROLADORA.ESPECIALIDADES.OBTENER_INSTANCIA();
+            cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
+            cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();
 
             ARMA_COMBOBOX_ESPECIALIDAD();
             ARMA_GRILLA("A");
@@ -279,6 +281,17 @@ namespace VISTA
 
             ACCION = "C";
 
+            txtNOMBRE.Text = oPROFESIONAL.NOMBRE.ToUpper();
+            txtAPELLIDO.Text = oPROFESIONAL.APELLIDO.ToUpper();
+            txtCONTACTO.Text = oPROFESIONAL.CONTACTO.ToString();
+            txtEMAIL.Text = oPROFESIONAL.EMAIL;
+
+            cmbESPECIALIDAD.ValueMember = "ID_ESPECIALIDAD";
+            cmbESPECIALIDAD.DisplayMember = "NOMBRE";
+            cmbESPECIALIDAD.DataSource = cESPECIALIDADES.OBTENER_ESPECIALIDADES();
+
+            cmbESPECIALIDAD.Text = oPROFESIONAL.ESPECIALIDAD.ToString();
+
             MODO_DATOS();
         }
 
@@ -291,35 +304,42 @@ namespace VISTA
             }
             oPROFESIONAL = (MODELO.PROFESIONAL)dgvLISTA_PROFESIONALES.CurrentRow.DataBoundItem;
 
+            if (oPROFESIONAL.ESTADO != "ACTIVO")
+            {
+                MessageBox.Show("Debe seleccionar un profesional activo para poder eliminarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el profesional " + oPROFESIONAL.NOMBRE + " " + oPROFESIONAL.APELLIDO + " de la lista de profesionales?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
-                /*DateTime DIA_ACTUAL = DateTime.Now;
+                DateTime DIA_ACTUAL = DateTime.Now;
                 var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
-                                    where a.FECHA > DIA_ACTUAL
+                                    where a.FECHA > DIA_ACTUAL && a.PROFESIONAL.ID_PROFESIONAL == oPROFESIONAL.ID_PROFESIONAL
                                     select a).ToList();
                 foreach (var item in LISTA_TURNOS)
                 {
-                    oTURNO = (MODELO.TURNO)item;
+                    oTURNO = item;
                     oTURNO.ESTADO = "CANCELADO";
                     cTURNOS.MODIFICAR_TURNO(oTURNO);
-                }*/
+                }
 
-                /*var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
-                                        where a.PROFESIONAL.ID_PROFESIONAL == oATENCION.PROFESIONAL.ID_PROFESIONAL
-                                        select a).ToList();
+                var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
+                                    where a.PROFESIONAL.ID_PROFESIONAL == oPROFESIONAL.ID_PROFESIONAL
+                                    select a).ToList();
 
                 foreach (var items in LISTA_ATENCIONES)
                 {
-                    oATENCION = (MODELO.ATENCION)items;
+                    oATENCION = items;
                     oATENCION.ESTADO = "INACTIVO";
                     cATENCIONES.MODIFICAR_ATENCION(oATENCION);
-                }*/
+                }
 
                 oPROFESIONAL.ESTADO = "INACTIVO";
                 cPROFESIONALES.MODIFICAR_PROFESIONAL(oPROFESIONAL);
                 ARMA_GRILLA("A");
             }
+        
         }
 
         private void btnRECUPERAR_Click(object sender, EventArgs e)
@@ -339,6 +359,17 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de recuperar el profesional " + oPROFESIONAL.NOMBRE + " " + oPROFESIONAL.APELLIDO + " de la lista de profesionales?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
+                var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
+                                        where a.PROFESIONAL.ID_PROFESIONAL == oPROFESIONAL.ID_PROFESIONAL
+                                        select a).ToList();
+
+                foreach (var items in LISTA_ATENCIONES)
+                {
+                    oATENCION = items;
+                    oATENCION.ESTADO = "ACTIVO";
+                    cATENCIONES.MODIFICAR_ATENCION(oATENCION);
+                }
+
                 oPROFESIONAL.ESTADO = "ACTIVO";
                 cPROFESIONALES.MODIFICAR_PROFESIONAL(oPROFESIONAL);
                 ARMA_GRILLA("A");

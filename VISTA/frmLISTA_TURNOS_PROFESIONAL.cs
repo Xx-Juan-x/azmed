@@ -101,14 +101,15 @@ namespace VISTA
                                                     where a.PROFESIONAL.ID_PROFESIONAL == FILTRO_PROFESIONAL
                                                     select a).ToList();
                 }
+
                 dgvLISTA_TURNOS.DataSource = null;
-                //dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
                 BindingSource source = new BindingSource();
                 source.DataSource = LISTA_TURNOS_PROFESIONAL;
                 dgvLISTA_TURNOS.DataSource = source;
                 dgvLISTA_TURNOS.Update();
                 dgvLISTA_TURNOS.Refresh();
             }
+
             //Un dia seleccionado
             if (TIPO == "B")
             {
@@ -125,8 +126,8 @@ namespace VISTA
                                                 where a.DIA == FILTRO_DIA_LABORAL && a.PROFESIONAL.ID_PROFESIONAL == FILTRO_PROFESIONAL
                                                 select a).ToList();
                 }
+
                 dgvLISTA_TURNOS.DataSource = null;
-                //dgvLISTA_TURNOS.DataSource = LISTA_TURNOS_PROFESIONAL;
                 BindingSource source = new BindingSource();
                 source.DataSource = LISTA_TURNOS_PROFESIONAL;
                 dgvLISTA_TURNOS.DataSource = source;

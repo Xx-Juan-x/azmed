@@ -38,14 +38,6 @@ namespace VISTA
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
-            //cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
-        }
-
-        private void linklblREGISTRARSE_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //FORMULARIO_REGISTRO = frmREGISTRO_PACIENTE.OBTENER_INSTANCIA();
-            this.Hide();        
-            //FORMULARIO_REGISTRO.Show();        
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)

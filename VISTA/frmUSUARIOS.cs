@@ -37,23 +37,12 @@ namespace VISTA
         private MODELO.PROFESIONAL oPROFESIONAL;
         string ACCION;
 
-        //CODIGO PARA LA TABLA PACIENTES Y PROFESIONALES
-
-        //private CONTROLADORA.ATENCIONES cATENCIONES;
-        //private MODELO.ATENCION oATENCION;
-        //private CONTROLADORA.TURNOS cTURNOS;
-        //private MODELO.TURNO oTURNO;
-
-
         public frmUSUARIOS()
         {
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
             cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
-            //CODIGO PARA LA TABLA PACIENTE Y PROFESIONAL
-            /*cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
-            cTURNOS = CONTROLADORA.TURNOS.OBTENER_INSTANCIA();*/
 
             ARMA_GRILLA("A");
             MODO_GRILLA();
@@ -268,18 +257,6 @@ namespace VISTA
                 return;
             }
 
-            /*string TIPO = "";
-            foreach (DataGridViewRow row in dgvLISTA_USUARIOS.SelectedRows)
-            {
-                TIPO = (string)row.Cells["TIPO"].Value;
-            }
-
-            if (TIPO == "PACIENTE")
-            {
-                MessageBox.Show("No puede modificar un usuario de tipo paciente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }*/
-
             ACCION = "M";
 
             cmbGRUPO.ValueMember = "ID_GRUPO";
@@ -329,33 +306,6 @@ namespace VISTA
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
-                //CODIGO PARA LA TABLA PACIENTES Y PROFESIONALES
-
-                /*if (oUSUARIO.GRUPO.NOMBRE == "PROFESIONAL")
-                {
-                    DateTime DIA_ACTUAL = DateTime.Now;
-                    var LISTA_TURNOS = (from a in cTURNOS.OBTENER_TURNOS()
-                                        where a.FECHA > DIA_ACTUAL && a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
-                                        select a).ToList();
-                    foreach (var item in LISTA_TURNOS)
-                    {
-                        oTURNO = (MODELO.TURNO)item;
-                        oTURNO.ESTADO = "CANCELADO";
-                        cTURNOS.MODIFICAR_TURNO(oTURNO);
-                    }
-
-                    var LISTA_ATENCIONES = (from a in cATENCIONES.OBTENER_ATENCIONES()
-                                            where a.PROFESIONAL.ID_USUARIO == oUSUARIO.ID_USUARIO
-                                            select a).ToList();
-
-                    foreach (var items in LISTA_ATENCIONES)
-                    {
-                        oATENCION = (MODELO.ATENCION)items;
-                        oATENCION.ESTADO = "INACTIVO";
-                        cATENCIONES.MODIFICAR_ATENCION(oATENCION);
-                    }
-                }*/
-
                 oUSUARIO.ESTADO = "INACTIVO";
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");

@@ -179,13 +179,6 @@ namespace VISTA
                     return;
                 }
             }
-
-            /*DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar el grupo " + oGRUPO.NOMBRE + " de la lista de grupos?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (RESPUESTA == DialogResult.Yes)
-            {
-                cGRUPOS.ELIMINAR_GRUPO(oGRUPO);
-                ARMA_GRILLA();
-            }*/
         }
 
         private void btnCANCELAR_Click(object sender, EventArgs e)
@@ -197,6 +190,16 @@ namespace VISTA
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNOMBRE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("Solo se permiten letras", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

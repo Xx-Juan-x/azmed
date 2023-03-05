@@ -71,8 +71,7 @@ namespace VISTA
                 LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE(PACIENTE.NOMBRE + " " + PACIENTE.APELLIDO, PACIENTE.ID_PACIENTE));
             }
             cmbPACIENTE.DataSource = LISTA_CMB_PACIENTES;
-            /*cmbDIA.Items.Add("SELECCIONE...");
-            cmbDIA.SelectedItem = "SELECCIONE...";*/
+
             var hoy = DateTime.Today;//2022-03-07
 
             var dia_nombre = new string[7];
@@ -203,7 +202,7 @@ namespace VISTA
 
             var LISTA_ATENCION = (from a in cATENCIONES.OBTENER_ATENCIONES().AsEnumerable()
                                   where a.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
-                                  && a.DIA_LABORAL == DIA_CMB_T
+                                  && a.DIA_LABORAL == DIA_CMB_T && a.ESTADO == "ACTIVO"
                                   select a).ToList();
 
             var dict = new Dictionary<int, int>();
@@ -282,7 +281,6 @@ namespace VISTA
             cmbHORAS.Items.Clear();
             cmbHORAS.ResetText();
             cmbPROFESIONAL.DataSource = null;
-            //cmbESPECIALIDAD.SelectedValue;
             MODELO.ESPECIALIDAD ESP = new MODELO.ESPECIALIDAD();
             ESP = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedValue;
             IMPORTE_CONSULTA = ESP.IMPORTE_CONSULTA;
@@ -482,10 +480,9 @@ namespace VISTA
                 return;
             }
 
-            oTURNO.ESTADO = "SOLICITADO";
-
             if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "A")
             {
+                oTURNO.ESTADO = "SOLICITADO";
                 cTURNOS.AGREGAR_TURNO(oTURNO);
                 MessageBox.Show("Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmbHORAS.Items.Clear();

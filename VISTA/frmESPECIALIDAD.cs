@@ -209,7 +209,9 @@ namespace VISTA
             ACCION = "C";
 
             txtNOMBRE.Text = oESPECIALIDAD.NOMBRE.ToUpper();
-            
+            txtIMPORTE_CONSULTA.Text = oESPECIALIDAD.IMPORTE_CONSULTA.ToString();
+            txtIMPORTE_ESTUDIO.Text = oESPECIALIDAD.IMPORTE_ESTUDIO.ToString();
+
 
             MODO_DATOS();
 
@@ -227,13 +229,6 @@ namespace VISTA
 
         private void txtIMPORTE_CONSULTA_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }*/
-
             var reg = new Regex("^[0-9,]*$");
             if (!reg.IsMatch(e.KeyChar.ToString()) && !(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {

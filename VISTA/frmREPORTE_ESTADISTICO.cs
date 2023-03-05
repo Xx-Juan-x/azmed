@@ -59,11 +59,6 @@ namespace VISTA
 
                 // Agrego la cantidad de Profesionales (las barras)
                 SERIES.Points.Add(CANTIDAD_PROFESIONALES);
-                //chartESPECIALIDAD_PROFESIONAL.AlignDataPointsByAxisLabel(SERIES_ARRAY_ESPECIALIDAD[i]);
-
-                //SERIES.Points.Add(Convert.ToDouble(SERIES_ARRAY_ESPECIALIDAD[i]));
-
-                //chartESPECIALIDAD_PROFESIONAL.Series[SERIES_ARRAY_ESPECIALIDAD[i]]["PointWidth"] = "0.8";
             }
         }
         private void btnCERRAR_Click(object sender, EventArgs e)
