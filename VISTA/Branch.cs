@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace VISTA
 {
+    //PATRON COMPOSITE: branch
     public class Branch : Composite
     {
         private CONTROLADORA.GRUPOS cGRUPOS;
@@ -40,6 +41,5 @@ namespace VISTA
                 this.Agregar(hoja);
             }
         }
-
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace VISTA
 {
+    //PATRON COMPOSITE: Leaf
     public class Leaf : Composite
     {
         public override string Nombre { get; set; }

@@ -244,6 +244,12 @@ namespace VISTA
             }
             oPROFESIONAL = (MODELO.PROFESIONAL)dgvLISTA_PROFESIONALES.CurrentRow.DataBoundItem;
 
+            if (oPROFESIONAL.ESTADO == "INACTIVO")
+            {
+                MessageBox.Show("Debe seleccionar un profesional activo para poder modificarlo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             ACCION = "M";
 
             txtNOMBRE.Text = oPROFESIONAL.NOMBRE.ToUpper();

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace VISTA
 {
+    //PATRON COMPOSITE: client
     public class Cliente : Composite
     {
         public Cliente(TreeView treeview = null)
@@ -45,8 +46,6 @@ namespace VISTA
                 }
 
             }
-        }
-
-        
+        }       
     }
 }

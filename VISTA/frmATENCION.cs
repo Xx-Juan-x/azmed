@@ -244,6 +244,12 @@ namespace VISTA
             }
             oATENCION = (MODELO.ATENCION)dgvLISTA_ATENCIONES.CurrentRow.DataBoundItem;
 
+            if (oATENCION.ESTADO == "INACTIVO")
+            {
+                MessageBox.Show("Debe seleccionar una atención activa para poder modificarla", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             ACCION = "M";
 
             cmbESPECIALIDADES.ValueMember = "ID_ESPECIALIDAD";

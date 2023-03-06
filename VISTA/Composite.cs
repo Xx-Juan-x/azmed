@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace VISTA
 {
+    //PATRON COMPOSITE: composite
     abstract public class Composite
     {
         public virtual int ID { get; set; }
