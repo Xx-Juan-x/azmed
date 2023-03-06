@@ -72,12 +72,16 @@ namespace VISTA
             frmUSUARIOS FORMULARIO_USUARIO = frmUSUARIOS.OBTENER_INSTANCIA();
             FORMULARIO_USUARIO.Show();
         }
+
+        
         private object GetValueByPropertyName<T>(T obj, string propertyName)
         {
             PropertyInfo propInfo = typeof(T).GetProperty(propertyName);
 
             return propInfo.GetValue(obj);
         }
+
+        //PATRON COMPOSITE
         private void frmCLINICA_Load(object sender, EventArgs e)
         {
             lblTIPO_USUARIO.Text = frmLOGIN.TIPO_USUARIO;

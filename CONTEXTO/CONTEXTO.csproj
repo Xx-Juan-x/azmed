@@ -338,6 +338,10 @@
     <Compile Include="Migrations\202303060601572_grupos_acciones.designer.cs">
       <DependentUpon>202303060601572_grupos_acciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303061132579_QUITO ESTADO DE PACIENTE.cs" />
+    <Compile Include="Migrations\202303061132579_QUITO ESTADO DE PACIENTE.designer.cs">
+      <DependentUpon>202303061132579_QUITO ESTADO DE PACIENTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -567,6 +571,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303060601572_grupos_acciones.resx">
       <DependentUpon>202303060601572_grupos_acciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303061132579_QUITO ESTADO DE PACIENTE.resx">
+      <DependentUpon>202303061132579_QUITO ESTADO DE PACIENTE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

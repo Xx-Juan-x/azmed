@@ -197,6 +197,12 @@ namespace VISTA
                 MessageBox.Show("La contraseña debe contener entre 8 y 16 caracteres", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (cmbVincularProf.Text == "SELECCIONE..." && cmbVincularProf.Enabled == true)
+            {
+                MessageBox.Show("Debe vincular un profesional para poder gestionar un usuario", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             #endregion
 
             // ASIGNO MI TEXTBOX CON MI PROPIEDAD
@@ -399,7 +405,7 @@ namespace VISTA
             if (cmbGRUPO.SelectedItem != null && cmbGRUPO.SelectedItem.ToString() == "PROFESIONAL")
             {
                 var profesionales = (from p in cPROFESIONALES.OBTENER_PROFESIONALES() select p).ToList();
-                listaPROF.Add(new COMBOBOX_PROFESIONALES("Seleccione..", -1));
+                listaPROF.Add(new COMBOBOX_PROFESIONALES("SELECCIONE...", -1));
                 foreach (var prof in profesionales)
                 {
                     listaPROF.Add(new COMBOBOX_PROFESIONALES(prof.NOMBRE + " " + prof.APELLIDO, prof.ID_PROFESIONAL));
@@ -409,7 +415,7 @@ namespace VISTA
             }
             else
             {
-                cmbVincularProf.Items.Clear();
+                //cmbVincularProf.Items.Clear();
                 cmbVincularProf.Enabled = false;
             }
         }

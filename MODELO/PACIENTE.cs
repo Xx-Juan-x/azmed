@@ -16,7 +16,6 @@ namespace MODELO
         public OBRA_SOCIAL OBRA_SOCIAL { get; set; }
         public PLAN PLAN { get; set; }
         public DateTime FECHA { get; set; }
-        public string ESTADO { get; set; }
 
         public override string ToString()
         {

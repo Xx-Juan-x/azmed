@@ -42,7 +42,7 @@ namespace VISTA
 
             InitializeComponent();
             List<COMBOBOX_GRUPOS> LISTA_GRUPOS = new List<COMBOBOX_GRUPOS>();
-            LISTA_GRUPOS.Add(new COMBOBOX_GRUPOS("Seleccione", -1));
+            LISTA_GRUPOS.Add(new COMBOBOX_GRUPOS("SELECCIONE...", -1));
             var grupos = (from  a in cGRUPOS.OBTENER_GRUPOS() select a).ToList();
             foreach (var g in grupos)
             {
@@ -50,19 +50,19 @@ namespace VISTA
                 
             }
             
-            cmb_GRUPOS.DataSource = LISTA_GRUPOS;
+            cmbGRUPOS.DataSource = LISTA_GRUPOS;
 
             List<COMBOBOX_ACCIONES> LISTA_ACCIONES = new List<COMBOBOX_ACCIONES>();
-            LISTA_ACCIONES.Add(new COMBOBOX_ACCIONES("Seleccione", -1));
+            LISTA_ACCIONES.Add(new COMBOBOX_ACCIONES("SELECCIONE...", -1));
             var acciones = cACCIONES.OBTENER_ACCIONES().ToList();
             foreach (var a in acciones)
             {
                 LISTA_ACCIONES.Add(new COMBOBOX_ACCIONES(a.DESCRIPCION.ToString(), a.ID_ACCIONES));
             }
             cmb_ACCIONES.DataSource = LISTA_ACCIONES;
-            armarVista();
+            ARMAR_VISTA();
         }
-        private void armarVista()
+        private void ARMAR_VISTA()
         {
             var grupos = (from a in cGRUPOS.OBTENER_GRUPOS() select a).ToList();
             Branch raiz = new Branch("RAIZ", 0);
@@ -75,25 +75,29 @@ namespace VISTA
             Cliente client = new Cliente(treeViewGrupo);
             client.VistaArbol(raiz._children, null);
         }
-        private void btn_asignarAccion_Click(object sender, EventArgs e)
+
+        private void btnCERRAR_Click(object sender, EventArgs e)
         {
-            COMBOBOX_GRUPOS cmb_g = (COMBOBOX_GRUPOS)cmb_GRUPOS.SelectedValue;
+            this.Close();
+        }
+
+        private void btnASIGNAR_ACCION_Click(object sender, EventArgs e)
+        {
+            COMBOBOX_GRUPOS cmb_g = (COMBOBOX_GRUPOS)cmbGRUPOS.SelectedValue;
             if (cmb_ACCIONES.SelectedIndex != -1 && cmb_g.CMB_VALOR != -1)
             {
-                string gr = cmb_GRUPOS.SelectedItem.ToString();
+                string gr = cmbGRUPOS.SelectedItem.ToString();
                 string ac = cmb_ACCIONES.SelectedItem.ToString();
                 oACCIONES = (from a in cACCIONES.OBTENER_ACCIONES() where a.DESCRIPCION == ac select a).FirstOrDefault();
                 oACCIONES_GRUPOS = new MODELO.ACCIONES_GRUPOS();
                 oACCIONES_GRUPOS.GRUPO_ID_GRUPO = cmb_g.CMB_VALOR;
                 oACCIONES_GRUPOS.ACCION = oACCIONES;
                 cACCIONES_GRUPOS.AGREGAR_ACCIONES_GRUPOS(oACCIONES_GRUPOS);
-                MessageBox.Show("Se ha guardado la asignacion de la accion "+ac, "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se ha guardado la asignacion de la accion " + ac, "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 treeViewGrupo.Refresh();
                 treeViewGrupo.Nodes.Clear();
-                armarVista();
-
+                ARMAR_VISTA();
             }
-
         }
     }
     class COMBOBOX_ACCIONES

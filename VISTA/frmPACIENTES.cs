@@ -223,13 +223,11 @@ namespace VISTA
             oPACIENTE.CONTACTO = CONTACTO;
             oPACIENTE.EMAIL = txtEMAIL.Text;
             oPACIENTE.FECHA = DateTime.Now;
-            oPACIENTE.ESTADO = "ACTIVO";
             oPACIENTE.OBRA_SOCIAL = (MODELO.OBRA_SOCIAL)cmbOBRA_SOCIAL.SelectedItem;
             oPACIENTE.PLAN = (MODELO.PLAN)cmbPLAN.SelectedItem;
 
             if (ACCION == "A")
             {
-                oPACIENTE.ESTADO = "ACTIVO";
                 cPACIENTES.AGREGAR_PACIENTE(oPACIENTE);
             }
             else if (ACCION == "M")

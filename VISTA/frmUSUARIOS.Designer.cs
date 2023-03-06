@@ -33,6 +33,8 @@ namespace VISTA
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbDATOS_USUARIO = new System.Windows.Forms.GroupBox();
+            this.cmbVincularProf = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDESCRIPCION_CLAVE = new System.Windows.Forms.Label();
             this.lblDESCRIPCION = new System.Windows.Forms.Label();
             this.txtCONFIRMAR_PASSWORD = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@ namespace VISTA
             this.btnMODIFICAR = new System.Windows.Forms.Button();
             this.btnAGREGAR = new System.Windows.Forms.Button();
             this.dgvLISTA_USUARIOS = new System.Windows.Forms.DataGridView();
-            this.cmbVincularProf = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbDATOS_USUARIO.SuspendLayout();
             this.gbLISTA_USUARIOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_USUARIOS)).BeginInit();
@@ -91,6 +91,26 @@ namespace VISTA
             this.gbDATOS_USUARIO.TabIndex = 5;
             this.gbDATOS_USUARIO.TabStop = false;
             this.gbDATOS_USUARIO.Text = "DATOS DEL USUARIO";
+            // 
+            // cmbVincularProf
+            // 
+            this.cmbVincularProf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVincularProf.Enabled = false;
+            this.cmbVincularProf.FormattingEnabled = true;
+            this.cmbVincularProf.Location = new System.Drawing.Point(99, 329);
+            this.cmbVincularProf.Name = "cmbVincularProf";
+            this.cmbVincularProf.Size = new System.Drawing.Size(159, 21);
+            this.cmbVincularProf.TabIndex = 79;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 337);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "PROFESIONAL:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblDESCRIPCION_CLAVE
             // 
@@ -434,26 +454,6 @@ namespace VISTA
             this.dgvLISTA_USUARIOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_USUARIOS.Size = new System.Drawing.Size(777, 314);
             this.dgvLISTA_USUARIOS.TabIndex = 0;
-            // 
-            // cmbVincularProf
-            // 
-            this.cmbVincularProf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVincularProf.Enabled = false;
-            this.cmbVincularProf.FormattingEnabled = true;
-            this.cmbVincularProf.Location = new System.Drawing.Point(99, 329);
-            this.cmbVincularProf.Name = "cmbVincularProf";
-            this.cmbVincularProf.Size = new System.Drawing.Size(159, 21);
-            this.cmbVincularProf.TabIndex = 79;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 326);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 26);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Vincular\r\nProfesional";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmUSUARIOS
             // 
