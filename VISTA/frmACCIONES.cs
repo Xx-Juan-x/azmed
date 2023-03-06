@@ -92,7 +92,7 @@ namespace VISTA
 
                 if (yaExiste != null)
                 {
-                    MessageBox.Show("Verifique los datos del plan y la obra social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("La acción " + oACCIONES.DESCRIPCION + " ya se encuentra asignada a este grupo, pruebe con otra acción", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

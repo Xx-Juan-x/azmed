@@ -145,7 +145,7 @@
             this.txt_ACCION.Enabled = false;
             this.txt_ACCION.Location = new System.Drawing.Point(494, 32);
             this.txt_ACCION.Name = "txt_ACCION";
-            this.txt_ACCION.Size = new System.Drawing.Size(100, 20);
+            this.txt_ACCION.Size = new System.Drawing.Size(127, 20);
             this.txt_ACCION.TabIndex = 86;
             // 
             // btn_DESASIGNAR
@@ -156,7 +156,7 @@
             this.btn_DESASIGNAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DESASIGNAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DESASIGNAR.ForeColor = System.Drawing.Color.White;
-            this.btn_DESASIGNAR.Location = new System.Drawing.Point(610, 21);
+            this.btn_DESASIGNAR.Location = new System.Drawing.Point(627, 21);
             this.btn_DESASIGNAR.Name = "btn_DESASIGNAR";
             this.btn_DESASIGNAR.Size = new System.Drawing.Size(129, 40);
             this.btn_DESASIGNAR.TabIndex = 87;
