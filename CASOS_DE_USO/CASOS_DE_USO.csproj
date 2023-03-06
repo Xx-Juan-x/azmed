@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACCIONES\GESTION_ACCIONES.cs" />
+    <Compile Include="ACCIONES_GRUPOS\GESTION_ACCIONES_GRUPOS.cs" />
+    <Compile Include="ACCIONES_GRUPOS\OPERACIONES_ACCIONES_GRUPOS.cs" />
     <Compile Include="ATENCION\GESTION_ATENCIONES.cs" />
     <Compile Include="ATENCION\OPERACIONES_ATENCIONES.cs" />
     <Compile Include="COTIZACIONES\GESTION_COTIZACIONES.cs" />

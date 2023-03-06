@@ -66,6 +66,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Branch.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Composite.cs" />
+    <Compile Include="frmACCIONES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmACCIONES.Designer.cs">
+      <DependentUpon>frmACCIONES.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmATENCION.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +213,7 @@
     <Compile Include="frmUSUARIOS.Designer.cs">
       <DependentUpon>frmUSUARIOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Leaf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmREPORTE_CANTIDAD_TURNOS.cs">
@@ -212,6 +222,9 @@
     <Compile Include="frmREPORTE_CANTIDAD_TURNOS.Designer.cs">
       <DependentUpon>frmREPORTE_CANTIDAD_TURNOS.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmACCIONES.resx">
+      <DependentUpon>frmACCIONES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmATENCION.resx">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>

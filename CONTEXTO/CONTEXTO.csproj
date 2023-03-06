@@ -334,6 +334,10 @@
     <Compile Include="Migrations\202303030409415_usuario cambios.designer.cs">
       <DependentUpon>202303030409415_usuario cambios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303060601572_grupos_acciones.cs" />
+    <Compile Include="Migrations\202303060601572_grupos_acciones.designer.cs">
+      <DependentUpon>202303060601572_grupos_acciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -560,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303030409415_usuario cambios.resx">
       <DependentUpon>202303030409415_usuario cambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303060601572_grupos_acciones.resx">
+      <DependentUpon>202303060601572_grupos_acciones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

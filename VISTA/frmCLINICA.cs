@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Reflection;
+using System.Data.Entity.Infrastructure;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace VISTA
 {
@@ -16,7 +19,7 @@ namespace VISTA
         private CONTROLADORA.USUARIOS cUSUARIOS;
         private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
-
+        private CONTROLADORA.ACCIONES_GRUPOS cACCIONES_GRUPOS ;
         //PATRON SINGLETON
         private static frmCLINICA instancia;
 
@@ -39,6 +42,7 @@ namespace VISTA
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cLISTA_PEDIDOS = CONTROLADORA.LISTA_DE_PEDIDOS.OBTENER_INSTANCIA();
             cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
+            cACCIONES_GRUPOS = CONTROLADORA.ACCIONES_GRUPOS.OBTENER_INSTANCIA();
         }
 
         
@@ -68,57 +72,100 @@ namespace VISTA
             frmUSUARIOS FORMULARIO_USUARIO = frmUSUARIOS.OBTENER_INSTANCIA();
             FORMULARIO_USUARIO.Show();
         }
+        private object GetValueByPropertyName<T>(T obj, string propertyName)
+        {
+            PropertyInfo propInfo = typeof(T).GetProperty(propertyName);
 
+            return propInfo.GetValue(obj);
+        }
         private void frmCLINICA_Load(object sender, EventArgs e)
         {
             lblTIPO_USUARIO.Text = frmLOGIN.TIPO_USUARIO;
+            List<ToolStripMenuItem> tool_list = new List<ToolStripMenuItem>();
+            tool_list.Add(uSUARIOSToolStripMenuItem);
+            tool_list.Add(pACIENTESToolStripMenuItem);
+            tool_list.Add(pROFESIONALESToolStripMenuItem);
+            tool_list.Add(tURNOSToolStripMenuItem);
+            tool_list.Add(SolicitarTurnoToolStripMenuItem);
+            tool_list.Add(turnosToolStripMenuItem1);
+            tool_list.Add(registrarMaterialesToolStripMenuItem);
+            tool_list.Add(registrarProveedoresToolStripMenuItem);
+            tool_list.Add(crearCotizacionesToolStripMenuItem);
+            tool_list.Add(crearOrdenDeCompraToolStripMenuItem);
+            tool_list.Add(turnosDeHoyToolStripMenuItem);
+            tool_list.Add(cOMPRASToolStripMenuItem);
+            tool_list.Add(crearSolicitudDePedidoToolStripMenuItem);
+            tool_list.Add(rEPORTESToolStripMenuItem);
+            tool_list.Add(horariosLaboralesToolStripMenuItem);
+            tool_list.Add(registrarEspecialidadesToolStripMenuItem);
+            tool_list.Add(registrarProfesionalesToolStripMenuItem);
+            tool_list.Add(gestionarAtenciónToolStripMenuItem);
+            tool_list.Add(facturarToolStripMenuItem);
+
+            foreach (ToolStripMenuItem itm in tool_list)
+            {
+                itm.Visible = false;
+            }
+            gbLISTA_SOLICITUDES_PEDIDOS.Visible = false;
+
             switch (frmLOGIN.TIPO_USUARIO)
             {
                 case "ADMINISTRADOR":
-                    uSUARIOSToolStripMenuItem.Visible = true;
-                    pACIENTESToolStripMenuItem.Visible = true;
-                    pROFESIONALESToolStripMenuItem.Visible = true;
-                    tURNOSToolStripMenuItem.Visible = true;
-                    rEPORTESToolStripMenuItem.Visible = true;
-                    horariosLaboralesToolStripMenuItem.Visible = true;
-                    SolicitarTurnoToolStripMenuItem.Visible = false;
-                    turnosToolStripMenuItem1.Visible = true;
-                    gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;
-                    registrarMaterialesToolStripMenuItem.Visible = true;
-                    registrarProveedoresToolStripMenuItem.Visible = true;
-                    crearCotizacionesToolStripMenuItem.Visible = true;
-                    crearOrdenDeCompraToolStripMenuItem.Visible = true;
-                    turnosDeHoyToolStripMenuItem.Visible = true;
-                    gestionarAtenciónToolStripMenuItem.Visible = true;
+                    var acciones_grupos = (from a in cACCIONES_GRUPOS.OBTENER_ACCIONES_GRUPOS() where a.GRUPO_ID_GRUPO == 2 select a).ToList();
+                    foreach(var item in acciones_grupos){
+                        foreach(ToolStripMenuItem itm in tool_list)
+                        {
+                            if(itm.Name == item.ACCION.ACCION)
+                            {
+                                itm.Visible = true;
+                            }
+                            
+                        }
+                        if ("gbLISTA_SOLICITUDES_PEDIDOS" == item.ACCION.ACCION)
+                        {
+                            gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;
+                        }
+                    }
+                    
                     break;
                 
                 case "JEFE DE COMPRAS":
-                    uSUARIOSToolStripMenuItem.Visible = false;
-                    pACIENTESToolStripMenuItem.Visible = false;
-                    pROFESIONALESToolStripMenuItem.Visible = false;
-                    tURNOSToolStripMenuItem.Visible = false;
-                    cOMPRASToolStripMenuItem.Visible = true;
-                    crearSolicitudDePedidoToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;
-                    gestionarAtenciónToolStripMenuItem.Visible = false;
+                    acciones_grupos = (from a in cACCIONES_GRUPOS.OBTENER_ACCIONES_GRUPOS() where a.GRUPO_ID_GRUPO == 4 select a).ToList();
+                    foreach (var item in acciones_grupos)
+                    {
+                        foreach (ToolStripMenuItem itm in tool_list)
+                        {
+                            if (itm.Name == item.ACCION.ACCION)
+                            {
+                                itm.Visible = true;
+                            }
+
+                        }
+                        if ("gbLISTA_SOLICITUDES_PEDIDOS" == item.ACCION.ACCION)
+                        {
+                            gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;
+                        }
+                    }
                     ARMA_LISTA_SOLICITUD_PEDIDO();                
                     break;
 
                 case "PROFESIONAL":
-                    tURNOSToolStripMenuItem.Visible = true;
-                    turnosDeHoyToolStripMenuItem.Visible = true;
-                    pROFESIONALESToolStripMenuItem.Visible = true;
-                    horariosLaboralesToolStripMenuItem.Visible = true;
-                    registrarEspecialidadesToolStripMenuItem.Visible = false;
-                    registrarProfesionalesToolStripMenuItem.Visible = false;
-                    gestionarAtenciónToolStripMenuItem.Visible = false;
-                    SolicitarTurnoToolStripMenuItem.Visible = false;
-                    turnosToolStripMenuItem1.Visible = false;
-                    facturarToolStripMenuItem.Visible = false;
-                    uSUARIOSToolStripMenuItem.Visible = false;
-                    pACIENTESToolStripMenuItem.Visible = false;       
-                    cOMPRASToolStripMenuItem.Visible = false;
-                    rEPORTESToolStripMenuItem.Visible = false;       
+                    acciones_grupos = (from a in cACCIONES_GRUPOS.OBTENER_ACCIONES_GRUPOS() where a.GRUPO_ID_GRUPO == 3 select a).ToList();
+                    foreach (var item in acciones_grupos)
+                    {
+                        foreach (ToolStripMenuItem itm in tool_list)
+                        {
+                            if (itm.Name == item.ACCION.ACCION)
+                            {
+                                itm.Visible = true;
+                            }
+
+                        }
+                        if ("gbLISTA_SOLICITUDES_PEDIDOS" == item.ACCION.ACCION)
+                        {
+                            gbLISTA_SOLICITUDES_PEDIDOS.Visible = true;
+                        }
+                    }
                     break;
 
                 default:
@@ -248,6 +295,12 @@ namespace VISTA
         {
             frmPROFESIONALES FORMULARIO_PROFESIONAL = frmPROFESIONALES.OBTENER_INSTANCIA();
             FORMULARIO_PROFESIONAL.Show();
+        }
+
+        private void gestionAccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmACCIONES ACCIONES = frmACCIONES.OBTENER_INSTANCIA();
+            ACCIONES.Show();
         }
     }
 }

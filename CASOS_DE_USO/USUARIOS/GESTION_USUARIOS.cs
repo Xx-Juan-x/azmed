@@ -15,8 +15,8 @@ namespace CASOS_DE_USO.USUARIOS
 
         public static List<MODELO.USUARIO> OBTENER_USUARIOS(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
-            List<MODELO.USUARIO> RESPUESTA = (from USUARIOS in AZMED_CLINICA.USUARIOS.Include("GRUPO")
-                                              //where USUARIOS.ESTADO != "INACTIVO"
+            List<MODELO.USUARIO> RESPUESTA = (from USUARIOS in AZMED_CLINICA.USUARIOS.Include("GRUPO").Include("PROFESIONAL")
+                                                  //where USUARIOS.ESTADO != "INACTIVO"
                                               select USUARIOS).ToList();
             return RESPUESTA;
         }

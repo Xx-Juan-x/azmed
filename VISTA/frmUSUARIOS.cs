@@ -266,7 +266,7 @@ namespace VISTA
             txtNOMBRE_USUARIO.Text = oUSUARIO.NOMBRE.ToUpper();
             txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
-            cmbGRUPO.Text = oUSUARIO.GRUPO.ToString();
+            if (oUSUARIO.GRUPO != null) cmbGRUPO.Text = oUSUARIO.GRUPO.ToString();
 
             MODO_DATOS();
         }
@@ -289,7 +289,7 @@ namespace VISTA
             txtNOMBRE_USUARIO.Text = oUSUARIO.NOMBRE.ToUpper();
             txtEMAIL.Text = oUSUARIO.EMAIL;
             txtPASSWORD.Text = oUSUARIO.CLAVE;
-            cmbGRUPO.Text = oUSUARIO.GRUPO.ToString();
+            if (oUSUARIO.GRUPO != null) cmbGRUPO.Text = oUSUARIO.GRUPO.ToString();
 
             MODO_DATOS();
         }
@@ -396,8 +396,7 @@ namespace VISTA
         private void cmbGRUPO_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<COMBOBOX_PROFESIONALES> listaPROF = new List<COMBOBOX_PROFESIONALES>();
-            var a = cmbGRUPO.SelectedItem.ToString();
-            if (cmbGRUPO.SelectedItem.ToString() == "PROFESIONAL")
+            if (cmbGRUPO.SelectedItem != null && cmbGRUPO.SelectedItem.ToString() == "PROFESIONAL")
             {
                 var profesionales = (from p in cPROFESIONALES.OBTENER_PROFESIONALES() select p).ToList();
                 listaPROF.Add(new COMBOBOX_PROFESIONALES("Seleccione..", -1));
