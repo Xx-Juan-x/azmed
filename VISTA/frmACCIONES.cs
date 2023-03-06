@@ -21,6 +21,7 @@ namespace VISTA
         private MODELO.ACCIONES oACCIONES;
         private MODELO.GRUPO oGRUPO;
         private static frmACCIONES instancia;
+        int grupo_desasignar;
 
         public static frmACCIONES OBTENER_INSTANCIA()
         {
@@ -47,9 +48,7 @@ namespace VISTA
             foreach (var g in grupos)
             {
                 LISTA_GRUPOS.Add(new COMBOBOX_GRUPOS(g.NOMBRE.ToString(),g.ID_GRUPO));
-                
             }
-            
             cmbGRUPOS.DataSource = LISTA_GRUPOS;
 
             List<COMBOBOX_ACCIONES> LISTA_ACCIONES = new List<COMBOBOX_ACCIONES>();
@@ -89,15 +88,50 @@ namespace VISTA
                 string gr = cmbGRUPOS.SelectedItem.ToString();
                 string ac = cmb_ACCIONES.SelectedItem.ToString();
                 oACCIONES = (from a in cACCIONES.OBTENER_ACCIONES() where a.DESCRIPCION == ac select a).FirstOrDefault();
-                oACCIONES_GRUPOS = new MODELO.ACCIONES_GRUPOS();
-                oACCIONES_GRUPOS.GRUPO_ID_GRUPO = cmb_g.CMB_VALOR;
-                oACCIONES_GRUPOS.ACCION = oACCIONES;
-                cACCIONES_GRUPOS.AGREGAR_ACCIONES_GRUPOS(oACCIONES_GRUPOS);
-                MessageBox.Show("Se ha guardado la asignacion de la accion " + ac, "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                treeViewGrupo.Refresh();
-                treeViewGrupo.Nodes.Clear();
-                ARMAR_VISTA();
+                var yaExiste = (from b in cACCIONES_GRUPOS.OBTENER_ACCIONES_GRUPOS() where b.GRUPO_ID_GRUPO == cmb_g.CMB_VALOR && b.ACCION.DESCRIPCION == ac select b).FirstOrDefault();
+
+                if (yaExiste != null)
+                {
+                    MessageBox.Show("Verifique los datos del plan y la obra social", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    oACCIONES_GRUPOS = new MODELO.ACCIONES_GRUPOS();
+                    oACCIONES_GRUPOS.GRUPO_ID_GRUPO = cmb_g.CMB_VALOR;
+                    oACCIONES_GRUPOS.ACCION = oACCIONES;
+                    cACCIONES_GRUPOS.AGREGAR_ACCIONES_GRUPOS(oACCIONES_GRUPOS);
+                    MessageBox.Show("Se ha guardado la asignacion de la accion " + ac, "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    treeViewGrupo.Refresh();
+                    treeViewGrupo.Nodes.Clear();
+                    ARMAR_VISTA();
+                }
+                
             }
+        }
+
+        private void treeViewGrupo_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            var accion = e.Node;
+            if (accion.Text != "PROFESIONAL" && accion.Text != "JEFE DE COMPRAS" && accion.Text != "ADMINISTRADOR")
+            {
+                txt_ACCION.Text = accion.Text;
+                if (e.Node.Parent.Text == "PROFESIONAL") grupo_desasignar = 3;
+                if (e.Node.Parent.Text == "ADMINISTRADOR") grupo_desasignar = 2;
+                if (e.Node.Parent.Text == "JEFE DE COMPRAS") grupo_desasignar = 4;
+                btn_DESASIGNAR.Enabled = true;
+            }
+            
+
+        }
+
+        private void btn_DESASIGNAR_Click(object sender, EventArgs e)
+        {
+            var accion_grupo = (from a in cACCIONES_GRUPOS.OBTENER_ACCIONES_GRUPOS() where a.GRUPO_ID_GRUPO == grupo_desasignar && a.ACCION.DESCRIPCION == txt_ACCION.Text select a).ToList();
+            cACCIONES_GRUPOS.ELIMINAR_ACCIONES_GRUPOS(accion_grupo[0]);
+            MessageBox.Show("Se ha desasignado la accion al grupo", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            treeViewGrupo.Refresh();
+            treeViewGrupo.Nodes.Clear();
+            ARMAR_VISTA();
         }
     }
     class COMBOBOX_ACCIONES
