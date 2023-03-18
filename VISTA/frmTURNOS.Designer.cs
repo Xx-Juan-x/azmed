@@ -138,7 +138,7 @@ namespace VISTA
             // lblPROFESIONAL
             // 
             this.lblPROFESIONAL.AutoSize = true;
-            this.lblPROFESIONAL.Location = new System.Drawing.Point(13, 147);
+            this.lblPROFESIONAL.Location = new System.Drawing.Point(13, 66);
             this.lblPROFESIONAL.Name = "lblPROFESIONAL";
             this.lblPROFESIONAL.Size = new System.Drawing.Size(85, 13);
             this.lblPROFESIONAL.TabIndex = 88;
@@ -148,10 +148,11 @@ namespace VISTA
             // 
             this.cmbPROFESIONAL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPROFESIONAL.FormattingEnabled = true;
-            this.cmbPROFESIONAL.Location = new System.Drawing.Point(170, 139);
+            this.cmbPROFESIONAL.Location = new System.Drawing.Point(170, 58);
             this.cmbPROFESIONAL.Name = "cmbPROFESIONAL";
             this.cmbPROFESIONAL.Size = new System.Drawing.Size(224, 21);
             this.cmbPROFESIONAL.TabIndex = 87;
+            this.cmbPROFESIONAL.SelectedIndexChanged += new System.EventHandler(this.cmbPROFESIONAL_SelectedIndexChanged);
             // 
             // rbESTUDIO
             // 
@@ -180,7 +181,7 @@ namespace VISTA
             // lblHORAS
             // 
             this.lblHORAS.AutoSize = true;
-            this.lblHORAS.Location = new System.Drawing.Point(13, 107);
+            this.lblHORAS.Location = new System.Drawing.Point(13, 144);
             this.lblHORAS.Name = "lblHORAS";
             this.lblHORAS.Size = new System.Drawing.Size(48, 13);
             this.lblHORAS.TabIndex = 84;
@@ -190,7 +191,7 @@ namespace VISTA
             // 
             this.cmbHORAS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHORAS.FormattingEnabled = true;
-            this.cmbHORAS.Location = new System.Drawing.Point(170, 99);
+            this.cmbHORAS.Location = new System.Drawing.Point(170, 136);
             this.cmbHORAS.Name = "cmbHORAS";
             this.cmbHORAS.Size = new System.Drawing.Size(224, 21);
             this.cmbHORAS.TabIndex = 83;
@@ -200,7 +201,7 @@ namespace VISTA
             // 
             this.cmbDIA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDIA.FormattingEnabled = true;
-            this.cmbDIA.Location = new System.Drawing.Point(170, 58);
+            this.cmbDIA.Location = new System.Drawing.Point(170, 98);
             this.cmbDIA.Name = "cmbDIA";
             this.cmbDIA.Size = new System.Drawing.Size(224, 21);
             this.cmbDIA.TabIndex = 82;
@@ -228,7 +229,7 @@ namespace VISTA
             // lblDIA
             // 
             this.lblDIA.AutoSize = true;
-            this.lblDIA.Location = new System.Drawing.Point(13, 66);
+            this.lblDIA.Location = new System.Drawing.Point(13, 106);
             this.lblDIA.Name = "lblDIA";
             this.lblDIA.Size = new System.Drawing.Size(28, 13);
             this.lblDIA.TabIndex = 80;

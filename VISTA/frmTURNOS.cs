@@ -60,7 +60,10 @@ namespace VISTA
             cATENCIONES = CONTROLADORA.ATENCIONES.OBTENER_INSTANCIA();
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
-            cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
+
+            //ESPECIALIDADES COMBOBOX
+            ARMA_COMBOBOX_ESPECIALIDADES();
+
             var lista_pacientes = cPACIENTES.OBTENER_PACIENTES().ToList();
             List<COMBOBOX_PACIENTE> LISTA_CMB_PACIENTES = new List<COMBOBOX_PACIENTE>();
             LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE("SELECCIONE...", -1));
@@ -100,6 +103,8 @@ namespace VISTA
             cmbDIA.DataSource = LISTA_DIAS;
             cmbDIA.DisplayMember = "DIA_TEXTO";
             cmbDIA.ValueMember = "DIA_VALOR";
+
+            
 
             //cmbDIA.SelectionChanged += new SelectionChangedEventHandler(comboBox1_SelectionChanged);
 
@@ -177,6 +182,32 @@ namespace VISTA
             return dia;
         }
 
+        //AGREGADO RECIENTEMENTE
+        private void ARMA_COMBOBOX_ESPECIALIDADES()
+        {
+            cmbESPECIALIDAD.DataSource = null;
+            cmbESPECIALIDAD.Items.Add("SELECCIONE...");
+            cmbESPECIALIDAD.SelectedItem = "SELECCIONE...";
+
+            cmbESPECIALIDAD.ValueMember = "ID_ESPECIALIDAD";
+            cmbESPECIALIDAD.DisplayMember = "NOMBRE";
+            cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
+            
+        }
+
+        private void ARMA_COMBOBOX_PROFESIONALES(int ID_ESPECIALIDAD)
+        {
+            //Traigo todos los profesionales que coincidan con la especialidad y esten en un estado activo
+            cmbPROFESIONAL.DataSource = null;
+            var LISTA_PROFESIONALES = (from c in cPROFESIONALES.OBTENER_PROFESIONALES()
+                                       where c.ESPECIALIDAD != null && c.ESPECIALIDAD.ID_ESPECIALIDAD == ID_ESPECIALIDAD && c.ESTADO != "INACTIVO"
+                                       select c).ToList();
+
+            cmbPROFESIONAL.DataSource = LISTA_PROFESIONALES;
+            cmbPROFESIONAL.ValueMember = "ID_PROFESIONAL";
+            cmbPROFESIONAL.DisplayMember = "NOMBRE" + "APELLIDO";
+        }       
+
         class DIAS
         {
             public string DIA_TEXTO { get; set; }
@@ -190,7 +221,8 @@ namespace VISTA
 
         private void cmbDIA_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            cmbPROFESIONAL.DataSource = null;
+            //cmbPROFESIONAL.DataSource = null;
+            
             int[] horas_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
             int[] horas_no_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
 
@@ -201,8 +233,9 @@ namespace VISTA
             int[] hora_disponibles = new int[24];
 
             var LISTA_ATENCION = (from a in cATENCIONES.OBTENER_ATENCIONES().AsEnumerable()
-                                  where a.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
-                                  && a.DIA_LABORAL == DIA_CMB_T && a.ESTADO == "ACTIVO"
+                                  where a.ESPECIALIDAD.ID_ESPECIALIDAD == Convert.ToInt32(cmbESPECIALIDAD.SelectedValue)
+                                  && a.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONAL.SelectedValue)
+                                  && a.DIA_LABORAL == cmbDIA.SelectedValue.ToString() && a.ESTADO == "ACTIVO"
                                   select a).ToList();
 
             var dict = new Dictionary<int, int>();
@@ -223,9 +256,10 @@ namespace VISTA
                 //hora_disponibles = hora_disponibles.Concat(HORA_ARRAY_PROFESIONAL).ToArray();
             }
             //La LISTA_TURNOS es un array [5,6,7...] con los turnos asignados  
-            var LISTA_TURNOS = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
-                                where b.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
-                                && b.FECHA.ToShortDateString() == DIA_CMB_V
+            
+            /*var LISTA_TURNOS = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
+                                where //b.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
+                                b.FECHA.ToShortDateString() == DIA_CMB_V
                                 select b.HORA_TURNO).ToArray();
             for (int i = 0; i < LISTA_TURNOS.Length; i++)
             {
@@ -273,12 +307,15 @@ namespace VISTA
                     //cmbHORAS.Items.Add(new ComboBoxItem() { Selectable = true, Text = i.ToString(), Value = i });
                     cmbHORAS.Items.Add(i.ToString() + " Hs");//7Hs 7
                 }
-            }
+            }*/
         }
 
-        private void cmbESPECIALIDAD_SelectedIndexChanged(object sender = null, EventArgs e = null)
+        private void cmbESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbHORAS.Items.Clear();
+            int ID_ESPECIALIDAD = Convert.ToInt32(cmbESPECIALIDAD.SelectedValue);
+            ARMA_COMBOBOX_PROFESIONALES(ID_ESPECIALIDAD);
+
+            /*cmbHORAS.Items.Clear();
             cmbHORAS.ResetText();
             cmbPROFESIONAL.DataSource = null;
             MODELO.ESPECIALIDAD ESP = new MODELO.ESPECIALIDAD();
@@ -296,12 +333,13 @@ namespace VISTA
 
                 PRECIO = IMPORTE_ESTUDIO;
 
-            }
+            }*/
+            return;
         }
 
         private void cmbHORAS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbPROFESIONAL.DataSource = null;
+            /*cmbPROFESIONAL.DataSource = null;
             DIAS dia = cmbDIA.SelectedItem as DIAS;
             string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
             //Traigo todos los profesionales que coincidan con , el dia laboral, con la especialidad seleccionada, y con la hora selecciona
@@ -343,7 +381,7 @@ namespace VISTA
             {
                 LISTA_CMB_PROFESIONAL.Add(cmb_extra);
             }
-            cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
+            cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;*/
         }
 
         class COMBOBOX_PROFESIONAL
@@ -527,6 +565,26 @@ namespace VISTA
             {
                 PRECIO = IMPORTE_ESTUDIO;
             }
+        }
+
+        private void cmbPROFESIONAL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
+                                              where c.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONAL.SelectedValue)
+                                              select c.DIA_LABORAL).ToList();
+
+                /*List<string> LISTA_DIA = new List<string>();
+                LISTA_DIA.Add("LUNES");
+                LISTA_DIA.Add("MARTES");
+                LISTA_DIA.Add("MIERCOLES");
+                LISTA_DIA.Add("JUEVES");
+                LISTA_DIA.Add("VIERNES");
+                LISTA_DIA.Add("SABADO");
+                LISTA_DIA.Add("DOMINGO");*/
+
+                cmbDIA.DataSource = LISTA_DIAS_PROFESIONAL;
+                //var DIAS_NO_AGREGADOS = LISTA_DIA.Except(LISTA_DIAS_PROFESIONAL).ToList();
+                //cmbDIA.DataSource = DIAS_NO_AGREGADOS; 
         }
     } 
 }
