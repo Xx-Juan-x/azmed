@@ -81,6 +81,7 @@ namespace VISTA
             this.btnCERRAR.TabIndex = 15;
             this.btnCERRAR.Text = "Cerrar";
             this.btnCERRAR.UseVisualStyleBackColor = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click_1);
             // 
             // frmREPORTE_COMPRAS
             // 

@@ -63,7 +63,7 @@ namespace VISTA
             //MessageBox.Show(GASTOS.ToString());
         }
 
-        private void btnCERRAR_Click(object sender, EventArgs e)
+        private void btnCERRAR_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
