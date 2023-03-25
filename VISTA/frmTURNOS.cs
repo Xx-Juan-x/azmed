@@ -75,40 +75,6 @@ namespace VISTA
             }
             cmbPACIENTE.DataSource = LISTA_CMB_PACIENTES;
 
-            var hoy = DateTime.Today;//2022-03-07
-
-            var dia_nombre = new string[8];
-            dia_nombre[0] = "SELECCIONE...";//VIERNES 
-            dia_nombre[1] = traducir_dia(hoy.DayOfWeek.ToString());//VIERNES 
-            dia_nombre[2] = traducir_dia(hoy.AddDays(1).DayOfWeek.ToString());//SABADO
-            dia_nombre[3] = traducir_dia(hoy.AddDays(2).DayOfWeek.ToString());
-            dia_nombre[4] = traducir_dia(hoy.AddDays(3).DayOfWeek.ToString());
-            dia_nombre[5] = traducir_dia(hoy.AddDays(4).DayOfWeek.ToString());
-            dia_nombre[6] = traducir_dia(hoy.AddDays(5).DayOfWeek.ToString());
-            dia_nombre[7] = traducir_dia(hoy.AddDays(6).DayOfWeek.ToString());
-
-            var dia_fecha = new DateTime[8];
-            dia_fecha[0] = hoy.AddDays(-1);//2022-03-11 
-            dia_fecha[1] = hoy;//2022-03-11 
-            dia_fecha[2] = hoy.AddDays(1);//2022-03-12
-            dia_fecha[3] = hoy.AddDays(2);
-            dia_fecha[4] = hoy.AddDays(3);
-            dia_fecha[5] = hoy.AddDays(4);
-            dia_fecha[6] = hoy.AddDays(5);
-            dia_fecha[7] = hoy.AddDays(6);
-
-            List<DIAS> LISTA_DIAS = new List<DIAS>();
-            for (int i = 0; i < 8; i++)
-            {
-                LISTA_DIAS.Add(new DIAS(dia_nombre[i], dia_fecha[i]));
-            }
-            cmbDIA.DataSource = LISTA_DIAS;
-            cmbDIA.DisplayMember = "DIA_TEXTO";
-            cmbDIA.ValueMember = "DIA_VALOR";
-
-            
-
-            //cmbDIA.SelectionChanged += new SelectionChangedEventHandler(comboBox1_SelectionChanged);
 
             for (int i = 0; i < 7; i++)
             {
@@ -244,15 +210,17 @@ namespace VISTA
             if (cmbDIA.SelectedItem == null) return;
             DIAS DIA_SELECCIONADO = cmbDIA.SelectedItem as DIAS;
             if (DIA_SELECCIONADO == null) return;
+            COMBOBOX_ESPECIALIDAD ESP_SELECCIONADA = cmbESPECIALIDAD.SelectedItem as COMBOBOX_ESPECIALIDAD;
+            COMBOBOX_PROFESIONAL PROF_SELECCIONADO = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
 
             string DIA_CMB_T = DIA_SELECCIONADO.DIA_TEXTO;//LUNES
             string DIA_CMB_V = DIA_SELECCIONADO.DIA_VALOR.ToShortDateString();//11-03-2022
             int[] hora_disponibles = new int[24];
 
             var LISTA_ATENCION = (from a in cATENCIONES.OBTENER_ATENCIONES().AsEnumerable()
-                                  where a.ESPECIALIDAD.ID_ESPECIALIDAD == Convert.ToInt32(cmbESPECIALIDAD.SelectedIndex)
-                                  && a.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONAL.SelectedValue)
-                                  && a.DIA_LABORAL == cmbDIA.SelectedValue.ToString() && a.ESTADO == "ACTIVO"
+                                  where a.ESPECIALIDAD.ID_ESPECIALIDAD == Convert.ToInt32(ESP_SELECCIONADA.CMB_VALOR)
+                                  && a.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(PROF_SELECCIONADO.CMB_VALOR)
+                                  && a.DIA_LABORAL == DIA_CMB_T && a.ESTADO == "ACTIVO"
                                   select a).ToList();
 
             var dict = new Dictionary<int, int>();
@@ -355,49 +323,7 @@ namespace VISTA
 
         private void cmbHORAS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbPROFESIONAL.DataSource = null;
-            DIAS dia = cmbDIA.SelectedItem as DIAS;
-            string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
-            //Traigo todos los profesionales que coincidan con , el dia laboral, con la especialidad seleccionada, y con la hora selecciona
-            //MessageBox.Show(cmbHORAS.SelectedItem.ToString());
-            var LISTA_PROFESIONALES = (from a in cATENCIONES.OBTENER_ATENCIONES()
-                                       where a.DIA_LABORAL == dia.DIA_TEXTO
-                                       && a.ESPECIALIDAD.NOMBRE == cmbESPECIALIDAD.SelectedValue.ToString()
-                                       && (a.HORA_INICIO <= Convert.ToInt32(HORA_TEXTO)
-                                       && a.HORA_FIN >= Convert.ToInt32(HORA_TEXTO))
-                                       select a).ToList();
 
-            //En esta lista le inserto un indice por cada profesional que esta disponible luego de recorrer los turnos de dicho profesional.
-            List<COMBOBOX_PROFESIONAL> LISTA_CMB_PROFESIONAL = new List<COMBOBOX_PROFESIONAL>();
-
-            cmbPROFESIONAL.DisplayMember = "CMB_TEXTO";
-            cmbPROFESIONAL.ValueMember = "CMB_VALOR";
-           
-            int HORA_NUMERO = Convert.ToInt32(HORA_TEXTO);
-            foreach (var PROFESIONAL in LISTA_PROFESIONALES)
-            {
-                var COMPROBAR_PROFESIONAL = (from b in cTURNOS.OBTENER_TURNOS().AsEnumerable()
-                                             where b.HORA_TURNO == HORA_NUMERO
-                                             && b.PROFESIONAL.ID_PROFESIONAL == PROFESIONAL.PROFESIONAL.ID_PROFESIONAL
-                                             && b.FECHA.ToShortDateString() == dia.DIA_VALOR.ToShortDateString()
-                                             select b).Count();
-                //si COMPROBAR_PROFESIONAL el count me devuelve 0, significa que el profesional esta disponible
-                //si devuelve 1 , el profesional ya tiene un turno para esa hora, no esta disponible
-                if (COMPROBAR_PROFESIONAL == 0)
-                {
-                    //agrego a la cmb 
-                    LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(PROFESIONAL.PROFESIONAL.NOMBRE + " " + PROFESIONAL.PROFESIONAL.APELLIDO, PROFESIONAL.PROFESIONAL.ID_PROFESIONAL));
-                }
-
-            }
-            //Pasa cuando el turno es modificado
-            COMBOBOX_PROFESIONAL cmb_extra = new COMBOBOX_PROFESIONAL(prof_modificar, id_prof_modificar);
-            var prof_existe = LISTA_CMB_PROFESIONAL.Find(a => a.CMB_TEXTO == prof_modificar);
-            if (prof_modificar != null && prof_existe == null)
-            {
-                LISTA_CMB_PROFESIONAL.Add(cmb_extra);
-            }
-            //cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
         }
 
         class COMBOBOX_PROFESIONAL
@@ -531,9 +457,13 @@ namespace VISTA
                 oPACIENTE = PACIENTES;
             }
             DIAS DIA_SELECCIONADO = cmbDIA.SelectedItem as DIAS;
+            COMBOBOX_ESPECIALIDAD ESP_SELECCIONADA = cmbESPECIALIDAD.SelectedItem as COMBOBOX_ESPECIALIDAD;
 
             // ASIGNO MIS COMBO BOXS CON MIS PROPIEDADES
-            oTURNO.ESPECIALIDAD = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedItem;
+            oESPECIALIDAD  = new MODELO.ESPECIALIDAD();
+            oESPECIALIDAD.ID_ESPECIALIDAD = ESP_SELECCIONADA.CMB_VALOR;
+            oESPECIALIDAD.NOMBRE = ESP_SELECCIONADA.CMB_TEXTO;
+            oTURNO.ESPECIALIDAD = oESPECIALIDAD;
             oTURNO.DIA = cmbDIA.Text;
             string HORA_TEXTO = (string)cmbHORAS.SelectedItem.ToString().Replace(" Hs", "");
             oTURNO.HORA_TURNO = Convert.ToInt32(HORA_TEXTO);
@@ -558,7 +488,15 @@ namespace VISTA
                 MessageBox.Show("Debe seleccionar si es un turno de tipo CONSULTA o un turno de tipo ESTUDIO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            if(frmLISTA_TURNOS_PROFESIONAL.ACCION == null)
+            {
+                oTURNO.ESTADO = "SOLICITADO";
+                cTURNOS.AGREGAR_TURNO(oTURNO);
+                MessageBox.Show("Su " + oTURNO.TIPO + " se ah guardado con éxito", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbHORAS.Items.Clear();
+                cmbHORAS.ResetText();
+                cmbPROFESIONAL.DataSource = null;
+            }
             if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "A")
             {
                 oTURNO.ESTADO = "SOLICITADO";
@@ -619,8 +557,25 @@ namespace VISTA
             var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_PROFESIONAL == PROF_SELECCIONADO[0].ID_PROFESIONAL
                                               select c.DIA_LABORAL).ToList();
+            List<DIAS> DIAS_CMB= new List<DIAS>();
+            var hoy = DateTime.Today;
 
-            cmbDIA.DataSource = LISTA_DIAS_PROFESIONAL;
+            DIAS_CMB.Add(new DIAS("SELECCIONE...", DateTime.Today.AddDays(-100)));
+
+            foreach (var dias_nombre in LISTA_DIAS_PROFESIONAL)
+            {
+                
+                while (traducir_dia(hoy.DayOfWeek.ToString()) != dias_nombre)
+                {
+                    var algo = traducir_dia(hoy.DayOfWeek.ToString());
+                    var algo1 = dias_nombre;
+                    hoy = hoy.AddDays(1);
+                }
+                DIAS_CMB.Add(new DIAS(dias_nombre,hoy));
+            }
+            cmbDIA.DataSource = DIAS_CMB;
+            cmbDIA.DisplayMember = "DIA_TEXTO";
+            cmbDIA.ValueMember = "DIA_VALOR";
         }
     } 
 }
