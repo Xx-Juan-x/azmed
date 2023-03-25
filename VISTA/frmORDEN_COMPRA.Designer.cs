@@ -29,15 +29,25 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_COTIZACIONES = new System.Windows.Forms.GroupBox();
             this.lblSOLICITUD_PEDIDO = new System.Windows.Forms.Label();
             this.cmbSOLICITUD_PEDIDO = new System.Windows.Forms.ComboBox();
             this.dgvLISTA_COTIZACIONES = new System.Windows.Forms.DataGridView();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.gbCOTIZACIONES = new System.Windows.Forms.GroupBox();
+            this.txtCOTIZACION_10 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_9 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_8 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_7 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_6 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_5 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_4 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_3 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_2 = new System.Windows.Forms.TextBox();
+            this.txtCOTIZACION_1 = new System.Windows.Forms.TextBox();
             this.btnENVIAR = new System.Windows.Forms.Button();
             this.txtCANTIDAD_10 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_9 = new System.Windows.Forms.TextBox();
@@ -49,16 +59,6 @@ namespace VISTA
             this.txtCANTIDAD_3 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_2 = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD_1 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_1 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_2 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_3 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_4 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_5 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_6 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_7 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_8 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_9 = new System.Windows.Forms.TextBox();
-            this.txtCOTIZACION_10 = new System.Windows.Forms.TextBox();
             this.gbLISTA_COTIZACIONES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_COTIZACIONES)).BeginInit();
             this.gbCOTIZACIONES.SuspendLayout();
@@ -117,36 +117,36 @@ namespace VISTA
             this.dgvLISTA_COTIZACIONES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_COTIZACIONES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_COTIZACIONES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_COTIZACIONES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_COTIZACIONES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_COTIZACIONES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_COTIZACIONES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_COTIZACIONES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_COTIZACIONES.Location = new System.Drawing.Point(6, 46);
             this.dgvLISTA_COTIZACIONES.Name = "dgvLISTA_COTIZACIONES";
             this.dgvLISTA_COTIZACIONES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_COTIZACIONES.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_COTIZACIONES.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_COTIZACIONES.RowHeadersVisible = false;
             this.dgvLISTA_COTIZACIONES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_COTIZACIONES.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_COTIZACIONES.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_COTIZACIONES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_COTIZACIONES.Size = new System.Drawing.Size(671, 265);
             this.dgvLISTA_COTIZACIONES.TabIndex = 0;
@@ -200,6 +200,86 @@ namespace VISTA
             this.gbCOTIZACIONES.TabIndex = 72;
             this.gbCOTIZACIONES.TabStop = false;
             this.gbCOTIZACIONES.Text = "COTIZACIONES";
+            // 
+            // txtCOTIZACION_10
+            // 
+            this.txtCOTIZACION_10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_10.Location = new System.Drawing.Point(379, 191);
+            this.txtCOTIZACION_10.Name = "txtCOTIZACION_10";
+            this.txtCOTIZACION_10.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_10.TabIndex = 101;
+            // 
+            // txtCOTIZACION_9
+            // 
+            this.txtCOTIZACION_9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_9.Location = new System.Drawing.Point(379, 148);
+            this.txtCOTIZACION_9.Name = "txtCOTIZACION_9";
+            this.txtCOTIZACION_9.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_9.TabIndex = 100;
+            // 
+            // txtCOTIZACION_8
+            // 
+            this.txtCOTIZACION_8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_8.Location = new System.Drawing.Point(379, 102);
+            this.txtCOTIZACION_8.Name = "txtCOTIZACION_8";
+            this.txtCOTIZACION_8.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_8.TabIndex = 99;
+            // 
+            // txtCOTIZACION_7
+            // 
+            this.txtCOTIZACION_7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_7.Location = new System.Drawing.Point(379, 56);
+            this.txtCOTIZACION_7.Name = "txtCOTIZACION_7";
+            this.txtCOTIZACION_7.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_7.TabIndex = 98;
+            // 
+            // txtCOTIZACION_6
+            // 
+            this.txtCOTIZACION_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCOTIZACION_6.Location = new System.Drawing.Point(379, 15);
+            this.txtCOTIZACION_6.Name = "txtCOTIZACION_6";
+            this.txtCOTIZACION_6.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_6.TabIndex = 97;
+            // 
+            // txtCOTIZACION_5
+            // 
+            this.txtCOTIZACION_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_5.Location = new System.Drawing.Point(12, 191);
+            this.txtCOTIZACION_5.Name = "txtCOTIZACION_5";
+            this.txtCOTIZACION_5.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_5.TabIndex = 96;
+            // 
+            // txtCOTIZACION_4
+            // 
+            this.txtCOTIZACION_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_4.Location = new System.Drawing.Point(12, 148);
+            this.txtCOTIZACION_4.Name = "txtCOTIZACION_4";
+            this.txtCOTIZACION_4.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_4.TabIndex = 95;
+            // 
+            // txtCOTIZACION_3
+            // 
+            this.txtCOTIZACION_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_3.Location = new System.Drawing.Point(12, 102);
+            this.txtCOTIZACION_3.Name = "txtCOTIZACION_3";
+            this.txtCOTIZACION_3.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_3.TabIndex = 94;
+            // 
+            // txtCOTIZACION_2
+            // 
+            this.txtCOTIZACION_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_2.Location = new System.Drawing.Point(12, 56);
+            this.txtCOTIZACION_2.Name = "txtCOTIZACION_2";
+            this.txtCOTIZACION_2.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_2.TabIndex = 93;
+            // 
+            // txtCOTIZACION_1
+            // 
+            this.txtCOTIZACION_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCOTIZACION_1.Location = new System.Drawing.Point(12, 14);
+            this.txtCOTIZACION_1.Name = "txtCOTIZACION_1";
+            this.txtCOTIZACION_1.Size = new System.Drawing.Size(162, 20);
+            this.txtCOTIZACION_1.TabIndex = 92;
             // 
             // btnENVIAR
             // 
@@ -296,86 +376,6 @@ namespace VISTA
             this.txtCANTIDAD_1.Name = "txtCANTIDAD_1";
             this.txtCANTIDAD_1.Size = new System.Drawing.Size(100, 20);
             this.txtCANTIDAD_1.TabIndex = 82;
-            // 
-            // txtCOTIZACION_1
-            // 
-            this.txtCOTIZACION_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCOTIZACION_1.Location = new System.Drawing.Point(12, 14);
-            this.txtCOTIZACION_1.Name = "txtCOTIZACION_1";
-            this.txtCOTIZACION_1.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_1.TabIndex = 92;
-            // 
-            // txtCOTIZACION_2
-            // 
-            this.txtCOTIZACION_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCOTIZACION_2.Location = new System.Drawing.Point(12, 56);
-            this.txtCOTIZACION_2.Name = "txtCOTIZACION_2";
-            this.txtCOTIZACION_2.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_2.TabIndex = 93;
-            // 
-            // txtCOTIZACION_3
-            // 
-            this.txtCOTIZACION_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCOTIZACION_3.Location = new System.Drawing.Point(12, 102);
-            this.txtCOTIZACION_3.Name = "txtCOTIZACION_3";
-            this.txtCOTIZACION_3.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_3.TabIndex = 94;
-            // 
-            // txtCOTIZACION_4
-            // 
-            this.txtCOTIZACION_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCOTIZACION_4.Location = new System.Drawing.Point(12, 148);
-            this.txtCOTIZACION_4.Name = "txtCOTIZACION_4";
-            this.txtCOTIZACION_4.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_4.TabIndex = 95;
-            // 
-            // txtCOTIZACION_5
-            // 
-            this.txtCOTIZACION_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCOTIZACION_5.Location = new System.Drawing.Point(12, 191);
-            this.txtCOTIZACION_5.Name = "txtCOTIZACION_5";
-            this.txtCOTIZACION_5.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_5.TabIndex = 96;
-            // 
-            // txtCOTIZACION_6
-            // 
-            this.txtCOTIZACION_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCOTIZACION_6.Location = new System.Drawing.Point(379, 15);
-            this.txtCOTIZACION_6.Name = "txtCOTIZACION_6";
-            this.txtCOTIZACION_6.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_6.TabIndex = 97;
-            // 
-            // txtCOTIZACION_7
-            // 
-            this.txtCOTIZACION_7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCOTIZACION_7.Location = new System.Drawing.Point(379, 56);
-            this.txtCOTIZACION_7.Name = "txtCOTIZACION_7";
-            this.txtCOTIZACION_7.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_7.TabIndex = 98;
-            // 
-            // txtCOTIZACION_8
-            // 
-            this.txtCOTIZACION_8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCOTIZACION_8.Location = new System.Drawing.Point(379, 102);
-            this.txtCOTIZACION_8.Name = "txtCOTIZACION_8";
-            this.txtCOTIZACION_8.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_8.TabIndex = 99;
-            // 
-            // txtCOTIZACION_9
-            // 
-            this.txtCOTIZACION_9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCOTIZACION_9.Location = new System.Drawing.Point(379, 148);
-            this.txtCOTIZACION_9.Name = "txtCOTIZACION_9";
-            this.txtCOTIZACION_9.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_9.TabIndex = 100;
-            // 
-            // txtCOTIZACION_10
-            // 
-            this.txtCOTIZACION_10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCOTIZACION_10.Location = new System.Drawing.Point(379, 191);
-            this.txtCOTIZACION_10.Name = "txtCOTIZACION_10";
-            this.txtCOTIZACION_10.Size = new System.Drawing.Size(162, 20);
-            this.txtCOTIZACION_10.TabIndex = 101;
             // 
             // frmORDEN_COMPRA
             // 
