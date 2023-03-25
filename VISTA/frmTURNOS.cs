@@ -77,26 +77,28 @@ namespace VISTA
 
             var hoy = DateTime.Today;//2022-03-07
 
-            var dia_nombre = new string[7];
-            dia_nombre[0] = traducir_dia(hoy.DayOfWeek.ToString());//VIERNES 
-            dia_nombre[1] = traducir_dia(hoy.AddDays(1).DayOfWeek.ToString());//SABADO
-            dia_nombre[2] = traducir_dia(hoy.AddDays(2).DayOfWeek.ToString());
-            dia_nombre[3] = traducir_dia(hoy.AddDays(3).DayOfWeek.ToString());
-            dia_nombre[4] = traducir_dia(hoy.AddDays(4).DayOfWeek.ToString());
-            dia_nombre[5] = traducir_dia(hoy.AddDays(5).DayOfWeek.ToString());
-            dia_nombre[6] = traducir_dia(hoy.AddDays(6).DayOfWeek.ToString());
+            var dia_nombre = new string[8];
+            dia_nombre[0] = "SELECCIONE...";//VIERNES 
+            dia_nombre[1] = traducir_dia(hoy.DayOfWeek.ToString());//VIERNES 
+            dia_nombre[2] = traducir_dia(hoy.AddDays(1).DayOfWeek.ToString());//SABADO
+            dia_nombre[3] = traducir_dia(hoy.AddDays(2).DayOfWeek.ToString());
+            dia_nombre[4] = traducir_dia(hoy.AddDays(3).DayOfWeek.ToString());
+            dia_nombre[5] = traducir_dia(hoy.AddDays(4).DayOfWeek.ToString());
+            dia_nombre[6] = traducir_dia(hoy.AddDays(5).DayOfWeek.ToString());
+            dia_nombre[7] = traducir_dia(hoy.AddDays(6).DayOfWeek.ToString());
 
-            var dia_fecha = new DateTime[7];
-            dia_fecha[0] = hoy;//2022-03-11 
-            dia_fecha[1] = hoy.AddDays(1);//2022-03-12
-            dia_fecha[2] = hoy.AddDays(2);
-            dia_fecha[3] = hoy.AddDays(3);
-            dia_fecha[4] = hoy.AddDays(4);
-            dia_fecha[5] = hoy.AddDays(5);
-            dia_fecha[6] = hoy.AddDays(6);
+            var dia_fecha = new DateTime[8];
+            dia_fecha[0] = hoy.AddDays(-1);//2022-03-11 
+            dia_fecha[1] = hoy;//2022-03-11 
+            dia_fecha[2] = hoy.AddDays(1);//2022-03-12
+            dia_fecha[3] = hoy.AddDays(2);
+            dia_fecha[4] = hoy.AddDays(3);
+            dia_fecha[5] = hoy.AddDays(4);
+            dia_fecha[6] = hoy.AddDays(5);
+            dia_fecha[7] = hoy.AddDays(6);
 
             List<DIAS> LISTA_DIAS = new List<DIAS>();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
                 LISTA_DIAS.Add(new DIAS(dia_nombre[i], dia_fecha[i]));
             }
@@ -186,26 +188,40 @@ namespace VISTA
         private void ARMA_COMBOBOX_ESPECIALIDADES()
         {
             cmbESPECIALIDAD.DataSource = null;
-            cmbESPECIALIDAD.Items.Add("SELECCIONE...");
-            cmbESPECIALIDAD.SelectedItem = "SELECCIONE...";
 
+
+            var lista_especialidades = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
+            List<COMBOBOX_ESPECIALIDAD> LISTA_CMB_ESPE = new List<COMBOBOX_ESPECIALIDAD>();
+            LISTA_CMB_ESPE.Add(new COMBOBOX_ESPECIALIDAD("SELECCIONE...", -1));
             cmbESPECIALIDAD.ValueMember = "ID_ESPECIALIDAD";
             cmbESPECIALIDAD.DisplayMember = "NOMBRE";
-            cmbESPECIALIDAD.DataSource = cESPECIALIDAD.OBTENER_ESPECIALIDADES();
-            
+            foreach (var ESPE in lista_especialidades)
+            {
+                LISTA_CMB_ESPE.Add(new COMBOBOX_ESPECIALIDAD(ESPE.NOMBRE, ESPE.ID_ESPECIALIDAD));
+            }
+            cmbESPECIALIDAD.SelectedItem = "SELECCIONE...";
+            cmbESPECIALIDAD.DataSource = LISTA_CMB_ESPE;
         }
 
-        private void ARMA_COMBOBOX_PROFESIONALES(int ID_ESPECIALIDAD)
+        private void ARMA_COMBOBOX_PROFESIONALES(string ESPECIALIDAD_NOMBRE)
         {
             //Traigo todos los profesionales que coincidan con la especialidad y esten en un estado activo
             cmbPROFESIONAL.DataSource = null;
             var LISTA_PROFESIONALES = (from c in cPROFESIONALES.OBTENER_PROFESIONALES()
-                                       where c.ESPECIALIDAD != null && c.ESPECIALIDAD.ID_ESPECIALIDAD == ID_ESPECIALIDAD && c.ESTADO != "INACTIVO"
+                                       where c.ESPECIALIDAD != null && c.ESPECIALIDAD.NOMBRE == ESPECIALIDAD_NOMBRE && c.ESTADO != "INACTIVO"
                                        select c).ToList();
+            List<COMBOBOX_PROFESIONAL> LISTA_CMB_PROFESIONAL = new List<COMBOBOX_PROFESIONAL>();
 
-            cmbPROFESIONAL.DataSource = LISTA_PROFESIONALES;
             cmbPROFESIONAL.ValueMember = "ID_PROFESIONAL";
             cmbPROFESIONAL.DisplayMember = "NOMBRE" + "APELLIDO";
+            LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL("SELECCIONE...", -1));
+            foreach (var PROF in LISTA_PROFESIONALES)
+            {
+                LISTA_CMB_PROFESIONAL.Add(new COMBOBOX_PROFESIONAL(PROF.NOMBRE + " " +PROF.APELLIDO, PROF.ID_PROFESIONAL));
+            }
+            cmbPROFESIONAL.SelectedItem = "SELECCIONE...";
+            cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
+
         }       
 
         class DIAS
@@ -225,15 +241,16 @@ namespace VISTA
             
             int[] horas_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
             int[] horas_no_habiles = new int[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
-
+            if (cmbDIA.SelectedItem == null) return;
             DIAS DIA_SELECCIONADO = cmbDIA.SelectedItem as DIAS;
+            if (DIA_SELECCIONADO == null) return;
 
             string DIA_CMB_T = DIA_SELECCIONADO.DIA_TEXTO;//LUNES
             string DIA_CMB_V = DIA_SELECCIONADO.DIA_VALOR.ToShortDateString();//11-03-2022
             int[] hora_disponibles = new int[24];
 
             var LISTA_ATENCION = (from a in cATENCIONES.OBTENER_ATENCIONES().AsEnumerable()
-                                  where a.ESPECIALIDAD.ID_ESPECIALIDAD == Convert.ToInt32(cmbESPECIALIDAD.SelectedValue)
+                                  where a.ESPECIALIDAD.ID_ESPECIALIDAD == Convert.ToInt32(cmbESPECIALIDAD.SelectedIndex)
                                   && a.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONAL.SelectedValue)
                                   && a.DIA_LABORAL == cmbDIA.SelectedValue.ToString() && a.ESTADO == "ACTIVO"
                                   select a).ToList();
@@ -312,16 +329,15 @@ namespace VISTA
 
         private void cmbESPECIALIDAD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ID_ESPECIALIDAD = Convert.ToInt32(cmbESPECIALIDAD.SelectedValue);
-            ARMA_COMBOBOX_PROFESIONALES(ID_ESPECIALIDAD);
+            if (cmbESPECIALIDAD.SelectedValue == null) return;
+            string ESPECIALIDAD_NOMBRE = cmbESPECIALIDAD.SelectedValue.ToString();
+            ARMA_COMBOBOX_PROFESIONALES(ESPECIALIDAD_NOMBRE);
 
             cmbHORAS.Items.Clear();
             cmbHORAS.ResetText();
-            cmbPROFESIONAL.DataSource = null;
-            MODELO.ESPECIALIDAD ESP = new MODELO.ESPECIALIDAD();
-            ESP = (MODELO.ESPECIALIDAD)cmbESPECIALIDAD.SelectedValue;
-            IMPORTE_CONSULTA = ESP.IMPORTE_CONSULTA;
-            IMPORTE_ESTUDIO = ESP.IMPORTE_ESTUDIO;
+            var especialidad_seleccionada = (from a in cESPECIALIDAD.OBTENER_ESPECIALIDADES() where a.NOMBRE == ESPECIALIDAD_NOMBRE select a).FirstOrDefault();
+            IMPORTE_CONSULTA = especialidad_seleccionada.IMPORTE_CONSULTA;
+            IMPORTE_ESTUDIO = especialidad_seleccionada.IMPORTE_ESTUDIO;
             if (rbCONSULTA.Checked == true)
             {
 
@@ -381,7 +397,7 @@ namespace VISTA
             {
                 LISTA_CMB_PROFESIONAL.Add(cmb_extra);
             }
-            cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
+            //cmbPROFESIONAL.DataSource = LISTA_CMB_PROFESIONAL;
         }
 
         class COMBOBOX_PROFESIONAL
@@ -393,6 +409,14 @@ namespace VISTA
                 CMB_TEXTO = T;
                 CMB_VALOR = V;
             }
+            public override string ToString()
+            {
+                return CMB_TEXTO;
+            }
+            public override int GetHashCode()
+            {
+                return CMB_VALOR;
+            }
         }
         class COMBOBOX_PACIENTE
         {
@@ -403,8 +427,25 @@ namespace VISTA
                 CMB_TEXTO = T;
                 CMB_VALOR = V;
             }
+            public override string ToString()
+            {
+                return CMB_TEXTO;
+            }
         }
-
+        class COMBOBOX_ESPECIALIDAD
+        {
+            public string CMB_TEXTO { get; set; }
+            public int CMB_VALOR { get; set; }
+            public COMBOBOX_ESPECIALIDAD(string T, int V)
+            {
+                CMB_TEXTO = T;
+                CMB_VALOR = V;
+            }
+            public override string ToString()
+            {
+                return CMB_TEXTO;
+            }
+        }
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
         {
@@ -569,11 +610,17 @@ namespace VISTA
 
         private void cmbPROFESIONAL_SelectedIndexChanged(object sender, EventArgs e)
         {
-                var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
-                                              where c.PROFESIONAL.ID_PROFESIONAL == Convert.ToInt32(cmbPROFESIONAL.SelectedValue)
+            if (cmbPROFESIONAL.SelectedValue == null || cmbPROFESIONAL.SelectedValue.ToString() == "SELECCIONE...") return;
+            string[] nombre_prof_seleccionado = cmbPROFESIONAL.SelectedValue.ToString().Split(' ');
+
+            var PROF_SELECCIONADO = (from a in cPROFESIONALES.OBTENER_PROFESIONALES()
+                                          where a.NOMBRE == nombre_prof_seleccionado[0] && a.APELLIDO == nombre_prof_seleccionado[1]
+                                     select a).ToList();
+            var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
+                                              where c.PROFESIONAL.ID_PROFESIONAL == PROF_SELECCIONADO[0].ID_PROFESIONAL
                                               select c.DIA_LABORAL).ToList();
 
-                cmbDIA.DataSource = LISTA_DIAS_PROFESIONAL;
+            cmbDIA.DataSource = LISTA_DIAS_PROFESIONAL;
         }
     } 
 }
