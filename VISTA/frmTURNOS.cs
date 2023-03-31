@@ -550,9 +550,10 @@ namespace VISTA
         {
             if (cmbPROFESIONAL.SelectedValue == null || cmbPROFESIONAL.SelectedValue.ToString() == "SELECCIONE...") return;
             string[] nombre_prof_seleccionado = cmbPROFESIONAL.SelectedValue.ToString().Split(' ');
+            COMBOBOX_PROFESIONAL PROF = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
 
             var PROF_SELECCIONADO = (from a in cPROFESIONALES.OBTENER_PROFESIONALES()
-                                          where a.NOMBRE == nombre_prof_seleccionado[0] && a.APELLIDO == nombre_prof_seleccionado[1]
+                                          where a.ID_PROFESIONAL == PROF.CMB_VALOR
                                      select a).ToList();
             var LISTA_DIAS_PROFESIONAL = (from c in cATENCIONES.OBTENER_ATENCIONES()
                                               where c.PROFESIONAL.ID_PROFESIONAL == PROF_SELECCIONADO[0].ID_PROFESIONAL
