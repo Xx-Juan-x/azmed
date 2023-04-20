@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CONTROLADORA;
+using MODELO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VISTA
 {
@@ -53,12 +56,6 @@ namespace VISTA
             cmbPROVEEDOR.DataSource = cPROVEEDORES.OBTENER_PROVEEDORES();
         }
 
-        private void ARMA_COMBOBOX_SOLICITUD_PEDIDO()
-        {
-            cmbSOLICITUD_PEDIDO.DataSource = null;
-            cmbSOLICITUD_PEDIDO.DataSource = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS();
-        }
-
         private void btnGUARDAR_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES
@@ -78,7 +75,7 @@ namespace VISTA
                 return;
             }
             double PRECIO_UNITARIO;
-            if (!double.TryParse(txtPRECIO.Text, out PRECIO_UNITARIO))
+            if (!double.TryParse(txtPRECIO1.Text, out PRECIO_UNITARIO))
             {
                 MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -113,7 +110,7 @@ namespace VISTA
                     txtNOMBRE.Clear();
                     ARMA_COMBOBOX_PROVEEDOR();
                     ARMA_COMBOBOX_SOLICITUD_PEDIDO();
-                    txtPRECIO.Clear();
+                    txtPRECIO1.Clear();
                     txtMOTIVO.Clear();
                 }           
             }
@@ -123,5 +120,56 @@ namespace VISTA
         {
             this.Close();
         }
+
+        private void cmbSOLICITUD_PEDIDO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
+            var LISTA_SOLICITUD = (from c in cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS() where c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
+            int contador = 1;
+            foreach (var material_solicitado in LISTA_SOLICITUD)
+            {
+                
+                Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
+                (c as Label).Text = material_solicitado.INSUMO.NOMBRE;
+                
+                Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
+                (t as System.Windows.Forms.TextBox).Enabled = true;
+                (t as System.Windows.Forms.TextBox).BackColor = Color.White;
+                contador++;
+            }
+        }
+        private void ARMA_COMBOBOX_SOLICITUD_PEDIDO()
+        {
+            //Traigo todos los profesionales que coincidan con la especialidad y esten en un estado activo
+            cmbSOLICITUD_PEDIDO.DataSource = null;
+            var LISTA_SOLICITUD = (from c in cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUDES_PEDIDOS() select c).ToList();
+            List<CMB_SOLICITUD_PEDIDO> LISTA_CMB_SOLICITUD = new List<CMB_SOLICITUD_PEDIDO>();
+
+            cmbSOLICITUD_PEDIDO.ValueMember = "ID_SOLICITUD";
+            cmbSOLICITUD_PEDIDO.DisplayMember = "NOMBRE";
+            LISTA_CMB_SOLICITUD.Add(new CMB_SOLICITUD_PEDIDO("SELECCIONE...", -1));
+            foreach (var SOLI in LISTA_SOLICITUD)
+            {
+                LISTA_CMB_SOLICITUD.Add(new CMB_SOLICITUD_PEDIDO(SOLI.DESCRIPCION, SOLI.ID_SOLICITUD_PEDIDO));
+            }
+            cmbSOLICITUD_PEDIDO.SelectedItem = "SELECCIONE...";
+            cmbSOLICITUD_PEDIDO.DataSource = LISTA_CMB_SOLICITUD;
+
+        }
+        class CMB_SOLICITUD_PEDIDO
+        {
+            public string CMB_TEXTO { get; set; }
+            public int CMB_VALOR { get; set; }
+            public CMB_SOLICITUD_PEDIDO(string T, int V)
+            {
+                CMB_VALOR = V;
+                CMB_TEXTO = T;
+            }
+            public override string ToString()
+            {
+                return CMB_TEXTO;
+            }
+        }
+
     }
 }
