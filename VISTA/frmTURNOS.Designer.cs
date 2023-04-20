@@ -195,7 +195,6 @@ namespace VISTA
             this.cmbHORAS.Name = "cmbHORAS";
             this.cmbHORAS.Size = new System.Drawing.Size(224, 21);
             this.cmbHORAS.TabIndex = 83;
-            this.cmbHORAS.SelectedIndexChanged += new System.EventHandler(this.cmbHORAS_SelectedIndexChanged);
             // 
             // cmbDIA
             // 

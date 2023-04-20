@@ -61,9 +61,7 @@ namespace VISTA
             cOBRAS_SOCIALES = CONTROLADORA.OBRAS_SOCIALES.OBTENER_INSTANCIA();
             cPLANES = CONTROLADORA.PLANES.OBTENER_INSTANCIA();
 
-            //ESPECIALIDADES COMBOBOX
             ARMA_COMBOBOX_ESPECIALIDADES();
-
             var lista_pacientes = cPACIENTES.OBTENER_PACIENTES().ToList();
             List<COMBOBOX_PACIENTE> LISTA_CMB_PACIENTES = new List<COMBOBOX_PACIENTE>();
             LISTA_CMB_PACIENTES.Add(new COMBOBOX_PACIENTE("SELECCIONE...", -1));
@@ -150,7 +148,6 @@ namespace VISTA
             return dia;
         }
 
-        //AGREGADO RECIENTEMENTE
         private void ARMA_COMBOBOX_ESPECIALIDADES()
         {
             cmbESPECIALIDAD.DataSource = null;
@@ -321,11 +318,6 @@ namespace VISTA
             return;
         }
 
-        private void cmbHORAS_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         class COMBOBOX_PROFESIONAL
         {
             public string CMB_TEXTO { get; set; }
@@ -410,7 +402,6 @@ namespace VISTA
             if(oTURNO == null)
             {
                 oTURNO = new MODELO.TURNO();
-
             }
 
             COMBOBOX_PROFESIONAL VALOR_PROFESIONAL = cmbPROFESIONAL.SelectedItem as COMBOBOX_PROFESIONAL;
@@ -506,7 +497,6 @@ namespace VISTA
                 cmbHORAS.ResetText();
                 cmbPROFESIONAL.DataSource = null;
                 frmLISTA_TURNOS_PROFESIONAL FORMULARIO_TURNO = frmLISTA_TURNOS_PROFESIONAL.OBTENER_INSTANCIA();
-                //frmLISTA_TURNOS_PROFESIONAL frm = new frmLISTA_TURNOS_PROFESIONAL();
                 FORMULARIO_TURNO.ARMA_GRILLA("A");
             }
             else if (frmLISTA_TURNOS_PROFESIONAL.ACCION == "M")
@@ -518,9 +508,7 @@ namespace VISTA
                 cmbHORAS.ResetText();
                 cmbPROFESIONAL.DataSource = null;
                 frmLISTA_TURNOS_PROFESIONAL FORMULARIO_TURNO = frmLISTA_TURNOS_PROFESIONAL.OBTENER_INSTANCIA();
-                FORMULARIO_TURNO.ARMA_GRILLA("A");
-                //frmLISTA_TURNOS_PROFESIONAL frm = new frmLISTA_TURNOS_PROFESIONAL();
-                //frm.ARMA_GRILLA("A");
+                FORMULARIO_TURNO.ARMA_GRILLA("A");               
             }
         }
 
