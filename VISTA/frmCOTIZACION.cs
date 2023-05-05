@@ -37,7 +37,7 @@ namespace VISTA
         private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
         private MODELO.LISTA_PEDIDO oLISTA_PEDIDO;
         string ACCION;
-
+        bool EDITAR = false;
         public frmCOTIZACION()
         {
             InitializeComponent();
@@ -123,19 +123,53 @@ namespace VISTA
 
         private void cmbSOLICITUD_PEDIDO_SelectedIndexChanged(object sender, EventArgs e)
         {
+            for (int i = 1; i < 5; i++)
+            {
+                Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
+                (c as Label).Text = "";
+
+                Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
+                t.Text = "";
+                (t as System.Windows.Forms.TextBox).Enabled = false;
+                (t as System.Windows.Forms.TextBox).BackColor = SystemColors.InactiveCaption;
+            }
             CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
             var LISTA_SOLICITUD = (from c in cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS() where c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
-            int contador = 1;
-            foreach (var material_solicitado in LISTA_SOLICITUD)
+            object proveedor_actual = cmbPROVEEDOR.SelectedValue;
+
+            var cotizacion_existe = (from c in cCOTIZACIONES.OBTENER_COTIZACIONES() where c.PROVEEDOR.ID_PROVEEDOR == ((MODELO.PROVEEDOR)proveedor_actual).ID_PROVEEDOR && c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
+            if (cotizacion_existe.Count == 0)
             {
-                
-                Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
-                (c as Label).Text = material_solicitado.INSUMO.NOMBRE;
-                
-                Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
-                (t as System.Windows.Forms.TextBox).Enabled = true;
-                (t as System.Windows.Forms.TextBox).BackColor = Color.White;
-                contador++;
+                EDITAR = false;
+
+                int contador = 1;
+                foreach (var material_solicitado in LISTA_SOLICITUD)
+                {
+                    Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
+                    (c as Label).Text = material_solicitado.INSUMO.NOMBRE;
+
+                    Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
+                    (t as System.Windows.Forms.TextBox).Enabled = true;
+                    (t as System.Windows.Forms.TextBox).BackColor = Color.White;
+                    contador++;
+                }
+            }
+            if (cotizacion_existe.Count > 0)
+            {
+                EDITAR = true;
+
+                int contador = 1;
+                foreach (var cot in cotizacion_existe)
+                {
+                    Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
+                    (c as Label).Text = cot.NOMBRE.ToString();
+
+                    Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
+                    t.Text = cot.PRECIO.ToString();
+                    (t as System.Windows.Forms.TextBox).Enabled = true;
+                    (t as System.Windows.Forms.TextBox).BackColor = Color.White;
+                    contador++;
+                }
             }
         }
         private void ARMA_COMBOBOX_SOLICITUD_PEDIDO()
