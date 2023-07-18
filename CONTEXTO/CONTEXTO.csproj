@@ -342,6 +342,10 @@
     <Compile Include="Migrations\202303061132579_QUITO ESTADO DE PACIENTE.designer.cs">
       <DependentUpon>202303061132579_QUITO ESTADO DE PACIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307180345362_LISTA_COTIZACION.cs" />
+    <Compile Include="Migrations\202307180345362_LISTA_COTIZACION.designer.cs">
+      <DependentUpon>202307180345362_LISTA_COTIZACION.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -574,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303061132579_QUITO ESTADO DE PACIENTE.resx">
       <DependentUpon>202303061132579_QUITO ESTADO DE PACIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307180345362_LISTA_COTIZACION.resx">
+      <DependentUpon>202307180345362_LISTA_COTIZACION.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

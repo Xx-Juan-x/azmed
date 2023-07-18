@@ -194,6 +194,7 @@ namespace VISTA
             this.cmbPROVEEDOR.Name = "cmbPROVEEDOR";
             this.cmbPROVEEDOR.Size = new System.Drawing.Size(224, 21);
             this.cmbPROVEEDOR.TabIndex = 92;
+            this.cmbPROVEEDOR.SelectedIndexChanged += new System.EventHandler(this.cmbPROVEEDOR_SelectedIndexChanged);
             // 
             // txtNOMBRE
             // 

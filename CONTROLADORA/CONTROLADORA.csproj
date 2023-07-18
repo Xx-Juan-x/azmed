@@ -58,6 +58,7 @@
     <Compile Include="ESPECIALIDADES.cs" />
     <Compile Include="GRUPOS.cs" />
     <Compile Include="LISTA_DE_PEDIDOS.cs" />
+    <Compile Include="LISTA_COTIZACION.cs" />
     <Compile Include="LISTA_ORDENES_DE_COMPRAS.cs" />
     <Compile Include="MATERIALES.cs" />
     <Compile Include="OBRAS_SOCIALES.cs" />
