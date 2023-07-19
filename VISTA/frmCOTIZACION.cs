@@ -32,12 +32,13 @@ namespace VISTA
 
         private CONTROLADORA.COTIZACIONES cCOTIZACIONES;
         private MODELO.COTIZACION oCONTIZACION;
+        private MODELO.SOLICITUD_PEDIDO oSOLICITUD_PEDIDO;
         private CONTROLADORA.PROVEEDORES cPROVEEDORES;
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
         private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
         private MODELO.LISTA_PEDIDO oLISTA_PEDIDO;
         string ACCION;
-        bool EDITAR = false;
+        int ID_COTIZACION_ACTUAL;
         public frmCOTIZACION()
         {
             InitializeComponent();
@@ -87,18 +88,7 @@ namespace VISTA
             }
             #endregion
 
-            oCONTIZACION = new MODELO.COTIZACION();
-            oLISTA_PEDIDO = new MODELO.LISTA_PEDIDO();
-            ACCION = "A";
-
-            oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
-            oCONTIZACION.FECHA = DateTime.Now;
-            oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;
-            oCONTIZACION.PEDIDO = (MODELO.SOLICITUD_PEDIDO)cmbSOLICITUD_PEDIDO.SelectedItem;
-            oCONTIZACION.PRECIO = PRECIO_UNITARIO;
-            oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
-            //VER LA LISTA DE PEDIDOS
-            oLISTA_PEDIDO.PEDIDO = (MODELO.SOLICITUD_PEDIDO)cmbSOLICITUD_PEDIDO.SelectedItem;
+            
             
 
             if (ACCION == "A")
@@ -106,13 +96,65 @@ namespace VISTA
                 DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea cotizar el pedido?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (RESPUESTA == DialogResult.Yes)
                 {
+                    oCONTIZACION = new MODELO.COTIZACION();
+                    oLISTA_PEDIDO = new MODELO.LISTA_PEDIDO();
+                    oSOLICITUD_PEDIDO = new MODELO.SOLICITUD_PEDIDO();
+                    oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
+                    oCONTIZACION.FECHA = DateTime.Now;
+                    oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;
+                    CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
+                    oSOLICITUD_PEDIDO = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUD_PEDIDO(solicitud_seleccionado.CMB_VALOR);
+                    oCONTIZACION.PEDIDO = oSOLICITUD_PEDIDO;
+                    //oCONTIZACION.PRECIO = PRECIO_UNITARIO; ACA
+                    oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
+                    //VER LA LISTA DE PEDIDOS
+
                     cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);                   
                     txtNOMBRE.Clear();
                     ARMA_COMBOBOX_PROVEEDOR();
                     ARMA_COMBOBOX_SOLICITUD_PEDIDO();
-                    txtPRECIO1.Clear();
-                    txtMOTIVO.Clear();
+                    for (int i = 1; i < 5; i++)
+                    {
+                        Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
+                        (c as Label).Text = "";
+
+                        Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
+                        t.Text = "";
+                        (t as System.Windows.Forms.TextBox).Enabled = false;
+                        (t as System.Windows.Forms.TextBox).BackColor = SystemColors.InactiveCaption;
+                    }
                 }           
+            }
+            else if(ACCION == "M")
+            {
+                DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea editar la cotizacion del pedido?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (RESPUESTA == DialogResult.Yes)
+                {
+                    oCONTIZACION = cCOTIZACIONES.OBTENER_COTIZACION(ID_COTIZACION_ACTUAL);
+                    oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
+                    oCONTIZACION.FECHA = DateTime.Now;
+                    oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;
+                    CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
+                    oSOLICITUD_PEDIDO = new MODELO.SOLICITUD_PEDIDO();
+                    oSOLICITUD_PEDIDO = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUD_PEDIDO(solicitud_seleccionado.CMB_VALOR);
+                    oCONTIZACION.PEDIDO = oSOLICITUD_PEDIDO;
+                    //oCONTIZACION.PRECIO = PRECIO_UNITARIO; ACA
+                    oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
+                    cCOTIZACIONES.MODIFICAR_COTIZACION(oCONTIZACION);
+                    txtNOMBRE.Clear();
+                    ARMA_COMBOBOX_PROVEEDOR();
+                    ARMA_COMBOBOX_SOLICITUD_PEDIDO();
+                    for (int i = 1; i < 5; i++)
+                    {
+                        Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
+                        (c as Label).Text = "";
+
+                        Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
+                        t.Text = "";
+                        (t as System.Windows.Forms.TextBox).Enabled = false;
+                        (t as System.Windows.Forms.TextBox).BackColor = SystemColors.InactiveCaption;
+                    }
+                }
             }
         }
 
@@ -123,52 +165,61 @@ namespace VISTA
 
         private void cmbSOLICITUD_PEDIDO_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 1; i < 5; i++)
-            {
-                Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
-                (c as Label).Text = "";
-
-                Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
-                t.Text = "";
-                (t as System.Windows.Forms.TextBox).Enabled = false;
-                (t as System.Windows.Forms.TextBox).BackColor = SystemColors.InactiveCaption;
-            }
             CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
-            var LISTA_SOLICITUD = (from c in cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS() where c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
-            object proveedor_actual = cmbPROVEEDOR.SelectedValue;
-
-            var cotizacion_existe = (from c in cCOTIZACIONES.OBTENER_COTIZACIONES() where c.PROVEEDOR.ID_PROVEEDOR == ((MODELO.PROVEEDOR)proveedor_actual).ID_PROVEEDOR && c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
-            if (cotizacion_existe.Count == 0)
+            if (solicitud_seleccionado != null)
             {
-                EDITAR = false;
-
-                int contador = 1;
-                foreach (var material_solicitado in LISTA_SOLICITUD)
+                for (int i = 1; i < 5; i++)
                 {
-                    Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
-                    (c as Label).Text = material_solicitado.INSUMO.NOMBRE;
+                    Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
+                    (c as Label).Text = "";
 
-                    Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
-                    (t as System.Windows.Forms.TextBox).Enabled = true;
-                    (t as System.Windows.Forms.TextBox).BackColor = Color.White;
-                    contador++;
+                    Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
+                    t.Text = "";
+                    (t as System.Windows.Forms.TextBox).Enabled = false;
+                    (t as System.Windows.Forms.TextBox).BackColor = SystemColors.InactiveCaption;
                 }
-            }
-            if (cotizacion_existe.Count > 0)
-            {
-                EDITAR = true;
 
-                int contador = 1;
-                foreach (var cot in cotizacion_existe)
+                var LISTA_SOLICITUD = (from c in cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS() where c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
+                object proveedor_actual = cmbPROVEEDOR.SelectedValue;
+
+                var cotizacion_existe = (from c in cCOTIZACIONES.OBTENER_COTIZACIONES() where c.PROVEEDOR.ID_PROVEEDOR == ((MODELO.PROVEEDOR)proveedor_actual).ID_PROVEEDOR && c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
+                if (cotizacion_existe.Count == 0)
                 {
-                    Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
-                    (c as Label).Text = cot.NOMBRE.ToString();
+                    ACCION = "A";
+                    int contador = 1;
+                    foreach (var material_solicitado in LISTA_SOLICITUD)
+                    {
+                        Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
+                        (c as Label).Text = material_solicitado.INSUMO.NOMBRE;
 
-                    Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
-                    t.Text = cot.PRECIO.ToString();
-                    (t as System.Windows.Forms.TextBox).Enabled = true;
-                    (t as System.Windows.Forms.TextBox).BackColor = Color.White;
-                    contador++;
+                        Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
+                        (t as System.Windows.Forms.TextBox).Enabled = true;
+                        (t as System.Windows.Forms.TextBox).BackColor = Color.White;
+                        contador++;
+                    }
+                }
+                if (cotizacion_existe.Count > 0)
+                {
+                    ACCION = "M";
+                    int contador = 1;
+                    foreach (var material_solicitado in LISTA_SOLICITUD)
+                    {
+                        Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
+                        (c as Label).Text = material_solicitado.INSUMO.NOMBRE;
+
+                        Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
+                        (t as System.Windows.Forms.TextBox).Enabled = true;
+                        (t as System.Windows.Forms.TextBox).BackColor = Color.White;
+                        contador++;
+                    }
+                    contador = 1;
+                    foreach (var cot in cotizacion_existe)
+                    {
+                        Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
+                        //t.Text = cot.PRECIO.ToString(); ACA
+                        contador++;
+                    }
+                    ID_COTIZACION_ACTUAL = cotizacion_existe[0].ID_COTIZACION;
                 }
             }
         }
@@ -205,5 +256,9 @@ namespace VISTA
             }
         }
 
+        private void cmbPROVEEDOR_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbSOLICITUD_PEDIDO_SelectedIndexChanged(sender, e);
+        }
     }
 }

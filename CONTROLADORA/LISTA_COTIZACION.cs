@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CONTROLADORA
+{
+    public class LISTA_COTIZACION
+    {
+        // PATRON SINGLETON
+        private static LISTA_COTIZACION instancia;
+
+        public static LISTA_COTIZACION OBTENER_INSTANCIA()
+        {
+            if (instancia == null)
+            {
+                instancia = new LISTA_COTIZACION();
+            }
+            return instancia;
+        }
+
+        CONTEXTO.CLINICA_AZMED oCONTEXTO;
+
+        private LISTA_COTIZACION()
+        {
+            oCONTEXTO = CONTEXTO.CLINICA_AZMED.OBTENER_INSTANCIA();
+        }
+
+        public void AGREGAR_LISTA_COTIZACION(MODELO.LISTA_COTIZACION LISTA_COTIZACION)
+        {
+            CASOS_DE_USO.LISTA_COTIZACION.OPERACIONES_LISTA_COTIZACIONES.AGREGAR_LISTA_COTIZACION(oCONTEXTO, LISTA_COTIZACION);
+            oCONTEXTO.SaveChanges();
+        }
+
+        public void MODIFICAR_LISTA_COTIZACION(MODELO.LISTA_COTIZACION LISTA_COTIZACION)
+        {
+            CASOS_DE_USO.LISTA_COTIZACION.OPERACIONES_LISTA_COTIZACIONES.MODIFICAR_LISTA_COTIZACION(oCONTEXTO, LISTA_COTIZACION);
+            oCONTEXTO.SaveChanges();
+        }
+
+        public void ELIMINAR_LISTA_COTIZACION(MODELO.LISTA_COTIZACION LISTA_COTIZACION)
+        {
+            CASOS_DE_USO.LISTA_COTIZACION.OPERACIONES_LISTA_COTIZACIONES.ELIMINAR_LISTA_COTIZACION(oCONTEXTO, LISTA_COTIZACION);
+            oCONTEXTO.SaveChanges();
+        }
+
+        public MODELO.LISTA_COTIZACION OBTENER_LISTA_COTIZACION(int CODIGO)
+        {
+            return CASOS_DE_USO.LISTA_COTIZACION.GESTION_LISTA_COTIZACIONES.OBTENER_LISTA_COTIZACION(CODIGO, oCONTEXTO);
+        }
+
+        public List<MODELO.LISTA_COTIZACION> OBTENER_LISTA_COTIZACIONES()
+        {
+            return CASOS_DE_USO.LISTA_COTIZACION.GESTION_LISTA_COTIZACIONES.OBTENER_LISTA_COTIZACIONES(oCONTEXTO);
+        }
+
+    }
+}

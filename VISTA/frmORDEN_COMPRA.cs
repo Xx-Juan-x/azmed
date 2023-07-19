@@ -94,7 +94,7 @@ namespace VISTA
                 TextBox tbx = this.Controls.Find("txtCOTIZACION_" + i, true).FirstOrDefault() as TextBox;
                 if (tbx != null)
                 {
-                    tbx.Text = item.ID_COTIZACION + "-" + item.NOMBRE + "-" + item.PRECIO;
+                    //tbx.Text = item.ID_COTIZACION + "-" + item.NOMBRE + "-" + item.PRECIO; ACA
                     
                 }
                 i++;
