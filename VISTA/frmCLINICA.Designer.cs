@@ -35,8 +35,8 @@ namespace VISTA
             this.mnStripMENU_CLINICA = new System.Windows.Forms.MenuStrip();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionAccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pACIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarObrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +67,8 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
+            this.bACKUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarBackupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -83,6 +85,7 @@ namespace VISTA
             this.tURNOSToolStripMenuItem,
             this.cOMPRASToolStripMenuItem,
             this.rEPORTESToolStripMenuItem,
+            this.bACKUPToolStripMenuItem,
             this.sALIRToolStripMenuItem});
             this.mnStripMENU_CLINICA.Location = new System.Drawing.Point(0, 0);
             this.mnStripMENU_CLINICA.Name = "mnStripMENU_CLINICA";
@@ -104,24 +107,24 @@ namespace VISTA
             // gestionarGruposToolStripMenuItem
             // 
             this.gestionarGruposToolStripMenuItem.Name = "gestionarGruposToolStripMenuItem";
-            this.gestionarGruposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarGruposToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.gestionarGruposToolStripMenuItem.Text = "Gestionar Grupos";
             this.gestionarGruposToolStripMenuItem.Click += new System.EventHandler(this.gestionarGruposToolStripMenuItem_Click);
+            // 
+            // gestionAccionesToolStripMenuItem
+            // 
+            this.gestionAccionesToolStripMenuItem.Name = "gestionAccionesToolStripMenuItem";
+            this.gestionAccionesToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.gestionAccionesToolStripMenuItem.Text = "Gestionar Acciones";
+            this.gestionAccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionAccionesToolStripMenuItem_Click);
             // 
             // crearUsuariosToolStripMenuItem
             // 
             this.crearUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
-            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearUsuariosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.crearUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
             this.crearUsuariosToolStripMenuItem.Click += new System.EventHandler(this.crearUsuariosToolStripMenuItem_Click);
-            // 
-            // gestionAccionesToolStripMenuItem
-            // 
-            this.gestionAccionesToolStripMenuItem.Name = "gestionAccionesToolStripMenuItem";
-            this.gestionAccionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionAccionesToolStripMenuItem.Text = "Gestionar Acciones";
-            this.gestionAccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionAccionesToolStripMenuItem_Click);
             // 
             // pACIENTESToolStripMenuItem
             // 
@@ -416,6 +419,21 @@ namespace VISTA
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
             // 
+            // bACKUPToolStripMenuItem
+            // 
+            this.bACKUPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarBackupDelSistemaToolStripMenuItem});
+            this.bACKUPToolStripMenuItem.Name = "bACKUPToolStripMenuItem";
+            this.bACKUPToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.bACKUPToolStripMenuItem.Text = "BACKUP";
+            // 
+            // realizarBackupDelSistemaToolStripMenuItem
+            // 
+            this.realizarBackupDelSistemaToolStripMenuItem.Name = "realizarBackupDelSistemaToolStripMenuItem";
+            this.realizarBackupDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.realizarBackupDelSistemaToolStripMenuItem.Text = "Realizar backup del sistema";
+            this.realizarBackupDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.realizarBackupDelSistemaToolStripMenuItem_Click);
+            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,5 +496,7 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem registrarPacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProfesionalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionAccionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bACKUPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem realizarBackupDelSistemaToolStripMenuItem;
     }
 }

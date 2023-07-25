@@ -105,6 +105,7 @@ namespace VISTA
             tool_list.Add(registrarProfesionalesToolStripMenuItem);
             tool_list.Add(gestionarAtenciónToolStripMenuItem);
             tool_list.Add(facturarToolStripMenuItem);
+            tool_list.Add(bACKUPToolStripMenuItem);
 
             foreach (ToolStripMenuItem itm in tool_list)
             {
@@ -305,6 +306,12 @@ namespace VISTA
         {
             frmACCIONES ACCIONES = frmACCIONES.OBTENER_INSTANCIA();
             ACCIONES.Show();
+        }
+
+        private void realizarBackupDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBACKUP FORMULARIO_BACKUP = frmBACKUP.OBTENER_INSTANCIA();
+            FORMULARIO_BACKUP.Show();
         }
     }
 }
