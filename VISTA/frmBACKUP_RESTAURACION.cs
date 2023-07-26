@@ -54,12 +54,24 @@ namespace VISTA
             }
             else
             {
-                string cmd = "BACKUP DATABASE [" + DATABASE + "] TO DISK= '" + txtLOCALIZACION1.Text + "\\" + "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
-                CONEXION.Open();
-                SqlCommand COMANDO = new SqlCommand(cmd, CONEXION);
-                COMANDO.ExecuteNonQuery();
-                MessageBox.Show("Copia de seguridad de la base de datos realizada con éxito", "COPIA DE SEGURIDAD", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CONEXION.Close();
+                try
+                {
+                    // Respaldar la base de datos completa
+                    string fullBackupCmd = "BACKUP DATABASE [" + DATABASE + "] TO DISK= '" + txtLOCALIZACION1.Text + "\\" + "database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
+                    CONEXION.Open();
+                    SqlCommand fullBackupCommand = new SqlCommand(fullBackupCmd, CONEXION);
+                    fullBackupCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Copia de seguridad de la base de datos realizada con éxito", "COPIA DE SEGURIDAD", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en el respaldo de la base de datos: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    CONEXION.Close();
+                }
                 btnBACKUP.Enabled = false;
             }
         }
@@ -83,24 +95,31 @@ namespace VISTA
 
             try
             {
+                // Cambiar al modo de usuario único antes de la restauración
                 string str1 = string.Format("ALTER DATABASE [" + DATABASE + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
                 SqlCommand cmd1 = new SqlCommand(str1, CONEXION);
                 cmd1.ExecuteNonQuery();
 
+                // Restaurar la base de datos desde el archivo seleccionado
                 string str2 = "USE MASTER RESTORE DATABASE [" + DATABASE + "] FROM DISK='" + txtLOCALIZACION2.Text + "' WITH REPLACE;";
                 SqlCommand cmd2 = new SqlCommand(str2, CONEXION);
                 cmd2.ExecuteNonQuery();
 
+                // Cambiar al modo multiusuario después de la restauración
                 string str3 = string.Format("ALTER DATABASE [" + DATABASE + "] SET MULTI_USER");
                 SqlCommand cmd3 = new SqlCommand(str3, CONEXION);
                 cmd3.ExecuteNonQuery();
 
                 MessageBox.Show("Restauración de la base de datos realizada con éxito", "RESTAURACION BASE DE DATOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CONEXION.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en la restauración de la base de datos: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CONEXION.Close();
             }
         }
 
