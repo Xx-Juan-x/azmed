@@ -310,7 +310,7 @@ namespace VISTA
 
         private void realizarBackupDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmBACKUP FORMULARIO_BACKUP = frmBACKUP.OBTENER_INSTANCIA();
+            frmBACKUP_RESTAURACION FORMULARIO_BACKUP = frmBACKUP_RESTAURACION.OBTENER_INSTANCIA();
             FORMULARIO_BACKUP.Show();
         }
     }

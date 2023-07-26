@@ -11,26 +11,26 @@ using System.Data.SqlClient;
 
 namespace VISTA
 {
-    public partial class frmBACKUP : Form
+    public partial class frmBACKUP_RESTAURACION : Form
     {
-        private static frmBACKUP instancia;
+        private static frmBACKUP_RESTAURACION instancia;
 
-        public static frmBACKUP OBTENER_INSTANCIA()
+        public static frmBACKUP_RESTAURACION OBTENER_INSTANCIA()
         {
             if (instancia == null)
             {
-                instancia = new frmBACKUP();
+                instancia = new frmBACKUP_RESTAURACION();
             }
             if (instancia.IsDisposed)
             {
-                instancia = new frmBACKUP();
+                instancia = new frmBACKUP_RESTAURACION();
             }
             return instancia;
         }
 
         SqlConnection CONEXION = new SqlConnection("Data Source=JUAN\\SQLEXPRESS;Initial Catalog=CONTEXTO.CLINICA_AZMED;Integrated Security=True");
 
-        public frmBACKUP()
+        public frmBACKUP_RESTAURACION()
         {
             InitializeComponent();
         }

@@ -81,11 +81,11 @@
     <Compile Include="frmATENCION.Designer.cs">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBACKUP.cs">
+    <Compile Include="frmBACKUP_RESTAURACION.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBACKUP.Designer.cs">
-      <DependentUpon>frmBACKUP.cs</DependentUpon>
+    <Compile Include="frmBACKUP_RESTAURACION.Designer.cs">
+      <DependentUpon>frmBACKUP_RESTAURACION.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCLINICA.cs">
       <SubType>Form</SubType>
@@ -234,8 +234,8 @@
     <EmbeddedResource Include="frmATENCION.resx">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBACKUP.resx">
-      <DependentUpon>frmBACKUP.cs</DependentUpon>
+    <EmbeddedResource Include="frmBACKUP_RESTAURACION.resx">
+      <DependentUpon>frmBACKUP_RESTAURACION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCLINICA.resx">
       <DependentUpon>frmCLINICA.cs</DependentUpon>

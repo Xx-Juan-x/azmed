@@ -1,7 +1,7 @@
 ﻿
 namespace VISTA
 {
-    partial class frmBACKUP
+    partial class frmBACKUP_RESTAURACION
     {
         /// <summary>
         /// Required designer variable.
@@ -118,7 +118,7 @@ namespace VISTA
             this.groupBox1.Size = new System.Drawing.Size(378, 97);
             this.groupBox1.TabIndex = 93;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "BACKUP DE LA BASE DE DATOS";
+            this.groupBox1.Text = "RESTAURACION DE LA BASE DE DATOS";
             // 
             // btnRESTAURAR
             // 
@@ -193,7 +193,7 @@ namespace VISTA
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBACKUP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BACKUP DEL SISTEMA";
+            this.Text = "BACKUP Y RESTAURACION";
             this.gbBACKUP_DATABASE.ResumeLayout(false);
             this.gbBACKUP_DATABASE.PerformLayout();
             this.groupBox1.ResumeLayout(false);
