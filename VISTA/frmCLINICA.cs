@@ -20,6 +20,8 @@ namespace VISTA
         private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
         private CONTROLADORA.ACCIONES_GRUPOS cACCIONES_GRUPOS ;
+        private CONTROLADORA.AUDITORIAS cAUDITORIAS;
+        private MODELO.AUDITORIA oAUDITORIA;
         //PATRON SINGLETON
         private static frmCLINICA instancia;
 
@@ -43,6 +45,7 @@ namespace VISTA
             cLISTA_PEDIDOS = CONTROLADORA.LISTA_DE_PEDIDOS.OBTENER_INSTANCIA();
             cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
             cACCIONES_GRUPOS = CONTROLADORA.ACCIONES_GRUPOS.OBTENER_INSTANCIA();
+            cAUDITORIAS = CONTROLADORA.AUDITORIAS.OBTENER_INSTANCIA();
         }
 
         
@@ -195,9 +198,28 @@ namespace VISTA
 
         private void sALIRToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            CIERRE_DE_SESION(frmLOGIN.ID_USUARIO.ToString());
             frmLOGIN FORMULARIO_LOGIN = frmLOGIN.OBTENER_INSTANCIA();
             FORMULARIO_LOGIN.Show();
             this.Close();
+        }
+
+        //AUDITORIA CIERRE DE SESION
+        private void CIERRE_DE_SESION(string USUARIO)
+        {
+            
+            var LOGIN_USUARIO = cUSUARIOS.OBTENER_USUARIOS().FirstOrDefault(u => u.ID_USUARIO == frmLOGIN.ID_USUARIO);
+            if (LOGIN_USUARIO != null)
+            {
+                oAUDITORIA = new MODELO.AUDITORIA();
+
+                oAUDITORIA.USUARIO = LOGIN_USUARIO;
+                oAUDITORIA.FECHA_HORA = DateTime.Now;
+                oAUDITORIA.ACCION = "Cierre de Sesión";
+                oAUDITORIA.DATOS_REGISTRADOS = "LOGOUT";
+
+                cAUDITORIAS.AGREGAR_AUDITORIA(oAUDITORIA);
+            }
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -312,6 +334,12 @@ namespace VISTA
         {
             frmBACKUP_RESTAURACION FORMULARIO_BACKUP = frmBACKUP_RESTAURACION.OBTENER_INSTANCIA();
             FORMULARIO_BACKUP.Show();
+        }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAUDITORIA FORMULARIO_AUDITORIA = frmAUDITORIA.OBTENER_INSTANCIA();
+            FORMULARIO_AUDITORIA.Show();
         }
     }
 }

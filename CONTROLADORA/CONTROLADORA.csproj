@@ -54,6 +54,7 @@
     <Compile Include="ACCIONES.cs" />
     <Compile Include="ACCIONES_GRUPOS.cs" />
     <Compile Include="ATENCIONES.cs" />
+    <Compile Include="AUDITORIAS.cs" />
     <Compile Include="COTIZACIONES.cs" />
     <Compile Include="ESPECIALIDADES.cs" />
     <Compile Include="GRUPOS.cs" />

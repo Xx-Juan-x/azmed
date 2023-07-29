@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace VISTA
 {
@@ -60,7 +61,28 @@ namespace VISTA
                     GASTOS += ITEMS_COMPRAS.PRECIO * ITEMS_COMPRAS.CANTIDAD;
                 }
             }
-            //MessageBox.Show(GASTOS.ToString());
+            //.Where(r => r.CANTIDAD != 0 && r.PRECIO != 0)
+            //.Where(r => r.PEDIDO != null)
+            // Traigo la cantidad de especialidades que tengo    
+            string[] SERIES_ARRAY_COMPRAS = cORDEN_COMPRA.OBTENER_ORDENES_COMPRAS().AsEnumerable().Select(r => r.PEDIDO.DESCRIPCION).Distinct().ToArray();
+            string[] LISTA_COMPRAS = cLISTA_ORDEN_COMPRAS.OBTENER_LISTA_COMPRAS().AsEnumerable().Select(r => r.PRECIO.ToString()).Distinct().ToArray();
+
+
+            // For que me permite cargar los datos en el chart
+            for (int i = 0; i < SERIES_ARRAY_COMPRAS.Length; i++)
+            {
+                //Titulo de la serie
+                Series SERIES = chart_CANTIDAD_GASTOS.Series.Add(SERIES_ARRAY_COMPRAS[i]);
+
+
+                // Asocio las series con la cantidad de profesionales
+                int CANTIDAD_GASTOS = (from row in SERIES_ARRAY_COMPRAS
+                                              where row == LISTA_COMPRAS[i]
+                                              select row).Count();
+
+                // Agrego la cantidad de Profesionales (las barras)
+                SERIES.Points.Add(CANTIDAD_GASTOS);
+            }
         }
 
         private void btnCERRAR_Click_1(object sender, EventArgs e)

@@ -35,6 +35,8 @@ namespace VISTA
         private CONTROLADORA.GRUPOS cGRUPOS;
         private MODELO.GRUPO oGRUPO;
         private MODELO.PROFESIONAL oPROFESIONAL;
+        private CONTROLADORA.AUDITORIAS cAUDITORIAS;
+        private MODELO.AUDITORIA oAUDITORIA;
         string ACCION;
 
         public frmUSUARIOS()
@@ -43,6 +45,7 @@ namespace VISTA
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
             cPROFESIONALES = CONTROLADORA.PROFESIONALES.OBTENER_INSTANCIA();
+            cAUDITORIAS = CONTROLADORA.AUDITORIAS.OBTENER_INSTANCIA();
 
             ARMA_GRILLA("A");
             MODO_GRILLA();
@@ -226,10 +229,12 @@ namespace VISTA
                 {
                     oUSUARIO.ESTADO = "ACTIVO";
                     cUSUARIOS.AGREGAR_USUARIO(oUSUARIO);
+                    REGISTRO_AUDITORIA_USUARIO(oUSUARIO, "A");
                 }
                 else if (ACCION == "M")
                 {
                     cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
+                    REGISTRO_AUDITORIA_USUARIO(oUSUARIO, "M");
                 }
                 // LIMPIO LA TEXTBOX         
                 txtNOMBRE_USUARIO.Clear();
@@ -309,12 +314,51 @@ namespace VISTA
             }
             oUSUARIO = (MODELO.USUARIO)dgvLISTA_USUARIOS.CurrentRow.DataBoundItem;
 
+            ACCION = "E";
+
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de eliminar el usuario " + oUSUARIO.NOMBRE + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
                 oUSUARIO.ESTADO = "INACTIVO";
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
+                REGISTRO_AUDITORIA_USUARIO(oUSUARIO, "E");
+            }
+        }
+
+        //AUDITORIA DE USUARIOS
+        private void REGISTRO_AUDITORIA_USUARIO(MODELO.USUARIO oUSUARIO, string TIPO_ACCION)
+        {
+            var REGISTRO_ACCION = cUSUARIOS.OBTENER_USUARIOS().FirstOrDefault(u => u.EMAIL == oUSUARIO.EMAIL);
+            if (REGISTRO_ACCION != null)
+            {
+                oAUDITORIA = new MODELO.AUDITORIA();
+               
+                oAUDITORIA.USUARIO = oUSUARIO;
+                oAUDITORIA.FECHA_HORA = DateTime.Now;
+
+                if (ACCION == "A")
+                {
+                    oAUDITORIA.ACCION = "Agregar Usuario";
+                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE AGREGADO AL SISTEMA COMO UN NUEVO USUARIO";
+                }
+                else if (ACCION == "M")
+                {
+                    oAUDITORIA.ACCION = "Modificar Usuario";
+                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE MODIFICADO DEL SISTEMA";
+                }
+                else if (ACCION == "E")
+                {
+                    oAUDITORIA.ACCION = "Eliminar Usuario";
+                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE DADO DE BAJA";
+                }
+                else if (ACCION == "R")
+                {
+                    oAUDITORIA.ACCION = "Recuperar Usuario";
+                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE DADO DE ALTA";
+                }
+
+                cAUDITORIAS.AGREGAR_AUDITORIA(oAUDITORIA);
             }
         }
 
@@ -368,12 +412,15 @@ namespace VISTA
                 return;
             }
 
+            ACCION = "R";
+
             DialogResult RESPUESTA = MessageBox.Show("¿Esta seguro de activar el usuario " + oUSUARIO.NOMBRE + " de la lista de usuarios?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (RESPUESTA == DialogResult.Yes)
             {
                 oUSUARIO.ESTADO = "ACTIVO";
                 cUSUARIOS.MODIFICAR_USUARIO(oUSUARIO);
                 ARMA_GRILLA("A");
+                REGISTRO_AUDITORIA_USUARIO(oUSUARIO, "R");
             }
         }
 

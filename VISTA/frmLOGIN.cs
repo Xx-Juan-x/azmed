@@ -29,6 +29,8 @@ namespace VISTA
 
         private CONTROLADORA.USUARIOS cUSUARIOS;
         public static CONTROLADORA.GRUPOS cGRUPOS;
+        private CONTROLADORA.AUDITORIAS cAUDITORIAS;
+        private MODELO.AUDITORIA oAUDITORIA;
         public static string TIPO_USUARIO = "";
         public static int ID_USUARIO; 
         public static int ID_PROFESIONAL = 0;
@@ -38,6 +40,7 @@ namespace VISTA
             InitializeComponent();
             cUSUARIOS = CONTROLADORA.USUARIOS.OBTENER_INSTANCIA();
             cGRUPOS = CONTROLADORA.GRUPOS.OBTENER_INSTANCIA();
+            cAUDITORIAS = CONTROLADORA.AUDITORIAS.OBTENER_INSTANCIA();
         }
 
         private void btnSALIR_Click(object sender, EventArgs e)
@@ -93,11 +96,51 @@ namespace VISTA
         {
             if (VALIDAR_LOGIN(txtEMAIL.Text, txtCLAVE.Text))
             {
+                
+                REGISTRAR_INICIO_SESION_EXITOSO(txtEMAIL.Text);
                 frmCLINICA FORMULARIO_CLINICA = frmCLINICA.OBTENER_INSTANCIA();
                 FORMULARIO_CLINICA.Show();
                 txtEMAIL.Clear();
                 txtCLAVE.Clear();
                 this.Hide();
+                
+            }
+            else
+            {
+                REGISTRAR_INTENTO_INICIO_SESION_FALLIDO(txtEMAIL.Text);
+            }
+        }
+
+        //AUDITORIA DE LOGIN
+        private void REGISTRAR_INICIO_SESION_EXITOSO(string USUARIO)
+        {
+            var EMAIL_USUARIO = cUSUARIOS.OBTENER_USUARIOS().FirstOrDefault(u => u.EMAIL == USUARIO);
+            if (EMAIL_USUARIO != null)
+            {
+                oAUDITORIA = new MODELO.AUDITORIA();
+
+                oAUDITORIA.USUARIO = EMAIL_USUARIO;
+                oAUDITORIA.FECHA_HORA = DateTime.Now;
+                oAUDITORIA.ACCION = "Inicio de sesión exitoso";
+                oAUDITORIA.DATOS_REGISTRADOS = "LOGUEO";
+
+                cAUDITORIAS.AGREGAR_AUDITORIA(oAUDITORIA);              
+            }
+        }
+
+        private void REGISTRAR_INTENTO_INICIO_SESION_FALLIDO(string USUARIO)
+        {
+            var EMAIL_USUARIO = cUSUARIOS.OBTENER_USUARIOS().FirstOrDefault(u => u.EMAIL == USUARIO);
+            if (EMAIL_USUARIO != null)
+            {
+                oAUDITORIA = new MODELO.AUDITORIA();
+
+                oAUDITORIA.USUARIO = EMAIL_USUARIO;
+                oAUDITORIA.FECHA_HORA = DateTime.Now;
+                oAUDITORIA.ACCION = "Inicio de sesión fallido";
+                oAUDITORIA.DATOS_REGISTRADOS = "LOGUEO FALLIDO";
+
+                cAUDITORIAS.AGREGAR_AUDITORIA(oAUDITORIA);
             }
         }
     }

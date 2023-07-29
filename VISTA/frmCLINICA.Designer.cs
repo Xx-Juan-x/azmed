@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnStripMENU_CLINICA = new System.Windows.Forms.MenuStrip();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarGruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,13 +62,14 @@ namespace VISTA
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bACKUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarBackupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTIPO_USUARIO = new System.Windows.Forms.Label();
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
-            this.bACKUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.realizarBackupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
+            this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -288,7 +289,8 @@ namespace VISTA
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem,
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem,
             this.reportesDeComprasRealizadasToolStripMenuItem,
-            this.estadisticaDeMaterialesToolStripMenuItem});
+            this.estadisticaDeMaterialesToolStripMenuItem,
+            this.auditoriaToolStripMenuItem});
             this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
             this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.rEPORTESToolStripMenuItem.Text = "REPORTES";
@@ -320,6 +322,21 @@ namespace VISTA
             this.estadisticaDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.estadisticaDeMaterialesToolStripMenuItem.Text = "Estadistica de Materiales";
             this.estadisticaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMaterialesToolStripMenuItem_Click);
+            // 
+            // bACKUPToolStripMenuItem
+            // 
+            this.bACKUPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarBackupDelSistemaToolStripMenuItem});
+            this.bACKUPToolStripMenuItem.Name = "bACKUPToolStripMenuItem";
+            this.bACKUPToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
+            this.bACKUPToolStripMenuItem.Text = "BACKUP Y RESTAURACION";
+            // 
+            // realizarBackupDelSistemaToolStripMenuItem
+            // 
+            this.realizarBackupDelSistemaToolStripMenuItem.Name = "realizarBackupDelSistemaToolStripMenuItem";
+            this.realizarBackupDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.realizarBackupDelSistemaToolStripMenuItem.Text = "Respaldar y Resguardar Datos";
+            this.realizarBackupDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.realizarBackupDelSistemaToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
@@ -357,36 +374,36 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_SOLICITUD_PEDIDO.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_SOLICITUD_PEDIDO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_SOLICITUD_PEDIDO.EnableHeadersVisualStyles = false;
             this.dgvLISTA_SOLICITUD_PEDIDO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_SOLICITUD_PEDIDO.Location = new System.Drawing.Point(5, 19);
             this.dgvLISTA_SOLICITUD_PEDIDO.Name = "dgvLISTA_SOLICITUD_PEDIDO";
             this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersVisible = false;
             this.dgvLISTA_SOLICITUD_PEDIDO.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_SOLICITUD_PEDIDO.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_SOLICITUD_PEDIDO.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_SOLICITUD_PEDIDO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_SOLICITUD_PEDIDO.Size = new System.Drawing.Size(1172, 519);
             this.dgvLISTA_SOLICITUD_PEDIDO.TabIndex = 0;
@@ -406,21 +423,6 @@ namespace VISTA
             this.gbLISTA_SOLICITUDES_PEDIDOS.TabStop = false;
             this.gbLISTA_SOLICITUDES_PEDIDOS.Text = "LISTA DE SOLICITUDES DE PEDIDOS";
             // 
-            // bACKUPToolStripMenuItem
-            // 
-            this.bACKUPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.realizarBackupDelSistemaToolStripMenuItem});
-            this.bACKUPToolStripMenuItem.Name = "bACKUPToolStripMenuItem";
-            this.bACKUPToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
-            this.bACKUPToolStripMenuItem.Text = "BACKUP Y RESTAURACION";
-            // 
-            // realizarBackupDelSistemaToolStripMenuItem
-            // 
-            this.realizarBackupDelSistemaToolStripMenuItem.Name = "realizarBackupDelSistemaToolStripMenuItem";
-            this.realizarBackupDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.realizarBackupDelSistemaToolStripMenuItem.Text = "Respaldar y Resguardar Datos";
-            this.realizarBackupDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.realizarBackupDelSistemaToolStripMenuItem_Click);
-            // 
             // picIMAGEN_CLINICA
             // 
             this.picIMAGEN_CLINICA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -433,6 +435,13 @@ namespace VISTA
             this.picIMAGEN_CLINICA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
+            // 
+            // auditoriaToolStripMenuItem
+            // 
+            this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.auditoriaToolStripMenuItem.Text = "Auditoria";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // frmCLINICA
             // 
@@ -498,5 +507,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem gestionAccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bACKUPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarBackupDelSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
     }
 }

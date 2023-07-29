@@ -30,23 +30,23 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbBACKUP_DATABASE = new System.Windows.Forms.GroupBox();
-            this.lbl_LOCALIZACION = new System.Windows.Forms.Label();
-            this.txtLOCALIZACION1 = new System.Windows.Forms.TextBox();
             this.btnBACKUP = new System.Windows.Forms.Button();
+            this.lbl_LOCALIZACION = new System.Windows.Forms.Label();
             this.btnNAVEGADOR1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtLOCALIZACION1 = new System.Windows.Forms.TextBox();
+            this.gbRESTORE_DATABASE = new System.Windows.Forms.GroupBox();
             this.btnRESTAURAR = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNAVEGADOR2 = new System.Windows.Forms.Button();
             this.txtLOCALIZACION2 = new System.Windows.Forms.TextBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.gbBACKUP_DATABASE.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbRESTORE_DATABASE.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBACKUP_DATABASE
             // 
-            this.gbBACKUP_DATABASE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBACKUP_DATABASE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.gbBACKUP_DATABASE.Controls.Add(this.btnBACKUP);
             this.gbBACKUP_DATABASE.Controls.Add(this.lbl_LOCALIZACION);
             this.gbBACKUP_DATABASE.Controls.Add(this.btnNAVEGADOR1);
@@ -58,22 +58,6 @@ namespace VISTA
             this.gbBACKUP_DATABASE.TabIndex = 8;
             this.gbBACKUP_DATABASE.TabStop = false;
             this.gbBACKUP_DATABASE.Text = "BACKUP DE LA BASE DE DATOS";
-            // 
-            // lbl_LOCALIZACION
-            // 
-            this.lbl_LOCALIZACION.AutoSize = true;
-            this.lbl_LOCALIZACION.Location = new System.Drawing.Point(6, 43);
-            this.lbl_LOCALIZACION.Name = "lbl_LOCALIZACION";
-            this.lbl_LOCALIZACION.Size = new System.Drawing.Size(87, 13);
-            this.lbl_LOCALIZACION.TabIndex = 10;
-            this.lbl_LOCALIZACION.Text = "LOCALIZACION:";
-            // 
-            // txtLOCALIZACION1
-            // 
-            this.txtLOCALIZACION1.Location = new System.Drawing.Point(99, 40);
-            this.txtLOCALIZACION1.Name = "txtLOCALIZACION1";
-            this.txtLOCALIZACION1.Size = new System.Drawing.Size(172, 20);
-            this.txtLOCALIZACION1.TabIndex = 13;
             // 
             // btnBACKUP
             // 
@@ -90,6 +74,15 @@ namespace VISTA
             this.btnBACKUP.UseVisualStyleBackColor = false;
             this.btnBACKUP.Click += new System.EventHandler(this.btnBACKUP_Click);
             // 
+            // lbl_LOCALIZACION
+            // 
+            this.lbl_LOCALIZACION.AutoSize = true;
+            this.lbl_LOCALIZACION.Location = new System.Drawing.Point(6, 43);
+            this.lbl_LOCALIZACION.Name = "lbl_LOCALIZACION";
+            this.lbl_LOCALIZACION.Size = new System.Drawing.Size(87, 13);
+            this.lbl_LOCALIZACION.TabIndex = 10;
+            this.lbl_LOCALIZACION.Text = "LOCALIZACION:";
+            // 
             // btnNAVEGADOR1
             // 
             this.btnNAVEGADOR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -105,20 +98,27 @@ namespace VISTA
             this.btnNAVEGADOR1.UseVisualStyleBackColor = false;
             this.btnNAVEGADOR1.Click += new System.EventHandler(this.btnNAVEGADOR1_Click);
             // 
-            // groupBox1
+            // txtLOCALIZACION1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnRESTAURAR);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnNAVEGADOR2);
-            this.groupBox1.Controls.Add(this.txtLOCALIZACION2);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(11, 120);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 97);
-            this.groupBox1.TabIndex = 93;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "RESTAURACION DE LA BASE DE DATOS";
+            this.txtLOCALIZACION1.Location = new System.Drawing.Point(99, 40);
+            this.txtLOCALIZACION1.Name = "txtLOCALIZACION1";
+            this.txtLOCALIZACION1.Size = new System.Drawing.Size(172, 20);
+            this.txtLOCALIZACION1.TabIndex = 13;
+            // 
+            // gbRESTORE_DATABASE
+            // 
+            this.gbRESTORE_DATABASE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbRESTORE_DATABASE.Controls.Add(this.btnRESTAURAR);
+            this.gbRESTORE_DATABASE.Controls.Add(this.label1);
+            this.gbRESTORE_DATABASE.Controls.Add(this.btnNAVEGADOR2);
+            this.gbRESTORE_DATABASE.Controls.Add(this.txtLOCALIZACION2);
+            this.gbRESTORE_DATABASE.ForeColor = System.Drawing.Color.White;
+            this.gbRESTORE_DATABASE.Location = new System.Drawing.Point(11, 120);
+            this.gbRESTORE_DATABASE.Name = "gbRESTORE_DATABASE";
+            this.gbRESTORE_DATABASE.Size = new System.Drawing.Size(378, 97);
+            this.gbRESTORE_DATABASE.TabIndex = 93;
+            this.gbRESTORE_DATABASE.TabStop = false;
+            this.gbRESTORE_DATABASE.Text = "RESTAURACION DE LA BASE DE DATOS";
             // 
             // btnRESTAURAR
             // 
@@ -181,23 +181,23 @@ namespace VISTA
             this.btnCERRAR.UseVisualStyleBackColor = false;
             this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
-            // frmBACKUP
+            // frmBACKUP_RESTAURACION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(401, 271);
             this.Controls.Add(this.btnCERRAR);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbRESTORE_DATABASE);
             this.Controls.Add(this.gbBACKUP_DATABASE);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmBACKUP";
+            this.Name = "frmBACKUP_RESTAURACION";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BACKUP Y RESTAURACION";
             this.gbBACKUP_DATABASE.ResumeLayout(false);
             this.gbBACKUP_DATABASE.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbRESTORE_DATABASE.ResumeLayout(false);
+            this.gbRESTORE_DATABASE.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -209,7 +209,7 @@ namespace VISTA
         private System.Windows.Forms.TextBox txtLOCALIZACION1;
         private System.Windows.Forms.Button btnBACKUP;
         private System.Windows.Forms.Button btnNAVEGADOR1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbRESTORE_DATABASE;
         private System.Windows.Forms.Button btnRESTAURAR;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNAVEGADOR2;

@@ -71,6 +71,8 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.PACIENTE> PACIENTES { get; set; }
 
+        public virtual DbSet<MODELO.AUDITORIA> AUDITORIA { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()
@@ -111,6 +113,8 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_PROFESIONAL);
             modelBuilder.Entity<MODELO.PACIENTE>()
                 .HasKey(c => c.ID_PACIENTE);
+            modelBuilder.Entity<MODELO.AUDITORIA>()
+                .HasKey(c => c.ID_AUDITORIA);
         }
     }
 

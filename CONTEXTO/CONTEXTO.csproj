@@ -346,6 +346,10 @@
     <Compile Include="Migrations\202307180345362_LISTA_COTIZACION.designer.cs">
       <DependentUpon>202307180345362_LISTA_COTIZACION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307291640249_AUDITORIA.cs" />
+    <Compile Include="Migrations\202307291640249_AUDITORIA.designer.cs">
+      <DependentUpon>202307291640249_AUDITORIA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -581,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307180345362_LISTA_COTIZACION.resx">
       <DependentUpon>202307180345362_LISTA_COTIZACION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307291640249_AUDITORIA.resx">
+      <DependentUpon>202307291640249_AUDITORIA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
