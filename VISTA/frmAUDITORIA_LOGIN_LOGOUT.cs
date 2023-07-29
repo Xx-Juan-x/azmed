@@ -10,27 +10,27 @@ using System.Windows.Forms;
 
 namespace VISTA
 {
-    public partial class frmAUDITORIA : Form
+    public partial class frmAUDITORIA_LOGIN_LOGOUT : Form
     {
-        private static frmAUDITORIA instancia;
+        private static frmAUDITORIA_LOGIN_LOGOUT instancia;
 
-        public static frmAUDITORIA OBTENER_INSTANCIA()
+        public static frmAUDITORIA_LOGIN_LOGOUT OBTENER_INSTANCIA()
         {
             if (instancia == null)
             {
-                instancia = new frmAUDITORIA();
+                instancia = new frmAUDITORIA_LOGIN_LOGOUT();
             }
             if (instancia.IsDisposed)
             {
-                instancia = new frmAUDITORIA();
+                instancia = new frmAUDITORIA_LOGIN_LOGOUT();
             }
             return instancia;
         }
 
         CONTROLADORA.AUDITORIAS cAUDITORIAS;
-        MODELO.AUDITORIA oAUDITORIA;
+        MODELO.AUDITORIA_LOGIN_LOGOUT oAUDITORIA;
         
-        public frmAUDITORIA()
+        public frmAUDITORIA_LOGIN_LOGOUT()
         {
             InitializeComponent();
 
@@ -40,22 +40,20 @@ namespace VISTA
 
         private void ARMA_GRILLA()
         {
-            dgvLISTA_ACCIONES.DataSource = null;           
-            dgvLISTA_ACCIONES.DataSource = cAUDITORIAS.OBTENER_AUDITORIAS();
-            // No puedo hacer andar correctamente el email del usuario, se muestra como MODELO.USUARIO
-            dgvLISTA_ACCIONES.Columns["USUARIO"].Visible = false;
+            dgvLISTA_ACCIONES_LOGIN_LOGOUT.DataSource = null;           
+            dgvLISTA_ACCIONES_LOGIN_LOGOUT.DataSource = cAUDITORIAS.OBTENER_AUDITORIAS();
         }
 
         private void btnELIMINAR_Click(object sender, EventArgs e)
         {
-            if (dgvLISTA_ACCIONES.CurrentRow == null)
+            if (dgvLISTA_ACCIONES_LOGIN_LOGOUT.CurrentRow == null)
             {
                 MessageBox.Show("Debe seleccionar una accion de la lista de la auditoria para poder eliminar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            oAUDITORIA = (MODELO.AUDITORIA)dgvLISTA_ACCIONES.CurrentRow.DataBoundItem;
+            oAUDITORIA = (MODELO.AUDITORIA_LOGIN_LOGOUT)dgvLISTA_ACCIONES_LOGIN_LOGOUT.CurrentRow.DataBoundItem;
 
-            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar la accion " + oAUDITORIA.ACCION + " del usuario " + oAUDITORIA.USUARIO.EMAIL + " de la lista de acciones de la auditoría?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult RESPUESTA = MessageBox.Show("¿Desea eliminar la accion " + oAUDITORIA.ACCION + " del usuario " + oAUDITORIA.USUARIO + " de la lista de acciones de la auditoría?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (RESPUESTA == DialogResult.Yes)
             {
                 cAUDITORIAS.ELIMINAR_AUDITORIA(oAUDITORIA);

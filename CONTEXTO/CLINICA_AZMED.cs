@@ -71,7 +71,9 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.PACIENTE> PACIENTES { get; set; }
 
-        public virtual DbSet<MODELO.AUDITORIA> AUDITORIA { get; set; }
+        public virtual DbSet<MODELO.AUDITORIA_LOGIN_LOGOUT> AUDITORIA { get; set; }
+
+        public virtual DbSet<MODELO.AUDITORIA_USUARIO> AUDITORIA_USUARIO { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -113,7 +115,9 @@ namespace CONTEXTO
                 .HasKey(c => c.ID_PROFESIONAL);
             modelBuilder.Entity<MODELO.PACIENTE>()
                 .HasKey(c => c.ID_PACIENTE);
-            modelBuilder.Entity<MODELO.AUDITORIA>()
+            modelBuilder.Entity<MODELO.AUDITORIA_LOGIN_LOGOUT>()
+                .HasKey(c => c.ID_AUDITORIA);
+            modelBuilder.Entity<MODELO.AUDITORIA_USUARIO>()
                 .HasKey(c => c.ID_AUDITORIA);
         }
     }

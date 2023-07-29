@@ -81,11 +81,17 @@
     <Compile Include="frmATENCION.Designer.cs">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAUDITORIA.cs">
+    <Compile Include="frmAUDITORIA_LOGIN_LOGOUT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAUDITORIA.Designer.cs">
-      <DependentUpon>frmAUDITORIA.cs</DependentUpon>
+    <Compile Include="frmAUDITORIA_LOGIN_LOGOUT.Designer.cs">
+      <DependentUpon>frmAUDITORIA_LOGIN_LOGOUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAUDITORIA_USUARIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAUDITORIA_USUARIO.Designer.cs">
+      <DependentUpon>frmAUDITORIA_USUARIO.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBACKUP_RESTAURACION.cs">
       <SubType>Form</SubType>
@@ -240,8 +246,11 @@
     <EmbeddedResource Include="frmATENCION.resx">
       <DependentUpon>frmATENCION.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAUDITORIA.resx">
-      <DependentUpon>frmAUDITORIA.cs</DependentUpon>
+    <EmbeddedResource Include="frmAUDITORIA_LOGIN_LOGOUT.resx">
+      <DependentUpon>frmAUDITORIA_LOGIN_LOGOUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAUDITORIA_USUARIO.resx">
+      <DependentUpon>frmAUDITORIA_USUARIO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBACKUP_RESTAURACION.resx">
       <DependentUpon>frmBACKUP_RESTAURACION.cs</DependentUpon>

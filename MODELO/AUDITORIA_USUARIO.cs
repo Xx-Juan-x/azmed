@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace MODELO
 {
-    public class AUDITORIA
+    public class AUDITORIA_USUARIO
     {
         public int ID_AUDITORIA { get; set; }
-        public USUARIO USUARIO { get; set; }
+        public string USUARIO { get; set; }
+        public string NOMBRE { get; set; }
+        public string EMAIL { get; set; }
         public DateTime FECHA_HORA { get; set; }
         public string ACCION { get; set; }
         public string DATOS_REGISTRADOS { get; set; }
-        public override string ToString()
-        {
-            return USUARIO.ToString();
-        }
+
     }
 }

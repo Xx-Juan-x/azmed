@@ -21,7 +21,7 @@ namespace VISTA
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
         private CONTROLADORA.ACCIONES_GRUPOS cACCIONES_GRUPOS ;
         private CONTROLADORA.AUDITORIAS cAUDITORIAS;
-        private MODELO.AUDITORIA oAUDITORIA;
+        private MODELO.AUDITORIA_LOGIN_LOGOUT oAUDITORIA;
         //PATRON SINGLETON
         private static frmCLINICA instancia;
 
@@ -211,9 +211,9 @@ namespace VISTA
             var LOGIN_USUARIO = cUSUARIOS.OBTENER_USUARIOS().FirstOrDefault(u => u.ID_USUARIO == frmLOGIN.ID_USUARIO);
             if (LOGIN_USUARIO != null)
             {
-                oAUDITORIA = new MODELO.AUDITORIA();
+                oAUDITORIA = new MODELO.AUDITORIA_LOGIN_LOGOUT();
 
-                oAUDITORIA.USUARIO = LOGIN_USUARIO;
+                oAUDITORIA.USUARIO = LOGIN_USUARIO.EMAIL;
                 oAUDITORIA.FECHA_HORA = DateTime.Now;
                 oAUDITORIA.ACCION = "Cierre de Sesión";
                 oAUDITORIA.DATOS_REGISTRADOS = "LOGOUT";
@@ -336,10 +336,16 @@ namespace VISTA
             FORMULARIO_BACKUP.Show();
         }
 
-        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void auditorialoginlogoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAUDITORIA FORMULARIO_AUDITORIA = frmAUDITORIA.OBTENER_INSTANCIA();
+            frmAUDITORIA_LOGIN_LOGOUT FORMULARIO_AUDITORIA = frmAUDITORIA_LOGIN_LOGOUT.OBTENER_INSTANCIA();
             FORMULARIO_AUDITORIA.Show();
+        }
+
+        private void auditoriaDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAUDITORIA_USUARIO FORMULARIO_AUDITORIA_USUARIO = frmAUDITORIA_USUARIO.OBTENER_INSTANCIA();
+            FORMULARIO_AUDITORIA_USUARIO.Show();
         }
     }
 }

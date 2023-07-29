@@ -36,7 +36,7 @@ namespace VISTA
         private MODELO.GRUPO oGRUPO;
         private MODELO.PROFESIONAL oPROFESIONAL;
         private CONTROLADORA.AUDITORIAS cAUDITORIAS;
-        private MODELO.AUDITORIA oAUDITORIA;
+        private MODELO.AUDITORIA_USUARIO oAUDITORIA_USUARIO;
         string ACCION;
 
         public frmUSUARIOS()
@@ -332,33 +332,35 @@ namespace VISTA
             var REGISTRO_ACCION = cUSUARIOS.OBTENER_USUARIOS().FirstOrDefault(u => u.EMAIL == oUSUARIO.EMAIL);
             if (REGISTRO_ACCION != null)
             {
-                oAUDITORIA = new MODELO.AUDITORIA();
+                oAUDITORIA_USUARIO = new MODELO.AUDITORIA_USUARIO();
                
-                oAUDITORIA.USUARIO = oUSUARIO;
-                oAUDITORIA.FECHA_HORA = DateTime.Now;
+                oAUDITORIA_USUARIO.NOMBRE = oUSUARIO.NOMBRE;
+                oAUDITORIA_USUARIO.EMAIL = oUSUARIO.EMAIL;
+                oAUDITORIA_USUARIO.FECHA_HORA = DateTime.Now;
+                oAUDITORIA_USUARIO.USUARIO = frmLOGIN.NOMBRE_USUARIO.ToString();
 
                 if (ACCION == "A")
                 {
-                    oAUDITORIA.ACCION = "Agregar Usuario";
-                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE AGREGADO AL SISTEMA COMO UN NUEVO USUARIO";
+                   oAUDITORIA_USUARIO.ACCION = "Agregar Usuario";
+                   oAUDITORIA_USUARIO.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE AGREGADO AL SISTEMA COMO UN NUEVO USUARIO";
                 }
                 else if (ACCION == "M")
                 {
-                    oAUDITORIA.ACCION = "Modificar Usuario";
-                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE MODIFICADO DEL SISTEMA";
+                    oAUDITORIA_USUARIO.ACCION = "Modificar Usuario";
+                    oAUDITORIA_USUARIO.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE MODIFICADO DEL SISTEMA";
                 }
                 else if (ACCION == "E")
                 {
-                    oAUDITORIA.ACCION = "Eliminar Usuario";
-                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE DADO DE BAJA";
+                    oAUDITORIA_USUARIO.ACCION = "Eliminar Usuario";
+                    oAUDITORIA_USUARIO.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE DADO DE BAJA";
                 }
                 else if (ACCION == "R")
                 {
-                    oAUDITORIA.ACCION = "Recuperar Usuario";
-                    oAUDITORIA.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE DADO DE ALTA";
+                    oAUDITORIA_USUARIO.ACCION = "Recuperar Usuario";
+                    oAUDITORIA_USUARIO.DATOS_REGISTRADOS = "EL USUARIO " + oUSUARIO.EMAIL.ToUpper() + " FUE DADO DE ALTA";
                 }
 
-                cAUDITORIAS.AGREGAR_AUDITORIA(oAUDITORIA);
+                cAUDITORIAS.AGREGAR_AUDITORIA_USUARIO(oAUDITORIA_USUARIO);
             }
         }
 

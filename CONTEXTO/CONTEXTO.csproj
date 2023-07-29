@@ -350,6 +350,30 @@
     <Compile Include="Migrations\202307291640249_AUDITORIA.designer.cs">
       <DependentUpon>202307291640249_AUDITORIA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307292127116_CAMBIO_PROPIEDAD_AUDITORIA.cs" />
+    <Compile Include="Migrations\202307292127116_CAMBIO_PROPIEDAD_AUDITORIA.designer.cs">
+      <DependentUpon>202307292127116_CAMBIO_PROPIEDAD_AUDITORIA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307292133418_CAMBIO_PROPIEDAD.cs" />
+    <Compile Include="Migrations\202307292133418_CAMBIO_PROPIEDAD.designer.cs">
+      <DependentUpon>202307292133418_CAMBIO_PROPIEDAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307292137310_CAMBIO_AUDITORIA.cs" />
+    <Compile Include="Migrations\202307292137310_CAMBIO_AUDITORIA.designer.cs">
+      <DependentUpon>202307292137310_CAMBIO_AUDITORIA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307292234502_TABLA_AUDITORIA_USUARIO.cs" />
+    <Compile Include="Migrations\202307292234502_TABLA_AUDITORIA_USUARIO.designer.cs">
+      <DependentUpon>202307292234502_TABLA_AUDITORIA_USUARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.cs" />
+    <Compile Include="Migrations\202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.designer.cs">
+      <DependentUpon>202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307292324233_CAMBIO_PROPIEDAD_AUDITORIA_USUARIO.cs" />
+    <Compile Include="Migrations\202307292324233_CAMBIO_PROPIEDAD_AUDITORIA_USUARIO.designer.cs">
+      <DependentUpon>202307292324233_CAMBIO_PROPIEDAD_AUDITORIA_USUARIO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -588,6 +612,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307291640249_AUDITORIA.resx">
       <DependentUpon>202307291640249_AUDITORIA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307292127116_CAMBIO_PROPIEDAD_AUDITORIA.resx">
+      <DependentUpon>202307292127116_CAMBIO_PROPIEDAD_AUDITORIA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307292133418_CAMBIO_PROPIEDAD.resx">
+      <DependentUpon>202307292133418_CAMBIO_PROPIEDAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307292137310_CAMBIO_AUDITORIA.resx">
+      <DependentUpon>202307292137310_CAMBIO_AUDITORIA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307292234502_TABLA_AUDITORIA_USUARIO.resx">
+      <DependentUpon>202307292234502_TABLA_AUDITORIA_USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.resx">
+      <DependentUpon>202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307292324233_CAMBIO_PROPIEDAD_AUDITORIA_USUARIO.resx">
+      <DependentUpon>202307292324233_CAMBIO_PROPIEDAD_AUDITORIA_USUARIO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
