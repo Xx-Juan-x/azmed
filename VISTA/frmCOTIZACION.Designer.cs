@@ -52,6 +52,16 @@ namespace VISTA
             this.lblPROVEEDOR = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtPRECIO10 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO10 = new System.Windows.Forms.Label();
+            this.txtPRECIO9 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO9 = new System.Windows.Forms.Label();
+            this.txtPRECIO8 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO8 = new System.Windows.Forms.Label();
+            this.txtPRECIO7 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO7 = new System.Windows.Forms.Label();
+            this.txtPRECIO6 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO6 = new System.Windows.Forms.Label();
             this.gbDATOS_COTIZACION.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +70,16 @@ namespace VISTA
             this.gbDATOS_COTIZACION.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO10);
+            this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO10);
+            this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO9);
+            this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO9);
+            this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO8);
+            this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO8);
+            this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO7);
+            this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO7);
+            this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO6);
+            this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO6);
             this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO5);
             this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO5);
             this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO4);
@@ -83,7 +103,7 @@ namespace VISTA
             this.gbDATOS_COTIZACION.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_COTIZACION.Location = new System.Drawing.Point(12, 58);
             this.gbDATOS_COTIZACION.Name = "gbDATOS_COTIZACION";
-            this.gbDATOS_COTIZACION.Size = new System.Drawing.Size(404, 561);
+            this.gbDATOS_COTIZACION.Size = new System.Drawing.Size(813, 468);
             this.gbDATOS_COTIZACION.TabIndex = 10;
             this.gbDATOS_COTIZACION.TabStop = false;
             this.gbDATOS_COTIZACION.Text = "DATOS DE LA COTIZACION";
@@ -92,7 +112,7 @@ namespace VISTA
             // 
             this.txtPRECIO5.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO5.Enabled = false;
-            this.txtPRECIO5.Location = new System.Drawing.Point(203, 334);
+            this.txtPRECIO5.Location = new System.Drawing.Point(177, 334);
             this.txtPRECIO5.Name = "txtPRECIO5";
             this.txtPRECIO5.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO5.TabIndex = 103;
@@ -100,7 +120,7 @@ namespace VISTA
             // lblPRECIO5
             // 
             this.lblPRECIO5.AutoSize = true;
-            this.lblPRECIO5.Location = new System.Drawing.Point(13, 337);
+            this.lblPRECIO5.Location = new System.Drawing.Point(27, 337);
             this.lblPRECIO5.Name = "lblPRECIO5";
             this.lblPRECIO5.Size = new System.Drawing.Size(16, 13);
             this.lblPRECIO5.TabIndex = 102;
@@ -110,7 +130,7 @@ namespace VISTA
             // 
             this.txtPRECIO4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO4.Enabled = false;
-            this.txtPRECIO4.Location = new System.Drawing.Point(203, 294);
+            this.txtPRECIO4.Location = new System.Drawing.Point(177, 294);
             this.txtPRECIO4.Name = "txtPRECIO4";
             this.txtPRECIO4.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO4.TabIndex = 101;
@@ -118,7 +138,7 @@ namespace VISTA
             // lblPRECIO4
             // 
             this.lblPRECIO4.AutoSize = true;
-            this.lblPRECIO4.Location = new System.Drawing.Point(13, 297);
+            this.lblPRECIO4.Location = new System.Drawing.Point(27, 297);
             this.lblPRECIO4.Name = "lblPRECIO4";
             this.lblPRECIO4.Size = new System.Drawing.Size(16, 13);
             this.lblPRECIO4.TabIndex = 100;
@@ -128,7 +148,7 @@ namespace VISTA
             // 
             this.txtPRECIO3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO3.Enabled = false;
-            this.txtPRECIO3.Location = new System.Drawing.Point(203, 253);
+            this.txtPRECIO3.Location = new System.Drawing.Point(177, 253);
             this.txtPRECIO3.Name = "txtPRECIO3";
             this.txtPRECIO3.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO3.TabIndex = 99;
@@ -136,7 +156,7 @@ namespace VISTA
             // lblPRECIO3
             // 
             this.lblPRECIO3.AutoSize = true;
-            this.lblPRECIO3.Location = new System.Drawing.Point(13, 256);
+            this.lblPRECIO3.Location = new System.Drawing.Point(27, 256);
             this.lblPRECIO3.Name = "lblPRECIO3";
             this.lblPRECIO3.Size = new System.Drawing.Size(16, 13);
             this.lblPRECIO3.TabIndex = 98;
@@ -146,7 +166,7 @@ namespace VISTA
             // 
             this.txtPRECIO2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO2.Enabled = false;
-            this.txtPRECIO2.Location = new System.Drawing.Point(203, 211);
+            this.txtPRECIO2.Location = new System.Drawing.Point(177, 211);
             this.txtPRECIO2.Name = "txtPRECIO2";
             this.txtPRECIO2.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO2.TabIndex = 97;
@@ -154,7 +174,7 @@ namespace VISTA
             // lblPRECIO2
             // 
             this.lblPRECIO2.AutoSize = true;
-            this.lblPRECIO2.Location = new System.Drawing.Point(13, 214);
+            this.lblPRECIO2.Location = new System.Drawing.Point(27, 214);
             this.lblPRECIO2.Name = "lblPRECIO2";
             this.lblPRECIO2.Size = new System.Drawing.Size(16, 13);
             this.lblPRECIO2.TabIndex = 96;
@@ -164,7 +184,7 @@ namespace VISTA
             // 
             this.txtPRECIO1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO1.Enabled = false;
-            this.txtPRECIO1.Location = new System.Drawing.Point(203, 172);
+            this.txtPRECIO1.Location = new System.Drawing.Point(177, 172);
             this.txtPRECIO1.Name = "txtPRECIO1";
             this.txtPRECIO1.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO1.TabIndex = 95;
@@ -172,7 +192,7 @@ namespace VISTA
             // lblPRECIO1
             // 
             this.lblPRECIO1.AutoSize = true;
-            this.lblPRECIO1.Location = new System.Drawing.Point(13, 175);
+            this.lblPRECIO1.Location = new System.Drawing.Point(27, 175);
             this.lblPRECIO1.Name = "lblPRECIO1";
             this.lblPRECIO1.Size = new System.Drawing.Size(16, 13);
             this.lblPRECIO1.TabIndex = 94;
@@ -180,27 +200,27 @@ namespace VISTA
             // 
             // txtMOTIVO
             // 
-            this.txtMOTIVO.Location = new System.Drawing.Point(85, 375);
+            this.txtMOTIVO.Location = new System.Drawing.Point(447, 35);
             this.txtMOTIVO.Multiline = true;
             this.txtMOTIVO.Name = "txtMOTIVO";
-            this.txtMOTIVO.Size = new System.Drawing.Size(309, 93);
+            this.txtMOTIVO.Size = new System.Drawing.Size(343, 97);
             this.txtMOTIVO.TabIndex = 93;
             // 
             // cmbPROVEEDOR
             // 
             this.cmbPROVEEDOR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPROVEEDOR.FormattingEnabled = true;
-            this.cmbPROVEEDOR.Location = new System.Drawing.Point(170, 64);
+            this.cmbPROVEEDOR.Location = new System.Drawing.Point(161, 73);
             this.cmbPROVEEDOR.Name = "cmbPROVEEDOR";
-            this.cmbPROVEEDOR.Size = new System.Drawing.Size(224, 21);
+            this.cmbPROVEEDOR.Size = new System.Drawing.Size(256, 21);
             this.cmbPROVEEDOR.TabIndex = 92;
             this.cmbPROVEEDOR.SelectedIndexChanged += new System.EventHandler(this.cmbPROVEEDOR_SelectedIndexChanged);
             // 
             // txtNOMBRE
             // 
-            this.txtNOMBRE.Location = new System.Drawing.Point(170, 22);
+            this.txtNOMBRE.Location = new System.Drawing.Point(161, 35);
             this.txtNOMBRE.Name = "txtNOMBRE";
-            this.txtNOMBRE.Size = new System.Drawing.Size(224, 20);
+            this.txtNOMBRE.Size = new System.Drawing.Size(256, 20);
             this.txtNOMBRE.TabIndex = 91;
             // 
             // btnCERRAR
@@ -210,7 +230,7 @@ namespace VISTA
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(275, 506);
+            this.btnCERRAR.Location = new System.Drawing.Point(447, 415);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(119, 36);
             this.btnCERRAR.TabIndex = 90;
@@ -225,7 +245,7 @@ namespace VISTA
             this.btnGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGUARDAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGUARDAR.ForeColor = System.Drawing.Color.White;
-            this.btnGUARDAR.Location = new System.Drawing.Point(16, 506);
+            this.btnGUARDAR.Location = new System.Drawing.Point(298, 415);
             this.btnGUARDAR.Name = "btnGUARDAR";
             this.btnGUARDAR.Size = new System.Drawing.Size(119, 36);
             this.btnGUARDAR.TabIndex = 86;
@@ -236,7 +256,7 @@ namespace VISTA
             // lblMOTIVO
             // 
             this.lblMOTIVO.AutoSize = true;
-            this.lblMOTIVO.Location = new System.Drawing.Point(13, 378);
+            this.lblMOTIVO.Location = new System.Drawing.Point(444, 19);
             this.lblMOTIVO.Name = "lblMOTIVO";
             this.lblMOTIVO.Size = new System.Drawing.Size(52, 13);
             this.lblMOTIVO.TabIndex = 88;
@@ -245,26 +265,27 @@ namespace VISTA
             // lblSOLICITUD_PEDIDO
             // 
             this.lblSOLICITUD_PEDIDO.AutoSize = true;
-            this.lblSOLICITUD_PEDIDO.Location = new System.Drawing.Point(13, 108);
+            this.lblSOLICITUD_PEDIDO.Location = new System.Drawing.Point(15, 119);
             this.lblSOLICITUD_PEDIDO.Name = "lblSOLICITUD_PEDIDO";
             this.lblSOLICITUD_PEDIDO.Size = new System.Drawing.Size(126, 13);
             this.lblSOLICITUD_PEDIDO.TabIndex = 84;
             this.lblSOLICITUD_PEDIDO.Text = "SOLICITUD DE PEDIDO";
+            this.lblSOLICITUD_PEDIDO.Click += new System.EventHandler(this.lblSOLICITUD_PEDIDO_Click);
             // 
             // cmbSOLICITUD_PEDIDO
             // 
             this.cmbSOLICITUD_PEDIDO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSOLICITUD_PEDIDO.FormattingEnabled = true;
-            this.cmbSOLICITUD_PEDIDO.Location = new System.Drawing.Point(16, 124);
+            this.cmbSOLICITUD_PEDIDO.Location = new System.Drawing.Point(161, 111);
             this.cmbSOLICITUD_PEDIDO.Name = "cmbSOLICITUD_PEDIDO";
-            this.cmbSOLICITUD_PEDIDO.Size = new System.Drawing.Size(378, 21);
+            this.cmbSOLICITUD_PEDIDO.Size = new System.Drawing.Size(256, 21);
             this.cmbSOLICITUD_PEDIDO.TabIndex = 83;
             this.cmbSOLICITUD_PEDIDO.SelectedIndexChanged += new System.EventHandler(this.cmbSOLICITUD_PEDIDO_SelectedIndexChanged);
             // 
             // lblNOMBRE_COTIZACION
             // 
             this.lblNOMBRE_COTIZACION.AutoSize = true;
-            this.lblNOMBRE_COTIZACION.Location = new System.Drawing.Point(13, 22);
+            this.lblNOMBRE_COTIZACION.Location = new System.Drawing.Point(19, 42);
             this.lblNOMBRE_COTIZACION.Name = "lblNOMBRE_COTIZACION";
             this.lblNOMBRE_COTIZACION.Size = new System.Drawing.Size(57, 13);
             this.lblNOMBRE_COTIZACION.TabIndex = 79;
@@ -273,7 +294,7 @@ namespace VISTA
             // lblPROVEEDOR
             // 
             this.lblPROVEEDOR.AutoSize = true;
-            this.lblPROVEEDOR.Location = new System.Drawing.Point(13, 67);
+            this.lblPROVEEDOR.Location = new System.Drawing.Point(15, 81);
             this.lblPROVEEDOR.Name = "lblPROVEEDOR";
             this.lblPROVEEDOR.Size = new System.Drawing.Size(78, 13);
             this.lblPROVEEDOR.TabIndex = 80;
@@ -285,7 +306,7 @@ namespace VISTA
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(428, 55);
+            this.label3.Size = new System.Drawing.Size(845, 55);
             this.label3.TabIndex = 930;
             // 
             // label4
@@ -300,12 +321,102 @@ namespace VISTA
             this.label4.TabIndex = 931;
             this.label4.Text = "Cotizar Material";
             // 
+            // txtPRECIO10
+            // 
+            this.txtPRECIO10.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO10.Enabled = false;
+            this.txtPRECIO10.Location = new System.Drawing.Point(565, 330);
+            this.txtPRECIO10.Name = "txtPRECIO10";
+            this.txtPRECIO10.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO10.TabIndex = 113;
+            // 
+            // lblPRECIO10
+            // 
+            this.lblPRECIO10.AutoSize = true;
+            this.lblPRECIO10.Location = new System.Drawing.Point(423, 337);
+            this.lblPRECIO10.Name = "lblPRECIO10";
+            this.lblPRECIO10.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO10.TabIndex = 112;
+            this.lblPRECIO10.Text = "---";
+            // 
+            // txtPRECIO9
+            // 
+            this.txtPRECIO9.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO9.Enabled = false;
+            this.txtPRECIO9.Location = new System.Drawing.Point(565, 290);
+            this.txtPRECIO9.Name = "txtPRECIO9";
+            this.txtPRECIO9.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO9.TabIndex = 111;
+            // 
+            // lblPRECIO9
+            // 
+            this.lblPRECIO9.AutoSize = true;
+            this.lblPRECIO9.Location = new System.Drawing.Point(423, 297);
+            this.lblPRECIO9.Name = "lblPRECIO9";
+            this.lblPRECIO9.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO9.TabIndex = 110;
+            this.lblPRECIO9.Text = "---";
+            // 
+            // txtPRECIO8
+            // 
+            this.txtPRECIO8.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO8.Enabled = false;
+            this.txtPRECIO8.Location = new System.Drawing.Point(565, 249);
+            this.txtPRECIO8.Name = "txtPRECIO8";
+            this.txtPRECIO8.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO8.TabIndex = 109;
+            // 
+            // lblPRECIO8
+            // 
+            this.lblPRECIO8.AutoSize = true;
+            this.lblPRECIO8.Location = new System.Drawing.Point(423, 256);
+            this.lblPRECIO8.Name = "lblPRECIO8";
+            this.lblPRECIO8.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO8.TabIndex = 108;
+            this.lblPRECIO8.Text = "---";
+            // 
+            // txtPRECIO7
+            // 
+            this.txtPRECIO7.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO7.Enabled = false;
+            this.txtPRECIO7.Location = new System.Drawing.Point(565, 207);
+            this.txtPRECIO7.Name = "txtPRECIO7";
+            this.txtPRECIO7.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO7.TabIndex = 107;
+            // 
+            // lblPRECIO7
+            // 
+            this.lblPRECIO7.AutoSize = true;
+            this.lblPRECIO7.Location = new System.Drawing.Point(423, 214);
+            this.lblPRECIO7.Name = "lblPRECIO7";
+            this.lblPRECIO7.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO7.TabIndex = 106;
+            this.lblPRECIO7.Text = "---";
+            // 
+            // txtPRECIO6
+            // 
+            this.txtPRECIO6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO6.Enabled = false;
+            this.txtPRECIO6.Location = new System.Drawing.Point(565, 168);
+            this.txtPRECIO6.Name = "txtPRECIO6";
+            this.txtPRECIO6.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO6.TabIndex = 105;
+            // 
+            // lblPRECIO6
+            // 
+            this.lblPRECIO6.AutoSize = true;
+            this.lblPRECIO6.Location = new System.Drawing.Point(423, 175);
+            this.lblPRECIO6.Name = "lblPRECIO6";
+            this.lblPRECIO6.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO6.TabIndex = 104;
+            this.lblPRECIO6.Text = "---";
+            // 
             // frmCOTIZACION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(428, 631);
+            this.ClientSize = new System.Drawing.Size(845, 538);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gbDATOS_COTIZACION);
@@ -345,5 +456,15 @@ namespace VISTA
         private System.Windows.Forms.Label lblPRECIO3;
         private System.Windows.Forms.TextBox txtPRECIO2;
         private System.Windows.Forms.Label lblPRECIO2;
+        private System.Windows.Forms.TextBox txtPRECIO10;
+        private System.Windows.Forms.Label lblPRECIO10;
+        private System.Windows.Forms.TextBox txtPRECIO9;
+        private System.Windows.Forms.Label lblPRECIO9;
+        private System.Windows.Forms.TextBox txtPRECIO8;
+        private System.Windows.Forms.Label lblPRECIO8;
+        private System.Windows.Forms.Label lblPRECIO7;
+        private System.Windows.Forms.TextBox txtPRECIO6;
+        private System.Windows.Forms.Label lblPRECIO6;
+        private System.Windows.Forms.TextBox txtPRECIO7;
     }
 }

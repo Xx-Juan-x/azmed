@@ -35,8 +35,11 @@ namespace VISTA
         private MODELO.SOLICITUD_PEDIDO oSOLICITUD_PEDIDO;
         private CONTROLADORA.PROVEEDORES cPROVEEDORES;
         private CONTROLADORA.SOLICITUDES_DE_PEDIDOS cSOLICITUDES_PEDIDOS;
+        private CONTROLADORA.MATERIALES cMATERIALES;
+        private CONTROLADORA.LISTA_COTIZACION cLISTA_COTIZACION;
         private CONTROLADORA.LISTA_DE_PEDIDOS cLISTA_PEDIDOS;
-        private MODELO.LISTA_PEDIDO oLISTA_PEDIDO;
+        private MODELO.LISTA_COTIZACION oLISTA_COTIZACION;
+        private MODELO.MATERIAL oMATERIAL;
         string ACCION;
         int ID_COTIZACION_ACTUAL;
         public frmCOTIZACION()
@@ -45,7 +48,9 @@ namespace VISTA
             cCOTIZACIONES = CONTROLADORA.COTIZACIONES.OBTENER_INSTANCIA();
             cPROVEEDORES = CONTROLADORA.PROVEEDORES.OBTENER_INSTANCIA();
             cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
+            cMATERIALES = CONTROLADORA.MATERIALES.OBTENER_INSTANCIA();
             cLISTA_PEDIDOS = CONTROLADORA.LISTA_DE_PEDIDOS.OBTENER_INSTANCIA();
+            cLISTA_COTIZACION = CONTROLADORA.LISTA_COTIZACION.OBTENER_INSTANCIA();
             ARMA_COMBOBOX_PROVEEDOR();
             ARMA_COMBOBOX_SOLICITUD_PEDIDO();
 
@@ -90,14 +95,13 @@ namespace VISTA
 
             
             
-
             if (ACCION == "A")
             {
                 DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea cotizar el pedido?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (RESPUESTA == DialogResult.Yes)
                 {
                     oCONTIZACION = new MODELO.COTIZACION();
-                    oLISTA_PEDIDO = new MODELO.LISTA_PEDIDO();
+                    oLISTA_COTIZACION = new MODELO.LISTA_COTIZACION();
                     oSOLICITUD_PEDIDO = new MODELO.SOLICITUD_PEDIDO();
                     oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
                     oCONTIZACION.FECHA = DateTime.Now;
@@ -105,18 +109,37 @@ namespace VISTA
                     CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
                     oSOLICITUD_PEDIDO = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUD_PEDIDO(solicitud_seleccionado.CMB_VALOR);
                     oCONTIZACION.PEDIDO = oSOLICITUD_PEDIDO;
-                    //oCONTIZACION.PRECIO = PRECIO_UNITARIO; ACA
                     oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
-                    //VER LA LISTA DE PEDIDOS
+                    
+                    cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);
 
-                    cCOTIZACIONES.AGREGAR_COTIZACION(oCONTIZACION);                   
+                    oCONTIZACION = new MODELO.COTIZACION();
+                    var ULTIMA_COTIZACION = cCOTIZACIONES.OBTENER_COTIZACIONES().Last();
+                    oCONTIZACION = ULTIMA_COTIZACION;
+                    oLISTA_COTIZACION.COTIZACION = oCONTIZACION;
+
+                    for (int i = 1; i < 10; i++)
+                    {
+                        Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
+                        Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
+                        if ((t as System.Windows.Forms.TextBox).Enabled == true)
+                        {
+                            oMATERIAL = new MODELO.MATERIAL();
+                            oLISTA_COTIZACION.PRECIO = Convert.ToInt64((t as System.Windows.Forms.TextBox).Text);
+                            oLISTA_COTIZACION.COTIZACION = oCONTIZACION;
+                            oMATERIAL = (from m in cMATERIALES.OBTENER_MATERIALES() where m.NOMBRE == (c as Label).Text.ToString() select m).FirstOrDefault();
+                            oLISTA_COTIZACION.MATERIAL = oMATERIAL;
+                            cLISTA_COTIZACION.AGREGAR_LISTA_COTIZACION(oLISTA_COTIZACION);
+                        }
+                    }
                     txtNOMBRE.Clear();
                     ARMA_COMBOBOX_PROVEEDOR();
                     ARMA_COMBOBOX_SOLICITUD_PEDIDO();
-                    for (int i = 1; i < 5; i++)
+                    
+                    for (int i = 1; i < 10; i++)
                     {
                         Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
-                        (c as Label).Text = "";
+                        (c as Label).Text = "---";
 
                         Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
                         t.Text = "";
@@ -131,7 +154,7 @@ namespace VISTA
                 if (RESPUESTA == DialogResult.Yes)
                 {
                     oCONTIZACION = cCOTIZACIONES.OBTENER_COTIZACION(ID_COTIZACION_ACTUAL);
-                    oCONTIZACION.NOMBRE = txtNOMBRE.Text.ToUpper();
+                    oCONTIZACION.NOMBRE = txtNOMBRE.Text;
                     oCONTIZACION.FECHA = DateTime.Now;
                     oCONTIZACION.PROVEEDOR = (MODELO.PROVEEDOR)cmbPROVEEDOR.SelectedItem;
                     CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
@@ -139,15 +162,31 @@ namespace VISTA
                     oSOLICITUD_PEDIDO = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUD_PEDIDO(solicitud_seleccionado.CMB_VALOR);
                     oCONTIZACION.PEDIDO = oSOLICITUD_PEDIDO;
                     //oCONTIZACION.PRECIO = PRECIO_UNITARIO; ACA
-                    oCONTIZACION.MOTIVO = txtMOTIVO.Text.ToUpper();
+                    oCONTIZACION.MOTIVO = txtMOTIVO.Text;
                     cCOTIZACIONES.MODIFICAR_COTIZACION(oCONTIZACION);
+
+                    for (int i = 1; i < 10; i++)
+                    {
+                        Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
+                        Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
+                        if ((t as System.Windows.Forms.TextBox).Enabled == true)
+                        {
+                            oLISTA_COTIZACION = (
+                                from l in cLISTA_COTIZACION.OBTENER_LISTA_COTIZACIONES()
+                                where l.COTIZACION.ID_COTIZACION == oCONTIZACION.ID_COTIZACION 
+                                && l.MATERIAL.NOMBRE == (c as Label).Text.ToString() select l).FirstOrDefault();
+                            oLISTA_COTIZACION.PRECIO = Convert.ToInt64((t as System.Windows.Forms.TextBox).Text);
+                            cLISTA_COTIZACION.MODIFICAR_LISTA_COTIZACION(oLISTA_COTIZACION);
+                        }
+                    }
+
                     txtNOMBRE.Clear();
                     ARMA_COMBOBOX_PROVEEDOR();
                     ARMA_COMBOBOX_SOLICITUD_PEDIDO();
-                    for (int i = 1; i < 5; i++)
+                    for (int i = 1; i < 10; i++)
                     {
                         Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
-                        (c as Label).Text = "";
+                        (c as Label).Text = "---";
 
                         Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
                         t.Text = "";
@@ -168,10 +207,12 @@ namespace VISTA
             CMB_SOLICITUD_PEDIDO solicitud_seleccionado = cmbSOLICITUD_PEDIDO.SelectedItem as CMB_SOLICITUD_PEDIDO;
             if (solicitud_seleccionado != null)
             {
-                for (int i = 1; i < 5; i++)
+                txtMOTIVO.Text = "";
+                txtNOMBRE.Text = "";
+                for (int i = 1; i < 10; i++)
                 {
                     Control c = this.Controls.Find("lblPRECIO" + i.ToString(), true).Single();
-                    (c as Label).Text = "";
+                    (c as Label).Text = "---";
 
                     Control t = this.Controls.Find("txtPRECIO" + i.ToString(), true).Single();
                     t.Text = "";
@@ -181,7 +222,7 @@ namespace VISTA
 
                 var LISTA_SOLICITUD = (from c in cLISTA_PEDIDOS.OBTENER_LISTA_PEDIDOS() where c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
                 object proveedor_actual = cmbPROVEEDOR.SelectedValue;
-
+                if (proveedor_actual == null) return ;
                 var cotizacion_existe = (from c in cCOTIZACIONES.OBTENER_COTIZACIONES() where c.PROVEEDOR.ID_PROVEEDOR == ((MODELO.PROVEEDOR)proveedor_actual).ID_PROVEEDOR && c.PEDIDO.ID_SOLICITUD_PEDIDO == solicitud_seleccionado.CMB_VALOR select c).ToList();
                 if (cotizacion_existe.Count == 0)
                 {
@@ -202,6 +243,9 @@ namespace VISTA
                 {
                     ACCION = "M";
                     int contador = 1;
+                    txtMOTIVO.Text = cotizacion_existe[0].MOTIVO;
+                    txtNOMBRE.Text = cotizacion_existe[0].NOMBRE;
+
                     foreach (var material_solicitado in LISTA_SOLICITUD)
                     {
                         Control c = this.Controls.Find("lblPRECIO" + contador.ToString(), true).Single();
@@ -213,10 +257,18 @@ namespace VISTA
                         contador++;
                     }
                     contador = 1;
-                    foreach (var cot in cotizacion_existe)
+
+                    foreach (var material_solicitado in LISTA_SOLICITUD)
                     {
                         Control t = this.Controls.Find("txtPRECIO" + contador.ToString(), true).Single();
-                        //t.Text = cot.PRECIO.ToString(); ACA
+                        oLISTA_COTIZACION = (
+                            from l in cLISTA_COTIZACION.OBTENER_LISTA_COTIZACIONES()
+                            where l.COTIZACION.ID_COTIZACION == cotizacion_existe[0].ID_COTIZACION
+                            && l.MATERIAL.NOMBRE == material_solicitado.INSUMO.NOMBRE
+                            select l).FirstOrDefault();
+
+                        t.Text = Decimal.ToInt32(oLISTA_COTIZACION.PRECIO).ToString();
+
                         contador++;
                     }
                     ID_COTIZACION_ACTUAL = cotizacion_existe[0].ID_COTIZACION;
@@ -259,6 +311,11 @@ namespace VISTA
         private void cmbPROVEEDOR_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbSOLICITUD_PEDIDO_SelectedIndexChanged(sender, e);
+        }
+
+        private void lblSOLICITUD_PEDIDO_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
