@@ -204,7 +204,7 @@ namespace VISTA
             this.Close();
         }
 
-        //AUDITORIA CIERRE DE SESION
+        //AUDITORIA LOGOUT
         private void CIERRE_DE_SESION(string USUARIO)
         {
             

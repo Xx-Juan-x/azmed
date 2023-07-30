@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -53,7 +54,6 @@ namespace VISTA
             cLISTA_COTIZACION = CONTROLADORA.LISTA_COTIZACION.OBTENER_INSTANCIA();
             ARMA_COMBOBOX_PROVEEDOR();
             ARMA_COMBOBOX_SOLICITUD_PEDIDO();
-
         }
 
         private void ARMA_COMBOBOX_PROVEEDOR()
@@ -80,12 +80,59 @@ namespace VISTA
                 MessageBox.Show("Debe elegir una solicitud para poder cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+           
             double PRECIO_UNITARIO;
-            if (!double.TryParse(txtPRECIO1.Text, out PRECIO_UNITARIO))
+            if (txtPRECIO1.Enabled == true && !double.TryParse(txtPRECIO1.Text, out PRECIO_UNITARIO))
             {
                 MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (txtPRECIO2.Enabled == true && !double.TryParse(txtPRECIO2.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO3.Enabled == true && !double.TryParse(txtPRECIO3.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO4.Enabled == true && !double.TryParse(txtPRECIO4.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO5.Enabled == true && !double.TryParse(txtPRECIO5.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO6.Enabled == true && !double.TryParse(txtPRECIO6.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO7.Enabled == true && !double.TryParse(txtPRECIO7.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO8.Enabled == true && !double.TryParse(txtPRECIO8.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO9.Enabled == true && !double.TryParse(txtPRECIO9.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPRECIO10.Enabled == true && !double.TryParse(txtPRECIO10.Text, out PRECIO_UNITARIO))
+            {
+                MessageBox.Show("Debe ingresar un precio unitario al material que se va a cotizar", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtMOTIVO.Text))
             {
                 MessageBox.Show("Debe ingresar un motivo de porqué ganó tal proveedor con tal material", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,8 +140,6 @@ namespace VISTA
             }
             #endregion
 
-            
-            
             if (ACCION == "A")
             {
                 DialogResult RESPUESTA = MessageBox.Show("¿Está seguro que desea cotizar el pedido?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -161,7 +206,6 @@ namespace VISTA
                     oSOLICITUD_PEDIDO = new MODELO.SOLICITUD_PEDIDO();
                     oSOLICITUD_PEDIDO = cSOLICITUDES_PEDIDOS.OBTENER_SOLICITUD_PEDIDO(solicitud_seleccionado.CMB_VALOR);
                     oCONTIZACION.PEDIDO = oSOLICITUD_PEDIDO;
-                    //oCONTIZACION.PRECIO = PRECIO_UNITARIO; ACA
                     oCONTIZACION.MOTIVO = txtMOTIVO.Text;
                     cCOTIZACIONES.MODIFICAR_COTIZACION(oCONTIZACION);
 
@@ -316,6 +360,115 @@ namespace VISTA
         private void lblSOLICITUD_PEDIDO_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPRECIO1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPRECIO9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void txtPRECIO10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var reg = new Regex("^[0-9,]*$");
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

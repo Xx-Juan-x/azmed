@@ -30,6 +30,16 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_COTIZACION = new System.Windows.Forms.GroupBox();
+            this.txtPRECIO10 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO10 = new System.Windows.Forms.Label();
+            this.txtPRECIO9 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO9 = new System.Windows.Forms.Label();
+            this.txtPRECIO8 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO8 = new System.Windows.Forms.Label();
+            this.txtPRECIO7 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO7 = new System.Windows.Forms.Label();
+            this.txtPRECIO6 = new System.Windows.Forms.TextBox();
+            this.lblPRECIO6 = new System.Windows.Forms.Label();
             this.txtPRECIO5 = new System.Windows.Forms.TextBox();
             this.lblPRECIO5 = new System.Windows.Forms.Label();
             this.txtPRECIO4 = new System.Windows.Forms.TextBox();
@@ -52,16 +62,8 @@ namespace VISTA
             this.lblPROVEEDOR = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPRECIO10 = new System.Windows.Forms.TextBox();
-            this.lblPRECIO10 = new System.Windows.Forms.Label();
-            this.txtPRECIO9 = new System.Windows.Forms.TextBox();
-            this.lblPRECIO9 = new System.Windows.Forms.Label();
-            this.txtPRECIO8 = new System.Windows.Forms.TextBox();
-            this.lblPRECIO8 = new System.Windows.Forms.Label();
-            this.txtPRECIO7 = new System.Windows.Forms.TextBox();
-            this.lblPRECIO7 = new System.Windows.Forms.Label();
-            this.txtPRECIO6 = new System.Windows.Forms.TextBox();
-            this.lblPRECIO6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbDATOS_COTIZACION.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +72,8 @@ namespace VISTA
             this.gbDATOS_COTIZACION.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDATOS_COTIZACION.Controls.Add(this.label2);
+            this.gbDATOS_COTIZACION.Controls.Add(this.label1);
             this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO10);
             this.gbDATOS_COTIZACION.Controls.Add(this.lblPRECIO10);
             this.gbDATOS_COTIZACION.Controls.Add(this.txtPRECIO9);
@@ -103,19 +107,115 @@ namespace VISTA
             this.gbDATOS_COTIZACION.ForeColor = System.Drawing.Color.White;
             this.gbDATOS_COTIZACION.Location = new System.Drawing.Point(12, 58);
             this.gbDATOS_COTIZACION.Name = "gbDATOS_COTIZACION";
-            this.gbDATOS_COTIZACION.Size = new System.Drawing.Size(813, 468);
+            this.gbDATOS_COTIZACION.Size = new System.Drawing.Size(844, 468);
             this.gbDATOS_COTIZACION.TabIndex = 10;
             this.gbDATOS_COTIZACION.TabStop = false;
             this.gbDATOS_COTIZACION.Text = "DATOS DE LA COTIZACION";
+            // 
+            // txtPRECIO10
+            // 
+            this.txtPRECIO10.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO10.Enabled = false;
+            this.txtPRECIO10.Location = new System.Drawing.Point(618, 330);
+            this.txtPRECIO10.Name = "txtPRECIO10";
+            this.txtPRECIO10.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO10.TabIndex = 113;
+            this.txtPRECIO10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO10_KeyPress);
+            // 
+            // lblPRECIO10
+            // 
+            this.lblPRECIO10.AutoSize = true;
+            this.lblPRECIO10.Location = new System.Drawing.Point(438, 333);
+            this.lblPRECIO10.Name = "lblPRECIO10";
+            this.lblPRECIO10.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO10.TabIndex = 112;
+            this.lblPRECIO10.Text = "---";
+            // 
+            // txtPRECIO9
+            // 
+            this.txtPRECIO9.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO9.Enabled = false;
+            this.txtPRECIO9.Location = new System.Drawing.Point(618, 290);
+            this.txtPRECIO9.Name = "txtPRECIO9";
+            this.txtPRECIO9.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO9.TabIndex = 111;
+            this.txtPRECIO9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO9_KeyPress);
+            // 
+            // lblPRECIO9
+            // 
+            this.lblPRECIO9.AutoSize = true;
+            this.lblPRECIO9.Location = new System.Drawing.Point(438, 293);
+            this.lblPRECIO9.Name = "lblPRECIO9";
+            this.lblPRECIO9.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO9.TabIndex = 110;
+            this.lblPRECIO9.Text = "---";
+            // 
+            // txtPRECIO8
+            // 
+            this.txtPRECIO8.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO8.Enabled = false;
+            this.txtPRECIO8.Location = new System.Drawing.Point(618, 249);
+            this.txtPRECIO8.Name = "txtPRECIO8";
+            this.txtPRECIO8.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO8.TabIndex = 109;
+            this.txtPRECIO8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO8_KeyPress);
+            // 
+            // lblPRECIO8
+            // 
+            this.lblPRECIO8.AutoSize = true;
+            this.lblPRECIO8.Location = new System.Drawing.Point(438, 252);
+            this.lblPRECIO8.Name = "lblPRECIO8";
+            this.lblPRECIO8.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO8.TabIndex = 108;
+            this.lblPRECIO8.Text = "---";
+            // 
+            // txtPRECIO7
+            // 
+            this.txtPRECIO7.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO7.Enabled = false;
+            this.txtPRECIO7.Location = new System.Drawing.Point(618, 207);
+            this.txtPRECIO7.Name = "txtPRECIO7";
+            this.txtPRECIO7.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO7.TabIndex = 107;
+            this.txtPRECIO7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO7_KeyPress);
+            // 
+            // lblPRECIO7
+            // 
+            this.lblPRECIO7.AutoSize = true;
+            this.lblPRECIO7.Location = new System.Drawing.Point(438, 210);
+            this.lblPRECIO7.Name = "lblPRECIO7";
+            this.lblPRECIO7.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO7.TabIndex = 106;
+            this.lblPRECIO7.Text = "---";
+            // 
+            // txtPRECIO6
+            // 
+            this.txtPRECIO6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPRECIO6.Enabled = false;
+            this.txtPRECIO6.Location = new System.Drawing.Point(618, 168);
+            this.txtPRECIO6.Name = "txtPRECIO6";
+            this.txtPRECIO6.Size = new System.Drawing.Size(191, 20);
+            this.txtPRECIO6.TabIndex = 105;
+            this.txtPRECIO6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO6_KeyPress);
+            // 
+            // lblPRECIO6
+            // 
+            this.lblPRECIO6.AutoSize = true;
+            this.lblPRECIO6.Location = new System.Drawing.Point(438, 171);
+            this.lblPRECIO6.Name = "lblPRECIO6";
+            this.lblPRECIO6.Size = new System.Drawing.Size(16, 13);
+            this.lblPRECIO6.TabIndex = 104;
+            this.lblPRECIO6.Text = "---";
             // 
             // txtPRECIO5
             // 
             this.txtPRECIO5.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO5.Enabled = false;
-            this.txtPRECIO5.Location = new System.Drawing.Point(177, 334);
+            this.txtPRECIO5.Location = new System.Drawing.Point(226, 330);
             this.txtPRECIO5.Name = "txtPRECIO5";
             this.txtPRECIO5.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO5.TabIndex = 103;
+            this.txtPRECIO5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO5_KeyPress);
             // 
             // lblPRECIO5
             // 
@@ -130,10 +230,11 @@ namespace VISTA
             // 
             this.txtPRECIO4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO4.Enabled = false;
-            this.txtPRECIO4.Location = new System.Drawing.Point(177, 294);
+            this.txtPRECIO4.Location = new System.Drawing.Point(226, 290);
             this.txtPRECIO4.Name = "txtPRECIO4";
             this.txtPRECIO4.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO4.TabIndex = 101;
+            this.txtPRECIO4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO4_KeyPress);
             // 
             // lblPRECIO4
             // 
@@ -148,10 +249,11 @@ namespace VISTA
             // 
             this.txtPRECIO3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO3.Enabled = false;
-            this.txtPRECIO3.Location = new System.Drawing.Point(177, 253);
+            this.txtPRECIO3.Location = new System.Drawing.Point(226, 249);
             this.txtPRECIO3.Name = "txtPRECIO3";
             this.txtPRECIO3.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO3.TabIndex = 99;
+            this.txtPRECIO3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO3_KeyPress);
             // 
             // lblPRECIO3
             // 
@@ -166,10 +268,11 @@ namespace VISTA
             // 
             this.txtPRECIO2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO2.Enabled = false;
-            this.txtPRECIO2.Location = new System.Drawing.Point(177, 211);
+            this.txtPRECIO2.Location = new System.Drawing.Point(226, 207);
             this.txtPRECIO2.Name = "txtPRECIO2";
             this.txtPRECIO2.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO2.TabIndex = 97;
+            this.txtPRECIO2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO2_KeyPress);
             // 
             // lblPRECIO2
             // 
@@ -184,10 +287,11 @@ namespace VISTA
             // 
             this.txtPRECIO1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPRECIO1.Enabled = false;
-            this.txtPRECIO1.Location = new System.Drawing.Point(177, 172);
+            this.txtPRECIO1.Location = new System.Drawing.Point(226, 168);
             this.txtPRECIO1.Name = "txtPRECIO1";
             this.txtPRECIO1.Size = new System.Drawing.Size(191, 20);
             this.txtPRECIO1.TabIndex = 95;
+            this.txtPRECIO1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRECIO1_KeyPress);
             // 
             // lblPRECIO1
             // 
@@ -200,7 +304,7 @@ namespace VISTA
             // 
             // txtMOTIVO
             // 
-            this.txtMOTIVO.Location = new System.Drawing.Point(447, 35);
+            this.txtMOTIVO.Location = new System.Drawing.Point(495, 35);
             this.txtMOTIVO.Multiline = true;
             this.txtMOTIVO.Name = "txtMOTIVO";
             this.txtMOTIVO.Size = new System.Drawing.Size(343, 97);
@@ -256,7 +360,7 @@ namespace VISTA
             // lblMOTIVO
             // 
             this.lblMOTIVO.AutoSize = true;
-            this.lblMOTIVO.Location = new System.Drawing.Point(444, 19);
+            this.lblMOTIVO.Location = new System.Drawing.Point(492, 19);
             this.lblMOTIVO.Name = "lblMOTIVO";
             this.lblMOTIVO.Size = new System.Drawing.Size(52, 13);
             this.lblMOTIVO.TabIndex = 88;
@@ -306,7 +410,7 @@ namespace VISTA
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(845, 55);
+            this.label3.Size = new System.Drawing.Size(876, 55);
             this.label3.TabIndex = 930;
             // 
             // label4
@@ -315,108 +419,36 @@ namespace VISTA
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(110, 9);
+            this.label4.Location = new System.Drawing.Point(342, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(204, 31);
             this.label4.TabIndex = 931;
             this.label4.Text = "Cotizar Material";
             // 
-            // txtPRECIO10
+            // label1
             // 
-            this.txtPRECIO10.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPRECIO10.Enabled = false;
-            this.txtPRECIO10.Location = new System.Drawing.Point(565, 330);
-            this.txtPRECIO10.Name = "txtPRECIO10";
-            this.txtPRECIO10.Size = new System.Drawing.Size(191, 20);
-            this.txtPRECIO10.TabIndex = 113;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(236, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 13);
+            this.label1.TabIndex = 114;
+            this.label1.Text = "INGRESE PRECIO AL MATERIAL";
             // 
-            // lblPRECIO10
+            // label2
             // 
-            this.lblPRECIO10.AutoSize = true;
-            this.lblPRECIO10.Location = new System.Drawing.Point(423, 337);
-            this.lblPRECIO10.Name = "lblPRECIO10";
-            this.lblPRECIO10.Size = new System.Drawing.Size(16, 13);
-            this.lblPRECIO10.TabIndex = 112;
-            this.lblPRECIO10.Text = "---";
-            // 
-            // txtPRECIO9
-            // 
-            this.txtPRECIO9.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPRECIO9.Enabled = false;
-            this.txtPRECIO9.Location = new System.Drawing.Point(565, 290);
-            this.txtPRECIO9.Name = "txtPRECIO9";
-            this.txtPRECIO9.Size = new System.Drawing.Size(191, 20);
-            this.txtPRECIO9.TabIndex = 111;
-            // 
-            // lblPRECIO9
-            // 
-            this.lblPRECIO9.AutoSize = true;
-            this.lblPRECIO9.Location = new System.Drawing.Point(423, 297);
-            this.lblPRECIO9.Name = "lblPRECIO9";
-            this.lblPRECIO9.Size = new System.Drawing.Size(16, 13);
-            this.lblPRECIO9.TabIndex = 110;
-            this.lblPRECIO9.Text = "---";
-            // 
-            // txtPRECIO8
-            // 
-            this.txtPRECIO8.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPRECIO8.Enabled = false;
-            this.txtPRECIO8.Location = new System.Drawing.Point(565, 249);
-            this.txtPRECIO8.Name = "txtPRECIO8";
-            this.txtPRECIO8.Size = new System.Drawing.Size(191, 20);
-            this.txtPRECIO8.TabIndex = 109;
-            // 
-            // lblPRECIO8
-            // 
-            this.lblPRECIO8.AutoSize = true;
-            this.lblPRECIO8.Location = new System.Drawing.Point(423, 256);
-            this.lblPRECIO8.Name = "lblPRECIO8";
-            this.lblPRECIO8.Size = new System.Drawing.Size(16, 13);
-            this.lblPRECIO8.TabIndex = 108;
-            this.lblPRECIO8.Text = "---";
-            // 
-            // txtPRECIO7
-            // 
-            this.txtPRECIO7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPRECIO7.Enabled = false;
-            this.txtPRECIO7.Location = new System.Drawing.Point(565, 207);
-            this.txtPRECIO7.Name = "txtPRECIO7";
-            this.txtPRECIO7.Size = new System.Drawing.Size(191, 20);
-            this.txtPRECIO7.TabIndex = 107;
-            // 
-            // lblPRECIO7
-            // 
-            this.lblPRECIO7.AutoSize = true;
-            this.lblPRECIO7.Location = new System.Drawing.Point(423, 214);
-            this.lblPRECIO7.Name = "lblPRECIO7";
-            this.lblPRECIO7.Size = new System.Drawing.Size(16, 13);
-            this.lblPRECIO7.TabIndex = 106;
-            this.lblPRECIO7.Text = "---";
-            // 
-            // txtPRECIO6
-            // 
-            this.txtPRECIO6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPRECIO6.Enabled = false;
-            this.txtPRECIO6.Location = new System.Drawing.Point(565, 168);
-            this.txtPRECIO6.Name = "txtPRECIO6";
-            this.txtPRECIO6.Size = new System.Drawing.Size(191, 20);
-            this.txtPRECIO6.TabIndex = 105;
-            // 
-            // lblPRECIO6
-            // 
-            this.lblPRECIO6.AutoSize = true;
-            this.lblPRECIO6.Location = new System.Drawing.Point(423, 175);
-            this.lblPRECIO6.Name = "lblPRECIO6";
-            this.lblPRECIO6.Size = new System.Drawing.Size(16, 13);
-            this.lblPRECIO6.TabIndex = 104;
-            this.lblPRECIO6.Text = "---";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(629, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 13);
+            this.label2.TabIndex = 115;
+            this.label2.Text = "INGRESE PRECIO AL MATERIAL";
             // 
             // frmCOTIZACION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(845, 538);
+            this.ClientSize = new System.Drawing.Size(876, 538);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gbDATOS_COTIZACION);
@@ -466,5 +498,7 @@ namespace VISTA
         private System.Windows.Forms.TextBox txtPRECIO6;
         private System.Windows.Forms.Label lblPRECIO6;
         private System.Windows.Forms.TextBox txtPRECIO7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
