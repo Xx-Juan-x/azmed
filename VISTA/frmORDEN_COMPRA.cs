@@ -87,9 +87,6 @@ namespace VISTA
 
         private void ARMA_GRILLA_COTIZACION(int ID_SOLICITUD_PEDIDO)
         {
-
-            
-
             var LISTA_COTIZACIONES = 
                 (from a in cCOTIZACIONES.OBTENER_COTIZACIONES()
                 where a.PEDIDO.ID_SOLICITUD_PEDIDO == ID_SOLICITUD_PEDIDO 

@@ -75,6 +75,8 @@ namespace CONTEXTO
 
         public virtual DbSet<MODELO.AUDITORIA_USUARIO> AUDITORIA_USUARIO { get; set; }
 
+        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MODELO.ESPECIALIDAD>()

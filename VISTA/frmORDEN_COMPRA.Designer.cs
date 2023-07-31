@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_COTIZACIONES = new System.Windows.Forms.GroupBox();
             this.lblSOLICITUD_PEDIDO = new System.Windows.Forms.Label();
             this.cmbSOLICITUD_PEDIDO = new System.Windows.Forms.ComboBox();
@@ -133,36 +133,36 @@ namespace VISTA
             this.dgvLISTA_COTIZACIONES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_COTIZACIONES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_COTIZACIONES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_COTIZACIONES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_COTIZACIONES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLISTA_COTIZACIONES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_COTIZACIONES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_COTIZACIONES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_COTIZACIONES.Location = new System.Drawing.Point(6, 46);
             this.dgvLISTA_COTIZACIONES.Name = "dgvLISTA_COTIZACIONES";
             this.dgvLISTA_COTIZACIONES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle62.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_COTIZACIONES.RowHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_COTIZACIONES.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLISTA_COTIZACIONES.RowHeadersVisible = false;
             this.dgvLISTA_COTIZACIONES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_COTIZACIONES.RowsDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_COTIZACIONES.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLISTA_COTIZACIONES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_COTIZACIONES.Size = new System.Drawing.Size(830, 308);
             this.dgvLISTA_COTIZACIONES.TabIndex = 0;
@@ -235,6 +235,7 @@ namespace VISTA
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(779, 26);
             this.label4.Name = "label4";
@@ -244,6 +245,7 @@ namespace VISTA
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(702, 26);
             this.label5.Name = "label5";
@@ -253,6 +255,7 @@ namespace VISTA
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(474, 26);
             this.label6.Name = "label6";
@@ -290,7 +293,6 @@ namespace VISTA
             // 
             // txtCantidad5
             // 
-            this.txtCantidad5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad5.Location = new System.Drawing.Point(318, 235);
             this.txtCantidad5.Name = "txtCantidad5";
             this.txtCantidad5.Size = new System.Drawing.Size(61, 20);
@@ -299,7 +301,6 @@ namespace VISTA
             // 
             // txtCantidad4
             // 
-            this.txtCantidad4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad4.Location = new System.Drawing.Point(318, 192);
             this.txtCantidad4.Name = "txtCantidad4";
             this.txtCantidad4.Size = new System.Drawing.Size(61, 20);
@@ -308,7 +309,6 @@ namespace VISTA
             // 
             // txtCantidad3
             // 
-            this.txtCantidad3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad3.Location = new System.Drawing.Point(318, 146);
             this.txtCantidad3.Name = "txtCantidad3";
             this.txtCantidad3.Size = new System.Drawing.Size(61, 20);
@@ -317,7 +317,6 @@ namespace VISTA
             // 
             // txtCantidad2
             // 
-            this.txtCantidad2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad2.Location = new System.Drawing.Point(318, 100);
             this.txtCantidad2.Name = "txtCantidad2";
             this.txtCantidad2.Size = new System.Drawing.Size(61, 20);
@@ -326,7 +325,6 @@ namespace VISTA
             // 
             // txtCantidad1
             // 
-            this.txtCantidad1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad1.Location = new System.Drawing.Point(318, 59);
             this.txtCantidad1.Name = "txtCantidad1";
             this.txtCantidad1.Size = new System.Drawing.Size(61, 20);
@@ -335,7 +333,6 @@ namespace VISTA
             // 
             // txtPrecio5
             // 
-            this.txtPrecio5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio5.Location = new System.Drawing.Point(219, 235);
             this.txtPrecio5.Name = "txtPrecio5";
             this.txtPrecio5.Size = new System.Drawing.Size(82, 20);
@@ -344,7 +341,6 @@ namespace VISTA
             // 
             // txtPrecio4
             // 
-            this.txtPrecio4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio4.Location = new System.Drawing.Point(219, 192);
             this.txtPrecio4.Name = "txtPrecio4";
             this.txtPrecio4.Size = new System.Drawing.Size(82, 20);
@@ -353,7 +349,6 @@ namespace VISTA
             // 
             // txtPrecio3
             // 
-            this.txtPrecio3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio3.Location = new System.Drawing.Point(219, 146);
             this.txtPrecio3.Name = "txtPrecio3";
             this.txtPrecio3.Size = new System.Drawing.Size(82, 20);
@@ -362,7 +357,6 @@ namespace VISTA
             // 
             // txtPrecio2
             // 
-            this.txtPrecio2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio2.Location = new System.Drawing.Point(219, 100);
             this.txtPrecio2.Name = "txtPrecio2";
             this.txtPrecio2.Size = new System.Drawing.Size(82, 20);
@@ -371,7 +365,6 @@ namespace VISTA
             // 
             // txtPrecio1
             // 
-            this.txtPrecio1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio1.Location = new System.Drawing.Point(219, 59);
             this.txtPrecio1.Name = "txtPrecio1";
             this.txtPrecio1.Size = new System.Drawing.Size(82, 20);
@@ -380,7 +373,7 @@ namespace VISTA
             // 
             // txtCantidad10
             // 
-            this.txtCantidad10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCantidad10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad10.Location = new System.Drawing.Point(779, 233);
             this.txtCantidad10.Name = "txtCantidad10";
             this.txtCantidad10.Size = new System.Drawing.Size(53, 20);
@@ -389,7 +382,7 @@ namespace VISTA
             // 
             // txtCantidad9
             // 
-            this.txtCantidad9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCantidad9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad9.Location = new System.Drawing.Point(779, 190);
             this.txtCantidad9.Name = "txtCantidad9";
             this.txtCantidad9.Size = new System.Drawing.Size(53, 20);
@@ -398,7 +391,7 @@ namespace VISTA
             // 
             // txtCantidad8
             // 
-            this.txtCantidad8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCantidad8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad8.Location = new System.Drawing.Point(779, 144);
             this.txtCantidad8.Name = "txtCantidad8";
             this.txtCantidad8.Size = new System.Drawing.Size(53, 20);
@@ -407,7 +400,7 @@ namespace VISTA
             // 
             // txtCantidad7
             // 
-            this.txtCantidad7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCantidad7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad7.Location = new System.Drawing.Point(779, 98);
             this.txtCantidad7.Name = "txtCantidad7";
             this.txtCantidad7.Size = new System.Drawing.Size(53, 20);
@@ -416,7 +409,7 @@ namespace VISTA
             // 
             // txtCantidad6
             // 
-            this.txtCantidad6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCantidad6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidad6.Location = new System.Drawing.Point(779, 57);
             this.txtCantidad6.Name = "txtCantidad6";
             this.txtCantidad6.Size = new System.Drawing.Size(53, 20);
@@ -425,6 +418,8 @@ namespace VISTA
             // 
             // cmbCotizacion_10
             // 
+            this.cmbCotizacion_10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCotizacion_10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_10.FormattingEnabled = true;
             this.cmbCotizacion_10.Location = new System.Drawing.Point(476, 232);
             this.cmbCotizacion_10.Name = "cmbCotizacion_10";
@@ -434,6 +429,8 @@ namespace VISTA
             // 
             // cmbCotizacion_9
             // 
+            this.cmbCotizacion_9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCotizacion_9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_9.FormattingEnabled = true;
             this.cmbCotizacion_9.Location = new System.Drawing.Point(476, 189);
             this.cmbCotizacion_9.Name = "cmbCotizacion_9";
@@ -443,6 +440,8 @@ namespace VISTA
             // 
             // cmbCotizacion_8
             // 
+            this.cmbCotizacion_8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCotizacion_8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_8.FormattingEnabled = true;
             this.cmbCotizacion_8.Location = new System.Drawing.Point(476, 142);
             this.cmbCotizacion_8.Name = "cmbCotizacion_8";
@@ -452,6 +451,8 @@ namespace VISTA
             // 
             // cmbCotizacion_7
             // 
+            this.cmbCotizacion_7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCotizacion_7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_7.FormattingEnabled = true;
             this.cmbCotizacion_7.Location = new System.Drawing.Point(476, 97);
             this.cmbCotizacion_7.Name = "cmbCotizacion_7";
@@ -461,6 +462,8 @@ namespace VISTA
             // 
             // cmbCotizacion_6
             // 
+            this.cmbCotizacion_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCotizacion_6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_6.FormattingEnabled = true;
             this.cmbCotizacion_6.Location = new System.Drawing.Point(476, 56);
             this.cmbCotizacion_6.Name = "cmbCotizacion_6";
@@ -470,6 +473,7 @@ namespace VISTA
             // 
             // cmbCotizacion_5
             // 
+            this.cmbCotizacion_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_5.FormattingEnabled = true;
             this.cmbCotizacion_5.Location = new System.Drawing.Point(13, 232);
             this.cmbCotizacion_5.Name = "cmbCotizacion_5";
@@ -479,6 +483,7 @@ namespace VISTA
             // 
             // cmbCotizacion_4
             // 
+            this.cmbCotizacion_4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_4.FormattingEnabled = true;
             this.cmbCotizacion_4.Location = new System.Drawing.Point(13, 190);
             this.cmbCotizacion_4.Name = "cmbCotizacion_4";
@@ -488,6 +493,7 @@ namespace VISTA
             // 
             // cmbCotizacion_3
             // 
+            this.cmbCotizacion_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_3.FormattingEnabled = true;
             this.cmbCotizacion_3.Location = new System.Drawing.Point(13, 143);
             this.cmbCotizacion_3.Name = "cmbCotizacion_3";
@@ -497,6 +503,7 @@ namespace VISTA
             // 
             // cmbCotizacion_2
             // 
+            this.cmbCotizacion_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_2.FormattingEnabled = true;
             this.cmbCotizacion_2.Location = new System.Drawing.Point(13, 98);
             this.cmbCotizacion_2.Name = "cmbCotizacion_2";
@@ -506,6 +513,7 @@ namespace VISTA
             // 
             // cmbCotizacion_1
             // 
+            this.cmbCotizacion_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCotizacion_1.FormattingEnabled = true;
             this.cmbCotizacion_1.Items.AddRange(new object[] {
             "algo",
@@ -534,7 +542,7 @@ namespace VISTA
             // 
             // txtPrecio10
             // 
-            this.txtPrecio10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrecio10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio10.Location = new System.Drawing.Point(683, 233);
             this.txtPrecio10.Name = "txtPrecio10";
             this.txtPrecio10.Size = new System.Drawing.Size(82, 20);
@@ -543,7 +551,7 @@ namespace VISTA
             // 
             // txtPrecio9
             // 
-            this.txtPrecio9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrecio9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio9.Location = new System.Drawing.Point(683, 190);
             this.txtPrecio9.Name = "txtPrecio9";
             this.txtPrecio9.Size = new System.Drawing.Size(82, 20);
@@ -552,7 +560,7 @@ namespace VISTA
             // 
             // txtPrecio8
             // 
-            this.txtPrecio8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrecio8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio8.Location = new System.Drawing.Point(683, 144);
             this.txtPrecio8.Name = "txtPrecio8";
             this.txtPrecio8.Size = new System.Drawing.Size(82, 20);
@@ -561,7 +569,7 @@ namespace VISTA
             // 
             // txtPrecio7
             // 
-            this.txtPrecio7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrecio7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio7.Location = new System.Drawing.Point(683, 98);
             this.txtPrecio7.Name = "txtPrecio7";
             this.txtPrecio7.Size = new System.Drawing.Size(82, 20);
@@ -570,7 +578,7 @@ namespace VISTA
             // 
             // txtPrecio6
             // 
-            this.txtPrecio6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrecio6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecio6.Location = new System.Drawing.Point(683, 57);
             this.txtPrecio6.Name = "txtPrecio6";
             this.txtPrecio6.Size = new System.Drawing.Size(82, 20);

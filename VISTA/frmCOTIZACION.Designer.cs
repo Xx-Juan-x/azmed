@@ -30,6 +30,8 @@ namespace VISTA
         private void InitializeComponent()
         {
             this.gbDATOS_COTIZACION = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPRECIO10 = new System.Windows.Forms.TextBox();
             this.lblPRECIO10 = new System.Windows.Forms.Label();
             this.txtPRECIO9 = new System.Windows.Forms.TextBox();
@@ -62,8 +64,6 @@ namespace VISTA
             this.lblPROVEEDOR = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.gbDATOS_COTIZACION.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +111,24 @@ namespace VISTA
             this.gbDATOS_COTIZACION.TabIndex = 10;
             this.gbDATOS_COTIZACION.TabStop = false;
             this.gbDATOS_COTIZACION.Text = "DATOS DE LA COTIZACION";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(629, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 13);
+            this.label2.TabIndex = 115;
+            this.label2.Text = "INGRESE PRECIO AL MATERIAL";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(236, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 13);
+            this.label1.TabIndex = 114;
+            this.label1.Text = "INGRESE PRECIO AL MATERIAL";
             // 
             // txtPRECIO10
             // 
@@ -424,24 +442,6 @@ namespace VISTA
             this.label4.Size = new System.Drawing.Size(204, 31);
             this.label4.TabIndex = 931;
             this.label4.Text = "Cotizar Material";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(236, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 13);
-            this.label1.TabIndex = 114;
-            this.label1.Text = "INGRESE PRECIO AL MATERIAL";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(629, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 13);
-            this.label2.TabIndex = 115;
-            this.label2.Text = "INGRESE PRECIO AL MATERIAL";
             // 
             // frmCOTIZACION
             // 

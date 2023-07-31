@@ -109,6 +109,7 @@ namespace VISTA
             tool_list.Add(gestionarAtenciónToolStripMenuItem);
             tool_list.Add(facturarToolStripMenuItem);
             tool_list.Add(bACKUPToolStripMenuItem);
+            tool_list.Add(listaDeOrdenesDeComprasToolStripMenuItem);
 
             foreach (ToolStripMenuItem itm in tool_list)
             {
@@ -346,6 +347,12 @@ namespace VISTA
         {
             frmAUDITORIA_USUARIO FORMULARIO_AUDITORIA_USUARIO = frmAUDITORIA_USUARIO.OBTENER_INSTANCIA();
             FORMULARIO_AUDITORIA_USUARIO.Show();
+        }
+
+        private void listaDeOrdenesDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLISTA_ORDEN_COMPRA FORMULARIO_LISTA_COMPRAS = frmLISTA_ORDEN_COMPRA.OBTENER_INSTANCIA();
+            FORMULARIO_LISTA_COMPRAS.Show();
         }
     }
 }
