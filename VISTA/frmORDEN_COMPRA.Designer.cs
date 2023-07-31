@@ -29,9 +29,9 @@ namespace VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_COTIZACIONES = new System.Windows.Forms.GroupBox();
             this.lblSOLICITUD_PEDIDO = new System.Windows.Forms.Label();
             this.cmbSOLICITUD_PEDIDO = new System.Windows.Forms.ComboBox();
@@ -53,22 +53,28 @@ namespace VISTA
             this.txtCantidad8 = new System.Windows.Forms.TextBox();
             this.txtCantidad7 = new System.Windows.Forms.TextBox();
             this.txtCantidad6 = new System.Windows.Forms.TextBox();
-            this.cmbCotizacion10 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion9 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion8 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion7 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion6 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion5 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion4 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion3 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion2 = new System.Windows.Forms.ComboBox();
-            this.cmbCotizacion1 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_10 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_9 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_8 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_7 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_6 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_5 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_4 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_3 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_2 = new System.Windows.Forms.ComboBox();
+            this.cmbCotizacion_1 = new System.Windows.Forms.ComboBox();
             this.btnENVIAR = new System.Windows.Forms.Button();
             this.txtPrecio10 = new System.Windows.Forms.TextBox();
             this.txtPrecio9 = new System.Windows.Forms.TextBox();
             this.txtPrecio8 = new System.Windows.Forms.TextBox();
             this.txtPrecio7 = new System.Windows.Forms.TextBox();
             this.txtPrecio6 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.gbLISTA_COTIZACIONES.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_COTIZACIONES)).BeginInit();
             this.gbCOTIZACIONES.SuspendLayout();
@@ -86,7 +92,7 @@ namespace VISTA
             this.gbLISTA_COTIZACIONES.ForeColor = System.Drawing.Color.White;
             this.gbLISTA_COTIZACIONES.Location = new System.Drawing.Point(6, 17);
             this.gbLISTA_COTIZACIONES.Name = "gbLISTA_COTIZACIONES";
-            this.gbLISTA_COTIZACIONES.Size = new System.Drawing.Size(845, 317);
+            this.gbLISTA_COTIZACIONES.Size = new System.Drawing.Size(845, 410);
             this.gbLISTA_COTIZACIONES.TabIndex = 5;
             this.gbLISTA_COTIZACIONES.TabStop = false;
             this.gbLISTA_COTIZACIONES.Text = "LISTA DE COTIZACIONES";
@@ -127,38 +133,38 @@ namespace VISTA
             this.dgvLISTA_COTIZACIONES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLISTA_COTIZACIONES.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLISTA_COTIZACIONES.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_COTIZACIONES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_COTIZACIONES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLISTA_COTIZACIONES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLISTA_COTIZACIONES.EnableHeadersVisualStyles = false;
             this.dgvLISTA_COTIZACIONES.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.dgvLISTA_COTIZACIONES.Location = new System.Drawing.Point(6, 46);
             this.dgvLISTA_COTIZACIONES.Name = "dgvLISTA_COTIZACIONES";
             this.dgvLISTA_COTIZACIONES.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLISTA_COTIZACIONES.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLISTA_COTIZACIONES.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvLISTA_COTIZACIONES.RowHeadersVisible = false;
             this.dgvLISTA_COTIZACIONES.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvLISTA_COTIZACIONES.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvLISTA_COTIZACIONES.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvLISTA_COTIZACIONES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLISTA_COTIZACIONES.Size = new System.Drawing.Size(833, 265);
+            this.dgvLISTA_COTIZACIONES.Size = new System.Drawing.Size(833, 308);
             this.dgvLISTA_COTIZACIONES.TabIndex = 0;
             // 
             // btnCERRAR
@@ -169,7 +175,7 @@ namespace VISTA
             this.btnCERRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCERRAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCERRAR.ForeColor = System.Drawing.Color.White;
-            this.btnCERRAR.Location = new System.Drawing.Point(535, 229);
+            this.btnCERRAR.Location = new System.Drawing.Point(535, 266);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(304, 39);
             this.btnCERRAR.TabIndex = 16;
@@ -180,6 +186,12 @@ namespace VISTA
             // gbCOTIZACIONES
             // 
             this.gbCOTIZACIONES.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbCOTIZACIONES.Controls.Add(this.label4);
+            this.gbCOTIZACIONES.Controls.Add(this.label5);
+            this.gbCOTIZACIONES.Controls.Add(this.label6);
+            this.gbCOTIZACIONES.Controls.Add(this.label3);
+            this.gbCOTIZACIONES.Controls.Add(this.label2);
+            this.gbCOTIZACIONES.Controls.Add(this.label1);
             this.gbCOTIZACIONES.Controls.Add(this.txtCantidad5);
             this.gbCOTIZACIONES.Controls.Add(this.txtCantidad4);
             this.gbCOTIZACIONES.Controls.Add(this.txtCantidad3);
@@ -195,16 +207,16 @@ namespace VISTA
             this.gbCOTIZACIONES.Controls.Add(this.txtCantidad8);
             this.gbCOTIZACIONES.Controls.Add(this.txtCantidad7);
             this.gbCOTIZACIONES.Controls.Add(this.txtCantidad6);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion10);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion9);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion8);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion7);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion6);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion5);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion4);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion3);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion2);
-            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion1);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_10);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_9);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_8);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_7);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_6);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_5);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_4);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_3);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_2);
+            this.gbCOTIZACIONES.Controls.Add(this.cmbCotizacion_1);
             this.gbCOTIZACIONES.Controls.Add(this.btnENVIAR);
             this.gbCOTIZACIONES.Controls.Add(this.txtPrecio10);
             this.gbCOTIZACIONES.Controls.Add(this.txtPrecio9);
@@ -214,9 +226,9 @@ namespace VISTA
             this.gbCOTIZACIONES.Controls.Add(this.txtPrecio6);
             this.gbCOTIZACIONES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbCOTIZACIONES.ForeColor = System.Drawing.Color.White;
-            this.gbCOTIZACIONES.Location = new System.Drawing.Point(6, 340);
+            this.gbCOTIZACIONES.Location = new System.Drawing.Point(6, 387);
             this.gbCOTIZACIONES.Name = "gbCOTIZACIONES";
-            this.gbCOTIZACIONES.Size = new System.Drawing.Size(845, 274);
+            this.gbCOTIZACIONES.Size = new System.Drawing.Size(845, 311);
             this.gbCOTIZACIONES.TabIndex = 72;
             this.gbCOTIZACIONES.TabStop = false;
             this.gbCOTIZACIONES.Text = "COTIZACIONES";
@@ -224,7 +236,7 @@ namespace VISTA
             // txtCantidad5
             // 
             this.txtCantidad5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad5.Location = new System.Drawing.Point(321, 198);
+            this.txtCantidad5.Location = new System.Drawing.Point(321, 235);
             this.txtCantidad5.Name = "txtCantidad5";
             this.txtCantidad5.Size = new System.Drawing.Size(61, 20);
             this.txtCantidad5.TabIndex = 115;
@@ -232,7 +244,7 @@ namespace VISTA
             // txtCantidad4
             // 
             this.txtCantidad4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad4.Location = new System.Drawing.Point(321, 155);
+            this.txtCantidad4.Location = new System.Drawing.Point(321, 192);
             this.txtCantidad4.Name = "txtCantidad4";
             this.txtCantidad4.Size = new System.Drawing.Size(61, 20);
             this.txtCantidad4.TabIndex = 114;
@@ -240,7 +252,7 @@ namespace VISTA
             // txtCantidad3
             // 
             this.txtCantidad3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad3.Location = new System.Drawing.Point(321, 109);
+            this.txtCantidad3.Location = new System.Drawing.Point(321, 146);
             this.txtCantidad3.Name = "txtCantidad3";
             this.txtCantidad3.Size = new System.Drawing.Size(61, 20);
             this.txtCantidad3.TabIndex = 113;
@@ -248,7 +260,7 @@ namespace VISTA
             // txtCantidad2
             // 
             this.txtCantidad2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad2.Location = new System.Drawing.Point(321, 63);
+            this.txtCantidad2.Location = new System.Drawing.Point(321, 100);
             this.txtCantidad2.Name = "txtCantidad2";
             this.txtCantidad2.Size = new System.Drawing.Size(61, 20);
             this.txtCantidad2.TabIndex = 112;
@@ -256,7 +268,7 @@ namespace VISTA
             // txtCantidad1
             // 
             this.txtCantidad1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad1.Location = new System.Drawing.Point(321, 22);
+            this.txtCantidad1.Location = new System.Drawing.Point(321, 59);
             this.txtCantidad1.Name = "txtCantidad1";
             this.txtCantidad1.Size = new System.Drawing.Size(61, 20);
             this.txtCantidad1.TabIndex = 111;
@@ -264,7 +276,7 @@ namespace VISTA
             // txtPrecio5
             // 
             this.txtPrecio5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio5.Location = new System.Drawing.Point(222, 198);
+            this.txtPrecio5.Location = new System.Drawing.Point(222, 235);
             this.txtPrecio5.Name = "txtPrecio5";
             this.txtPrecio5.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio5.TabIndex = 110;
@@ -272,7 +284,7 @@ namespace VISTA
             // txtPrecio4
             // 
             this.txtPrecio4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio4.Location = new System.Drawing.Point(222, 155);
+            this.txtPrecio4.Location = new System.Drawing.Point(222, 192);
             this.txtPrecio4.Name = "txtPrecio4";
             this.txtPrecio4.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio4.TabIndex = 109;
@@ -280,7 +292,7 @@ namespace VISTA
             // txtPrecio3
             // 
             this.txtPrecio3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio3.Location = new System.Drawing.Point(222, 109);
+            this.txtPrecio3.Location = new System.Drawing.Point(222, 146);
             this.txtPrecio3.Name = "txtPrecio3";
             this.txtPrecio3.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio3.TabIndex = 108;
@@ -288,7 +300,7 @@ namespace VISTA
             // txtPrecio2
             // 
             this.txtPrecio2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio2.Location = new System.Drawing.Point(222, 63);
+            this.txtPrecio2.Location = new System.Drawing.Point(222, 100);
             this.txtPrecio2.Name = "txtPrecio2";
             this.txtPrecio2.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio2.TabIndex = 107;
@@ -296,7 +308,7 @@ namespace VISTA
             // txtPrecio1
             // 
             this.txtPrecio1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio1.Location = new System.Drawing.Point(222, 22);
+            this.txtPrecio1.Location = new System.Drawing.Point(222, 59);
             this.txtPrecio1.Name = "txtPrecio1";
             this.txtPrecio1.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio1.TabIndex = 106;
@@ -304,7 +316,7 @@ namespace VISTA
             // txtCantidad10
             // 
             this.txtCantidad10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad10.Location = new System.Drawing.Point(782, 196);
+            this.txtCantidad10.Location = new System.Drawing.Point(782, 233);
             this.txtCantidad10.Name = "txtCantidad10";
             this.txtCantidad10.Size = new System.Drawing.Size(53, 20);
             this.txtCantidad10.TabIndex = 105;
@@ -312,7 +324,7 @@ namespace VISTA
             // txtCantidad9
             // 
             this.txtCantidad9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad9.Location = new System.Drawing.Point(782, 153);
+            this.txtCantidad9.Location = new System.Drawing.Point(782, 190);
             this.txtCantidad9.Name = "txtCantidad9";
             this.txtCantidad9.Size = new System.Drawing.Size(53, 20);
             this.txtCantidad9.TabIndex = 104;
@@ -320,7 +332,7 @@ namespace VISTA
             // txtCantidad8
             // 
             this.txtCantidad8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad8.Location = new System.Drawing.Point(782, 107);
+            this.txtCantidad8.Location = new System.Drawing.Point(782, 144);
             this.txtCantidad8.Name = "txtCantidad8";
             this.txtCantidad8.Size = new System.Drawing.Size(53, 20);
             this.txtCantidad8.TabIndex = 103;
@@ -328,7 +340,7 @@ namespace VISTA
             // txtCantidad7
             // 
             this.txtCantidad7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad7.Location = new System.Drawing.Point(782, 61);
+            this.txtCantidad7.Location = new System.Drawing.Point(782, 98);
             this.txtCantidad7.Name = "txtCantidad7";
             this.txtCantidad7.Size = new System.Drawing.Size(53, 20);
             this.txtCantidad7.TabIndex = 102;
@@ -336,93 +348,103 @@ namespace VISTA
             // txtCantidad6
             // 
             this.txtCantidad6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad6.Location = new System.Drawing.Point(782, 20);
+            this.txtCantidad6.Location = new System.Drawing.Point(782, 57);
             this.txtCantidad6.Name = "txtCantidad6";
             this.txtCantidad6.Size = new System.Drawing.Size(53, 20);
             this.txtCantidad6.TabIndex = 101;
             // 
-            // cmbCotizacion10
+            // cmbCotizacion_10
             // 
-            this.cmbCotizacion10.FormattingEnabled = true;
-            this.cmbCotizacion10.Location = new System.Drawing.Point(476, 196);
-            this.cmbCotizacion10.Name = "cmbCotizacion10";
-            this.cmbCotizacion10.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion10.TabIndex = 100;
+            this.cmbCotizacion_10.FormattingEnabled = true;
+            this.cmbCotizacion_10.Location = new System.Drawing.Point(476, 232);
+            this.cmbCotizacion_10.Name = "cmbCotizacion_10";
+            this.cmbCotizacion_10.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_10.TabIndex = 100;
+            this.cmbCotizacion_10.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion9
+            // cmbCotizacion_9
             // 
-            this.cmbCotizacion9.FormattingEnabled = true;
-            this.cmbCotizacion9.Location = new System.Drawing.Point(476, 153);
-            this.cmbCotizacion9.Name = "cmbCotizacion9";
-            this.cmbCotizacion9.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion9.TabIndex = 99;
+            this.cmbCotizacion_9.FormattingEnabled = true;
+            this.cmbCotizacion_9.Location = new System.Drawing.Point(476, 189);
+            this.cmbCotizacion_9.Name = "cmbCotizacion_9";
+            this.cmbCotizacion_9.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_9.TabIndex = 99;
+            this.cmbCotizacion_9.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion8
+            // cmbCotizacion_8
             // 
-            this.cmbCotizacion8.FormattingEnabled = true;
-            this.cmbCotizacion8.Location = new System.Drawing.Point(476, 106);
-            this.cmbCotizacion8.Name = "cmbCotizacion8";
-            this.cmbCotizacion8.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion8.TabIndex = 98;
+            this.cmbCotizacion_8.FormattingEnabled = true;
+            this.cmbCotizacion_8.Location = new System.Drawing.Point(476, 142);
+            this.cmbCotizacion_8.Name = "cmbCotizacion_8";
+            this.cmbCotizacion_8.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_8.TabIndex = 98;
+            this.cmbCotizacion_8.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion7
+            // cmbCotizacion_7
             // 
-            this.cmbCotizacion7.FormattingEnabled = true;
-            this.cmbCotizacion7.Location = new System.Drawing.Point(476, 61);
-            this.cmbCotizacion7.Name = "cmbCotizacion7";
-            this.cmbCotizacion7.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion7.TabIndex = 97;
+            this.cmbCotizacion_7.FormattingEnabled = true;
+            this.cmbCotizacion_7.Location = new System.Drawing.Point(476, 97);
+            this.cmbCotizacion_7.Name = "cmbCotizacion_7";
+            this.cmbCotizacion_7.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_7.TabIndex = 97;
+            this.cmbCotizacion_7.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion6
+            // cmbCotizacion_6
             // 
-            this.cmbCotizacion6.FormattingEnabled = true;
-            this.cmbCotizacion6.Location = new System.Drawing.Point(476, 20);
-            this.cmbCotizacion6.Name = "cmbCotizacion6";
-            this.cmbCotizacion6.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion6.TabIndex = 96;
+            this.cmbCotizacion_6.FormattingEnabled = true;
+            this.cmbCotizacion_6.Location = new System.Drawing.Point(476, 56);
+            this.cmbCotizacion_6.Name = "cmbCotizacion_6";
+            this.cmbCotizacion_6.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_6.TabIndex = 96;
+            this.cmbCotizacion_6.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion5
+            // cmbCotizacion_5
             // 
-            this.cmbCotizacion5.FormattingEnabled = true;
-            this.cmbCotizacion5.Location = new System.Drawing.Point(13, 196);
-            this.cmbCotizacion5.Name = "cmbCotizacion5";
-            this.cmbCotizacion5.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion5.TabIndex = 95;
+            this.cmbCotizacion_5.FormattingEnabled = true;
+            this.cmbCotizacion_5.Location = new System.Drawing.Point(13, 232);
+            this.cmbCotizacion_5.Name = "cmbCotizacion_5";
+            this.cmbCotizacion_5.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_5.TabIndex = 95;
+            this.cmbCotizacion_5.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion4
+            // cmbCotizacion_4
             // 
-            this.cmbCotizacion4.FormattingEnabled = true;
-            this.cmbCotizacion4.Location = new System.Drawing.Point(13, 154);
-            this.cmbCotizacion4.Name = "cmbCotizacion4";
-            this.cmbCotizacion4.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion4.TabIndex = 94;
+            this.cmbCotizacion_4.FormattingEnabled = true;
+            this.cmbCotizacion_4.Location = new System.Drawing.Point(13, 190);
+            this.cmbCotizacion_4.Name = "cmbCotizacion_4";
+            this.cmbCotizacion_4.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_4.TabIndex = 94;
+            this.cmbCotizacion_4.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion3
+            // cmbCotizacion_3
             // 
-            this.cmbCotizacion3.FormattingEnabled = true;
-            this.cmbCotizacion3.Location = new System.Drawing.Point(13, 107);
-            this.cmbCotizacion3.Name = "cmbCotizacion3";
-            this.cmbCotizacion3.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion3.TabIndex = 93;
+            this.cmbCotizacion_3.FormattingEnabled = true;
+            this.cmbCotizacion_3.Location = new System.Drawing.Point(13, 143);
+            this.cmbCotizacion_3.Name = "cmbCotizacion_3";
+            this.cmbCotizacion_3.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_3.TabIndex = 93;
+            this.cmbCotizacion_3.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion2
+            // cmbCotizacion_2
             // 
-            this.cmbCotizacion2.FormattingEnabled = true;
-            this.cmbCotizacion2.Location = new System.Drawing.Point(13, 62);
-            this.cmbCotizacion2.Name = "cmbCotizacion2";
-            this.cmbCotizacion2.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion2.TabIndex = 92;
+            this.cmbCotizacion_2.FormattingEnabled = true;
+            this.cmbCotizacion_2.Location = new System.Drawing.Point(13, 98);
+            this.cmbCotizacion_2.Name = "cmbCotizacion_2";
+            this.cmbCotizacion_2.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_2.TabIndex = 92;
+            this.cmbCotizacion_2.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
-            // cmbCotizacion1
+            // cmbCotizacion_1
             // 
-            this.cmbCotizacion1.FormattingEnabled = true;
-            this.cmbCotizacion1.Items.AddRange(new object[] {
+            this.cmbCotizacion_1.FormattingEnabled = true;
+            this.cmbCotizacion_1.Items.AddRange(new object[] {
             "algo",
             "alguien"});
-            this.cmbCotizacion1.Location = new System.Drawing.Point(13, 21);
-            this.cmbCotizacion1.Name = "cmbCotizacion1";
-            this.cmbCotizacion1.Size = new System.Drawing.Size(192, 21);
-            this.cmbCotizacion1.TabIndex = 72;
+            this.cmbCotizacion_1.Location = new System.Drawing.Point(13, 57);
+            this.cmbCotizacion_1.Name = "cmbCotizacion_1";
+            this.cmbCotizacion_1.Size = new System.Drawing.Size(192, 21);
+            this.cmbCotizacion_1.TabIndex = 72;
+            this.cmbCotizacion_1.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionado_mostrarPrecio);
             // 
             // btnENVIAR
             // 
@@ -432,7 +454,7 @@ namespace VISTA
             this.btnENVIAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnENVIAR.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnENVIAR.ForeColor = System.Drawing.Color.White;
-            this.btnENVIAR.Location = new System.Drawing.Point(6, 229);
+            this.btnENVIAR.Location = new System.Drawing.Point(6, 266);
             this.btnENVIAR.Name = "btnENVIAR";
             this.btnENVIAR.Size = new System.Drawing.Size(301, 39);
             this.btnENVIAR.TabIndex = 73;
@@ -443,7 +465,7 @@ namespace VISTA
             // txtPrecio10
             // 
             this.txtPrecio10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio10.Location = new System.Drawing.Point(686, 196);
+            this.txtPrecio10.Location = new System.Drawing.Point(686, 233);
             this.txtPrecio10.Name = "txtPrecio10";
             this.txtPrecio10.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio10.TabIndex = 91;
@@ -451,7 +473,7 @@ namespace VISTA
             // txtPrecio9
             // 
             this.txtPrecio9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio9.Location = new System.Drawing.Point(686, 153);
+            this.txtPrecio9.Location = new System.Drawing.Point(686, 190);
             this.txtPrecio9.Name = "txtPrecio9";
             this.txtPrecio9.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio9.TabIndex = 90;
@@ -459,7 +481,7 @@ namespace VISTA
             // txtPrecio8
             // 
             this.txtPrecio8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio8.Location = new System.Drawing.Point(686, 107);
+            this.txtPrecio8.Location = new System.Drawing.Point(686, 144);
             this.txtPrecio8.Name = "txtPrecio8";
             this.txtPrecio8.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio8.TabIndex = 89;
@@ -467,7 +489,7 @@ namespace VISTA
             // txtPrecio7
             // 
             this.txtPrecio7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio7.Location = new System.Drawing.Point(686, 61);
+            this.txtPrecio7.Location = new System.Drawing.Point(686, 98);
             this.txtPrecio7.Name = "txtPrecio7";
             this.txtPrecio7.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio7.TabIndex = 88;
@@ -475,17 +497,73 @@ namespace VISTA
             // txtPrecio6
             // 
             this.txtPrecio6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecio6.Location = new System.Drawing.Point(686, 20);
+            this.txtPrecio6.Location = new System.Drawing.Point(686, 57);
             this.txtPrecio6.Name = "txtPrecio6";
             this.txtPrecio6.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio6.TabIndex = 87;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 116;
+            this.label1.Text = "PROVEEDOR";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(238, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 117;
+            this.label2.Text = "PRECIO";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(320, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 118;
+            this.label3.Text = "CANTIDAD";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(779, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 121;
+            this.label4.Text = "CANTIDAD";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(702, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 120;
+            this.label5.Text = "PRECIO";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(474, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "PROVEEDOR";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmORDEN_COMPRA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(855, 617);
+            this.ClientSize = new System.Drawing.Size(855, 710);
             this.Controls.Add(this.gbCOTIZACIONES);
             this.Controls.Add(this.gbLISTA_COTIZACIONES);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -515,16 +593,16 @@ namespace VISTA
         private System.Windows.Forms.TextBox txtPrecio7;
         private System.Windows.Forms.TextBox txtPrecio6;
         private System.Windows.Forms.Button btnENVIAR;
-        private System.Windows.Forms.ComboBox cmbCotizacion10;
-        private System.Windows.Forms.ComboBox cmbCotizacion9;
-        private System.Windows.Forms.ComboBox cmbCotizacion8;
-        private System.Windows.Forms.ComboBox cmbCotizacion7;
-        private System.Windows.Forms.ComboBox cmbCotizacion6;
-        private System.Windows.Forms.ComboBox cmbCotizacion5;
-        private System.Windows.Forms.ComboBox cmbCotizacion4;
-        private System.Windows.Forms.ComboBox cmbCotizacion3;
-        private System.Windows.Forms.ComboBox cmbCotizacion2;
-        private System.Windows.Forms.ComboBox cmbCotizacion1;
+        private System.Windows.Forms.ComboBox cmbCotizacion_10;
+        private System.Windows.Forms.ComboBox cmbCotizacion_9;
+        private System.Windows.Forms.ComboBox cmbCotizacion_8;
+        private System.Windows.Forms.ComboBox cmbCotizacion_7;
+        private System.Windows.Forms.ComboBox cmbCotizacion_6;
+        private System.Windows.Forms.ComboBox cmbCotizacion_5;
+        private System.Windows.Forms.ComboBox cmbCotizacion_4;
+        private System.Windows.Forms.ComboBox cmbCotizacion_3;
+        private System.Windows.Forms.ComboBox cmbCotizacion_2;
+        private System.Windows.Forms.ComboBox cmbCotizacion_1;
         private System.Windows.Forms.TextBox txtCantidad5;
         private System.Windows.Forms.TextBox txtCantidad4;
         private System.Windows.Forms.TextBox txtCantidad3;
@@ -540,5 +618,11 @@ namespace VISTA
         private System.Windows.Forms.TextBox txtCantidad8;
         private System.Windows.Forms.TextBox txtCantidad7;
         private System.Windows.Forms.TextBox txtCantidad6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

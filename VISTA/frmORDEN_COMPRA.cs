@@ -44,16 +44,30 @@ namespace VISTA
         {
 
             InitializeComponent();
-            cmbCotizacion1.Enabled = false;
-            cmbCotizacion2.Enabled = false;
-            cmbCotizacion3.Enabled = false;
-            cmbCotizacion4.Enabled = false;
-            cmbCotizacion5.Enabled = false;
-            cmbCotizacion6.Enabled = false;
-            cmbCotizacion7.Enabled = false;
-            cmbCotizacion8.Enabled = false;
-            cmbCotizacion9.Enabled = false;
-            cmbCotizacion10.Enabled = false;
+
+            for (int j = 1; j < 11; j++)
+            {
+                TextBox tbx = this.Controls.Find("txtPrecio" + j, true).FirstOrDefault() as TextBox;
+                if (tbx != null)
+                {
+                    tbx.Text = "";
+                    tbx.Enabled = false;
+                    tbx.BackColor = System.Drawing.Color.Gray;
+                }
+                TextBox tcx = this.Controls.Find("txtCantidad" + j, true).FirstOrDefault() as TextBox;
+                if (tcx != null)
+                {
+                    tcx.Text = "";
+                    tcx.Enabled = false;
+                    tcx.BackColor = System.Drawing.Color.Gray;
+                }
+                ComboBox cmbC = this.Controls.Find("cmbCotizacion_" + j, true).FirstOrDefault() as ComboBox;
+                if (cmbC != null)
+                {
+                    cmbC.Enabled = false;
+                    cmbC.BackColor = System.Drawing.Color.Gray;
+                }
+            }
             cSOLICITUDES_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
             cCOTIZACIONES = CONTROLADORA.COTIZACIONES.OBTENER_INSTANCIA();
             cORDENES_COMPRAS = CONTROLADORA.ORDENES_DE_COMPRAS.OBTENER_INSTANCIA();
@@ -73,20 +87,7 @@ namespace VISTA
         private void ARMA_GRILLA_COTIZACION(int ID_SOLICITUD_PEDIDO)
         {
 
-            for (int j = 1; j < 11; j++)
-            {
-                TextBox tbx = this.Controls.Find("txtCOTIZACION_" + j, true).FirstOrDefault() as TextBox;
-                if(tbx != null)
-                {
-                    tbx.Text = ""; 
-                }
-                TextBox tcx = this.Controls.Find("txtCANTIDAD_" + j, true).FirstOrDefault() as TextBox;
-                if (tcx != null)
-                {
-                    tcx.Text = "";
-                    tcx.Enabled = true;
-                }
-            }
+            
 
             var LISTA_COTIZACIONES = 
                 (from a in cCOTIZACIONES.OBTENER_COTIZACIONES()
@@ -111,8 +112,9 @@ namespace VISTA
             foreach(var lista_pedidos in LISTA_SOLICITUD) {
                 var LISTA_COTIZACION = (from lc in cLISTA_COTIZACION.OBTENER_LISTA_COTIZACIONES() where lc.COTIZACION.PEDIDO.ID_SOLICITUD_PEDIDO == ID_SOLICITUD_PEDIDO && lc.MATERIAL.ID_MATERIAL == lista_pedidos.INSUMO.ID_MATERIAL select lc).ToList();
 
-                ComboBox cmbc = this.Controls.Find("cmbCotizacion" + (i+ 1), true).FirstOrDefault() as ComboBox;
+                ComboBox cmbc = this.Controls.Find("cmbCotizacion_" + (i+ 1), true).FirstOrDefault() as ComboBox;
                 TextBox tbp = this.Controls.Find("txtPrecio" + (i + 1), true).FirstOrDefault() as TextBox;
+                TextBox tbc = this.Controls.Find("txtCantidad" + (i + 1), true).FirstOrDefault() as TextBox;
                 cmbc.DataSource = null;
                 cmbc.ValueMember = "ID_PROVEEDOR";
                 cmbc.DisplayMember = "NOMBRE";
@@ -125,11 +127,17 @@ namespace VISTA
                 {
                     ComboboxItem item = new ComboboxItem();
                     item.Text = itemLC.COTIZACION.PROVEEDOR.NOMBRE+" "+itemLC.COTIZACION.PROVEEDOR.APELLIDO +" : $"+itemLC.PRECIO;
-                    item.Value = itemLC.COTIZACION.PROVEEDOR.ID_PROVEEDOR;
+                    item.Value = itemLC.ID_LISTA_COTIZACION;
                     LISTA_CMB_COTIZACION.Add(item);
                 }
                 cmbc.DataSource = LISTA_CMB_COTIZACION;
                 cmbc.Enabled = true;
+                tbc.Enabled = true;
+                tbp.Enabled = true;
+                cmbc.BackColor = System.Drawing.Color.White;
+                tbp.BackColor = System.Drawing.Color.White;
+                tbc.BackColor = System.Drawing.Color.White;
+
                 i++;
                 
             }
@@ -172,38 +180,61 @@ namespace VISTA
             {
                 bool cantidad = false;
                 bool cotizacion = false;
+                bool precio = false;
 
-                TextBox tbx = this.Controls.Find("txtCOTIZACION_" + c, true).FirstOrDefault() as TextBox;
-                if (tbx.Text.Length > 0)
+                ComboBox cmbc = this.Controls.Find("cmbCotizacion_" + c, true).FirstOrDefault() as ComboBox;
+                if (cmbc.Text.Length > 0)
                 {
-                    texto_cotizacion = tbx.Text.Split('-');
+                    texto_cotizacion = cmbc.Text.Split('-');
                     cotizacion = true;
                 }
-                TextBox tcx = this.Controls.Find("txtCANTIDAD_" + c, true).FirstOrDefault() as TextBox;
-                if (tcx.Text.Length > 0)
+                TextBox tbc = this.Controls.Find("txtCantidad" + c, true).FirstOrDefault() as TextBox;
+                if (tbc.Text.Length > 0)
                 {
                     cantidad = true;
+                }
+                TextBox tbp = this.Controls.Find("txtPrecio" + c, true).FirstOrDefault() as TextBox;
+                if (tbp.Text.Length > 0)
+                {
+                    precio = true;
                 }
 
                 if (cotizacion == true && cantidad == true)
                 {
                     oLISTA_COMPRA = new MODELO.LISTA_COMPRA();
-                    oLISTA_COMPRA.CANTIDAD = Convert.ToInt32(tcx.Text);
-                    oCOTIZACION = new MODELO.COTIZACION();
-                    oCOTIZACION.ID_COTIZACION = Convert.ToInt32(texto_cotizacion[0]);
-
-                    var COTIZACION = (from a in cCOTIZACIONES.OBTENER_COTIZACIONES()
-                                      where a.ID_COTIZACION == Convert.ToInt32(texto_cotizacion[0])
+                    oLISTA_COMPRA.CANTIDAD = Convert.ToInt32(tbc.Text);
+                    ComboboxItem proveedor_seleccionado = (ComboboxItem)cmbc.SelectedItem;
+                    var l_cotizacion = (from a in cLISTA_COTIZACION.OBTENER_LISTA_COTIZACIONES()
+                                      where a.ID_LISTA_COTIZACION == Convert.ToInt32(proveedor_seleccionado.Value)
                                       select a).ToList();
 
-                    oLISTA_COMPRA.COTIZACION = (MODELO.COTIZACION)COTIZACION[0];
-                    oLISTA_COMPRA.PRECIO = Convert.ToInt32(texto_cotizacion[2]);
+                    oLISTA_COMPRA.LISTA_COTIZACION = (MODELO.LISTA_COTIZACION)l_cotizacion[0];
+                    oLISTA_COMPRA.PRECIO = Convert.ToInt32(tbp.Text);
                     oLISTA_COMPRA.COMPRA = ULTIMA_COMPRA;
                     cLISTA_ORDENES_COMPRAS.AGREGAR_LISTA_ORDEN_COMPRA(oLISTA_COMPRA);
                 }
             }
             //PONER MENSAJE SIN QUE SE REPITA
             MessageBox.Show("Su Orden de compra se concretó con éxito");
+        }
+
+
+
+        private void cmbSeleccionado_mostrarPrecio(object sender, EventArgs e)
+        {
+
+            ComboBox cotizacion_cmb = (ComboBox)sender;
+            string[] i = cotizacion_cmb.Name.Split('_');
+            ComboboxItem cotizacion_seleccionado = cotizacion_cmb.SelectedItem as ComboboxItem;
+            string[] precio = cotizacion_seleccionado.Text.Split('$');
+            TextBox textPrecio = this.Controls.Find("txtPrecio" + i[1], true).FirstOrDefault() as TextBox;
+            textPrecio.Text = precio[1].Split('.')[0];
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

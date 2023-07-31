@@ -10,7 +10,7 @@ namespace MODELO
     {
         public int ID_LISTA_COMPRA { get; set; }
         public ORDEN_COMPRA COMPRA { get; set; }
-        public COTIZACION COTIZACION { get; set; }
+        public LISTA_COTIZACION LISTA_COTIZACION { get; set; }
         public int CANTIDAD { get; set; }
         public decimal PRECIO { get; set; }
     }
