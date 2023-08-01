@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VISTA.State;
 
 namespace VISTA
 {
@@ -304,7 +305,8 @@ namespace VISTA
             if (EXISTE_COMPRA.Count == 0)
             {
                 cORDENES_COMPRAS.AGREGAR_ORDEN_COMPRA(oORDEN_COMPRA);
-
+                var context = new Context(new ConcreteStateCompletado());
+                context.Request1(oORDEN_COMPRA.PEDIDO);
                 var COMPRAS = (from a in cORDENES_COMPRAS.OBTENER_ORDENES_COMPRAS() select a).ToList();
 
                 MODELO.ORDEN_COMPRA ULTIMA_COMPRA = COMPRAS.Last();
@@ -391,7 +393,8 @@ namespace VISTA
                                             select a).ToList();
 
                         oLISTA_COMPRA.LISTA_COTIZACION = (MODELO.LISTA_COTIZACION)l_cotizacion[0];
-                        oLISTA_COMPRA.PRECIO = Convert.ToInt32(tbp.Text);
+                        string[] tb_precio = tbp.Text.Contains('.') ? tbp.Text.Split('.') : new string[] { tbp.Text };
+                        oLISTA_COMPRA.PRECIO = Convert.ToInt32(tb_precio.Last());
                         oLISTA_COMPRA.COMPRA = EXISTE_COMPRA[0];
                         cLISTA_ORDENES_COMPRAS.AGREGAR_LISTA_ORDEN_COMPRA(oLISTA_COMPRA);
                     }

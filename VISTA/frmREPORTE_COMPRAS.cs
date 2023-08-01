@@ -65,23 +65,18 @@ namespace VISTA
             //.Where(r => r.PEDIDO != null)
             // Traigo la cantidad de especialidades que tengo    
             string[] SERIES_ARRAY_COMPRAS = cORDEN_COMPRA.OBTENER_ORDENES_COMPRAS().AsEnumerable().Select(r => r.PEDIDO.DESCRIPCION).Distinct().ToArray();
-            string[] LISTA_COMPRAS = cLISTA_ORDEN_COMPRAS.OBTENER_LISTA_COMPRAS().AsEnumerable().Select(r => r.PRECIO.ToString()).Distinct().ToArray();
-
-
+            var LISTA_COMPRAS = (from loc in cLISTA_ORDEN_COMPRAS.OBTENER_LISTA_COMPRAS()  select new {precio = loc.PRECIO,orden = loc.COMPRA.ID_ORDEN_COMPRA}).ToList();
+            //string[] SERIES_PRECIOS = LISTA_COMPRAS.Sum(w => w.precio)
+            int[] SERIES_PRECIOS = LISTA_COMPRAS.GroupBy(a => a.orden).Select(i =>  i.Sum(x => (int)x.precio)).ToArray();
             // For que me permite cargar los datos en el chart
+            chart_CANTIDAD_GASTOS.Series[0].Points.DataBindXY(SERIES_ARRAY_COMPRAS, SERIES_PRECIOS);
+
             for (int i = 0; i < SERIES_ARRAY_COMPRAS.Length; i++)
             {
                 //Titulo de la serie
                 Series SERIES = chart_CANTIDAD_GASTOS.Series.Add(SERIES_ARRAY_COMPRAS[i]);
 
-
-                // Asocio las series con la cantidad de profesionales
-                int CANTIDAD_GASTOS = (from row in SERIES_ARRAY_COMPRAS
-                                              where row == LISTA_COMPRAS[i]
-                                              select row).Count();
-
                 // Agrego la cantidad de Profesionales (las barras)
-                SERIES.Points.Add(CANTIDAD_GASTOS);
             }
         }
 
