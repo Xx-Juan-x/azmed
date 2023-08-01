@@ -378,6 +378,10 @@
     <Compile Include="Migrations\202307310419346_lista_order_cambio.designer.cs">
       <DependentUpon>202307310419346_lista_order_cambio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308010451176_lista_coti_cambio.cs" />
+    <Compile Include="Migrations\202308010451176_lista_coti_cambio.designer.cs">
+      <DependentUpon>202308010451176_lista_coti_cambio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -637,6 +641,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307310419346_lista_order_cambio.resx">
       <DependentUpon>202307310419346_lista_order_cambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308010451176_lista_coti_cambio.resx">
+      <DependentUpon>202308010451176_lista_coti_cambio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

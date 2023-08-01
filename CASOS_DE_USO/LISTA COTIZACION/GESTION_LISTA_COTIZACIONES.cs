@@ -12,7 +12,6 @@ namespace CASOS_DE_USO.LISTA_COTIZACION
         { 
             return AZMED_CLINICA.LISTA_COTIZACION.Include("COTIZACION").Include("MATERIAL").FirstOrDefault(_ => _.ID_LISTA_COTIZACION == CODIGO);
         }
-
         public static List<MODELO.LISTA_COTIZACION> OBTENER_LISTA_COTIZACIONES(CONTEXTO.CLINICA_AZMED AZMED_CLINICA)
         {
             return AZMED_CLINICA.LISTA_COTIZACION.Include("COTIZACION").Include("MATERIAL").ToList();
