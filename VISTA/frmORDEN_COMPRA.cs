@@ -342,7 +342,8 @@ namespace VISTA
                                             select a).ToList();
 
                         oLISTA_COMPRA.LISTA_COTIZACION = (MODELO.LISTA_COTIZACION)l_cotizacion[0];
-                        oLISTA_COMPRA.PRECIO = Convert.ToInt32(tbp.Text);
+                        string[] tb_precio = tbp.Text.Contains('.') ? tbp.Text.Split('.') : new string[] { tbp.Text };
+                        oLISTA_COMPRA.PRECIO = Convert.ToDecimal(tb_precio.Last());
                         oLISTA_COMPRA.COMPRA = ULTIMA_COMPRA;
                         cLISTA_ORDENES_COMPRAS.AGREGAR_LISTA_ORDEN_COMPRA(oLISTA_COMPRA);
                     }
@@ -391,7 +392,8 @@ namespace VISTA
                                             select a).ToList();
 
                         oLISTA_COMPRA.LISTA_COTIZACION = (MODELO.LISTA_COTIZACION)l_cotizacion[0];
-                        oLISTA_COMPRA.PRECIO = Convert.ToInt32(tbp.Text);
+                        string[] tb_precio = tbp.Text.Contains('.') ? tbp.Text.Split('.') : new string[] { tbp.Text };
+                        oLISTA_COMPRA.PRECIO = Convert.ToDecimal(tb_precio.Last());
                         oLISTA_COMPRA.COMPRA = EXISTE_COMPRA[0];
                         cLISTA_ORDENES_COMPRAS.AGREGAR_LISTA_ORDEN_COMPRA(oLISTA_COMPRA);
                     }

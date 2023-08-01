@@ -33,9 +33,9 @@ namespace VISTA
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbLISTA_ORDEN_COMPRA = new System.Windows.Forms.GroupBox();
+            this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.btnCERRAR = new System.Windows.Forms.Button();
             this.dgvLISTA_ORDENES_COMPRA = new System.Windows.Forms.DataGridView();
-            this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.gbLISTA_ORDEN_COMPRA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_ORDENES_COMPRA)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,16 @@ namespace VISTA
             this.gbLISTA_ORDEN_COMPRA.TabIndex = 6;
             this.gbLISTA_ORDEN_COMPRA.TabStop = false;
             this.gbLISTA_ORDEN_COMPRA.Text = "LISTA DE ORDENES DE COMPRAS";
+            // 
+            // cmbOrden
+            // 
+            this.cmbOrden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrden.FormattingEnabled = true;
+            this.cmbOrden.Location = new System.Drawing.Point(655, 19);
+            this.cmbOrden.Name = "cmbOrden";
+            this.cmbOrden.Size = new System.Drawing.Size(279, 21);
+            this.cmbOrden.TabIndex = 17;
+            this.cmbOrden.SelectedIndexChanged += new System.EventHandler(this.cmbOrden_SelectedIndexChanged);
             // 
             // btnCERRAR
             // 
@@ -120,15 +130,6 @@ namespace VISTA
             this.dgvLISTA_ORDENES_COMPRA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLISTA_ORDENES_COMPRA.Size = new System.Drawing.Size(941, 225);
             this.dgvLISTA_ORDENES_COMPRA.TabIndex = 0;
-            // 
-            // cmbOrden
-            // 
-            this.cmbOrden.FormattingEnabled = true;
-            this.cmbOrden.Location = new System.Drawing.Point(655, 19);
-            this.cmbOrden.Name = "cmbOrden";
-            this.cmbOrden.Size = new System.Drawing.Size(279, 21);
-            this.cmbOrden.TabIndex = 17;
-            this.cmbOrden.SelectedIndexChanged += new System.EventHandler(this.cmbOrden_SelectedIndexChanged);
             // 
             // frmLISTA_ORDEN_COMPRA
             // 
