@@ -57,11 +57,11 @@ namespace VISTA
             this.registrarProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeOrdenesDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeComprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditorialoginlogoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bACKUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +71,6 @@ namespace VISTA
             this.dgvLISTA_SOLICITUD_PEDIDO = new System.Windows.Forms.DataGridView();
             this.gbLISTA_SOLICITUDES_PEDIDOS = new System.Windows.Forms.GroupBox();
             this.picIMAGEN_CLINICA = new System.Windows.Forms.PictureBox();
-            this.listaDeOrdenesDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStripMENU_CLINICA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLISTA_SOLICITUD_PEDIDO)).BeginInit();
             this.gbLISTA_SOLICITUDES_PEDIDOS.SuspendLayout();
@@ -286,13 +285,19 @@ namespace VISTA
             this.crearOrdenDeCompraToolStripMenuItem.Text = "Crear Orden de Compra";
             this.crearOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.crearOrdenDeCompraToolStripMenuItem_Click);
             // 
+            // listaDeOrdenesDeComprasToolStripMenuItem
+            // 
+            this.listaDeOrdenesDeComprasToolStripMenuItem.Name = "listaDeOrdenesDeComprasToolStripMenuItem";
+            this.listaDeOrdenesDeComprasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.listaDeOrdenesDeComprasToolStripMenuItem.Text = "Lista de Ordenes de Compras";
+            this.listaDeOrdenesDeComprasToolStripMenuItem.Click += new System.EventHandler(this.listaDeOrdenesDeComprasToolStripMenuItem_Click);
+            // 
             // rEPORTESToolStripMenuItem
             // 
             this.rEPORTESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaYReportesDeProfesionalesRegistradosToolStripMenuItem,
             this.consultaYReportesDeTurnosSolicitadosToolStripMenuItem,
             this.reportesDeComprasRealizadasToolStripMenuItem,
-            this.estadisticaDeMaterialesToolStripMenuItem,
             this.auditorialoginlogoutToolStripMenuItem,
             this.auditoriaDeUsuarioToolStripMenuItem});
             this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
@@ -319,13 +324,6 @@ namespace VISTA
             this.reportesDeComprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.reportesDeComprasRealizadasToolStripMenuItem.Text = "Reportes de Compras";
             this.reportesDeComprasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.reportesDeComprasRealizadasToolStripMenuItem_Click);
-            // 
-            // estadisticaDeMaterialesToolStripMenuItem
-            // 
-            this.estadisticaDeMaterialesToolStripMenuItem.Name = "estadisticaDeMaterialesToolStripMenuItem";
-            this.estadisticaDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.estadisticaDeMaterialesToolStripMenuItem.Text = "Estadistica de Materiales";
-            this.estadisticaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMaterialesToolStripMenuItem_Click);
             // 
             // auditorialoginlogoutToolStripMenuItem
             // 
@@ -454,13 +452,6 @@ namespace VISTA
             this.picIMAGEN_CLINICA.TabIndex = 4;
             this.picIMAGEN_CLINICA.TabStop = false;
             // 
-            // listaDeOrdenesDeComprasToolStripMenuItem
-            // 
-            this.listaDeOrdenesDeComprasToolStripMenuItem.Name = "listaDeOrdenesDeComprasToolStripMenuItem";
-            this.listaDeOrdenesDeComprasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.listaDeOrdenesDeComprasToolStripMenuItem.Text = "Lista de Ordenes de Compras";
-            this.listaDeOrdenesDeComprasToolStripMenuItem.Click += new System.EventHandler(this.listaDeOrdenesDeComprasToolStripMenuItem_Click);
-            // 
             // frmCLINICA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,7 +507,6 @@ namespace VISTA
         private System.Windows.Forms.ToolStripMenuItem horariosLaboralesToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvLISTA_SOLICITUD_PEDIDO;
         private System.Windows.Forms.GroupBox gbLISTA_SOLICITUDES_PEDIDOS;
-        private System.Windows.Forms.ToolStripMenuItem estadisticaDeMaterialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosDeHoyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarGruposToolStripMenuItem;

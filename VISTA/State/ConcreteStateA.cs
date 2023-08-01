@@ -15,7 +15,7 @@ namespace VISTA.State
             cSOLICITUD_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
             solicitud.ESTADO = "EN COTIZACION";
             cSOLICITUD_PEDIDOS.MODIFICAR_SOLICITUD_PEDIDO(solicitud);
-            MessageBox.Show("Estado de la solicitud modificada : EN COTIZACION");
+            MessageBox.Show("Estado de la solicitud modificada : EN COTIZACION", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //"ConcreteStateA handles request1.";
             //"ConcreteStateA wants to change the state of the context.";
@@ -36,7 +36,7 @@ namespace VISTA.State
             cSOLICITUD_PEDIDOS = CONTROLADORA.SOLICITUDES_DE_PEDIDOS.OBTENER_INSTANCIA();
             solicitud.ESTADO = "COMPLETADO";
             cSOLICITUD_PEDIDOS.MODIFICAR_SOLICITUD_PEDIDO(solicitud);
-            MessageBox.Show("Estado de la solicitud modificada : COMPLETADA");
+            MessageBox.Show("Estado de la solicitud modificada : COMPLETADA", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //"ConcreteStateB handles request1.";
         }
 
