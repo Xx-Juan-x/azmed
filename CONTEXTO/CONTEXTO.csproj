@@ -419,9 +419,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202130038495_ACTUALIZACION_PLAN.resx">
       <DependentUpon>202202130038495_ACTUALIZACION_PLAN.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202130041332_ACTUALIZACION_PLAN1.resx">
       <DependentUpon>202202130041332_ACTUALIZACION_PLAN1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202130053058_ACTUALIZACION_PLAN3.resx">
       <DependentUpon>202202130053058_ACTUALIZACION_PLAN3.cs</DependentUpon>
@@ -431,6 +433,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202151418178_TIPO_USUARIO.resx">
       <DependentUpon>202202151418178_TIPO_USUARIO.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202151421324_ELIMINAR_IDROL.resx">
       <DependentUpon>202202151421324_ELIMINAR_IDROL.cs</DependentUpon>
@@ -488,9 +491,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203020226046_FACTURACION.resx">
       <DependentUpon>202203020226046_FACTURACION.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203041345362_ESTADOS.resx">
       <DependentUpon>202203041345362_ESTADOS.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203042310549_BORRO_TIPO_PLAN.resx">
       <DependentUpon>202203042310549_BORRO_TIPO_PLAN.cs</DependentUpon>
@@ -500,6 +505,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203072048224_CAMBIO_VARIABLE_TURNO.resx">
       <DependentUpon>202203072048224_CAMBIO_VARIABLE_TURNO.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203120043520_DIA_MODELO_STRING.resx">
       <DependentUpon>202203120043520_DIA_MODELO_STRING.cs</DependentUpon>
@@ -518,15 +524,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203231420309_MODIFICACION_MATERIAL.resx">
       <DependentUpon>202203231420309_MODIFICACION_MATERIAL.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203231427203_SOLICITUD_PEDIDO.resx">
       <DependentUpon>202203231427203_SOLICITUD_PEDIDO.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203241300338_COTIZACION.resx">
       <DependentUpon>202203241300338_COTIZACION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203242216399_LISTA_SOLICITUD_PEDIDO.resx">
       <DependentUpon>202203242216399_LISTA_SOLICITUD_PEDIDO.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203242302269_BORRO_SOLICITUD_PEDIDO.resx">
       <DependentUpon>202203242302269_BORRO_SOLICITUD_PEDIDO.cs</DependentUpon>
@@ -593,6 +602,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302050945489_CAMBIO_ATRIBUTO_PACIENTE.resx">
       <DependentUpon>202302050945489_CAMBIO_ATRIBUTO_PACIENTE.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.resx">
       <DependentUpon>202302061647492_CAMBIO_ATRIBUTO_PROFESIONAL.cs</DependentUpon>
@@ -617,6 +627,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307180345362_LISTA_COTIZACION.resx">
       <DependentUpon>202307180345362_LISTA_COTIZACION.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307291640249_AUDITORIA.resx">
       <DependentUpon>202307291640249_AUDITORIA.cs</DependentUpon>
@@ -632,6 +643,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307292234502_TABLA_AUDITORIA_USUARIO.resx">
       <DependentUpon>202307292234502_TABLA_AUDITORIA_USUARIO.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.resx">
       <DependentUpon>202307292320326_AGREGO_PROPIEDAD_EMAIL_AUDITORIA.cs</DependentUpon>

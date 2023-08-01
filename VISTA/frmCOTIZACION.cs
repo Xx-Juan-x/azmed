@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VISTA.State;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VISTA
@@ -175,6 +176,8 @@ namespace VISTA
                             oMATERIAL = (from m in cMATERIALES.OBTENER_MATERIALES() where m.NOMBRE == (c as Label).Text.ToString() select m).FirstOrDefault();
                             oLISTA_COTIZACION.MATERIAL = oMATERIAL;
                             cLISTA_COTIZACION.AGREGAR_LISTA_COTIZACION(oLISTA_COTIZACION);
+                            var context = new Context(new ConcreteStateCotizar());
+                            context.Request1(oSOLICITUD_PEDIDO);
                         }
                     }
                     txtNOMBRE.Clear();

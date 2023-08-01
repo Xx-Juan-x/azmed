@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VISTA.State;
 
 namespace VISTA
 {
@@ -304,7 +305,8 @@ namespace VISTA
             if (EXISTE_COMPRA.Count == 0)
             {
                 cORDENES_COMPRAS.AGREGAR_ORDEN_COMPRA(oORDEN_COMPRA);
-
+                var context = new Context(new ConcreteStateCompletado());
+                context.Request1(oORDEN_COMPRA.PEDIDO);
                 var COMPRAS = (from a in cORDENES_COMPRAS.OBTENER_ORDENES_COMPRAS() select a).ToList();
 
                 MODELO.ORDEN_COMPRA ULTIMA_COMPRA = COMPRAS.Last();

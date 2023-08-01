@@ -246,6 +246,9 @@
     <Compile Include="frmREPORTE_CANTIDAD_TURNOS.Designer.cs">
       <DependentUpon>frmREPORTE_CANTIDAD_TURNOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="State\ConcreteStateA.cs" />
+    <Compile Include="State\Context.cs" />
+    <Compile Include="State\State.cs" />
     <EmbeddedResource Include="frmACCIONES.resx">
       <DependentUpon>frmACCIONES.cs</DependentUpon>
     </EmbeddedResource>
